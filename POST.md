@@ -2,19 +2,18 @@
 
 *Astrobites Beyond post.*
 
-Ask an early version of ChatGPT to polish a paragraph and the
+Ask an early version of [ChatGPT](https://en.wikipedia.org/wiki/ChatGPT) to polish a paragraph and the
 same handful of words keeps coming back, words like *delve*, *underscore*, *intricate*,
 and *showcasing*. On their own these are ordinary words. What is not ordinary is how
 often they started to appear in scientific writing after late 2022, when ChatGPT became
 easy to use.
 
-Other fields have already put a number on this. One study estimates that a large language
-model (a text-prediction system trained on huge amounts of writing, ChatGPT being the best-known example) was involved in more than 10% of all papers published in 2024. In
-computer science the fraction of abstracts with model-edited text has been put near 17%.
-For biomedical papers on PubMed, the estimate is at least 13.5%. Nobody has published the
+Other fields have already put a number on this. [One study](https://arxiv.org/abs/2512.01560) estimates that a [large language model](https://en.wikipedia.org/wiki/Large_language_model) (a text-prediction system trained on huge amounts of writing, ChatGPT being the best-known example) was involved in more than 10% of all papers published in 2024. In
+computer science the fraction of abstracts with model-edited text has been put [near 17%](https://arxiv.org/abs/2404.01268).
+For biomedical papers on [PubMed](https://pubmed.ncbi.nlm.nih.gov), the estimate is at least [13.5%](https://arxiv.org/abs/2406.07016). Nobody has published the
 number for astronomy. So, I set out to measure it.
 
-I pulled the abstracts of every astro-ph paper posted to arXiv from January 2015 through
+I pulled the abstracts of every astro-ph paper posted to [arXiv](https://arxiv.org) from January 2015 through
 mid-2026, which comes to 200,547 papers. Then I counted words. This post walks through
 what the counting shows, where it stops working, and one place where astronomy comes out
 looking better than most fields.
@@ -54,7 +53,7 @@ Bottom: individual words. "delve" (orange) peaks in early 2024 and then falls ba
 where it started, while less famous words like "underscore" and "leveraging" keep rising.*
 
 Once *delve* was known, it went away. Authors, and the tools themselves, stopped using it.
-But the top panel shows that the overall marker rate did not fall with it. Other words took over the load. Earlier work found the same pattern across all of arXiv, and astronomy follows
+But the top panel shows that the overall marker rate did not fall with it. Other words took over the load. [Earlier work](https://arxiv.org/abs/2502.09606) found the same pattern across all of arXiv, and astronomy follows
 it closely.
 
 ## Letting the data pick the words
@@ -66,8 +65,8 @@ biggest movers.
 
 ![Figure 3](figs/fig3_discovery.png)
 *Figure 3: The words whose frequency rose the most in astro-ph, ranked by ratio. They split
-into two groups. Blue words are new telescopes and surveys (JWST's NIRCam, MIRI, NIRSpec,
-the DESI survey), real astronomy events. Red words are chatbot-style verbs and adjectives
+into two groups. Blue words are new telescopes and surveys ([JWST](https://science.nasa.gov/mission/webb/)'s NIRCam, MIRI, NIRSpec,
+the [DESI survey](https://www.desi.lbl.gov)), real astronomy events. Red words are chatbot-style verbs and adjectives
 (leveraging, pivotal, intricate, highlighting).*
 
 The list sorts itself into two families. One family is names of instruments and surveys that
@@ -97,11 +96,9 @@ double digits of abstracts with some chatbot help.
 
 ## Using it and saying so are not the same
 
-If a few percent of abstracts have chatbot help, how many authors mention it? NASA ADS lets
-you search the acknowledgments section of papers, which is where people note the tools they
+If a few percent of abstracts have chatbot help, how many authors mention it? [NASA ADS](https://ui.adsabs.harvard.edu) lets you search the acknowledgments section of papers, which is where people note the tools they
 used. I searched astronomy papers each year for clear terms: ChatGPT, GPT-4, "large language
-model", GitHub Copilot. I left out words like "Gemini", which in astronomy usually means the
-Gemini Observatory, and "Claude", which is often a person's name.
+model", [GitHub Copilot](https://github.com/features/copilot). I left out words like "Gemini", which in astronomy usually means the [Gemini Observatory](https://www.gemini.edu), and "Claude", which is often a person's name.
 
 ![Figure 4](figs/fig4_disclosure.png)
 *Figure 4: Left, the count of astronomy papers each year that mention a chatbot in the text
@@ -116,7 +113,7 @@ Saying so is rare.
 
 ## The ladder of ways to catch it
 
-I tried one more thing. arXiv posts the LaTeX source of most papers, not just the final PDF.
+I tried one more thing. arXiv posts the [LaTeX](https://www.latex-project.org) source of most papers, not just the final PDF.
 Sometimes a chatbot's boilerplate gets pasted into that source and left in a comment that
 never shows up in the PDF, lines like "as an AI language model". I downloaded the source of
 3,950 papers and searched for these leftovers.
@@ -140,13 +137,13 @@ only method here that sees the bulk of the use.
 ## One place astronomy holds up well
 
 There is a real worry in other fields that chatbots invent references, citations to papers
-that do not exist. A recent audit of medical papers found the rate of made-up citations
+that do not exist. [A recent audit of medical papers](https://www.nature.com/articles/d41586-026-00748-w) found the rate of made-up citations
 rising, reaching roughly one paper in 458 by 2025. Astronomy has a tool that should guard
-against this: the NASA Astrophysics Data System, which nearly every astronomer uses to build
+against this: the [NASA Astrophysics Data System](https://ui.adsabs.harvard.edu), which nearly every astronomer uses to build
 their reference lists, so the identifiers are real by construction.
 
 I checked. From the source of recent papers, I pulled about 6,460 cited arXiv identifiers and
-2,500 cited DOIs (a DOI is a permanent code that points to a specific paper or dataset). Then
+2,500 cited [DOIs](https://www.doi.org) (a DOI is a permanent code that points to a specific paper or dataset). Then
 I looked up whether each one exists.
 
 ![Figure 12](figs/fig12_citation_integrity.png)
@@ -157,7 +154,7 @@ recent figures for biomedicine.*
 
 Every one of the 6,460 arXiv identifiers exists. Of the DOIs, the ones a first pass could
 not find turned out to be real records held in registries that the checking service does not
-index, such as arXiv's own system and the Zenodo archive. After sorting those out, the count
+index, such as arXiv's own system and the [Zenodo](https://zenodo.org) archive. After sorting those out, the count
 of invented citations is zero. Astronomy's habit of building reference lists from ADS seems
 to protect it from a problem that is growing elsewhere.
 
@@ -232,10 +229,9 @@ Figure 8 shows, and it reads abstracts, not full papers. And there is a differen
 three things that are easy to blur together: a chatbot used as a copy editor, a chatbot used
 to draft content, and a paper generated wholesale. The word counting mostly sees the first.
 
-On policy, the picture is uneven. arXiv asks authors to note significant use of generative
-tools and does not allow a tool to be listed as an author. Observatory time-allocation rules,
-such as those at ESO, forbid using a chatbot to judge a proposal. Astronomy and Astrophysics
-put out a statement on AI-assisted writing in mid-2026. A clear, dated policy from the AAS
+On policy, the picture is uneven. arXiv asks authors to [note significant use of generative tools](https://info.arxiv.org/help/moderation/index.html) and does not allow a tool to be listed as an author. Observatory time-allocation rules,
+such as those at [ESO](https://www.eso.org), forbid using a chatbot to judge a proposal. Astronomy and Astrophysics
+put out a [statement on AI-assisted writing](https://www.aanda.org/news/3200-a-a-publishes-statement-on-the-use-of-ai-assisted-technologies) in mid-2026. A clear, dated policy from the AAS
 journals is harder to find written down in one place. The open question is whether astronomy
 should agree on a disclosure norm now, before any single case forces the issue.
 

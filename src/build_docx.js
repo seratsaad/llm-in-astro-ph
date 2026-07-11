@@ -2,7 +2,7 @@
 // centered figures, italic captions. No decorative lines.
 const fs = require("fs");
 const path = require("path");
-const { Document, Packer, Paragraph, TextRun, ImageRun, AlignmentType } = require("docx");
+const { Document, Packer, Paragraph, TextRun, ImageRun, AlignmentType, ExternalHyperlink } = require("docx");
 
 const ROOT = path.join(__dirname, "..");
 const MD = fs.readFileSync(path.join(ROOT, "POST.md"), "utf8");
@@ -18,19 +18,28 @@ function pngSize(buf) {
   return { w: buf.readUInt32BE(16), h: buf.readUInt32BE(20) };
 }
 
-// inline **bold** / *italic* -> TextRun[]
+// inline [link](url) / **bold** / *italic* -> (TextRun | ExternalHyperlink)[]
 function runs(text, opts = {}) {
-  const base = { font: FONT, size: opts.size || BODY, italics: !!opts.italics, color: "1A1A1A" };
+  const size = opts.size || BODY, it = !!opts.italics;
+  const mk = (t, extra) => new TextRun({ text: t, font: FONT, size, italics: it, color: "1A1A1A", ...extra });
   const out = [];
-  const re = /(\*\*([^*]+)\*\*|\*([^*]+)\*)/g;
+  const re = /(\[([^\]]+)\]\(([^)]+)\))|(\*\*([^*]+)\*\*)|(\*([^*]+)\*)/g;
   let last = 0, m;
   while ((m = re.exec(text))) {
-    if (m.index > last) out.push(new TextRun({ ...base, text: text.slice(last, m.index) }));
-    if (m[2] !== undefined) out.push(new TextRun({ ...base, text: m[2], bold: true }));
-    else out.push(new TextRun({ ...base, text: m[3], italics: true }));
+    if (m.index > last) out.push(mk(text.slice(last, m.index)));
+    if (m[1] !== undefined) {
+      out.push(new ExternalHyperlink({
+        link: m[3],
+        children: [new TextRun({ text: m[2], font: FONT, size, italics: it, color: "0563C1", underline: {} })],
+      }));
+    } else if (m[4] !== undefined) {
+      out.push(mk(m[5], { bold: true }));
+    } else {
+      out.push(mk(m[7], { italics: true }));
+    }
     last = re.lastIndex;
   }
-  if (last < text.length) out.push(new TextRun({ ...base, text: text.slice(last) }));
+  if (last < text.length) out.push(mk(text.slice(last)));
   return out;
 }
 

@@ -14,6 +14,7 @@ def img_data_uri(path):
 
 def inline(t):
     t = html.escape(t)
+    t = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r'<a href="\2">\1</a>', t)  # links first
     t = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", t)
     t = re.sub(r"\*(.+?)\*", r"<em>\1</em>", t)
     return t
@@ -53,6 +54,7 @@ h2 { font-size: 14.5pt; margin: 26px 0 8px 0; }
 p { margin: 0 0 11px 0; text-align: justify; }
 em { font-style: italic; }
 strong { font-weight: 700; }
+a { color:#0563C1; text-decoration: underline; }
 .figwrap { text-align:center; margin: 16px 0 4px 0; page-break-inside: avoid; }
 .figwrap img { max-width: 100%; height:auto; }
 .caption { font-size: 9.4pt; color:#555; text-align:center; line-height:1.4;
