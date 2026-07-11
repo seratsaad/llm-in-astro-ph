@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+node_modules/
+package-lock.json
+.venv/
+.DS_Store
+POST.html
+# raw harvested abstract dump (~300 MB) — regenerate with src/harvest_arxiv.py
+data/astroph_abstracts.jsonl
+# logs and resumable-progress files
+data/*.log
+data/harvest_progress.json
+# Word lock/temp files
+~$*
+# internal working notes (not for the public repo)
+RESULTS.md
+LITERATURE_AND_IDEAS.md
