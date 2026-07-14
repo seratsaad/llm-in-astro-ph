@@ -50,9 +50,9 @@ def fig8_detectability():
     # LEFT: marker clusters quarterly
     axL.plot(s.yq, s.all_markers*100, color=C["black"], lw=3, label="all markers", zorder=5)
     axL.plot(s.yq, s.collapsing*100, "-o", ms=3.5, color=C["vermillion"], lw=1.9,
-             label="early tells (delve, intricate, pivotal ...)")
+             label="early tells")
     axL.plot(s.yq, s.rising*100, "-o", ms=3.5, color=C["green"], lw=1.9,
-             label="late tells (underscore, leveraging, notably ...)")
+             label="late tells")
     axL.text(2025.55, axL.get_ylim()[1]*0.12, "2026:\nboth fall", fontsize=9, color=C["grey"])
     axL.set_xlabel("Year (quarterly)"); axL.set_ylabel("% of abstracts with marker(s)")
     axL.legend(loc="upper left", fontsize=8.8)
