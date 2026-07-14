@@ -21,7 +21,8 @@ def fig10_subfield():
         lw = 3.2 if s == order[0] else 1.8
         ax.plot(d.year, d.rate, "-o", ms=4, lw=lw, color=palette[s],
                 label=s + ("  ← leads" if s == order[0] else ""))
-    ax.axvspan(2022.85, 2026.4, color=C["yellow"], alpha=0.15, zorder=0)
+    ax.axvline(2022.85, color=C["grey"], ls="--", lw=1)
+    ax.text(2022.7, 7.9, "ChatGPT", rotation=90, va="top", ha="right", fontsize=8, color=C["grey"])
     ax.set_xlabel("Year"); ax.set_ylabel("% of abstracts with LLM marker basket")
     ax.legend(loc="upper left", fontsize=9.2)
     ax.set_xticks(range(2018, 2027, 2))
@@ -177,7 +178,7 @@ def fig12_citation_integrity():
     no_minor_y(axL)
     axL.set_xlabel("count among the 123 Crossref 'misses'")
     for i, val in enumerate(vals):
-        axL.text(val+1, i, str(val), va="center", fontsize=10, fontweight="bold")
+        axL.text(val+1, i, str(val), va="center", fontsize=10, fontweight="normal")
     axL.set_xlim(0, max(vals)*1.2)
     # RIGHT: fabrication rate astro vs elsewhere
     fields = ["astro-ph\n(this work)", "Biomed 2025\n(Lancet)", "Biomed 2026\n(Lancet)"]
@@ -187,7 +188,7 @@ def fig12_citation_integrity():
     no_minor_x(axR)
     for bar, val in zip(b, fvals):
         axR.text(bar.get_x()+bar.get_width()/2, val+0.008,
-                 "0" if val == 0 else f"{val:.2f}%", ha="center", fontsize=11, fontweight="bold")
+                 "0" if val == 0 else f"{val:.2f}%", ha="center", fontsize=11, fontweight="normal")
     axR.set_ylabel("% of papers with a fabricated citation")
     axR.set_ylim(0, 0.45)
     axR.text(0.02, 0.92, f"astro-ph: 0 fabrications in\n~{total_checked:,} references checked\n"

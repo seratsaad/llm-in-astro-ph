@@ -108,7 +108,7 @@ def make_figure():
     ax.set_xlim(0.05, 30)
     for i, v in enumerate(vals):
         ax.text(v*1.12, i, f"{v:.2f}%" if v < 1 else f"{v:.1f}%", va="center",
-                fontsize=10.5, fontweight="bold")
+                fontsize=10.5, fontweight="normal")
     ax.set_xlabel("% of astronomy papers (2024 to 2026), log scale", labelpad=6)
     fig.tight_layout()
     fig.savefig(os.path.join(os.path.dirname(__file__), "..", "figs", "fig9_detection_ladder.png"),

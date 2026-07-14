@@ -15,3 +15,19 @@ data/harvest_progress.json
 # internal working notes (not for the public repo)
 RESULTS.md
 LITERATURE_AND_IDEAS.md
+# n-gram intermediate for c8_ngrams.py (~350 MB) — regenerate with src/c8_ngrams.py
+data/ngram_counts.pkl
+# LaTeX build artifacts
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.blg
+paper/*.bbl
+paper/*.synctex.gz
+paper/c*.log
+paper/bib.log
+paper/compile*.log
+
+# pre-existing skill-dev artifacts (superseded by src/ngrams.py)
+src/c8_ngrams.py
+data/c8_top_*.csv

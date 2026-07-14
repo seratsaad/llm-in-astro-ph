@@ -5,7 +5,8 @@ language models (LLMs) in the astronomy literature. Everything is reproducible f
 public arXiv and NASA ADS data.
 
 The write-up is in [`POST.md`](POST.md) (and [`POST.pdf`](POST.pdf)); the figures are in
-[`figs/`](figs/).
+[`figs/`](figs/). A journal-style paper version is in [`paper/`](paper/)
+([`paper/main.pdf`](paper/main.pdf)).
 
 ## What the analysis does
 
@@ -50,6 +51,7 @@ re-harvesting:
 python src/plots.py            # figures 1–6
 python src/plots2.py           # figures 7–8
 python src/plots3.py           # figures 10–12
+python src/plots_ngram.py      # n-gram viewer, bigram discovery, co-occurrence
 python src/analyze_source.py --fig   # figure 9 (detection ladder)
 ```
 
@@ -76,6 +78,7 @@ python src/c5_subfield.py       # marker rate by subfield
 python src/c4_geography.py      # marker + disclosure by country (needs token)
 python src/c6_model_switch.py   # marker-vocabulary trajectories
 python src/c7_hype_hedge.py     # promotional vs hedging vocabulary
+python src/ngrams.py            # two-word phrase + co-occurrence analysis
 
 # 6. Source-leak audit: download arXiv LaTeX source and scan it  (~1 hr, downloads)
 python src/harvest_source.py

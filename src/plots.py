@@ -41,10 +41,9 @@ def fig1_markers_vs_control():
     ax.plot(ctrl.year, ctrl.freq*100, "-s", color=C["blue"], lw=2.2, ms=5,
             label="Neutral control words\n(observed, measured, galaxy, ...)")
     ax.set_ylim(0, 15)
-    ax.axvspan(2022.85, 2025.6, color=C["yellow"], alpha=0.18, zorder=0)
-    ax.text(2024.2, 7.4, "ChatGPT era", color="#8a6d00",
-            fontsize=10, ha="center", style="italic")
     ax.axvline(2022.85, color=C["grey"], ls="--", lw=1)
+    ax.text(2022.7, 14.3, "ChatGPT", rotation=90, va="top", ha="right",
+            fontsize=8, color=C["grey"])
     ax.set_xlabel("Year"); ax.set_ylabel("% of abstracts containing the word(s)")
     ax.legend(loc="center left", fontsize=9.5)
     ax.set_xticks(range(2015, 2026, 2))
@@ -62,8 +61,7 @@ def fig2_delve_collapse():
     fig, (top, bot) = plt.subplots(2, 1, figsize=(8.8, 7.2), sharex=True,
                                    gridspec_kw={"height_ratios":[1, 1.25]})
     # TOP: aggregate footprint doesn't shrink
-    top.plot(a.yq, a.rate*100, color=C["black"], lw=3.0, zorder=5)
-    top.fill_between(a.yq, a.rate*100, color=C["black"], alpha=0.06)
+    top.plot(a.yq, a.rate*100, color=C["black"], lw=2.2, zorder=5)
     top.set_ylabel("% with ANY marker")
     # BOTTOM: individual words, zoomed
     for w, col, lab in [("delve", C["vermillion"], "delve  (went viral → abandoned)"),
@@ -178,11 +176,11 @@ def fig5_gap():
     no_minor_x(axL)
     for b,v in zip(bars, vals):
         axL.text(b.get_x()+b.get_width()/2, v+0.15, f"{v:.1f}%" if v>=1 else f"{v:.2f}%",
-                 ha="center", fontsize=11, fontweight="bold")
+                 ha="center", fontsize=11, fontweight="normal")
     axL.set_ylabel("% of 2025 astronomy papers")
     axL.set_ylim(0, max(vals)*1.25)
     axL.text(1.0, est*0.7, f"~{est/max(disc_full,0.01):.0f}x gap", ha="center",
-             color=C["grey"], fontsize=10, fontweight="bold")
+             color=C["grey"], fontsize=10, fontweight="normal")
 
     # RIGHT: field comparison (literature) + astro-ph
     fields = ["Computer\nScience", "Biomed\n(PubMed)", "astro-ph\n(this work,\nlower bound)",
@@ -195,7 +193,7 @@ def fig5_gap():
     axR.set_yticks(range(len(fields))); axR.set_yticklabels(fields, fontsize=9.5)
     no_minor_y(axR)
     for i,v in enumerate(fvals):
-        axR.text(v+0.3, i, f"{v:.1f}%", va="center", fontsize=10, fontweight="bold")
+        axR.text(v+0.3, i, f"{v:.1f}%", va="center", fontsize=10, fontweight="normal")
     axR.set_xlabel("% of abstracts LLM-modified / LLM-touched")
     axR.set_xlim(0, 21)
     footer(fig); fig.tight_layout()

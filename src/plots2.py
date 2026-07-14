@@ -27,8 +27,8 @@ def fig7_hype_hedge():
             label="Hype words (unprecedented, remarkable, striking, ...)")
     ax.plot(d.year, d.hedge_idx, "-s", color=C["blue"], lw=2.4, ms=5,
             label="Hedging words (may, might, suggest, likely, ...)")
-    ax.axvspan(2022.85, 2026.6, color=C["yellow"], alpha=0.16, zorder=0)
-    ax.text(2024.3, 104, "ChatGPT era", color="#8a6d00", fontsize=9.5, style="italic", ha="center")
+    ax.axvline(2022.85, color=C["grey"], ls="--", lw=1)
+    ax.text(2022.7, 126.5, "ChatGPT", rotation=90, va="top", ha="right", fontsize=8, color=C["grey"])
     ax.set_ylabel("frequency, indexed to 2015-19 = 100"); ax.set_xlabel("Year")
     ax.set_ylim(90, 128)
     ax.legend(loc="upper left", fontsize=9.4)
@@ -53,19 +53,17 @@ def fig8_detectability():
              label="early tells (delve, intricate, pivotal ...)")
     axL.plot(s.yq, s.rising*100, "-o", ms=3.5, color=C["green"], lw=1.9,
              label="late tells (underscore, leveraging, notably ...)")
-    axL.axvspan(2025.75, 2026.5, color=C["grey"], alpha=0.10)
     axL.text(2025.55, axL.get_ylim()[1]*0.12, "2026:\nboth fall", fontsize=9, color=C["grey"])
     axL.set_xlabel("Year (quarterly)"); axL.set_ylabel("% of abstracts with marker(s)")
     axL.legend(loc="upper left", fontsize=8.8)
     axL.set_xlim(2022, 2026.6)
     # RIGHT: disclosure still rising -> contradiction
     axR.plot(yrs, frac_full, "-o", color=C["sky"], lw=2.6, ms=6)
-    axR.axvspan(2025.5, 2026.5, color=C["grey"], alpha=0.10)
     axR.set_xlabel("Year"); axR.set_ylabel("% of astronomy papers disclosing LLM use (full text)")
     axR.set_xticks(range(2016, 2027, 2))
     axR.annotate("usage up while word-signal down\n= detection going underground",
                  xy=(2026, frac_full[-1]), xytext=(2019.4, frac_full[-1]*0.62),
-                 fontsize=9.5, color=C["black"], fontweight="bold",
+                 fontsize=9.5, color=C["black"], fontweight="normal",
                  arrowprops=dict(arrowstyle="->", color=C["black"]))
     footer(fig); fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig8_detectability_erosion.png"), bbox_inches="tight"); plt.close(fig)
