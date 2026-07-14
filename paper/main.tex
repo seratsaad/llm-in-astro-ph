@@ -1,4 +1,4 @@
-\documentclass[twocolumn]{aastex631}
+\documentclass[onecolumn]{aastex631}
 
 \usepackage{amsmath}
 \usepackage{placeins}   % \FloatBarrier used at a few points to keep floats near their text
@@ -8,8 +8,6 @@
 \renewcommand{\bottomfraction}{0.85}
 \renewcommand{\textfraction}{0.06}
 \renewcommand{\floatpagefraction}{0.75}
-\renewcommand{\dbltopfraction}{0.92}
-\renewcommand{\dblfloatpagefraction}{0.75}
 \setcounter{topnumber}{3}
 \setcounter{totalnumber}{5}
 
@@ -118,7 +116,7 @@ model-favored vocabulary and is not a general change in how abstracts are writte
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{fig1_markers_vs_control.png}
+\includegraphics[width=0.68\textwidth]{fig1_markers_vs_control.png}
 \caption{Fraction of astro-ph abstracts containing a marker word (red) and a matched set of
 neutral control words (blue), by year. The marker basket rises after ChatGPT while the
 control stays flat. Both are per-abstract fractions, so we stop at the last full year, 2025.}
@@ -134,7 +132,7 @@ habit stays, which matches the cross-field result of \citet{GengTrotta2025}.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{fig2_delve_collapse.png}
+\includegraphics[width=0.68\textwidth]{fig2_delve_collapse.png}
 \caption{Top: the fraction of abstracts with any marker word, by quarter, keeps rising.
 Bottom: single words. \mw{delve} peaks in early 2024 and then declines, while other markers
 keep rising; the aggregate does not fall with it.}
@@ -175,7 +173,7 @@ once. The full table of every word that clears a count floor is in the public da
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{fig3_discovery.png}
+\includegraphics[width=0.68\textwidth]{fig3_discovery.png}
 \caption{Words with the largest frequency increase in astro-ph abstracts, 2024--2026 versus
 2018--2021. Blue: new instruments, surveys, and object classes. Red: style words. Green:
 technical machine-learning terms.}
@@ -192,7 +190,7 @@ harder to remove by editing one word at a time.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{fig_ngram_viewer.png}
+\includegraphics[width=0.68\textwidth]{fig_ngram_viewer.png}
 \caption{Fraction of abstracts containing selected two-word phrases, by year. Model-favored
 phrases rise after 2022; a control phrase (\mw{wide range}) stays flat.}
 \label{fig:ngram}
@@ -200,7 +198,7 @@ phrases rise after 2022; a control phrase (\mw{wide range}) stays flat.}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{fig_bigram_discovery.png}
+\includegraphics[width=0.68\textwidth]{fig_bigram_discovery.png}
 \caption{Two-word phrases with the largest frequency increase, 2024--2026 versus 2018--2021,
 split into new-topic phrases (blue) and style phrases (red).}
 \label{fig:bigram}
@@ -227,7 +225,7 @@ a set of unrelated trends.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{fig_cooccur.png}
+\includegraphics[width=0.68\textwidth]{fig_cooccur.png}
 \caption{Co-occurrence lift for pairs of marker words in 2024--2026 abstracts. A value of one
 means the two words appear together as often as chance predicts. Marker words appear together
 far more often than that.}
@@ -264,14 +262,14 @@ Because our number is a strict lower bound while the others use fuller estimator
 reading is that astronomy is in the same range as the rest of science, at a few percent to low
 double digits.
 
-\begin{figure*}
+\begin{figure}
 \centering
-\includegraphics[width=0.9\textwidth]{fig5_gap.png}
+\includegraphics[width=0.85\textwidth]{fig5_gap.png}
 \caption{Left: for 2025 astronomy papers, the estimated lower bound on the model-touched
 fraction (about 4.3\%) next to the fraction that state model use. Right: the astronomy lower
 bound against published estimates for other fields \citep{Liang2024,Kobak2024}.}
 \label{fig:gap}
-\end{figure*}
+\end{figure}
 
 \section{Using a model and saying so}
 \label{sec:disclosure}
@@ -286,14 +284,14 @@ is a good check that the search is clean, and it rises every year after
 anywhere in the text. Set against the 4\% floor from the word counting, model use is common
 and stated use is rare.
 
-\begin{figure*}
+\begin{figure}
 \centering
-\includegraphics[width=0.9\textwidth]{fig4_disclosure.png}
+\includegraphics[width=0.85\textwidth]{fig4_disclosure.png}
 \caption{Left: number of astronomy papers per year that mention a model in full text (blue)
 or in the acknowledgments (red); the count is zero before 2023. Right: the same as a share of
 all astronomy papers, which stays below 1\%.}
 \label{fig:disclosure}
-\end{figure*}
+\end{figure}
 
 \FloatBarrier
 \section{A ladder of ways to catch it}
@@ -311,14 +309,14 @@ the least; the word signal (4.3\%, a lower bound) finds far more. A reader who t
 the crude checks would conclude that astronomy has almost no model use, which is wrong. The
 word counting is the only method here that sees most of the use.
 
-\begin{figure*}
+\begin{figure}
 \centering
-\includegraphics[width=0.9\textwidth]{fig9_detection_ladder.png}
+\includegraphics[width=0.85\textwidth]{fig9_detection_ladder.png}
 \caption{Four ways of looking for model use in the same 2024--2026 astronomy papers, on a log
 scale. Source leaks and stated disclosure find the least; the word signal finds most. The
 biomedical estimate \citep{Kobak2024} is shown for scale.}
 \label{fig:ladder}
-\end{figure*}
+\end{figure}
 
 \section{Citation integrity}
 \label{sec:citations}
@@ -335,14 +333,14 @@ system, the Zenodo archive, data archives, and regional journals), not fabricati
 (Figure~\ref{fig:citations}). We find no fabricated citations. The reference habit of the
 field appears to protect its citation record against a problem that is growing elsewhere.
 
-\begin{figure*}
+\begin{figure}
 \centering
-\includegraphics[width=0.9\textwidth]{fig12_citation_integrity.png}
+\includegraphics[width=0.85\textwidth]{fig12_citation_integrity.png}
 \caption{Left: the 123 DOIs a first check could not resolve are all real records in
 non-Crossref registries, not fabrications. Right: the fabricated-citation rate in astronomy
 (this work) against recent biomedical figures \citep{Topaz2026}.}
 \label{fig:citations}
-\end{figure*}
+\end{figure}
 
 \FloatBarrier
 \section{Who, and where}
@@ -355,7 +353,7 @@ seen across science also holds inside astronomy.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{fig10_subfield_diffusion.png}
+\includegraphics[width=0.68\textwidth]{fig10_subfield_diffusion.png}
 \caption{Marker rate by primary astro-ph subfield. Instrumentation and Methods leads;
 high-energy astrophysics trails.}
 \label{fig:subfield}
@@ -370,13 +368,13 @@ high marker rate with one of the lowest disclosure rates, the widest gap in the 
 affiliation search counts every country on a paper, so large collaborations appear more than
 once, and the small-sample countries are noisy; these numbers are first-order.
 
-\begin{figure*}
+\begin{figure}
 \centering
-\includegraphics[width=0.9\textwidth]{fig11_equity_map.png}
+\includegraphics[width=0.85\textwidth]{fig11_equity_map.png}
 \caption{Marker rate against disclosure rate by author country in 2025. Blue points mark
 countries where English is a first language. Bubble size is the number of papers.}
 \label{fig:geo}
-\end{figure*}
+\end{figure}
 
 \section{Louder, not more careful}
 \label{sec:hype}
@@ -390,7 +388,7 @@ pushes promotion up on its own, but the flat caution alongside rising volume is 
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{fig7_hype_hedge.png}
+\includegraphics[width=0.68\textwidth]{fig7_hype_hedge.png}
 \caption{Promotional and hedging word frequency, indexed to the 2015--2019 mean. Promotional
 words rise with model use; hedging words stay flat.}
 \label{fig:hype}
@@ -407,15 +405,15 @@ past the full 2025 count in half a year. What weakens is the word signal, not th
 models write with fewer of the known words, and authors edit the famous ones out. Any
 word-based number is therefore a lower bound, and the bound will slide down even as use grows.
 
-\begin{figure*}
+\begin{figure}
 \centering
-\includegraphics[width=0.9\textwidth]{fig8_detectability_erosion.png}
+\includegraphics[width=0.85\textwidth]{fig8_detectability_erosion.png}
 \caption{Left: the marker words weaken across the board in 2026, both the early tells that
 peaked first (\mw{delve}, \mw{intricate}, \mw{pivotal}) and the later ones (\mw{underscore},
 \mw{leveraging}). Right: over the same months, stated model use keeps rising. Use is not
 falling; the word signal is.}
 \label{fig:erosion}
-\end{figure*}
+\end{figure}
 
 \section{Discussion}
 \label{sec:discussion}
