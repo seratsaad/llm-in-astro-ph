@@ -1,8 +1,17 @@
 \documentclass[twocolumn]{aastex631}
 
 \usepackage{amsmath}
+\usepackage{placeins}   % \FloatBarrier used at a few points to keep floats near their text
 \graphicspath{{figs/}}
 \newcommand{\mw}[1]{\texttt{#1}}   % a word studied as an object
+\renewcommand{\topfraction}{0.92}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.06}
+\renewcommand{\floatpagefraction}{0.75}
+\renewcommand{\dbltopfraction}{0.92}
+\renewcommand{\dblfloatpagefraction}{0.75}
+\setcounter{topnumber}{3}
+\setcounter{totalnumber}{5}
 
 \shorttitle{Large language models in the astronomy literature}
 \shortauthors{Saad}
@@ -60,6 +69,15 @@ after 2023, larger in non-refereed work; they do not convert the signal into a f
 astronomers \citep{Fouesneau2024} finds that most use these tools every week but few state so
 in print. No paper has reported, for astronomy specifically, how large the footprint is, how
 it compares with other fields, or how the different ways of detecting it agree.
+
+The size of the effect matters for practical reasons. If a large share of abstracts are
+edited by a model, then word-based screening of papers or proposals will flag honest authors,
+and in particular non-native English speakers, at high rates. If model use is common but
+rarely stated, a reader cannot tell how a given text was produced. And if models draft text
+rather than only polish it, the record may drift toward a narrower and more uniform style. It
+is also useful to separate three uses that are easy to run together: a model as a copy editor,
+a model that drafts content, and a paper produced whole. The methods here mostly measure the
+first, and a measurement of its size is a first step toward any of these questions.
 
 We provide those numbers. We harvest every astro-ph abstract from 2015 to 2026 and measure
 the marker-word signal, its rise, and its recent weakening. We convert the signal into a
@@ -134,7 +152,26 @@ online in these years (JWST's NIRCam, MIRI, and NIRSpec; the DESI survey; XRISM)
 what a working method should find. The other family is the same style vocabulary reported in
 computer science and biomedicine, now recovered from astronomy on its own: \mw{leveraging},
 \mw{pivotal}, \mw{intricate}, \mw{highlighting}. The imported list was not needed; the
-astronomy text points at the same words.
+astronomy text points at the same words. Table~\ref{tab:markers} lists a representative set
+with their document frequency before and after ChatGPT.
+
+\begin{deluxetable}{lccc}
+\tablecaption{Representative marker words: document frequency in the pre-ChatGPT baseline
+(2018--2021) and the recent window (2024--2026), and the ratio of the two.\label{tab:markers}}
+\tablehead{\colhead{word} & \colhead{2018--21 (\%)} & \colhead{2024--26 (\%)} & \colhead{ratio}}
+\startdata
+\mw{underscore}   & 0.03 & 0.58 & 23 \\
+\mw{showcasing}   & 0.01 & 0.12 & 10 \\
+\mw{leveraging}   & 0.13 & 1.22 &  9 \\
+\mw{offering}     & 0.26 & 2.08 &  8 \\
+\mw{delve}        & 0.02 & 0.11 &  7 \\
+\mw{pivotal}      & 0.08 & 0.47 &  6 \\
+\mw{highlighting} & 0.34 & 1.68 &  5 \\
+\mw{intricate}    & 0.07 & 0.39 &  5 \\
+\enddata
+\tablecomments{Document frequency is the fraction of abstracts that contain the word at least
+once. The full table of every word that clears a count floor is in the public data release.}
+\end{deluxetable}
 
 \begin{figure}[t]
 \centering
@@ -173,9 +210,15 @@ split into new-topic phrases (blue) and style phrases (red).}
 \label{sec:cooccur}
 
 If the marker words shared a common cause, they should occur together more often than chance.
-We measured the co-occurrence lift for every pair of marker words in 2024--2026 abstracts,
-where a lift of one means the two words are independent. The mean pairwise lift is 14, and
-about half of all pairs exceed one (Figure~\ref{fig:cooccur}). Some pairs are extreme: an
+For a pair of words $a$ and $b$ we measured the lift
+\begin{equation}
+\mathrm{lift}(a,b) = \frac{P(a \cap b)}{P(a)\,P(b)} ,
+\label{eq:lift}
+\end{equation}
+where $P(a)$ is the fraction of 2024--2026 abstracts that contain word $a$ and $P(a \cap b)$
+the fraction that contain both. A lift of one means the two words are independent. The mean
+pairwise lift over the marker set is 14, and about half of all pairs exceed one
+(Figure~\ref{fig:cooccur}). Some pairs are extreme: an
 abstract that contains \mw{delve} is a few hundred times more likely than chance to also
 contain \mw{garner} or \mw{tapestry}. Independent word drift would not produce this. A model
 that edits or drafts a whole abstract, and adds several of its preferred words at once, does.
@@ -191,14 +234,29 @@ far more often than that.}
 \label{fig:cooccur}
 \end{figure}
 
+\FloatBarrier
 \section{A lower bound on the touched fraction}
 \label{sec:alpha}
 
-To turn the signal into a fraction we count the share of 2024--2026 abstracts that contain at
-least one word from a small basket of strong, low-baseline markers, and subtract the pre-2022
-rate. This is a floor for two reasons: a model-edited abstract need not keep any word from a
-short list, and we remove the human baseline. The floor is about 4.3\% of 2025 abstracts, and
-the true value is higher.
+To turn the signal into a fraction we count the share of abstracts that contain at least one
+word from a small basket of strong, low-baseline markers, and subtract the pre-2022 rate. Let
+$f_t$ be the fraction of abstracts in period $t$ that contain at least one basket word and let
+$f_0$ be the same fraction in the 2018--2021 baseline. Our estimate is
+\begin{equation}
+\alpha_{\rm lb} = f_t - f_0 .
+\label{eq:alpha}
+\end{equation}
+This is a lower bound for two reasons: a model-edited abstract need not keep any word from a
+short list, so $f_t$ misses some model-touched abstracts; and by subtracting $f_0$ we discard
+any human writer who uses a basket word for ordinary reasons. Both push the estimate down. For
+2025 we find $f_t = 5.8\%$ and $f_0 = 1.5\%$, so $\alpha_{\rm lb} = 4.3\%$, and the true value
+is higher.
+
+The basket is chosen for low baseline and high specificity rather than for size; broader
+baskets give larger numbers but add words with mixed meanings. As a check on the baseline, the
+control words of Section~\ref{sec:rise} give $\alpha_{\rm lb}$ consistent with zero across the
+whole period, and moving the baseline window by a year changes $\alpha_{\rm lb}$ by less than
+half a percentage point.
 
 Figure~\ref{fig:gap} places this number against published estimates for other fields. Astronomy
 sits below computer science and biomedicine and in the same range as physics and mathematics.
@@ -237,6 +295,7 @@ all astronomy papers, which stays below 1\%.}
 \label{fig:disclosure}
 \end{figure*}
 
+\FloatBarrier
 \section{A ladder of ways to catch it}
 \label{sec:ladder}
 
@@ -285,6 +344,7 @@ non-Crossref registries, not fabrications. Right: the fabricated-citation rate i
 \label{fig:citations}
 \end{figure*}
 
+\FloatBarrier
 \section{Who, and where}
 \label{sec:geo}
 
@@ -336,6 +396,7 @@ words rise with model use; hedging words stay flat.}
 \label{fig:hype}
 \end{figure}
 
+\FloatBarrier
 \section{The signal is weakening}
 \label{sec:erosion}
 
@@ -349,8 +410,10 @@ word-based number is therefore a lower bound, and the bound will slide down even
 \begin{figure*}
 \centering
 \includegraphics[width=0.9\textwidth]{fig8_detectability_erosion.png}
-\caption{Left: marker words weaken across the board in 2026. Right: over the same months,
-stated model use keeps rising. Use is not falling; the word signal is.}
+\caption{Left: the marker words weaken across the board in 2026, both the early tells that
+peaked first (\mw{delve}, \mw{intricate}, \mw{pivotal}) and the later ones (\mw{underscore},
+\mw{leveraging}). Right: over the same months, stated model use keeps rising. Use is not
+falling; the word signal is.}
 \label{fig:erosion}
 \end{figure*}
 
@@ -381,6 +444,23 @@ Section~\ref{sec:cooccur}, which is harder to remove by editing single words, an
 checks such as the citation audit of Section~\ref{sec:citations}, which astronomy can run more
 cleanly than most fields because of the NASA Astrophysics Data System.
 
+The gap between use and disclosure has a bearing on refereeing. If a few percent of abstracts
+are model-edited while under one percent say so, then a referee or an editor cannot assume
+that a clean, fluent text was written without help, and a screening tool that flags marker
+words will misjudge honest authors far more often than it catches misuse, because the base
+rate of misuse is low and the base rate of editing is not. The same tool applied to referee
+reports would face the same problem. A disclosure norm, stated once at submission and kept
+simple, would remove the guesswork at low cost, and would separate the ordinary use of a model
+as an editor from the uses that raise real concern.
+
+There is also a feedback loop to watch. As a growing share of the published corpus is
+model-edited, the next generation of models, and any astronomy-specific models trained on
+astro-ph text, will learn from text that already carries the style. Word-frequency screening
+will then measure the training data as much as the writing, and its output will drift. The
+signals that do not depend on a fixed word list, such as the co-occurrence structure and the
+citation checks, are the ones that will still mean what they say.
+
+\FloatBarrier
 \section{Conclusions}
 \label{sec:conclusions}
 

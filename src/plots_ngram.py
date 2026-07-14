@@ -25,7 +25,8 @@ def fig_ngram_viewer():
     ax.text(2022.7, ax.get_ylim()[1]*0.9, "ChatGPT", rotation=90, va="top",
             ha="right", fontsize=8, color=C["grey"])
     ax.set_xlabel("Year"); ax.set_ylabel("fraction of abstracts with the phrase (%)")
-    ax.legend(fontsize=8.5, loc="upper left")
+    ax.set_ylim(-0.1, 2.75)
+    ax.legend(fontsize=8.5, loc="center left", bbox_to_anchor=(0.02, 0.62))
     ax.set_xticks(range(2015, 2026, 2))
     fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig_ngram_viewer.png"), bbox_inches="tight"); plt.close(fig)
