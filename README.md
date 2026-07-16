@@ -79,6 +79,7 @@ python src/c4_geography.py      # marker + disclosure by country (needs token)
 python src/c6_model_switch.py   # marker-vocabulary trajectories
 python src/c7_hype_hedge.py     # promotional vs hedging vocabulary
 python src/ngrams.py            # two-word phrase + co-occurrence analysis
+python src/rigor_stats.py       # uncertainties, robustness variants, significance tests
 
 # 6. Source-leak audit: download arXiv LaTeX source and scan it  (~1 hr, downloads)
 python src/harvest_source.py

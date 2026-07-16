@@ -35,14 +35,27 @@ def fig1_markers_vs_control():
     # per-abstract fractions (not counts), so a partial year is not comparable here.
     yr = yr[yr.year <= 2025]
     ctrl = ctrl[ctrl.year <= 2025]
+    # Wilson 95% intervals on the yearly basket rate
+    agg = a.groupby("year").agg(hit=("hit", "sum"), total=("total", "sum")).reset_index()
+    agg = agg[agg.year <= 2025]
+    import math
+    def wilson(k, n, z=1.96):
+        p = k/n; d = 1 + z*z/n
+        c = (p + z*z/(2*n))/d
+        h = z*math.sqrt(p*(1-p)/n + z*z/(4*n*n))/d
+        return c-h, c+h
+    lohi = [wilson(k, n) for k, n in zip(agg.hit, agg.total)]
+    yerr = np.array([[r*100 - lo*100 for (lo, hi), r in zip(lohi, agg.hit/agg.total)],
+                     [hi*100 - r*100 for (lo, hi), r in zip(lohi, agg.hit/agg.total)]])
     fig, ax = plt.subplots(figsize=(8.4, 5.0))
-    ax.plot(yr.year, yr.rate*100, "-o", color=C["vermillion"], lw=2.8, ms=6,
-            label="LLM marker basket\n(delve, underscore, intricate, pivotal, ...)")
+    ax.errorbar(yr.year, yr.rate*100, yerr=yerr, fmt="-o", color=C["vermillion"],
+                lw=2.2, ms=5, capsize=2, elinewidth=0.9,
+                label="LLM marker basket\n(delve, underscore, intricate, pivotal, ...)")
     ax.plot(ctrl.year, ctrl.freq*100, "-s", color=C["blue"], lw=2.2, ms=5,
             label="Neutral control words\n(observed, measured, galaxy, ...)")
     ax.set_ylim(0, 15)
     ax.axvline(2022.85, color=C["grey"], ls="--", lw=1)
-    ax.text(2022.7, 14.3, "ChatGPT", rotation=90, va="top", ha="right",
+    ax.text(2022.7, 10.8, "ChatGPT", rotation=90, va="top", ha="right",
             fontsize=8, color=C["grey"])
     ax.set_xlabel("Year"); ax.set_ylabel("% of abstracts containing the word(s)")
     ax.legend(loc="center left", fontsize=9.5)

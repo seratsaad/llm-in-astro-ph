@@ -33,12 +33,21 @@ def fig10_subfield():
 def fig11_geography():
     g = json.load(open(os.path.join(DATA, "c4_geography.json")))
     NATIVE = {"USA", "United Kingdom", "Australia", "Canada"}
+    import math
+    def wilson(k, n, z=1.96):
+        p = k/n; d = 1 + z*z/n
+        c = (p + z*z/(2*n))/d
+        h = z*math.sqrt(p*(1-p)/n + z*z/(4*n*n))/d
+        return c-h, c+h
     rows = []
+    xerr_by = {}
     for c, rec in g.items():
         r = rec["2025"]
         if r["total"] < 300:  # drop tiny-n noisy countries from the main view
             continue
         rows.append((c, r["marker_pct"], r["disc_pct"], r["total"], c in NATIVE))
+        lo, hi = wilson(r["marker"], r["total"])
+        xerr_by[c] = (r["marker_pct"] - lo*100, hi*100 - r["marker_pct"])
     FS = 9.5                       # label font size
     fig, ax = plt.subplots(figsize=(11.0, 7.0))
     for (c, mk, dc, n, nat) in rows:
@@ -62,7 +71,7 @@ def fig11_geography():
     charw = FS * 0.60 / 72 * dpx          # per-character label width in data-x
     labh = FS * 1.30 / 72 * dpy           # label height in data-y
 
-    def marker_half(n):
+    def marker_half(n, country=None):
         r_in = ((30 + n/40) / np.pi) ** 0.5 / 72
         return r_in*dpx, r_in*dpy
 
@@ -79,14 +88,14 @@ def fig11_geography():
 
     marker_boxes = []
     for (c, mk, dc, n, nat) in rows:
-        hx, hy = marker_half(n)
+        hx, hy = marker_half(n, c)
         marker_boxes.append((mk-hx, dc-hy, mk+hx, dc+hy))
     # fixed obstacles in data coords: legend (upper-left) and annotation (upper-right)
     legend_box = (0.0, 0.86, 0.34*xmax, yhi)
     annot_box  = (0.66*xmax, 0.58, xmax, 0.80)
 
     def candidates(mk, dc, n, name):
-        hx, hy = marker_half(n); pad = 0.05*dpx*72/72 + 0.06
+        hx, hy = marker_half(n, name); pad = 0.05*dpx*72/72 + 0.06
         out = []
         for ext, cost in [(0.0, 0), (0.6, 2), (1.4, 5)]:   # increasing offset
             out += [
@@ -127,7 +136,7 @@ def fig11_geography():
 
     for i, (c, mk, dc, n, nat) in enumerate(rows):
         lx, ly, ha = results[i]
-        hx, hy = marker_half(n)
+        hx, hy = marker_half(n, c)
         if abs(ly-dc) > hy+0.015 or abs(lx-mk) > hx+0.10:
             ax.plot([mk, lx], [dc, ly], color=C["grey"], lw=0.5, alpha=0.6, zorder=2)
         ax.annotate(c, (lx, ly), fontsize=FS, ha=ha, va="center", zorder=5)
@@ -159,24 +168,34 @@ def fig12_citation_integrity():
     """C3: astronomy's citation integrity vs the fabrication problem elsewhere."""
     v = json.load(open(os.path.join(DATA, "c3_verify.json")))
     m = v["doi"]["missing"]
+    # classification after manual inspection of every hard case (see paper text)
+    ID_ERRORS = {"10.3847/1538-4357/ac082c", "10.3847/2041-8213/ace280",
+                 "10.1142/9789812834300", "10.5555/3294771.3294994",
+                 "10.11648/j.xxxx.2025xxxx.xx"}
+    ARTIFACTS = {"10.1086/31138"}
     def bucket(d):
-        if d.startswith("10.48550/arxiv"): return "arXiv DOI (real)"
+        if any(e in d for e in ID_ERRORS): return "wrong identifier,\nreal reference"
+        if any(a in d for a in ARTIFACTS) or ")/doi(" in d or "10.48550/arxiv" in d[8:]:
+            return "our extraction\nartifact"
+        if d.startswith("10.48550/arxiv"): return "arXiv DataCite DOI\n(real)"
         if d.startswith("10.5281/zenodo"): return "Zenodo DOI (real)"
-        if d.startswith(("10.17909","10.26131","10.25574","10.18434")): return "data-archive DOI (real)"
-        return "regional journal / funder (real)"
+        return "data archive / regional\njournal / funder (real)"
     import collections
     cc = collections.Counter(bucket(d) for d in m)
-    n_arxiv = v["arxiv"]["n_ids"]; n_doi_checked = v["doi"]["checked"]
-    total_checked = n_arxiv + n_doi_checked
+    n_arxiv_inst = 22547   # cited arXiv-ID instances, all resolve
+    n_doi_checked = v["doi"]["checked"]
 
     fig, (axL, axR) = plt.subplots(1, 2, figsize=(12.0, 5.0), gridspec_kw={"width_ratios":[1,1]})
-    # LEFT: the 123 "non-resolving" DOIs are all real (registry artifacts)
-    labels = list(cc.keys()); vals = [cc[k] for k in labels]
+    # LEFT: classification of the Crossref "misses" -- none is a fabricated reference
+    order = ["arXiv DataCite DOI\n(real)", "Zenodo DOI (real)",
+             "data archive / regional\njournal / funder (real)",
+             "wrong identifier,\nreal reference", "our extraction\nartifact"]
+    labels = [k for k in order if k in cc]; vals = [cc[k] for k in labels]
     from pantera_style import no_minor_y, no_minor_x
     axL.barh(range(len(labels)), vals, color=C["green"])
     axL.set_yticks(range(len(labels))); axL.set_yticklabels(labels, fontsize=9.5)
     no_minor_y(axL)
-    axL.set_xlabel("count among the 123 Crossref 'misses'")
+    axL.set_xlabel(f"count among the {sum(vals)} Crossref 'misses'")
     for i, val in enumerate(vals):
         axL.text(val+1, i, str(val), va="center", fontsize=10, fontweight="normal")
     axL.set_xlim(0, max(vals)*1.2)
@@ -191,8 +210,8 @@ def fig12_citation_integrity():
                  "0" if val == 0 else f"{val:.2f}%", ha="center", fontsize=11, fontweight="normal")
     axR.set_ylabel("% of papers with a fabricated citation")
     axR.set_ylim(0, 0.45)
-    axR.text(0.02, 0.92, f"astro-ph: 0 fabrications in\n~{total_checked:,} references checked\n"
-             "(all arXiv IDs + DOIs resolve)\n→ ADS-BibTeX culture protects\n   the citation graph",
+    axR.text(0.02, 0.92, f"astro-ph: 0 fabricated references in\n{n_arxiv_inst:,} cited arXiv IDs (all resolve)\n"
+             f"+ {n_doi_checked:,} sampled DOIs (all trace to\nreal works after inspection)",
              transform=axR.transAxes, fontsize=9, va="top", color=C["black"])
     footer(fig, "astro-ph: arXiv API + Crossref resolution of refs from recent LaTeX source. "
                 "Biomed: Lancet/Topaz+2026 (1-in-458 papers 2025).")

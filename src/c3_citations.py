@@ -23,7 +23,7 @@ ARXIV_NEW = re.compile(r"arxiv[:\s]*?(\d{4}\.\d{4,5})", re.I)
 ARXIV_OLD = re.compile(r"(astro-ph|gr-qc|hep-ph|hep-th|math|cond-mat|physics)/(\d{7})", re.I)
 DOI_RE = re.compile(r"10\.\d{4,9}/[-._;()/:A-Za-z0-9]+")
 
-SAMPLE = {2020: 250, 2022: 250, 2023: 300, 2024: 350, 2025: 350, 2026: 250}
+SAMPLE = {2023: 300, 2024: 450, 2025: 600, 2026: 450}  # 1800 recent papers: enough to test the biomedical per-paper rate (needs ~1400 for a 95% exclusion)
 
 def collect():
     import threading

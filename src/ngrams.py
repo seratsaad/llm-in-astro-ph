@@ -110,17 +110,20 @@ def main():
     # ---- co-occurrence lift matrix among markers (recent) ----
     M = len(MARKERS)
     lift = np.full((M, M), np.nan)
+    pairs = np.zeros((M, M), dtype=int)
     for i in range(M):
         for j in range(M):
             if i == j:
                 continue
             a, c = sorted((MARKERS[i], MARKERS[j]))
-            pij = mark_pair[(a, c)] / rec_docs
+            npair = mark_pair[(a, c)]
+            pairs[i, j] = npair
+            pij = npair / rec_docs
             pi = mark_single[MARKERS[i]] / rec_docs
             pj = mark_single[MARKERS[j]] / rec_docs
             if pi > 0 and pj > 0:
                 lift[i, j] = pij / (pi * pj)
-    np.savez(os.path.join(DATA, "cooccur.npz"), lift=lift,
+    np.savez(os.path.join(DATA, "cooccur.npz"), lift=lift, pairs=pairs,
              markers=np.array(MARKERS), single=np.array([mark_single[m] for m in MARKERS]),
              rec_docs=rec_docs)
 

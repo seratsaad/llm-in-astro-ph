@@ -57,15 +57,38 @@ def fig_bigram_discovery():
     fig.savefig(os.path.join(FIGS, "fig_bigram_discovery.png"), bbox_inches="tight"); plt.close(fig)
 
 def fig_cooccur():
+    import math
     d = np.load(os.path.join(DATA, "cooccur.npz"), allow_pickle=True)
     lift = d["lift"].astype(float); M = list(d["markers"])
+    pairs = d["pairs"].astype(int); single = d["single"]; nd = int(d["rec_docs"])
     n = len(M)
-    # order markers by total single frequency for a cleaner block structure
-    single = d["single"]; order = np.argsort(-single)
-    lift = lift[np.ix_(order, order)]; M = [M[i] for i in order]
-    disp = lift.copy()
-    np.fill_diagonal(disp, np.nan)
+
+    def pois_tail(x, mu):
+        """P(X >= x) for X ~ Poisson(mu)."""
+        if x == 0:
+            return 1.0
+        s, term = 0.0, math.exp(-mu)
+        for k in range(x):
+            s += term
+            term *= mu / (k + 1)
+        return max(0.0, 1 - s)
+
+    # significance mask: keep cells where the joint count exceeds independence at p < 0.01
+    sig = np.zeros((n, n), bool)
+    for i in range(n):
+        for j in range(n):
+            if i == j:
+                continue
+            mu = nd * (single[i]/nd) * (single[j]/nd)
+            if pois_tail(int(pairs[i, j]), mu) < 0.01:
+                sig[i, j] = True
+
+    order = np.argsort(-single)
+    lift = lift[np.ix_(order, order)]; sig = sig[np.ix_(order, order)]
+    pairs = pairs[np.ix_(order, order)]; M = [M[i] for i in order]
+    disp = np.where(sig, lift, np.nan)
     fig, ax = plt.subplots(figsize=(7.4, 6.2))
+    ax.set_facecolor("#EDEDED")   # grey background = not significant / no excess
     im = ax.imshow(np.ma.masked_invalid(disp), cmap="YlOrBr",
                    norm=LogNorm(vmin=1, vmax=np.nanmax(disp)))
     ax.set_xticks(range(n)); ax.set_xticklabels(M, rotation=45, ha="right", fontsize=8.5)
