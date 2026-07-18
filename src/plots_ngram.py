@@ -31,31 +31,6 @@ def fig_ngram_viewer():
     fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig_ngram_viewer.png"), bbox_inches="tight"); plt.close(fig)
 
-def fig_bigram_discovery():
-    bd = pd.read_csv(os.path.join(DATA, "bigram_discovery.csv"))
-    bd = bd[bd.base_freq > 0.0005].copy()
-    topic_kw = ("jwst", "desi", "kagra", "virgo", "webb", "spectroscopic", "instrument",
-                "habitable", "worlds", "noon", "nircam", "miri", "nirspec", "xrism",
-                "language", "transformer", "simulation", "cosmos", "euclid", "lrds",
-                "little", "red", "dots")
-    def is_topic(bg):
-        return any(k in bg.split() for k in topic_kw)
-    bd["topic"] = bd.bigram.apply(is_topic)
-    top = bd.sort_values("ratio", ascending=False).head(24).iloc[::-1]
-    cols = [C["blue"] if t else C["vermillion"] for t in top.topic]
-    fig, ax = plt.subplots(figsize=(4.32, 3.96))
-    ax.barh(range(len(top)), top.ratio, color=cols, alpha=0.85, height=0.72)
-    ax.set_yticks(range(len(top))); ax.set_yticklabels(top.bigram, fontsize=8.5)
-    no_minor_y(ax)
-    ax.set_xlabel("frequency ratio, 2024-2026 vs 2018-2021")
-    from matplotlib.patches import Patch
-    ax.legend(handles=[Patch(color=C["blue"], label="new topic (instrument / survey / object)"),
-                       Patch(color=C["vermillion"], label="stylistic phrase")],
-              loc="lower right", fontsize=8.5)
-    ax.margins(y=0.01)
-    fig.tight_layout()
-    fig.savefig(os.path.join(FIGS, "fig_bigram_discovery.png"), bbox_inches="tight"); plt.close(fig)
-
 def fig_cooccur():
     import math
     d = np.load(os.path.join(DATA, "cooccur.npz"), allow_pickle=True)
@@ -109,5 +84,4 @@ def fig_cooccur():
 
 if __name__ == "__main__":
     fig_ngram_viewer(); print("ngram viewer done")
-    fig_bigram_discovery(); print("bigram discovery done")
     fig_cooccur(); print("cooccur done")

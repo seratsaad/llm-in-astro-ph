@@ -54,6 +54,13 @@ def fig1_markers_vs_control():
     ax.plot(ctrl.year, ctrl.freq*100, "-s", color=C["blue"], lw=1.3, ms=3.4,
             label="Neutral control words\n(observed, measured, galaxy, ...)")
     ax.set_ylim(0, 15)
+    # counterfactual: linear extrapolation of the 2015-2021 trend (Kobak-style)
+    pre = yr[yr.year <= 2021]
+    coef = np.polyfit(pre.year, pre.rate*100, 1)
+    xx = np.array([2022, 2025.4])
+    ax.plot(xx, np.polyval(coef, xx), ls=(0, (3, 2)), lw=0.9, color=C["black"], zorder=2)
+    ax.text(2025.0, np.polyval(coef, 2024.4) - 0.4, "pre-2022 trend", fontsize=6.5,
+            color=C["black"], ha="right", va="top")
     ax.axvline(2022.85, color=C["grey"], ls="--", lw=1)
     ax.text(2022.7, 10.8, "ChatGPT", rotation=90, va="top", ha="right",
             fontsize=8, color=C["grey"])
@@ -100,9 +107,9 @@ def fig2_delve_collapse():
 
 # ---------------------------------------------------------------- FIG 3 (data-driven discovery)
 def fig3_discovery():
-    df = pd.read_parquet(os.path.join(DATA, "word_docfreq.parquet"))
-    df = df[df.base_freq > 0.0005].copy()
-    # classify
+    """Kobak-style volcano: full vocabulary as a cloud, frequency ratio vs recent
+    frequency on log axes, with the classified tail annotated directly."""
+    from pantera_style import place_labels
     instruments = {"nircam","miri","nirspec","jwst","desi","xrism","mrs","ixpe",
                    "lhaaso","prism","kagra","noon","euclid","ligo","virgo"}
     ml_topic = {"interpretable","differentiable","normalizing","transformer","embeddings"}
@@ -111,34 +118,80 @@ def fig3_discovery():
              "investigates","showcasing","underscore","underscores","frameworks",
              "struggle","delve","nuanced","boasts","tapestry","meticulous","garner",
              "elucidate","multifaceted","comprehensively"}
-    def kind(w):
-        if w in instruments: return "instrument"
-        if w in ml_topic: return "ml-method"
-        if w in style: return "llm-style"
-        return "other"
-    df["kind"] = df.word.apply(kind)
-    top = df.sort_values("ratio", ascending=False).head(28).iloc[::-1]
-    colmap = {"instrument": C["blue"], "llm-style": C["vermillion"],
-              "ml-method": C["green"], "other": C["grey"]}
-    from pantera_style import no_minor_y
-    fig, ax = plt.subplots(figsize=(5.40, 5.04))
-    ax.barh(range(len(top)), top.ratio, color=[colmap[k] for k in top.kind])
-    ax.set_yticks(range(len(top)))
-    ax.set_yticklabels(top.word, fontsize=7.8)
-    no_minor_y(ax)
-    ax.set_xlim(0, top.ratio.max()*1.28)   # headroom for right-edge value labels
-    for i,(_,r) in enumerate(top.iterrows()):
-        ax.text(r.ratio+0.2, i, f"{r.base_freq*100:.2f}%→{r.rec_freq*100:.2f}%",
-                va="center", fontsize=7.4, color="#444")
-    ax.set_xlabel("Frequency ratio: 2024-2026 vs 2018-2021 baseline")
-    from matplotlib.patches import Patch
-    ax.legend(handles=[Patch(color=C["blue"], label="new telescope/survey (real astronomy)"),
-                       Patch(color=C["vermillion"], label="LLM stylistic word"),
-                       Patch(color=C["green"], label="ML method term"),
-                       Patch(color=C["grey"], label="other")],
-              loc="lower right", fontsize=7.3)
-    ax.margins(y=0.01)
-    footer(fig); fig.tight_layout(rect=[0,0.03,1,1])
+    wf = pd.read_parquet(os.path.join(DATA, "word_docfreq.parquet"))
+    wf = wf[(wf.rec_freq > 0) & (wf.ratio > 0)].copy()
+    bg = pd.read_csv(os.path.join(DATA, "bigram_discovery.csv"))
+    bg = bg[(bg.rec_freq > 0) & (bg.ratio > 0)].copy()
+    topic_kw = ("jwst","desi","kagra","virgo","webb","spectroscopic","instrument",
+                "habitable","worlds","noon","nircam","miri","nirspec","xrism",
+                "language","transformer","simulation","cosmos","euclid","lrds",
+                "little","red","dots")
+
+    fig, (axA, axB) = plt.subplots(1, 2, figsize=(7.1, 3.2))
+    for ax in (axA, axB):
+        ax.set_xscale("log"); ax.set_yscale("log")
+
+    # ---- panel (a): single words ----
+    axA.scatter(wf.rec_freq*100, wf.ratio, s=1.5, color="#C9C9C9", alpha=0.5,
+                linewidths=0, zorder=1, rasterized=True)
+    iconic = {"delve", "delves", "tapestry", "meticulous", "nuanced"}
+    sel = wf[((wf.base_freq > 0.0005) | wf.word.isin(iconic)) & (wf.ratio >= 4)].copy()
+    def kindw(w):
+        if w in instruments: return "inst"
+        if w in ml_topic: return "ml"
+        if w in style: return "sty"
+        return None
+    sel["kind"] = sel.word.map(kindw)
+    sel = sel[sel.kind.notna()]
+    kcol = {"inst": C["blue"], "sty": C["vermillion"], "ml": C["green"]}
+    for k, g in sel.groupby("kind"):
+        axA.scatter(g.rec_freq*100, g.ratio, s=7, color=kcol[k], zorder=4, linewidths=0)
+    axA.axhline(5, color=C["grey"], ls="--", lw=0.7, zorder=2)
+    axA.set_xlim(3e-3, 30); axA.set_ylim(0.25, 40)
+    axA.set_xlabel("frequency in 2024-2026 (% of abstracts)")
+    axA.set_ylabel("frequency ratio, 2024-2026 / 2018-2021")
+    axA.set_title("(a) single words", loc="left", fontsize=8)
+    show_a = ["nircam", "miri", "nirspec", "jwst", "desi", "xrism", "ixpe",
+              "interpretable", "leveraging", "aligns", "offering", "pivotal",
+              "intricate", "highlighting", "delve"]
+    ann = sel[sel.word.isin(show_a)]
+    others = sel[~sel.word.isin(show_a)]
+    place_labels(axA, list(ann.rec_freq*100), list(ann.ratio), list(ann.word),
+                 colors=[kcol[k] for k in ann.kind], fontsize=6.2,
+                 obstacles=list(zip(others.rec_freq*100, others.ratio)))
+
+    # ---- panel (b): two-word phrases ----
+    axB.scatter(bg.rec_freq*100, bg.ratio, s=1.5, color="#C9C9C9", alpha=0.4,
+                linewidths=0, zorder=1, rasterized=True)
+    selb = bg[(bg.base_freq > 0.0005) & (bg.ratio >= 4)].copy()
+    def kindb(t):
+        return "inst" if any(k in t.split() for k in topic_kw) else "sty"
+    selb["kind"] = selb.bigram.map(kindb)
+    for k, g in selb.groupby("kind"):
+        axB.scatter(g.rec_freq*100, g.ratio, s=7, color=kcol[k], zorder=4, linewidths=0)
+    axB.axhline(5, color=C["grey"], ls="--", lw=0.7, zorder=2)
+    axB.set_xlim(3e-3, 30); axB.set_ylim(0.25, 40)
+    axB.set_xlabel("frequency in 2024-2026 (% of abstracts)")
+    axB.set_title("(b) two-word phrases", loc="left", fontsize=8)
+    show_b = ["jwst observations", "the desi", "energy spectroscopic",
+              "habitable worlds", "leveraging the", "align with", "offering a",
+              "results highlight", "findings indicate"]
+    annb = selb[selb.bigram.isin(show_b)]
+    othb = selb[~selb.bigram.isin(show_b)]
+    place_labels(axB, list(annb.rec_freq*100), list(annb.ratio), list(annb.bigram),
+                 colors=[kcol[k] for k in annb.kind], fontsize=6.2,
+                 obstacles=list(zip(othb.rec_freq*100, othb.ratio)))
+
+    from matplotlib.lines import Line2D
+    axA.legend(handles=[
+        Line2D([0],[0], marker="o", color="w", markerfacecolor=C["blue"], ms=4,
+               label="new instrument / survey / topic"),
+        Line2D([0],[0], marker="o", color="w", markerfacecolor=C["vermillion"], ms=4,
+               label="style word / phrase"),
+        Line2D([0],[0], marker="o", color="w", markerfacecolor=C["green"], ms=4,
+               label="ML method term")],
+        loc="lower left", fontsize=6, handletextpad=0.2)
+    fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig3_discovery.png"), bbox_inches="tight")
     plt.close(fig)
 
@@ -150,14 +203,13 @@ def fig4_disclosure():
     full = [d["full"][str(y)] for y in yrs]
     tot = [d["total_astro"][str(y)] for y in yrs]
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.84, 2.88))
-    ax1.bar([y-0.2 for y in yrs], full, width=0.4, color=C["sky"], label="mentions in full text")
-    ax1.bar([y+0.2 for y in yrs], ack, width=0.4, color=C["vermillion"], label="in acknowledgments (used it)")
+    ax1.plot(yrs, full, "-o", color=C["sky"], lw=1.3, ms=3, label="mentions in full text")
+    ax1.plot(yrs, ack, "-s", color=C["vermillion"], lw=1.3, ms=3,
+             label="in acknowledgments (used it)")
     ax1.set_ylabel("number of papers per year"); ax1.set_xlabel("Year")
-    ax1.legend(fontsize=7.3); ax1.set_xticks(range(2016,2027,2))
-    ax1.annotate("exactly zero\nbefore 2023", xy=(2019, 2), xytext=(2016.5, 250),
-                 fontsize=8.5, color=C["grey"], arrowprops=dict(arrowstyle="->", color=C["grey"]))
-    ax1.annotate("2026 partial", xy=(2026, full[-1]), xytext=(2023.4, 650),
-                 fontsize=8, color=C["grey"], arrowprops=dict(arrowstyle="->", color=C["grey"]))
+    ax1.legend(fontsize=7, loc="upper left"); ax1.set_xticks(range(2016,2027,2))
+    ax1.annotate("zero before 2023", xy=(2020, 8), xytext=(2016.5, 210),
+                 fontsize=7, color=C["grey"], arrowprops=dict(arrowstyle="->", color=C["grey"], lw=0.6))
     # fraction
     frac_ack = [100*a/t for a,t in zip(ack,tot)]
     frac_full = [100*f/t for f,t in zip(full,tot)]
@@ -172,44 +224,43 @@ def fig4_disclosure():
 
 # ---------------------------------------------------------------- FIG 5 (the gap + fields)
 def fig5_gap():
+    from pantera_style import no_minor_y
     al = json.load(open(os.path.join(DATA, "alpha_summary.json")))
     d = json.load(open(os.path.join(DATA, "ads_disclosure.json")))
-    # astro-ph estimated lower bound (2025) vs disclosed (2025 full text & ack)
     est = al["by_year"]["2025"]["excess"]*100
     disc_full = 100*d["full"]["2025"]/d["total_astro"]["2025"]
     disc_ack = 100*d["ack"]["2025"]/d["total_astro"]["2025"]
 
-    from pantera_style import no_minor_x, no_minor_y
-    fig, (axL, axR) = plt.subplots(1, 2, figsize=(6.96, 3.00), gridspec_kw={"width_ratios":[1,1.15]})
-    # LEFT: the gap (2025 astronomy)
-    labels = ["Estimated\nLLM-touched\n(lower bound)", "Disclosed\n(full text)", "Disclosed\n(acknowledg.)"]
-    vals = [est, disc_full, disc_ack]
-    cols = [C["vermillion"], C["sky"], C["blue"]]
-    bars = axL.bar(labels, vals, color=cols, width=0.62)
-    no_minor_x(axL)
-    for b,v in zip(bars, vals):
-        axL.text(b.get_x()+b.get_width()/2, v+0.15, f"{v:.1f}%" if v>=1 else f"{v:.2f}%",
-                 ha="center", fontsize=8, fontweight="normal")
-    axL.set_ylabel("% of 2025 astronomy papers")
-    axL.set_ylim(0, max(vals)*1.25)
-    axL.text(1.0, est*0.7, f"~{est/max(disc_full,0.01):.0f}x gap", ha="center",
-             color=C["grey"], fontsize=7.8, fontweight="normal")
-
-    # RIGHT: field comparison (literature) + astro-ph
-    fields = ["Computer\nScience", "Biomed\n(PubMed)", "astro-ph\n(this work,\nlower bound)",
-              "Math /\nNature"]
-    fvals = [17.5, 12.5, est, 6.3]
-    fcol = [C["grey"], C["grey"], C["vermillion"], C["grey"]]
-    order = np.argsort(fvals)
-    fields = [fields[i] for i in order]; fvals=[fvals[i] for i in order]; fcol=[fcol[i] for i in order]
-    b2 = axR.barh(range(len(fields)), fvals, color=fcol)
-    axR.set_yticks(range(len(fields))); axR.set_yticklabels(fields, fontsize=7.5)
-    no_minor_y(axR)
-    for i,v in enumerate(fvals):
-        axR.text(v+0.3, i, f"{v:.1f}%", va="center", fontsize=7.8, fontweight="normal")
-    axR.set_xlabel("% of abstracts LLM-modified / LLM-touched")
-    axR.set_xlim(0, 21)
-    footer(fig); fig.tight_layout()
+    # one log-axis dot plot: literature estimates (grey), astro-ph estimate
+    # (accent, lower bound -> right arrow), astro-ph disclosure (open circles)
+    rows = [
+        ("Computer science (Liang et al.)",     17.5,     C["grey"], "lit"),
+        ("Biomedicine (Kobak et al.)",          13.5,     C["grey"], "lit"),
+        ("Mathematics / Nature (Liang et al.)",  6.3,     C["grey"], "lit"),
+        ("astro-ph, marker-word lower bound",    est,     C["vermillion"], "lb"),
+        ("astro-ph, any AI mention in text",     disc_full, C["blue"], "open"),
+        ("astro-ph, stated in acknowledgments",  disc_ack,  C["blue"], "open"),
+    ]
+    fig, ax = plt.subplots(figsize=(4.7, 2.4))
+    ys = list(range(len(rows)))
+    for yi, (lab, v, col, kind) in zip(ys, rows):
+        ax.plot([0.1, v], [yi, yi], lw=0.7, color="#CCCCCC", zorder=1)
+        if kind == "open":
+            ax.plot(v, yi, "o", ms=5, mfc="white", mec=col, mew=1.1, zorder=3)
+        else:
+            ax.plot(v, yi, "o", ms=5, color=col, zorder=3)
+        if kind == "lb":   # lower bound: arrow to the right
+            ax.annotate("", xy=(v*1.9, yi), xytext=(v*1.12, yi),
+                        arrowprops=dict(arrowstyle="->", color=col, lw=1.0))
+        ax.text(v*2.2 if kind == "lb" else v*1.25, yi,
+                f"{v:.2f}%" if v < 1 else f"{v:.1f}%",
+                va="center", fontsize=7, color="#555555")
+    no_minor_y(ax)
+    ax.set_yticks(ys); ax.set_yticklabels([r[0] for r in rows], fontsize=7)
+    ax.invert_yaxis()
+    ax.set_xscale("log"); ax.set_xlim(0.1, 60)
+    ax.set_xlabel("% of papers with model-edited text (2025), log scale", labelpad=4)
+    fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig5_gap.png"), bbox_inches="tight")
     plt.close(fig)
 
