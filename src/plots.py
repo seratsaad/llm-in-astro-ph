@@ -84,7 +84,7 @@ def fig2_delve_collapse():
     top.plot(a.yq, a.rate*100, color=C["black"], lw=1.3, zorder=5)
     top.set_ylabel("% with ANY marker")
     # BOTTOM: individual words, zoomed
-    for w, col, lab in [("delve", C["vermillion"], "delve  (went viral → abandoned)"),
+    for w, col, lab in [("delve", C["vermillion"], "delve"),
                         ("underscore", C["green"], "underscore"),
                         ("leveraging", C["blue"], "leveraging"),
                         ("pivotal", C["purple"], "pivotal")]:
@@ -98,9 +98,7 @@ def fig2_delve_collapse():
     bot.set_ylim(0, 2.0)
     # legend in the clear upper-left (all lines are low there in 2022-2023);
     # annotation above the data, connected by the existing dotted line
-    bot.legend(loc="upper left", ncol=1, fontsize=8.6)
-    bot.text(2025.15, 1.9, '"delve" outed as the\nChatGPT tell (mid-2024)',
-             fontsize=8.4, color=C["grey"], ha="center", va="top", style="italic")
+    bot.legend(loc="upper left", ncol=1, fontsize=7.5)
     footer(fig); fig.tight_layout(rect=[0,0.03,1,0.97])
     fig.savefig(os.path.join(FIGS, "fig2_delve_collapse.png"), bbox_inches="tight")
     plt.close(fig)
@@ -203,13 +201,13 @@ def fig4_disclosure():
     full = [d["full"][str(y)] for y in yrs]
     tot = [d["total_astro"][str(y)] for y in yrs]
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.84, 2.88))
-    ax1.plot(yrs, full, "-o", color=C["sky"], lw=1.3, ms=3, label="mentions in full text")
-    ax1.plot(yrs, ack, "-s", color=C["vermillion"], lw=1.3, ms=3,
-             label="in acknowledgments (used it)")
+    ax1.bar([y-0.2 for y in yrs], full, width=0.4, color=C["sky"], label="mentions in full text")
+    ax1.bar([y+0.2 for y in yrs], ack, width=0.4, color=C["vermillion"],
+            label="stated in acknowledgments")
+    from pantera_style import no_minor_x
+    no_minor_x(ax1)
     ax1.set_ylabel("number of papers per year"); ax1.set_xlabel("Year")
     ax1.legend(fontsize=7, loc="upper left"); ax1.set_xticks(range(2016,2027,2))
-    ax1.annotate("zero before 2023", xy=(2020, 8), xytext=(2016.5, 210),
-                 fontsize=7, color=C["grey"], arrowprops=dict(arrowstyle="->", color=C["grey"], lw=0.6))
     # fraction
     frac_ack = [100*a/t for a,t in zip(ack,tot)]
     frac_full = [100*f/t for f,t in zip(full,tot)]

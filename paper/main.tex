@@ -30,11 +30,12 @@ of abstracts that contain a ``marker'' word, rare before ChatGPT and common afte
 conservative lower bound puts the model-touched fraction of 2025 abstracts near 4\%, robust to
 baseline and word-list choice. Chosen without an imported list, the data recover the
 same style words next to the genuinely new instrument names, and the marker words occur together
-far more often than chance (27 of 91 pairs above independence at $p<0.01$). Against these numbers, explicit disclosure of model use stays
-below 1\% and crude source-code checks find near-zero pasted text. All 22{,}547 cited arXiv
-identifiers in 2{,}532 recent papers resolve, so fabricated citations, which are rising in
-biomedicine, sit below a 0.24\% per-paper limit here. The word signal weakens in 2026 even as
-disclosure rises. All data and code are public.
+far more often than chance (27 of 91 pairs above independence at $p<0.01$). Against these
+numbers, explicit disclosure of model use stays below 1\% and direct checks of the LaTeX source
+find near-zero pasted text. All 22{,}547 cited arXiv identifiers in 2{,}532 recent papers
+resolve, so fabricated citations, which are rising in biomedicine, sit below a 0.24\% per-paper
+limit here. The word signal weakens in 2026 even as disclosure rises. All data and code are
+public.
 \end{abstract}
 
 \keywords{Astronomy data analysis --- Scholarly communication --- Natural language processing}
@@ -71,19 +72,24 @@ is also useful to separate three uses that are easy to run together: a model as 
 a model that drafts content, and a paper produced whole. The methods here mostly measure the
 first, and a measurement of its size is a first step toward any of these questions.
 
-We provide those numbers. We harvest every astro-ph abstract from 2015 to 2026 and measure
-the marker-word signal, its rise, and its recent weakening. We convert the signal into a
-lower bound on the fraction of abstracts a model touched. We let the data select the words
-and two-word phrases without an imported list, and we measure how often the marker words
-occur together. We then compare the word signal against three other lenses on the same
+In this paper we harvest every astro-ph abstract from 2015 to 2026 and measure the
+marker-word signal, its rise, and its recent weakening. We convert the signal into a lower
+bound on the fraction of abstracts a model touched. We let the data select the words and
+two-word phrases without an imported list, and we measure how often the marker words occur
+together. We then compare the word signal against three other measurements on the same
 corpus: explicit disclosure in acknowledgments, pasted-model text in the LaTeX source, and
-fabricated citations. We close with cuts by subfield and by author country, a measurement of
-promotional versus hedging language, and the limits of the method. The point is narrow and
-worth stating up front: a marker word is a sign of model-edited language, not of poor or
+fabricated citations. We close with the dependence on subfield and author country, a
+measurement of promotional versus hedging language, and the limits of the method. Section
+\ref{sec:data} describes the data and methods, Section \ref{sec:results} the results, and
+Sections \ref{sec:discussion} and \ref{sec:conclusions} the discussion and summary.
+Throughout, a marker word is treated as a sign of model-edited language, not of poor or
 dishonest science.
 
-\section{Data}
+\section{Data and Methods}
 \label{sec:data}
+
+\subsection{Corpus}
+\label{sec:corpus}
 
 We queried the arXiv API for every paper with a primary or cross-listed astro-ph category,
 month by month, from January 2015 through July 2026, and kept the version-1 submission date,
@@ -96,20 +102,111 @@ January through July. We tokenize each abstract into lowercase alphabetic words.
 ``document frequency'' in a year is the fraction of that year's abstracts that contain the
 word at least once, which is the quantity used in earlier work.
 
-For disclosure (Section~\ref{sec:disclosure}) and for the by-country cut
+For disclosure (Section~\ref{sec:disclosure}) and for the by-country measurement
 (Section~\ref{sec:geo}) we use the NASA Astrophysics Data System, whose \mw{ack} field
 searches the acknowledgments section and whose \mw{full} field searches full text where
 available. We count \mw{database:astronomy} records per year as the denominator.
 
-\section{The marker-word rise}
+\subsection{Marker, control, and tone vocabularies}
+\label{sec:vocab}
+
+We assembled a basket of 38 marker words from earlier studies \citep{Kobak2024,Liang2024,
+GengTrotta2025}: \mw{delve}, \mw{underscore}, \mw{intricate}, \mw{pivotal}, \mw{showcasing},
+\mw{meticulous}, and related forms; the full list is given in Appendix~\ref{app:basket}. The
+basket is chosen for low pre-2022 baseline and high specificity rather than for size; broader
+baskets give larger signals but add words with mixed meanings. As a control we use ten neutral
+astronomy words (\mw{observed}, \mw{measured}, \mw{galaxy}, and others listed in
+Appendix~\ref{app:basket}) whose frequency should not depend on writing tools. To measure tone
+(Section~\ref{sec:hype}) we additionally track a set of promotional words
+(\mw{unprecedented}, \mw{remarkable}, \mw{striking}) and a set of hedging words (\mw{may},
+\mw{might}, \mw{suggest}) that mark stated caution.
+
+\subsection{Data-driven vocabulary selection}
+\label{sec:discmethod}
+
+Because the marker basket is imported from other fields, we also select vocabulary from the
+astronomy corpus alone. For every word, and separately for every two-word phrase, we compute
+the document frequency in a pre-ChatGPT baseline window (2018--2021) and in a recent window
+(2024--2026), keep items that pass a minimum count in either window, and rank by the ratio of
+the two frequencies. No external word list enters this selection.
+
+\subsection{Co-occurrence statistics}
+\label{sec:coocmethod}
+
+If the marker words share a common cause, they should occur together within abstracts more
+often than chance. For a pair of words $a$ and $b$ we measure the lift
+\begin{equation}
+\mathrm{lift}(a,b) = \frac{P(a \cap b)}{P(a)\,P(b)} ,
+\label{eq:lift}
+\end{equation}
+where $P(a)$ is the fraction of 2024--2026 abstracts that contain word $a$ and $P(a \cap b)$
+the fraction that contain both; a lift of one means the two words are independent. Because
+several markers are rare, a large lift can rest on a handful of abstracts. We therefore test
+each pair against a Poisson null: with $N=53{,}192$ recent abstracts the expected joint count
+under independence is $\mu = N\,P(a)\,P(b)$, and we compute the probability of the observed
+count or more.
+
+\subsection{Lower-bound estimator}
+\label{sec:alphamethod}
+
+To convert the signal into a fraction we count the share of abstracts that contain at least
+one basket word and subtract the pre-2022 rate. Let $f_t$ be the fraction of abstracts in
+period $t$ that contain at least one basket word and let $f_0$ be the same fraction in the
+2018--2021 baseline. Our estimate is
+\begin{equation}
+\alpha_{\rm lb} = f_t - f_0 .
+\label{eq:alpha}
+\end{equation}
+This is a lower bound for two reasons: a model-edited abstract need not keep any word from a
+short list, so $f_t$ misses some model-touched abstracts; and by subtracting $f_0$ we discard
+any human writer who uses a basket word for ordinary reasons. Both effects push the estimate
+down. Equation~\ref{eq:alpha} is the $q=1$ limit of a two-population model: if a fraction
+$\alpha$ of abstracts are model-edited and carry a basket word with probability $q$, while
+the rest carry one at the baseline rate $f_0$, then $f_t=(1-\alpha)f_0+\alpha q$ and
+$\alpha=(f_t-f_0)/(q-f_0)$. Since $q\le1$, $\alpha \ge f_t-f_0$, and any realistic $q<1$
+raises $\alpha$ above the bound.
+
+\subsection{Disclosure searches}
+\label{sec:discsearch}
+
+We search astronomy records in the NASA Astrophysics Data System for terms that identify
+model use without ambiguity: ChatGPT, GPT-4, ``large language model'', and GitHub Copilot.
+We exclude terms that are ambiguous in astronomy, such as ``Gemini'' (the observatory) and
+``Claude'' (a personal name). Acknowledgment matches are read as stated use; full-text
+matches include discussion of models as a research topic and give an upper envelope of
+mentions.
+
+\subsection{Source-text audit}
+\label{sec:srcmethod}
+
+arXiv distributes the LaTeX source of most papers, and model boilerplate is sometimes pasted
+into the source in comments that never reach the compiled document, such as ``as an AI
+language model''. We downloaded the source of 3{,}950 papers, sampled with a fixed stride
+within each year from 2016 to 2026, and searched the source and its comments for a fixed set
+of such phrases. Papers from before 2023 serve as a null sample for the false-positive rate.
+
+\subsection{Citation audit}
+\label{sec:citmethod}
+
+Models sometimes produce citations to works that do not exist, and the rate of such
+references is rising in biomedicine, from about one paper in 2828 in 2023 to one in 458 in
+2025 and one in 277 in early 2026 \citep{Topaz2026}. To test for this failure mode in
+astronomy we extracted every cited arXiv identifier and digital object identifier (DOI) from
+the LaTeX source of 2{,}532 papers from 2022--2026, drawn with a fixed stride within each
+year and weighted toward 2024--2026. Every new-style arXiv identifier is checked against the
+arXiv API; a random sample of 2{,}500 of the 56{,}706 unique DOIs is checked against
+Crossref, and every unresolved case is inspected by hand against the global handle resolver
+and the citing reference.
+
+\section{Results}
+\label{sec:results}
+
+\subsection{The rise of the marker vocabulary}
 \label{sec:rise}
 
-We assembled a basket of marker words from earlier studies: \mw{delve}, \mw{underscore},
-\mw{intricate}, \mw{pivotal}, \mw{showcasing}, \mw{meticulous}, and about thirty more. For a
-control we used neutral astronomy words such as \mw{observed}, \mw{measured}, and \mw{galaxy},
-which should not depend on writing tools. Figure~\ref{fig:rise} shows the two curves. The
-marker basket sat between 1.0\% and 2.0\% over 2015--2022, with a slow drift of
-0.12 percentage points per year that we return to in Section~\ref{sec:robust}, and rose to
+Figure~\ref{fig:rise} shows the yearly document frequency of the marker basket and of the
+control set. The marker basket sat between 1.0\% and 2.0\% over 2015--2022, with a slow drift
+of 0.12 percentage points per year that we return to in Section~\ref{sec:robust}, and rose to
 $5.80\pm0.16\%$ by 2025. Against the pooled 2018--2021 baseline of 1.50\%, the 2025 rate
 differs by $z=35$ in a two-proportion test. The mean frequency of the control set changed by
 $+0.10$ percentage points between the same two periods, forty times less than the basket
@@ -129,35 +226,37 @@ full year, 2025.}
 \label{fig:rise}
 \end{figure}
 
-The aggregate rise hides a moving target. Figure~\ref{fig:collapse} tracks individual words
-by quarter. The word \mw{delve} rose to a peak in early 2024 and then fell back toward its
-starting level once it became a widely known sign of model text, while less famous words such
-as \mw{underscore} and \mw{leveraging} kept rising. The total marker rate did not fall with
-\mw{delve}; the load shifted to other words. Naming a marker removes it, but the underlying
-habit stays, which matches the cross-field result of \citet{GengTrotta2025}.
+The aggregate rate conceals substantial evolution among the contributing words.
+Figure~\ref{fig:collapse} tracks individual words by quarter. The frequency of \mw{delve}
+rose to a peak in early 2024 and then returned toward its starting level after the word
+received wide public attention as a sign of model text, while less publicized words such as
+\mw{underscore} and \mw{leveraging} continued to rise. The total marker rate did not fall
+with \mw{delve}; the decline was offset by other words. Public attention to a specific
+marker suppresses that marker without reducing the aggregate signal, which matches the
+cross-field result of \citet{GengTrotta2025}.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.74\textwidth]{fig2_delve_collapse.png}
-\caption{Top: the fraction of abstracts with any marker word, by quarter, keeps rising.
-Bottom: single words. \mw{delve} peaks in early 2024 and then declines, while other markers
-keep rising; the aggregate does not fall with it.}
+\caption{Top: the fraction of abstracts with any marker word, by quarter. Bottom: single
+words. The vertical dotted line marks mid-2024, when \mw{delve} received wide public
+attention as a sign of model-generated text; its frequency declines from that point while
+other markers continue to rise, and the aggregate rate does not fall.}
 \label{fig:collapse}
 \end{figure}
 
-\section{Letting the data pick the words}
+\subsection{Data-driven vocabulary and phrases}
 \label{sec:discovery}
 
-An imported word list invites the question of whether astronomy differs. We set the list
-aside and ranked every word by how much more common it became in 2024--2026 than in
-2018--2021. The top of the ranking splits cleanly into two families
-(Figure~\ref{fig:discovery}). One family is the names of instruments and surveys that came
-online in these years (JWST's NIRCam, MIRI, and NIRSpec; the DESI survey; XRISM), which is
-what a working method should find. The other family is the same style vocabulary reported in
-computer science and biomedicine, now recovered from astronomy on its own: \mw{leveraging},
-\mw{pivotal}, \mw{intricate}, \mw{highlighting}. The imported list was not needed; the
-astronomy text points at the same words. Table~\ref{tab:markers} lists a representative set
-with their document frequency before and after ChatGPT.
+The ranking of Section~\ref{sec:discmethod} provides a check that does not depend on the
+imported basket. The top of the ranking separates into two families
+(Figure~\ref{fig:discovery}). One family consists of instruments and surveys that began
+operating during the recent window (JWST's NIRCam, MIRI, and NIRSpec; the DESI survey;
+XRISM), as expected for genuine changes in research topics. The other family is the same
+style vocabulary reported in computer science and biomedicine, recovered here independently
+from the astronomy corpus: \mw{leveraging}, \mw{pivotal}, \mw{intricate}, \mw{highlighting}.
+Table~\ref{tab:markers} lists a representative set with document frequencies before and
+after ChatGPT.
 
 \begin{deluxetable}{lccc}
 \tablecaption{Representative marker words: document frequency in the pre-ChatGPT baseline
@@ -188,13 +287,14 @@ labeled. Axes are logarithmic.}
 \label{fig:discovery}
 \end{figure}
 
-The same split holds for two-word phrases. Figure~\ref{fig:ngram} tracks a set of
+The same separation holds for two-word phrases. Figure~\ref{fig:ngram} tracks a set of
 model-favored bigrams over time; \mw{underscores the} and \mw{highlighting the} rose by an
 order of magnitude, while a neutral control phrase (\mw{wide range}) stayed flat. Ranking all
-bigrams by their increase again separates topic phrases (\mw{jwst observations}, \mw{the desi})
-from style phrases (\mw{offering a}, \mw{results highlight}, \mw{findings indicate}), as shown
-in panel (b) of Figure~\ref{fig:discovery}. Phrases carry a stronger signal than single words,
-and they are harder to remove by editing one word at a time.
+bigrams by their frequency ratio again separates topic phrases (\mw{jwst observations},
+\mw{the desi}) from style phrases (\mw{offering a}, \mw{results highlight},
+\mw{findings indicate}), as shown in panel (b) of Figure~\ref{fig:discovery}. Phrases carry a
+stronger signal than single words, and they are harder to remove by editing one word at a
+time.
 
 \begin{figure}[t]
 \centering
@@ -204,38 +304,25 @@ phrases rise after 2022; a control phrase (\mw{wide range}) stays flat.}
 \label{fig:ngram}
 \end{figure}
 
-\section{The marker words travel together}
+\subsection{Co-occurrence of marker words}
 \label{sec:cooccur}
 
-If the marker words shared a common cause, they should occur together more often than chance.
-For a pair of words $a$ and $b$ we measured the lift
-\begin{equation}
-\mathrm{lift}(a,b) = \frac{P(a \cap b)}{P(a)\,P(b)} ,
-\label{eq:lift}
-\end{equation}
-where $P(a)$ is the fraction of 2024--2026 abstracts that contain word $a$ and $P(a \cap b)$
-the fraction that contain both. A lift of one means the two words are independent.
+Of the 91 marker pairs, 27 exceed the independence expectation at $p<0.01$, where 0.9 false
+positives would be expected; Figure~\ref{fig:cooccur} shows the significant cells. Among
+pairs with at least five joint occurrences the lift runs from 3 to 36
+(\mw{delves}+\mw{intricate}: lift 36 from 5 joint abstracts against an expectation of 0.14,
+$p=4\times10^{-7}$; \mw{intricate}+\mw{pivotal}: lift 10 from 10 against 0.97,
+$p=8\times10^{-8}$). The largest lifts among the rarest words rest on one to three abstracts
+each and should be read as order-of-magnitude values, although even a single joint occurrence
+is significant when the expectation is $2\times10^{-3}$. The mean pairwise lift is 14, and 11
+when restricted to pairs with at least five joint occurrences.
 
-Because several markers are rare, many pairs have small joint counts, and a large lift can
-rest on a handful of abstracts. We therefore test each pair against a Poisson null: with
-53{,}192 recent abstracts, the expected joint count under independence is
-$\mu = N\,P(a)\,P(b)$, and we ask for the probability of the observed count or more. Of the
-91 pairs, 27 exceed independence at $p<0.01$, where 0.9 false positives would be expected;
-Figure~\ref{fig:cooccur} shows only these significant cells. Among pairs with at least five
-joint occurrences the lift runs from 3 to 36 (\mw{delves}+\mw{intricate}: lift 36 from 5
-joint abstracts against an expectation of 0.14, $p=4\times10^{-7}$;
-\mw{intricate}+\mw{pivotal}: lift 10 from 10 against 0.97, $p=8\times10^{-8}$). The very
-large lifts among the rarest words rest on one to three abstracts each and should be read as
-order of magnitude only, although even a single joint occurrence is significant when the
-expectation is $2\times10^{-3}$. The mean pairwise lift is 14, and 11 when restricted to
-pairs with at least five joint occurrences.
-
-Independent word drift would not produce this pattern. A model that edits or drafts a whole
-abstract, and adds several of its preferred words at once, does. Part of the clustering could
-also be topical, since marker use is not uniform across subfields
-(Section~\ref{sec:geo}), but the strongest pairs join words with no shared subject matter.
-The clustering supports reading the marker signal as one effect rather than a set of
-unrelated trends.
+Independent drift of unrelated words would not produce this pattern, whereas a model that
+edits or drafts a whole abstract, and introduces several of its preferred words at once,
+would. Part of the clustering could be topical, since marker use is not uniform across
+subfields (Section~\ref{sec:geo}), but the strongest pairs join words with no shared subject
+matter. The clustering therefore supports reading the marker signal as one effect rather
+than a set of unrelated trends.
 
 \begin{figure}[t]
 \centering
@@ -248,44 +335,24 @@ one to three joint abstracts and are order-of-magnitude values.}
 \end{figure}
 
 \FloatBarrier
-\section{A lower bound on the touched fraction}
+\subsection{The lower bound and its robustness}
 \label{sec:alpha}
 
-To turn the signal into a fraction we count the share of abstracts that contain at least one
-word from a small basket of strong, low-baseline markers, and subtract the pre-2022 rate. Let
-$f_t$ be the fraction of abstracts in period $t$ that contain at least one basket word and let
-$f_0$ be the same fraction in the 2018--2021 baseline. Our estimate is
-\begin{equation}
-\alpha_{\rm lb} = f_t - f_0 .
-\label{eq:alpha}
-\end{equation}
-This is a lower bound for two reasons: a model-edited abstract need not keep any word from a
-short list, so $f_t$ misses some model-touched abstracts; and by subtracting $f_0$ we discard
-any human writer who uses a basket word for ordinary reasons. Both push the estimate down. For
-2025 we find $f_t = 5.8\%$ and $f_0 = 1.5\%$, so $\alpha_{\rm lb} = 4.3\%$, and the true value
-is higher.
+For 2025 the estimator of Section~\ref{sec:alphamethod} gives $f_t = 5.8\%$ and
+$f_0 = 1.5\%$, so $\alpha_{\rm lb} = 4.30\pm0.16\%$, where the error is the binomial error
+on the two proportions; the true value is higher.
 
-The basket is chosen for low baseline and high specificity rather than for size; broader
-baskets give larger numbers but add words with mixed meanings. Equation~\ref{eq:alpha} is the
-$q=1$ limit of a two-population model: if a fraction $\alpha$ of abstracts are model-edited
-and carry a basket word with probability $q$, while the rest carry one at the baseline rate
-$f_0$, then $f_t=(1-\alpha)f_0+\alpha q$ and $\alpha=(f_t-f_0)/(q-f_0)$. Since $q\le1$,
-$\alpha \ge f_t-f_0$; any realistic $q<1$ raises $\alpha$ above our bound.
-
-\subsection{Robustness}
 \label{sec:robust}
-
 Table~\ref{tab:robust} collects the variations we tried, computed for the pooled 2024--2026
-window; for 2025 alone the default choices give $\alpha_{\rm lb}=4.30\pm0.16\%$, where the
-error is the binomial error on the two proportions. Moving the four-year baseline window
-earlier raises the pooled bound by at most 0.36 percentage points, because the basket rate
-drifted up slowly even before ChatGPT (0.12 points per year over 2015--2021). Treating that
-drift as a secular trend and extrapolating it linearly raises the effective 2025 baseline to
-2.2\% and lowers the 2025 bound from 4.3\% to 3.6\%, which we consider the most
-conservative reading. Removing any single word from the basket changes the pooled bound by at
-most 1.0 point; the largest single carrier is \mw{leveraging}, without which it is 3.0\%.
-The control-word set run through the same estimator gives $+0.10$ points. Under every variant
-the bound stays between 3.0\% and 4.3\%.
+window. Moving the four-year baseline window earlier raises the pooled bound by at most 0.36
+percentage points, because the basket rate drifted up slowly even before ChatGPT (0.12
+points per year over 2015--2021). Treating that drift as a secular trend and extrapolating
+it linearly raises the effective 2025 baseline to 2.2\% and lowers the 2025 bound from
+4.3\% to 3.6\%, which we consider the most conservative reading. Removing any single word
+from the basket changes the pooled bound by at most 1.0 point; the largest single carrier is
+\mw{leveraging}, without which it is 3.0\%. The control-word set run through the same
+estimator gives $+0.10$ points. Under every variant the bound stays between 3.0\% and
+4.3\%.
 
 \begin{deluxetable}{lc}
 \tablecaption{Robustness of the lower bound $\alpha_{\rm lb}$, pooled 2024--2026
@@ -303,11 +370,11 @@ control words, same estimator             & 0.1 \\
 of the pre-2022 drift in place of the flat baseline gives 3.6\%.}
 \end{deluxetable}
 
-Figure~\ref{fig:gap} places this number against published estimates for other fields. Astronomy
-sits below computer science and biomedicine and in the same range as physics and mathematics.
-Because our number is a strict lower bound while the others use fuller estimators, the honest
-reading is that astronomy is in the same range as the rest of science, at a few percent to low
-double digits.
+Figure~\ref{fig:gap} places this number against published estimates for other fields.
+Astronomy sits below computer science and biomedicine and in the same range as physics and
+mathematics. Because our number is a strict lower bound while the other studies use fuller
+estimators, we conclude that astronomy is consistent with the range measured for the rest of
+science, at a few percent to low double digits.
 
 \begin{figure}
 \centering
@@ -321,20 +388,18 @@ from disclosure.}
 \label{fig:gap}
 \end{figure}
 
-\section{Using a model and saying so}
+\subsection{Stated use}
 \label{sec:disclosure}
 
-Authors who use a model can state so in the acknowledgments. We searched astronomy papers in
-the NASA Astrophysics Data System for clear terms (ChatGPT, GPT-4, ``large language model'',
-GitHub Copilot), and left out terms that are ambiguous in astronomy, such as ``Gemini'' (the
-observatory) and ``Claude'' (a personal name). The count is exactly zero before 2023, which
-is a good check that the search is clean, and it rises every year after
-(Figure~\ref{fig:disclosure}). As a share of all astronomy papers it stays below 1\%: about
-0.20\% of 2025 papers state model use in the acknowledgments and about 0.67\% mention a model
-anywhere in the text. Full-text coverage in the database is incomplete, so these fractions are
-themselves lower limits, but the missing coverage would have to be large and heavily skewed to
-close the factor-of-twenty gap to the word signal. Set against the 4\% floor from the word
-counting, model use is common and stated use is rare.
+The count of astronomy papers matching the disclosure terms of
+Section~\ref{sec:discsearch} is exactly zero before 2023, which confirms that the search
+itself is clean, and rises every year after (Figure~\ref{fig:disclosure}). As a share of all
+astronomy papers it stays below 1\%: about 0.20\% of 2025 papers state model use in the
+acknowledgments and about 0.67\% mention a model anywhere in the text. Full-text coverage in
+the database is incomplete, so these fractions are themselves lower limits, but the missing
+coverage would have to be large and heavily skewed to close the factor-of-twenty gap to the
+word signal. Set against the 4\% floor from the word counting, model use is common and
+stated use is rare.
 
 \begin{figure}
 \centering
@@ -346,65 +411,50 @@ same as a share of all astronomy papers, which stays below 1\%.}
 \end{figure}
 
 \FloatBarrier
-\section{A ladder of ways to catch it}
+\subsection{Source-text and citation audits}
 \label{sec:ladder}
 
-arXiv posts the LaTeX source of most papers. A model's boilerplate is sometimes pasted into
-that source and left in a comment that never reaches the PDF, such as ``as an AI language
-model''. We downloaded the source of 3{,}950 papers, sampled with a fixed stride within each
-year, and searched for such text. In the 2{,}085 papers from 2024--2026 we find 3 hits, a rate
-of 0.14\% (Wilson 95\% interval 0.05--0.42\%), and two of the three are papers that study
-models as a research topic rather than writing slips. The 1{,}244 pre-2023 papers give zero
-hits (95\% upper limit 0.31\%), so the search itself is clean.
-
-Placing the four lenses side by side (Figure~\ref{fig:ladder}) shows a range of two orders of
-magnitude on the same corpus. Crude source leaks (0.14\%) and stated disclosure (0.19\%) find
-the least; the word signal (4.3\%, a lower bound) finds far more. A reader who trusted only
-the crude checks would conclude that astronomy has almost no model use, which is wrong. The
-word counting is the only method here that sees most of the use.
+The source-text search of Section~\ref{sec:srcmethod} finds 3 matches in the 2{,}085 papers
+from 2024--2026, a rate of 0.14\% (Wilson 95\% interval 0.05--0.42\%); two of the three are
+papers that study language models as a research topic rather than writing slips. The 1{,}244
+pre-2023 papers give zero matches (95\% upper limit 0.31\%), so the false-positive rate is
+low. Figure~\ref{fig:ladder} compares the four detection routes on the same corpus; they
+span two orders of magnitude. Direct source checks (0.14\%) and stated disclosure (0.19\%)
+find the least, and the word signal (4.3\%, a lower bound) finds the most, so population
+statistics recover a factor of twenty more model use than direct evidence alone.
 
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{fig9_detection_ladder.png}
-\caption{Four ways of looking for model use in the same 2024--2026 astronomy papers, on a log
-scale. Source leaks and stated disclosure find the least; the word signal finds most. The
-biomedical estimate \citep{Kobak2024} is shown for scale.}
+\caption{Four detection routes applied to the same 2024--2026 astronomy papers, on a
+logarithmic scale. Source-text matches and stated disclosure find the least; the word signal
+finds the most. The biomedical estimate \citep{Kobak2024} is shown for scale.}
 \label{fig:ladder}
 \end{figure}
 
-\section{Citation integrity}
 \label{sec:citations}
-
-Models sometimes produce citations to papers that do not exist, and the rate of such
-citations is rising in biomedicine: from about one paper in 2828 in 2023 to one in 458 in
-2025 and one in 277 in early 2026 \citep{Topaz2026}. Astronomy has a defense: nearly every
-author builds reference lists from the NASA Astrophysics Data System, so the identifiers are
-real by construction. We tested this on the LaTeX source of 2{,}532 papers from 2022--2026,
-drawn with a fixed stride within each year and weighted toward 2024--2026.
-
-We extracted every cited arXiv identifier and digital object identifier (DOI). The 22{,}547
-cited new-style arXiv identifiers (16{,}850 unique) all resolve; none points to a paper that
-does not exist. Of the 56{,}706 unique cited DOIs we checked a random sample of 2{,}500
-against Crossref, which returned 134 misses, and we inspected every one. Most are real records
-in registries that Crossref does not index: 87 arXiv DataCite identifiers, 22 Zenodo records,
-and 16 data-archive, regional-journal, and funder identifiers, of which four we confirmed
-directly through the global handle resolver. Four more are artifacts of our own extraction.
-The remaining five are wrong identifiers attached to real references: two DOIs in a single
-bibliography whose suffixes do not exist while every other field (authors, title, journal,
-volume, page, arXiv number) matches a real paper, two identifier schemes that are not
-registered DOIs (an ACM proceedings prefix and an ISBN written as a DOI), and one journal
-citation-template placeholder. We find no fabricated references, in the sense of a reference
-to a work that does not exist.
+The citation audit of Section~\ref{sec:citmethod} finds that all 22{,}547 cited new-style
+arXiv identifiers (16{,}850 unique) resolve; none points to a paper that does not exist. Of
+the 2{,}500 sampled DOIs, Crossref returned 134 misses, and we inspected every one. Most are
+real records in registries that Crossref does not index: 87 arXiv DataCite identifiers, 22
+Zenodo records, and 16 data-archive, regional-journal, and funder identifiers, of which four
+we confirmed directly through the global handle resolver. Four more are artifacts of our own
+extraction. The remaining five are wrong identifiers attached to real references: two DOIs
+in a single bibliography whose suffixes do not exist while every other field (authors,
+title, journal, volume, page, arXiv number) matches a real paper, two identifier schemes
+that are not registered DOIs (an ACM proceedings prefix and an ISBN written as a DOI), and
+one journal citation-template placeholder. We find no fabricated references, in the sense of
+a reference to a work that does not exist.
 
 The null result carries statistical weight. Restricting to the 1{,}250 papers with at least
 one checkable arXiv identifier, zero flagged papers gives a 95\% upper limit of 0.24\% on
-the per-paper rate. At the early-2026 biomedical rate of one paper in 277 we would expect 4.5
-flagged papers here, so that rate is excluded at 95\% confidence ($p=0.011$); the 2025
+the per-paper rate. At the early-2026 biomedical rate of one paper in 277 we would expect
+4.5 flagged papers here, so that rate is excluded at 95\% confidence ($p=0.011$); the 2025
 biomedical rate of one in 458 predicts 2.7 and is disfavored but not excluded ($p=0.065$).
-Per cited identifier the limit is $1.3\times10^{-4}$. Two caveats bound the claim. Our check
-tests whether a cited work exists, not whether it supports the claim it is attached to, and
-the wrong-suffix DOIs above show that identifier corruption does occur even when the
-reference is real. And the test covers papers that cite through arXiv identifiers, which
+Per cited identifier the limit is $1.3\times10^{-4}$. Two caveats bound the claim. The check
+tests whether a cited work exists, not whether it supports the statement it is attached to,
+and the wrong-suffix DOIs above show that identifier corruption occurs even when the
+reference is real. The test also covers papers that cite through arXiv identifiers, which
 skews toward recent, arXiv-native bibliographies (Figure~\ref{fig:citations}).
 
 \begin{figure}
@@ -420,19 +470,21 @@ artifacts of our extraction. Right: the fabricated-citation rate; the astronomy 
 \end{figure}
 
 \FloatBarrier
-\section{Who, and where}
+\subsection{Dependence on subfield and country}
 \label{sec:geo}
 
-The marker rate is not uniform. By subfield (Figure~\ref{fig:subfield}), the Instrumentation
-and Methods category, which is closest to software and machine learning, has the highest rate
-throughout, and high-energy astrophysics the lowest. The ``computer science first'' pattern
-seen across science also holds inside astronomy.
+The marker rate is not uniform across the field. By subfield (Figure~\ref{fig:subfield}),
+the Instrumentation and Methods category, which is closest to software and machine learning,
+has the highest rate throughout, reaching $7.8\pm1.3\%$ in 2025 (binomial 95\%), while
+high-energy astrophysics has the lowest at $4.7\pm0.7\%$; the difference is large compared
+with its uncertainty. The ordering follows the pattern seen across science, where fields
+closer to computer science adopted these tools first.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.74\textwidth]{fig10_subfield_diffusion.png}
-\caption{Marker rate by primary astro-ph subfield. Instrumentation and Methods leads;
-high-energy astrophysics trails.}
+\caption{Marker rate by primary astro-ph subfield. Instrumentation and Methods has the
+highest rate throughout; high-energy astrophysics the lowest.}
 \label{fig:subfield}
 \end{figure}
 
@@ -440,13 +492,12 @@ By author country (Figure~\ref{fig:geo}), obtained from the affiliation field, p
 countries where English is not a first language tend toward higher marker rates, with Iran
 ($11.2\%$, Wilson 95\% interval 8.6--14.6\%, $n=418$), China ($7.6\%$, $n=8{,}377$), and
 India ($6.5\%$, $n=3{,}179$) at the high end and Japan ($4.2\%$) and Russia ($1.3\%$)
-lower. This is consistent with a reading
-of these tools as a writing aid for non-native English speakers, and it is a reason to treat a
-marker word as evidence of editing rather than of anything worse. Papers from China combine a
-high marker rate (7.6\%) with one of the lowest disclosure rates (0.26\%), the widest gap in
-the sample. The
-affiliation search counts every country on a paper, so large collaborations appear more than
-once, and the small-sample countries are noisy; these numbers are first-order.
+lower. This is consistent with the use of these tools as a writing aid by non-native English
+speakers, and it is a reason to treat a marker word as evidence of editing rather than of
+anything worse. Papers from China combine a high marker rate (7.6\%) with one of the lowest
+disclosure rates (0.26\%), the widest separation in the sample. The affiliation search
+counts every country on a paper, so large collaborations appear more than once, and the
+small-sample countries are noisy; these rates are indicative rather than precise.
 
 \begin{figure}
 \centering
@@ -459,42 +510,42 @@ enter more than once.}
 \label{fig:geo}
 \end{figure}
 
-\section{Louder, not more careful}
+\subsection{Promotional and hedging vocabulary}
 \label{sec:hype}
 
-Word counts can measure tone as well as presence. We tracked promotional words
-(\mw{unprecedented}, \mw{remarkable}, \mw{striking}) and hedging words (\mw{may}, \mw{might},
-\mw{suggest}) that mark caution. The promotional set rose by about 19\% over the period and
-follows the marker rate closely; the hedging set did not move (Figure~\ref{fig:hype}). Abstracts
-got louder without getting more careful. This is a correlation, and competition for attention
-pushes promotion up on its own, but the flat caution alongside rising volume is worth recording.
+The promotional word set rose by about 19\% over the period and follows the marker rate
+closely ($r=0.87$ over the twelve yearly points, $p=2\times10^{-4}$); the hedging set did
+not move ($r=-0.21$; Figure~\ref{fig:hype}). Promotional vocabulary therefore rose while
+stated caution did not. Both series trend with time, so part of the correlation reflects the
+shared calendar, and competition for attention raises promotional language on its own; we
+report this as a descriptive result rather than a causal claim.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.74\textwidth]{fig7_hype_hedge.png}
 \caption{Promotional and hedging word frequency, indexed to the 2015--2019 mean. Promotional
-words rise with model use; hedging words stay flat.}
+words rise together with the marker rate; hedging words stay flat.}
 \label{fig:hype}
 \end{figure}
 
 \FloatBarrier
-\section{The signal is weakening}
+\subsection{Time evolution of the word signal}
 \label{sec:erosion}
 
-The marker rate dips a little in 2026. This is not a drop in model use.
-Figure~\ref{fig:erosion} places the marker rate next to the disclosure count over the same
-months: the marker words soften across the board while stated model use keeps rising, already
-past the full 2025 count in half a year. What weakens is the word signal, not the use. Newer
-models write with fewer of the known words, and authors edit the famous ones out. Any
-word-based number is therefore a lower bound, and the bound will slide down even as use grows.
+The marker rate declines slightly in 2026. Two observations argue against reading this as a
+decline in model use. Figure~\ref{fig:erosion} places the marker rate next to the disclosure
+count over the same months: the marker words weaken across the board while stated model use
+continues to rise, exceeding the full 2025 count within half a year. The weakening therefore
+affects the word signal, not the underlying use. Newer models produce fewer of the known
+words, and authors edit the publicized ones out. Any word-based estimate is consequently a
+lower bound whose sensitivity declines with time, even as use grows.
 
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{fig8_detectability_erosion.png}
-\caption{Left: the marker words weaken across the board in 2026, both the early tells that
+\caption{Left: the marker words weaken across the board in 2026, both the early markers that
 peaked first (\mw{delve}, \mw{intricate}, \mw{pivotal}) and the later ones (\mw{underscore},
-\mw{leveraging}). Right: over the same months, stated model use keeps rising. Use is not
-falling; the word signal is.}
+\mw{leveraging}). Right: over the same months, stated model use continues to rise.}
 \label{fig:erosion}
 \end{figure}
 
@@ -504,9 +555,10 @@ falling; the word signal is.}
 The measurements above give a consistent picture. A few percent of recent astro-ph abstracts,
 at least, carry model-edited language; the true fraction is higher and is in the range measured
 for other physical sciences. Stated use is rare, below 1\%, so the gap between use and
-disclosure is large. The marker words rise together and cluster within abstracts, with 27 of 91 pairs above
-independence at $p<0.01$, which points to a single cause rather than unrelated drift. Crude ``gotcha'' checks find almost nothing, so
-the population statistics are the only reliable lens. Astronomy so far avoids the fabricated-citation
+disclosure is large. The marker words rise together and cluster within abstracts, with 27 of
+91 pairs above independence at $p<0.01$, which points to a single cause rather than unrelated
+drift. Direct checks of source text and stated disclosure find almost nothing, so population
+statistics are the only reliable measurement. Astronomy so far avoids the fabricated-citation
 problem seen elsewhere, at a level we can bound below the early-2026 biomedical rate, most
 likely because of its shared reference database.
 
@@ -520,10 +572,10 @@ papers, and abstracts are the most edited part of a paper. Finally, three uses t
 run together should be kept apart: a model as a copy editor, a model that drafts content, and a
 paper produced whole. The word counting mostly sees the first.
 
-These results also point to method. Word lists will keep losing power, so the more durable
+These results also bear on method. Word lists will keep losing power, so the more durable
 signals are the ones tied to content rather than style: the co-occurrence structure of
 Section~\ref{sec:cooccur}, which is harder to remove by editing single words, and integrity
-checks such as the citation audit of Section~\ref{sec:citations}, which astronomy can run more
+checks such as the citation audit of Section~\ref{sec:ladder}, which astronomy can run more
 cleanly than most fields because of the NASA Astrophysics Data System.
 
 The gap between use and disclosure has a bearing on refereeing. If a few percent of abstracts
@@ -535,15 +587,15 @@ reports would face the same problem. A disclosure norm, stated once at submissio
 simple, would remove the guesswork at low cost, and would separate the ordinary use of a model
 as an editor from the uses that raise real concern.
 
-There is also a feedback loop to watch. As a growing share of the published corpus is
+There is also a feedback loop to consider. As a growing share of the published corpus is
 model-edited, the next generation of models, and any astronomy-specific models trained on
 astro-ph text, will learn from text that already carries the style. Word-frequency screening
 will then measure the training data as much as the writing, and its output will drift. The
 signals that do not depend on a fixed word list, such as the co-occurrence structure and the
-citation checks, are the ones that will still mean what they say.
+citation checks, are the ones that will retain their meaning.
 
 \FloatBarrier
-\section{Conclusions}
+\section{Summary}
 \label{sec:conclusions}
 
 We measured the footprint of large language models in the astronomy literature from
@@ -556,7 +608,7 @@ the true value is higher and is in the range measured for physics and mathematic
 \item Without an imported list, the data recover the same style words and phrases next to the
 genuinely new instrument and survey names, and the marker words occur together far more often
 than chance.
-\item Stated disclosure stays below 1\%, and crude source-code checks find near-zero pasted
+\item Stated disclosure stays below 1\%, and direct source-text checks find near-zero pasted
 text; the word signal sees roughly two orders of magnitude more than either.
 \item We find no fabricated citations, in contrast with a rising rate in biomedicine; the
 astronomy reference habit appears to protect the citation record.
