@@ -20,7 +20,7 @@ def fig10_subfield():
         d = df[df.subfield==s].sort_values("year")
         lw = 3.2 if s == order[0] else 1.8
         ax.plot(d.year, d.rate, "-o", ms=3.2, lw=lw, color=palette[s],
-                label=s + ("  ← leads" if s == order[0] else ""))
+                label=s)
     ax.axvline(2022.85, color=C["grey"], ls="--", lw=1)
     ax.text(2022.7, 7.9, "ChatGPT", rotation=90, va="top", ha="right", fontsize=8, color=C["grey"])
     ax.set_xlabel("Year"); ax.set_ylabel("% of abstracts with LLM marker basket")
@@ -92,7 +92,7 @@ def fig11_geography():
         marker_boxes.append((mk-hx, dc-hy, mk+hx, dc+hy))
     # fixed obstacles in data coords: legend (upper-left) and annotation (upper-right)
     legend_box = (0.0, 0.86, 0.34*xmax, yhi)
-    annot_box  = (0.66*xmax, 0.58, xmax, 0.80)
+    annot_box  = (9e9, 9e9, 9e9, 9e9)   # no in-panel annotation any more
 
     def candidates(mk, dc, n, name):
         hx, hy = marker_half(n, name); pad = 0.05*dpx*72/72 + 0.06
@@ -152,9 +152,6 @@ def fig11_geography():
         if overlap(b, legend_box) or overlap(b, annot_box): probs += 1
     print(f"fig11 label overlaps remaining: {probs}")
 
-    ax.text(0.985, 0.72, "bottom-right =\nhigh use, low disclosure\n(biggest 'concealment' zone)",
-            transform=ax.transAxes, ha="right", va="top", fontsize=8.6,
-            color=C["grey"], style="italic")
     ax.set_xlabel("LLM marker-word incidence, 2025 (% of papers)")
     ax.set_ylabel("Explicit LLM disclosure, 2025 (% of papers)")
     from matplotlib.lines import Line2D
@@ -193,10 +190,9 @@ def fig12_citation_integrity():
     labels = [k for k in order if k in cc]; vals = [cc[k] for k in labels]
     from pantera_style import no_minor_y, no_minor_x
     ys = list(range(len(labels)))
+    axL.barh(ys, vals, color=C["green"], height=0.62)
     for yi, v in zip(ys, vals):
-        axL.plot([0, v], [yi, yi], lw=0.7, color="#CCCCCC", zorder=1)
-        axL.plot(v, yi, "o", ms=5, color=C["green"], zorder=3)
-        axL.text(v+3, yi, str(v), va="center", fontsize=7, color="#555555")
+        axL.text(v+2.5, yi, str(v), va="center", fontsize=7, color="#555555")
     no_minor_y(axL)
     axL.set_yticks(ys); axL.set_yticklabels(labels, fontsize=6.5)
     axL.invert_yaxis()

@@ -53,7 +53,6 @@ def fig8_detectability():
              label="early tells")
     axL.plot(s.yq, s.rising*100, "-o", ms=2.8, color=C["green"], lw=1.2,
              label="late tells")
-    axL.text(2025.55, axL.get_ylim()[1]*0.12, "2026:\nboth fall", fontsize=7.3, color=C["grey"])
     axL.set_xlabel("Year (quarterly)"); axL.set_ylabel("% of abstracts with marker(s)")
     axL.legend(loc="upper left", fontsize=7.5)
     axL.set_xlim(2022, 2026.6)
@@ -61,10 +60,6 @@ def fig8_detectability():
     axR.plot(yrs, frac_full, "-o", color=C["sky"], lw=1.4, ms=3)
     axR.set_xlabel("Year"); axR.set_ylabel("% of astronomy papers disclosing LLM use (full text)")
     axR.set_xticks(range(2016, 2027, 2))
-    axR.annotate("usage up while word-signal down\n= detection going underground",
-                 xy=(2026, frac_full[-1]), xytext=(2019.4, frac_full[-1]*0.62),
-                 fontsize=7.5, color=C["black"], fontweight="normal",
-                 arrowprops=dict(arrowstyle="->", color=C["black"]))
     footer(fig); fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig8_detectability_erosion.png"), bbox_inches="tight"); plt.close(fig)
 
