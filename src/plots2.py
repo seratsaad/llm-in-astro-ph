@@ -21,17 +21,17 @@ def fig7_hype_hedge():
     hbase, gbase = base.hype_per1k.mean(), base.hedge_per1k.mean()
     d["hype_idx"] = 100 * d.hype_per1k / hbase
     d["hedge_idx"] = 100 * d.hedge_per1k / gbase
-    fig, ax = plt.subplots(figsize=(8.6, 5.1))
+    fig, ax = plt.subplots(figsize=(5.16, 3.06))
     ax.axhline(100, color=C["grey"], lw=1, ls=":")
-    ax.plot(d.year, d.hype_idx, "-o", color=C["vermillion"], lw=2.8, ms=6,
+    ax.plot(d.year, d.hype_idx, "-o", color=C["vermillion"], lw=1.5, ms=3,
             label="Hype words (unprecedented, remarkable, striking, ...)")
-    ax.plot(d.year, d.hedge_idx, "-s", color=C["blue"], lw=2.4, ms=5,
+    ax.plot(d.year, d.hedge_idx, "-s", color=C["blue"], lw=1.3, ms=3.4,
             label="Hedging words (may, might, suggest, likely, ...)")
     ax.axvline(2022.85, color=C["grey"], ls="--", lw=1)
     ax.text(2022.7, 126.5, "ChatGPT", rotation=90, va="top", ha="right", fontsize=8, color=C["grey"])
     ax.set_ylabel("frequency, indexed to 2015-19 = 100"); ax.set_xlabel("Year")
     ax.set_ylim(90, 128)
-    ax.legend(loc="upper left", fontsize=9.4)
+    ax.legend(loc="upper left", fontsize=7.5)
     ax.set_xticks(range(2015, 2027, 2))
     footer(fig); fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig7_hype_hedge.png"), bbox_inches="tight"); plt.close(fig)
@@ -46,24 +46,24 @@ def fig8_detectability():
     # annualize 2026 (partial ~ half year): scale full-text fraction is a rate so fine
     frac_full = [100*f/t for f, t in zip(full, tot)]
 
-    fig, (axL, axR) = plt.subplots(1, 2, figsize=(12.2, 5.2))
+    fig, (axL, axR) = plt.subplots(1, 2, figsize=(7.32, 3.12))
     # LEFT: marker clusters quarterly
-    axL.plot(s.yq, s.all_markers*100, color=C["black"], lw=3, label="all markers", zorder=5)
-    axL.plot(s.yq, s.collapsing*100, "-o", ms=3.5, color=C["vermillion"], lw=1.9,
+    axL.plot(s.yq, s.all_markers*100, color=C["black"], lw=1.4, label="all markers", zorder=5)
+    axL.plot(s.yq, s.collapsing*100, "-o", ms=2.8, color=C["vermillion"], lw=1.2,
              label="early tells")
-    axL.plot(s.yq, s.rising*100, "-o", ms=3.5, color=C["green"], lw=1.9,
+    axL.plot(s.yq, s.rising*100, "-o", ms=2.8, color=C["green"], lw=1.2,
              label="late tells")
-    axL.text(2025.55, axL.get_ylim()[1]*0.12, "2026:\nboth fall", fontsize=9, color=C["grey"])
+    axL.text(2025.55, axL.get_ylim()[1]*0.12, "2026:\nboth fall", fontsize=7.3, color=C["grey"])
     axL.set_xlabel("Year (quarterly)"); axL.set_ylabel("% of abstracts with marker(s)")
-    axL.legend(loc="upper left", fontsize=8.8)
+    axL.legend(loc="upper left", fontsize=7.5)
     axL.set_xlim(2022, 2026.6)
     # RIGHT: disclosure still rising -> contradiction
-    axR.plot(yrs, frac_full, "-o", color=C["sky"], lw=2.6, ms=6)
+    axR.plot(yrs, frac_full, "-o", color=C["sky"], lw=1.4, ms=3)
     axR.set_xlabel("Year"); axR.set_ylabel("% of astronomy papers disclosing LLM use (full text)")
     axR.set_xticks(range(2016, 2027, 2))
     axR.annotate("usage up while word-signal down\n= detection going underground",
                  xy=(2026, frac_full[-1]), xytext=(2019.4, frac_full[-1]*0.62),
-                 fontsize=9.5, color=C["black"], fontweight="normal",
+                 fontsize=7.5, color=C["black"], fontweight="normal",
                  arrowprops=dict(arrowstyle="->", color=C["black"]))
     footer(fig); fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig8_detectability_erosion.png"), bbox_inches="tight"); plt.close(fig)

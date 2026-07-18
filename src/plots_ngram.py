@@ -8,25 +8,25 @@ from pantera_style import C, no_minor_y
 HERE = os.path.dirname(__file__); DATA = os.path.join(HERE, "..", "data")
 FIGS = os.path.join(HERE, "..", "figs")
 # sober tweaks on top of the shared style
-mpl.rcParams.update({"axes.titleweight": "normal", "font.size": 11})
+mpl.rcParams.update({"axes.titleweight": "normal"})
 
 def fig_ngram_viewer():
     w = pd.read_csv(os.path.join(DATA, "ngram_watch.csv"))
     show = [("underscores the", C["vermillion"]), ("highlighting the", C["orange"]),
             ("leveraging the", C["green"]), ("pivotal role", C["purple"]),
             ("delve into", C["black"]), ("wide range", C["blue"])]
-    fig, ax = plt.subplots(figsize=(7.0, 4.4))
+    fig, ax = plt.subplots(figsize=(4.20, 2.64))
     for p, col in show:
         s = w[w.phrase == p].sort_values("year")
         ls = "--" if p == "wide range" else "-"
-        ax.plot(s.year, s.freq, ls, color=col, lw=1.6, ms=3, marker="o",
+        ax.plot(s.year, s.freq, ls, color=col, lw=1.3, ms=3, marker="o",
                 label=f'"{p}"' + ("  (control)" if p == "wide range" else ""))
     ax.axvline(2022.85, color=C["grey"], ls=":", lw=1)
-    ax.text(2022.7, ax.get_ylim()[1]*0.9, "ChatGPT", rotation=90, va="top",
-            ha="right", fontsize=8, color=C["grey"])
+    ax.set_ylim(-0.1, 2.8)
+    ax.text(2022.7, 1.55, "ChatGPT", rotation=90, va="top",
+            ha="right", fontsize=7.5, color=C["grey"])
     ax.set_xlabel("Year"); ax.set_ylabel("fraction of abstracts with the phrase (%)")
-    ax.set_ylim(-0.1, 2.75)
-    ax.legend(fontsize=8.5, loc="center left", bbox_to_anchor=(0.02, 0.62))
+    ax.legend(fontsize=7, loc="center left", bbox_to_anchor=(0.03, 0.40))
     ax.set_xticks(range(2015, 2026, 2))
     fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig_ngram_viewer.png"), bbox_inches="tight"); plt.close(fig)
@@ -43,7 +43,7 @@ def fig_bigram_discovery():
     bd["topic"] = bd.bigram.apply(is_topic)
     top = bd.sort_values("ratio", ascending=False).head(24).iloc[::-1]
     cols = [C["blue"] if t else C["vermillion"] for t in top.topic]
-    fig, ax = plt.subplots(figsize=(7.2, 6.6))
+    fig, ax = plt.subplots(figsize=(4.32, 3.96))
     ax.barh(range(len(top)), top.ratio, color=cols, alpha=0.85, height=0.72)
     ax.set_yticks(range(len(top))); ax.set_yticklabels(top.bigram, fontsize=8.5)
     no_minor_y(ax)
@@ -87,7 +87,7 @@ def fig_cooccur():
     lift = lift[np.ix_(order, order)]; sig = sig[np.ix_(order, order)]
     pairs = pairs[np.ix_(order, order)]; M = [M[i] for i in order]
     disp = np.where(sig, lift, np.nan)
-    fig, ax = plt.subplots(figsize=(7.4, 6.2))
+    fig, ax = plt.subplots(figsize=(4.44, 3.72))
     ax.set_facecolor("#EDEDED")   # grey background = not significant / no excess
     im = ax.imshow(np.ma.masked_invalid(disp), cmap="YlOrBr",
                    norm=LogNorm(vmin=1, vmax=np.nanmax(disp)))
@@ -103,7 +103,7 @@ def fig_cooccur():
                         ha="center", va="center", fontsize=6.5,
                         color="white" if v > 30 else "#333")
     cb = fig.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
-    cb.set_label("co-occurrence lift (1 = independent)", fontsize=9)
+    cb.set_label("co-occurrence lift (1 = independent)", fontsize=7.3)
     fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig_cooccur.png"), bbox_inches="tight"); plt.close(fig)
 
