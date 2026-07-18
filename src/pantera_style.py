@@ -35,11 +35,11 @@ def apply():
         "mathtext.it": "Times New Roman:italic",
         "mathtext.bf": "Times New Roman:bold",
         "svg.fonttype": "none", "pdf.fonttype": 42,
-        # compact type
-        "font.size": 8.5, "axes.labelsize": 8.5,
-        "axes.titlesize": 9, "axes.titleweight": "bold",
-        "xtick.labelsize": 7.5, "ytick.labelsize": 7.5,
-        "legend.fontsize": 7.5,
+        # match the paper's 10 pt body text
+        "font.size": 10, "axes.labelsize": 10,
+        "axes.titlesize": 10.5, "axes.titleweight": "bold",
+        "xtick.labelsize": 9, "ytick.labelsize": 9,
+        "legend.fontsize": 9,
         # full box, thin
         "axes.spines.top": True, "axes.spines.right": True,
         "axes.spines.left": True, "axes.spines.bottom": True,

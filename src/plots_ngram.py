@@ -15,7 +15,7 @@ def fig_ngram_viewer():
     show = [("underscores the", C["vermillion"]), ("highlighting the", C["orange"]),
             ("leveraging the", C["green"]), ("pivotal role", C["purple"]),
             ("delve into", C["black"]), ("wide range", C["blue"])]
-    fig, ax = plt.subplots(figsize=(4.20, 2.64))
+    fig, ax = plt.subplots(figsize=(4.8, 3.0))
     for p, col in show:
         s = w[w.phrase == p].sort_values("year")
         ls = "--" if p == "wide range" else "-"
@@ -24,9 +24,9 @@ def fig_ngram_viewer():
     ax.axvline(2022.85, color=C["grey"], ls=":", lw=1)
     ax.set_ylim(-0.1, 2.8)
     ax.text(2022.7, 1.55, "ChatGPT", rotation=90, va="top",
-            ha="right", fontsize=7.5, color=C["grey"])
+            ha="right", fontsize=9, color=C["grey"])
     ax.set_xlabel("Year"); ax.set_ylabel("fraction of abstracts with the phrase (%)")
-    ax.legend(fontsize=7, loc="center left", bbox_to_anchor=(0.03, 0.40))
+    ax.legend(fontsize=9, loc="center left", bbox_to_anchor=(0.03, 0.40))
     ax.set_xticks(range(2015, 2026, 2))
     fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig_ngram_viewer.png"), bbox_inches="tight"); plt.close(fig)
@@ -62,12 +62,12 @@ def fig_cooccur():
     lift = lift[np.ix_(order, order)]; sig = sig[np.ix_(order, order)]
     pairs = pairs[np.ix_(order, order)]; M = [M[i] for i in order]
     disp = np.where(sig, lift, np.nan)
-    fig, ax = plt.subplots(figsize=(4.44, 3.72))
+    fig, ax = plt.subplots(figsize=(4.8, 4.0))
     ax.set_facecolor("#EDEDED")   # grey background = not significant / no excess
     im = ax.imshow(np.ma.masked_invalid(disp), cmap="YlOrBr",
                    norm=LogNorm(vmin=1, vmax=np.nanmax(disp)))
-    ax.set_xticks(range(n)); ax.set_xticklabels(M, rotation=45, ha="right", fontsize=8.5)
-    ax.set_yticks(range(n)); ax.set_yticklabels(M, fontsize=8.5)
+    ax.set_xticks(range(n)); ax.set_xticklabels(M, rotation=45, ha="right", fontsize=9.5)
+    ax.set_yticks(range(n)); ax.set_yticklabels(M, fontsize=9.5)
     ax.xaxis.set_minor_locator(mpl.ticker.NullLocator())
     ax.yaxis.set_minor_locator(mpl.ticker.NullLocator())
     for i in range(n):
@@ -75,10 +75,10 @@ def fig_cooccur():
             if i != j and np.isfinite(disp[i, j]):
                 v = disp[i, j]
                 ax.text(j, i, f"{v:.0f}" if v >= 10 else f"{v:.1f}",
-                        ha="center", va="center", fontsize=6.5,
+                        ha="center", va="center", fontsize=8.5,
                         color="white" if v > 30 else "#333")
     cb = fig.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
-    cb.set_label("co-occurrence lift (1 = independent)", fontsize=7.3)
+    cb.set_label("co-occurrence lift (1 = independent)", fontsize=9)
     fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig_cooccur.png"), bbox_inches="tight"); plt.close(fig)
 

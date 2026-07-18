@@ -47,7 +47,7 @@ def fig1_markers_vs_control():
     lohi = [wilson(k, n) for k, n in zip(agg.hit, agg.total)]
     yerr = np.array([[r*100 - lo*100 for (lo, hi), r in zip(lohi, agg.hit/agg.total)],
                      [hi*100 - r*100 for (lo, hi), r in zip(lohi, agg.hit/agg.total)]])
-    fig, ax = plt.subplots(figsize=(5.04, 3.00))
+    fig, ax = plt.subplots(figsize=(4.8, 2.85))
     ax.errorbar(yr.year, yr.rate*100, yerr=yerr, fmt="-o", color=C["vermillion"],
                 lw=1.3, ms=3.4, capsize=2, elinewidth=0.9,
                 label="LLM marker basket\n(delve, underscore, intricate, pivotal, ...)")
@@ -59,13 +59,13 @@ def fig1_markers_vs_control():
     coef = np.polyfit(pre.year, pre.rate*100, 1)
     xx = np.array([2022, 2025.4])
     ax.plot(xx, np.polyval(coef, xx), ls=(0, (3, 2)), lw=0.9, color=C["black"], zorder=2)
-    ax.text(2025.0, np.polyval(coef, 2024.4) - 0.4, "pre-2022 trend", fontsize=6.5,
+    ax.text(2025.0, np.polyval(coef, 2024.4) - 0.4, "pre-2022 trend", fontsize=8.5,
             color=C["black"], ha="right", va="top")
     ax.axvline(2022.85, color=C["grey"], ls="--", lw=1)
     ax.text(2022.7, 10.8, "ChatGPT", rotation=90, va="top", ha="right",
-            fontsize=8, color=C["grey"])
+            fontsize=9.5, color=C["grey"])
     ax.set_xlabel("Year"); ax.set_ylabel("% of abstracts containing the word(s)")
-    ax.legend(loc="center left", fontsize=7.5)
+    ax.legend(loc="center left", fontsize=9)
     ax.set_xticks(range(2015, 2026, 2))
     footer(fig); fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig1_markers_vs_control.png"), bbox_inches="tight")
@@ -80,15 +80,15 @@ def fig2_delve_collapse():
     ym = pd.read_csv(os.path.join(DATA, "year_markers.csv"))
     words = ["delve", "underscore", "leveraging", "pivotal"]
 
-    fig = plt.figure(figsize=(7.0, 3.6))
+    fig = plt.figure(figsize=(6.5, 3.35))
     gs = fig.add_gridspec(2, 4, height_ratios=[1.0, 1.15], hspace=0.52, wspace=0.42)
     top = fig.add_subplot(gs[0, :])
     top.plot(a.yq, a.rate*100, color=C["black"], lw=1.3)
     top.axvline(2024.35, color=C["grey"], ls=":", lw=1.0)
     top.set_xlim(2022, 2026.6)
-    top.set_ylabel("% with any marker", fontsize=7.5)
-    top.set_title("any marker word", loc="left", fontsize=8)
-    top.tick_params(labelsize=7)
+    top.set_ylabel("% with any marker", fontsize=9)
+    top.set_title("any marker word", loc="left", fontsize=9.5)
+    top.tick_params(labelsize=9)
 
     for i, w in enumerate(words):
         ax = fig.add_subplot(gs[1, i])
@@ -103,11 +103,11 @@ def fig2_delve_collapse():
         ax.axvline(2024.35, color=C["grey"], ls=":", lw=0.8)
         ax.set_xlim(2022, 2026.6)
         ax.set_ylim(0, max(d.freq.max()*100*1.25, 0.1))
-        ax.set_title(w, loc="left", fontsize=8)
-        ax.tick_params(labelsize=6.5)
+        ax.set_title(w, loc="left", fontsize=9.5)
+        ax.tick_params(labelsize=8.5)
         ax.set_xticks([2022, 2024, 2026])
         if i == 0:
-            ax.set_ylabel("% of abstracts", fontsize=7.5)
+            ax.set_ylabel("% of abstracts", fontsize=9)
     fig.savefig(os.path.join(FIGS, "fig2_delve_collapse.png"), bbox_inches="tight")
     plt.close(fig)
 
@@ -133,7 +133,7 @@ def fig3_discovery():
                 "language","transformer","simulation","cosmos","euclid","lrds",
                 "little","red","dots")
 
-    fig, (axA, axB) = plt.subplots(1, 2, figsize=(9.0, 4.1))
+    fig, (axA, axB) = plt.subplots(1, 2, figsize=(6.5, 3.6))
     for ax in (axA, axB):
         ax.set_xscale("log"); ax.set_yscale("log")
 
@@ -163,7 +163,7 @@ def fig3_discovery():
     ann = sel[sel.word.isin(show_a)]
     others = sel[~sel.word.isin(show_a)]
     place_labels(axA, list(ann.rec_freq*100), list(ann.ratio), list(ann.word),
-                 colors=[kcol[k] for k in ann.kind], fontsize=7.6,
+                 colors=[kcol[k] for k in ann.kind], fontsize=8.5,
                  obstacles=list(zip(others.rec_freq*100, others.ratio)))
 
     # ---- panel (b): two-word phrases ----
@@ -185,7 +185,7 @@ def fig3_discovery():
     annb = selb[selb.bigram.isin(show_b)]
     othb = selb[~selb.bigram.isin(show_b)]
     place_labels(axB, list(annb.rec_freq*100), list(annb.ratio), list(annb.bigram),
-                 colors=[kcol[k] for k in annb.kind], fontsize=7.6,
+                 colors=[kcol[k] for k in annb.kind], fontsize=8.5,
                  obstacles=list(zip(othb.rec_freq*100, othb.ratio)))
 
     from matplotlib.lines import Line2D
@@ -196,7 +196,7 @@ def fig3_discovery():
                label="style word / phrase"),
         Line2D([0],[0], marker="o", color="w", markerfacecolor=C["green"], ms=4,
                label="ML method term")],
-        loc="lower left", fontsize=7.5, handletextpad=0.3)
+        loc="lower left", fontsize=9, handletextpad=0.3)
     fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig3_discovery.png"), bbox_inches="tight")
     plt.close(fig)
@@ -208,21 +208,21 @@ def fig4_disclosure():
     ack = [d["ack"][str(y)] for y in yrs]
     full = [d["full"][str(y)] for y in yrs]
     tot = [d["total_astro"][str(y)] for y in yrs]
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.84, 2.88))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.5, 2.74))
     ax1.bar([y-0.2 for y in yrs], full, width=0.4, color=C["sky"], label="mentions in full text")
     ax1.bar([y+0.2 for y in yrs], ack, width=0.4, color=C["vermillion"],
             label="stated in acknowledgments")
     from pantera_style import no_minor_x
     no_minor_x(ax1)
     ax1.set_ylabel("number of papers per year"); ax1.set_xlabel("Year")
-    ax1.legend(fontsize=7, loc="upper left"); ax1.set_xticks(range(2016,2027,2))
+    ax1.legend(fontsize=9, loc="upper left"); ax1.set_xticks(range(2016,2027,2))
     # fraction
     frac_ack = [100*a/t for a,t in zip(ack,tot)]
     frac_full = [100*f/t for f,t in zip(full,tot)]
     ax2.plot(yrs, frac_full, "-o", color=C["sky"], lw=1.3, label="full text")
     ax2.plot(yrs, frac_ack, "-o", color=C["vermillion"], lw=1.3, label="acknowledgments")
     ax2.set_ylabel("% of astronomy papers"); ax2.set_xlabel("Year")
-    ax2.legend(fontsize=7.3); ax2.set_xticks(range(2016,2027,2))
+    ax2.legend(fontsize=9); ax2.set_xticks(range(2016,2027,2))
     ax2.yaxis.set_major_formatter(PercentFormatter(decimals=1))
     footer(fig); fig.tight_layout(rect=[0,0.04,1,1])
     fig.savefig(os.path.join(FIGS, "fig4_disclosure.png"), bbox_inches="tight")
@@ -247,7 +247,7 @@ def fig5_gap():
         ("astro-ph, any AI mention in text",     disc_full, C["blue"], "open"),
         ("astro-ph, stated in acknowledgments",  disc_ack,  C["blue"], "open"),
     ]
-    fig, ax = plt.subplots(figsize=(4.7, 2.4))
+    fig, ax = plt.subplots(figsize=(6.5, 3.0))
     ys = list(range(len(rows)))
     for yi, (lab, v, col, kind) in zip(ys, rows):
         ax.plot([0.1, v], [yi, yi], lw=0.7, color="#CCCCCC", zorder=1)
@@ -260,9 +260,9 @@ def fig5_gap():
                         arrowprops=dict(arrowstyle="->", color=col, lw=1.0))
         ax.text(v*2.2 if kind == "lb" else v*1.25, yi,
                 f"{v:.2f}%" if v < 1 else f"{v:.1f}%",
-                va="center", fontsize=7, color="#555555")
+                va="center", fontsize=9, color="#555555")
     no_minor_y(ax)
-    ax.set_yticks(ys); ax.set_yticklabels([r[0] for r in rows], fontsize=7)
+    ax.set_yticks(ys); ax.set_yticklabels([r[0] for r in rows], fontsize=9)
     ax.invert_yaxis()
     ax.set_xscale("log"); ax.set_xlim(0.1, 60)
     ax.set_xlabel("% of papers with model-edited text (2025), log scale", labelpad=4)
@@ -277,7 +277,7 @@ def fig6_volume():
     fig, ax = plt.subplots(figsize=(4.80, 2.76))
     ax.bar(yc.year, yc.n_abstracts, color=C["blue"])
     ax.axvline(2022.85, color=C["vermillion"], ls="--", lw=1.5)
-    ax.text(2023.0, yc.n_abstracts.max()*0.96, "ChatGPT", color=C["vermillion"], fontsize=7.3)
+    ax.text(2023.0, yc.n_abstracts.max()*0.96, "ChatGPT", color=C["vermillion"], fontsize=9)
     ax.set_xlabel("Year"); ax.set_ylabel("astro-ph submissions (sampled via arXiv API)")
     ax.set_xticks(range(2015,2026,2))
     footer(fig); fig.tight_layout(rect=[0,0.03,1,1])
