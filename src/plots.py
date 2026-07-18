@@ -73,33 +73,41 @@ def fig1_markers_vs_control():
 
 # ---------------------------------------------------------------- FIG 2 (delve collapse)
 def fig2_delve_collapse():
+    """Kobak-style: aggregate quarterly rate on top; per-word small multiples below,
+    each with its own y-range and a dashed pre-2022 counterfactual segment."""
     q = pd.read_csv(os.path.join(DATA, "quarter_markers.csv"))
     a = pd.read_csv(os.path.join(DATA, "alpha_series.csv"))
-    def s(w):
-        d = q[(q.word==w)].sort_values("yq")
-        return d.yq.values, d.freq.values*100
-    fig, (top, bot) = plt.subplots(2, 1, figsize=(5.28, 4.32), sharex=True,
-                                   gridspec_kw={"height_ratios":[1, 1.25]})
-    # TOP: aggregate footprint doesn't shrink
-    top.plot(a.yq, a.rate*100, color=C["black"], lw=1.3, zorder=5)
-    top.set_ylabel("% with ANY marker")
-    # BOTTOM: individual words, zoomed
-    for w, col, lab in [("delve", C["vermillion"], "delve"),
-                        ("underscore", C["green"], "underscore"),
-                        ("leveraging", C["blue"], "leveraging"),
-                        ("pivotal", C["purple"], "pivotal")]:
-        x, y = s(w)
-        bot.plot(x, y, "-o", ms=3, lw=1.2, color=col, label=lab)
-    bot.set_ylabel("% of abstracts (individual words)")
-    bot.set_xlabel("Year (quarterly)")
-    for ax in (top, bot):
-        ax.axvline(2024.35, color=C["grey"], ls=":", lw=1.4)
-    bot.set_xlim(2022, 2026.6)
-    bot.set_ylim(0, 2.0)
-    # legend in the clear upper-left (all lines are low there in 2022-2023);
-    # annotation above the data, connected by the existing dotted line
-    bot.legend(loc="upper left", ncol=1, fontsize=7.5)
-    footer(fig); fig.tight_layout(rect=[0,0.03,1,0.97])
+    ym = pd.read_csv(os.path.join(DATA, "year_markers.csv"))
+    words = ["delve", "underscore", "leveraging", "pivotal"]
+
+    fig = plt.figure(figsize=(7.0, 3.6))
+    gs = fig.add_gridspec(2, 4, height_ratios=[1.0, 1.15], hspace=0.52, wspace=0.42)
+    top = fig.add_subplot(gs[0, :])
+    top.plot(a.yq, a.rate*100, color=C["black"], lw=1.3)
+    top.axvline(2024.35, color=C["grey"], ls=":", lw=1.0)
+    top.set_xlim(2022, 2026.6)
+    top.set_ylabel("% with any marker", fontsize=7.5)
+    top.set_title("any marker word", loc="left", fontsize=8)
+    top.tick_params(labelsize=7)
+
+    for i, w in enumerate(words):
+        ax = fig.add_subplot(gs[1, i])
+        d = q[(q.word == w) & (q.yq >= 2022)].sort_values("yq")
+        # counterfactual: linear fit to the 2015-2021 yearly rates, extrapolated
+        yy = ym[(ym.word == w) & (ym.year <= 2021)]
+        coef = np.polyfit(yy.year, yy.freq*100, 1)
+        xx = np.array([2022, 2026.5])
+        ax.plot(xx, np.clip(np.polyval(coef, xx), 0, None), ls=(0, (3, 2)),
+                lw=0.9, color=C["black"], zorder=2)
+        ax.plot(d.yq, d.freq*100, "-o", ms=2.2, lw=1.1, color=C["blue"], zorder=3)
+        ax.axvline(2024.35, color=C["grey"], ls=":", lw=0.8)
+        ax.set_xlim(2022, 2026.6)
+        ax.set_ylim(0, max(d.freq.max()*100*1.25, 0.1))
+        ax.set_title(w, loc="left", fontsize=8)
+        ax.tick_params(labelsize=6.5)
+        ax.set_xticks([2022, 2024, 2026])
+        if i == 0:
+            ax.set_ylabel("% of abstracts", fontsize=7.5)
     fig.savefig(os.path.join(FIGS, "fig2_delve_collapse.png"), bbox_inches="tight")
     plt.close(fig)
 
