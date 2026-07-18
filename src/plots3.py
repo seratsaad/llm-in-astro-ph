@@ -15,16 +15,16 @@ def fig10_subfield():
     palette = {order[0]: C["vermillion"]}
     others = [C["blue"], C["green"], C["purple"], C["sky"], C["orange"]]
     for i, s in enumerate(order[1:]): palette[s] = others[i % len(others)]
-    fig, ax = plt.subplots(figsize=(8.8, 5.3))
+    fig, ax = plt.subplots(figsize=(5.28, 3.18))
     for s in order:
         d = df[df.subfield==s].sort_values("year")
         lw = 3.2 if s == order[0] else 1.8
-        ax.plot(d.year, d.rate, "-o", ms=4, lw=lw, color=palette[s],
+        ax.plot(d.year, d.rate, "-o", ms=3.2, lw=lw, color=palette[s],
                 label=s + ("  ← leads" if s == order[0] else ""))
     ax.axvline(2022.85, color=C["grey"], ls="--", lw=1)
     ax.text(2022.7, 7.9, "ChatGPT", rotation=90, va="top", ha="right", fontsize=8, color=C["grey"])
     ax.set_xlabel("Year"); ax.set_ylabel("% of abstracts with LLM marker basket")
-    ax.legend(loc="upper left", fontsize=9.2)
+    ax.legend(loc="upper left", fontsize=7.4)
     ax.set_xticks(range(2018, 2027, 2))
     footer(fig, "Data: 200,547 astro-ph abstracts by primary arXiv category  |  Analysis for Astrobites")
     fig.tight_layout(rect=[0,0.03,1,1])
@@ -49,7 +49,7 @@ def fig11_geography():
         lo, hi = wilson(r["marker"], r["total"])
         xerr_by[c] = (r["marker_pct"] - lo*100, hi*100 - r["marker_pct"])
     FS = 9.5                       # label font size
-    fig, ax = plt.subplots(figsize=(11.0, 7.0))
+    fig, ax = plt.subplots(figsize=(6.60, 4.20))
     for (c, mk, dc, n, nat) in rows:
         col = C["blue"] if nat else C["vermillion"]
         ax.scatter(mk, dc, s=30+n/40, color=col, alpha=0.85, edgecolor="white",
@@ -160,7 +160,7 @@ def fig11_geography():
     from matplotlib.lines import Line2D
     ax.legend(handles=[Line2D([0],[0],marker='o',color='w',markerfacecolor=C["blue"],label='native English',ms=9),
                        Line2D([0],[0],marker='o',color='w',markerfacecolor=C["vermillion"],label='non-native English',ms=9)],
-              loc="upper left", fontsize=9)
+              loc="upper left", fontsize=7.3)
     footer(fig, "Data: NASA ADS aff: x abs:/ack: queries, 2025  |  aff: matches any affiliation (multi-country collabs double-counted)")
     fig.savefig(os.path.join(FIGS, "fig11_equity_map.png"), bbox_inches="tight"); plt.close(fig)
 
@@ -185,7 +185,7 @@ def fig12_citation_integrity():
     n_arxiv_inst = 22547   # cited arXiv-ID instances, all resolve
     n_doi_checked = v["doi"]["checked"]
 
-    fig, (axL, axR) = plt.subplots(1, 2, figsize=(12.0, 5.0), gridspec_kw={"width_ratios":[1,1]})
+    fig, (axL, axR) = plt.subplots(1, 2, figsize=(7.20, 3.00), gridspec_kw={"width_ratios":[1,1]})
     # LEFT: classification of the Crossref "misses" -- none is a fabricated reference
     order = ["arXiv DataCite DOI\n(real)", "Zenodo DOI (real)",
              "data archive / regional\njournal / funder (real)",
@@ -193,11 +193,11 @@ def fig12_citation_integrity():
     labels = [k for k in order if k in cc]; vals = [cc[k] for k in labels]
     from pantera_style import no_minor_y, no_minor_x
     axL.barh(range(len(labels)), vals, color=C["green"])
-    axL.set_yticks(range(len(labels))); axL.set_yticklabels(labels, fontsize=9.5)
+    axL.set_yticks(range(len(labels))); axL.set_yticklabels(labels, fontsize=7.5)
     no_minor_y(axL)
     axL.set_xlabel(f"count among the {sum(vals)} Crossref 'misses'")
     for i, val in enumerate(vals):
-        axL.text(val+1, i, str(val), va="center", fontsize=10, fontweight="normal")
+        axL.text(val+1, i, str(val), va="center", fontsize=7.8, fontweight="normal")
     axL.set_xlim(0, max(vals)*1.2)
     # RIGHT: fabrication rate astro vs elsewhere
     fields = ["astro-ph\n(this work)", "Biomed 2025\n(Lancet)", "Biomed 2026\n(Lancet)"]
@@ -207,12 +207,12 @@ def fig12_citation_integrity():
     no_minor_x(axR)
     for bar, val in zip(b, fvals):
         axR.text(bar.get_x()+bar.get_width()/2, val+0.008,
-                 "0" if val == 0 else f"{val:.2f}%", ha="center", fontsize=11, fontweight="normal")
+                 "0" if val == 0 else f"{val:.2f}%", ha="center", fontsize=8, fontweight="normal")
     axR.set_ylabel("% of papers with a fabricated citation")
     axR.set_ylim(0, 0.45)
     axR.text(0.02, 0.92, f"astro-ph: 0 fabricated references in\n{n_arxiv_inst:,} cited arXiv IDs (all resolve)\n"
              f"+ {n_doi_checked:,} sampled DOIs (all trace to\nreal works after inspection)",
-             transform=axR.transAxes, fontsize=9, va="top", color=C["black"])
+             transform=axR.transAxes, fontsize=7.3, va="top", color=C["black"])
     footer(fig, "astro-ph: arXiv API + Crossref resolution of refs from recent LaTeX source. "
                 "Biomed: Lancet/Topaz+2026 (1-in-458 papers 2025).")
     fig.tight_layout(rect=[0,0.04,1,1])

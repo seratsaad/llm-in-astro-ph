@@ -98,17 +98,17 @@ def make_figure():
     ]
     labels = [r[0] for r in rungs]; vals = [r[1] for r in rungs]; cols = [r[2] for r in rungs]
     from pantera_style import no_minor_y
-    fig, ax = plt.subplots(figsize=(9.4, 5.6))
+    fig, ax = plt.subplots(figsize=(5.64, 3.36))
     y = range(len(rungs))
     ax.barh(list(y), vals, color=cols)
     no_minor_y(ax)
-    ax.set_yticks(list(y)); ax.set_yticklabels(labels, fontsize=9.5)
+    ax.set_yticks(list(y)); ax.set_yticklabels(labels, fontsize=7.5)
     ax.invert_yaxis()
     ax.set_xscale("log")
     ax.set_xlim(0.05, 30)
     for i, v in enumerate(vals):
         ax.text(v*1.12, i, f"{v:.2f}%" if v < 1 else f"{v:.1f}%", va="center",
-                fontsize=10.5, fontweight="normal")
+                fontsize=8, fontweight="normal")
     ax.set_xlabel("% of astronomy papers (2024 to 2026), log scale", labelpad=6)
     fig.tight_layout()
     fig.savefig(os.path.join(os.path.dirname(__file__), "..", "figs", "fig9_detection_ladder.png"),

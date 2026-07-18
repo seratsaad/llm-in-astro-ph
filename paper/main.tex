@@ -22,27 +22,19 @@
 \affiliation{Department of Astronomy, The Ohio State University, Columbus, OH 43210, USA}
 
 \begin{abstract}
-Large language models became easy to use in late 2022, and their use in scientific
-writing has grown quickly in most fields. The size of this change in astronomy has not
-been reported. We measure it from the text itself. Using 200{,}547 astro-ph abstracts
-posted to arXiv between 2015 and 2026, we track a set of ``marker'' words that were rare
-for the whole decade before ChatGPT and then became common. The fraction of abstracts
-that contain at least one such word rose from about 1.5\% before 2022 to about 5.8\% in
-2025, while a matched set of neutral astronomy words stayed flat. A conservative estimate
-puts a lower bound of about 4\% on the fraction of recent abstracts whose language a model
-touched; the bound stays between 3.0\% and 4.3\% under every variant of baseline window,
-pre-existing trend, and word list that we tried. We let the data pick the words and phrases without an imported list, and recover
-the same style vocabulary next to the genuinely new instrument and survey names. The marker
-words also appear together far more often than chance: 27 of 91 marker pairs exceed
-independence at $p<0.01$, where one would be expected by chance, which is what one expects
-if a single cause acts on the whole abstract. Against these numbers, explicit disclosure of model use in astronomy papers stays
-below 1\%, and crude checks of the LaTeX source find near-zero pasted-model text. In 2{,}532 recent papers, all 22{,}547
-cited arXiv identifiers resolve and every checked DOI traces to a real work, which puts a
-95\% upper limit of 0.24\% on the per-paper fabricated-citation rate and excludes the
-early-2026 biomedical rate; the astronomy habit of building reference lists from the NASA
-Astrophysics Data System appears to protect the citation record. Finally, the word signal weakens in 2026 even
-as disclosure keeps rising, so word counts are a lower bound that will get harder to measure.
-All data and code are public.
+Large language models became easy to use in late 2022, and their use in scientific writing has
+grown quickly in most fields, but the size of this change in astronomy has not been reported. We
+measure it from 200{,}547 astro-ph abstracts posted to arXiv between 2015 and 2026. The fraction
+of abstracts that contain a ``marker'' word, rare before ChatGPT and common after, rose from
+1.5\% before 2022 to 5.8\% in 2025, while a matched set of neutral words stayed flat. A
+conservative lower bound puts the model-touched fraction of 2025 abstracts near 4\%, robust to
+baseline and word-list choice. Chosen without an imported list, the data recover the
+same style words next to the genuinely new instrument names, and the marker words occur together
+far more often than chance (27 of 91 pairs above independence at $p<0.01$). Against these numbers, explicit disclosure of model use stays
+below 1\% and crude source-code checks find near-zero pasted text. All 22{,}547 cited arXiv
+identifiers in 2{,}532 recent papers resolve, so fabricated citations, which are rising in
+biomedicine, sit below a 0.24\% per-paper limit here. The word signal weakens in 2026 even as
+disclosure rises. All data and code are public.
 \end{abstract}
 
 \keywords{Astronomy data analysis --- Scholarly communication --- Natural language processing}
@@ -127,7 +119,7 @@ the model-favored vocabulary and is not a general change in how abstracts are wr
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.68\textwidth]{fig1_markers_vs_control.png}
+\includegraphics[width=0.74\textwidth]{fig1_markers_vs_control.png}
 \caption{Fraction of astro-ph abstracts containing a marker word (red) and a matched set of
 neutral control words (blue), by year. Error bars on the marker curve are Wilson 95\%
 intervals; most are comparable to the symbol size ($n\simeq15{,}000$--$22{,}000$ abstracts
@@ -144,7 +136,7 @@ habit stays, which matches the cross-field result of \citet{GengTrotta2025}.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.68\textwidth]{fig2_delve_collapse.png}
+\includegraphics[width=0.74\textwidth]{fig2_delve_collapse.png}
 \caption{Top: the fraction of abstracts with any marker word, by quarter, keeps rising.
 Bottom: single words. \mw{delve} peaks in early 2024 and then declines, while other markers
 keep rising; the aggregate does not fall with it.}
@@ -185,7 +177,7 @@ once. The full table of every word that clears a count floor is in the public da
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.68\textwidth]{fig3_discovery.png}
+\includegraphics[width=0.74\textwidth]{fig3_discovery.png}
 \caption{Words with the largest frequency increase in astro-ph abstracts, 2024--2026 versus
 2018--2021. Blue: new instruments, surveys, and object classes. Red: style words. Green:
 technical machine-learning terms.}
@@ -202,7 +194,7 @@ harder to remove by editing one word at a time.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.68\textwidth]{fig_ngram_viewer.png}
+\includegraphics[width=0.74\textwidth]{fig_ngram_viewer.png}
 \caption{Fraction of abstracts containing selected two-word phrases, by year. Model-favored
 phrases rise after 2022; a control phrase (\mw{wide range}) stays flat.}
 \label{fig:ngram}
@@ -210,7 +202,7 @@ phrases rise after 2022; a control phrase (\mw{wide range}) stays flat.}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.68\textwidth]{fig_bigram_discovery.png}
+\includegraphics[width=0.74\textwidth]{fig_bigram_discovery.png}
 \caption{Two-word phrases with the largest frequency increase, 2024--2026 versus 2018--2021,
 split into new-topic phrases (blue) and style phrases (red).}
 \label{fig:bigram}
@@ -251,7 +243,7 @@ unrelated trends.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.68\textwidth]{fig_cooccur.png}
+\includegraphics[width=0.74\textwidth]{fig_cooccur.png}
 \caption{Co-occurrence lift for pairs of marker words in 2024--2026 abstracts. Colored cells
 are the 27 of 91 pairs whose joint count exceeds the independence expectation at $p<0.01$
 (Poisson test); grey cells are consistent with independence. Lifts above $\sim$40 rest on
@@ -323,7 +315,7 @@ double digits.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.85\textwidth]{fig5_gap.png}
+\includegraphics[width=\textwidth]{fig5_gap.png}
 \caption{Left: for 2025 astronomy papers, the estimated lower bound on the model-touched
 fraction (about 4.3\%) next to the fraction that state model use. Right: the astronomy lower
 bound against published estimates for other fields \citep{Liang2024,Kobak2024}.}
@@ -347,7 +339,7 @@ counting, model use is common and stated use is rare.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.85\textwidth]{fig4_disclosure.png}
+\includegraphics[width=\textwidth]{fig4_disclosure.png}
 \caption{Left: number of astronomy papers per year that mention a model in full text (blue)
 or in the acknowledgments (red); the count is zero before 2023. Right: the same as a share of
 all astronomy papers, which stays below 1\%.}
@@ -374,7 +366,7 @@ word counting is the only method here that sees most of the use.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.85\textwidth]{fig9_detection_ladder.png}
+\includegraphics[width=\textwidth]{fig9_detection_ladder.png}
 \caption{Four ways of looking for model use in the same 2024--2026 astronomy papers, on a log
 scale. Source leaks and stated disclosure find the least; the word signal finds most. The
 biomedical estimate \citep{Kobak2024} is shown for scale.}
@@ -418,7 +410,7 @@ skews toward recent, arXiv-native bibliographies (Figure~\ref{fig:citations}).
 
 \begin{figure}
 \centering
-\includegraphics[width=0.85\textwidth]{fig12_citation_integrity.png}
+\includegraphics[width=\textwidth]{fig12_citation_integrity.png}
 \caption{Left: classification, after manual inspection, of the 134 DOIs that a Crossref
 check could not resolve. None is a fabricated reference: most are real records in registries
 Crossref does not index, five are wrong identifiers attached to real references, and four are
@@ -438,7 +430,7 @@ seen across science also holds inside astronomy.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.68\textwidth]{fig10_subfield_diffusion.png}
+\includegraphics[width=0.74\textwidth]{fig10_subfield_diffusion.png}
 \caption{Marker rate by primary astro-ph subfield. Instrumentation and Methods leads;
 high-energy astrophysics trails.}
 \label{fig:subfield}
@@ -458,7 +450,7 @@ once, and the small-sample countries are noisy; these numbers are first-order.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.85\textwidth]{fig11_equity_map.png}
+\includegraphics[width=\textwidth]{fig11_equity_map.png}
 \caption{Marker rate against disclosure rate by author country in 2025. Blue points mark
 countries where English is a first language, and bubble size is the number of papers. Wilson
 95\% intervals on the marker rates are quoted in the text; the smallest sample shown is Iran
@@ -479,7 +471,7 @@ pushes promotion up on its own, but the flat caution alongside rising volume is 
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.68\textwidth]{fig7_hype_hedge.png}
+\includegraphics[width=0.74\textwidth]{fig7_hype_hedge.png}
 \caption{Promotional and hedging word frequency, indexed to the 2015--2019 mean. Promotional
 words rise with model use; hedging words stay flat.}
 \label{fig:hype}
@@ -498,7 +490,7 @@ word-based number is therefore a lower bound, and the bound will slide down even
 
 \begin{figure}
 \centering
-\includegraphics[width=0.85\textwidth]{fig8_detectability_erosion.png}
+\includegraphics[width=\textwidth]{fig8_detectability_erosion.png}
 \caption{Left: the marker words weaken across the board in 2026, both the early tells that
 peaked first (\mw{delve}, \mw{intricate}, \mw{pivotal}) and the later ones (\mw{underscore},
 \mw{leveraging}). Right: over the same months, stated model use keeps rising. Use is not
