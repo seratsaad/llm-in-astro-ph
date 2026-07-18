@@ -87,7 +87,8 @@ def fig2_delve_collapse():
     top.axvline(2024.35, color=C["grey"], ls=":", lw=1.0)
     top.set_xlim(2022, 2026.6)
     top.set_ylabel("% with any marker", fontsize=9)
-    top.set_title("any marker word", loc="left", fontsize=9.5)
+    top.text(0.015, 0.93, "any marker word", transform=top.transAxes,
+             va="top", ha="left", fontsize=9.5, fontweight="bold")
     top.tick_params(labelsize=9)
 
     for i, w in enumerate(words):
@@ -103,7 +104,8 @@ def fig2_delve_collapse():
         ax.axvline(2024.35, color=C["grey"], ls=":", lw=0.8)
         ax.set_xlim(2022, 2026.6)
         ax.set_ylim(0, max(d.freq.max()*100*1.25, 0.1))
-        ax.set_title(w, loc="left", fontsize=9.5)
+        ax.text(0.05, 0.94, w, transform=ax.transAxes, va="top", ha="left",
+                fontsize=9.5, fontweight="bold")
         ax.tick_params(labelsize=8.5)
         ax.set_xticks([2022, 2024, 2026])
         if i == 0:
@@ -156,7 +158,8 @@ def fig3_discovery():
     axA.set_xlim(3e-3, 30); axA.set_ylim(0.25, 40)
     axA.set_xlabel("frequency in 2024-2026 (% of abstracts)")
     axA.set_ylabel("frequency ratio, 2024-2026 / 2018-2021")
-    axA.set_title("(a) single words", loc="left", fontsize=9.5)
+    axA.text(0.025, 0.97, "(a) single words", transform=axA.transAxes,
+             va="top", ha="left", fontsize=9.5, fontweight="bold", zorder=7)
     show_a = ["nircam", "miri", "nirspec", "jwst", "desi", "xrism", "ixpe",
               "interpretable", "leveraging", "aligns", "offering", "pivotal",
               "intricate", "highlighting", "delve"]
@@ -178,7 +181,8 @@ def fig3_discovery():
     axB.axhline(5, color=C["grey"], ls="--", lw=0.7, zorder=2)
     axB.set_xlim(3e-3, 30); axB.set_ylim(0.25, 40)
     axB.set_xlabel("frequency in 2024-2026 (% of abstracts)")
-    axB.set_title("(b) two-word phrases", loc="left", fontsize=9.5)
+    axB.text(0.025, 0.97, "(b) two-word phrases", transform=axB.transAxes,
+             va="top", ha="left", fontsize=9.5, fontweight="bold", zorder=7)
     show_b = ["jwst observations", "the desi", "energy spectroscopic",
               "habitable worlds", "leveraging the", "align with", "offering a",
               "results highlight", "findings indicate"]
