@@ -98,15 +98,15 @@ def make_figure():
     ]
     labels = [r[0] for r in rungs]; vals = [r[1] for r in rungs]; cols = [r[2] for r in rungs]
     from pantera_style import no_minor_y
-    fig, ax = plt.subplots(figsize=(4.6, 2.6))
+    fig, ax = plt.subplots(figsize=(6.5, 3.4))
     y = list(range(len(rungs)))
     for yi, v, c in zip(y, vals, cols):
         ax.plot([0.05, v], [yi, yi], lw=0.7, color="#BBBBBB", zorder=1)
         ax.plot(v, yi, "o", ms=5, color=c, zorder=3)
         ax.text(v*1.25, yi, f"{v:.2f}%" if v < 1 else f"{v:.1f}%", va="center",
-                fontsize=7, color="#555555")
+                fontsize=9, color="#555555")
     no_minor_y(ax)
-    ax.set_yticks(y); ax.set_yticklabels(labels, fontsize=7)
+    ax.set_yticks(y); ax.set_yticklabels(labels, fontsize=9)
     ax.invert_yaxis()
     ax.set_xscale("log")
     ax.set_xlim(0.05, 40)

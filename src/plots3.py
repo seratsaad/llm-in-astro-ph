@@ -15,16 +15,16 @@ def fig10_subfield():
     palette = {order[0]: C["vermillion"]}
     others = [C["blue"], C["green"], C["purple"], C["sky"], C["orange"]]
     for i, s in enumerate(order[1:]): palette[s] = others[i % len(others)]
-    fig, ax = plt.subplots(figsize=(5.28, 3.18))
+    fig, ax = plt.subplots(figsize=(4.8, 2.9))
     for s in order:
         d = df[df.subfield==s].sort_values("year")
         lw = 3.2 if s == order[0] else 1.8
         ax.plot(d.year, d.rate, "-o", ms=3.2, lw=lw, color=palette[s],
                 label=s)
     ax.axvline(2022.85, color=C["grey"], ls="--", lw=1)
-    ax.text(2022.7, 7.9, "ChatGPT", rotation=90, va="top", ha="right", fontsize=8, color=C["grey"])
+    ax.text(2022.7, 7.9, "ChatGPT", rotation=90, va="top", ha="right", fontsize=9.5, color=C["grey"])
     ax.set_xlabel("Year"); ax.set_ylabel("% of abstracts with LLM marker basket")
-    ax.legend(loc="upper left", fontsize=7.4)
+    ax.legend(loc="upper left", fontsize=9)
     ax.set_xticks(range(2018, 2027, 2))
     footer(fig, "Data: 200,547 astro-ph abstracts by primary arXiv category  |  Analysis for Astrobites")
     fig.tight_layout(rect=[0,0.03,1,1])
@@ -49,7 +49,7 @@ def fig11_geography():
         lo, hi = wilson(r["marker"], r["total"])
         xerr_by[c] = (r["marker_pct"] - lo*100, hi*100 - r["marker_pct"])
     FS = 9.5                       # label font size
-    fig, ax = plt.subplots(figsize=(6.60, 4.20))
+    fig, ax = plt.subplots(figsize=(6.5, 4.14))
     for (c, mk, dc, n, nat) in rows:
         col = C["blue"] if nat else C["vermillion"]
         ax.scatter(mk, dc, s=30+n/40, color=col, alpha=0.85, edgecolor="white",
@@ -157,7 +157,7 @@ def fig11_geography():
     from matplotlib.lines import Line2D
     ax.legend(handles=[Line2D([0],[0],marker='o',color='w',markerfacecolor=C["blue"],label='native English',ms=9),
                        Line2D([0],[0],marker='o',color='w',markerfacecolor=C["vermillion"],label='non-native English',ms=9)],
-              loc="upper left", fontsize=7.3)
+              loc="upper left", fontsize=9)
     footer(fig, "Data: NASA ADS aff: x abs:/ack: queries, 2025  |  aff: matches any affiliation (multi-country collabs double-counted)")
     fig.savefig(os.path.join(FIGS, "fig11_equity_map.png"), bbox_inches="tight"); plt.close(fig)
 
@@ -182,7 +182,7 @@ def fig12_citation_integrity():
     n_arxiv_inst = 22547   # cited arXiv-ID instances, all resolve
     n_doi_checked = v["doi"]["checked"]
 
-    fig, (axL, axR) = plt.subplots(1, 2, figsize=(6.9, 2.6), gridspec_kw={"width_ratios":[1.15,1]})
+    fig, (axL, axR) = plt.subplots(1, 2, figsize=(6.5, 2.6), gridspec_kw={"width_ratios":[1.15,1]})
     # LEFT: classification of Crossref misses as a dot plot (none is a fabrication)
     order = ["arXiv DataCite DOI\n(real)", "Zenodo DOI (real)",
              "data archive / regional\njournal / funder (real)",
@@ -192,12 +192,12 @@ def fig12_citation_integrity():
     ys = list(range(len(labels)))
     axL.barh(ys, vals, color=C["green"], height=0.62)
     for yi, v in zip(ys, vals):
-        axL.text(v+2.5, yi, str(v), va="center", fontsize=7, color="#555555")
+        axL.text(v+2.5, yi, str(v), va="center", fontsize=9, color="#555555")
     no_minor_y(axL)
-    axL.set_yticks(ys); axL.set_yticklabels(labels, fontsize=6.5)
+    axL.set_yticks(ys); axL.set_yticklabels(labels, fontsize=8.5)
     axL.invert_yaxis()
     axL.set_xlim(0, 108)
-    axL.set_xlabel(f"count among the {sum(vals)} Crossref 'misses'", fontsize=7.5)
+    axL.set_xlabel(f"count among the {sum(vals)} Crossref 'misses'", fontsize=9)
     # RIGHT: fabrication rate; astro-ph as a 95% upper limit (arrow), biomed as points
     cats = ["astro-ph\n(95% limit)", "Biomed 2025\n(Lancet)", "Biomed 2026\n(Lancet)"]
     xs = [0, 1, 2]
@@ -208,12 +208,12 @@ def fig12_citation_integrity():
     axR.plot(1, 0.22, "o", ms=5, color=C["grey"])
     axR.plot(2, 0.36, "o", ms=5, color=C["grey"])
     no_minor_x(axR)
-    axR.set_xticks(xs); axR.set_xticklabels(cats, fontsize=6.5)
+    axR.set_xticks(xs); axR.set_xticklabels(cats, fontsize=8.5)
     axR.set_xlim(-0.5, 2.5); axR.set_ylim(0, 0.45)
-    axR.set_ylabel("% of papers with a fabricated citation", fontsize=7.5)
+    axR.set_ylabel("% of papers with a fabricated citation", fontsize=9)
     axR.text(0.03, 0.96, f"0 fabricated references in {n_arxiv_inst:,} cited\narXiv IDs"
              f" + {n_doi_checked:,} sampled DOIs",
-             transform=axR.transAxes, fontsize=6.3, va="top", color=C["black"])
+             transform=axR.transAxes, fontsize=8, va="top", color=C["black"])
     fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig12_citation_integrity.png"), bbox_inches="tight")
 

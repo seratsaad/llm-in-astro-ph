@@ -21,17 +21,17 @@ def fig7_hype_hedge():
     hbase, gbase = base.hype_per1k.mean(), base.hedge_per1k.mean()
     d["hype_idx"] = 100 * d.hype_per1k / hbase
     d["hedge_idx"] = 100 * d.hedge_per1k / gbase
-    fig, ax = plt.subplots(figsize=(5.16, 3.06))
+    fig, ax = plt.subplots(figsize=(4.8, 2.85))
     ax.axhline(100, color=C["grey"], lw=1, ls=":")
     ax.plot(d.year, d.hype_idx, "-o", color=C["vermillion"], lw=1.5, ms=3,
             label="Hype words (unprecedented, remarkable, striking, ...)")
     ax.plot(d.year, d.hedge_idx, "-s", color=C["blue"], lw=1.3, ms=3.4,
             label="Hedging words (may, might, suggest, likely, ...)")
     ax.axvline(2022.85, color=C["grey"], ls="--", lw=1)
-    ax.text(2022.7, 126.5, "ChatGPT", rotation=90, va="top", ha="right", fontsize=8, color=C["grey"])
+    ax.text(2022.7, 126.5, "ChatGPT", rotation=90, va="top", ha="right", fontsize=9.5, color=C["grey"])
     ax.set_ylabel("frequency, indexed to 2015-19 = 100"); ax.set_xlabel("Year")
     ax.set_ylim(90, 128)
-    ax.legend(loc="upper left", fontsize=7.5)
+    ax.legend(loc="upper left", fontsize=9)
     ax.set_xticks(range(2015, 2027, 2))
     footer(fig); fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig7_hype_hedge.png"), bbox_inches="tight"); plt.close(fig)
@@ -46,7 +46,7 @@ def fig8_detectability():
     # annualize 2026 (partial ~ half year): scale full-text fraction is a rate so fine
     frac_full = [100*f/t for f, t in zip(full, tot)]
 
-    fig, (axL, axR) = plt.subplots(1, 2, figsize=(7.32, 3.12))
+    fig, (axL, axR) = plt.subplots(1, 2, figsize=(6.5, 2.77))
     # LEFT: marker clusters quarterly
     axL.plot(s.yq, s.all_markers*100, color=C["black"], lw=1.4, label="all markers", zorder=5)
     axL.plot(s.yq, s.collapsing*100, "-o", ms=2.8, color=C["vermillion"], lw=1.2,
@@ -54,7 +54,7 @@ def fig8_detectability():
     axL.plot(s.yq, s.rising*100, "-o", ms=2.8, color=C["green"], lw=1.2,
              label="late tells")
     axL.set_xlabel("Year (quarterly)"); axL.set_ylabel("% of abstracts with marker(s)")
-    axL.legend(loc="upper left", fontsize=7.5)
+    axL.legend(loc="upper left", fontsize=9)
     axL.set_xlim(2022, 2026.6)
     # RIGHT: disclosure still rising -> contradiction
     axR.plot(yrs, frac_full, "-o", color=C["sky"], lw=1.4, ms=3)
