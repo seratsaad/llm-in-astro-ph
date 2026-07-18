@@ -133,7 +133,7 @@ def fig3_discovery():
                 "language","transformer","simulation","cosmos","euclid","lrds",
                 "little","red","dots")
 
-    fig, (axA, axB) = plt.subplots(1, 2, figsize=(7.1, 3.2))
+    fig, (axA, axB) = plt.subplots(1, 2, figsize=(9.0, 4.1))
     for ax in (axA, axB):
         ax.set_xscale("log"); ax.set_yscale("log")
 
@@ -151,19 +151,19 @@ def fig3_discovery():
     sel = sel[sel.kind.notna()]
     kcol = {"inst": C["blue"], "sty": C["vermillion"], "ml": C["green"]}
     for k, g in sel.groupby("kind"):
-        axA.scatter(g.rec_freq*100, g.ratio, s=7, color=kcol[k], zorder=4, linewidths=0)
+        axA.scatter(g.rec_freq*100, g.ratio, s=10, color=kcol[k], zorder=4, linewidths=0)
     axA.axhline(5, color=C["grey"], ls="--", lw=0.7, zorder=2)
     axA.set_xlim(3e-3, 30); axA.set_ylim(0.25, 40)
     axA.set_xlabel("frequency in 2024-2026 (% of abstracts)")
     axA.set_ylabel("frequency ratio, 2024-2026 / 2018-2021")
-    axA.set_title("(a) single words", loc="left", fontsize=8)
+    axA.set_title("(a) single words", loc="left", fontsize=9.5)
     show_a = ["nircam", "miri", "nirspec", "jwst", "desi", "xrism", "ixpe",
               "interpretable", "leveraging", "aligns", "offering", "pivotal",
               "intricate", "highlighting", "delve"]
     ann = sel[sel.word.isin(show_a)]
     others = sel[~sel.word.isin(show_a)]
     place_labels(axA, list(ann.rec_freq*100), list(ann.ratio), list(ann.word),
-                 colors=[kcol[k] for k in ann.kind], fontsize=6.2,
+                 colors=[kcol[k] for k in ann.kind], fontsize=7.6,
                  obstacles=list(zip(others.rec_freq*100, others.ratio)))
 
     # ---- panel (b): two-word phrases ----
@@ -174,18 +174,18 @@ def fig3_discovery():
         return "inst" if any(k in t.split() for k in topic_kw) else "sty"
     selb["kind"] = selb.bigram.map(kindb)
     for k, g in selb.groupby("kind"):
-        axB.scatter(g.rec_freq*100, g.ratio, s=7, color=kcol[k], zorder=4, linewidths=0)
+        axB.scatter(g.rec_freq*100, g.ratio, s=10, color=kcol[k], zorder=4, linewidths=0)
     axB.axhline(5, color=C["grey"], ls="--", lw=0.7, zorder=2)
     axB.set_xlim(3e-3, 30); axB.set_ylim(0.25, 40)
     axB.set_xlabel("frequency in 2024-2026 (% of abstracts)")
-    axB.set_title("(b) two-word phrases", loc="left", fontsize=8)
+    axB.set_title("(b) two-word phrases", loc="left", fontsize=9.5)
     show_b = ["jwst observations", "the desi", "energy spectroscopic",
               "habitable worlds", "leveraging the", "align with", "offering a",
               "results highlight", "findings indicate"]
     annb = selb[selb.bigram.isin(show_b)]
     othb = selb[~selb.bigram.isin(show_b)]
     place_labels(axB, list(annb.rec_freq*100), list(annb.ratio), list(annb.bigram),
-                 colors=[kcol[k] for k in annb.kind], fontsize=6.2,
+                 colors=[kcol[k] for k in annb.kind], fontsize=7.6,
                  obstacles=list(zip(othb.rec_freq*100, othb.ratio)))
 
     from matplotlib.lines import Line2D
@@ -196,7 +196,7 @@ def fig3_discovery():
                label="style word / phrase"),
         Line2D([0],[0], marker="o", color="w", markerfacecolor=C["green"], ms=4,
                label="ML method term")],
-        loc="lower left", fontsize=6, handletextpad=0.2)
+        loc="lower left", fontsize=7.5, handletextpad=0.3)
     fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig3_discovery.png"), bbox_inches="tight")
     plt.close(fig)
