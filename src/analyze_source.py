@@ -98,18 +98,19 @@ def make_figure():
     ]
     labels = [r[0] for r in rungs]; vals = [r[1] for r in rungs]; cols = [r[2] for r in rungs]
     from pantera_style import no_minor_y
-    fig, ax = plt.subplots(figsize=(5.64, 3.36))
-    y = range(len(rungs))
-    ax.barh(list(y), vals, color=cols)
+    fig, ax = plt.subplots(figsize=(4.6, 2.6))
+    y = list(range(len(rungs)))
+    for yi, v, c in zip(y, vals, cols):
+        ax.plot([0.05, v], [yi, yi], lw=0.7, color="#BBBBBB", zorder=1)
+        ax.plot(v, yi, "o", ms=5, color=c, zorder=3)
+        ax.text(v*1.25, yi, f"{v:.2f}%" if v < 1 else f"{v:.1f}%", va="center",
+                fontsize=7, color="#555555")
     no_minor_y(ax)
-    ax.set_yticks(list(y)); ax.set_yticklabels(labels, fontsize=7.5)
+    ax.set_yticks(y); ax.set_yticklabels(labels, fontsize=7)
     ax.invert_yaxis()
     ax.set_xscale("log")
-    ax.set_xlim(0.05, 30)
-    for i, v in enumerate(vals):
-        ax.text(v*1.12, i, f"{v:.2f}%" if v < 1 else f"{v:.1f}%", va="center",
-                fontsize=8, fontweight="normal")
-    ax.set_xlabel("% of astronomy papers (2024 to 2026), log scale", labelpad=6)
+    ax.set_xlim(0.05, 40)
+    ax.set_xlabel("% of astronomy papers (2024 to 2026), log scale", labelpad=4)
     fig.tight_layout()
     fig.savefig(os.path.join(os.path.dirname(__file__), "..", "figs", "fig9_detection_ladder.png"),
                 bbox_inches="tight")

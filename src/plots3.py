@@ -185,38 +185,41 @@ def fig12_citation_integrity():
     n_arxiv_inst = 22547   # cited arXiv-ID instances, all resolve
     n_doi_checked = v["doi"]["checked"]
 
-    fig, (axL, axR) = plt.subplots(1, 2, figsize=(7.20, 3.00), gridspec_kw={"width_ratios":[1,1]})
-    # LEFT: classification of the Crossref "misses" -- none is a fabricated reference
+    fig, (axL, axR) = plt.subplots(1, 2, figsize=(6.9, 2.6), gridspec_kw={"width_ratios":[1.15,1]})
+    # LEFT: classification of Crossref misses as a dot plot (none is a fabrication)
     order = ["arXiv DataCite DOI\n(real)", "Zenodo DOI (real)",
              "data archive / regional\njournal / funder (real)",
              "wrong identifier,\nreal reference", "our extraction\nartifact"]
     labels = [k for k in order if k in cc]; vals = [cc[k] for k in labels]
     from pantera_style import no_minor_y, no_minor_x
-    axL.barh(range(len(labels)), vals, color=C["green"])
-    axL.set_yticks(range(len(labels))); axL.set_yticklabels(labels, fontsize=7.5)
+    ys = list(range(len(labels)))
+    for yi, v in zip(ys, vals):
+        axL.plot([0, v], [yi, yi], lw=0.7, color="#CCCCCC", zorder=1)
+        axL.plot(v, yi, "o", ms=5, color=C["green"], zorder=3)
+        axL.text(v+3, yi, str(v), va="center", fontsize=7, color="#555555")
     no_minor_y(axL)
-    axL.set_xlabel(f"count among the {sum(vals)} Crossref 'misses'")
-    for i, val in enumerate(vals):
-        axL.text(val+1, i, str(val), va="center", fontsize=7.8, fontweight="normal")
-    axL.set_xlim(0, max(vals)*1.2)
-    # RIGHT: fabrication rate astro vs elsewhere
-    fields = ["astro-ph\n(this work)", "Biomed 2025\n(Lancet)", "Biomed 2026\n(Lancet)"]
-    fvals = [0.0, 0.22, 0.36]   # % of papers with >=1 fabricated citation
-    cols = [C["blue"], C["grey"], C["grey"]]
-    b = axR.bar(fields, fvals, color=cols, width=0.6)
+    axL.set_yticks(ys); axL.set_yticklabels(labels, fontsize=6.5)
+    axL.invert_yaxis()
+    axL.set_xlim(0, 108)
+    axL.set_xlabel(f"count among the {sum(vals)} Crossref 'misses'", fontsize=7.5)
+    # RIGHT: fabrication rate; astro-ph as a 95% upper limit (arrow), biomed as points
+    cats = ["astro-ph\n(95% limit)", "Biomed 2025\n(Lancet)", "Biomed 2026\n(Lancet)"]
+    xs = [0, 1, 2]
+    ul = 0.24
+    axR.plot(0, ul, marker="_", ms=9, color=C["blue"], mew=1.4)
+    axR.annotate("", xy=(0, ul-0.10), xytext=(0, ul),
+                 arrowprops=dict(arrowstyle="->", color=C["blue"], lw=1.0))
+    axR.plot(1, 0.22, "o", ms=5, color=C["grey"])
+    axR.plot(2, 0.36, "o", ms=5, color=C["grey"])
     no_minor_x(axR)
-    for bar, val in zip(b, fvals):
-        axR.text(bar.get_x()+bar.get_width()/2, val+0.008,
-                 "0" if val == 0 else f"{val:.2f}%", ha="center", fontsize=8, fontweight="normal")
-    axR.set_ylabel("% of papers with a fabricated citation")
-    axR.set_ylim(0, 0.45)
-    axR.text(0.02, 0.92, f"astro-ph: 0 fabricated references in\n{n_arxiv_inst:,} cited arXiv IDs (all resolve)\n"
-             f"+ {n_doi_checked:,} sampled DOIs (all trace to\nreal works after inspection)",
-             transform=axR.transAxes, fontsize=7.3, va="top", color=C["black"])
-    footer(fig, "astro-ph: arXiv API + Crossref resolution of refs from recent LaTeX source. "
-                "Biomed: Lancet/Topaz+2026 (1-in-458 papers 2025).")
-    fig.tight_layout(rect=[0,0.04,1,1])
-    fig.savefig(os.path.join(FIGS, "fig12_citation_integrity.png"), bbox_inches="tight"); plt.close(fig)
+    axR.set_xticks(xs); axR.set_xticklabels(cats, fontsize=6.5)
+    axR.set_xlim(-0.5, 2.5); axR.set_ylim(0, 0.45)
+    axR.set_ylabel("% of papers with a fabricated citation", fontsize=7.5)
+    axR.text(0.03, 0.96, f"0 fabricated references in {n_arxiv_inst:,} cited\narXiv IDs"
+             f" + {n_doi_checked:,} sampled DOIs",
+             transform=axR.transAxes, fontsize=6.3, va="top", color=C["black"])
+    fig.tight_layout()
+    fig.savefig(os.path.join(FIGS, "fig12_citation_integrity.png"), bbox_inches="tight")
 
 if __name__ == "__main__":
     fig10_subfield(); print("fig10 done")
