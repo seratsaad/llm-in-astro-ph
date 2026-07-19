@@ -237,7 +237,6 @@ at least one checkable identifier and directly comparable to the biomedical audi
 \citet{Topaz2026}, and a per-identifier rate. Upper limits for zero detections follow the
 usual rule of three, $3/N$ at 95\% confidence.
 
-
 \section{Results}
 \label{sec:results}
 
@@ -274,17 +273,6 @@ same interval. The words \mw{underscore} and \mw{leveraging} continued to rise t
 latter reaching 1.5\% of abstracts. The total marker rate did not fall with \mw{delve}. The decline was offset by other words. Public attention to a specific marker removes that
 marker without reducing the aggregate signal, which matches the cross-field result of
 \citet{GengTrotta2025}.
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=\textwidth]{fig2_delve_collapse.png}
-\caption{Top: the fraction of abstracts with any marker word, by quarter. Bottom: four
-individual words, each on its own scale. The dashed black segment in each panel extrapolates
-that word's 2015--2021 linear trend. The vertical dotted line marks mid-2024, when
-\mw{delve} received wide public attention as a sign of model-generated text. Its frequency declines from that point while the other markers continue to rise, and the aggregate rate
-does not fall.}
-\label{fig:collapse}
-\end{figure}
 
 \subsection{Data-driven vocabulary and phrases}
 \label{sec:discovery}
@@ -334,14 +322,6 @@ bigrams by their frequency ratio again splits topic phrases (\mw{jwst observatio
 \mw{findings indicate}), as shown in panel (b) of Figure~\ref{fig:discovery}. Phrases carry a
 stronger signal than single words, and they are harder to remove by editing one word at a
 time.
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.74\textwidth]{fig_ngram_viewer.png}
-\caption{Fraction of abstracts containing selected two-word phrases, by year. Model-favored
-phrases rise after 2022, while a control phrase (\mw{wide range}) stays flat.}
-\label{fig:ngram}
-\end{figure}
 
 \subsection{Co-occurrence of marker words}
 \label{sec:cooccur}
@@ -438,15 +418,6 @@ coverage would have to be large and heavily skewed to close the factor-of-twenty
 word signal. Set against the 4\% floor from the word counting, model use is common and
 stated use is rare.
 
-\begin{figure}
-\centering
-\includegraphics[width=\textwidth]{fig4_disclosure.png}
-\caption{Left: number of astronomy papers per year that mention a model in full text (blue)
-or state model use in the acknowledgments (red). Both counts are zero before 2023. Right: the
-same as a share of all astronomy papers, which stays below 1\%.}
-\label{fig:disclosure}
-\end{figure}
-
 \FloatBarrier
 \subsection{Source-text and citation audits}
 \label{sec:ladder}
@@ -458,14 +429,6 @@ pre-2023 papers give zero matches (95\% upper limit 0.31\%), so the false-positi
 low. Figure~\ref{fig:ladder} compares the four detection routes on the same corpus. They span two orders of magnitude. Direct source checks (0.14\%) and stated disclosure (0.19\%)
 find the least, and the word signal (4.3\%, a lower bound) finds the most, so population
 statistics recover a factor of twenty more model use than direct evidence alone.
-
-\begin{figure}
-\centering
-\includegraphics[width=\textwidth]{fig9_detection_ladder.png}
-\caption{Four detection routes applied to the same 2024--2026 astronomy papers, on a
-logarithmic scale. Source-text matches and stated disclosure find the least. The word signal finds the most. The biomedical estimate \citep{Kobak2024} is shown for scale.}
-\label{fig:ladder}
-\end{figure}
 
 \label{sec:citations}
 The citation audit of Section~\ref{sec:citmethod} finds that all 22{,}547 cited new-style
@@ -512,13 +475,6 @@ has the highest rate throughout, reaching $7.8\pm1.3\%$ in 2025 (binomial 95\%),
 high-energy astrophysics has the lowest at $4.7\pm0.7\%$. The difference is large compared with its uncertainty. The ordering follows the pattern seen across science, where fields
 closer to computer science adopted these tools first.
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.74\textwidth]{fig10_subfield_diffusion.png}
-\caption{Marker rate by primary astro-ph subfield. Instrumentation and Methods has the highest rate throughout, and high-energy astrophysics the lowest.}
-\label{fig:subfield}
-\end{figure}
-
 By author country (Figure~\ref{fig:geo}), obtained from the affiliation field, papers from
 countries where English is not a first language tend toward higher marker rates, with Iran
 ($11.2\%$, Wilson 95\% interval 8.6--14.6\%, $n=418$), China ($7.6\%$, $n=8{,}377$), and
@@ -550,13 +506,6 @@ The promotional word set rose by about 19\% over the period and follows the mark
 closely ($r=0.87$ over the twelve yearly points, $p=2\times10^{-4}$). The hedging set did not move ($r=-0.21$, Figure~\ref{fig:hype}). Promotional vocabulary therefore rose while
 stated caution did not. Both series trend with time, so part of the correlation comes from the
 shared calendar, and competition for attention raises promotional language on its own. We report this as a descriptive result rather than a causal claim.
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.74\textwidth]{fig7_hype_hedge.png}
-\caption{Promotional and hedging word frequency, indexed to the 2015--2019 mean. Promotional words rise together with the marker rate, while hedging words stay flat.}
-\label{fig:hype}
-\end{figure}
 
 \FloatBarrier
 \subsection{Time evolution of the word signal}
@@ -662,6 +611,10 @@ System. All data and code are available at \texttt{github.com/seratsaad/llm-in-a
 \bibliography{refs}
 
 \appendix
+\renewcommand{\thefigure}{A\arabic{figure}}
+\renewcommand{\thetable}{A\arabic{table}}
+\setcounter{figure}{0}
+\setcounter{table}{0}
 
 \section{The marker basket}
 \label{app:basket}
@@ -681,5 +634,60 @@ frequencies in the baseline and recent windows. The control set is \mw{observed}
 \end{deluxetable}
 
 
+\clearpage
+\section{Supplementary figures}
+\label{app:supp}
+
+This appendix collects figures that support the results of Section~\ref{sec:results} but are not central to the main argument. Figure~\ref{fig:collapse} shows the quarterly behavior of individual marker words, Figure~\ref{fig:ngram} the same for two-word phrases, Figure~\ref{fig:disclosure} the yearly counts of stated model use, Figure~\ref{fig:ladder} the four detection routes side by side, Figure~\ref{fig:subfield} the marker rate by subfield, and Figure~\ref{fig:hype} the promotional and hedging vocabularies.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{fig2_delve_collapse.png}
+\caption{Top: the fraction of abstracts with any marker word, by quarter. Bottom: four
+individual words, each on its own scale. The dashed black segment in each panel extrapolates
+that word's 2015--2021 linear trend. The vertical dotted line marks mid-2024, when
+\mw{delve} received wide public attention as a sign of model-generated text. Its frequency declines from that point while the other markers continue to rise, and the aggregate rate
+does not fall.}
+\label{fig:collapse}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.74\textwidth]{fig_ngram_viewer.png}
+\caption{Fraction of abstracts containing selected two-word phrases, by year. Model-favored
+phrases rise after 2022, while a control phrase (\mw{wide range}) stays flat.}
+\label{fig:ngram}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{fig4_disclosure.png}
+\caption{Left: number of astronomy papers per year that mention a model in full text (blue)
+or state model use in the acknowledgments (red). Both counts are zero before 2023. Right: the
+same as a share of all astronomy papers, which stays below 1\%.}
+\label{fig:disclosure}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{fig9_detection_ladder.png}
+\caption{Four detection routes applied to the same 2024--2026 astronomy papers, on a
+logarithmic scale. Source-text matches and stated disclosure find the least. The word signal finds the most. The biomedical estimate \citep{Kobak2024} is shown for scale.}
+\label{fig:ladder}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.74\textwidth]{fig10_subfield_diffusion.png}
+\caption{Marker rate by primary astro-ph subfield. Instrumentation and Methods has the highest rate throughout, and high-energy astrophysics the lowest.}
+\label{fig:subfield}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.74\textwidth]{fig7_hype_hedge.png}
+\caption{Promotional and hedging word frequency, indexed to the 2015--2019 mean. Promotional words rise together with the marker rate, while hedging words stay flat.}
+\label{fig:hype}
+\end{figure}
 
 \end{document}
