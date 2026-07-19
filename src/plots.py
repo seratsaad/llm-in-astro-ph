@@ -160,14 +160,15 @@ def fig3_discovery():
     axA.set_ylabel("frequency ratio, 2024-2026 / 2018-2021")
     axA.text(0.025, 0.97, "(a) single words", transform=axA.transAxes,
              va="top", ha="left", fontsize=9.5, fontweight="bold", zorder=7)
-    show_a = ["nircam", "miri", "nirspec", "jwst", "desi", "xrism", "ixpe",
-              "interpretable", "leveraging", "aligns", "offering", "pivotal",
+    show_a = ["nircam", "miri", "nirspec", "jwst", "desi",
+              "interpretable", "leveraging", "offering", "pivotal",
               "intricate", "highlighting", "delve"]
     ann = sel[sel.word.isin(show_a)]
     others = sel[~sel.word.isin(show_a)]
-    place_labels(axA, list(ann.rec_freq*100), list(ann.ratio), list(ann.word),
+    dropA = place_labels(axA, list(ann.rec_freq*100), list(ann.ratio), list(ann.word),
                  colors=[kcol[k] for k in ann.kind], fontsize=8.5,
                  obstacles=list(zip(others.rec_freq*100, others.ratio)))
+    print('fig3a dropped:', dropA)
 
     # ---- panel (b): two-word phrases ----
     axB.scatter(bg.rec_freq*100, bg.ratio, s=1.5, color="#C9C9C9", alpha=0.4,
@@ -183,14 +184,13 @@ def fig3_discovery():
     axB.set_xlabel("frequency in 2024-2026 (% of abstracts)")
     axB.text(0.025, 0.97, "(b) two-word phrases", transform=axB.transAxes,
              va="top", ha="left", fontsize=9.5, fontweight="bold", zorder=7)
-    show_b = ["jwst observations", "the desi", "energy spectroscopic",
-              "habitable worlds", "leveraging the", "align with", "offering a",
-              "results highlight", "findings indicate"]
+    show_b = ["jwst observations", "the desi", "leveraging the", "insights into"]
     annb = selb[selb.bigram.isin(show_b)]
     othb = selb[~selb.bigram.isin(show_b)]
-    place_labels(axB, list(annb.rec_freq*100), list(annb.ratio), list(annb.bigram),
+    dropB = place_labels(axB, list(annb.rec_freq*100), list(annb.ratio), list(annb.bigram),
                  colors=[kcol[k] for k in annb.kind], fontsize=8.5,
                  obstacles=list(zip(othb.rec_freq*100, othb.ratio)))
+    print('fig3b dropped:', dropB)
 
     from matplotlib.lines import Line2D
     axA.legend(handles=[
