@@ -99,18 +99,49 @@ def place_labels(ax, xs, ys, names, colors=None, fontsize=6.5, priority=None,
         for (px, py) in pts:
             if b[0]-ptr < px < b[2]+ptr and b[1]-ptr < py < b[3]+ptr: return True
         return False
+
+    def seg_pt_dist(ax_, ay_, bx_, by_, px_, py_):
+        dx_, dy_ = bx_-ax_, by_-ay_
+        L2 = dx_*dx_ + dy_*dy_
+        if L2 == 0: return ((px_-ax_)**2 + (py_-ay_)**2) ** 0.5
+        t = max(0.0, min(1.0, ((px_-ax_)*dx_ + (py_-ay_)*dy_)/L2))
+        cx_, cy_ = ax_+t*dx_, ay_+t*dy_
+        return ((px_-cx_)**2 + (py_-cy_)**2) ** 0.5
+
+    def seg_box(ax_, ay_, bx_, by_, bx0, by0, bx1, by1):
+        # segment vs axis-aligned box: sample points along the segment
+        for t in (0.15, 0.3, 0.45, 0.6, 0.75, 0.9):
+            sx, sy = ax_+t*(bx_-ax_), ay_+t*(by_-ay_)
+            if bx0 <= sx <= bx1 and by0 <= sy <= by1: return True
+        return False
+
+    def leader_clear(i, lx, ly, ext):
+        if ext <= 0.03: return True          # no leader drawn
+        sx, sy = pts[i]
+        for j, (px, py) in enumerate(pts):
+            if j == i: continue
+            if seg_pt_dist(sx, sy, lx, ly, px, py) < ptr: return False
+        for pb in placed:
+            if seg_box(sx, sy, lx, ly, *pb): return False
+        return True
+
+    dropped = []
     for i in order:
         p = pts[i]; w = len(names[i])*ch_w
         best = None
-        for ext in (0.02, 0.04, 0.065, 0.095, 0.13):
-            for dx, dy, ha in ((ext, 0, "left"), (-ext, 0, "right"), (0, ext, "center"),
-                               (0, -ext, "center"), (ext, ext, "left"), (ext, -ext, "left"),
-                               (-ext, ext, "right"), (-ext, -ext, "right")):
+        for ext in (0.02, 0.035, 0.05, 0.07, 0.095, 0.125, 0.16, 0.2, 0.25):
+            for mx, my, ha in ((1, 0, "left"), (-1, 0, "right"), (0, 1, "center"),
+                               (0, -1, "center"), (1, 1, "left"), (1, -1, "left"),
+                               (-1, 1, "right"), (-1, -1, "right"),
+                               (0.5, 1, "center"), (-0.5, 1, "center"),
+                               (0.5, -1, "center"), (-0.5, -1, "center")):
+                dx, dy = mx*ext, my*ext
                 b = box(p[0]+dx, p[1]+dy, w, ha)
-                if not clash(b):
+                if not clash(b) and leader_clear(i, p[0]+dx, p[1]+dy, ext):
                     best = (p[0]+dx, p[1]+dy, ha, b, ext); break
             if best: break
         if best is None:
+            dropped.append(names[i])
             continue                        # skip label rather than overlap
         lx, ly, ha, b, ext = best
         placed.append(b)
@@ -119,3 +150,4 @@ def place_labels(ax, xs, ys, names, colors=None, fontsize=6.5, priority=None,
             ax.plot([xs[i], ix(lx)], [ys[i], iy(ly)], lw=0.4, color="#999999", zorder=3)
         ax.annotate(names[i], (ix(lx), iy(ly)), fontsize=fontsize, ha=ha,
                     va="center", color=col, zorder=6)
+    return dropped
