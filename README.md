@@ -4,9 +4,9 @@ Code and data behind the Astrobites "Beyond" post measuring the footprint of lar
 language models (LLMs) in the astronomy literature. Everything is reproducible from
 public arXiv and NASA ADS data.
 
-The write-up is in [`POST.md`](POST.md) (and [`POST.pdf`](POST.pdf)); the figures are in
-[`figs/`](figs/). A journal-style paper version is in [`paper/`](paper/)
-([`paper/main.pdf`](paper/main.pdf)).
+This repository holds the code, derived data, and figures. Run the scripts in
+[`src/`](src/) to reproduce every number and plot; outputs land in [`figs/`](figs/). The
+journal manuscript is kept separately and is not part of this repository.
 
 ## What the analysis does
 

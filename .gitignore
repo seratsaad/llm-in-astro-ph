@@ -31,3 +31,6 @@ paper/compile*.log
 # pre-existing skill-dev artifacts (superseded by src/ngrams.py)
 src/c8_ngrams.py
 data/c8_top_*.csv
+
+# journal manuscript kept out of the public repo (code + analysis only)
+paper/
