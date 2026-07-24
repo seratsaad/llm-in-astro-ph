@@ -193,7 +193,13 @@ which models the full word-frequency distribution and therefore counts model-edi
 abstracts that keep none of the listed words. This difference should be kept in mind when the
 resulting numbers are compared. Equation~\ref{eq:alpha} is the $q=1$ limit of a two-population model in which a fraction $\alpha$ of abstracts are model-edited and carry a basket word with probability $q$, while the rest carry one at the baseline rate $f_0$. In that model $f_t=(1-\alpha)f_0+\alpha q$ and
 $\alpha=(f_t-f_0)/(q-f_0)$. Since $q\le1$, $\alpha \ge f_t-f_0$, and any realistic $q<1$
-raises $\alpha$ above the bound.
+raises $\alpha$ above the bound. The size of the correction depends on $q$, the probability
+that a model-touched abstract keeps at least one basket word. For the 2025 values
+$f_t=5.8\%$ and $f_0=1.5\%$, a $q$ of 0.8 gives $\alpha=5.5\%$, a $q$ of 0.5 gives
+$\alpha=8.9\%$, and a $q$ of 0.3 gives $\alpha=15\%$. We report $f_t-f_0$ rather than a
+point estimate because $q$ is not known for astronomy abstracts. A direct measurement of $q$,
+from model-edited versions of real abstracts, would turn the bound into an estimate and is a
+clear next step.
 
 \subsection{Disclosure searches}
 \label{sec:discsearch}
@@ -205,7 +211,7 @@ We exclude terms that are ambiguous in astronomy, such as ``Gemini'' (the observ
 through the Gemini telescopes alone, so this cut is not optional. Acknowledgment matches are read as stated use. Full-text matches include discussion of models as a research topic and
 give an upper envelope of mentions. To check what the acknowledgment field captures, we read 25 randomly drawn matched acknowledgments from 2024, and all 25 are ordinary astronomy papers
 stating that a model was used for language or code, and none is a paper about language
-models.
+models. The same interface, restricted by affiliation country, gives the marker rate over time within native-English papers used in Section~\ref{sec:robust}.
 
 \subsection{Source-text audit}
 \label{sec:srcmethod}
@@ -247,7 +253,7 @@ Figure~\ref{fig:rise} shows the yearly document frequency of the marker basket a
 control set. The marker basket sat between 1.0\% and 2.0\% over 2015--2022, with a slow drift
 of 0.12 percentage points per year that we return to in Section~\ref{sec:robust}, and rose to
 $5.80\pm0.16\%$ by 2025. Against the pooled 2018--2021 baseline of 1.50\%, the 2025 rate
-differs by $z=35$ in a two-proportion test. The mean frequency of the control set changed by
+differs by $z=35$ in a two-proportion test. Intervals throughout treat abstracts as independent, so repeated phrasing by the same author would lower the effective sample a little, but not enough to affect a difference of this size. The mean frequency of the control set changed by
 $+0.10$ percentage points between the same two periods, forty times less than the basket
 change, although individual control words drift by up to 2 percentage points for topical
 reasons (\mw{obtained} fell 2.1 points and \mw{redshift} rose 1.7). The rise is specific to
@@ -337,8 +343,13 @@ Independent drift of unrelated words would not produce this pattern, whereas a m
 edits or drafts a whole abstract, and adds several of its preferred words at once,
 would. Part of the clustering could be topical, since marker use is not uniform across
 subfields (Section~\ref{sec:geo}), but the strongest pairs join words with no shared subject
-matter. The clustering therefore supports reading the marker signal as one effect rather
-than a set of unrelated trends.
+matter. To test whether the clustering is a byproduct of subfield concentration, we ran a
+permutation null that shuffles each marker word among abstracts within its primary subfield,
+which holds the per-subfield rate of every marker fixed while removing any within-abstract
+association. Across 300 shuffles the number of significant pairs has a mean of 0.3 and never
+reaches the observed 27 (permutation $p<0.003$). The clustering therefore supports reading
+the marker signal as one effect rather than a set of unrelated trends, and it is not produced
+by subfield structure alone.
 
 \begin{figure}[t]
 \centering
@@ -369,6 +380,14 @@ from the basket changes the pooled bound by at most 1.0 point. The largest singl
 \mw{leveraging}, without which it is 3.0\%. The control-word set run through the same
 estimator gives $+0.10$ points. Under every variant the bound stays between 3.0\% and
 4.3\%.
+
+A shift in the author population, toward countries where English is not a first language,
+could in principle raise the marker rate without any change in per-author behavior. We tested
+this with the NASA Astrophysics Data System by tracking the marker rate over time for papers
+with an affiliation in the United States, the United Kingdom, Australia, or Canada. Within
+this native-English set the rate rises from 1.3\% over 2018--2021 to 5.2\% in 2025, as
+steep as the rise in the full corpus. A change in author composition therefore does not
+account for the increase.
 
 \begin{deluxetable}{lc}
 \tablecaption{Robustness of the lower bound $\alpha_{\rm lb}$, pooled 2024--2026
@@ -452,7 +471,10 @@ Per cited identifier the limit is $1.3\times10^{-4}$. Two caveats bound the clai
 tests whether a cited work exists, not whether it supports the statement it is attached to,
 and the wrong-suffix DOIs above show that identifier corruption occurs even when the
 reference is real. The test also covers papers that cite through arXiv identifiers, which
-skews toward recent, arXiv-native bibliographies (Figure~\ref{fig:citations}).
+skews toward recent, arXiv-native bibliographies (Figure~\ref{fig:citations}). This
+population may also under-sample the papers most at risk, since a fabricated reference is more
+likely in a bibliography assembled by a model than in one built through the arXiv and ADS
+tools that most authors use.
 
 \begin{figure}
 \centering
@@ -503,7 +525,11 @@ enter more than once.}
 \label{sec:hype}
 
 The promotional word set rose by about 19\% over the period and follows the marker rate
-closely ($r=0.87$ over the twelve yearly points, $p=2\times10^{-4}$). The hedging set did not move ($r=-0.21$, Figure~\ref{fig:hype}). Promotional vocabulary therefore rose while
+closely (Figure~\ref{fig:hype}). The two series correlate at $r=0.87$ across the twelve
+yearly points, but both rise with time, so most of that value is shared trend. On
+first differences the correlation falls to $r=0.41$, and on linearly detrended series to
+$r=0.57$, so the association is real but weaker than the raw number suggests. Promotional
+vocabulary therefore rose while
 stated caution did not. Both series trend with time, so part of the correlation comes from the
 shared calendar, and competition for attention raises promotional language on its own. We report this as a descriptive result rather than a causal claim.
 
@@ -606,7 +632,7 @@ question the field can still answer on its own terms.
 \acknowledgments
 We thank Yuan-Sen Ting for suggesting this work be written up and for pointing to the
 co-occurrence measurement. This research used the arXiv API and the NASA Astrophysics Data
-System. All data and code are available at \texttt{github.com/seratsaad/llm-in-astro-ph}.
+System. All code and the derived data are available at \texttt{github.com/seratsaad/llm-in-astro-ph}, and the harvested abstract corpus will be deposited on Zenodo with a persistent identifier on publication.
 
 \software{NumPy, pandas, Matplotlib, PyArrow}
 
