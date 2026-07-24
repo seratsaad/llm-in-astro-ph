@@ -1,4 +1,7 @@
-pandas>=2.0
-numpy>=1.24
-matplotlib>=3.7
-pyarrow>=12.0
+# Pinned environment for reproducing the analysis.
+numpy==1.26.4
+pandas==2.2.2
+pyarrow==16.1.0
+matplotlib==3.9.0
+# retrieval tooling: standard-library urllib for arXiv, ADS, and Crossref REST APIs.
+# ADS requires a personal token at ~/.ads/dev_key (never committed).
