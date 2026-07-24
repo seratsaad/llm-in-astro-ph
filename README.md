@@ -99,10 +99,12 @@ node   src/build_docx.js        # POST.md -> POST.docx   (needs: npm install doc
 
 ## Data sources
 
-- arXiv API — https://info.arxiv.org/help/api/
-- NASA Astrophysics Data System (ADS) — https://ui.adsabs.harvard.edu
-- Some tools this work builds on, including the astro-ph knowledge graph, are shared by
-  Yuan-Sen Ting at https://github.com/tingyuansen
+- arXiv API — https://info.arxiv.org/help/api/ (abstracts and LaTeX source)
+- NASA Astrophysics Data System (ADS) — https://ui.adsabs.harvard.edu (disclosure, geography)
+
+The analysis uses only the two sources above. For related work on language models in
+astronomy, including the astro-ph knowledge graph, see Yuan-Sen Ting's tools at
+https://github.com/tingyuansen
 
 Marker-word method follows Liang et al. (2024), Gray (2025), and Kobak et al. (2024).
 
