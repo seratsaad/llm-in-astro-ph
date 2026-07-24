@@ -34,3 +34,11 @@ data/c8_top_*.csv
 
 # journal manuscript kept out of the public repo (code + analysis only)
 paper/
+
+# post write-up and its build tooling (repo is code for the paper)
+POST.md
+POST.pdf
+POST.docx
+package.json
+src/build_docx.js
+src/build_pdf.py

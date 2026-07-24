@@ -1,19 +1,20 @@
-# How much of the astronomy literature is written with a chatbot?
+# Measuring the footprint of large language models in the astronomy literature
 
-Code and data behind the Astrobites "Beyond" post measuring the footprint of large
-language models (LLMs) in the astronomy literature. Everything is reproducible from
-public arXiv and NASA ADS data.
+Code and derived data behind the paper measuring the footprint of large language models
+(LLMs) in the astronomy literature. Everything is reproducible from public arXiv and NASA
+ADS data.
 
-This repository holds the code, derived data, and figures. Run the scripts in
-[`src/`](src/) to reproduce every number and plot; outputs land in [`figs/`](figs/). The
-journal manuscript is kept separately and is not part of this repository.
+This repository holds the analysis and plotting code, the small derived data, and the
+output figures. Run the scripts in [`src/`](src/) to reproduce every number and figure;
+outputs land in [`figs/`](figs/). The manuscript itself is not part of this repository.
 
 ## What the analysis does
 
 - Counts LLM "marker words" (delve, underscore, intricate, ...) in 200,547 astro-ph
   abstracts (2015–2026) and compares them to neutral control words.
 - Discovers astro-ph's own excess vocabulary from the data (telescopes vs. style words).
-- Estimates a lower bound on the fraction of LLM-touched abstracts.
+- Estimates a lower bound on the fraction of LLM-touched abstracts, with placebo,
+  length, and structural-break checks.
 - Measures explicit LLM disclosure via NASA ADS acknowledgments.
 - Audits arXiv LaTeX source for pasted-chatbot leftovers.
 - Checks cited arXiv IDs and DOIs for fabricated ("hallucinated") citations.
@@ -25,7 +26,6 @@ journal manuscript is kept separately and is not part of this repository.
 src/    all analysis + plotting scripts
 data/   derived data the plot scripts read (the 300 MB raw abstract dump is NOT committed)
 figs/   output figures (PNG)
-POST.md the post
 ```
 
 ## Setup
@@ -48,11 +48,11 @@ The small derived data is committed, so you can rebuild every figure without
 re-harvesting:
 
 ```bash
-python src/plots.py            # figures 1–6
-python src/plots2.py           # figures 7–8
-python src/plots3.py           # figures 10–12
-python src/plots_ngram.py      # n-gram viewer, bigram discovery, co-occurrence
-python src/analyze_source.py --fig   # figure 9 (detection ladder)
+python src/plots.py            # marker rise, delve small-multiples, discovery volcano, disclosure, gap
+python src/plots2.py           # hype vs hedging, detectability erosion
+python src/plots3.py           # subfield diffusion, equity map, citation integrity
+python src/plots_ngram.py      # n-gram viewer, co-occurrence
+python src/analyze_source.py --fig   # detection ladder
 ```
 
 ## Reproduce the data from scratch
@@ -88,13 +88,12 @@ python src/analyze_source.py    # rates + detection-ladder figure
 # 7. Hallucinated-citation audit
 python src/c3_citations.py --collect
 python src/c3_citations.py --verify
-```
 
-## Rebuild the post document
-
-```bash
-python src/build_pdf.py         # POST.md -> POST.html (then print to PDF)
-node   src/build_docx.js        # POST.md -> POST.docx   (needs: npm install docx)
+# 8. Robustness checks
+python src/referee_checks.py    # q sensitivity, detrended tone, co-occurrence permutation
+python src/referee_checks2.py   # placebo basket, structural break, length control, recovery
+python src/c9_composition.py    # marker rise within native-English affiliations (needs token)
+python src/c10_version_smear.py # latest-version-abstract systematic
 ```
 
 ## Data sources
