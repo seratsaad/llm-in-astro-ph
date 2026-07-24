@@ -44,9 +44,9 @@
   "R5_subfield_permutation": {
     "N": 53192,
     "n_subfields": 92,
-    "n_perm": 300,
+    "n_perm": 1000,
     "observed_sig_pairs": 27,
-    "null_mean": 0.3,
+    "null_mean": 0.253,
     "null_p95": 1.0,
     "perm_pvalue": 0.0
   }
