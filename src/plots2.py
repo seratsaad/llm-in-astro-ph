@@ -28,7 +28,7 @@ def fig7_hype_hedge():
     ax.plot(d.year, d.hedge_idx, "-s", color=C["blue"], lw=1.3, ms=3.4,
             label="Hedging words (may, might, suggest, likely, ...)")
     ax.axvline(2022.85, color=C["grey"], ls="--", lw=1)
-    ax.text(2023.05, 90.7, "ChatGPT", va="bottom", ha="left", fontsize=9, color=C["grey"])
+    ax.text(2023.0, 107, "ChatGPT", rotation=90, va="center", ha="left", fontsize=9.5, color=C["grey"])
     ax.set_ylabel("Frequency, indexed to 2015-19 = 100"); ax.set_xlabel("Year")
     ax.set_ylim(90, 128)
     ax.legend(loc="upper left", fontsize=9)
