@@ -91,7 +91,7 @@ def fig11_geography():
         hx, hy = marker_half(n, c)
         marker_boxes.append((mk-hx, dc-hy, mk+hx, dc+hy))
     # fixed obstacles in data coords: legend (upper-left) and annotation (upper-right)
-    legend_box = (0.0, 0.86, 0.34*xmax, yhi)
+    legend_box = (0.62*xmax, 0.86, xmax, yhi)   # legend sits upper right
     annot_box  = (9e9, 9e9, 9e9, 9e9)   # no in-panel annotation any more
 
     def candidates(mk, dc, n, name):
@@ -157,7 +157,7 @@ def fig11_geography():
     from matplotlib.lines import Line2D
     ax.legend(handles=[Line2D([0],[0],marker='o',color='w',markerfacecolor=C["blue"],label='native English',ms=9),
                        Line2D([0],[0],marker='o',color='w',markerfacecolor=C["vermillion"],label='non-native English',ms=9)],
-              loc="upper left", fontsize=9)
+              loc="upper right", fontsize=9)
     footer(fig, "Data: NASA ADS aff: x abs:/ack: queries, 2025  |  aff: matches any affiliation (multi-country collabs double-counted)")
     fig.savefig(os.path.join(FIGS, "fig11_equity_map.png"), bbox_inches="tight"); plt.close(fig)
 
