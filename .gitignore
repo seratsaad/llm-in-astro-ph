@@ -42,3 +42,8 @@ POST.docx
 package.json
 src/build_docx.js
 src/build_pdf.py
+
+paper_oja_locked/
+paper_nature/
+
+zenodo_deposit/
