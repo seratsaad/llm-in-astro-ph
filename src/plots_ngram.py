@@ -25,7 +25,7 @@ def fig_ngram_viewer():
     ax.set_ylim(-0.1, 2.8)
     ax.text(2022.7, 1.55, "ChatGPT", rotation=90, va="top",
             ha="right", fontsize=9, color=C["grey"])
-    ax.set_xlabel("Year"); ax.set_ylabel("fraction of abstracts with the phrase (%)")
+    ax.set_xlabel("Year"); ax.set_ylabel("Fraction of abstracts with the phrase (%)")
     ax.legend(fontsize=9, loc="center left", bbox_to_anchor=(0.03, 0.40))
     ax.set_xticks(range(2015, 2026, 2))
     fig.tight_layout()
@@ -78,7 +78,7 @@ def fig_cooccur():
                         ha="center", va="center", fontsize=8.5,
                         color="white" if v > 30 else "#333")
     cb = fig.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
-    cb.set_label("co-occurrence lift (1 = independent)", fontsize=9)
+    cb.set_label("Co-occurrence lift (1 = independent)", fontsize=9)
     fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig_cooccur.png"), bbox_inches="tight"); plt.close(fig)
 

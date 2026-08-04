@@ -28,8 +28,8 @@ def fig7_hype_hedge():
     ax.plot(d.year, d.hedge_idx, "-s", color=C["blue"], lw=1.3, ms=3.4,
             label="Hedging words (may, might, suggest, likely, ...)")
     ax.axvline(2022.85, color=C["grey"], ls="--", lw=1)
-    ax.text(2022.7, 126.5, "ChatGPT", rotation=90, va="top", ha="right", fontsize=9.5, color=C["grey"])
-    ax.set_ylabel("frequency, indexed to 2015-19 = 100"); ax.set_xlabel("Year")
+    ax.text(2023.05, 90.7, "ChatGPT", va="bottom", ha="left", fontsize=9, color=C["grey"])
+    ax.set_ylabel("Frequency, indexed to 2015-19 = 100"); ax.set_xlabel("Year")
     ax.set_ylim(90, 128)
     ax.legend(loc="upper left", fontsize=9)
     ax.set_xticks(range(2015, 2027, 2))
@@ -48,11 +48,11 @@ def fig8_detectability():
 
     fig, (axL, axR) = plt.subplots(1, 2, figsize=(6.5, 2.77))
     # LEFT: marker clusters quarterly
-    axL.plot(s.yq, s.all_markers*100, color=C["black"], lw=1.4, label="all markers", zorder=5)
+    axL.plot(s.yq, s.all_markers*100, color=C["black"], lw=1.4, label="All markers", zorder=5)
     axL.plot(s.yq, s.collapsing*100, "-o", ms=2.8, color=C["vermillion"], lw=1.2,
-             label="early tells")
+             label="Early tells")
     axL.plot(s.yq, s.rising*100, "-o", ms=2.8, color=C["green"], lw=1.2,
-             label="late tells")
+             label="Late tells")
     axL.set_xlabel("Year (quarterly)"); axL.set_ylabel("% of abstracts with marker(s)")
     axL.legend(loc="upper left", fontsize=9)
     axL.set_xlim(2022, 2026.6)

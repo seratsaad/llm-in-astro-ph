@@ -37,7 +37,7 @@ def apply():
         "svg.fonttype": "none", "pdf.fonttype": 42,
         # match the paper's 10 pt body text
         "font.size": 10, "axes.labelsize": 10,
-        "axes.titlesize": 10.5, "axes.titleweight": "bold",
+        "axes.titlesize": 10.5, "axes.titleweight": "normal",
         "xtick.labelsize": 9, "ytick.labelsize": 9,
         "legend.fontsize": 9,
         # full box, thin
