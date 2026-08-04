@@ -69,7 +69,7 @@ def main():
             if not pub or len(pub) < 7:
                 continue
             y = int(pub[:4]); yq = qkey(pub)
-            if y < 2015 or y > 2026:
+            if y < 2015 or y > 2025:
                 continue
             toks = set(TOKEN_RE.findall((r.get("abstract") or "").lower()))
             year_total[y] += 1
@@ -106,7 +106,7 @@ def main():
 
     # word_docfreq.parquet -- full vocab per-year doc freq, filtered by min count
     baseline_years = [2018, 2019, 2020, 2021]
-    recent_years = [2024, 2025, 2026]
+    recent_years = [2024, 2025]
     keep = set()
     base_tot = sum(year_total[y] for y in baseline_years)
     rec_tot = sum(year_total[y] for y in recent_years)

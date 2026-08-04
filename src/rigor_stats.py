@@ -31,7 +31,7 @@ BASKET = {  # keep in sync with alpha_estimate.py
 CONTROL = ["observed", "measured", "obtained", "presented", "galaxy", "stellar",
            "sample", "temperature", "redshift", "spectra"]
 BASE_YEARS = (2018, 2019, 2020, 2021)
-REC_YEARS = (2024, 2025, 2026)
+REC_YEARS = (2024, 2025)
 
 def wilson(k, n, z=1.96):
     if n == 0: return (0.0, 0.0)
@@ -143,7 +143,7 @@ def main():
 
     # --- source-leak Wilson interval (2024-26) ---
     sl = pd.read_csv(os.path.join(DATA, "source_leak_by_year.csv"))
-    rec = sl[sl.year.between(2024, 2026)]
+    rec = sl[sl.year.between(2024, 2025)]
     k = int(rec.tier1.sum() + rec.tier2.sum()); n = int(rec.scanned.sum())
     lo, hi = wilson(k, n)
     pre = sl[sl.year <= 2022]

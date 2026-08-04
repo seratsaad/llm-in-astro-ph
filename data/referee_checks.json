@@ -34,19 +34,19 @@
     ]
   },
   "R4_hype_detrend": {
-    "n_years": 12,
-    "hype_levels_r": 0.8700294451078957,
-    "hedge_levels_r": -0.20760730567738456,
-    "hype_firstdiff_r": 0.41306335191981003,
-    "hedge_firstdiff_r": 0.7306995929191052,
-    "hype_detrended_r": 0.5744882859200937
+    "n_years": 11,
+    "hype_levels_r": 0.8731863957652805,
+    "hedge_levels_r": 0.020765875992680743,
+    "hype_firstdiff_r": 0.11929238447131166,
+    "hedge_firstdiff_r": 0.5171388573417004,
+    "hype_detrended_r": 0.5494095573303427
   },
   "R5_subfield_permutation": {
-    "N": 53192,
-    "n_subfields": 92,
+    "N": 41095,
+    "n_subfields": 83,
     "n_perm": 1000,
-    "observed_sig_pairs": 27,
-    "null_mean": 0.253,
+    "observed_sig_pairs": 29,
+    "null_mean": 0.318,
     "null_p95": 1.0,
     "perm_pvalue": 0.0
   }

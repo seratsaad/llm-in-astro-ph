@@ -1,0 +1,31 @@
+{
+  "papers": 1910,
+  "arxiv_instances": 20258,
+  "arxiv_unique": 15445,
+  "checkable_papers": 1109,
+  "unique_dois": 52230,
+  "doi_checked": 2500,
+  "doi_missing": 126,
+  "classification": {
+    "arXiv DataCite (real)": 84,
+    "data archive / regional / funder (real)": 8,
+    "Zenodo (real)": 18,
+    "extraction artifact": 5,
+    "wrong identifier, real reference": 7,
+    "other registry, resolves via handle (real)": 4
+  },
+  "unresolved_inspect": [],
+  "per_paper_UL_pct": 0.2705139765554554,
+  "P0_biomed2025": 0.08879744695423718,
+  "P0_biomed2026": 0.018249636657986533,
+  "hand_inspection_notes": {
+    "10.1093/mmnras/169.2.229": "doubled-m typo of mnras; corrected DOI resolves (real ref)",
+    "10.1093/mmnras/stt984": "doubled-m typo of mnras; corrected DOI resolves (real ref)",
+    "10.5555/2567709.2502609": "ACM non-registered prefix on a real proceedings work",
+    "10.3390/journalnamexxxx": "MDPI citation-template placeholder",
+    "10.22323/1.444.0905": "PoS ICRC2023 contribution exists at pos.sissa.it/444/905; DOI does not resolve",
+    "10.22323/1.444.0935": "PoS ICRC2023 contribution exists at pos.sissa.it/444/935; DOI does not resolve",
+    "10.1063/1.4863943/12948383/041001": "our regex captured an AIP URL path; base DOI resolves (artifact)",
+    "10.1126/science.1123013/suppl": "supplementary-material URL suffix; base DOI resolves (artifact)"
+  }
+}

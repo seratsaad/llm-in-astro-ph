@@ -25,7 +25,7 @@ def fig10_subfield():
     ax.text(2022.7, 7.9, "ChatGPT", rotation=90, va="top", ha="right", fontsize=9.5, color=C["grey"])
     ax.set_xlabel("Year"); ax.set_ylabel("% of abstracts with LLM marker basket")
     ax.legend(loc="upper left", fontsize=9)
-    ax.set_xticks(range(2018, 2027, 2))
+    ax.set_xticks(range(2018, 2026, 2))
     footer(fig, "Data: 200,547 astro-ph abstracts by primary arXiv category  |  Analysis for Astrobites")
     fig.tight_layout(rect=[0,0.03,1,1])
     fig.savefig(os.path.join(FIGS, "fig10_subfield_diffusion.png"), bbox_inches="tight"); plt.close(fig)
@@ -155,39 +155,32 @@ def fig11_geography():
     ax.set_xlabel("LLM marker-word incidence, 2025 (% of papers)")
     ax.set_ylabel("Explicit LLM disclosure, 2025 (% of papers)")
     from matplotlib.lines import Line2D
-    ax.legend(handles=[Line2D([0],[0],marker='o',color='w',markerfacecolor=C["blue"],label='native English',ms=9),
-                       Line2D([0],[0],marker='o',color='w',markerfacecolor=C["vermillion"],label='non-native English',ms=9)],
+    ax.legend(handles=[Line2D([0],[0],marker='o',color='w',markerfacecolor=C["blue"],label='Native English',ms=9),
+                       Line2D([0],[0],marker='o',color='w',markerfacecolor=C["vermillion"],label='Non-native English',ms=9)],
               loc="upper right", fontsize=9)
     footer(fig, "Data: NASA ADS aff: x abs:/ack: queries, 2025  |  aff: matches any affiliation (multi-country collabs double-counted)")
     fig.savefig(os.path.join(FIGS, "fig11_equity_map.png"), bbox_inches="tight"); plt.close(fig)
 
 def fig12_citation_integrity():
     """C3: astronomy's citation integrity vs the fabrication problem elsewhere."""
-    v = json.load(open(os.path.join(DATA, "c3_verify.json")))
-    m = v["doi"]["missing"]
-    # classification after manual inspection of every hard case (see paper text)
-    ID_ERRORS = {"10.3847/1538-4357/ac082c", "10.3847/2041-8213/ace280",
-                 "10.1142/9789812834300", "10.5555/3294771.3294994",
-                 "10.11648/j.xxxx.2025xxxx.xx"}
-    ARTIFACTS = {"10.1086/31138"}
-    def bucket(d):
-        if any(e in d for e in ID_ERRORS): return "wrong identifier,\nreal reference"
-        if any(a in d for a in ARTIFACTS) or ")/doi(" in d or "10.48550/arxiv" in d[8:]:
-            return "our extraction\nartifact"
-        if d.startswith("10.48550/arxiv"): return "arXiv DataCite DOI\n(real)"
-        if d.startswith("10.5281/zenodo"): return "Zenodo DOI (real)"
-        return "data archive / regional\njournal / funder (real)"
-    import collections
-    cc = collections.Counter(bucket(d) for d in m)
-    n_arxiv_inst = 22547   # cited arXiv-ID instances, all resolve
-    n_doi_checked = v["doi"]["checked"]
+    st = json.load(open(os.path.join(DATA, "c3_stats25.json")))
+    cls = st["classification"]
+    order = ["arXiv DataCite (real)", "Zenodo (real)",
+             "data archive / regional / funder (real)",
+             "other registry, resolves via handle (real)",
+             "wrong identifier, real reference", "extraction artifact"]
+    disp_name = {"arXiv DataCite (real)": "arXiv DataCite DOI\n(real)",
+                 "Zenodo (real)": "Zenodo DOI (real)",
+                 "data archive / regional / funder (real)": "data archive / regional\njournal / funder (real)",
+                 "other registry, resolves via handle (real)": "other registry,\nresolves (real)",
+                 "wrong identifier, real reference": "wrong identifier,\nreal reference",
+                 "extraction artifact": "our extraction\nartifact"}
+    labels = [disp_name[k] for k in order if cls.get(k)]
+    vals = [cls[k] for k in order if cls.get(k)]
+    n_arxiv_inst = st["arxiv_instances"]; n_doi_checked = st["doi_checked"]
 
     fig, (axL, axR) = plt.subplots(1, 2, figsize=(6.5, 2.6), gridspec_kw={"width_ratios":[1.15,1]})
-    # LEFT: classification of Crossref misses as a dot plot (none is a fabrication)
-    order = ["arXiv DataCite DOI\n(real)", "Zenodo DOI (real)",
-             "data archive / regional\njournal / funder (real)",
-             "wrong identifier,\nreal reference", "our extraction\nartifact"]
-    labels = [k for k in order if k in cc]; vals = [cc[k] for k in labels]
+    # LEFT: classification of the Crossref misses (none is a fabrication)
     from pantera_style import no_minor_y, no_minor_x
     ys = list(range(len(labels)))
     axL.barh(ys, vals, color=C["green"], height=0.62)
@@ -201,7 +194,7 @@ def fig12_citation_integrity():
     # RIGHT: fabrication rate; astro-ph as a 95% upper limit (arrow), biomed as points
     cats = ["astro-ph\n(95% limit)", "Biomed 2025\n(Lancet)", "Biomed 2026\n(Lancet)"]
     xs = [0, 1, 2]
-    ul = 0.24
+    ul = st["per_paper_UL_pct"]
     axR.plot(0, ul, marker="_", ms=9, color=C["blue"], mew=1.4)
     axR.annotate("", xy=(0, ul-0.10), xytext=(0, ul),
                  arrowprops=dict(arrowstyle="->", color=C["blue"], lw=1.0))

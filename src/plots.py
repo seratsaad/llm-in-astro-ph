@@ -85,7 +85,7 @@ def fig2_delve_collapse():
     top = fig.add_subplot(gs[0, :])
     top.plot(a.yq, a.rate*100, color=C["black"], lw=1.3)
     top.axvline(2024.35, color=C["grey"], ls=":", lw=1.0)
-    top.set_xlim(2022, 2026.6)
+    top.set_xlim(2022, 2026.0)
     top.set_ylabel("% with any marker", fontsize=9)
     top.text(0.015, 0.93, "any marker word", transform=top.transAxes,
              va="top", ha="left", fontsize=9.5)
@@ -97,17 +97,17 @@ def fig2_delve_collapse():
         # counterfactual: linear fit to the 2015-2021 yearly rates, extrapolated
         yy = ym[(ym.word == w) & (ym.year <= 2021)]
         coef = np.polyfit(yy.year, yy.freq*100, 1)
-        xx = np.array([2022, 2026.5])
+        xx = np.array([2022, 2025.9])
         ax.plot(xx, np.clip(np.polyval(coef, xx), 0, None), ls=(0, (3, 2)),
                 lw=0.9, color=C["black"], zorder=2)
         ax.plot(d.yq, d.freq*100, "-o", ms=2.2, lw=1.1, color=C["blue"], zorder=3)
         ax.axvline(2024.35, color=C["grey"], ls=":", lw=0.8)
-        ax.set_xlim(2022, 2026.6)
+        ax.set_xlim(2022, 2026.0)
         ax.set_ylim(0, max(d.freq.max()*100*1.25, 0.1))
         ax.text(0.05, 0.94, w, transform=ax.transAxes, va="top", ha="left",
                 fontsize=9.5)
         ax.tick_params(labelsize=8.5)
-        ax.set_xticks([2022, 2024, 2026])
+        ax.set_xticks([2022, 2024])
         if i == 0:
             ax.set_ylabel("% of abstracts", fontsize=9)
     fig.savefig(os.path.join(FIGS, "fig2_delve_collapse.png"), bbox_inches="tight")
@@ -156,14 +156,18 @@ def fig3_discovery():
         axA.scatter(g.rec_freq*100, g.ratio, s=10, color=kcol[k], zorder=4, linewidths=0)
     axA.axhline(5, color=C["grey"], ls="--", lw=0.7, zorder=2)
     axA.set_xlim(3e-3, 30); axA.set_ylim(0.25, 40)
-    axA.set_xlabel("Frequency in 2024-2026 (% of abstracts)")
-    axA.set_ylabel("Frequency ratio, 2024-2026 / 2018-2021")
+    axA.set_xlabel("Frequency in 2024-2025 (% of abstracts)")
+    axA.set_ylabel("Frequency ratio, 2024-2025 / 2018-2021")
     axA.text(0.025, 0.97, "(a) single words", transform=axA.transAxes,
              va="top", ha="left", fontsize=9.5, zorder=7)
     show_a = ["nircam", "miri", "nirspec", "jwst", "desi",
               "interpretable", "leveraging", "offering", "pivotal",
               "intricate", "highlighting", "delve"]
-    ann = sel[sel.word.isin(show_a)]
+    prio = {w: i for i, w in enumerate(
+        ["leveraging", "pivotal", "intricate", "delve", "offering", "highlighting",
+         "interpretable", "nircam", "miri", "nirspec", "jwst", "desi"])}
+    ann = sel[sel.word.isin(show_a)].copy()
+    ann = ann.assign(_p=ann.word.map(prio).fillna(99)).sort_values("_p")
     others = sel[~sel.word.isin(show_a)]
     dropA = place_labels(axA, list(ann.rec_freq*100), list(ann.ratio), list(ann.word),
                  colors=[kcol[k] for k in ann.kind], fontsize=8.5,
@@ -181,7 +185,7 @@ def fig3_discovery():
         axB.scatter(g.rec_freq*100, g.ratio, s=10, color=kcol[k], zorder=4, linewidths=0)
     axB.axhline(5, color=C["grey"], ls="--", lw=0.7, zorder=2)
     axB.set_xlim(3e-3, 30); axB.set_ylim(0.25, 40)
-    axB.set_xlabel("Frequency in 2024-2026 (% of abstracts)")
+    axB.set_xlabel("Frequency in 2024-2025 (% of abstracts)")
     axB.text(0.025, 0.97, "(b) two-word phrases", transform=axB.transAxes,
              va="top", ha="left", fontsize=9.5, zorder=7)
     show_b = ["jwst observations", "the desi", "leveraging the", "insights into"]
@@ -208,7 +212,7 @@ def fig3_discovery():
 # ---------------------------------------------------------------- FIG 4 (disclosure)
 def fig4_disclosure():
     d = json.load(open(os.path.join(DATA, "ads_disclosure.json")))
-    yrs = [int(y) for y in d["years"]]
+    yrs = [int(y) for y in d["years"] if int(y) <= 2025]
     ack = [d["ack"][str(y)] for y in yrs]
     full = [d["full"][str(y)] for y in yrs]
     tot = [d["total_astro"][str(y)] for y in yrs]
@@ -219,14 +223,14 @@ def fig4_disclosure():
     from pantera_style import no_minor_x
     no_minor_x(ax1)
     ax1.set_ylabel("Number of papers per year"); ax1.set_xlabel("Year")
-    ax1.legend(fontsize=9, loc="upper left"); ax1.set_xticks(range(2016,2027,2))
+    ax1.legend(fontsize=9, loc="upper left"); ax1.set_xticks(range(2016,2026,2))
     # fraction
     frac_ack = [100*a/t for a,t in zip(ack,tot)]
     frac_full = [100*f/t for f,t in zip(full,tot)]
     ax2.plot(yrs, frac_full, "-o", color=C["sky"], lw=1.3, label="Full text")
     ax2.plot(yrs, frac_ack, "-o", color=C["vermillion"], lw=1.3, label="Acknowledgments")
     ax2.set_ylabel("% of astronomy papers"); ax2.set_xlabel("Year")
-    ax2.legend(fontsize=9); ax2.set_xticks(range(2016,2027,2))
+    ax2.legend(fontsize=9); ax2.set_xticks(range(2016,2026,2))
     ax2.yaxis.set_major_formatter(PercentFormatter(decimals=1))
     footer(fig); fig.tight_layout(rect=[0,0.04,1,1])
     fig.savefig(os.path.join(FIGS, "fig4_disclosure.png"), bbox_inches="tight")

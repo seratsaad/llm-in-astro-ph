@@ -63,10 +63,10 @@ def main():
     # concealment factor vs ADS disclosure (recent pooled)
     try:
         ads = json.load(open(os.path.join(DATA, "ads_disclosure.json")))
-        rec = df[df.year.between(2024, 2026)]
+        rec = df[df.year.between(2024, 2025)]
         leak = (rec.tier1.sum() + rec.tier2.sum())  # generous "any signal"
         leak_pct = 100*leak/rec.scanned.sum() if rec.scanned.sum() else 0
-        yrs = [2024, 2025, 2026]
+        yrs = [2024, 2025]
         ack = sum(ads["ack"][str(y)] for y in yrs); tot = sum(ads["total_astro"][str(y)] for y in yrs)
         print(f"\n2024-26 source-leak (any tier) ~ {leak_pct:.2f}% of scanned; "
               f"ADS ack-disclosure ~ {100*ack/tot:.2f}% of papers")
@@ -80,10 +80,10 @@ def make_figure():
     from pantera_style import C as PC
     import json as _j
     df = pd.read_csv(os.path.join(DATA, "source_leak_by_year.csv"))
-    rec = df[df.year.between(2024, 2026)]
+    rec = df[df.year.between(2024, 2025)]
     src_leak = 100*(rec.tier1.sum()+rec.tier2.sum())/rec.scanned.sum()
     ads = _j.load(open(os.path.join(DATA, "ads_disclosure.json")))
-    yrs = [2024, 2025, 2026]
+    yrs = [2024, 2025]
     ack = 100*sum(ads["ack"][str(y)] for y in yrs)/sum(ads["total_astro"][str(y)] for y in yrs)
     full = 100*sum(ads["full"][str(y)] for y in yrs)/sum(ads["total_astro"][str(y)] for y in yrs)
     al = _j.load(open(os.path.join(DATA, "alpha_summary.json")))
@@ -110,7 +110,7 @@ def make_figure():
     ax.invert_yaxis()
     ax.set_xscale("log")
     ax.set_xlim(0.05, 40)
-    ax.set_xlabel("% of astronomy papers (2024 to 2026), log scale", labelpad=4)
+    ax.set_xlabel("% of astronomy papers (2024 to 2025), log scale", labelpad=4)
     fig.tight_layout()
     fig.savefig(os.path.join(os.path.dirname(__file__), "..", "figs", "fig9_detection_ladder.png"),
                 bbox_inches="tight")

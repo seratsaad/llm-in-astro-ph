@@ -35,7 +35,7 @@ def main():
         pub = r["published"]
         if not pub or len(pub) < 7: continue
         y = int(pub[:4])
-        if y < 2018 or y > 2026: continue
+        if y < 2018 or y > 2025: continue
         toks = set(TOK.findall((r.get("abstract") or "").lower()))
         tot[cat][y] += 1
         if toks & BASKET: hit[cat][y] += 1

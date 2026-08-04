@@ -30,7 +30,7 @@ MARKERS = ["delve", "delves", "underscore", "underscores", "intricate", "pivotal
            "garner", "multifaceted"]
 
 BASE_YEARS = {2018, 2019, 2020, 2021}
-REC_YEARS = {2024, 2025, 2026}
+REC_YEARS = {2024, 2025}
 MINC = 25
 
 def bigrams(toks):
@@ -55,7 +55,7 @@ def main():
         if not pub or len(pub) < 7:
             continue
         y = int(pub[:4])
-        if y < 2015 or y > 2026:
+        if y < 2015 or y > 2025:
             continue
         toks = TOK.findall((r.get("abstract") or "").lower())
         tset = set(toks)

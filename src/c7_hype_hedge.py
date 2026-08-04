@@ -39,7 +39,7 @@ def main():
         pub = r["published"]
         if not pub or len(pub) < 7: continue
         y = int(pub[:4])
-        if y < 2015 or y > 2026: continue
+        if y < 2015 or y > 2025: continue
         toks = TOK.findall((r.get("abstract") or "").lower())
         tset = set(toks)
         y_tot[y] += 1; y_words[y] += len(toks)

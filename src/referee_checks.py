@@ -63,7 +63,7 @@ def subfield_permutation(n_perm=300, seed=0):
     for line in open(os.path.join(DATA, "astroph_abstracts.jsonl")):
         r = json.loads(line)
         y = int(r["published"][:4])
-        if y not in (2024, 2025, 2026):
+        if y not in (2024, 2025):
             continue
         toks = set(re.findall(r"[a-z]+", r["abstract"].lower()))
         vec = np.zeros(len(MARKERS), bool)

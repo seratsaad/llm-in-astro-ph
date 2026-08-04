@@ -59,7 +59,7 @@ def main():
             if not pub or len(pub) < 7:
                 continue
             y = int(pub[:4])
-            if y < 2015 or y > 2026:
+            if y < 2015 or y > 2025:
                 continue
             yq = qkey(pub)
             toks = set(TOKEN_RE.findall((r.get("abstract") or "").lower()))
@@ -97,7 +97,7 @@ def main():
                                      "n": y_total[y], "hit": y_hit[y]}
             print(f"{y}: basket rate={rate*100:5.2f}%  excess(lowerbound alpha)={excess*100:5.2f}%  (n={y_total[y]})")
     # headline: 2024-2026 pooled
-    rec_years = [2024, 2025, 2026]
+    rec_years = [2024, 2025]
     rec_hit = sum(y_hit[y] for y in rec_years); rec_tot = sum(y_total[y] for y in rec_years)
     rec_rate = rec_hit / rec_tot
     headline = rec_rate - base_rate

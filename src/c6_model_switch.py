@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-C6 -- Is the 2026 dip in the LLM-marker basket a real DECLINE, or a MIGRATION to
+C6 -- Is the late-2025 dip in the LLM-marker basket a real DECLINE, or a MIGRATION to
 different vocabulary (consistent with a shift in the dominant source model / author
 awareness)?
 
@@ -32,7 +32,7 @@ MARKERS = ["delve", "delves", "delving", "tapestry", "testament", "boasts",
            "aligns", "aligning", "garner", "elucidate", "unravel", "crucial",
            "harnessing", "advancing", "endeavor"]
 
-QSTART, QEND = (2022, 1), (2026, 2)  # drop sparse 2026Q3
+QSTART, QEND = (2022, 1), (2025, 4)
 
 def qkey(pub):
     y = int(pub[:4]); m = int(pub[5:7]); return y, (m - 1) // 3 + 1
@@ -65,7 +65,7 @@ def main():
             if w in toks: cnt[w][i] += 1
 
     freq = {w: cnt[w] / tot for w in MARKERS}  # doc-frequency per quarter
-    # classify each word by recent trend: mean(2025Q1..2026Q2) vs peak-quarter value,
+    # classify each word by recent trend: mean(2025Q1..2025Q4) vs peak-quarter value,
     # AND slope over last 6 quarters.
     # Cluster by PEAK QUARTER: 'early tells' peaked by 2024Q4 (the GPT-3.5/4-era words
     # that went viral and were edited out); 'late tells' peaked 2025 or later.
@@ -103,12 +103,12 @@ def main():
     print("  " + ", ".join(sorted(collapsing)))
     print(f"LATE tells (peaked >=2025Q1, n={len(rising)}):")
     print("  " + ", ".join(sorted(rising)))
-    # how much of the 2025->2026 basket drop is from the collapsing cluster?
-    i25 = qidx[(2025, 2)]; i26 = qidx[(2026, 2)]
+    # how much of the mid-to-late-2025 basket drop is from the collapsing cluster?
+    i25 = qidx[(2025, 2)]; i26 = qidx[(2025, 4)]
     d_all = agg_all[i25] - agg_all[i26]
     d_col = agg_col[i25] - agg_col[i26]
     d_ris = agg_ris[i25] - agg_ris[i26]
-    print(f"\n2025Q2 -> 2026Q2 change in incidence:")
+    print(f"\n2025Q2 -> 2025Q4 change in incidence:")
     print(f"  all markers : {agg_all[i25]*100:.2f}% -> {agg_all[i26]*100:.2f}%  (Δ {d_all*100:+.2f}pp)")
     print(f"  collapsing  : {agg_col[i25]*100:.2f}% -> {agg_col[i26]*100:.2f}%  (Δ {d_col*100:+.2f}pp)")
     print(f"  rising      : {agg_ris[i25]*100:.2f}% -> {agg_ris[i26]*100:.2f}%  (Δ {d_ris*100:+.2f}pp)")

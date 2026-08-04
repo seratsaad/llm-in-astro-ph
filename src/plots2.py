@@ -32,7 +32,7 @@ def fig7_hype_hedge():
     ax.set_ylabel("Frequency, indexed to 2015-19 = 100"); ax.set_xlabel("Year")
     ax.set_ylim(90, 128)
     ax.legend(loc="upper left", fontsize=9)
-    ax.set_xticks(range(2015, 2027, 2))
+    ax.set_xticks(range(2015, 2026, 2))
     footer(fig); fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig7_hype_hedge.png"), bbox_inches="tight"); plt.close(fig)
 
@@ -40,7 +40,7 @@ def fig7_hype_hedge():
 def fig8_detectability():
     s = pd.read_csv(os.path.join(DATA, "c6_cluster_series.csv"))
     ads = json.load(open(os.path.join(DATA, "ads_disclosure.json")))
-    yrs = [int(y) for y in ads["years"]]
+    yrs = [int(y) for y in ads["years"] if int(y) <= 2025]
     full = [ads["full"][str(y)] for y in yrs]
     tot = [ads["total_astro"][str(y)] for y in yrs]
     # annualize 2026 (partial ~ half year): scale full-text fraction is a rate so fine
@@ -55,11 +55,11 @@ def fig8_detectability():
              label="Late tells")
     axL.set_xlabel("Year (quarterly)"); axL.set_ylabel("% of abstracts with marker(s)")
     axL.legend(loc="upper left", fontsize=9)
-    axL.set_xlim(2022, 2026.6)
+    axL.set_xlim(2022, 2026.0)
     # RIGHT: disclosure still rising -> contradiction
     axR.plot(yrs, frac_full, "-o", color=C["sky"], lw=1.4, ms=3)
     axR.set_xlabel("Year"); axR.set_ylabel("% of astronomy papers disclosing LLM use (full text)")
-    axR.set_xticks(range(2016, 2027, 2))
+    axR.set_xticks(range(2016, 2026, 2))
     footer(fig); fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig8_detectability_erosion.png"), bbox_inches="tight"); plt.close(fig)
 
