@@ -56,7 +56,7 @@ def main():
     axB.invert_yaxis()
     axB.set_xlim(0, 9.6)
     axB.set_xticks([0, 2, 4, 6, 8])
-    axB.set_xlabel("Quarters from peak to half of peak excess")
+    axB.set_xlabel("Quarters from peak excess to half")
     axB.text(0.05, 0.08, "(b)", transform=axB.transAxes, fontsize=10)
     axB.text(8.3, 5.35, "Not reached\nby end-2025", fontsize=8, color=C["blue"],
              ha="center", va="bottom")

@@ -86,6 +86,7 @@ def fig2_delve_collapse():
     top.plot(a.yq, a.rate*100, color=C["black"], lw=1.3)
     top.axvline(2024.35, color=C["grey"], ls=":", lw=1.0)
     top.set_xlim(2022, 2026.0)
+    top.set_xticks(range(2022, 2027))
     top.set_ylabel("% with any marker", fontsize=9)
     top.text(0.015, 0.93, "any marker word", transform=top.transAxes,
              va="top", ha="left", fontsize=9.5)
