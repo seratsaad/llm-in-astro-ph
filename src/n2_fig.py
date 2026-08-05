@@ -77,7 +77,9 @@ def main():
             ("leveraging", C["blue"], "-"), ("offering", C["blue"], "--")]
     axC.axvspan(*PUB, color=C["vermillion"], alpha=0.10, lw=0)
     for x, name in RELEASES:
-        axC.axvline(x, color="#999999", ls=(0, (2, 2)), lw=0.7, zorder=1)
+        label_bottom = 1.62 - 0.118 * len(name) - 0.05
+        axC.plot([x, x], [-0.15, label_bottom], color="#999999",
+                 ls=(0, (2, 2)), lw=0.7, zorder=1)
         axC.text(x, 1.62, name, rotation=90, ha="center", va="top", fontsize=7,
                  color="#777777")
     for w, col, ls in show:
@@ -94,7 +96,7 @@ def main():
     axC.set_xticks(range(2023, 2026))
     axC.set_xlabel("Year (quarterly)")
     axC.set_ylabel("Excess over trend, peak = 1")
-    axC.legend(loc="upper left", fontsize=8, ncol=1, bbox_to_anchor=(0.005, 0.80))
+    axC.legend(loc="upper left", fontsize=8, ncol=1, bbox_to_anchor=(0.005, 0.99))
     axC.text(2024.335, -0.05, "Publicity", fontsize=7.5, color=C["vermillion"],
              ha="center", va="bottom")
     axC.text(0.985, 0.06, "(c)", transform=axC.transAxes, fontsize=10, ha="right", va="bottom")
