@@ -1,0 +1,19 @@
+{
+  "changed_pairs": 450,
+  "words_added_total": 10611,
+  "words_removed_total": 8386,
+  "basket_added": 9,
+  "basket_removed": 0,
+  "placebo_sets": 1000,
+  "placebo_added_mean": 2.243,
+  "placebo_removed_mean": 1.662,
+  "placebo_net_mean": 0.581,
+  "p_net_ge_basket": 0.0,
+  "p_added_ge_basket": 0.0,
+  "null_net_percentiles": {
+    "50": 0,
+    "90": 3,
+    "95": 3,
+    "99": 5
+  }
+}

@@ -1,0 +1,118 @@
+{
+ "sources": [
+  {
+   "key": "graham2024",
+   "citation": "P. Graham, X post, 7 April 2024 (with international press coverage the same week)",
+   "url": "https://x.com/paulg/status/1777030573220933716",
+   "date": "2024-04",
+   "words_named": [
+    "delve"
+   ]
+  },
+  {
+   "key": "liang2024",
+   "citation": "Liang et al., arXiv:2404.01268 (posted 1 April 2024)",
+   "url": "https://arxiv.org/abs/2404.01268",
+   "date": "2024-04",
+   "words_named": [
+    "realm",
+    "intricate",
+    "showcasing",
+    "pivotal"
+   ]
+  },
+  {
+   "key": "kobak2024",
+   "citation": "Kobak et al., arXiv:2406.07016 (posted 11 June 2024; Science Advances 2025)",
+   "url": "https://arxiv.org/abs/2406.07016",
+   "date": "2024-06",
+   "words_named": [
+    "delves",
+    "delving",
+    "showcasing",
+    "underscores",
+    "intricate",
+    "intricacies",
+    "meticulously",
+    "pivotal"
+   ]
+  }
+ ],
+ "checked_but_named_none": [
+  {
+   "key": "gray2024",
+   "citation": "Gray, arXiv:2403.16887",
+   "note": "word list not in abstract page; excluded rather than guessed"
+  },
+  {
+   "key": "gengtrotta2024",
+   "citation": "Geng & Trotta, arXiv:2404.08627",
+   "note": "reports frequency shifts, names none of our basket words"
+  }
+ ],
+ "per_word": {
+  "delve": [
+   "graham2024"
+  ],
+  "delves": [
+   "kobak2024"
+  ],
+  "delving": [
+   "kobak2024"
+  ],
+  "underscore": [],
+  "underscores": [
+   "kobak2024"
+  ],
+  "underscoring": [],
+  "intricate": [
+   "liang2024",
+   "kobak2024"
+  ],
+  "intricacies": [
+   "kobak2024"
+  ],
+  "showcasing": [
+   "liang2024",
+   "kobak2024"
+  ],
+  "showcase": [],
+  "showcases": [],
+  "showcased": [],
+  "boasts": [],
+  "tapestry": [],
+  "pivotal": [
+   "liang2024",
+   "kobak2024"
+  ],
+  "meticulous": [],
+  "meticulously": [
+   "kobak2024"
+  ],
+  "nuanced": [],
+  "garner": [],
+  "garners": [],
+  "garnered": [],
+  "multifaceted": [],
+  "commendable": [],
+  "noteworthy": [],
+  "myriad": [],
+  "plethora": [],
+  "testament": [],
+  "encompassing": [],
+  "seamless": [],
+  "seamlessly": [],
+  "elucidate": [],
+  "elucidating": [],
+  "unravel": [],
+  "unraveling": [],
+  "unravelling": [],
+  "realm": [
+   "liang2024"
+  ],
+  "realms": [],
+  "leveraging": [],
+  "offering": [],
+  "highlighting": []
+ }
+}

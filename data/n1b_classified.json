@@ -1,0 +1,4211 @@
+{
+ "n_labeled": 424,
+ "purpose_counts": {
+  "writing": 188,
+  "research": 92,
+  "mention": 107,
+  "unclear": 18,
+  "code": 64
+ },
+ "tool_counts": {
+  "chatgpt": 216,
+  "generic": 81,
+  "other": 25,
+  "gpt4": 37,
+  "gpt_other": 16,
+  "llama": 12,
+  "copilot": 7,
+  "claude": 13,
+  "gemini": 13,
+  "deepseek": 4
+ },
+ "writing_ids": [
+  "2301.04149",
+  "2302.03158",
+  "2304.00351",
+  "2305.02078",
+  "2306.01136",
+  "2307.00867",
+  "2307.01349",
+  "2307.03965",
+  "2307.15294",
+  "2308.01957",
+  "2308.10477",
+  "2308.13125",
+  "2309.08862",
+  "2309.11415",
+  "2309.15998",
+  "2310.00631",
+  "2310.13142",
+  "2310.14183",
+  "2311.13437",
+  "2311.18621",
+  "2312.04886",
+  "2312.06239",
+  "2401.00043",
+  "2401.06450",
+  "2401.16179",
+  "2403.09006",
+  "2404.00690",
+  "2404.01502",
+  "2404.02636",
+  "2404.05332",
+  "2404.07806",
+  "2405.01487",
+  "2405.01763",
+  "2405.02408",
+  "2405.02658",
+  "2405.08116",
+  "2405.18907",
+  "2405.19177",
+  "2406.09270",
+  "2406.12239",
+  "2406.13011",
+  "2406.16438",
+  "2407.02533",
+  "2407.03743",
+  "2407.13005",
+  "2407.20359",
+  "2408.05823",
+  "2408.07178",
+  "2408.10959",
+  "2408.14538",
+  "2408.16038",
+  "2408.16813",
+  "2409.01371",
+  "2409.05775",
+  "2409.06421",
+  "2409.13640",
+  "2410.02076",
+  "2410.11884",
+  "2410.14014",
+  "2410.14804",
+  "2410.17697",
+  "2410.19047",
+  "2410.21580",
+  "2411.03931",
+  "2411.04968",
+  "2411.09752",
+  "2411.13801",
+  "2411.15495",
+  "2411.18440",
+  "2412.02744",
+  "2412.05745",
+  "2412.07840",
+  "2501.02119",
+  "2501.04082",
+  "2501.05297",
+  "2501.07677",
+  "2501.08084",
+  "2501.11872",
+  "2501.17508",
+  "2502.07713",
+  "2502.09790",
+  "2502.10672",
+  "2502.15297",
+  "2502.19244",
+  "2503.05412",
+  "2503.06004",
+  "2503.08586",
+  "2503.17841",
+  "2503.19968",
+  "2503.20777",
+  "2503.23788",
+  "2504.01067",
+  "2504.01351",
+  "2504.03156",
+  "2504.04387",
+  "2504.10032",
+  "2504.13395",
+  "2504.15086",
+  "2504.15530",
+  "2504.20133",
+  "2504.20450",
+  "2505.02475",
+  "2505.03890",
+  "2505.09042",
+  "2505.15855",
+  "2505.15995",
+  "2505.17188",
+  "2505.24743",
+  "2506.03547",
+  "2506.05506",
+  "2506.06445",
+  "2506.07912",
+  "2506.08065",
+  "2506.09116",
+  "2506.15952",
+  "2506.20690",
+  "2506.23477",
+  "2506.23686",
+  "2507.00765",
+  "2507.03088",
+  "2507.03743",
+  "2507.06696",
+  "2507.08823",
+  "2507.09721",
+  "2507.16902",
+  "2507.18683",
+  "2507.21270",
+  "2507.21632",
+  "2507.21639",
+  "2508.03809",
+  "2508.05961",
+  "2508.09568",
+  "2508.11001",
+  "2508.12601",
+  "2508.12802",
+  "2508.15756",
+  "2508.16234",
+  "2508.17331",
+  "2508.20286",
+  "2508.21275",
+  "2509.00153",
+  "2509.02298",
+  "2509.04142",
+  "2509.12318",
+  "2509.15334",
+  "2509.17102",
+  "2509.18241",
+  "2509.20621",
+  "2509.23264",
+  "2510.00847",
+  "2510.02639",
+  "2510.09760",
+  "2510.10344",
+  "2510.13765",
+  "2510.14149",
+  "2510.17473",
+  "2510.19606",
+  "2510.20693",
+  "2510.21197",
+  "2510.24065",
+  "2510.24087",
+  "2510.24545",
+  "2510.25161",
+  "2510.25672",
+  "2510.25824",
+  "2510.25953",
+  "2510.26970",
+  "2510.27415",
+  "2511.01959",
+  "2511.04740",
+  "2511.09806",
+  "2511.10782",
+  "2511.14235",
+  "2511.15006",
+  "2511.18607",
+  "2511.19707",
+  "2512.00056",
+  "2512.03329",
+  "2512.06011",
+  "2512.07214",
+  "2512.07896",
+  "2512.08495",
+  "2512.10222",
+  "2512.12754",
+  "2512.15920",
+  "2512.16208",
+  "2512.18795",
+  "2512.24895"
+ ],
+ "writing_ids_2025": [
+  "2501.02119",
+  "2501.04082",
+  "2501.05297",
+  "2501.07677",
+  "2501.08084",
+  "2501.11872",
+  "2501.17508",
+  "2502.07713",
+  "2502.09790",
+  "2502.10672",
+  "2502.15297",
+  "2502.19244",
+  "2503.05412",
+  "2503.06004",
+  "2503.08586",
+  "2503.17841",
+  "2503.19968",
+  "2503.20777",
+  "2503.23788",
+  "2504.01067",
+  "2504.01351",
+  "2504.03156",
+  "2504.04387",
+  "2504.10032",
+  "2504.13395",
+  "2504.15086",
+  "2504.15530",
+  "2504.20133",
+  "2504.20450",
+  "2505.02475",
+  "2505.03890",
+  "2505.09042",
+  "2505.15855",
+  "2505.15995",
+  "2505.17188",
+  "2505.24743",
+  "2506.03547",
+  "2506.05506",
+  "2506.06445",
+  "2506.07912",
+  "2506.08065",
+  "2506.09116",
+  "2506.15952",
+  "2506.20690",
+  "2506.23477",
+  "2506.23686",
+  "2507.00765",
+  "2507.03088",
+  "2507.03743",
+  "2507.06696",
+  "2507.08823",
+  "2507.09721",
+  "2507.16902",
+  "2507.18683",
+  "2507.21270",
+  "2507.21632",
+  "2507.21639",
+  "2508.03809",
+  "2508.05961",
+  "2508.09568",
+  "2508.11001",
+  "2508.12601",
+  "2508.12802",
+  "2508.15756",
+  "2508.16234",
+  "2508.17331",
+  "2508.20286",
+  "2508.21275",
+  "2509.00153",
+  "2509.02298",
+  "2509.04142",
+  "2509.12318",
+  "2509.15334",
+  "2509.17102",
+  "2509.18241",
+  "2509.20621",
+  "2509.23264",
+  "2510.00847",
+  "2510.02639",
+  "2510.09760",
+  "2510.10344",
+  "2510.13765",
+  "2510.14149",
+  "2510.17473",
+  "2510.19606",
+  "2510.20693",
+  "2510.21197",
+  "2510.24065",
+  "2510.24087",
+  "2510.24545",
+  "2510.25161",
+  "2510.25672",
+  "2510.25824",
+  "2510.25953",
+  "2510.26970",
+  "2510.27415",
+  "2511.01959",
+  "2511.04740",
+  "2511.09806",
+  "2511.10782",
+  "2511.14235",
+  "2511.15006",
+  "2511.18607",
+  "2511.19707",
+  "2512.00056",
+  "2512.03329",
+  "2512.06011",
+  "2512.07214",
+  "2512.07896",
+  "2512.08495",
+  "2512.10222",
+  "2512.12754",
+  "2512.15920",
+  "2512.16208",
+  "2512.18795",
+  "2512.24895"
+ ],
+ "writing_or_unclear_ids": [
+  "2301.04149",
+  "2302.03158",
+  "2303.16941",
+  "2304.00351",
+  "2305.02078",
+  "2306.01136",
+  "2307.00867",
+  "2307.01349",
+  "2307.03965",
+  "2307.15294",
+  "2308.01957",
+  "2308.10477",
+  "2308.13125",
+  "2308.16155",
+  "2308.16156",
+  "2308.16165",
+  "2309.08862",
+  "2309.11415",
+  "2309.15998",
+  "2310.00631",
+  "2310.13142",
+  "2310.14183",
+  "2311.13437",
+  "2311.18621",
+  "2312.04886",
+  "2312.06239",
+  "2401.00043",
+  "2401.06450",
+  "2401.16142",
+  "2401.16179",
+  "2403.09006",
+  "2404.00690",
+  "2404.01502",
+  "2404.02636",
+  "2404.05332",
+  "2404.07806",
+  "2405.01487",
+  "2405.01763",
+  "2405.02408",
+  "2405.02658",
+  "2405.08116",
+  "2405.18907",
+  "2405.19177",
+  "2406.05778",
+  "2406.09270",
+  "2406.12239",
+  "2406.13011",
+  "2406.16438",
+  "2407.02533",
+  "2407.03743",
+  "2407.04777",
+  "2407.09967",
+  "2407.13005",
+  "2407.20359",
+  "2408.05823",
+  "2408.07178",
+  "2408.10959",
+  "2408.14538",
+  "2408.16038",
+  "2408.16813",
+  "2409.00067",
+  "2409.01371",
+  "2409.05775",
+  "2409.06421",
+  "2409.13640",
+  "2410.02076",
+  "2410.11884",
+  "2410.14014",
+  "2410.14804",
+  "2410.17697",
+  "2410.19047",
+  "2410.21580",
+  "2411.03931",
+  "2411.04968",
+  "2411.09752",
+  "2411.13801",
+  "2411.15495",
+  "2411.18440",
+  "2412.02744",
+  "2412.05745",
+  "2412.07840",
+  "2501.02119",
+  "2501.04082",
+  "2501.05297",
+  "2501.07677",
+  "2501.08084",
+  "2501.11872",
+  "2501.17508",
+  "2501.18700",
+  "2502.07713",
+  "2502.09790",
+  "2502.10672",
+  "2502.15297",
+  "2502.19244",
+  "2503.05412",
+  "2503.06004",
+  "2503.08586",
+  "2503.17841",
+  "2503.19968",
+  "2503.20777",
+  "2503.23015",
+  "2503.23788",
+  "2504.01067",
+  "2504.01351",
+  "2504.03156",
+  "2504.04003",
+  "2504.04387",
+  "2504.10032",
+  "2504.13395",
+  "2504.15086",
+  "2504.15530",
+  "2504.20133",
+  "2504.20450",
+  "2505.02475",
+  "2505.03890",
+  "2505.08857",
+  "2505.09042",
+  "2505.15855",
+  "2505.15995",
+  "2505.17188",
+  "2505.24743",
+  "2506.03547",
+  "2506.05506",
+  "2506.06445",
+  "2506.07912",
+  "2506.08065",
+  "2506.09116",
+  "2506.15952",
+  "2506.20690",
+  "2506.23477",
+  "2506.23686",
+  "2507.00765",
+  "2507.03088",
+  "2507.03743",
+  "2507.06696",
+  "2507.08823",
+  "2507.09721",
+  "2507.16902",
+  "2507.18683",
+  "2507.21270",
+  "2507.21632",
+  "2507.21639",
+  "2507.21822",
+  "2508.03809",
+  "2508.05961",
+  "2508.09568",
+  "2508.11001",
+  "2508.12601",
+  "2508.12802",
+  "2508.15756",
+  "2508.16234",
+  "2508.17331",
+  "2508.20065",
+  "2508.20286",
+  "2508.21275",
+  "2508.21817",
+  "2509.00153",
+  "2509.02298",
+  "2509.04142",
+  "2509.12318",
+  "2509.15334",
+  "2509.17102",
+  "2509.18241",
+  "2509.20621",
+  "2509.22784",
+  "2509.23264",
+  "2510.00847",
+  "2510.02639",
+  "2510.06193",
+  "2510.09760",
+  "2510.10344",
+  "2510.13765",
+  "2510.14149",
+  "2510.17473",
+  "2510.19606",
+  "2510.20693",
+  "2510.21197",
+  "2510.24065",
+  "2510.24087",
+  "2510.24545",
+  "2510.25161",
+  "2510.25672",
+  "2510.25824",
+  "2510.25953",
+  "2510.26970",
+  "2510.27415",
+  "2511.01959",
+  "2511.04740",
+  "2511.09806",
+  "2511.10782",
+  "2511.14235",
+  "2511.15006",
+  "2511.18607",
+  "2511.19707",
+  "2512.00056",
+  "2512.03329",
+  "2512.06011",
+  "2512.07214",
+  "2512.07896",
+  "2512.08495",
+  "2512.10222",
+  "2512.12754",
+  "2512.15920",
+  "2512.16208",
+  "2512.18795",
+  "2512.24895"
+ ],
+ "code_only_ids": [
+  "2310.09902",
+  "2310.11800",
+  "2312.01420",
+  "2403.12120",
+  "2405.01634",
+  "2406.12512",
+  "2406.18733",
+  "2407.16917",
+  "2410.12776",
+  "2410.13932",
+  "2410.21974",
+  "2411.02245",
+  "2411.12799",
+  "2412.17086",
+  "2501.17538",
+  "2502.00223",
+  "2502.08473",
+  "2502.18564",
+  "2503.19579",
+  "2504.08029",
+  "2504.11539",
+  "2506.13522",
+  "2506.22519",
+  "2509.07938",
+  "2509.22301",
+  "2509.25099",
+  "2510.02479",
+  "2510.05017",
+  "2510.09571"
+ ],
+ "research_ids": [
+  "2302.04324",
+  "2303.17853",
+  "2304.05406",
+  "2305.00108",
+  "2306.11648",
+  "2308.13125",
+  "2309.06126",
+  "2310.17892",
+  "2312.02091",
+  "2312.08579",
+  "2312.14211",
+  "2401.01916",
+  "2401.09685",
+  "2404.10019",
+  "2404.10757",
+  "2405.10303",
+  "2405.14930",
+  "2405.20389",
+  "2406.01391",
+  "2406.11400",
+  "2406.17057",
+  "2407.02992",
+  "2407.04420",
+  "2407.11194",
+  "2408.08676",
+  "2409.11401",
+  "2409.14807",
+  "2409.19750",
+  "2409.20252",
+  "2410.01207",
+  "2411.09012",
+  "2412.00431",
+  "2412.06412",
+  "2412.08490",
+  "2412.20789",
+  "2501.04247",
+  "2501.05692",
+  "2501.07250",
+  "2501.18411",
+  "2502.15815",
+  "2503.00821",
+  "2503.22793",
+  "2503.23859",
+  "2504.03424",
+  "2504.08583",
+  "2505.03890",
+  "2505.17188",
+  "2505.17592",
+  "2505.19896",
+  "2505.20538",
+  "2506.02730",
+  "2506.09117",
+  "2506.17523",
+  "2506.20532",
+  "2506.20729",
+  "2507.02162",
+  "2507.07155",
+  "2507.07257",
+  "2507.08958",
+  "2507.14827",
+  "2507.15715",
+  "2507.22870",
+  "2508.03661",
+  "2508.05728",
+  "2508.10075",
+  "2508.17331",
+  "2508.21275",
+  "2509.02615",
+  "2509.04142",
+  "2509.07226",
+  "2509.26110",
+  "2510.00063",
+  "2510.01299",
+  "2510.02426",
+  "2510.05016",
+  "2510.05744",
+  "2510.06931",
+  "2510.08317",
+  "2510.24591",
+  "2510.25824",
+  "2510.25953",
+  "2510.26970",
+  "2511.08784",
+  "2511.08970",
+  "2511.12353",
+  "2511.14685",
+  "2511.20694",
+  "2512.03154",
+  "2512.04031",
+  "2512.06011",
+  "2512.11202",
+  "2512.24754"
+ ],
+ "mention_ids": [
+  "2302.13854",
+  "2303.01974",
+  "2303.03046",
+  "2303.03192",
+  "2303.15136",
+  "2303.16446",
+  "2303.17072",
+  "2304.06615",
+  "2305.09277",
+  "2305.12009",
+  "2305.18531",
+  "2306.15703",
+  "2306.16834",
+  "2307.14339",
+  "2308.10944",
+  "2310.02828",
+  "2310.12069",
+  "2310.14530",
+  "2310.15674",
+  "2310.20172",
+  "2311.01169",
+  "2311.05217",
+  "2311.15102",
+  "2311.15585",
+  "2401.02589",
+  "2401.07304",
+  "2402.17716",
+  "2403.12337",
+  "2403.19464",
+  "2403.19937",
+  "2404.00102",
+  "2404.01269",
+  "2404.02973",
+  "2404.12126",
+  "2404.18635",
+  "2405.00125",
+  "2405.03408",
+  "2405.10890",
+  "2405.13471",
+  "2405.17156",
+  "2406.11398",
+  "2406.12515",
+  "2406.17324",
+  "2406.19069",
+  "2407.05751",
+  "2407.18530",
+  "2408.01006",
+  "2408.01994",
+  "2408.02895",
+  "2408.03691",
+  "2408.11353",
+  "2408.12123",
+  "2408.16911",
+  "2409.00927",
+  "2409.03837",
+  "2409.04850",
+  "2409.19288",
+  "2410.09294",
+  "2410.19017",
+  "2411.02247",
+  "2411.02401",
+  "2411.08022",
+  "2411.09750",
+  "2412.08876",
+  "2412.09152",
+  "2412.09167",
+  "2412.15046",
+  "2412.20091",
+  "2501.00089",
+  "2501.03876",
+  "2501.06538",
+  "2502.01361",
+  "2502.07773",
+  "2502.10783",
+  "2502.13858",
+  "2502.14139",
+  "2502.18045",
+  "2503.09213",
+  "2503.13658",
+  "2503.17283",
+  "2503.18617",
+  "2503.22786",
+  "2504.01609",
+  "2504.01645",
+  "2504.02392",
+  "2504.10279",
+  "2504.10672",
+  "2504.17883",
+  "2505.01102",
+  "2505.04865",
+  "2506.17379",
+  "2506.21648",
+  "2506.24002",
+  "2507.04291",
+  "2507.04834",
+  "2507.11587",
+  "2507.18682",
+  "2507.20972",
+  "2509.16484",
+  "2509.19453",
+  "2510.02527",
+  "2510.03493",
+  "2510.08636",
+  "2510.12920",
+  "2510.17960",
+  "2511.11887",
+  "2511.20465"
+ ],
+ "labels": {
+  "2301.04149": {
+   "id": "2301.04149",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "use of AI language model ChatGPT for assistance in refining the writing and language of this manuscript"
+  },
+  "2302.03158": {
+   "id": "2302.03158",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "The English writing in this paper was improved with ChatGPT ... no sentences were generated from scratch"
+  },
+  "2302.04324": {
+   "id": "2302.04324",
+   "purposes": [
+    "research"
+   ],
+   "tool": "chatgpt",
+   "quote": "I have asked the AI chatbot ChatGPT the question posed by this article's title"
+  },
+  "2302.13854": {
+   "id": "2302.13854",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "we draw from research using positional embeddings used in modern Large Language Models (LLM's)"
+  },
+  "2303.01974": {
+   "id": "2303.01974",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "other",
+   "quote": "FAPESP (LLAMA Project No. 11/51676-9)"
+  },
+  "2303.03046": {
+   "id": "2303.03046",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "other",
+   "quote": "Bard, E., Raisbeck, G., Yiou, F., \\& Jouzel, J. 2000, Tellus Series B"
+  },
+  "2303.03192": {
+   "id": "2303.03192",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "in the age of large language models, there is potential to harness vast internet-scale knowledge"
+  },
+  "2303.15136": {
+   "id": "2303.15136",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "advanced deep learning tools, such as Large Language Models(LLMs), in nuclear physics research"
+  },
+  "2303.16446": {
+   "id": "2303.16446",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "other",
+   "quote": "Gemini Observatory/NSFs NOIRLab, Casilla 603, La Serena, Chile"
+  },
+  "2303.16941": {
+   "id": "2303.16941",
+   "purposes": [
+    "unclear"
+   ],
+   "tool": "chatgpt",
+   "quote": "The author made use of the OpenAI ChatGPT 3.5, which was a true test of the author's fortitude"
+  },
+  "2303.17072": {
+   "id": "2303.17072",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "matched 'llm' only inside compressed/binary data; no readable disclosure"
+  },
+  "2303.17853": {
+   "id": "2303.17853",
+   "purposes": [
+    "research"
+   ],
+   "tool": "chatgpt",
+   "quote": "prompts given to ChatGPT ... are shown in orange, text generated by ChatGPT is shown in black"
+  },
+  "2304.00351": {
+   "id": "2304.00351",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "This whole article was written by using ChatGPT."
+  },
+  "2304.05406": {
+   "id": "2304.05406",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt4",
+   "quote": "The authors thank the OpenAI Team for access to the GPT-4 model."
+  },
+  "2304.06615": {
+   "id": "2304.06615",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "other",
+   "quote": "The BARD catalog of BMRs was downloaded from the solar dynamo dataverse"
+  },
+  "2305.00108": {
+   "id": "2305.00108",
+   "purposes": [
+    "research"
+   ],
+   "tool": "chatgpt",
+   "quote": "leverages ChatGPT large-language models (LLMs) to automatically generate ... human-readable summaries"
+  },
+  "2305.02078": {
+   "id": "2305.02078",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "This paper's English composition was partially enhanced through the use of ChatGPT"
+  },
+  "2305.09277": {
+   "id": "2305.09277",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "matched term only inside compressed/binary data; no readable disclosure"
+  },
+  "2305.12009": {
+   "id": "2305.12009",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "The authors did not use generative AI and AI-assisted technologies in the writing of this paper."
+  },
+  "2305.18531": {
+   "id": "2305.18531",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "other",
+   "quote": "GRB 230307A: Continued Gemini-South observations confirm rapid optical fading"
+  },
+  "2306.01136": {
+   "id": "2306.01136",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "We acknowledge the use of chatGPT for English editing of the manuscript."
+  },
+  "2306.11648": {
+   "id": "2306.11648",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt4",
+   "quote": "thesis hypotheses produced by the in-context prompted ChatGPT model"
+  },
+  "2306.15703": {
+   "id": "2306.15703",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "Drawing parallels to the impact of large language models"
+  },
+  "2306.16834": {
+   "id": "2306.16834",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "Future LLMs may be able to more directly serve telescope intelligence"
+  },
+  "2307.00867": {
+   "id": "2307.00867",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "SEM acknowledge the assistance of ChatGPT for proofreading and language enhancement"
+  },
+  "2307.01349": {
+   "id": "2307.01349",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "We also thank ChatGPT for writing the first draft of the conclusion (and only the conclusion) of this paper."
+  },
+  "2307.03965": {
+   "id": "2307.03965",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "We acknowledge using ChatGPT to polish the language of one paragraph"
+  },
+  "2307.14339": {
+   "id": "2307.14339",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "from simple MLPs to complex Large Language Models"
+  },
+  "2307.15294": {
+   "id": "2307.15294",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "We used ChatGPT for checking the grammar and for simplifying some long sentences"
+  },
+  "2308.01957": {
+   "id": "2308.01957",
+   "purposes": [
+    "writing",
+    "code"
+   ],
+   "tool": "gpt4",
+   "quote": "use of the GPT-4 model by OpenAI for providing guidance during the programming of \\AP and editing of the paper"
+  },
+  "2308.10477": {
+   "id": "2308.10477",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "The English is polished by ChatGPT."
+  },
+  "2308.10944": {
+   "id": "2308.10944",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "the estimated cost of training OpenAI's GPT-4 is $100 million"
+  },
+  "2308.13125": {
+   "id": "2308.13125",
+   "purposes": [
+    "writing",
+    "research"
+   ],
+   "tool": "chatgpt",
+   "quote": "the abstract and title were generated by ChatGPT and slightly modified by the lead author"
+  },
+  "2308.16155": {
+   "id": "2308.16155",
+   "purposes": [
+    "unclear"
+   ],
+   "tool": "gpt_other",
+   "quote": "We also acknowledge the assistance provided by the OpenAI language model."
+  },
+  "2308.16156": {
+   "id": "2308.16156",
+   "purposes": [
+    "unclear"
+   ],
+   "tool": "gpt_other",
+   "quote": "We also acknowledge the assistance provided by the OpenAI language model."
+  },
+  "2308.16165": {
+   "id": "2308.16165",
+   "purposes": [
+    "unclear"
+   ],
+   "tool": "gpt_other",
+   "quote": "We also acknowledge the assistance provided by the OpenAI language model."
+  },
+  "2309.06126": {
+   "id": "2309.06126",
+   "purposes": [
+    "research"
+   ],
+   "tool": "llama",
+   "quote": "expedite our efforts in using language models to analyze astronomical literature"
+  },
+  "2309.08862": {
+   "id": "2309.08862",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "the author(s) used OpenAI's ChatGPT for proofreading purposes"
+  },
+  "2309.11415": {
+   "id": "2309.11415",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "We thank ChatGPT for its meticulous identification of grammar mistakes."
+  },
+  "2309.15998": {
+   "id": "2309.15998",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "sincere gratitude to ChatGPT for its invaluable language assistance"
+  },
+  "2310.00631": {
+   "id": "2310.00631",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "The English was polished with ChatGPT."
+  },
+  "2310.02828": {
+   "id": "2310.02828",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "other",
+   "quote": "FONDECYT-Chile grants ... Gemini-ANID 32180007, Chile"
+  },
+  "2310.09902": {
+   "id": "2310.09902",
+   "purposes": [
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT 3.5 (for minor coding suggestions)"
+  },
+  "2310.11800": {
+   "id": "2310.11800",
+   "purposes": [
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "Some of the software used in this study was produced with assistance from ChatGPT 3.5."
+  },
+  "2310.12069": {
+   "id": "2310.12069",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "chatgpt",
+   "quote": "you can query ChatGPT itself to explore how the attention mechanism works"
+  },
+  "2310.13142": {
+   "id": "2310.13142",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "We acknowledge using ChatGPT to help polish the language of one paragraph"
+  },
+  "2310.14183": {
+   "id": "2310.14183",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "The English is polished with ChatGPT."
+  },
+  "2310.14530": {
+   "id": "2310.14530",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "other",
+   "quote": "based on deep imaging with Gemini/GMOS-N"
+  },
+  "2310.15674": {
+   "id": "2310.15674",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "closely following known scaling laws that guide the training of large language models"
+  },
+  "2310.17892": {
+   "id": "2310.17892",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt4",
+   "quote": "results of GPT-4 and Claude 2 in extracting celestial object identifier and telescope name knowledge entities"
+  },
+  "2310.20172": {
+   "id": "2310.20172",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "large-scale language models (LLM) based on attention mechanism have shown their tremendous power"
+  },
+  "2311.01169": {
+   "id": "2311.01169",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "more and more tasks will be performed by scientists using AI tools"
+  },
+  "2311.05217": {
+   "id": "2311.05217",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "the auto-regressive way of generating data, used very successfully e.g. in PixelCNN and large language models"
+  },
+  "2311.13437": {
+   "id": "2311.13437",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "This article was spell- and stylechecked, but not generated by chatGPT 4.0."
+  },
+  "2311.15102": {
+   "id": "2311.15102",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "chatgpt",
+   "quote": "we will interface \\f\\, with artificial intelligence tools, starting with ChatGPT or similar tools"
+  },
+  "2311.15585": {
+   "id": "2311.15585",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "chatgpt",
+   "quote": "LLMs like ChatGPT (GPT-3.5 and GPT-4) and Llama 2 have revolutionized our interaction with digital content"
+  },
+  "2311.18621": {
+   "id": "2311.18621",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "assistance of AI language model ChatGPT in providing suggestions on improved text formulations"
+  },
+  "2312.01420": {
+   "id": "2312.01420",
+   "purposes": [
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "MAB used ChatGPT to help debug code."
+  },
+  "2312.02091": {
+   "id": "2312.02091",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt4",
+   "quote": "today's SOTA LLM (GPT4) zero-shot fails most of our problems"
+  },
+  "2312.04886": {
+   "id": "2312.04886",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "The English was polished with ChatGPT."
+  },
+  "2312.06239": {
+   "id": "2312.06239",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "gratitude to ChatGPT, an AI model developed by OpenAI, for its assistance in polishing the English of this paper"
+  },
+  "2312.08579": {
+   "id": "2312.08579",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt_other",
+   "quote": "inference with a locally installed large language model (LLM) to reliably identify planetary names"
+  },
+  "2312.14211": {
+   "id": "2312.14211",
+   "purposes": [
+    "research"
+   ],
+   "tool": "generic",
+   "quote": "Experimenting with Large Language Models and vector embeddings in NASA SciX"
+  },
+  "2401.00043": {
+   "id": "2401.00043",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT and Microsoft Word for grammar checks"
+  },
+  "2401.01916": {
+   "id": "2401.01916",
+   "purposes": [
+    "research"
+   ],
+   "tool": "llama",
+   "quote": "we engaged GPT-4 to formulate pertinent questions from paragraphs within 300,000 arXiv papers"
+  },
+  "2401.02589": {
+   "id": "2401.02589",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "chatgpt",
+   "quote": "development of sophisticated networks such as VGG, ResNet, and ChatGPT"
+  },
+  "2401.06450": {
+   "id": "2401.06450",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "English language editting was proofread with the assistance of ChatGPT"
+  },
+  "2401.07304": {
+   "id": "2401.07304",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "other",
+   "quote": "Univ Lyon, Univ Claude Bernard Lyon 1, CNRS, IP2I Lyon/IN2P3"
+  },
+  "2401.09685": {
+   "id": "2401.09685",
+   "purposes": [
+    "research"
+   ],
+   "tool": "generic",
+   "quote": "participated in the creation of a Large Language Model (LLM) developed by the NASA Science Mission Directorate"
+  },
+  "2401.16142": {
+   "id": "2401.16142",
+   "purposes": [
+    "unclear"
+   ],
+   "tool": "gpt_other",
+   "quote": "We acknowledge the use of the GPT-3.5 language model developed by OpenAI in this research."
+  },
+  "2401.16179": {
+   "id": "2401.16179",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "the authors used ChatGPT 3.5 to enhance the language quality"
+  },
+  "2402.17716": {
+   "id": "2402.17716",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "self-attention have been used successfully in the construction of large language models"
+  },
+  "2403.09006": {
+   "id": "2403.09006",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "the use of ChatGPT3.5 from OpenAI, which was helpful as a tool to improve the text of some parts of the manuscript"
+  },
+  "2403.12120": {
+   "id": "2403.12120",
+   "purposes": [
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "the author(s) used ChatGPT to generate LaTeX code templates"
+  },
+  "2403.12337": {
+   "id": "2403.12337",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "the attention-based architecture used commonly by large language models"
+  },
+  "2403.19464": {
+   "id": "2403.19464",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "chatgpt",
+   "quote": "very recently to ChatGPT's brother, an incredible drawing AI called DALL-E"
+  },
+  "2403.19937": {
+   "id": "2403.19937",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "such general tools should be called ``largely language methods'' or ``LLMs''"
+  },
+  "2404.00102": {
+   "id": "2404.00102",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "diverse areas including the well-known large language models"
+  },
+  "2404.00690": {
+   "id": "2404.00690",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "Figure 1 and all of the writing was made with the help of ChatGPT"
+  },
+  "2404.01269": {
+   "id": "2404.01269",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "a modern ML models based on Transformer model (which is also used in Large Language Models)"
+  },
+  "2404.01502": {
+   "id": "2404.01502",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "gratitude to openAI's ChatGPT ... for their invaluable help in writing portions of this manuscript"
+  },
+  "2404.02636": {
+   "id": "2404.02636",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "generic",
+   "quote": "Generative AI has been used to improve text flow and grammar of parts of the existing text"
+  },
+  "2404.02973": {
+   "id": "2404.02973",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "Learning Transferable Visual Models From Natural Language Supervision. OpenAI, page 47, 2021"
+  },
+  "2404.05332": {
+   "id": "2404.05332",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "The Large Language Models (LLMs), specifically ChatGPT and Gemini, were solely utilized for language refinement"
+  },
+  "2404.07806": {
+   "id": "2404.07806",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "We acknowledge ChatGPT's contribution in proofreading the manuscript"
+  },
+  "2404.10019": {
+   "id": "2404.10019",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt_other",
+   "quote": "We fine-tuned the GPT-3.5 turbo model using the training set over two epochs"
+  },
+  "2404.10757": {
+   "id": "2404.10757",
+   "purposes": [
+    "research"
+   ],
+   "tool": "generic",
+   "quote": "The confusion matrix of the LLM method in StarWhisper LC"
+  },
+  "2404.12126": {
+   "id": "2404.12126",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "other",
+   "quote": "Detection of Near-infrared Signatures of r-process Nucleosynthesis with Gemini-South"
+  },
+  "2404.18635": {
+   "id": "2404.18635",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "Large language models are now infamous for producing lucid text that is both confident and wrong"
+  },
+  "2405.00125": {
+   "id": "2405.00125",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "outstanding performance in large language models like generative pre-trained transformers"
+  },
+  "2405.01487": {
+   "id": "2405.01487",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "gpt_other",
+   "quote": "the use of GPT-3.5 ... for its assistance in identifying and rectifying any grammatical or syntactical errors"
+  },
+  "2405.01634": {
+   "id": "2405.01634",
+   "purposes": [
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "Some of the software used in this study was produced with assistance from ChatGPT 3.5"
+  },
+  "2405.01763": {
+   "id": "2405.01763",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "the authors used ChatGPT in order to improve readability and language"
+  },
+  "2405.02408": {
+   "id": "2405.02408",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT was utilized to improve wording at the sentence level"
+  },
+  "2405.02658": {
+   "id": "2405.02658",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "generic",
+   "quote": "Generative AI has been used to improve text flow and grammar of existing text"
+  },
+  "2405.03408": {
+   "id": "2405.03408",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "Two prominent examples are the large language model (LLM)"
+  },
+  "2405.08116": {
+   "id": "2405.08116",
+   "purposes": [
+    "writing",
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT was utilized to improve wording at the sentence level, answer coding inquires and to convert tables to LaTeX"
+  },
+  "2405.10303": {
+   "id": "2405.10303",
+   "purposes": [
+    "research"
+   ],
+   "tool": "chatgpt",
+   "quote": "thank OpenAI's ChatGPT-4 and DALL-E for generating the illustrations ... use of ChatGPT-4(o) and Bing for basic knowledge"
+  },
+  "2405.10890": {
+   "id": "2405.10890",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "encode prior knowledge about specific domains of problems, such as large language models (LLM)"
+  },
+  "2405.13471": {
+   "id": "2405.13471",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "Originating in the field of language processing with the advent of models like OpenAI's GPT"
+  },
+  "2405.14930": {
+   "id": "2405.14930",
+   "purposes": [
+    "research"
+   ],
+   "tool": "generic",
+   "quote": "LOM that has open code and weights, and that has been pretrained on openly available data"
+  },
+  "2405.17156": {
+   "id": "2405.17156",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "These models, especially Large Language Models (LLMs), exhibit performance unmatched by their smaller variants"
+  },
+  "2405.18907": {
+   "id": "2405.18907",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "the authors used ChatGPT 3.5 in order to improve readability and language"
+  },
+  "2405.19177": {
+   "id": "2405.19177",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "gpt4",
+   "quote": "checked for typographical errors and edited for clarity with assistance from OpenAI's GPT-4"
+  },
+  "2405.20389": {
+   "id": "2405.20389",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt4",
+   "quote": "We present a LLM chatbot that retrieves information from arXiv astro-ph papers in order to answer user queries"
+  },
+  "2406.01391": {
+   "id": "2406.01391",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt4",
+   "quote": "The classifications below are conducted using GPT-4"
+  },
+  "2406.05778": {
+   "id": "2406.05778",
+   "purposes": [
+    "unclear"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT (https://www.openai.com/chatgpt) listed among software used"
+  },
+  "2406.09270": {
+   "id": "2406.09270",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT serves as grammar checker and paraphrasing tool"
+  },
+  "2406.11398": {
+   "id": "2406.11398",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "other",
+   "quote": "the Luminous Local AGN with Matched Analogs survey (LLAMA)"
+  },
+  "2406.11400": {
+   "id": "2406.11400",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt4",
+   "quote": "This experiment investigates the use of the GPT-4 language model to extract entities"
+  },
+  "2406.12239": {
+   "id": "2406.12239",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT-4 (Assisted in the writing of the abstract"
+  },
+  "2406.12512": {
+   "id": "2406.12512",
+   "purposes": [
+    "code"
+   ],
+   "tool": "copilot",
+   "quote": "GitHub Copilot (chen2021evaluating) listed in software"
+  },
+  "2406.12515": {
+   "id": "2406.12515",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "used as a building block of large language models like GPT-3"
+  },
+  "2406.13011": {
+   "id": "2406.13011",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "gpt4",
+   "quote": "This work benefited from the language editing assistance of GPT-4"
+  },
+  "2406.16438": {
+   "id": "2406.16438",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "the authors used ChatGPT in order to improve language and readability"
+  },
+  "2406.17057": {
+   "id": "2406.17057",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt4",
+   "quote": "We investigate two models, GPT-4o and LLaVA-NeXT, for zero-shot classification of low-surface brightness galaxies"
+  },
+  "2406.17324": {
+   "id": "2406.17324",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT and large language models in academia: opportunities and challenges"
+  },
+  "2406.18733": {
+   "id": "2406.18733",
+   "purposes": [
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT (powered by OpenAI's language model, GPT-4) was used to generate code to produce the fit"
+  },
+  "2406.19069": {
+   "id": "2406.19069",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "other",
+   "quote": "Testing anthropic predictions for Lambda and the CMB temperature"
+  },
+  "2407.02533": {
+   "id": "2407.02533",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "the authors used ChatGPT in order to integrate the draft text with the Astronomy and Computing Latex template"
+  },
+  "2407.02992": {
+   "id": "2407.02992",
+   "purposes": [
+    "research"
+   ],
+   "tool": "chatgpt",
+   "quote": "We find that the ChatGPT-adjusted proposals tend to receive lower grades compared to the original proposals"
+  },
+  "2407.03743": {
+   "id": "2407.03743",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "The language was refined by ChatGPT"
+  },
+  "2407.04420": {
+   "id": "2407.04420",
+   "purposes": [
+    "research"
+   ],
+   "tool": "other",
+   "quote": "instances where cosmosage v3 demonstrates superior performance compared to state-of-the-art generalist models"
+  },
+  "2407.04777": {
+   "id": "2407.04777",
+   "purposes": [
+    "unclear"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT (OpenAI, 2024) listed in software with no stated purpose"
+  },
+  "2407.05751": {
+   "id": "2407.05751",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "This approach has its parallels in large language models"
+  },
+  "2407.09967": {
+   "id": "2407.09967",
+   "purposes": [
+    "unclear"
+   ],
+   "tool": "gpt4",
+   "quote": "{GPT-4} (OpenAI 2023) listed in software with no stated purpose"
+  },
+  "2407.11194": {
+   "id": "2407.11194",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt4",
+   "quote": "required us to further parse the results with GPT-4o"
+  },
+  "2407.13005": {
+   "id": "2407.13005",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "claude",
+   "quote": "Claude.AI and QuillBot were used for proofreading and language refinement"
+  },
+  "2407.16917": {
+   "id": "2407.16917",
+   "purposes": [
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "EGN acknowledges ChatGPT 3.5 for proofreading some of the functions"
+  },
+  "2407.18530": {
+   "id": "2407.18530",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "other",
+   "quote": "Gemini Observatory/NSFs NOIRLab, Casilla 603, La Serena, Chile"
+  },
+  "2407.20359": {
+   "id": "2407.20359",
+   "purposes": [
+    "writing",
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "using ChatGPT to help clarify the language ... also used to take existing code and optimize it for speed"
+  },
+  "2408.01006": {
+   "id": "2408.01006",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "other",
+   "quote": "FAPESP (LLAMA Project no. 11/51676-9)"
+  },
+  "2408.01994": {
+   "id": "2408.01994",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "other",
+   "quote": "Local Level Model (LLM)"
+  },
+  "2408.02895": {
+   "id": "2408.02895",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "chatgpt",
+   "quote": "meteoric rise in the use of text generation platforms such as ChatGPT"
+  },
+  "2408.03691": {
+   "id": "2408.03691",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "Large pre-trained models, such as GPT-4 and Llama2, have revolutionized natural language processing"
+  },
+  "2408.05823": {
+   "id": "2408.05823",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "the authors used ChatGPT and Grammarly to enhance the manuscript's language and readability"
+  },
+  "2408.07178": {
+   "id": "2408.07178",
+   "purposes": [
+    "writing",
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "This research has made use of ChatGPT to restructure text and code"
+  },
+  "2408.08676": {
+   "id": "2408.08676",
+   "purposes": [
+    "research"
+   ],
+   "tool": "chatgpt",
+   "quote": "use a fine-tuned LLM (e.g. ChatGPT, LLaMA) as an autonomous spacecraft operator"
+  },
+  "2408.10959": {
+   "id": "2408.10959",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT-4o (https://chatgpt.com/) was used for modifications to English grammar"
+  },
+  "2408.11353": {
+   "id": "2408.11353",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "which use LLMs to parse the text in circulars for parameters of interest"
+  },
+  "2408.12123": {
+   "id": "2408.12123",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "other",
+   "quote": "bibliography author name: Bardacova (Safronov et al. 2021)"
+  },
+  "2408.14538": {
+   "id": "2408.14538",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "claude",
+   "quote": "The authors made use of the Claude AI assistant (Anthropic, PBC) for writing assistance and editing"
+  },
+  "2408.16038": {
+   "id": "2408.16038",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "the authors used ChatGPT by OpenAI to gain insights into writing minor pieces of the manuscript"
+  },
+  "2408.16813": {
+   "id": "2408.16813",
+   "purposes": [
+    "writing",
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "{\\tt ChatGPT} was utilized to improve wording at the sentence level and assist with coding inquires"
+  },
+  "2408.16911": {
+   "id": "2408.16911",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "llama",
+   "quote": "FAPESP (LLAMA Project No. 11/51676-9)"
+  },
+  "2409.00067": {
+   "id": "2409.00067",
+   "purposes": [
+    "unclear"
+   ],
+   "tool": "claude",
+   "quote": "/Contents (https://www.anthropic.com/claude) [PDF link annotation; no readable statement of purpose]"
+  },
+  "2409.00927": {
+   "id": "2409.00927",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "X+llm(l [match inside compressed PDF binary stream; not a disclosure]"
+  },
+  "2409.01371": {
+   "id": "2409.01371",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "acknowledge the use of Grammarly, LanguageTool and ChatGPT for improving the English grammar and sentence structure"
+  },
+  "2409.03837": {
+   "id": "2409.03837",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "LlM [match inside compressed PDF binary stream; not a disclosure]"
+  },
+  "2409.04850": {
+   "id": "2409.04850",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "Third, Large language model (LLM) has been very successful recently. It also has been applied to the science field"
+  },
+  "2409.05775": {
+   "id": "2409.05775",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "other",
+   "quote": "During the preparation of this work the author used Grammarly in order to revise the English"
+  },
+  "2409.06421": {
+   "id": "2409.06421",
+   "purposes": [
+    "writing",
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "acknowledge OpenAI's ChatGPT for providing coding assistance and manuscript preparation"
+  },
+  "2409.11401": {
+   "id": "2409.11401",
+   "purposes": [
+    "research"
+   ],
+   "tool": "generic",
+   "quote": "treat the conditional halo catalog generation as a language translation problem and use a large language model-like architecture"
+  },
+  "2409.13640": {
+   "id": "2409.13640",
+   "purposes": [
+    "writing",
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT was also used to generate Python scripts that adjusted DUSTY models and gray-bodies to the observations"
+  },
+  "2409.14807": {
+   "id": "2409.14807",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt4",
+   "quote": "we primarily utilize the GPT-4o model ... as our LLM backbone"
+  },
+  "2409.19288": {
+   "id": "2409.19288",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "known as the Landau\u2013Lifschitz\u2013Matheron (LLM) conjecture"
+  },
+  "2409.19750": {
+   "id": "2409.19750",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gemini",
+   "quote": "questions were extracted from the high-quality Annual Review of Astronomy and Astrophysics using Gemini-1.5-Pro-001"
+  },
+  "2409.20252": {
+   "id": "2409.20252",
+   "purposes": [
+    "research"
+   ],
+   "tool": "chatgpt",
+   "quote": "LLM services used in this work ... Table \\ref{tab:services_used} briefly lists the services we used in this work"
+  },
+  "2410.01207": {
+   "id": "2410.01207",
+   "purposes": [
+    "research"
+   ],
+   "tool": "generic",
+   "quote": "astroLLM is designed using retrieval-augmented generation (RAG) techniques"
+  },
+  "2410.02076": {
+   "id": "2410.02076",
+   "purposes": [
+    "writing",
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "utilized ChatGPT ... for assistance with python and UNIX shell scripts ... used to refine the manuscript's clarity"
+  },
+  "2410.09294": {
+   "id": "2410.09294",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "chatgpt",
+   "quote": "the Vision Transformer (ViT) architecture, which was exemplified by the success of the ChatGPT"
+  },
+  "2410.11884": {
+   "id": "2410.11884",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "used ChatGPT (OpenAI) in order to improve the language and readability of the manuscript"
+  },
+  "2410.12776": {
+   "id": "2410.12776",
+   "purposes": [
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "The Monte Carlo Python code used in the line-of-sight calculation was written by the ChatGPT-3.5 bot"
+  },
+  "2410.13932": {
+   "id": "2410.13932",
+   "purposes": [
+    "code"
+   ],
+   "tool": "copilot",
+   "quote": "Typesetting was expedited with the use of GitHub Copilot, but without the use of any AI-generated text"
+  },
+  "2410.14014": {
+   "id": "2410.14014",
+   "purposes": [
+    "writing",
+    "code"
+   ],
+   "tool": "claude",
+   "quote": "Claude 3.5 Sonnet and ChatGPT were used to improve wording at the sentence level and assist with coding"
+  },
+  "2410.14804": {
+   "id": "2410.14804",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "This manuscript benefited from grammar checking and proofreading using ChatGPT (OpenAI)"
+  },
+  "2410.17697": {
+   "id": "2410.17697",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "Minor typos, grammar and spelling mistakes were identified with the assistance of ChatGPT-4o"
+  },
+  "2410.19017": {
+   "id": "2410.19017",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "gemini",
+   "quote": "observations obtained at the international Gemini Observatory, a program of NSF's NOIRLab"
+  },
+  "2410.19047": {
+   "id": "2410.19047",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "acknowledge the use of Grammarly and OpenAI's ChatGPT for language refinement and proofreading"
+  },
+  "2410.21580": {
+   "id": "2410.21580",
+   "purposes": [
+    "writing",
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT and Anthropic's Claude for assistance in editing this manuscript ... and in generating small analysis scripts"
+  },
+  "2410.21974": {
+   "id": "2410.21974",
+   "purposes": [
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "(chat-GPT version 3.5 and 4.0) to speed-up the development of, optimize, and clean-up the python code"
+  },
+  "2411.02245": {
+   "id": "2411.02245",
+   "purposes": [
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "I enlisted the help of ChatGPT, first to extract the frames from the movie ... a working program that showed slanted tracks"
+  },
+  "2411.02247": {
+   "id": "2411.02247",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "for the past years, large language models and natural language processing (NLP) [lecture topics]"
+  },
+  "2411.02401": {
+   "id": "2411.02401",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "chatgpt",
+   "quote": "In these times of ChatGPT, it is reasonable to assume that each extraterrestrial probe is also equipped with AI"
+  },
+  "2411.03931": {
+   "id": "2411.03931",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "We thank ChatGPT for polishing our English in this paper"
+  },
+  "2411.04968": {
+   "id": "2411.04968",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "acknowledge the use of ChatGPT (version 4.0 and 4.01-preview) developed by OpenAI for assisting with language editing"
+  },
+  "2411.08022": {
+   "id": "2411.08022",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "a two-piece long level metre (LLM) covers the full length of the TPC"
+  },
+  "2411.09012": {
+   "id": "2411.09012",
+   "purposes": [
+    "research"
+   ],
+   "tool": "llama",
+   "quote": "Achieving GPT-4o Level Performance in Astronomy with a Specialized 8B-Parameter Large Language Model [AstroSage-Llama-3.1-8B]"
+  },
+  "2411.09750": {
+   "id": "2411.09750",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "chatgpt",
+   "quote": "[match inside compressed PDF binary stream; no readable disclosure]"
+  },
+  "2411.09752": {
+   "id": "2411.09752",
+   "purposes": [
+    "writing",
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "\\texttt{ChatGPT} was utilized to improve wording at the sentence level and assist with coding inquires"
+  },
+  "2411.12799": {
+   "id": "2411.12799",
+   "purposes": [
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "made use of ChatGPT, an OpenAI software, to assist with python code development and refinement"
+  },
+  "2411.13801": {
+   "id": "2411.13801",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "The languages was polished by ChatGPT during the revision of the draft"
+  },
+  "2411.15495": {
+   "id": "2411.15495",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "The English writing in this paper was improved with ChatGPT (OpenAI 202026)"
+  },
+  "2411.18440": {
+   "id": "2411.18440",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "generic",
+   "quote": "We only used an LLM to catch grammatical details, but don't use it for anything else"
+  },
+  "2412.00431": {
+   "id": "2412.00431",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt4",
+   "quote": "we use gpt-4o-2024-05-13 queried via the OpenAI Application Programming Interface (API)"
+  },
+  "2412.02744": {
+   "id": "2412.02744",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "several software were used to improve the readability and the quality of the text, such as ChatGPT, Grammarly"
+  },
+  "2412.05745": {
+   "id": "2412.05745",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "gpt4",
+   "quote": "We used OpenAI's \\texttt{GPT-4} language model for assistance with language refinement and drafting parts of the manuscript"
+  },
+  "2412.06412": {
+   "id": "2412.06412",
+   "purposes": [
+    "research"
+   ],
+   "tool": "other",
+   "quote": "We asked Qwen-max-202412 model ... to show us 10 galaxies to observe in Beijing"
+  },
+  "2412.07840": {
+   "id": "2412.07840",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "used OpenAI's ChatGPT to assist in drafting portions of the following sections: Abstract, Introduction, and Conclusions"
+  },
+  "2412.08490": {
+   "id": "2412.08490",
+   "purposes": [
+    "research"
+   ],
+   "tool": "other",
+   "quote": "generated (incorrect!) code for a polyphase filter in vectorized RISC-V assembly using the QWEN 2.5 Coder 14B Instruct model"
+  },
+  "2412.08876": {
+   "id": "2412.08876",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "chatgpt",
+   "quote": "utm_source=chatgpt.com [URL artifact in a bibliography entry]"
+  },
+  "2412.09152": {
+   "id": "2412.09152",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "We aim to combine \\texttt{herakoi} with large language and vision models [future work, not a use disclosure]"
+  },
+  "2412.09167": {
+   "id": "2412.09167",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "Astronomy articles form part of the input to LLMs, and new researchers already risk being misinformed"
+  },
+  "2412.15046": {
+   "id": "2412.15046",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "the identification of text generated from large language models [example Kaggle competition]"
+  },
+  "2412.17086": {
+   "id": "2412.17086",
+   "purposes": [
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT-4 has been used to generate some of the code used in this work and was subsequently checked by the author"
+  },
+  "2412.20091": {
+   "id": "2412.20091",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "we aim to investigate transformer models and large language models [future research]"
+  },
+  "2412.20789": {
+   "id": "2412.20789",
+   "purposes": [
+    "research"
+   ],
+   "tool": "other",
+   "quote": "we introduce GW-Whisper, the first application of OpenAI's Whisper model \\citep{Whisper} for GW data analysis"
+  },
+  "2501.00089": {
+   "id": "2501.00089",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "sparse ML algorithms have been used ... to disentangle the internal activations of large language models"
+  },
+  "2501.02119": {
+   "id": "2501.02119",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "SJ acknowledges the use of ChatGPT-4o, particularly for (1) significant rewrites/reformulation of nearly all sentences"
+  },
+  "2501.03876": {
+   "id": "2501.03876",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "chatgpt",
+   "quote": "enhancing efficiency in writing code through tools like OpenAI's ChatGPT and GitHub's Copilot [general discussion]"
+  },
+  "2501.04082": {
+   "id": "2501.04082",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "This work made use of ChatGPT, a large language model developed by OpenAI, to assist with rewording sentences"
+  },
+  "2501.04247": {
+   "id": "2501.04247",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt4",
+   "quote": "GPT-4 Turbo ... and ERNIE-Bot 4.0 ... were identified as the top-performing models for this task"
+  },
+  "2501.05297": {
+   "id": "2501.05297",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "acknowledge the use of ChatGPT-4 for grammar corrections and proofreading assistance"
+  },
+  "2501.05692": {
+   "id": "2501.05692",
+   "purposes": [
+    "research"
+   ],
+   "tool": "other",
+   "quote": "the GPT4ALL library with the \\texttt{mistral-7b-instruct-v} model developed by Mistral ... was implemented"
+  },
+  "2501.06538": {
+   "id": "2501.06538",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "advances in machine translation using large language models have raised the possibility of AI aiding the human translation"
+  },
+  "2501.07250": {
+   "id": "2501.07250",
+   "purposes": [
+    "research"
+   ],
+   "tool": "generic",
+   "quote": "the aim of integrating Large Language Model (LLM) tools in the OSS environment [KM3NeT RAG chat applications]"
+  },
+  "2501.07677": {
+   "id": "2501.07677",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "Minor typos, grammar and spelling mistakes were identified with the assistance of ChatGPT-4o"
+  },
+  "2501.08084": {
+   "id": "2501.08084",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "use of free version of ChatGPT (OpenAI) for language polishing and manuscript text refinement"
+  },
+  "2501.11872": {
+   "id": "2501.11872",
+   "purposes": [
+    "writing",
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "gratitude to ChatGPT for its assistance in refining the manuscript and enhancing the code to improve execution efficiency"
+  },
+  "2501.17508": {
+   "id": "2501.17508",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "the language was edited by using ChatGPT"
+  },
+  "2501.17538": {
+   "id": "2501.17538",
+   "purposes": [
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "acknowledge OpenAI's ChatGPT for its assistance in debugging certain codes used in this research"
+  },
+  "2501.18411": {
+   "id": "2501.18411",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt4",
+   "quote": "supported by ... Anthropic (compute credits) and OpenAI (superalignment grant) [agent benchmark: GPT-4o, Claude 3.5]"
+  },
+  "2501.18700": {
+   "id": "2501.18700",
+   "purposes": [
+    "unclear"
+   ],
+   "tool": "claude",
+   "quote": "\\texttt{lightkurve} \\citep{lightkurve}, and \\texttt{Claude 3.5 Sonnet.}} [software list, no stated purpose]"
+  },
+  "2502.00223": {
+   "id": "2502.00223",
+   "purposes": [
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "I could do it fairly quickly with the help of ChatGPT, which would provide most of the essential code"
+  },
+  "2502.01361": {
+   "id": "2502.01361",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "chatgpt",
+   "quote": "many neural network models have been designed... such as LeNet-5, AlexNet, and ChatGPT"
+  },
+  "2502.07713": {
+   "id": "2502.07713",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "The authors acknowledge the use of \\textsc{ChatGPT} for refining the text."
+  },
+  "2502.07773": {
+   "id": "2502.07773",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "llama",
+   "quote": "{Jackman}, {Llama}, {McElwain}, {Rajagopal}, {Roy}, {Robertson}"
+  },
+  "2502.08473": {
+   "id": "2502.08473",
+   "purposes": [
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "the authors used ChatGPT in order to produce code documentation, refactor code, and produce unit tests"
+  },
+  "2502.09790": {
+   "id": "2502.09790",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "acknowledge the use of OpenAI's ChatGPT in editing portions of this manuscript to improve clarity and writing quality"
+  },
+  "2502.10672": {
+   "id": "2502.10672",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "gemini",
+   "quote": "We asked Google Gemini (1.5 Flash...) for suggestions on the grammar and expression of the Introduction"
+  },
+  "2502.10783": {
+   "id": "2502.10783",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "emerging methods that incorporate large language models (LLMs) and large vision models (LVMs) aim to capture"
+  },
+  "2502.13858": {
+   "id": "2502.13858",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "other",
+   "quote": "{Auza}, {Axelrod}, {Bard}, {Barr}, {Barrau}, {Bartlett}"
+  },
+  "2502.14139": {
+   "id": "2502.14139",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "llama",
+   "quote": "FAPESP (LLAMA Project 11/51676-9)"
+  },
+  "2502.15297": {
+   "id": "2502.15297",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "generic",
+   "quote": "large language models were used for refining grammar and enhancing the overall clarity of the text"
+  },
+  "2502.15815": {
+   "id": "2502.15815",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt4",
+   "quote": "Performance Comparison for different system prompts, using the GPT-4o model, on a subset of problems"
+  },
+  "2502.18045": {
+   "id": "2502.18045",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "No generative AI was used in the production of this manuscript."
+  },
+  "2502.18564": {
+   "id": "2502.18564",
+   "purposes": [
+    "code"
+   ],
+   "tool": "copilot",
+   "quote": "Typesetting was expedited with the use of GitHub Copilot, but without the use of AI-generated text."
+  },
+  "2502.19244": {
+   "id": "2502.19244",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "the author used ChatGPT-o1 for the purposes of improving syntax and grammar checking"
+  },
+  "2503.00821": {
+   "id": "2503.00821",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt4",
+   "quote": "After thorough testing, we managed to fine-tune a GPT-4o model. Hence, the prototype application is equipped with"
+  },
+  "2503.05412": {
+   "id": "2503.05412",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "For language editing and translation, we utilized DeepL and ChatGPT."
+  },
+  "2503.06004": {
+   "id": "2503.06004",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT, was utilised in this study exclusively for the purpose of editing and proofreading all sentences"
+  },
+  "2503.08586": {
+   "id": "2503.08586",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "We express our gratitude to ChatGPT, an AI model developed by OpenAI, for its assistance in polishing the English"
+  },
+  "2503.09213": {
+   "id": "2503.09213",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "copilot",
+   "quote": "opened new doors to software development, including AI coding assistants, such as Copilot"
+  },
+  "2503.13658": {
+   "id": "2503.13658",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "One way to do this might be to automate a search over the literature using an Artificial Intelligence Large Language Model"
+  },
+  "2503.17283": {
+   "id": "2503.17283",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "using \\acp{LLM}/chatbots or GitHub Copilot to generate code for routine tasks is by now common"
+  },
+  "2503.17841": {
+   "id": "2503.17841",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "gpt4",
+   "quote": "GPT-4 \\cite{OpenAI2023ChatGPT4} was used to refine this manuscript."
+  },
+  "2503.18617": {
+   "id": "2503.18617",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "The idea of scaling laws in large language models has been thoroughly studied"
+  },
+  "2503.19579": {
+   "id": "2503.19579",
+   "purposes": [
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "Some {\\sc python} codes were developed with the help of ChatGPT 3.5."
+  },
+  "2503.19968": {
+   "id": "2503.19968",
+   "purposes": [
+    "writing",
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "we acknowledge the assistance of AI tools, specifically OpenAI's ChatGPT, for aiding in writing and code development"
+  },
+  "2503.20777": {
+   "id": "2503.20777",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "acknowledge the use of OpenAI's ChatGPT for assistance in refining the language and improving the clarity"
+  },
+  "2503.22786": {
+   "id": "2503.22786",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "gpt_other",
+   "quote": "Most large language models, such as GPT-3 \\citep{Brown2020GPT3}, are transformer models"
+  },
+  "2503.22793": {
+   "id": "2503.22793",
+   "purposes": [
+    "research"
+   ],
+   "tool": "chatgpt",
+   "quote": "The bulk of the work in this manuscript is done by ChatGPT and deepseek."
+  },
+  "2503.23015": {
+   "id": "2503.23015",
+   "purposes": [
+    "unclear"
+   ],
+   "tool": "claude",
+   "quote": "/URI 169 0 R >> endobj 169 0 obj (https://claude.ai/)"
+  },
+  "2503.23788": {
+   "id": "2503.23788",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "All but the last paragraph of the introduction was written by {\\tt ChatGPT}"
+  },
+  "2503.23859": {
+   "id": "2503.23859",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt4",
+   "quote": "we made an effort to evaluate at least one commercial model - GPT-4.1 via the OpenAI API platform"
+  },
+  "2504.01067": {
+   "id": "2504.01067",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "This illustration was partially created with the assistance of ChatGPT-4o"
+  },
+  "2504.01351": {
+   "id": "2504.01351",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "Grammarly and ChatGPT are used for the language and grammar clean-up."
+  },
+  "2504.01609": {
+   "id": "2504.01609",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "Further processing with a machine learning classifier or large language model, such as Falco (Zuo et al., in prep)"
+  },
+  "2504.01645": {
+   "id": "2504.01645",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "chatgpt",
+   "quote": "Chatbots based on large language models (LLMs), such as {\\tt chatGPT}, {\\tt Claude}, or {\\tt Gemini}"
+  },
+  "2504.02392": {
+   "id": "2504.02392",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "gemini",
+   "quote": "the other two lie in the constellation Gemini"
+  },
+  "2504.03156": {
+   "id": "2504.03156",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "The English writing in this paper was improved with ChatGPT and Grammarly, while no sentences were generated"
+  },
+  "2504.03424": {
+   "id": "2504.03424",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gemini",
+   "quote": "We employ Gemini 2.5 Pro ... for the majority of agent functions, including planning, analysis, and synthesis tasks"
+  },
+  "2504.04003": {
+   "id": "2504.04003",
+   "purposes": [
+    "unclear"
+   ],
+   "tool": "chatgpt",
+   "quote": "\\software{... ChatGPT \\citep{OpenAI_2025, achiam2023gpt, hurst2024gpt, OpenAI_2025b}, DeepSeek \\citep{guo2025deepseek}"
+  },
+  "2504.04387": {
+   "id": "2504.04387",
+   "purposes": [
+    "writing",
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "We thank ChatGPT for assisting us in polishing the manuscript and optimizing the code to improve its execution speed"
+  },
+  "2504.08029": {
+   "id": "2504.08029",
+   "purposes": [
+    "code"
+   ],
+   "tool": "copilot",
+   "quote": "\\software{... {\\tt iSLAT} \\citep{iSLAT_code}, GitHub Copilot \\citep{githubcopilot}"
+  },
+  "2504.08583": {
+   "id": "2504.08583",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt4",
+   "quote": "We use unimodal text GPT-4 to generate synthetic conversations between an `AstroLLaVA' oracle simulacrum"
+  },
+  "2504.10032": {
+   "id": "2504.10032",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "The authors acknowledge the use of AI-assisted copy editing (ChatGPT) to improve the text of the manuscript."
+  },
+  "2504.10279": {
+   "id": "2504.10279",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "a new analytically solvable model is invaluable in the era of Large Language Models (LLMs)"
+  },
+  "2504.10672": {
+   "id": "2504.10672",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "llm[`wI (match occurs only inside compressed PDF binary stream)"
+  },
+  "2504.11539": {
+   "id": "2504.11539",
+   "purposes": [
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "We thank ChatGPT for producing most of the analysis code used in this work"
+  },
+  "2504.13395": {
+   "id": "2504.13395",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "gpt4",
+   "quote": "We used OpenAI's \\texttt{GPT-4} language model for assistance with language refinement and drafting parts of the manuscript"
+  },
+  "2504.15086": {
+   "id": "2504.15086",
+   "purposes": [
+    "writing",
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "gratitude to ChatGPT for its assistance in refining the manuscript and enhancing the code to improve execution efficiency"
+  },
+  "2504.15530": {
+   "id": "2504.15530",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "we utilized ChatGPT to refine the grammar and enhance the flow of paragraphs in this paper"
+  },
+  "2504.17883": {
+   "id": "2504.17883",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "The recent surge in training Large Language Models (LLMs), consuming around 29.3 terawatt-hours per year"
+  },
+  "2504.20133": {
+   "id": "2504.20133",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "expresses sincere gratitude to ChatGPT for its language assistance (and for writing its own acknowledgment)"
+  },
+  "2504.20450": {
+   "id": "2504.20450",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "acknowledge the use of large language models (LLMs), including ChatGPT, to improve the grammar, clarity, and readability"
+  },
+  "2505.01102": {
+   "id": "2505.01102",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "gemini",
+   "quote": "First light of the gemini planet imager"
+  },
+  "2505.02475": {
+   "id": "2505.02475",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "copilot",
+   "quote": "utilized AI-assisted tool (Microsoft Copilot) to enhance language clarity and grammatical precision in this manuscript"
+  },
+  "2505.03890": {
+   "id": "2505.03890",
+   "purposes": [
+    "writing",
+    "research"
+   ],
+   "tool": "chatgpt",
+   "quote": "LLM-based tools (ChatGPT for finding appropriate wording and references in some cases, Grammarly for grammar..."
+  },
+  "2505.04865": {
+   "id": "2505.04865",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "large language models that are all the rage in AI development right now may show a way forward with positional encoding"
+  },
+  "2505.08857": {
+   "id": "2505.08857",
+   "purposes": [
+    "unclear"
+   ],
+   "tool": "chatgpt",
+   "quote": "This work made use of the following software: ... \\texttt{chatGPT} \\cite{chatGPT}"
+  },
+  "2505.09042": {
+   "id": "2505.09042",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "the author(s) used ChatGPT for translation purposes and for correcting grammatical errors"
+  },
+  "2505.15855": {
+   "id": "2505.15855",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT-4 was employed for editing and grammar checks throughout the entire paper to enhance clarity and readability"
+  },
+  "2505.15995": {
+   "id": "2505.15995",
+   "purposes": [
+    "writing",
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT was used to improve the wording at the sentence level and to assist in coding."
+  },
+  "2505.17188": {
+   "id": "2505.17188",
+   "purposes": [
+    "writing",
+    "code",
+    "research"
+   ],
+   "tool": "chatgpt",
+   "quote": "use of OpenAI's ChatGPT for support with code implementation, text refinement, and certain analytical calculations"
+  },
+  "2505.17592": {
+   "id": "2505.17592",
+   "purposes": [
+    "research"
+   ],
+   "tool": "other",
+   "quote": "\\model achieves top-tier performance (89.0\\%), matching GPT-5.2, Claude-4.5-Opus, and Gemini-3-Pro"
+  },
+  "2505.19896": {
+   "id": "2505.19896",
+   "purposes": [
+    "research"
+   ],
+   "tool": "llama",
+   "quote": "This project contains the experimental runs and fine-tuning processes for the LLaMA models."
+  },
+  "2505.20538": {
+   "id": "2505.20538",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt4",
+   "quote": "We use \\texttt{gpt-4o} to simultaneously split notebooks into these clearly defined stages"
+  },
+  "2505.24743": {
+   "id": "2505.24743",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "I acknowledge the assistance of ChatGPT 3.5 and Grammarly in improving the grammar and English language usage"
+  },
+  "2506.02730": {
+   "id": "2506.02730",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt_other",
+   "quote": "With only 117 million parameters, GPT-2 small is far below the threshold for emergent behaviors"
+  },
+  "2506.03547": {
+   "id": "2506.03547",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "acknowledges the use of ... OpenAI's ChatGPT Large language model for language proofreading and editing support"
+  },
+  "2506.05506": {
+   "id": "2506.05506",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "The public version of ChatGPT \\citep{ChatGPT2023} was used to review the basic spelling and grammar of the document."
+  },
+  "2506.06445": {
+   "id": "2506.06445",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "The authors used ChatGPT (version GPT-4)... to help improve the grammar and clarity of the manuscript."
+  },
+  "2506.07912": {
+   "id": "2506.07912",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "The authors acknowledge the use of AI-assisted copy editing (ChatGPT) to improve the text of the manuscript."
+  },
+  "2506.08065": {
+   "id": "2506.08065",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "generic",
+   "quote": "We do not use LLMs for any core design of the proposed method, but only for minor writing editing."
+  },
+  "2506.09116": {
+   "id": "2506.09116",
+   "purposes": [
+    "writing",
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT, Model o3; Conversational AI model used for editing manuscript and generating testable code"
+  },
+  "2506.09117": {
+   "id": "2506.09117",
+   "purposes": [
+    "research"
+   ],
+   "tool": "chatgpt",
+   "quote": "grateful to Vasily Belokurov, GyuChul Myeong, HanYuan Zhang, Sarah Kane, and ChatGPT for helpful discussions"
+  },
+  "2506.13522": {
+   "id": "2506.13522",
+   "purposes": [
+    "code"
+   ],
+   "tool": "gpt4",
+   "quote": "Assistance in Python programming (both for error propagation and disentanglement) was provided by ChatGPT-4"
+  },
+  "2506.15952": {
+   "id": "2506.15952",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "Portions of this text were written with the assistance of ChatGPT, especially in regard to English usage and grammar"
+  },
+  "2506.17379": {
+   "id": "2506.17379",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "claude",
+   "quote": "\\bibnamefont {{Mack}}, \\bibfnamefont {Claude~E.} (bibliography author name)"
+  },
+  "2506.17523": {
+   "id": "2506.17523",
+   "purposes": [
+    "research"
+   ],
+   "tool": "chatgpt",
+   "quote": "We acknowledge UCLA OpenAI project for providing access to ChatGPT."
+  },
+  "2506.20532": {
+   "id": "2506.20532",
+   "purposes": [
+    "research"
+   ],
+   "tool": "generic",
+   "quote": "a GCN digester powered by large language models"
+  },
+  "2506.20690": {
+   "id": "2506.20690",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "The authors utilized ChatGPT for AI-assisted copy editing and improving the manuscript's language"
+  },
+  "2506.20729": {
+   "id": "2506.20729",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gemini",
+   "quote": "We mainly use Gemini models for evaluation in this paper. Gemini-2.5-Pro achieves the best performance"
+  },
+  "2506.21648": {
+   "id": "2506.21648",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "An emerging area of significant promise is the application of Large Language Models (LLMs)"
+  },
+  "2506.22519": {
+   "id": "2506.22519",
+   "purposes": [
+    "code"
+   ],
+   "tool": "claude",
+   "quote": "We made use of the Claude AI assistant (Anthropic, 2024) for code optimization."
+  },
+  "2506.23477": {
+   "id": "2506.23477",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "claude",
+   "quote": "The use of the Claude AI assistant is acknowledged for grammar refinement in the preparation of the text."
+  },
+  "2506.23686": {
+   "id": "2506.23686",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "gpt4",
+   "quote": "Some portions of the text were revised with the help of OpenAI's ChatGPT (GPT-4), used for improving clarity"
+  },
+  "2506.24002": {
+   "id": "2506.24002",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "llama",
+   "quote": "family={{Llama}}, given={Joe} (bibliography author name)"
+  },
+  "2507.00765": {
+   "id": "2507.00765",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "use of large language models (LLMs), including ChatGPT, to improve the grammar, clarity, and readability"
+  },
+  "2507.02162": {
+   "id": "2507.02162",
+   "purposes": [
+    "research"
+   ],
+   "tool": "chatgpt",
+   "quote": "How do we respond to ChatGPT? ... The rise of ChatGPT and other large language models (LLMs)"
+  },
+  "2507.03088": {
+   "id": "2507.03088",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "generic",
+   "quote": "Minor language edits were assisted by AI tools."
+  },
+  "2507.03743": {
+   "id": "2507.03743",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "The authors used OpenAI's ChatGPT to assist with editing and proofreading the manuscript."
+  },
+  "2507.04291": {
+   "id": "2507.04291",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "gemini",
+   "quote": "installed on the 8.1-m Gemini North telescope atop Mauna Kea (observatory, not AI)"
+  },
+  "2507.04834": {
+   "id": "2507.04834",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "other",
+   "quote": "{Axelrod}, {Bard}, {Barr}, {Barrau} (bibliography author name)"
+  },
+  "2507.06696": {
+   "id": "2507.06696",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT (GPT-4.5) was used to improve sentence wording."
+  },
+  "2507.07155": {
+   "id": "2507.07155",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt4",
+   "quote": "text-embedding-3-large for embeddings and GPT-4.1 for generation, with configurable retrieval parameters"
+  },
+  "2507.07257": {
+   "id": "2507.07257",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt_other",
+   "quote": "for all agents that perform tool calling, we exclusively use OpenAI models"
+  },
+  "2507.08823": {
+   "id": "2507.08823",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "The authors utilized ChatGPT for AI-assisted copy editing and improving the manuscript's language."
+  },
+  "2507.08958": {
+   "id": "2507.08958",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt4",
+   "quote": "We use OpenAI GPT-4 for our zero-shot extraction experiments"
+  },
+  "2507.09721": {
+   "id": "2507.09721",
+   "purposes": [
+    "writing",
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "we acknowledge the use of ChatGPT ... for paraphrasing some text and coding support"
+  },
+  "2507.11587": {
+   "id": "2507.11587",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "leveraging LLMs for deep archival data exploration (Mason et al. 2024)"
+  },
+  "2507.14827": {
+   "id": "2507.14827",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt4",
+   "quote": "Our AI-powered GCN parser employs a large language model (LLM; specifically, ChatGPT's GPT 4.1 model)"
+  },
+  "2507.15715": {
+   "id": "2507.15715",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt4",
+   "quote": "concatenated with a prompt and the initial user query and passed to gpt-4o to produce an answer for the user"
+  },
+  "2507.16902": {
+   "id": "2507.16902",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "We refined the English writing of this paper using the artificial intelligence tool ChatGPT"
+  },
+  "2507.18682": {
+   "id": "2507.18682",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "chatgpt",
+   "quote": "URI(https://chatgpt.com/) (PDF hyperlink in a list of tools, no use disclosure)"
+  },
+  "2507.18683": {
+   "id": "2507.18683",
+   "purposes": [
+    "writing",
+    "code"
+   ],
+   "tool": "claude",
+   "quote": "Claude (Sonnet 4.6) was used to assist in rewording and clarifying the manuscript ... as well as debugging R code"
+  },
+  "2507.20972": {
+   "id": "2507.20972",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "Motivated by the recent success of large language models (LLMs) in learning general-purpose representations"
+  },
+  "2507.21270": {
+   "id": "2507.21270",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "acknowledge the use of OpenAI's ChatGPT for providing stylistic suggestions"
+  },
+  "2507.21632": {
+   "id": "2507.21632",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "We acknowledge the use of ChatGPT, Grammarly, and DeepL for language refinement"
+  },
+  "2507.21639": {
+   "id": "2507.21639",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT (OpenAI 2023) is used for assistance in correcting typos and grammar"
+  },
+  "2507.21822": {
+   "id": "2507.21822",
+   "purposes": [
+    "unclear"
+   ],
+   "tool": "chatgpt",
+   "quote": "\\software{... ChatGPT \\citep{chatgpt2020} ...} (listed in software, no stated purpose)"
+  },
+  "2507.22870": {
+   "id": "2507.22870",
+   "purposes": [
+    "research"
+   ],
+   "tool": "chatgpt",
+   "quote": "To solve Eq. \\ref{eq_sl}, ChatGPT \\citep{chatgpt2024} provides the solution"
+  },
+  "2508.03661": {
+   "id": "2508.03661",
+   "purposes": [
+    "research"
+   ],
+   "tool": "deepseek",
+   "quote": "grateful to OpenAI, Anthropic, and DeepSeek for providing API access ... the core of our algorithmic discovery framework"
+  },
+  "2508.03809": {
+   "id": "2508.03809",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "the authors occasionally used ChatGPT to assist with language improvements"
+  },
+  "2508.05728": {
+   "id": "2508.05728",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt4",
+   "quote": "CLAPP: CLASS LLM Agent for Pair Programming ... GPT_MODELS = gpt-4o-mini, gpt-4o, gpt-4.1"
+  },
+  "2508.05961": {
+   "id": "2508.05961",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "we made use of OpenAI's ChatGPT to assist with language editing and improving clarity"
+  },
+  "2508.09568": {
+   "id": "2508.09568",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "we used ChatGPT in order to enhance the clarity of the writing"
+  },
+  "2508.10075": {
+   "id": "2508.10075",
+   "purposes": [
+    "research"
+   ],
+   "tool": "llama",
+   "quote": "LLaMA-3.1-8B can be efficiently repurposed to predict galaxy redshifts from spectroscopic data"
+  },
+  "2508.11001": {
+   "id": "2508.11001",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "Portions of this text were written with the assistance of ChatGPT ... in regard to English usage and grammar"
+  },
+  "2508.12601": {
+   "id": "2508.12601",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "gpt4",
+   "quote": "used the OpenAI GPT-4 model (ChatGPT) ... for assistance with LaTeX formatting and to improve the clarity"
+  },
+  "2508.12802": {
+   "id": "2508.12802",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "gemini",
+   "quote": "the authors used Gemini 2.5 Pro to improve the readability and language of the manuscript"
+  },
+  "2508.15756": {
+   "id": "2508.15756",
+   "purposes": [
+    "code",
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "we have also used GitHub Copilot and ChatGPT. Finally, we have used ChatGPT to improve the grammar and style"
+  },
+  "2508.16234": {
+   "id": "2508.16234",
+   "purposes": [
+    "writing",
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "gratitude to ChatGPT for its assistance in refining the manuscript and enhancing the code"
+  },
+  "2508.17331": {
+   "id": "2508.17331",
+   "purposes": [
+    "writing",
+    "research"
+   ],
+   "tool": "chatgpt",
+   "quote": "use of ChatGPT (OpenAI) for assistance in language refinement and literature exploration"
+  },
+  "2508.20065": {
+   "id": "2508.20065",
+   "purposes": [
+    "unclear"
+   ],
+   "tool": "chatgpt",
+   "quote": "\\software{Astropy ..., ChatGPT \\citep{openai2022chatgpt}, ...} (listed in software, no stated purpose)"
+  },
+  "2508.20286": {
+   "id": "2508.20286",
+   "purposes": [
+    "code",
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT (GPT-4.5) and DeepSeek (V3.1) were used to help debug codes and improve sentence wording"
+  },
+  "2508.21275": {
+   "id": "2508.21275",
+   "purposes": [
+    "writing",
+    "research",
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT (OpenAI) for assistance in language refinement, literature exploration, and Python scripting"
+  },
+  "2508.21817": {
+   "id": "2508.21817",
+   "purposes": [
+    "unclear"
+   ],
+   "tool": "chatgpt",
+   "quote": "We also thank ChatGPT for technical support (not for the calculations though)"
+  },
+  "2509.00153": {
+   "id": "2509.00153",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "This manuscript benefited from grammar checking and proofreading using ChatGPT"
+  },
+  "2509.02298": {
+   "id": "2509.02298",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "deepseek",
+   "quote": "LLM Deep Seek was used for grammar clean-up."
+  },
+  "2509.02615": {
+   "id": "2509.02615",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gemini",
+   "quote": "We evaluate open-source VLMs, such as Qwen2/2.5-VL-Instruct ... Gemini-2.5-Flash and GPT-4o are accessed via API"
+  },
+  "2509.04142": {
+   "id": "2509.04142",
+   "purposes": [
+    "writing",
+    "research",
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT (OpenAI) for assistance in language refinement, literature exploration, and Python scripting"
+  },
+  "2509.07226": {
+   "id": "2509.07226",
+   "purposes": [
+    "research"
+   ],
+   "tool": "generic",
+   "quote": "Our generative model is based on the transformer architecture ... at the basis of all modern Large Language Models"
+  },
+  "2509.07938": {
+   "id": "2509.07938",
+   "purposes": [
+    "code"
+   ],
+   "tool": "claude",
+   "quote": "The authors made use of the Claude AI assistant (Anthropic, 2024) for code optimization."
+  },
+  "2509.12318": {
+   "id": "2509.12318",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "The authors used AI tools (ChatGPT, OpenAI) only for language editing."
+  },
+  "2509.15334": {
+   "id": "2509.15334",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "use of artificial intelligence language models (ChatGPT, Deepseek and Grammarly) for assistance with text editing"
+  },
+  "2509.16484": {
+   "id": "2509.16484",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "llama",
+   "quote": "FAPESP (LLAMA Project No. 11/51676-9) (telescope project, not the AI model)"
+  },
+  "2509.17102": {
+   "id": "2509.17102",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "acknowledge the assistance of AI (OpenAI's ChatGPT5) for editorial and formatting support"
+  },
+  "2509.18241": {
+   "id": "2509.18241",
+   "purposes": [
+    "writing",
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "we used the ChatGPT software for suggestions on data analysis, plotting, and minor grammatical editing"
+  },
+  "2509.19453": {
+   "id": "2509.19453",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "approaches that directly finetune large language models on astronomical text \\citep[e.g.][]{...}"
+  },
+  "2509.20621": {
+   "id": "2509.20621",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "use of OpenAI's ChatGPT for assistance with proofreading and visualization suggestions"
+  },
+  "2509.22301": {
+   "id": "2509.22301",
+   "purposes": [
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "acknowledges the use of ChatGPT for minor code optimization suggestions"
+  },
+  "2509.22784": {
+   "id": "2509.22784",
+   "purposes": [
+    "unclear"
+   ],
+   "tool": "claude",
+   "quote": "\\software{... \\texttt{Claude} \\citep{Claude_AI}} (listed in software, no stated purpose)"
+  },
+  "2509.23264": {
+   "id": "2509.23264",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT (OpenAI 2023) is used for assistance in correcting typos and grammar"
+  },
+  "2509.25099": {
+   "id": "2509.25099",
+   "purposes": [
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "Some assistance in Python programming ... was provided by ChatGPT-4"
+  },
+  "2509.26110": {
+   "id": "2509.26110",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt_other",
+   "quote": "We compare two OpenAI reasoning models, o3 and gpt-5, both at the highest available reasoning effort"
+  },
+  "2510.00063": {
+   "id": "2510.00063",
+   "purposes": [
+    "research"
+   ],
+   "tool": "chatgpt",
+   "quote": "its performance surpassed that of leading closed-source models like ChatGPT-4o (69.07%)"
+  },
+  "2510.00847": {
+   "id": "2510.00847",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "we offer the following comment from ChatGPT 5.1"
+  },
+  "2510.01299": {
+   "id": "2510.01299",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt_other",
+   "quote": "In tests comparing OpenAI's o3 and gpt-5, both models eventually reached a 100% success rate"
+  },
+  "2510.02426": {
+   "id": "2510.02426",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt4",
+   "quote": "it is a single-agent backbone (by default, GPT-4o) which is invoked through a driver script"
+  },
+  "2510.02479": {
+   "id": "2510.02479",
+   "purposes": [
+    "code"
+   ],
+   "tool": "copilot",
+   "quote": "Enhancements of the codes that produced the graphs and table above were aided by Microsoft Copilot and ChatGPT"
+  },
+  "2510.02527": {
+   "id": "2510.02527",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "For large language models and text-to-image models, previous studies have demonstrated"
+  },
+  "2510.02639": {
+   "id": "2510.02639",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "We acknowledge the use of ChatGPT (OpenAI) in improving the grammar and clarity of the manuscript"
+  },
+  "2510.03493": {
+   "id": "2510.03493",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "chatgpt",
+   "quote": "This work also does not explore generative AI tools such as ChatGPT"
+  },
+  "2510.05016": {
+   "id": "2510.05016",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt_other",
+   "quote": "GPT-5 and Gemini 2.5 Pro show the lowest overall error rates, while Claude models show higher error rates"
+  },
+  "2510.05017": {
+   "id": "2510.05017",
+   "purposes": [
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "Some python codes were developed with the help of ChatGPT 4.0"
+  },
+  "2510.05744": {
+   "id": "2510.05744",
+   "purposes": [
+    "research"
+   ],
+   "tool": "llama",
+   "quote": "We prompted an LLM to classify non-explicitly typed resources into our five categories"
+  },
+  "2510.06193": {
+   "id": "2510.06193",
+   "purposes": [
+    "unclear"
+   ],
+   "tool": "chatgpt",
+   "quote": "The authors used OpenAI's ChatGPT during the preparation of this manuscript"
+  },
+  "2510.06931": {
+   "id": "2510.06931",
+   "purposes": [
+    "research"
+   ],
+   "tool": "generic",
+   "quote": "Textual interpretation of transient image classifications from large language models"
+  },
+  "2510.08317": {
+   "id": "2510.08317",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt_other",
+   "quote": "an ensemble of LLMs (e.g., Qwen3, GPT-4o, Gemini 1.5-Pro) prompted with a fixed prologue/epilogue template"
+  },
+  "2510.08636": {
+   "id": "2510.08636",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "(no readable disclosure; only binary PDF stream content matched)"
+  },
+  "2510.09571": {
+   "id": "2510.09571",
+   "purposes": [
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "AE also acknowledges the use of ChatGPT for assistance with plotting and debugging"
+  },
+  "2510.09760": {
+   "id": "2510.09760",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "generic",
+   "quote": "Some grammar improvement and graphic design was aided by an LLM"
+  },
+  "2510.10344": {
+   "id": "2510.10344",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "Portions of the text were refined with the assistance of Large Language Models (ChatGPT-5 by OpenAI)"
+  },
+  "2510.12920": {
+   "id": "2510.12920",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "(no readable disclosure; only binary PDF stream content matched)"
+  },
+  "2510.13765": {
+   "id": "2510.13765",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "generic",
+   "quote": "benefited from the use of generative AI tools for text refinement and language consistency"
+  },
+  "2510.14149": {
+   "id": "2510.14149",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "the author(s) utilized ChatGPT-4o to refine the English wording of certain phrases"
+  },
+  "2510.17473": {
+   "id": "2510.17473",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "acknowledge the use of OpenAI's ChatGPT to assist with editing and proofreading of the manuscript"
+  },
+  "2510.17960": {
+   "id": "2510.17960",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "recent advances like GPT-4V, Claude 3, and LLaVA have achieved human-level performance"
+  },
+  "2510.19606": {
+   "id": "2510.19606",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "we used the OpenAI language model ChatGPT (GPT-5) as a tool to assist with checking grammar, typos, clarity"
+  },
+  "2510.20693": {
+   "id": "2510.20693",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "the authors used ChatGPT-5 in order to improve readability"
+  },
+  "2510.21197": {
+   "id": "2510.21197",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "OpenAI ChatGPT (version 4.0) was used to assist with language and phrasing of the manuscript"
+  },
+  "2510.24065": {
+   "id": "2510.24065",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT only as a grammar checking and editing tool to improve the clarity and readability of the manuscript"
+  },
+  "2510.24087": {
+   "id": "2510.24087",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "deepseek",
+   "quote": "acknowledge the use of DeepSeek (DeepSeek Inc.) for refining the language and structure of this manuscript"
+  },
+  "2510.24545": {
+   "id": "2510.24545",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "gpt4",
+   "quote": "the author(s) used GPT-4 in order to: Grammar and spelling check"
+  },
+  "2510.24591": {
+   "id": "2510.24591",
+   "purposes": [
+    "research"
+   ],
+   "tool": "claude",
+   "quote": "We measure the performance of seven frontier LLMs: Claude 3.7 Sonnet, Claude 4 Sonnet, Claude 4.5 Sonnet..."
+  },
+  "2510.25161": {
+   "id": "2510.25161",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "AI tools including ChatGPT 5 was used to improve wording and correct grammar/style"
+  },
+  "2510.25672": {
+   "id": "2510.25672",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "acknowledge the use of ChatGPT (OpenAI GPT-5) for language editing and stylistic refinement"
+  },
+  "2510.25824": {
+   "id": "2510.25824",
+   "purposes": [
+    "writing",
+    "code",
+    "research"
+   ],
+   "tool": "chatgpt",
+   "quote": "We used ChatGPT ... to assist with code drafting and debugging; all suggestions were checked by hand"
+  },
+  "2510.25953": {
+   "id": "2510.25953",
+   "purposes": [
+    "writing",
+    "code",
+    "research"
+   ],
+   "tool": "chatgpt",
+   "quote": "We used OpenAI's ChatGPT to assist with code debugging, text paraphrasing, and improving the clarity"
+  },
+  "2510.26970": {
+   "id": "2510.26970",
+   "purposes": [
+    "writing",
+    "research"
+   ],
+   "tool": "gemini",
+   "quote": "Gemini AI 2.5 and Microsoft CoPilot tools were used to conduct literature searches and for editing sections"
+  },
+  "2510.27415": {
+   "id": "2510.27415",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "gpt_other",
+   "quote": "Portions of the text were generated or refined with the assistance of GPT-5 Plus (OpenAI)"
+  },
+  "2511.01959": {
+   "id": "2511.01959",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "the authors used chatGPT5 to correct grammar misspellings, consistency of notation and terminology"
+  },
+  "2511.04740": {
+   "id": "2511.04740",
+   "purposes": [
+    "writing",
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT was utilized to improve wording at the sentence level and assist with coding inquires"
+  },
+  "2511.08784": {
+   "id": "2511.08784",
+   "purposes": [
+    "research"
+   ],
+   "tool": "chatgpt",
+   "quote": "we queried ChatGPT-4.0 ... to propose an alternative [physics-informed symbolic regression template]"
+  },
+  "2511.08970": {
+   "id": "2511.08970",
+   "purposes": [
+    "research"
+   ],
+   "tool": "deepseek",
+   "quote": "knowledge distillation framework of the DeepSeek-R1 model ... reveal the underlying flare prediction mechanisms"
+  },
+  "2511.09806": {
+   "id": "2511.09806",
+   "purposes": [
+    "writing",
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "OpenAI's ChatGPT for assistance in proofreading ... and GitHub Copilot for assistance in generating code"
+  },
+  "2511.10782": {
+   "id": "2511.10782",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "For language editing and translation, we utilized DeepL, ChatGPT, and Grammarly"
+  },
+  "2511.11887": {
+   "id": "2511.11887",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "chatgpt",
+   "quote": "also asked ChatGTP to generate the basic format of a symbolic regression model [discussing another paper]"
+  },
+  "2511.12353": {
+   "id": "2511.12353",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt4",
+   "quote": "Different papers were processed with GPT-4o, GPT-4o-mini, o1-mini, and DeepSeek-v3"
+  },
+  "2511.14235": {
+   "id": "2511.14235",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "utilized Grammarly/ChatGPT-5 to correct grammatical mistakes and enhance the structure of specific paragraphs"
+  },
+  "2511.14685": {
+   "id": "2511.14685",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gpt4",
+   "quote": "We prompted OpenAI's gpt-4o-mini model to search for physical information in the ADS papers"
+  },
+  "2511.15006": {
+   "id": "2511.15006",
+   "purposes": [
+    "code",
+    "writing"
+   ],
+   "tool": "generic",
+   "quote": "LLMs were only used to troubleshoot coding errors and assistance with phrasing in the text"
+  },
+  "2511.18607": {
+   "id": "2511.18607",
+   "purposes": [
+    "code",
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "used OpenAI's ChatGPT (GPT-4) to assist in refining Python scripts ... and to provide limited editorial suggestions"
+  },
+  "2511.19707": {
+   "id": "2511.19707",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "the authors used ChatGPT for minor copy editing"
+  },
+  "2511.20465": {
+   "id": "2511.20465",
+   "purposes": [
+    "mention"
+   ],
+   "tool": "generic",
+   "quote": "Core Search Terms ... OR \"large language model\" [review of forecasting methods, no use disclosure]"
+  },
+  "2511.20694": {
+   "id": "2511.20694",
+   "purposes": [
+    "research"
+   ],
+   "tool": "gemini",
+   "quote": "we tested the base models Google Gemini 2.5 Pro, OpenAI OSS 20B and OSS 120B, Meta Llama 3.3, and Mistral 24.11"
+  },
+  "2512.00056": {
+   "id": "2512.00056",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "acknowledges the use of ChatGPT-5.1 (November 2025 version) to edit and refine the tone and clarity"
+  },
+  "2512.03154": {
+   "id": "2512.03154",
+   "purposes": [
+    "research"
+   ],
+   "tool": "generic",
+   "quote": "This research made use of the pathfinder LLM-enabled literature search framework"
+  },
+  "2512.03329": {
+   "id": "2512.03329",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "the use of OpenAI's ChatGPT (version August 2024) for assistance in language and grammar refinement"
+  },
+  "2512.04031": {
+   "id": "2512.04031",
+   "purposes": [
+    "research"
+   ],
+   "tool": "llama",
+   "quote": "this study employs Meta-Llama-3-8B-Instruct, a recently released open-weight LLM"
+  },
+  "2512.06011": {
+   "id": "2512.06011",
+   "purposes": [
+    "writing",
+    "research"
+   ],
+   "tool": "chatgpt",
+   "quote": "AI-based tools (ChatGPT, DeepL) were used to help sourcing information and translating"
+  },
+  "2512.07214": {
+   "id": "2512.07214",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "used ChatGPT (OpenAI) during the preparation of this manuscript to improve language clarity and grammatical correctness"
+  },
+  "2512.07896": {
+   "id": "2512.07896",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "AI tools (OpenAI ChatGPT) were occasionally used to assist with improving readability, grammar, and language"
+  },
+  "2512.08495": {
+   "id": "2512.08495",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "artificial intelligence tools, including OpenAI's ChatGPT, were used in proofreading and polishing this paper"
+  },
+  "2512.10222": {
+   "id": "2512.10222",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "OpenAI's language model - ChatGPT was used for some language editing during the draft stage"
+  },
+  "2512.11202": {
+   "id": "2512.11202",
+   "purposes": [
+    "research",
+    "code"
+   ],
+   "tool": "gpt_other",
+   "quote": "We use gpt-5-mini ... to make the final classification ... generated by LLMs, primarily via Claude Code"
+  },
+  "2512.12754": {
+   "id": "2512.12754",
+   "purposes": [
+    "writing",
+    "code"
+   ],
+   "tool": "chatgpt",
+   "quote": "ChatGPT for assistance in editing this manuscript for clarity and conciseness and for making minor edits to codes"
+  },
+  "2512.15920": {
+   "id": "2512.15920",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "gemini",
+   "quote": "Output generated by Gemini after editing: \\section{Introduction: Symbolic Regression and the Royal Society Meeting}"
+  },
+  "2512.16208": {
+   "id": "2512.16208",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "Minor typos, grammar and spelling mistakes were identified with the assistance of ChatGPT-4o"
+  },
+  "2512.18795": {
+   "id": "2512.18795",
+   "purposes": [
+    "code",
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "used ChatGPT (OpenAI) and Claude in order to support code development ... and to improve the language and readability"
+  },
+  "2512.24754": {
+   "id": "2512.24754",
+   "purposes": [
+    "research"
+   ],
+   "tool": "other",
+   "quote": "we benchmarked three state-of-the-art 70-billion-parameter LLMs, Qwen-2.5-72B, Llama-3.3-70B, and DeepSeek-R1-70B"
+  },
+  "2512.24895": {
+   "id": "2512.24895",
+   "purposes": [
+    "writing"
+   ],
+   "tool": "chatgpt",
+   "quote": "OpenAI ChatGPT (version 4.0) was used to assist with language and phrasing of the manuscript"
+  }
+ }
+}

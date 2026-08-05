@@ -1,0 +1,48 @@
+{
+  "counts": {
+    "total_refs": 4964,
+    "with_arxiv": 1612,
+    "with_doi_only": 1587,
+    "no_id": 1765,
+    "no_id_parsed": 1140,
+    "papers_ok": 57,
+    "papers_nobib": 17
+  },
+  "verdicts": {
+    "VERIFIED": 1078,
+    "UNPARSED": 625,
+    "NOT_FOUND": 36,
+    "YEAR_MISMATCH": 24,
+    "AUTHOR_MISMATCH": 2
+  },
+  "recheck": {
+    "VERIFIED_NOJOURNAL": 47,
+    "STILL_FAILED": 8,
+    "VERIFIED_VOLPAGE": 7
+  },
+  "hand_review_of_8": {
+    "verified_parser_artifacts": [
+      "2401.13729:Freese JCAP 07 007 = 2005JCAP...07..007F",
+      "2509.12298:Kamp&Bertoldi A&A 353 276 (href truncated page)",
+      "2412.01795:O'Donoghue ApJ 408 428 (old ADS export format)",
+      "2412.01795:Taylor ApJ 360 41 (old ADS export format)",
+      "2411.00279:Finkelstein 2017 = JWST Proposal 1345 (CEERS), real proposal"
+    ],
+    "real_with_author_typo": [
+      "2510.04565:Borkovits MNRAS 478 5135 cited as 513",
+      "2405.16811:Kokkin ApJL 681 L49 cited as 49"
+    ],
+    "nonexistent": [
+      "2510.14239:'Wang, J., Yan, Y., Aschwanden, M.J., & Wang, H. 2009, SoPh 258, 227' - no such paper, no such page in SoPh 258, no such author collaboration exists in ADS; cited for 'predicting super active regions'; style-inconsistent final bibitem"
+    ]
+  },
+  "conclusion": {
+    "no_id_refs": 1765,
+    "machine_or_hand_checked": 1140,
+    "verified_total": 1139,
+    "fabricated_found": 1,
+    "rate_per_checked_ref": 0.0008771929824561404,
+    "papers_sampled": 57,
+    "unparsed_pool": 625
+  }
+}

@@ -1,0 +1,421 @@
+[
+ {
+  "word": "intricate",
+  "peak_q": 2024.25,
+  "peak_excess_pct": 0.6173064787909739,
+  "half_life_quarters": 1.0,
+  "end_excess_pct": 0.12219364100353346,
+  "peak_docs": 34,
+  "n_sources": 2,
+  "sources": [
+   "liang2024",
+   "kobak2024"
+  ],
+  "well_measured": 1.0
+ },
+ {
+  "word": "pivotal",
+  "peak_q": 2024.25,
+  "peak_excess_pct": 0.575726634013952,
+  "half_life_quarters": 1.5,
+  "end_excess_pct": 0.2473841356800104,
+  "peak_docs": 33,
+  "n_sources": 2,
+  "sources": [
+   "liang2024",
+   "kobak2024"
+  ],
+  "well_measured": 1.0
+ },
+ {
+  "word": "showcasing",
+  "peak_q": 2024.75,
+  "peak_excess_pct": 0.18267001301850694,
+  "half_life_quarters": 1.0,
+  "end_excess_pct": 0.06970780267506815,
+  "peak_docs": 10,
+  "n_sources": 2,
+  "sources": [
+   "liang2024",
+   "kobak2024"
+  ],
+  "well_measured": 0.0
+ },
+ {
+  "word": "underscores",
+  "peak_q": 2024.0,
+  "peak_excess_pct": 0.4701901573721694,
+  "half_life_quarters": null,
+  "end_excess_pct": 0.43690949141236013,
+  "peak_docs": 22,
+  "n_sources": 1,
+  "sources": [
+   "kobak2024"
+  ],
+  "well_measured": 1.0
+ },
+ {
+  "word": "delve",
+  "peak_q": 2024.0,
+  "peak_excess_pct": 0.2600837260831794,
+  "half_life_quarters": 0.5,
+  "end_excess_pct": 0.007960766034876655,
+  "peak_docs": 13,
+  "n_sources": 1,
+  "sources": [
+   "graham2024"
+  ],
+  "well_measured": 1.0
+ },
+ {
+  "word": "delves",
+  "peak_q": 2024.0,
+  "peak_excess_pct": 0.1568473815170147,
+  "half_life_quarters": 0.75,
+  "end_excess_pct": 0.014607636981629958,
+  "peak_docs": 7,
+  "n_sources": 1,
+  "sources": [
+   "kobak2024"
+  ],
+  "well_measured": 0.0
+ },
+ {
+  "word": "realm",
+  "peak_q": 2023.75,
+  "peak_excess_pct": 0.09650056947231778,
+  "half_life_quarters": 0.25,
+  "end_excess_pct": 0.02658966307931567,
+  "peak_docs": 8,
+  "n_sources": 1,
+  "sources": [
+   "liang2024"
+  ],
+  "well_measured": 0.0
+ },
+ {
+  "word": "meticulously",
+  "peak_q": 2024.25,
+  "peak_excess_pct": 0.08030724594654105,
+  "half_life_quarters": 0.25,
+  "end_excess_pct": -0.025827996100904332,
+  "peak_docs": 5,
+  "n_sources": 1,
+  "sources": [
+   "kobak2024"
+  ],
+  "well_measured": 0.0
+ },
+ {
+  "word": "intricacies",
+  "peak_q": 2023.5,
+  "peak_excess_pct": 0.06989265814075157,
+  "half_life_quarters": 0.25,
+  "end_excess_pct": 0.016902915437116268,
+  "peak_docs": 4,
+  "n_sources": 1,
+  "sources": [
+   "kobak2024"
+  ],
+  "well_measured": 0.0
+ },
+ {
+  "word": "delving",
+  "peak_q": 2024.25,
+  "peak_excess_pct": 0.05472740872021602,
+  "half_life_quarters": 0.25,
+  "end_excess_pct": 0.025600475929319657,
+  "peak_docs": 3,
+  "n_sources": 1,
+  "sources": [
+   "kobak2024"
+  ],
+  "well_measured": 0.0
+ },
+ {
+  "word": "offering",
+  "peak_q": 2025.0,
+  "peak_excess_pct": 2.0982193620414558,
+  "half_life_quarters": null,
+  "end_excess_pct": 2.7103959902772674,
+  "peak_docs": 118,
+  "n_sources": 0,
+  "sources": [],
+  "well_measured": 1.0
+ },
+ {
+  "word": "highlighting",
+  "peak_q": 2025.0,
+  "peak_excess_pct": 1.2680986860632908,
+  "half_life_quarters": null,
+  "end_excess_pct": 1.6003441375934795,
+  "peak_docs": 86,
+  "n_sources": 0,
+  "sources": [],
+  "well_measured": 1.0
+ },
+ {
+  "word": "leveraging",
+  "peak_q": 2025.0,
+  "peak_excess_pct": 1.1884545081992344,
+  "half_life_quarters": null,
+  "end_excess_pct": 0.956668913253554,
+  "peak_docs": 72,
+  "n_sources": 0,
+  "sources": [],
+  "well_measured": 1.0
+ },
+ {
+  "word": "underscore",
+  "peak_q": 2025.0,
+  "peak_excess_pct": 0.7884623739323101,
+  "half_life_quarters": null,
+  "end_excess_pct": 0.5037867129079435,
+  "peak_docs": 41,
+  "n_sources": 0,
+  "sources": [],
+  "well_measured": 1.0
+ },
+ {
+  "word": "encompassing",
+  "peak_q": 2024.5,
+  "peak_excess_pct": 0.4835739258002998,
+  "half_life_quarters": 0.25,
+  "end_excess_pct": 0.14020153454380319,
+  "peak_docs": 30,
+  "n_sources": 0,
+  "sources": [],
+  "well_measured": 1.0
+ },
+ {
+  "word": "elucidate",
+  "peak_q": 2024.0,
+  "peak_excess_pct": 0.33877713399872156,
+  "half_life_quarters": 0.75,
+  "end_excess_pct": 0.1375574748275123,
+  "peak_docs": 24,
+  "n_sources": 0,
+  "sources": [],
+  "well_measured": 1.0
+ },
+ {
+  "word": "underscoring",
+  "peak_q": 2024.75,
+  "peak_excess_pct": 0.33684940287159876,
+  "half_life_quarters": null,
+  "end_excess_pct": 0.3993505424786259,
+  "peak_docs": 18,
+  "n_sources": 0,
+  "sources": [],
+  "well_measured": 1.0
+ },
+ {
+  "word": "showcase",
+  "peak_q": 2024.5,
+  "peak_excess_pct": 0.18122427501665073,
+  "half_life_quarters": 0.75,
+  "end_excess_pct": 0.026880778580663702,
+  "peak_docs": 19,
+  "n_sources": 0,
+  "sources": [],
+  "well_measured": 0.0
+ },
+ {
+  "word": "unraveling",
+  "peak_q": 2024.0,
+  "peak_excess_pct": 0.1535002190757822,
+  "half_life_quarters": 0.25,
+  "end_excess_pct": 0.01440707853640386,
+  "peak_docs": 10,
+  "n_sources": 0,
+  "sources": [],
+  "well_measured": 0.0
+ },
+ {
+  "word": "nuanced",
+  "peak_q": 2025.0,
+  "peak_excess_pct": 0.13556900328207294,
+  "half_life_quarters": 0.25,
+  "end_excess_pct": 0.05502170589582646,
+  "peak_docs": 8,
+  "n_sources": 0,
+  "sources": [],
+  "well_measured": 0.0
+ },
+ {
+  "word": "showcases",
+  "peak_q": 2023.75,
+  "peak_excess_pct": 0.12598572907063993,
+  "half_life_quarters": 0.25,
+  "end_excess_pct": 0.07995929886991725,
+  "peak_docs": 8,
+  "n_sources": 0,
+  "sources": [],
+  "well_measured": 0.0
+ },
+ {
+  "word": "elucidating",
+  "peak_q": 2025.0,
+  "peak_excess_pct": 0.12002533996393473,
+  "half_life_quarters": 0.25,
+  "end_excess_pct": 0.05762354200888547,
+  "peak_docs": 8,
+  "n_sources": 0,
+  "sources": [],
+  "well_measured": 0.0
+ },
+ {
+  "word": "unravel",
+  "peak_q": 2024.5,
+  "peak_excess_pct": 0.10163583360113404,
+  "half_life_quarters": 0.25,
+  "end_excess_pct": -0.044017022067447904,
+  "peak_docs": 10,
+  "n_sources": 0,
+  "sources": [],
+  "well_measured": 0.0
+ },
+ {
+  "word": "noteworthy",
+  "peak_q": 2023.75,
+  "peak_excess_pct": 0.09962748958774398,
+  "half_life_quarters": 0.5,
+  "end_excess_pct": -0.04094295419543021,
+  "peak_docs": 8,
+  "n_sources": 0,
+  "sources": [],
+  "well_measured": 0.0
+ },
+ {
+  "word": "garnered",
+  "peak_q": 2023.75,
+  "peak_excess_pct": 0.08247830466918968,
+  "half_life_quarters": 0.75,
+  "end_excess_pct": 0.037744880801729074,
+  "peak_docs": 5,
+  "n_sources": 0,
+  "sources": [],
+  "well_measured": 0.0
+ },
+ {
+  "word": "myriad",
+  "peak_q": 2024.0,
+  "peak_excess_pct": 0.07696110795151258,
+  "half_life_quarters": 0.25,
+  "end_excess_pct": -0.04481191597566676,
+  "peak_docs": 7,
+  "n_sources": 0,
+  "sources": [],
+  "well_measured": 0.0
+ },
+ {
+  "word": "showcased",
+  "peak_q": 2023.5,
+  "peak_excess_pct": 0.07692230633527869,
+  "half_life_quarters": 0.25,
+  "end_excess_pct": 0.038912089117608295,
+  "peak_docs": 4,
+  "n_sources": 0,
+  "sources": [],
+  "well_measured": 0.0
+ },
+ {
+  "word": "seamlessly",
+  "peak_q": 2024.25,
+  "peak_excess_pct": 0.06625203079243616,
+  "half_life_quarters": 0.25,
+  "end_excess_pct": 0.0696359925609034,
+  "peak_docs": 6,
+  "n_sources": 0,
+  "sources": [],
+  "well_measured": 0.0
+ },
+ {
+  "word": "plethora",
+  "peak_q": 2022.0,
+  "peak_excess_pct": 0.059059498287433385,
+  "half_life_quarters": 0.25,
+  "end_excess_pct": -0.15909716304740212,
+  "peak_docs": 9,
+  "n_sources": 0,
+  "sources": [],
+  "well_measured": 0.0
+ },
+ {
+  "word": "multifaceted",
+  "peak_q": 2023.0,
+  "peak_excess_pct": 0.05732191440535812,
+  "half_life_quarters": 0.25,
+  "end_excess_pct": 0.05306480505121358,
+  "peak_docs": 3,
+  "n_sources": 0,
+  "sources": [],
+  "well_measured": 0.0
+ },
+ {
+  "word": "boasts",
+  "peak_q": 2024.25,
+  "peak_excess_pct": 0.054212235569294054,
+  "half_life_quarters": 0.25,
+  "end_excess_pct": -0.006933224819609114,
+  "peak_docs": 3,
+  "n_sources": 0,
+  "sources": [],
+  "well_measured": 0.0
+ },
+ {
+  "word": "unravelling",
+  "peak_q": 2024.5,
+  "peak_excess_pct": 0.05233865166870696,
+  "half_life_quarters": 0.25,
+  "end_excess_pct": -0.0021600013789769873,
+  "peak_docs": 4,
+  "n_sources": 0,
+  "sources": [],
+  "well_measured": 0.0
+ },
+ {
+  "word": "garner",
+  "peak_q": 2024.0,
+  "peak_excess_pct": 0.045372050816696916,
+  "half_life_quarters": 0.25,
+  "end_excess_pct": 0.0,
+  "peak_docs": 2,
+  "n_sources": 0,
+  "sources": [],
+  "well_measured": 0.0
+ },
+ {
+  "word": "meticulous",
+  "peak_q": 2024.5,
+  "peak_excess_pct": 0.045073707882261185,
+  "half_life_quarters": 0.25,
+  "end_excess_pct": 0.030813947530970612,
+  "peak_docs": 3,
+  "n_sources": 0,
+  "sources": [],
+  "well_measured": 0.0
+ },
+ {
+  "word": "tapestry",
+  "peak_q": 2024.0,
+  "peak_excess_pct": 0.04242906327685365,
+  "half_life_quarters": 0.25,
+  "end_excess_pct": 0.06294139490263397,
+  "peak_docs": 2,
+  "n_sources": 0,
+  "sources": [],
+  "well_measured": 0.0
+ },
+ {
+  "word": "seamless",
+  "peak_q": 2024.5,
+  "peak_excess_pct": 0.03122261377080112,
+  "half_life_quarters": 0.25,
+  "end_excess_pct": 0.041622495406839134,
+  "peak_docs": 4,
+  "n_sources": 0,
+  "sources": [],
+  "well_measured": 0.0
+ }
+]

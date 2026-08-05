@@ -11,6 +11,7 @@ def footer(fig, t=None): return  # source note lives in the figure caption
 
 def fig10_subfield():
     df = pd.read_csv(os.path.join(DATA, "c5_subfield.csv"))
+    df = df[df.n > 0]          # drop the empty trailing year bin
     order = df[df.year==2025].sort_values("rate", ascending=False)["subfield"].tolist()
     palette = {order[0]: C["vermillion"]}
     others = [C["blue"], C["green"], C["purple"], C["sky"], C["orange"]]

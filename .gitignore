@@ -49,3 +49,8 @@ paper_nature/
 zenodo_deposit/
 
 llm.txt
+data/n1b_snippets.jsonl
+data/n3_pairs.jsonl
+data/n3_updated.jsonl
+data/n2b_gdelt_cache/
+data/n2e_trends_cache/
