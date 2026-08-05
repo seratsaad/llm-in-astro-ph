@@ -278,7 +278,7 @@ def fig5_gap():
     ax.set_yticks(ys); ax.set_yticklabels([r[0] for r in rows], fontsize=9)
     ax.invert_yaxis()
     ax.set_xscale("log"); ax.set_xlim(0.1, 110)
-    ax.set_xlabel("% of papers with model-associated text, log scale (astro-ph 2025; other fields 2024)", labelpad=4)
+    ax.set_xlabel("% of papers with model-associated text, log scale", labelpad=4)
     fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig5_gap.png"), bbox_inches="tight")
     plt.close(fig)
