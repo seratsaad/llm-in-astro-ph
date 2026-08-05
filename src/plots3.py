@@ -211,9 +211,7 @@ def fig12_citation_integrity():
     axR.set_xticks(xs); axR.set_xticklabels(cats, fontsize=8)
     axR.set_xlim(-0.5, 3.5); axR.set_ylim(0.03, 20)
     axR.set_ylabel("% of papers with a fabricated citation", fontsize=9)
-    axR.text(0.03, 0.96, f"0 fabricated in {n_arxiv_inst:,} arXiv IDs\n"
-             f"+ {n_doi_checked:,} DOIs; 1 in 1,180 refs\nwithout identifiers",
-             transform=axR.transAxes, fontsize=7.8, va="top", color=C["black"])
+
     fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig12_citation_integrity.png"), bbox_inches="tight")
 
