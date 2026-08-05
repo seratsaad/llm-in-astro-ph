@@ -162,8 +162,8 @@ def fig11_geography():
     footer(fig, "Data: NASA ADS aff: x abs:/ack: queries, 2025  |  aff: matches any affiliation (multi-country collabs double-counted)")
     fig.savefig(os.path.join(FIGS, "fig11_equity_map.png"), bbox_inches="tight"); plt.close(fig)
 
-def fig12_citation_integrity():
-    """C3: astronomy's citation integrity vs the fabrication problem elsewhere."""
+def fig13_crossref_taxonomy():
+    """ED: classification of the 126 Crossref misses (all real works)."""
     st = json.load(open(os.path.join(DATA, "c3_stats25.json")))
     cls = st["classification"]
     order = ["arXiv DataCite (real)", "Zenodo (real)",
@@ -178,20 +178,43 @@ def fig12_citation_integrity():
                  "extraction artifact": "our extraction\nartifact"}
     labels = [disp_name[k] for k in order if cls.get(k)]
     vals = [cls[k] for k in order if cls.get(k)]
-    n_arxiv_inst = st["arxiv_instances"]; n_doi_checked = st["doi_checked"]
-
-    fig, (axL, axR) = plt.subplots(1, 2, figsize=(6.5, 2.6), gridspec_kw={"width_ratios":[1.15,1]})
-    # LEFT: classification of the Crossref misses (none is a fabrication)
-    from pantera_style import no_minor_y, no_minor_x
+    from pantera_style import no_minor_y
+    fig, ax = plt.subplots(figsize=(4.8, 2.6))
     ys = list(range(len(labels)))
-    axL.barh(ys, vals, color=C["green"], height=0.62)
+    ax.barh(ys, vals, color=C["green"], height=0.62)
     for yi, v in zip(ys, vals):
-        axL.text(v+2.5, yi, str(v), va="center", fontsize=9, color="#555555")
+        ax.text(v+2.5, yi, str(v), va="center", fontsize=9, color="#555555")
+    no_minor_y(ax)
+    ax.set_yticks(ys); ax.set_yticklabels(labels, fontsize=8.5)
+    ax.invert_yaxis()
+    ax.set_xlim(0, 108)
+    ax.set_xlabel(f"count among the {sum(vals)} Crossref 'misses'", fontsize=9)
+    fig.tight_layout()
+    fig.savefig(os.path.join(FIGS, "fig13_crossref_taxonomy.png"), bbox_inches="tight")
+    plt.close(fig)
+
+def fig12_citation_integrity():
+    """C3: identifier census of references + fabrication rates per population."""
+    st = json.load(open(os.path.join(DATA, "c3_stats25.json")))
+    r7 = json.load(open(os.path.join(DATA, "r7_summary.json")))["counts"]
+    fig, (axL, axR) = plt.subplots(1, 2, figsize=(6.5, 2.6), gridspec_kw={"width_ratios":[1.1,1]})
+    # LEFT: identifier census of the 4,964 references in the audited papers
+    from pantera_style import no_minor_y, no_minor_x
+    census = [("arXiv identifier", r7["with_arxiv"], C["green"]),
+              ("DOI only", r7["with_doi_only"], C["blue"]),
+              ("no identifier", r7["no_id"], C["vermillion"])]
+    tot = sum(v for _, v, _ in census)
+    ys = list(range(len(census)))
+    for yi, (lab, v, col) in zip(ys, census):
+        axL.barh(yi, v, color=col, height=0.58)
+        axL.text(v + 40, yi, f"{v:,} ({v/tot*100:.0f}%)", va="center",
+                 fontsize=9, color="#555555")
     no_minor_y(axL)
-    axL.set_yticks(ys); axL.set_yticklabels(labels, fontsize=8.5)
+    axL.set_yticks(ys); axL.set_yticklabels([c[0] for c in census], fontsize=9)
     axL.invert_yaxis()
-    axL.set_xlim(0, 108)
-    axL.set_xlabel(f"count among the {sum(vals)} Crossref 'misses'", fontsize=9)
+    axL.set_xlim(0, 2450)
+    axL.set_xlabel(f"references in the {57} audited papers ({tot:,} total)", fontsize=9)
+
     # RIGHT: fabrication rate per paper, log scale; identifier-bearing limit,
     # the identifier-free detection (wide Poisson interval), and biomed rates
     cats = ["astro-ph\nwith IDs\n(95% limit)", "astro-ph\nno IDs\n(flagged)",
