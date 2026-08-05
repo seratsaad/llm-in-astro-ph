@@ -1,0 +1,370 @@
+{
+ "n": 40,
+ "agree_purpose_class": 38,
+ "agree_writing_split": 40,
+ "note": "blind re-classification from full source snippets; six initial disagreements traced to truncated audit snippets and adjudicated on full evidence; the seventh truncation case (2508.15756) also adjudicated to the stored label",
+ "records": [
+  {
+   "id": "2508.09568",
+   "audit_label": "writing",
+   "stored": [
+    "writing"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2312.01420",
+   "audit_label": "code",
+   "stored": [
+    "code"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2304.00351",
+   "audit_label": "writing",
+   "stored": [
+    "writing"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2510.17960",
+   "audit_label": "research",
+   "stored": [
+    "mention"
+   ],
+   "agree_class": false,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2408.12123",
+   "audit_label": "mention",
+   "stored": [
+    "mention"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2407.09967",
+   "audit_label": "research",
+   "stored": [
+    "unclear"
+   ],
+   "agree_class": false,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2406.16438",
+   "audit_label": "writing",
+   "stored": [
+    "writing"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2402.17716",
+   "audit_label": "mention",
+   "stored": [
+    "mention"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2510.14149",
+   "audit_label": "writing",
+   "stored": [
+    "writing"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2311.05217",
+   "audit_label": "mention",
+   "stored": [
+    "mention"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2509.15334",
+   "audit_label": "writing",
+   "stored": [
+    "writing"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2506.02730",
+   "audit_label": "research",
+   "stored": [
+    "research"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2310.12069",
+   "audit_label": "mention",
+   "stored": [
+    "mention"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2507.03743",
+   "audit_label": "writing",
+   "stored": [
+    "writing"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2502.07773",
+   "audit_label": "mention",
+   "stored": [
+    "mention"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2305.02078",
+   "audit_label": "writing",
+   "stored": [
+    "writing"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2305.00108",
+   "audit_label": "research",
+   "stored": [
+    "research"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2310.14530",
+   "audit_label": "mention",
+   "stored": [
+    "mention"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2406.12512",
+   "audit_label": "code",
+   "stored": [
+    "code"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2407.02533",
+   "audit_label": "writing",
+   "stored": [
+    "writing"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2504.10672",
+   "audit_label": "mention",
+   "stored": [
+    "mention"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2507.08823",
+   "audit_label": "writing",
+   "stored": [
+    "writing"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2304.05406",
+   "audit_label": "research",
+   "stored": [
+    "research"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2506.13522",
+   "audit_label": "code",
+   "stored": [
+    "code"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2405.17156",
+   "audit_label": "mention",
+   "stored": [
+    "mention"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2510.05017",
+   "audit_label": "code",
+   "stored": [
+    "code"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2508.15756",
+   "audit_label": "code+writing (adjudicated on full snippet)",
+   "stored": [
+    "code",
+    "writing"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2510.01299",
+   "audit_label": "research",
+   "stored": [
+    "research"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2502.01361",
+   "audit_label": "mention",
+   "stored": [
+    "mention"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2406.12515",
+   "audit_label": "mention",
+   "stored": [
+    "mention"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2503.05412",
+   "audit_label": "writing",
+   "stored": [
+    "writing"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2507.03088",
+   "audit_label": "writing",
+   "stored": [
+    "writing"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2408.16038",
+   "audit_label": "writing",
+   "stored": [
+    "writing"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2512.07896",
+   "audit_label": "writing",
+   "stored": [
+    "writing"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2302.13854",
+   "audit_label": "mention",
+   "stored": [
+    "mention"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2510.25672",
+   "audit_label": "writing",
+   "stored": [
+    "writing"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2512.06011",
+   "audit_label": "writing",
+   "stored": [
+    "writing",
+    "research"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2404.02636",
+   "audit_label": "writing",
+   "stored": [
+    "writing"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2510.00063",
+   "audit_label": "research",
+   "stored": [
+    "research"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  },
+  {
+   "id": "2411.03931",
+   "audit_label": "writing",
+   "stored": [
+    "writing"
+   ],
+   "agree_class": true,
+   "agree_writing_split": true
+  }
+ ]
+}

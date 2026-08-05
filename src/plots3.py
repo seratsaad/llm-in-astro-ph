@@ -192,22 +192,28 @@ def fig12_citation_integrity():
     axL.invert_yaxis()
     axL.set_xlim(0, 108)
     axL.set_xlabel(f"count among the {sum(vals)} Crossref 'misses'", fontsize=9)
-    # RIGHT: fabrication rate; astro-ph as a 95% upper limit (arrow), biomed as points
-    cats = ["astro-ph\n(95% limit)", "Biomed 2025\n(Lancet)", "Biomed 2026\n(Lancet)"]
-    xs = [0, 1, 2]
+    # RIGHT: fabrication rate per paper, log scale; identifier-bearing limit,
+    # the identifier-free detection (wide Poisson interval), and biomed rates
+    cats = ["astro-ph\nwith IDs\n(95% limit)", "astro-ph\nno IDs\n(flagged)",
+            "Biomed\n2025", "Biomed\n2026"]
+    xs = [0, 1, 2, 3]
     ul = st["per_paper_UL_pct"]
     axR.plot(0, ul, marker="_", ms=9, color=C["blue"], mew=1.4)
-    axR.annotate("", xy=(0, ul-0.10), xytext=(0, ul),
+    axR.annotate("", xy=(0, ul*0.55), xytext=(0, ul),
                  arrowprops=dict(arrowstyle="->", color=C["blue"], lw=1.0))
-    axR.plot(1, 0.22, "o", ms=5, color=C["grey"])
-    axR.plot(2, 0.36, "o", ms=5, color=C["grey"])
+    # 1 detection in 57 papers: 1.75%, exact Poisson 95% interval 0.044-9.8%
+    axR.errorbar(1, 100/57, yerr=[[100/57 - 0.044], [9.8 - 100/57]],
+                 fmt="o", ms=4.5, color=C["vermillion"], elinewidth=1.0, capsize=2.5)
+    axR.plot(2, 0.22, "o", ms=5, color=C["grey"])
+    axR.plot(3, 0.36, "o", ms=5, color=C["grey"])
+    axR.set_yscale("log")
     no_minor_x(axR)
-    axR.set_xticks(xs); axR.set_xticklabels(cats, fontsize=8.5)
-    axR.set_xlim(-0.5, 2.5); axR.set_ylim(0, 0.45)
+    axR.set_xticks(xs); axR.set_xticklabels(cats, fontsize=8)
+    axR.set_xlim(-0.5, 3.5); axR.set_ylim(0.03, 20)
     axR.set_ylabel("% of papers with a fabricated citation", fontsize=9)
-    axR.text(0.03, 0.96, f"0 fabricated references in {n_arxiv_inst:,} cited\narXiv IDs"
-             f" + {n_doi_checked:,} sampled DOIs",
-             transform=axR.transAxes, fontsize=8, va="top", color=C["black"])
+    axR.text(0.03, 0.96, f"0 fabricated in {n_arxiv_inst:,} arXiv IDs\n"
+             f"+ {n_doi_checked:,} DOIs; 1 in 1,180 refs\nwithout identifiers",
+             transform=axR.transAxes, fontsize=7.8, va="top", color=C["black"])
     fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig12_citation_integrity.png"), bbox_inches="tight")
 
