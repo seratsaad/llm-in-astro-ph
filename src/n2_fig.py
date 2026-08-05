@@ -76,12 +76,17 @@ def main():
             ("pivotal", C["vermillion"], ":"),
             ("leveraging", C["blue"], "-"), ("offering", C["blue"], "--")]
     axC.axvspan(*PUB, color=C["vermillion"], alpha=0.10, lw=0)
-    for x, name in RELEASES:
-        label_bottom = 1.62 - 0.118 * len(name) - 0.05
+    axC.set_xlim(2022.5, 2026.0)
+    axC.set_ylim(-0.15, 1.65)
+    rel_texts = [axC.text(x, 1.62, name, rotation=90, ha="center", va="top",
+                          fontsize=7, color="#777777") for x, name in RELEASES]
+    fig.canvas.draw()
+    inv = axC.transData.inverted()
+    for (x, name), txt in zip(RELEASES, rel_texts):
+        bb = txt.get_window_extent()
+        label_bottom = inv.transform((bb.x0, bb.y0))[1] - 0.035
         axC.plot([x, x], [-0.15, label_bottom], color="#999999",
                  ls=(0, (2, 2)), lw=0.7, zorder=1)
-        axC.text(x, 1.62, name, rotation=90, ha="center", va="top", fontsize=7,
-                 color="#777777")
     for w, col, ls in show:
         d = wq[wq.word == w].sort_values("q")
         pre = d[d.q < 2022]
