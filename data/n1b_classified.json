@@ -111,7 +111,6 @@
   "2503.19968",
   "2503.20777",
   "2503.23788",
-  "2504.01067",
   "2504.01351",
   "2504.03156",
   "2504.04387",
@@ -229,7 +228,6 @@
   "2503.19968",
   "2503.20777",
   "2503.23788",
-  "2504.01067",
   "2504.01351",
   "2504.03156",
   "2504.04387",
@@ -2747,10 +2745,11 @@
   "2504.01067": {
    "id": "2504.01067",
    "purposes": [
-    "writing"
+    "research"
    ],
    "tool": "chatgpt",
-   "quote": "This illustration was partially created with the assistance of ChatGPT-4o"
+   "quote": "This illustration was partially created with the assistance of ChatGPT-4o",
+   "note": "full-188 audit: ChatGPT-4o used for a figure illustration, not prose; moved out of writing"
   },
   "2504.01351": {
    "id": "2504.01351",
@@ -4207,5 +4206,17 @@
    "tool": "chatgpt",
    "quote": "OpenAI ChatGPT (version 4.0) was used to assist with language and phrasing of the manuscript"
   }
+ },
+ "full_writing_audit": {
+  "n_audited": 188,
+  "confirmed": 187,
+  "reclassified": [
+   "2504.01067"
+  ],
+  "notes": [
+   "2409.05775 kept: Grammarly-only AI writing tool",
+   "2510.00847 kept: model-generated explanatory text placed in the paper",
+   "2409.13640 kept: grammar review disclosed alongside code use"
+  ]
  }
 }

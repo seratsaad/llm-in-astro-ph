@@ -249,8 +249,9 @@ def fig5_gap():
     # one log-axis dot plot: literature estimates (grey), astro-ph estimate
     # (accent, lower bound -> right arrow), astro-ph disclosure (open circles)
     rows = [
+        ("astro-ph, calibrated estimate",        44.0,    C["vermillion"], "cal"),
         ("Computer science (Liang et al.)",     17.5,     C["grey"], "lit"),
-        ("Biomedicine (Kobak et al.)",          13.5,     C["grey"], "lit"),
+        ("Biomedicine (Kobak et al., 2024)",    13.5,     C["grey"], "lit"),
         ("Mathematics / Nature (Liang et al.)",  6.3,     C["grey"], "lit"),
         ("astro-ph, marker-word lower bound",    est,     C["vermillion"], "lb"),
         ("astro-ph, any AI mention in text",     disc_full, C["blue"], "open"),
@@ -267,14 +268,17 @@ def fig5_gap():
         if kind == "lb":   # lower bound: arrow to the right
             ax.annotate("", xy=(v*1.9, yi), xytext=(v*1.12, yi),
                         arrowprops=dict(arrowstyle="->", color=col, lw=1.0))
-        ax.text(v*2.2 if kind == "lb" else v*1.25, yi,
-                f"{v:.2f}%" if v < 1 else f"{v:.1f}%",
+        if kind == "cal":  # 68 per cent interval on the calibrated estimate
+            ax.plot([35, 56], [yi, yi], lw=1.6, color=col, zorder=2)
+        xtext = v*2.2 if kind == "lb" else (66 if kind == "cal" else v*1.25)
+        ax.text(xtext, yi,
+                f"{v:.2f}%" if v < 1 else f"{v:.0f}%" if kind == "cal" else f"{v:.1f}%",
                 va="center", fontsize=9, color="#555555")
     no_minor_y(ax)
     ax.set_yticks(ys); ax.set_yticklabels([r[0] for r in rows], fontsize=9)
     ax.invert_yaxis()
-    ax.set_xscale("log"); ax.set_xlim(0.1, 60)
-    ax.set_xlabel("% of papers with model-edited text (2025), log scale", labelpad=4)
+    ax.set_xscale("log"); ax.set_xlim(0.1, 110)
+    ax.set_xlabel("% of papers with model-associated text, log scale (astro-ph 2025; other fields 2024)", labelpad=4)
     fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig5_gap.png"), bbox_inches="tight")
     plt.close(fig)

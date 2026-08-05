@@ -1,0 +1,21 @@
+{
+  "strata_q": {
+    "nonnative": {
+      "k": 9,
+      "n": 78
+    },
+    "native": {
+      "k": 10,
+      "n": 56
+    }
+  },
+  "resolved": 134,
+  "w_native_corpus": 0.32683390408153234,
+  "alpha_reweighted_median": 0.352,
+  "alpha_reweighted_68": [
+    0.28200000000000003,
+    0.458
+  ],
+  "kt_2025": 1268,
+  "nt_2025": 21869
+}
