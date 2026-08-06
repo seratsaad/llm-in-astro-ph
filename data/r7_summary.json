@@ -1,12 +1,12 @@
 {
   "counts": {
-    "total_refs": 4964,
-    "with_arxiv": 1612,
-    "with_doi_only": 1587,
-    "no_id": 1765,
-    "no_id_parsed": 1140,
-    "papers_ok": 57,
-    "papers_nobib": 17
+    "total_refs": 16132,
+    "with_arxiv": 4788,
+    "with_doi_only": 5825,
+    "no_id": 5519,
+    "no_id_parsed": 3499,
+    "papers_ok": 186,
+    "papers_nobib": 39
   },
   "verdicts": {
     "VERIFIED": 1078,
@@ -16,9 +16,9 @@
     "AUTHOR_MISMATCH": 2
   },
   "recheck": {
-    "VERIFIED_NOJOURNAL": 47,
-    "STILL_FAILED": 8,
-    "VERIFIED_VOLPAGE": 7
+    "VERIFIED_NOJOURNAL": 175,
+    "STILL_FAILED": 57,
+    "VERIFIED_VOLPAGE": 105
   },
   "hand_review_of_8": {
     "verified_parser_artifacts": [
@@ -37,12 +37,34 @@
     ]
   },
   "conclusion": {
-    "no_id_refs": 1765,
-    "machine_or_hand_checked": 1140,
-    "verified_total": 1139,
+    "papers_sampled": 250,
+    "papers_with_bibliography": 186,
+    "total_refs": 16132,
+    "no_id_refs": 5519,
+    "machine_checked": 3499,
+    "unparsed_pool": 2020,
+    "unparsed_hand_sample": 40,
     "fabricated_found": 1,
-    "rate_per_checked_ref": 0.0008771929824561404,
-    "papers_sampled": 57,
-    "unparsed_pool": 625
+    "per_paper_pct": 0.5376344086021505,
+    "per_paper_95CI_pct": [
+      0.013602150537634408,
+      2.995483870967742
+    ]
+  },
+  "verdicts_combined": {
+    "AUTHOR_MISMATCH": 63,
+    "VERIFIED": 3162,
+    "YEAR_MISMATCH": 56,
+    "NOT_FOUND": 218,
+    "UNPARSED": 2020
+  },
+  "extension_2026_08": {
+    "papers_added": 129,
+    "seed2": 20260806,
+    "recheck": {
+      "journal_agnostic_cleared": 280,
+      "still_failed_hand_reviewed": 57,
+      "outcome": "55 real (issue-number and reprint/book parser artifacts dominate; one systematically garbled but real bibliography in 2402.08835), 2 author-side page typos (prior round), 1 fabrication (prior round, 2510.14239). No new fabrications."
+    }
   }
 }

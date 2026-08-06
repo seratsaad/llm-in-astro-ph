@@ -207,13 +207,13 @@ def fig12_citation_integrity():
     ys = list(range(len(census)))
     for yi, (lab, v, col) in zip(ys, census):
         axL.barh(yi, v, color=col, height=0.58)
-        axL.text(v + 40, yi, f"{v:,} ({v/tot*100:.0f}%)", va="center",
+        axL.text(v + 130, yi, f"{v:,} ({v/tot*100:.0f}%)", va="center",
                  fontsize=9, color="#555555")
     no_minor_y(axL)
     axL.set_yticks(ys); axL.set_yticklabels([c[0] for c in census], fontsize=9)
     axL.invert_yaxis()
-    axL.set_xlim(0, 2450)
-    axL.set_xlabel(f"references in the {57} audited papers ({tot:,} total)", fontsize=9)
+    axL.set_xlim(0, 8600)
+    axL.set_xlabel(f"references in the 186 audited papers ({tot:,} total)", fontsize=9)
 
     # RIGHT: fabrication rate per paper, log scale; identifier-bearing limit,
     # the identifier-free detection (wide Poisson interval), and biomed rates
@@ -224,15 +224,15 @@ def fig12_citation_integrity():
     axR.plot(0, ul, marker="_", ms=9, color=C["blue"], mew=1.4)
     axR.annotate("", xy=(0, ul*0.55), xytext=(0, ul),
                  arrowprops=dict(arrowstyle="->", color=C["blue"], lw=1.0))
-    # 1 detection in 57 papers: 1.75%, exact Poisson 95% interval 0.044-9.8%
-    axR.errorbar(1, 100/57, yerr=[[100/57 - 0.044], [9.8 - 100/57]],
+    # 1 detection in 186 papers: 0.54%, exact Poisson 95% interval 0.014-3.0%
+    axR.errorbar(1, 100/186, yerr=[[100/186 - 0.0136], [3.0 - 100/186]],
                  fmt="o", ms=4.5, color=C["vermillion"], elinewidth=1.0, capsize=2.5)
     axR.plot(2, 0.22, "o", ms=5, color=C["grey"])
     axR.plot(3, 0.36, "o", ms=5, color=C["grey"])
     axR.set_yscale("log")
     no_minor_x(axR)
     axR.set_xticks(xs); axR.set_xticklabels(cats, fontsize=8)
-    axR.set_xlim(-0.5, 3.5); axR.set_ylim(0.03, 20)
+    axR.set_xlim(-0.5, 3.5); axR.set_ylim(0.008, 8)
     axR.set_ylabel("% of papers with a fabricated citation", fontsize=9)
 
     fig.tight_layout()

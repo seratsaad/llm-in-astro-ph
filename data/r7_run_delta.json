@@ -1,0 +1,18 @@
+{
+  "counts_this_run": {
+    "total_refs": 11168,
+    "with_arxiv": 3176,
+    "with_doi_only": 4238,
+    "no_id": 3754,
+    "no_id_parsed": 2359,
+    "papers_ok": 129,
+    "papers_nobib": 22
+  },
+  "verdicts_this_run": {
+    "VERIFIED": 2084,
+    "UNPARSED": 1395,
+    "NOT_FOUND": 182,
+    "AUTHOR_MISMATCH": 61,
+    "YEAR_MISMATCH": 32
+  }
+}

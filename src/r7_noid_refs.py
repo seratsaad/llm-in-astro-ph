@@ -31,8 +31,9 @@ meticulous meticulously nuanced garner garners garnered multifaceted commendable
 noteworthy myriad plethora testament encompassing seamless seamlessly elucidate
 elucidating unravel unraveling unravelling realm realms leveraging""".split())
 
-N_PAPERS = 80
-SEED = 20260805
+N_PAPERS = 250
+SEED = 20260805      # original 80-paper draw
+SEED2 = 20260806     # extension draw to N_PAPERS (referee scale-up)
 
 ARXIV_RE = re.compile(r"\b\d{4}\.\d{4,5}\b|arxiv|astro-ph[/.]", re.I)
 DOI_RE = re.compile(r"\b10\.\d{4,9}/|\\doi\b|doi\.org|doi:", re.I)
@@ -130,9 +131,7 @@ def main():
             continue
         if set(re.findall(r"[a-z]+", r["abstract"].lower())) & BASKET:
             flagged.append(re.sub(r"v\d+$", "", r["id"]))
-    sample = rng.sample(flagged, N_PAPERS)
-    print(f"marker-flagged 2024-25 papers: {len(flagged)}; sampled {N_PAPERS}", flush=True)
-
+    sample = rng.sample(flagged, 80)
     done = set()
     if os.path.exists(OUT):
         for line in open(OUT):
@@ -140,6 +139,12 @@ def main():
                 done.add(json.loads(line)["paper"])
             except Exception:
                 pass
+    if N_PAPERS > 80:
+        rng2 = random.Random(SEED2)
+        pool = [f for f in flagged if f not in set(sample) and f not in done]
+        sample = sample + rng2.sample(pool, N_PAPERS - 80)
+    print(f"marker-flagged 2024-25 papers: {len(flagged)}; sampled {len(sample)} "
+          f"({len(done)} already processed)", flush=True)
     fout = open(OUT, "a")
     counts = {"total_refs": 0, "with_arxiv": 0, "with_doi_only": 0, "no_id": 0,
               "no_id_parsed": 0, "papers_ok": 0, "papers_nobib": 0}
@@ -183,9 +188,9 @@ def main():
         print(f"[{k+1}/{N_PAPERS}] {pid}: refs so far {counts['total_refs']}, "
               f"no-id {counts['no_id']}, verdicts {results}", flush=True)
     fout.close()
-    json.dump({"counts": counts, "verdicts": results},
-              open(os.path.join(DATA, "r7_summary.json"), "w"), indent=2)
-    print(json.dumps({"counts": counts, "verdicts": results}, indent=1))
+    json.dump({"counts_this_run": counts, "verdicts_this_run": results},
+              open(os.path.join(DATA, "r7_run_delta.json"), "w"), indent=2)
+    print(json.dumps({"counts_this_run": counts, "verdicts_this_run": results}, indent=1))
 
 if __name__ == "__main__":
     main()
