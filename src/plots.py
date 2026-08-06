@@ -254,6 +254,7 @@ def fig5_gap():
         ("Biomedicine (Kobak et al., 2024)",    13.5,     C["grey"], "lit"),
         ("Mathematics / Nature (Liang et al.)",  6.3,     C["grey"], "lit"),
         ("astro-ph, marker-word lower bound",    est,     C["vermillion"], "lb"),
+        ("astro-ph, writing disclosed in source", 1.78,    C["blue"], "open"),
         ("astro-ph, any AI mention in text",     disc_full, C["blue"], "open"),
         ("astro-ph, stated in acknowledgments",  disc_ack,  C["blue"], "open"),
     ]

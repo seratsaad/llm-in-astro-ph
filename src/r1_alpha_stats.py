@@ -55,7 +55,8 @@ def rank_basket_words():
 def tokset(s):
     return set(re.findall(r"[a-z]+", s.lower()))
 
-BASKETS = {"full": set(FULL), "no_publicized": set(FULL) - PUBLICIZED}
+BASKETS = {"full": set(FULL), "no_publicized": set(FULL) - PUBLICIZED,
+           "no_leveraging": set(FULL) - {"leveraging"}}
 
 def main():
     ranked = rank_basket_words()
