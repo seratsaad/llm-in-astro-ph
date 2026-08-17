@@ -35,7 +35,7 @@ def main():
     for line in open(os.path.join(DATA, "astroph_abstracts.jsonl")):
         r = json.loads(line)
         y = int(r["published"][:4]); m = int(r["published"][5:7])
-        if y < 2015 or y > 2025: continue
+        if y < 2015 or y > 2026 or (y == 2026 and m > 6): continue
         qk = y + ((m - 1) // 3) * 0.25
         toks = set(re.findall(r"[a-z]+", r["abstract"].lower()))
         hits = toks & BASKET

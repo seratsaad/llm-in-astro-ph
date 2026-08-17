@@ -64,9 +64,40 @@ def fig1_markers_vs_control():
     ax.axvline(2022.85, color=C["grey"], ls="--", lw=1)
     ax.text(2022.7, 10.8, "ChatGPT", rotation=90, va="top", ha="right",
             fontsize=9.5, color=C["grey"])
+    # 2026 first half: the turnover point, computed from the corpus directly
+    import json as _json, re as _re
+    BAS = set("""delve delves delving underscore underscores underscoring intricate
+intricacies showcasing showcase showcases showcased boasts tapestry pivotal
+meticulous meticulously nuanced garner garners garnered multifaceted commendable
+noteworthy myriad plethora testament encompassing seamless seamlessly elucidate
+elucidating unravel unraveling unravelling realm realms leveraging""".split())
+    k26 = n26 = 0
+    csum = {w: 0 for w in ctrl_words}
+    for line in open(os.path.join(DATA, "astroph_abstracts.jsonl")):
+        r = _json.loads(line)
+        if r["published"][:4] != "2026" or int(r["published"][5:7]) > 6:
+            continue
+        toks = set(_re.findall(r"[a-z]+", r["abstract"].lower()))
+        n26 += 1
+        if toks & BAS: k26 += 1
+        for w in ctrl_words:
+            if w in toks: csum[w] += 1
+    r26 = k26 / n26
+    lo, hi = wilson(k26, n26)
+    ax.errorbar([2026.25], [r26*100], yerr=[[r26*100-lo*100],[hi*100-r26*100]],
+                fmt="o", color=C["vermillion"], ms=3.4, capsize=2, elinewidth=0.9)
+    ax.plot([2025, 2026.25], [yr[yr.year==2025].rate.iloc[0]*100, r26*100],
+            "-", color=C["vermillion"], lw=1.3)
+    c26 = np.mean([csum[w]/n26 for w in ctrl_words])
+    ax.plot([2026.25], [c26*100], "s", color=C["blue"], ms=3.4)
+    ax.plot([2025, 2026.25], [ctrl[ctrl.year==2025].freq.iloc[0]*100, c26*100],
+            "-", color=C["blue"], lw=1.3)
+    ax.annotate("2026\n(Jan to Jun)", (2026.25, r26*100), textcoords="offset points",
+                xytext=(-4, -26), fontsize=8, color=C["vermillion"], ha="center")
     ax.set_xlabel("Year"); ax.set_ylabel("% of abstracts containing the word(s)")
     ax.legend(loc="center left", fontsize=9)
-    ax.set_xticks(range(2015, 2026, 2))
+    ax.set_xticks(range(2015, 2027, 2))
+    ax.set_xlim(2014.5, 2027.0)
     footer(fig); fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig1_markers_vs_control.png"), bbox_inches="tight")
     plt.close(fig)

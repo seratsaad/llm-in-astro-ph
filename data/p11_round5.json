@@ -1,0 +1,78 @@
+{
+ "M4_convention": "bins labelled by start month, so 2024.25 is April to June 2024, the publicity quarter, and a peak at 2024.00 means the decline began inside it",
+ "M4_named_peaks": {
+  "delve": 2024.0,
+  "delves": 2024.0,
+  "delving": 2024.25,
+  "underscores": 2025.25,
+  "intricate": 2024.25,
+  "intricacies": 2023.5,
+  "showcasing": 2024.75,
+  "pivotal": 2024.25,
+  "meticulously": 2024.25,
+  "realm": 2023.75
+ },
+ "M4_exact_publicity_quarter": {
+  "named": [
+   4,
+   10
+  ],
+  "unnamed": [
+   1,
+   23
+  ],
+  "p_perm": 0.02195,
+  "p_perm_freq_stratified": 0.05595
+ },
+ "M4_publicity_or_quarter_before": {
+  "named": [
+   6,
+   10
+  ],
+  "unnamed": [
+   4,
+   23
+  ],
+  "p_perm": 0.0233,
+  "p_perm_freq_stratified": 0.0591
+ },
+ "M5_placebo": {
+  "0.1": {
+   "named_mean": -50.56077374042554,
+   "unnamed_mean": -27.620193407115494,
+   "n_unnamed": 13,
+   "p_perm_one_sided": 0.2593
+  },
+  "0.15": {
+   "named_mean": -50.56077374042554,
+   "unnamed_mean": 16.556102145777256,
+   "n_unnamed": 9,
+   "p_perm_one_sided": 0.0597
+  },
+  "0.19": {
+   "named_mean": -50.56077374042554,
+   "unnamed_mean": 36.466484869965754,
+   "n_unnamed": 7,
+   "p_perm_one_sided": 0.0209
+  },
+  "0.25": {
+   "named_mean": -50.56077374042554,
+   "unnamed_mean": 25.846902277346935,
+   "n_unnamed": 7,
+   "p_perm_one_sided": 0.0266
+  }
+ },
+ "M6_cochran_Q": {
+  "Q": 9.403880408186872,
+  "dof": 5,
+  "p": 0.09399921191769062,
+  "decays": {
+   "IM": 88.57543372652681,
+   "GA": 60.2743810516217,
+   "CO": 54.628655594722034,
+   "EP": 79.60751883093214,
+   "SR": 38.87541223133706,
+   "HE": 88.93577210064201
+  }
+ }
+}

@@ -40,7 +40,7 @@ def decay_all():
     for line in open(os.path.join(DATA, "astroph_abstracts.jsonl")):
         r = json.loads(line)
         y = int(r["published"][:4]); m = int(r["published"][5:7])
-        if y < 2015 or y > 2025:
+        if y < 2015 or y > 2026 or (y == 2026 and m > 6):
             continue
         qk = y + ((m - 1) // 3) * 0.25
         toks = set(re.findall(r"[a-z]+", r["abstract"].lower()))
@@ -55,7 +55,7 @@ def decay_all():
         pre = [(qk, ser[qk]) for qk in quarters if qk < 2022]
         coef = np.polyfit([p[0] for p in pre], [p[1] for p in pre], 1)
         exc = {qk: ser[qk] - np.polyval(coef, qk) for qk in quarters if qk >= 2022}
-        pk = max((qk for qk in exc if qk <= 2025.0), key=lambda qk: exc[qk])
+        pk = max((qk for qk in exc if qk <= 2025.75), key=lambda qk: exc[qk])
         peak_val = exc[pk]
         if peak_val < FLOOR:
             continue
@@ -64,9 +64,11 @@ def decay_all():
             if exc[qk] <= peak_val / 2:
                 half = qk - pk
                 break
+        last2 = sorted(exc)[-2:]
+        end = sum(exc[q] for q in last2) / len(last2)   # mean of 2026 Q1+Q2
         out[w] = {"peak_q": pk, "peak_excess_pct": peak_val * 100,
                   "half_life_quarters": half,
-                  "end_excess_pct": exc[max(exc)] * 100,
+                  "end_excess_pct": end * 100,
                   "peak_docs": wq[w][pk]}
     return out
 

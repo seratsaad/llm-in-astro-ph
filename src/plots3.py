@@ -215,24 +215,32 @@ def fig12_citation_integrity():
     axL.set_xlim(0, 8600)
     axL.set_xlabel(f"references in the 186 audited papers ({tot:,} total)", fontsize=9)
 
-    # RIGHT: fabrication rate per paper, log scale; identifier-bearing limit,
-    # the identifier-free detection (wide Poisson interval), and biomed rates
-    cats = ["astro-ph\nwith IDs\n(95% limit)", "astro-ph\nno IDs\n(flagged)",
-            "Biomed\n2025", "Biomed\n2026"]
-    xs = [0, 1, 2, 3]
+    # RIGHT: fabrication rate per paper, log scale; astronomy group (ID limit,
+    # flagged detection, unflagged control limit) set apart from biomedicine
+    cats = ["with IDs\n(95% limit)", "no IDs\nflagged", "no IDs\ncontrol\n(95% limit)",
+            "2025", "2026"]
+    xs = [0, 1.2, 2.4, 4.1, 5.1]
     ul = st["per_paper_UL_pct"]
+    axR.axvspan(-0.55, 2.95, color=C["blue"], alpha=0.05, lw=0)
     axR.plot(0, ul, marker="_", ms=9, color=C["blue"], mew=1.4)
     axR.annotate("", xy=(0, ul*0.55), xytext=(0, ul),
                  arrowprops=dict(arrowstyle="->", color=C["blue"], lw=1.0))
     # 1 detection in 186 papers: 0.54%, exact Poisson 95% interval 0.014-3.0%
-    axR.errorbar(1, 100/186, yerr=[[100/186 - 0.0136], [3.0 - 100/186]],
+    axR.errorbar(1.2, 100/186, yerr=[[100/186 - 0.0136], [3.0 - 100/186]],
                  fmt="o", ms=4.5, color=C["vermillion"], elinewidth=1.0, capsize=2.5)
-    axR.plot(2, 0.22, "o", ms=5, color=C["grey"])
-    axR.plot(3, 0.36, "o", ms=5, color=C["grey"])
+    # 0 detections in the 77 control papers: one-sided 95% limit 3.0/77
+    ulc = 100 * 3.0 / 77
+    axR.plot(2.4, ulc, marker="_", ms=9, color=C["blue"], mew=1.4)
+    axR.annotate("", xy=(2.4, ulc*0.55), xytext=(2.4, ulc),
+                 arrowprops=dict(arrowstyle="->", color=C["blue"], lw=1.0))
+    axR.plot(4.1, 0.22, "o", ms=5, color=C["grey"])
+    axR.plot(5.1, 0.36, "o", ms=5, color=C["grey"])
     axR.set_yscale("log")
     no_minor_x(axR)
-    axR.set_xticks(xs); axR.set_xticklabels(cats, fontsize=8)
-    axR.set_xlim(-0.5, 3.5); axR.set_ylim(0.008, 8)
+    axR.set_xticks(xs); axR.set_xticklabels(cats, fontsize=7.5)
+    axR.set_xlim(-0.55, 5.6); axR.set_ylim(0.008, 24)
+    axR.text(1.2, 14, "astro-ph", ha="center", fontsize=8.5, color=C["blue"])
+    axR.text(4.6, 14, "biomedicine", ha="center", fontsize=8.5, color=C["grey"])
     axR.set_ylabel("% of papers with a fabricated citation", fontsize=9)
 
     fig.tight_layout()

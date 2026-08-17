@@ -34,38 +34,41 @@ def main():
     axA.fill_between(d.q, d.cond_lo * 100, d.cond_hi * 100, color=C["vermillion"], alpha=0.15, lw=0)
     axA.set_xlabel("Year (quarterly)")
     axA.set_ylabel("% of abstracts")
-    axA.set_xlim(2022, 2026.0)
+    axA.set_xlim(2022, 2026.5)
     axA.set_ylim(0, 22)
     axA.legend(loc="upper left", fontsize=8.5)
     axA.text(0.96, 0.95, "(a)", transform=axA.transAxes, fontsize=10, ha="right", va="top")
 
-    # (b) decay against documented publicity, well-measured words only
-    tab = json.load(open(os.path.join(DATA, "n2g_word_table.json")))
-    wm = [r for r in tab if r["well_measured"]]
-    lab_dx = {"delve": (0.13, 0), "underscores": (0.13, 0), "intricate": (0.13, 3),
-              "pivotal": (0.13, -3), "offering": (0.16, -8), "highlighting": (0.16, 1),
-              "leveraging": (0.1, 0), "underscore": (0.1, 3),
-              "underscoring": (0.13, 9), "encompassing": (0.1, 3),
-              "elucidate": (0.1, -3)}
-    xjit = {"offering": -0.06, "highlighting": 0.07, "underscoring": 0.0}
-    for r in wm:
-        dec_frac = (r["peak_excess_pct"] - r["end_excess_pct"]) / r["peak_excess_pct"] * 100
-        col = C["vermillion"] if r["n_sources"] > 0 else C["blue"]
-        ms = 3.0 + 3.5 * r["peak_excess_pct"]
-        x = r["n_sources"] + xjit.get(r["word"], 0.0)
-        axB.plot(x, dec_frac, "o", ms=ms, color=col, mec="white",
-                 mew=0.4, zorder=3)
-        dx, dy = lab_dx.get(r["word"], (0.1, 0))
-        axB.text(x + dx, dec_frac + dy, r["word"], fontsize=7.3,
-                 va="center", color=col)
+    # (b) frequency-matched pairs, the analysis that decides the question
+    p4 = json.load(open(os.path.join(DATA, "p4_freqmatched.json")))
+    pairs = p4["C_matched"]["pairs"]
+    def destack(vals, min_gap=6.5):
+        """Nudge label y-positions apart while keeping order."""
+        order = sorted(range(len(vals)), key=lambda i: vals[i])
+        out = list(vals)
+        for a, b in zip(order, order[1:]):
+            if out[b] - out[a] < min_gap:
+                out[b] = out[a] + min_gap
+        return out
+    lyL = destack([p["decay_named"] for p in pairs])
+    lyR = destack([p["decay_unnamed"] for p in pairs])
+    for pr, yl, yr in zip(pairs, lyL, lyR):
+        axB.plot([0, 1], [pr["decay_named"], pr["decay_unnamed"]], "-",
+                 color="#BBBBBB", lw=0.8, zorder=1)
+        axB.plot(0, pr["decay_named"], "o", ms=4.5, color=C["vermillion"], zorder=3)
+        axB.plot(1, pr["decay_unnamed"], "o", ms=4.5, color=C["blue"], zorder=3)
+        axB.text(-0.08, yl, pr["named"], fontsize=6.6,
+                 ha="right", va="center", color=C["vermillion"])
+        axB.text(1.08, yr, pr["unnamed"], fontsize=6.6,
+                 ha="left", va="center", color=C["blue"])
     axB.axhline(0, color="#CCCCCC", lw=0.6)
     no_minor_y(axB)
-    axB.set_xlim(-0.35, 2.85)
-    axB.set_xticks([0, 1, 2])
-    axB.set_ylim(-42, 108)
-    axB.set_xlabel("Sources naming the word, 2024")
-    axB.set_ylabel("Decay from peak by end-2025 (%)")
-    axB.text(0.96, 0.95, "(b)", transform=axB.transAxes, fontsize=10, ha="right", va="top")
+    axB.set_xlim(-0.75, 1.85)
+    axB.set_xticks([0, 1])
+    axB.set_xticklabels(["Named,\n2024", "Matched\nunnamed"], fontsize=8.5)
+    axB.set_ylabel("Decay from peak by mid-2026 (%)")
+    axB.text(0.96, 0.04, "(b)", transform=axB.transAxes, fontsize=10,
+             ha="right", va="bottom")
     # (c) timing test: decay follows publicity, not model releases
     import numpy as np
     wq = pd.read_csv(os.path.join(DATA, "n2_words.csv"))
@@ -76,7 +79,7 @@ def main():
             ("pivotal", C["vermillion"], ":"),
             ("leveraging", C["blue"], "-"), ("offering", C["blue"], "--")]
     axC.axvspan(*PUB, color=C["vermillion"], alpha=0.10, lw=0)
-    axC.set_xlim(2022.5, 2026.0)
+    axC.set_xlim(2022.5, 2026.5)
     axC.set_ylim(-0.15, 1.65)
     rel_texts = [axC.text(x, 1.62, name, rotation=90, ha="center", va="top",
                           fontsize=7, color="#777777") for x, name in RELEASES]
@@ -96,9 +99,9 @@ def main():
         pk = exc.e.max()
         axC.plot(exc.q, exc.e / pk, ls, color=col, lw=1.3, label=w)
     axC.axhline(0, color="#CCCCCC", lw=0.6)
-    axC.set_xlim(2022.5, 2026.0)
+    axC.set_xlim(2022.5, 2026.5)
     axC.set_ylim(-0.15, 1.65)
-    axC.set_xticks(range(2023, 2026))
+    axC.set_xticks(range(2023, 2027))
     axC.set_xlabel("Year (quarterly)")
     axC.set_ylabel("Excess over trend, peak = 1")
     axC.legend(loc="upper left", fontsize=8, ncol=1, bbox_to_anchor=(0.005, 0.99))

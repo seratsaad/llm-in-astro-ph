@@ -1,0 +1,23 @@
+{
+  "counts_this_run": {
+    "total_refs": 5635,
+    "with_arxiv": 1410,
+    "with_doi_only": 2527,
+    "no_id": 1698,
+    "no_id_parsed": 1068,
+    "papers_ok": 77,
+    "papers_nobib": 14
+  },
+  "verdicts_this_run": {
+    "UNPARSED": 630,
+    "VERIFIED": 925,
+    "NOT_FOUND": 109,
+    "YEAR_MISMATCH": 12,
+    "AUTHOR_MISMATCH": 22
+  },
+  "recheck": {
+    "VERIFIED_NOJOURNAL": 69,
+    "STILL_FAILED": 48,
+    "VERIFIED_VOLPAGE": 26
+  }
+}

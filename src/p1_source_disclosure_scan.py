@@ -5,7 +5,7 @@ P1 (referee round 4, points 1 and 7) -- outcome-blind disclosure scan.
 The calibration sample so far reaches papers through NASA ADS, which indexes
 published versions and lags for recent preprints, so it misses disclosures
 that exist only in the arXiv source. Here we scan the arXiv source of a
-random sample of 2025 astro-ph papers directly, in randomized order so that
+random sample of 2025 to 2026 June astro-ph papers directly, in randomized order so that
 any partial run is still a random sample, and extract every disclosure
 statement we find.
 
@@ -74,7 +74,8 @@ def main():
     ids = []
     for line in open(os.path.join(DATA, "astroph_abstracts.jsonl")):
         r = json.loads(line)
-        if r["published"][:4] == "2025":
+        y = int(r["published"][:4]); m = int(r["published"][5:7])
+        if y == 2025 or (y == 2026 and m <= 6):
             ids.append(re.sub(r"v\d+$", "", r["id"]))
     ids = sorted(set(ids))
     random.Random(SEED).shuffle(ids)          # randomized order: partial run stays random
@@ -86,7 +87,7 @@ def main():
             except Exception:
                 pass
     todo = [i for i in ids if i not in done]
-    print(f"2025 astro-ph papers: {len(ids)}; already scanned {len(done)}; "
+    print(f"2025 to 2026 June astro-ph papers: {len(ids)}; already scanned {len(done)}; "
           f"queue {len(todo)}", flush=True)
 
     lock = threading.Lock()

@@ -3675,5 +3675,3006 @@
   ],
   "2509.14897": [
     "lang_template"
+  ],
+  "2601.22215": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2603.10200": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2601.04552": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2603.13167": [
+    "chatgpt",
+    "body_chatgpt",
+    "editing_tools",
+    "lang_template"
+  ],
+  "2605.08544": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2605.00262": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2603.07158": [
+    "chatgpt",
+    "gpt",
+    "template",
+    "body_chatgpt"
+  ],
+  "2606.05103": [
+    "chatgpt",
+    "copilot",
+    "body_chatgpt"
+  ],
+  "2601.14975": [
+    "chatgpt",
+    "gpt",
+    "other_models",
+    "body_chatgpt"
+  ],
+  "2602.19836": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2605.15170": [
+    "chatgpt",
+    "llm_generic",
+    "body_chatgpt"
+  ],
+  "2604.13162": [
+    "chatgpt",
+    "gpt",
+    "genai",
+    "body_chatgpt",
+    "editing_tools"
+  ],
+  "2603.22720": [
+    "chatgpt",
+    "other_models",
+    "body_chatgpt"
+  ],
+  "2602.05021": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2603.18165": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2602.16845": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2602.14925": [
+    "chatgpt",
+    "gpt",
+    "llm_generic",
+    "body_chatgpt"
+  ],
+  "2602.05917": [
+    "chatgpt",
+    "llm_generic",
+    "body_chatgpt"
+  ],
+  "2606.12669": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2606.02815": [
+    "chatgpt",
+    "gpt",
+    "llm_generic",
+    "body_chatgpt"
+  ],
+  "2605.24143": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2603.21306": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2602.09251": [
+    "chatgpt",
+    "genai",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2604.18730": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2603.03063": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2604.14124": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2602.09223": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2602.00896": [
+    "chatgpt",
+    "gpt",
+    "copilot",
+    "llm_generic",
+    "body_chatgpt"
+  ],
+  "2603.00249": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2604.12242": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2605.14128": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2603.11371": [
+    "chatgpt",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2603.01352": [
+    "chatgpt",
+    "gpt",
+    "claude",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2601.00595": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2603.08530": [
+    "chatgpt",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2606.24603": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2602.12661": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2605.05108": [
+    "chatgpt",
+    "other_models",
+    "body_chatgpt"
+  ],
+  "2606.13291": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2603.09196": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2604.01783": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2605.04176": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2603.11357": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2604.08769": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2605.03016": [
+    "chatgpt",
+    "copilot",
+    "body_chatgpt"
+  ],
+  "2602.06116": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2605.01105": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2602.04688": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2603.04577": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2606.10558": [
+    "chatgpt",
+    "genai",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2604.00981": [
+    "chatgpt",
+    "genai",
+    "template",
+    "body_chatgpt"
+  ],
+  "2605.21735": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2604.07268": [
+    "chatgpt",
+    "gpt",
+    "genai",
+    "body_chatgpt"
+  ],
+  "2601.08931": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2605.14187": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2605.18995": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2604.07587": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2605.20487": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2606.23850": [
+    "chatgpt",
+    "template",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2605.16674": [
+    "chatgpt",
+    "llm_generic",
+    "body_chatgpt"
+  ],
+  "2602.20522": [
+    "chatgpt",
+    "genai",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2603.09489": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2602.17760": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2601.16268": [
+    "chatgpt",
+    "gpt",
+    "claude",
+    "copilot",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2601.15965": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2601.02348": [
+    "chatgpt",
+    "gpt",
+    "claude",
+    "body_chatgpt"
+  ],
+  "2602.02693": [
+    "chatgpt",
+    "gpt",
+    "other_models",
+    "llm_generic",
+    "body_chatgpt"
+  ],
+  "2606.06628": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2606.25500": [
+    "chatgpt",
+    "gpt",
+    "copilot",
+    "body_chatgpt"
+  ],
+  "2601.16288": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2604.27090": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2606.18333": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2602.03393": [
+    "chatgpt",
+    "gpt",
+    "other_models",
+    "llm_generic",
+    "body_chatgpt"
+  ],
+  "2604.27064": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2602.22739": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2603.25984": [
+    "chatgpt",
+    "gpt",
+    "claude",
+    "gemini_ai",
+    "llm_generic",
+    "body_chatgpt"
+  ],
+  "2602.10181": [
+    "chatgpt",
+    "gpt",
+    "claude",
+    "copilot",
+    "llm_generic",
+    "genai",
+    "body_chatgpt"
+  ],
+  "2602.04389": [
+    "chatgpt",
+    "gpt",
+    "gemini_ai",
+    "genai",
+    "body_chatgpt"
+  ],
+  "2603.29334": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2601.17255": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2603.21976": [
+    "chatgpt",
+    "gpt",
+    "other_models",
+    "llm_generic",
+    "body_chatgpt"
+  ],
+  "2605.07809": [
+    "chatgpt",
+    "gpt",
+    "claude",
+    "genai",
+    "template",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2604.22071": [
+    "chatgpt",
+    "claude",
+    "llm_generic",
+    "genai",
+    "body_chatgpt"
+  ],
+  "2603.22400": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2603.29039": [
+    "chatgpt",
+    "copilot",
+    "other_models",
+    "llm_generic",
+    "genai",
+    "body_chatgpt"
+  ],
+  "2602.17938": [
+    "chatgpt",
+    "genai",
+    "body_chatgpt"
+  ],
+  "2604.21218": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2606.11161": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2601.05598": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2603.01618": [
+    "chatgpt",
+    "gpt",
+    "genai",
+    "template",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2606.31673": [
+    "chatgpt",
+    "genai",
+    "template",
+    "body_chatgpt"
+  ],
+  "2604.00144": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2606.13574": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2605.09637": [
+    "chatgpt",
+    "gpt",
+    "genai",
+    "template",
+    "body_chatgpt"
+  ],
+  "2603.24182": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2605.24104": [
+    "chatgpt",
+    "llm_generic",
+    "template",
+    "body_chatgpt"
+  ],
+  "2606.30029": [
+    "chatgpt",
+    "gpt",
+    "claude",
+    "other_models",
+    "llm_generic",
+    "template",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2606.14396": [
+    "chatgpt",
+    "template",
+    "body_chatgpt"
+  ],
+  "2606.13914": [
+    "chatgpt",
+    "gpt",
+    "claude",
+    "genai",
+    "template",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2601.10304": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2602.10325": [
+    "chatgpt",
+    "gpt",
+    "llm_generic",
+    "body_chatgpt"
+  ],
+  "2604.07505": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2602.23195": [
+    "chatgpt",
+    "gpt",
+    "genai",
+    "body_chatgpt"
+  ],
+  "2606.22859": [
+    "chatgpt",
+    "llm_generic",
+    "genai",
+    "body_chatgpt"
+  ],
+  "2606.29653": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2606.09726": [
+    "chatgpt",
+    "gpt",
+    "genai",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2605.13983": [
+    "chatgpt",
+    "claude",
+    "body_chatgpt"
+  ],
+  "2601.18652": [
+    "chatgpt",
+    "gpt",
+    "genai",
+    "template",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2603.27673": [
+    "chatgpt",
+    "gpt",
+    "genai",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2605.14922": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2602.19984": [
+    "chatgpt",
+    "genai",
+    "template",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2605.21469": [
+    "chatgpt",
+    "genai",
+    "template",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2603.28895": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2606.28515": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2602.16252": [
+    "chatgpt",
+    "gpt",
+    "template",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2604.20814": [
+    "chatgpt",
+    "other_models",
+    "genai",
+    "body_chatgpt"
+  ],
+  "2604.14151": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2601.08037": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2601.15837": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2604.17554": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2604.07134": [
+    "chatgpt",
+    "gpt",
+    "claude",
+    "body_chatgpt"
+  ],
+  "2605.09621": [
+    "chatgpt",
+    "gpt",
+    "copilot",
+    "other_models",
+    "body_chatgpt"
+  ],
+  "2607.00114": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2603.22941": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2601.14426": [
+    "chatgpt",
+    "genai",
+    "template",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2602.17487": [
+    "chatgpt",
+    "genai",
+    "body_chatgpt"
+  ],
+  "2606.26491": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2602.08424": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2601.15961": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2601.09644": [
+    "chatgpt",
+    "gpt",
+    "genai",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2603.21570": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2601.14650": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2601.15949": [
+    "chatgpt",
+    "llm_generic",
+    "body_chatgpt"
+  ],
+  "2605.02663": [
+    "chatgpt",
+    "gpt",
+    "genai",
+    "body_chatgpt"
+  ],
+  "2606.22930": [
+    "chatgpt",
+    "gpt",
+    "claude",
+    "body_chatgpt"
+  ],
+  "2604.21666": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2601.02263": [
+    "chatgpt",
+    "other_models",
+    "llm_generic",
+    "body_chatgpt"
+  ],
+  "2606.22929": [
+    "chatgpt",
+    "claude",
+    "llm_generic",
+    "body_chatgpt"
+  ],
+  "2602.09694": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2604.22986": [
+    "chatgpt",
+    "genai",
+    "template",
+    "body_chatgpt"
+  ],
+  "2604.06399": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2603.02177": [
+    "chatgpt",
+    "genai",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2603.19037": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2604.03691": [
+    "chatgpt",
+    "gpt",
+    "llm_generic",
+    "body_chatgpt"
+  ],
+  "2603.04519": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2606.10411": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2604.07437": [
+    "chatgpt",
+    "genai",
+    "body_chatgpt"
+  ],
+  "2606.11157": [
+    "chatgpt",
+    "gpt",
+    "claude",
+    "llm_generic",
+    "genai",
+    "body_chatgpt"
+  ],
+  "2606.08782": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2606.20464": [
+    "chatgpt",
+    "llm_generic",
+    "body_chatgpt"
+  ],
+  "2602.17444": [
+    "chatgpt",
+    "genai",
+    "template",
+    "body_chatgpt",
+    "editing_tools",
+    "lang_template"
+  ],
+  "2601.18149": [
+    "chatgpt",
+    "body_chatgpt",
+    "editing_tools"
+  ],
+  "2605.00563": [
+    "chatgpt",
+    "gpt",
+    "claude",
+    "body_chatgpt"
+  ],
+  "2605.19226": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2604.20802": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2606.28645": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2602.14166": [
+    "chatgpt",
+    "editing_tools"
+  ],
+  "2606.20067": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2602.12201": [
+    "chatgpt",
+    "llm_generic",
+    "body_chatgpt"
+  ],
+  "2606.18653": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2603.26953": [
+    "chatgpt",
+    "gpt",
+    "claude",
+    "llm_generic",
+    "body_chatgpt"
+  ],
+  "2605.22112": [
+    "chatgpt",
+    "genai",
+    "template",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2606.07919": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2606.23780": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2606.13398": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2605.23049": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2602.23521": [
+    "chatgpt",
+    "gpt",
+    "claude",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2606.08767": [
+    "chatgpt",
+    "genai",
+    "body_chatgpt"
+  ],
+  "2606.10760": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2606.13666": [
+    "chatgpt",
+    "other_models",
+    "llm_generic",
+    "body_chatgpt"
+  ],
+  "2604.05822": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2601.02788": [
+    "chatgpt",
+    "template",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2605.27301": [
+    "chatgpt",
+    "genai",
+    "body_chatgpt"
+  ],
+  "2601.21946": [
+    "chatgpt",
+    "genai",
+    "body_chatgpt"
+  ],
+  "2606.18127": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2606.30488": [
+    "chatgpt",
+    "gpt",
+    "claude",
+    "genai",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2604.19743": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2606.15150": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2601.05969": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2605.23136": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2606.10038": [
+    "chatgpt",
+    "gpt",
+    "claude",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2601.13144": [
+    "chatgpt",
+    "llm_generic",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2606.18108": [
+    "chatgpt",
+    "gpt",
+    "claude",
+    "gemini_ai",
+    "llama",
+    "other_models",
+    "llm_generic",
+    "body_chatgpt"
+  ],
+  "2603.04535": [
+    "chatgpt",
+    "other_models",
+    "body_chatgpt"
+  ],
+  "2601.14235": [
+    "chatgpt",
+    "gpt",
+    "claude",
+    "llama",
+    "copilot",
+    "other_models",
+    "llm_generic",
+    "genai",
+    "body_chatgpt"
+  ],
+  "2603.11286": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2606.26537": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt",
+    "editing_tools"
+  ],
+  "2606.17571": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2605.01904": [
+    "chatgpt",
+    "other_models",
+    "template",
+    "body_chatgpt"
+  ],
+  "2604.11221": [
+    "chatgpt",
+    "gpt",
+    "llm_generic",
+    "genai",
+    "template",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2606.14959": [
+    "chatgpt",
+    "gpt",
+    "claude",
+    "body_chatgpt"
+  ],
+  "2605.18959": [
+    "chatgpt",
+    "gpt",
+    "claude",
+    "copilot",
+    "llm_generic",
+    "genai",
+    "body_chatgpt"
+  ],
+  "2605.14713": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2605.12542": [
+    "chatgpt",
+    "gpt",
+    "copilot",
+    "other_models",
+    "llm_generic",
+    "genai",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2606.11404": [
+    "chatgpt",
+    "genai",
+    "template",
+    "body_chatgpt"
+  ],
+  "2602.02339": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2604.21859": [
+    "chatgpt",
+    "gpt",
+    "claude",
+    "body_chatgpt"
+  ],
+  "2601.16263": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2602.22004": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2606.13784": [
+    "chatgpt",
+    "llm_generic",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2604.16595": [
+    "chatgpt",
+    "genai",
+    "body_chatgpt"
+  ],
+  "2604.22144": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2605.05635": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2606.12447": [
+    "chatgpt",
+    "gpt",
+    "genai",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2606.17207": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2602.19958": [
+    "chatgpt",
+    "template",
+    "body_chatgpt"
+  ],
+  "2605.15310": [
+    "chatgpt",
+    "genai",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2604.12672": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2606.19539": [
+    "chatgpt",
+    "copilot",
+    "other_models",
+    "llm_generic",
+    "body_chatgpt"
+  ],
+  "2604.08090": [
+    "chatgpt",
+    "llm_generic",
+    "template",
+    "body_chatgpt"
+  ],
+  "2605.23637": [
+    "chatgpt",
+    "gpt",
+    "llm_generic",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2602.20298": [
+    "chatgpt",
+    "body_chatgpt"
+  ],
+  "2602.13291": [
+    "chatgpt",
+    "gpt",
+    "other_models",
+    "llm_generic",
+    "body_chatgpt"
+  ],
+  "2605.11446": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2606.17984": [
+    "chatgpt",
+    "gpt",
+    "claude",
+    "template",
+    "body_chatgpt"
+  ],
+  "2602.20431": [
+    "chatgpt",
+    "gpt",
+    "template",
+    "body_chatgpt"
+  ],
+  "2603.24685": [
+    "chatgpt",
+    "gpt",
+    "genai",
+    "template",
+    "body_chatgpt"
+  ],
+  "2602.21790": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2606.18335": [
+    "chatgpt"
+  ],
+  "2606.12156": [
+    "chatgpt",
+    "claude",
+    "genai",
+    "body_chatgpt"
+  ],
+  "2606.17155": [
+    "chatgpt",
+    "gpt",
+    "body_chatgpt"
+  ],
+  "2605.21093": [
+    "chatgpt",
+    "claude",
+    "llm_generic",
+    "body_chatgpt"
+  ],
+  "2601.05155": [
+    "chatgpt",
+    "genai",
+    "body_chatgpt",
+    "lang_template"
+  ],
+  "2606.30855": [
+    "gpt",
+    "claude",
+    "llm_generic"
+  ],
+  "2604.21005": [
+    "gpt"
+  ],
+  "2601.09492": [
+    "gpt"
+  ],
+  "2605.14017": [
+    "gpt",
+    "copilot",
+    "llm_generic",
+    "lang_template"
+  ],
+  "2605.12721": [
+    "gpt"
+  ],
+  "2602.08200": [
+    "gpt"
+  ],
+  "2602.06926": [
+    "gpt",
+    "llm_generic",
+    "template"
+  ],
+  "2606.14638": [
+    "gpt"
+  ],
+  "2601.03436": [
+    "gpt",
+    "llm_generic"
+  ],
+  "2602.07469": [
+    "gpt",
+    "llm_generic"
+  ],
+  "2605.18752": [
+    "gpt",
+    "llm_generic",
+    "genai"
+  ],
+  "2601.06498": [
+    "gpt",
+    "gemini_ai",
+    "other_models",
+    "llm_generic"
+  ],
+  "2603.04516": [
+    "gpt"
+  ],
+  "2602.22357": [
+    "gpt",
+    "claude",
+    "gemini_ai",
+    "llama",
+    "llm_generic"
+  ],
+  "2603.00699": [
+    "gpt",
+    "llama",
+    "llm_generic"
+  ],
+  "2604.08196": [
+    "gpt",
+    "claude",
+    "other_models"
+  ],
+  "2606.07779": [
+    "gpt",
+    "other_models",
+    "llm_generic"
+  ],
+  "2604.25345": [
+    "gpt",
+    "llm_generic"
+  ],
+  "2603.05680": [
+    "gpt",
+    "claude",
+    "llm_generic"
+  ],
+  "2602.15951": [
+    "gpt",
+    "claude",
+    "gemini_ai",
+    "llm_generic",
+    "lang_template"
+  ],
+  "2601.14288": [
+    "gpt",
+    "llm_generic"
+  ],
+  "2605.28916": [
+    "gpt",
+    "claude",
+    "llm_generic"
+  ],
+  "2601.02577": [
+    "gpt",
+    "claude",
+    "gemini_ai",
+    "llama",
+    "llm_generic"
+  ],
+  "2601.08027": [
+    "gpt",
+    "claude",
+    "llm_generic"
+  ],
+  "2602.14335": [
+    "gpt",
+    "llm_generic"
+  ],
+  "2606.22506": [
+    "gpt",
+    "claude",
+    "llm_generic",
+    "template"
+  ],
+  "2602.09670": [
+    "gpt",
+    "gemini_ai",
+    "other_models",
+    "llm_generic",
+    "genai"
+  ],
+  "2604.17981": [
+    "gpt",
+    "claude"
+  ],
+  "2606.12851": [
+    "gpt"
+  ],
+  "2605.27579": [
+    "gpt"
+  ],
+  "2606.10028": [
+    "gpt",
+    "claude"
+  ],
+  "2603.29771": [
+    "gpt",
+    "llm_generic",
+    "genai"
+  ],
+  "2602.17414": [
+    "gpt",
+    "claude"
+  ],
+  "2601.10893": [
+    "gpt",
+    "genai",
+    "template"
+  ],
+  "2603.05810": [
+    "gpt"
+  ],
+  "2603.15490": [
+    "gpt",
+    "gemini_ai",
+    "genai",
+    "template"
+  ],
+  "2606.26585": [
+    "gpt",
+    "other_models",
+    "llm_generic",
+    "genai"
+  ],
+  "2606.24159": [
+    "gpt",
+    "claude"
+  ],
+  "2605.13990": [
+    "gpt",
+    "llm_generic",
+    "lang_template"
+  ],
+  "2604.27088": [
+    "gpt"
+  ],
+  "2605.21672": [
+    "gpt"
+  ],
+  "2606.25610": [
+    "gpt"
+  ],
+  "2603.15779": [
+    "gpt",
+    "claude",
+    "genai"
+  ],
+  "2606.15610": [
+    "gpt",
+    "llama",
+    "llm_generic",
+    "genai"
+  ],
+  "2604.24516": [
+    "gpt"
+  ],
+  "2604.03227": [
+    "gpt",
+    "claude",
+    "llm_generic",
+    "genai"
+  ],
+  "2605.02996": [
+    "gpt"
+  ],
+  "2606.22159": [
+    "gpt"
+  ],
+  "2606.02912": [
+    "gpt",
+    "llm_generic",
+    "lang_template"
+  ],
+  "2606.19427": [
+    "gpt",
+    "llm_generic",
+    "genai"
+  ],
+  "2604.19690": [
+    "claude"
+  ],
+  "2606.17272": [
+    "claude"
+  ],
+  "2603.28848": [
+    "claude"
+  ],
+  "2603.10247": [
+    "claude",
+    "genai",
+    "lang_template"
+  ],
+  "2603.27680": [
+    "claude"
+  ],
+  "2603.11629": [
+    "claude",
+    "genai",
+    "template"
+  ],
+  "2604.02726": [
+    "claude",
+    "llm_generic",
+    "genai"
+  ],
+  "2601.07836": [
+    "claude"
+  ],
+  "2605.11058": [
+    "claude"
+  ],
+  "2602.09420": [
+    "claude"
+  ],
+  "2603.11693": [
+    "claude",
+    "llm_generic",
+    "genai",
+    "lang_template"
+  ],
+  "2603.29019": [
+    "claude",
+    "llm_generic",
+    "template"
+  ],
+  "2604.13489": [
+    "claude",
+    "gemini_ai",
+    "llama",
+    "copilot",
+    "llm_generic",
+    "genai"
+  ],
+  "2605.13514": [
+    "claude"
+  ],
+  "2606.04044": [
+    "claude"
+  ],
+  "2603.20377": [
+    "claude",
+    "lang_template"
+  ],
+  "2605.06964": [
+    "claude"
+  ],
+  "2603.27830": [
+    "claude",
+    "genai"
+  ],
+  "2605.25339": [
+    "claude",
+    "gemini_ai",
+    "copilot",
+    "llm_generic",
+    "genai"
+  ],
+  "2606.30711": [
+    "claude",
+    "llm_generic"
+  ],
+  "2606.21658": [
+    "claude",
+    "llm_generic"
+  ],
+  "2605.31046": [
+    "claude"
+  ],
+  "2605.30384": [
+    "claude",
+    "gemini_ai",
+    "copilot",
+    "llm_generic",
+    "genai"
+  ],
+  "2606.16099": [
+    "claude"
+  ],
+  "2606.14575": [
+    "claude"
+  ],
+  "2606.30541": [
+    "claude"
+  ],
+  "2606.11308": [
+    "claude",
+    "gemini_ai",
+    "copilot",
+    "llm_generic"
+  ],
+  "2605.04138": [
+    "claude"
+  ],
+  "2605.14279": [
+    "claude",
+    "genai"
+  ],
+  "2602.00155": [
+    "claude",
+    "copilot",
+    "llm_generic"
+  ],
+  "2605.24342": [
+    "claude"
+  ],
+  "2602.15104": [
+    "claude"
+  ],
+  "2603.13095": [
+    "claude"
+  ],
+  "2603.10120": [
+    "claude",
+    "copilot"
+  ],
+  "2603.18145": [
+    "claude",
+    "gemini_ai",
+    "copilot",
+    "llm_generic",
+    "genai"
+  ],
+  "2606.11861": [
+    "claude"
+  ],
+  "2603.11815": [
+    "claude",
+    "editing_tools"
+  ],
+  "2606.26228": [
+    "claude",
+    "llm_generic",
+    "genai"
+  ],
+  "2602.00106": [
+    "claude"
+  ],
+  "2604.06224": [
+    "claude"
+  ],
+  "2602.13387": [
+    "claude"
+  ],
+  "2604.27047": [
+    "claude"
+  ],
+  "2606.18330": [
+    "claude",
+    "genai",
+    "template"
+  ],
+  "2606.18386": [
+    "claude",
+    "llm_generic"
+  ],
+  "2606.29435": [
+    "claude",
+    "genai",
+    "lang_template"
+  ],
+  "2604.17516": [
+    "claude",
+    "genai",
+    "template"
+  ],
+  "2601.11180": [
+    "claude"
+  ],
+  "2601.14366": [
+    "claude"
+  ],
+  "2606.28993": [
+    "claude",
+    "genai"
+  ],
+  "2606.08373": [
+    "claude"
+  ],
+  "2603.22414": [
+    "claude",
+    "genai"
+  ],
+  "2602.17476": [
+    "claude"
+  ],
+  "2606.19094": [
+    "claude"
+  ],
+  "2606.29660": [
+    "claude"
+  ],
+  "2604.17536": [
+    "claude"
+  ],
+  "2606.20792": [
+    "claude"
+  ],
+  "2604.02470": [
+    "claude"
+  ],
+  "2606.19424": [
+    "claude"
+  ],
+  "2603.29242": [
+    "claude"
+  ],
+  "2604.16470": [
+    "claude",
+    "llm_generic",
+    "genai"
+  ],
+  "2602.02667": [
+    "claude"
+  ],
+  "2603.05722": [
+    "claude"
+  ],
+  "2607.00084": [
+    "claude",
+    "genai"
+  ],
+  "2606.21755": [
+    "claude",
+    "genai",
+    "template"
+  ],
+  "2605.27538": [
+    "claude"
+  ],
+  "2605.16200": [
+    "claude"
+  ],
+  "2606.06587": [
+    "claude"
+  ],
+  "2601.22910": [
+    "claude"
+  ],
+  "2601.19463": [
+    "claude"
+  ],
+  "2602.06092": [
+    "claude"
+  ],
+  "2603.13715": [
+    "claude",
+    "genai",
+    "template"
+  ],
+  "2605.18135": [
+    "claude"
+  ],
+  "2603.29024": [
+    "claude"
+  ],
+  "2602.02682": [
+    "claude"
+  ],
+  "2606.02594": [
+    "claude"
+  ],
+  "2603.18132": [
+    "claude"
+  ],
+  "2606.31898": [
+    "claude"
+  ],
+  "2606.30129": [
+    "claude",
+    "template",
+    "lang_template"
+  ],
+  "2603.20008": [
+    "claude"
+  ],
+  "2604.21010": [
+    "claude"
+  ],
+  "2606.12521": [
+    "claude",
+    "template"
+  ],
+  "2606.31795": [
+    "claude",
+    "other_models",
+    "template"
+  ],
+  "2603.06772": [
+    "claude"
+  ],
+  "2606.17947": [
+    "claude",
+    "genai",
+    "template"
+  ],
+  "2603.26644": [
+    "claude",
+    "llm_generic"
+  ],
+  "2606.07160": [
+    "claude"
+  ],
+  "2602.14389": [
+    "claude"
+  ],
+  "2606.05352": [
+    "claude"
+  ],
+  "2601.07904": [
+    "claude"
+  ],
+  "2605.03741": [
+    "claude"
+  ],
+  "2603.15746": [
+    "claude"
+  ],
+  "2605.00053": [
+    "claude",
+    "lang_template"
+  ],
+  "2606.12775": [
+    "claude"
+  ],
+  "2606.26854": [
+    "claude"
+  ],
+  "2604.17441": [
+    "claude"
+  ],
+  "2603.21302": [
+    "claude"
+  ],
+  "2603.03433": [
+    "claude"
+  ],
+  "2601.03921": [
+    "gemini_ai",
+    "lang_template"
+  ],
+  "2601.03571": [
+    "gemini_ai",
+    "other_models"
+  ],
+  "2603.18499": [
+    "gemini_ai"
+  ],
+  "2604.06143": [
+    "gemini_ai",
+    "genai"
+  ],
+  "2601.07106": [
+    "gemini_ai"
+  ],
+  "2602.13404": [
+    "gemini_ai"
+  ],
+  "2606.28314": [
+    "gemini_ai",
+    "copilot"
+  ],
+  "2606.10011": [
+    "gemini_ai"
+  ],
+  "2603.28504": [
+    "gemini_ai",
+    "other_models",
+    "llm_generic"
+  ],
+  "2606.26996": [
+    "gemini_ai"
+  ],
+  "2603.15899": [
+    "gemini_ai"
+  ],
+  "2606.09975": [
+    "gemini_ai"
+  ],
+  "2601.07595": [
+    "llama"
+  ],
+  "2606.13762": [
+    "llama"
+  ],
+  "2605.22162": [
+    "llama",
+    "llm_generic"
+  ],
+  "2606.09616": [
+    "llama"
+  ],
+  "2601.08791": [
+    "llama"
+  ],
+  "2603.06291": [
+    "llama",
+    "llm_generic",
+    "genai",
+    "lang_template"
+  ],
+  "2602.21507": [
+    "copilot"
+  ],
+  "2606.07838": [
+    "copilot"
+  ],
+  "2604.11904": [
+    "copilot",
+    "editing_tools"
+  ],
+  "2602.06783": [
+    "copilot",
+    "genai",
+    "editing_tools"
+  ],
+  "2601.14877": [
+    "copilot",
+    "genai"
+  ],
+  "2604.09433": [
+    "copilot"
+  ],
+  "2604.18111": [
+    "copilot",
+    "genai"
+  ],
+  "2604.09182": [
+    "copilot",
+    "genai"
+  ],
+  "2602.02279": [
+    "copilot",
+    "genai"
+  ],
+  "2606.28136": [
+    "copilot"
+  ],
+  "2606.23910": [
+    "copilot"
+  ],
+  "2603.03284": [
+    "copilot",
+    "genai"
+  ],
+  "2603.11215": [
+    "copilot",
+    "editing_tools"
+  ],
+  "2601.21870": [
+    "other_models"
+  ],
+  "2602.23724": [
+    "other_models",
+    "editing_tools"
+  ],
+  "2602.01098": [
+    "other_models",
+    "lang_template"
+  ],
+  "2605.03540": [
+    "other_models",
+    "llm_generic"
+  ],
+  "2601.23205": [
+    "other_models"
+  ],
+  "2602.14567": [
+    "other_models"
+  ],
+  "2606.10624": [
+    "other_models",
+    "lang_template"
+  ],
+  "2606.10017": [
+    "other_models"
+  ],
+  "2601.08757": [
+    "other_models"
+  ],
+  "2604.02156": [
+    "other_models",
+    "llm_generic"
+  ],
+  "2603.16429": [
+    "other_models"
+  ],
+  "2601.10038": [
+    "other_models",
+    "llm_generic",
+    "genai"
+  ],
+  "2602.19647": [
+    "other_models"
+  ],
+  "2602.10243": [
+    "other_models"
+  ],
+  "2601.14065": [
+    "other_models"
+  ],
+  "2602.22375": [
+    "other_models"
+  ],
+  "2602.09943": [
+    "other_models"
+  ],
+  "2604.19182": [
+    "other_models"
+  ],
+  "2605.22399": [
+    "other_models"
+  ],
+  "2601.16203": [
+    "other_models"
+  ],
+  "2601.20929": [
+    "other_models"
+  ],
+  "2606.23310": [
+    "other_models"
+  ],
+  "2604.11881": [
+    "other_models"
+  ],
+  "2601.13176": [
+    "other_models"
+  ],
+  "2601.20902": [
+    "other_models"
+  ],
+  "2601.03408": [
+    "other_models"
+  ],
+  "2604.15160": [
+    "other_models"
+  ],
+  "2603.10345": [
+    "other_models"
+  ],
+  "2601.07983": [
+    "other_models"
+  ],
+  "2604.08489": [
+    "other_models"
+  ],
+  "2604.15304": [
+    "other_models"
+  ],
+  "2603.04382": [
+    "other_models"
+  ],
+  "2602.02321": [
+    "other_models"
+  ],
+  "2606.00177": [
+    "other_models"
+  ],
+  "2601.09766": [
+    "other_models"
+  ],
+  "2602.06793": [
+    "other_models"
+  ],
+  "2603.23644": [
+    "other_models"
+  ],
+  "2602.22476": [
+    "other_models"
+  ],
+  "2606.10868": [
+    "other_models",
+    "llm_generic"
+  ],
+  "2603.04392": [
+    "other_models"
+  ],
+  "2601.15672": [
+    "other_models"
+  ],
+  "2601.21377": [
+    "other_models",
+    "llm_generic"
+  ],
+  "2601.16048": [
+    "other_models"
+  ],
+  "2603.16345": [
+    "other_models"
+  ],
+  "2601.18434": [
+    "other_models"
+  ],
+  "2602.09886": [
+    "other_models"
+  ],
+  "2601.06904": [
+    "other_models"
+  ],
+  "2603.24700": [
+    "other_models"
+  ],
+  "2604.18688": [
+    "other_models"
+  ],
+  "2606.11737": [
+    "other_models"
+  ],
+  "2602.20712": [
+    "other_models"
+  ],
+  "2606.11102": [
+    "other_models"
+  ],
+  "2603.19882": [
+    "other_models"
+  ],
+  "2601.20669": [
+    "other_models"
+  ],
+  "2601.21741": [
+    "other_models"
+  ],
+  "2601.23250": [
+    "other_models"
+  ],
+  "2606.11714": [
+    "other_models"
+  ],
+  "2603.11928": [
+    "other_models"
+  ],
+  "2603.17138": [
+    "other_models"
+  ],
+  "2601.01879": [
+    "other_models"
+  ],
+  "2602.01543": [
+    "other_models"
+  ],
+  "2605.16183": [
+    "other_models"
+  ],
+  "2604.11291": [
+    "other_models"
+  ],
+  "2605.30626": [
+    "other_models",
+    "llm_generic",
+    "genai"
+  ],
+  "2605.23367": [
+    "other_models"
+  ],
+  "2606.23683": [
+    "other_models"
+  ],
+  "2603.28237": [
+    "other_models",
+    "template"
+  ],
+  "2606.31806": [
+    "other_models",
+    "lang_template"
+  ],
+  "2606.27184": [
+    "other_models",
+    "lang_template"
+  ],
+  "2602.04065": [
+    "other_models"
+  ],
+  "2602.09096": [
+    "other_models"
+  ],
+  "2606.09921": [
+    "other_models"
+  ],
+  "2606.31793": [
+    "other_models"
+  ],
+  "2606.31945": [
+    "other_models"
+  ],
+  "2602.23067": [
+    "other_models"
+  ],
+  "2606.18419": [
+    "other_models"
+  ],
+  "2605.05444": [
+    "other_models"
+  ],
+  "2606.05959": [
+    "other_models"
+  ],
+  "2605.27226": [
+    "other_models"
+  ],
+  "2603.19019": [
+    "other_models"
+  ],
+  "2602.08921": [
+    "other_models"
+  ],
+  "2604.12032": [
+    "other_models"
+  ],
+  "2606.05514": [
+    "other_models"
+  ],
+  "2606.27227": [
+    "other_models"
+  ],
+  "2605.27223": [
+    "other_models"
+  ],
+  "2606.31792": [
+    "other_models"
+  ],
+  "2604.19744": [
+    "other_models"
+  ],
+  "2605.23114": [
+    "other_models",
+    "genai"
+  ],
+  "2603.19020": [
+    "other_models"
+  ],
+  "2603.19021": [
+    "other_models"
+  ],
+  "2605.27090": [
+    "other_models"
+  ],
+  "2606.28446": [
+    "other_models"
+  ],
+  "2601.00323": [
+    "other_models"
+  ],
+  "2602.13961": [
+    "other_models",
+    "llm_generic"
+  ],
+  "2605.27225": [
+    "other_models"
+  ],
+  "2603.13053": [
+    "other_models"
+  ],
+  "2605.27227": [
+    "other_models"
+  ],
+  "2605.27224": [
+    "other_models"
+  ],
+  "2603.26613": [
+    "other_models",
+    "llm_generic",
+    "genai"
+  ],
+  "2601.02482": [
+    "llm_generic"
+  ],
+  "2606.27447": [
+    "llm_generic",
+    "genai",
+    "lang_template"
+  ],
+  "2605.19022": [
+    "llm_generic"
+  ],
+  "2604.10835": [
+    "llm_generic"
+  ],
+  "2601.22811": [
+    "llm_generic"
+  ],
+  "2605.05573": [
+    "llm_generic"
+  ],
+  "2605.11154": [
+    "llm_generic"
+  ],
+  "2605.11269": [
+    "llm_generic"
+  ],
+  "2605.14791": [
+    "llm_generic",
+    "genai"
+  ],
+  "2605.10584": [
+    "llm_generic"
+  ],
+  "2605.11280": [
+    "llm_generic"
+  ],
+  "2601.00146": [
+    "llm_generic"
+  ],
+  "2605.03099": [
+    "llm_generic"
+  ],
+  "2602.12303": [
+    "llm_generic"
+  ],
+  "2603.28741": [
+    "llm_generic",
+    "genai"
+  ],
+  "2604.15366": [
+    "llm_generic"
+  ],
+  "2606.18338": [
+    "llm_generic"
+  ],
+  "2603.29936": [
+    "llm_generic"
+  ],
+  "2602.24087": [
+    "llm_generic",
+    "genai"
+  ],
+  "2606.11746": [
+    "llm_generic"
+  ],
+  "2601.02556": [
+    "llm_generic"
+  ],
+  "2603.29503": [
+    "llm_generic"
+  ],
+  "2605.07833": [
+    "llm_generic"
+  ],
+  "2604.09152": [
+    "llm_generic"
+  ],
+  "2606.28437": [
+    "llm_generic"
+  ],
+  "2601.10454": [
+    "llm_generic"
+  ],
+  "2606.23854": [
+    "llm_generic",
+    "genai"
+  ],
+  "2602.10172": [
+    "llm_generic",
+    "genai"
+  ],
+  "2604.22643": [
+    "llm_generic"
+  ],
+  "2605.15752": [
+    "llm_generic",
+    "genai"
+  ],
+  "2606.10686": [
+    "llm_generic",
+    "genai"
+  ],
+  "2604.02242": [
+    "llm_generic"
+  ],
+  "2604.19463": [
+    "llm_generic"
+  ],
+  "2606.07144": [
+    "llm_generic"
+  ],
+  "2605.23991": [
+    "llm_generic"
+  ],
+  "2606.30527": [
+    "llm_generic",
+    "genai"
+  ],
+  "2606.30438": [
+    "llm_generic",
+    "template"
+  ],
+  "2602.23415": [
+    "llm_generic"
+  ],
+  "2605.27499": [
+    "llm_generic",
+    "template"
+  ],
+  "2606.07745": [
+    "llm_generic"
+  ],
+  "2606.27526": [
+    "llm_generic"
+  ],
+  "2606.12653": [
+    "llm_generic"
+  ],
+  "2602.15021": [
+    "llm_generic"
+  ],
+  "2605.22163": [
+    "llm_generic",
+    "genai",
+    "lang_template"
+  ],
+  "2602.11273": [
+    "llm_generic"
+  ],
+  "2603.19555": [
+    "llm_generic",
+    "genai"
+  ],
+  "2605.22999": [
+    "llm_generic"
+  ],
+  "2605.25840": [
+    "llm_generic"
+  ],
+  "2606.18798": [
+    "llm_generic"
+  ],
+  "2601.20034": [
+    "llm_generic"
+  ],
+  "2606.27439": [
+    "llm_generic",
+    "lang_template"
+  ],
+  "2604.00661": [
+    "llm_generic"
+  ],
+  "2602.00203": [
+    "llm_generic"
+  ],
+  "2605.13973": [
+    "llm_generic"
+  ],
+  "2601.07130": [
+    "llm_generic"
+  ],
+  "2603.17072": [
+    "llm_generic"
+  ],
+  "2606.25702": [
+    "llm_generic",
+    "template"
+  ],
+  "2606.17485": [
+    "llm_generic"
+  ],
+  "2606.28267": [
+    "llm_generic"
+  ],
+  "2601.01376": [
+    "llm_generic"
+  ],
+  "2605.19472": [
+    "genai"
+  ],
+  "2603.11336": [
+    "genai"
+  ],
+  "2605.31089": [
+    "genai",
+    "lang_template"
+  ],
+  "2605.04423": [
+    "genai"
+  ],
+  "2603.29502": [
+    "genai"
+  ],
+  "2602.17980": [
+    "genai"
+  ],
+  "2606.30897": [
+    "genai",
+    "template"
+  ],
+  "2603.17938": [
+    "genai"
+  ],
+  "2605.14144": [
+    "genai",
+    "template"
+  ],
+  "2605.06648": [
+    "genai"
+  ],
+  "2601.22464": [
+    "genai"
+  ],
+  "2602.06314": [
+    "genai"
+  ],
+  "2601.04828": [
+    "genai",
+    "lang_template"
+  ],
+  "2606.13829": [
+    "genai"
+  ],
+  "2604.16531": [
+    "genai"
+  ],
+  "2606.26831": [
+    "genai"
+  ],
+  "2604.24838": [
+    "genai"
+  ],
+  "2601.08958": [
+    "genai",
+    "template"
+  ],
+  "2605.15432": [
+    "genai"
+  ],
+  "2604.04957": [
+    "genai"
+  ],
+  "2604.11844": [
+    "genai",
+    "template",
+    "editing_tools",
+    "lang_template"
+  ],
+  "2603.19600": [
+    "genai"
+  ],
+  "2603.25595": [
+    "genai",
+    "template",
+    "editing_tools"
+  ],
+  "2603.09339": [
+    "genai"
+  ],
+  "2602.17708": [
+    "genai",
+    "template"
+  ],
+  "2604.20896": [
+    "genai"
+  ],
+  "2604.15182": [
+    "genai"
+  ],
+  "2606.10197": [
+    "genai"
+  ],
+  "2604.14653": [
+    "genai"
+  ],
+  "2606.09576": [
+    "genai"
+  ],
+  "2606.23460": [
+    "genai"
+  ],
+  "2603.15128": [
+    "genai",
+    "lang_template"
+  ],
+  "2601.08666": [
+    "genai"
+  ],
+  "2602.06688": [
+    "genai",
+    "editing_tools"
+  ],
+  "2606.27346": [
+    "genai"
+  ],
+  "2604.20910": [
+    "genai"
+  ],
+  "2606.30936": [
+    "genai"
+  ],
+  "2604.02272": [
+    "genai",
+    "template"
+  ],
+  "2605.26210": [
+    "genai"
+  ],
+  "2605.14348": [
+    "genai",
+    "template"
+  ],
+  "2606.09626": [
+    "genai"
+  ],
+  "2602.20254": [
+    "genai"
+  ],
+  "2606.29170": [
+    "genai"
+  ],
+  "2604.03628": [
+    "genai"
+  ],
+  "2605.06790": [
+    "genai"
+  ],
+  "2606.27195": [
+    "genai"
+  ],
+  "2606.16363": [
+    "genai"
+  ],
+  "2601.07439": [
+    "genai"
+  ],
+  "2604.22917": [
+    "genai"
+  ],
+  "2606.17150": [
+    "genai"
+  ],
+  "2603.24323": [
+    "genai"
+  ],
+  "2606.22160": [
+    "genai"
+  ],
+  "2606.09998": [
+    "genai"
+  ],
+  "2605.16132": [
+    "genai"
+  ],
+  "2606.25801": [
+    "genai",
+    "lang_template"
+  ],
+  "2601.04165": [
+    "genai"
+  ],
+  "2601.15351": [
+    "genai"
+  ],
+  "2604.12514": [
+    "genai"
+  ],
+  "2602.15780": [
+    "genai"
+  ],
+  "2606.26934": [
+    "genai",
+    "lang_template"
+  ],
+  "2604.27061": [
+    "genai"
+  ],
+  "2604.21184": [
+    "genai"
+  ],
+  "2606.26914": [
+    "genai",
+    "lang_template"
+  ],
+  "2603.21277": [
+    "genai"
+  ],
+  "2605.27242": [
+    "genai"
+  ],
+  "2606.31503": [
+    "genai"
+  ],
+  "2602.22464": [
+    "genai"
+  ],
+  "2603.09351": [
+    "template"
+  ],
+  "2603.28856": [
+    "template"
+  ],
+  "2605.10222": [
+    "template"
+  ],
+  "2603.08470": [
+    "template"
+  ],
+  "2602.22326": [
+    "template"
+  ],
+  "2602.19826": [
+    "template"
+  ],
+  "2606.12605": [
+    "template"
+  ],
+  "2606.31434": [
+    "template"
+  ],
+  "2602.05094": [
+    "template"
+  ],
+  "2605.01994": [
+    "template"
+  ],
+  "2604.08268": [
+    "template"
+  ],
+  "2601.20313": [
+    "template",
+    "lang_template"
+  ],
+  "2601.11223": [
+    "template"
+  ],
+  "2606.25352": [
+    "template",
+    "lang_template"
+  ],
+  "2605.01390": [
+    "template"
+  ],
+  "2602.20101": [
+    "template"
+  ],
+  "2605.11123": [
+    "template"
+  ],
+  "2604.20280": [
+    "template"
+  ],
+  "2603.14494": [
+    "template"
+  ],
+  "2603.18357": [
+    "template"
+  ],
+  "2602.04198": [
+    "template"
+  ],
+  "2604.19883": [
+    "template"
+  ],
+  "2605.06636": [
+    "template"
+  ],
+  "2606.20201": [
+    "template"
+  ],
+  "2606.28822": [
+    "template",
+    "lang_template"
+  ],
+  "2604.19745": [
+    "template"
+  ],
+  "2602.19436": [
+    "template"
+  ],
+  "2603.12395": [
+    "template"
+  ],
+  "2603.05101": [
+    "template"
+  ],
+  "2606.19490": [
+    "template"
+  ],
+  "2606.19449": [
+    "template"
+  ],
+  "2602.17644": [
+    "template",
+    "lang_template"
+  ],
+  "2605.11702": [
+    "template"
+  ],
+  "2606.30210": [
+    "template"
+  ],
+  "2606.13728": [
+    "template"
+  ],
+  "2604.01219": [
+    "template"
+  ],
+  "2606.27221": [
+    "template"
+  ],
+  "2603.03608": [
+    "template"
+  ],
+  "2603.25650": [
+    "template"
+  ],
+  "2605.27291": [
+    "template"
+  ],
+  "2604.17162": [
+    "template"
+  ],
+  "2606.26568": [
+    "template",
+    "lang_template"
+  ],
+  "2606.13761": [
+    "template"
+  ],
+  "2603.10070": [
+    "template"
+  ],
+  "2603.03165": [
+    "template"
+  ],
+  "2606.26597": [
+    "template",
+    "lang_template"
+  ],
+  "2606.20269": [
+    "template"
+  ],
+  "2604.11903": [
+    "template"
+  ],
+  "2602.20257": [
+    "template"
+  ],
+  "2604.06941": [
+    "editing_tools"
+  ],
+  "2604.24923": [
+    "editing_tools",
+    "lang_template"
+  ],
+  "2602.22079": [
+    "editing_tools"
+  ],
+  "2604.11650": [
+    "editing_tools"
+  ],
+  "2603.13015": [
+    "editing_tools",
+    "lang_template"
+  ],
+  "2606.17754": [
+    "editing_tools"
+  ],
+  "2602.00677": [
+    "editing_tools"
+  ],
+  "2602.00736": [
+    "editing_tools"
+  ],
+  "2606.28887": [
+    "editing_tools",
+    "lang_template"
+  ],
+  "2605.18353": [
+    "editing_tools"
+  ],
+  "2602.07489": [
+    "lang_template"
+  ],
+  "2601.11337": [
+    "lang_template"
+  ],
+  "2602.19447": [
+    "lang_template"
+  ],
+  "2601.06563": [
+    "lang_template"
+  ],
+  "2606.06692": [
+    "lang_template"
+  ],
+  "2603.14978": [
+    "lang_template"
+  ],
+  "2606.00212": [
+    "lang_template"
+  ],
+  "2603.22417": [
+    "lang_template"
+  ],
+  "2604.13590": [
+    "lang_template"
+  ],
+  "2601.22227": [
+    "lang_template"
+  ],
+  "2601.13765": [
+    "lang_template"
+  ],
+  "2603.22550": [
+    "lang_template"
+  ],
+  "2604.10239": [
+    "lang_template"
+  ],
+  "2602.23445": [
+    "lang_template"
+  ],
+  "2603.06110": [
+    "lang_template"
+  ],
+  "2603.24807": [
+    "lang_template"
+  ],
+  "2601.15791": [
+    "lang_template"
+  ],
+  "2604.18579": [
+    "lang_template"
+  ],
+  "2601.10612": [
+    "lang_template"
+  ],
+  "2602.11046": [
+    "lang_template"
+  ],
+  "2602.09088": [
+    "lang_template"
+  ],
+  "2602.12995": [
+    "lang_template"
+  ],
+  "2606.23498": [
+    "lang_template"
+  ],
+  "2605.28636": [
+    "lang_template"
+  ],
+  "2601.05980": [
+    "lang_template"
+  ],
+  "2602.08978": [
+    "lang_template"
+  ],
+  "2606.07177": [
+    "lang_template"
+  ],
+  "2606.10483": [
+    "lang_template"
+  ],
+  "2602.23666": [
+    "lang_template"
+  ],
+  "2606.12543": [
+    "lang_template"
+  ],
+  "2606.14012": [
+    "lang_template"
+  ],
+  "2606.29830": [
+    "lang_template"
+  ],
+  "2604.16156": [
+    "lang_template"
+  ],
+  "2606.25794": [
+    "lang_template"
+  ],
+  "2603.18153": [
+    "lang_template"
+  ],
+  "2604.01309": [
+    "lang_template"
+  ],
+  "2605.28755": [
+    "lang_template"
+  ],
+  "2603.20454": [
+    "lang_template"
+  ],
+  "2603.22062": [
+    "lang_template"
+  ],
+  "2601.19438": [
+    "lang_template"
+  ],
+  "2606.23103": [
+    "lang_template"
+  ],
+  "2606.27858": [
+    "lang_template"
+  ],
+  "2606.28901": [
+    "lang_template"
+  ],
+  "2605.15947": [
+    "lang_template"
+  ],
+  "2606.31992": [
+    "lang_template"
   ]
 }
