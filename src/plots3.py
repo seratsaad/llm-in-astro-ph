@@ -31,34 +31,70 @@ def fig10_subfield():
     fig.tight_layout(rect=[0,0.03,1,1])
     fig.savefig(os.path.join(FIGS, "fig10_subfield_diffusion.png"), bbox_inches="tight"); plt.close(fig)
 
-def fig11_geography():
-    g = json.load(open(os.path.join(DATA, "c4_geography.json")))
-    NATIVE = {"USA", "United Kingdom", "Australia", "Canada"}
-    import math
-    def wilson(k, n, z=1.96):
-        p = k/n; d = 1 + z*z/n
-        c = (p + z*z/(2*n))/d
-        h = z*math.sqrt(p*(1-p)/n + z*z/(4*n*n))/d
-        return c-h, c+h
-    rows = []
-    xerr_by = {}
-    for c, rec in g.items():
-        r = rec["2025"]
-        if r["total"] < 300:  # drop tiny-n noisy countries from the main view
+NATIVE = {"USA", "United Kingdom", "Australia", "Canada", "Ireland",
+          "New Zealand"}
+_COUNTRIES = ["USA", "United States", "China", "Germany", "United Kingdom",
+    "UK", "Italy", "France", "Japan", "Spain", "India", "Australia", "Canada",
+    "Netherlands", "Switzerland", "Brazil", "Korea", "Russia", "Iran",
+    "Sweden", "Poland", "Austria", "Belgium", "Mexico", "Chile", "Portugal",
+    "Israel", "Taiwan", "Denmark", "Norway", "Finland", "Turkey", "Greece",
+    "Czech", "Hungary", "Argentina", "South Africa", "Ireland", "New Zealand",
+    "Scotland", "England"]
+_ALIAS = {"United States": "USA", "UK": "United Kingdom",
+          "England": "United Kingdom", "Scotland": "United Kingdom"}
+
+
+def _country_of(aff):
+    import re
+    for c in _COUNTRIES:
+        if re.search(r"\b" + re.escape(c) + r"\b", aff, re.I):
+            return _ALIAS.get(c, c)
+    return None
+
+
+def _firstauthor_rows(min_n=200):
+    """Rows for the first-author equity figure: per-country marker incidence
+    (x) against writing-disclosure rate (y), from the enlarged disclosure set
+    joined to first-author affiliations. No error bars are used, so tiny
+    disclosure numerators no longer dominate the panel."""
+    import re
+    p13 = json.load(open(os.path.join(DATA, "p13_firstauthor.json")))["country_rows"]
+    enl = set(json.load(open(os.path.join(DATA, "p1c_enlarged.json")))["writing_ids_enlarged"])
+    tot, disc = {}, {}
+    for line in open(os.path.join(DATA, "p13_aff_cache.jsonl")):
+        rec = json.loads(line)
+        c = _country_of(rec.get("aff0") or "")
+        if not c:
             continue
-        rows.append((c, r["marker_pct"], r["disc_pct"], r["total"], c in NATIVE))
-        lo, hi = wilson(r["marker"], r["total"])
-        xerr_by[c] = (r["marker_pct"] - lo*100, hi*100 - r["marker_pct"])
+        tot[c] = tot.get(c, 0) + 1
+        base = re.sub(r"v\d+$", "", rec["id"])
+        if rec["id"] in enl or base in enl:
+            disc[c] = disc.get(c, 0) + 1
+    rows = []
+    for c, r in p13.items():
+        if r["n"] < min_n:
+            continue
+        n = tot.get(c, r["n"])
+        rows.append((c, r["pct"], disc.get(c, 0) / n * 100, r["n"], c in NATIVE))
+    return rows
+
+
+def _equity_figure(rows, outfile, ylabel):
     FS = 9.5                       # label font size
+    DISPLAY = {"Korea": "South Korea"}
+    rows = [(DISPLAY.get(c, c), mk, dc, n, nat) for (c, mk, dc, n, nat) in rows]
     fig, ax = plt.subplots(figsize=(6.5, 4.14))
     for (c, mk, dc, n, nat) in rows:
         col = C["blue"] if nat else C["vermillion"]
         ax.scatter(mk, dc, s=30+n/40, color=col, alpha=0.85, edgecolor="white",
                    linewidth=0.8, zorder=3)
     mks = [r[1] for r in rows]; dcs = [r[2] for r in rows]
-    xmax = max(mks) * 1.20
-    ylo, yhi = -0.06, 1.14
-    ax.set_xlim(0, xmax); ax.set_ylim(ylo, yhi)
+    xmin = max(min(mks) - 0.8, 0)
+    xmax = max(mks) * 1.06
+    ymax = max(dcs)
+    yhi = ymax * 1.14
+    ylo = -0.06 * yhi
+    ax.set_xlim(xmin, xmax); ax.set_ylim(ylo, yhi)
     ax.axvline(np.median(mks), color=C["grey"], ls=":", lw=1, zorder=1)
     ax.axhline(np.median(dcs), color=C["grey"], ls=":", lw=1, zorder=1)
 
@@ -67,7 +103,7 @@ def fig11_geography():
     axpos = ax.get_position()
     axw_in = fig.get_size_inches()[0] * axpos.width
     axh_in = fig.get_size_inches()[1] * axpos.height
-    dpx = xmax / axw_in
+    dpx = (xmax - xmin) / axw_in
     dpy = (yhi - ylo) / axh_in
     charw = FS * 0.60 / 72 * dpx          # per-character label width in data-x
     labh = FS * 1.30 / 72 * dpy           # label height in data-y
@@ -92,7 +128,7 @@ def fig11_geography():
         hx, hy = marker_half(n, c)
         marker_boxes.append((mk-hx, dc-hy, mk+hx, dc+hy))
     # fixed obstacles in data coords: legend (upper-left) and annotation (upper-right)
-    legend_box = (0.62*xmax, 0.86, xmax, yhi)   # legend sits upper right
+    legend_box = (xmin, 0.80*yhi, xmin + 0.34*(xmax-xmin), yhi)   # upper left
     annot_box  = (9e9, 9e9, 9e9, 9e9)   # no in-panel annotation any more
 
     def candidates(mk, dc, n, name):
@@ -120,7 +156,7 @@ def fig11_geography():
         for (lx, ly, ha, dcost) in candidates(mk, dc, n, c):
             box = lbox(c, lx, ly, ha)
             pen = dcost
-            if box[0] < 0.05 or box[2] > xmax-0.05 or box[1] < ylo+0.02 or box[3] > yhi-0.02:
+            if box[0] < xmin+0.05 or box[2] > xmax-0.05 or box[1] < ylo+0.02 or box[3] > yhi-0.02:
                 pen += 200
             for mb in marker_boxes:
                 if overlap(box, mb): pen += 15
@@ -154,13 +190,32 @@ def fig11_geography():
     print(f"fig11 label overlaps remaining: {probs}")
 
     ax.set_xlabel("LLM marker-word incidence, 2025 (% of papers)")
-    ax.set_ylabel("Explicit LLM disclosure, 2025 (% of papers)")
+    ax.set_ylabel(ylabel)
     from matplotlib.lines import Line2D
     ax.legend(handles=[Line2D([0],[0],marker='o',color='w',markerfacecolor=C["blue"],label='Native English',ms=9),
                        Line2D([0],[0],marker='o',color='w',markerfacecolor=C["vermillion"],label='Non-native English',ms=9)],
-              loc="upper right", fontsize=9)
-    footer(fig, "Data: NASA ADS aff: x abs:/ack: queries, 2025  |  aff: matches any affiliation (multi-country collabs double-counted)")
-    fig.savefig(os.path.join(FIGS, "fig11_equity_map.png"), bbox_inches="tight"); plt.close(fig)
+              loc="upper left", fontsize=9)
+    fig.savefig(os.path.join(FIGS, outfile), bbox_inches="tight"); plt.close(fig)
+
+
+def fig11_firstauthor_equity():
+    """Figure 4: first-author country marker rate vs writing-disclosure rate,
+    no error bars (the disclosure numerators are small)."""
+    _equity_figure(_firstauthor_rows(min_n=200), "fig11_equity_map.png",
+                   "Stated model use, 2025 (% of papers)")
+
+
+def fig11_geography():
+    """Extended Data: any-affiliation version of the equity map."""
+    g = json.load(open(os.path.join(DATA, "c4_geography.json")))
+    rows = []
+    for c, rec in g.items():
+        r = rec["2025"]
+        if r["total"] < 300:
+            continue
+        rows.append((c, r["marker_pct"], r["disc_pct"], r["total"], c in NATIVE))
+    _equity_figure(rows, "fig11_equity_anyaff.png",
+                   "Explicit LLM disclosure, 2025 (% of papers)")
 
 def fig13_crossref_taxonomy():
     """ED: classification of the 126 Crossref misses (all real works)."""
@@ -215,32 +270,31 @@ def fig12_citation_integrity():
     axL.set_xlim(0, 8600)
     axL.set_xlabel(f"references in the 186 audited papers ({tot:,} total)", fontsize=9)
 
-    # RIGHT: fabrication rate per paper, log scale; astronomy group (ID limit,
-    # flagged detection, unflagged control limit) set apart from biomedicine
-    cats = ["with IDs\n(95% limit)", "no IDs\nflagged", "no IDs\ncontrol\n(95% limit)",
+    # RIGHT: fabrication rate per paper, log scale. Astronomy upper limits
+    # (identifier-bearing and unflagged control) set apart from biomedicine.
+    # The single flagged detection is a sample of one with a huge Poisson
+    # interval, so it is described in the text rather than plotted here.
+    cats = ["with IDs\n(95% limit)", "no IDs\ncontrol\n(95% limit)",
             "2025", "2026"]
-    xs = [0, 1.2, 2.4, 4.1, 5.1]
+    xs = [0, 1.2, 3.0, 4.0]
     ul = st["per_paper_UL_pct"]
-    axR.axvspan(-0.55, 2.95, color=C["blue"], alpha=0.05, lw=0)
+    axR.axvspan(-0.55, 1.75, color=C["blue"], alpha=0.05, lw=0)
     axR.plot(0, ul, marker="_", ms=9, color=C["blue"], mew=1.4)
     axR.annotate("", xy=(0, ul*0.55), xytext=(0, ul),
                  arrowprops=dict(arrowstyle="->", color=C["blue"], lw=1.0))
-    # 1 detection in 186 papers: 0.54%, exact Poisson 95% interval 0.014-3.0%
-    axR.errorbar(1.2, 100/186, yerr=[[100/186 - 0.0136], [3.0 - 100/186]],
-                 fmt="o", ms=4.5, color=C["vermillion"], elinewidth=1.0, capsize=2.5)
     # 0 detections in the 77 control papers: one-sided 95% limit 3.0/77
     ulc = 100 * 3.0 / 77
-    axR.plot(2.4, ulc, marker="_", ms=9, color=C["blue"], mew=1.4)
-    axR.annotate("", xy=(2.4, ulc*0.55), xytext=(2.4, ulc),
+    axR.plot(1.2, ulc, marker="_", ms=9, color=C["blue"], mew=1.4)
+    axR.annotate("", xy=(1.2, ulc*0.55), xytext=(1.2, ulc),
                  arrowprops=dict(arrowstyle="->", color=C["blue"], lw=1.0))
-    axR.plot(4.1, 0.22, "o", ms=5, color=C["grey"])
-    axR.plot(5.1, 0.36, "o", ms=5, color=C["grey"])
+    axR.plot(3.0, 0.22, "o", ms=5, color=C["grey"])
+    axR.plot(4.0, 0.36, "o", ms=5, color=C["grey"])
     axR.set_yscale("log")
     no_minor_x(axR)
     axR.set_xticks(xs); axR.set_xticklabels(cats, fontsize=7.5)
-    axR.set_xlim(-0.55, 5.6); axR.set_ylim(0.008, 24)
-    axR.text(1.2, 14, "astro-ph", ha="center", fontsize=8.5, color=C["blue"])
-    axR.text(4.6, 14, "biomedicine", ha="center", fontsize=8.5, color=C["grey"])
+    axR.set_xlim(-0.55, 4.5); axR.set_ylim(0.008, 24)
+    axR.text(0.6, 14, "astro-ph", ha="center", fontsize=8.5, color=C["blue"])
+    axR.text(3.5, 14, "biomedicine", ha="center", fontsize=8.5, color=C["grey"])
     axR.set_ylabel("% of papers with a fabricated citation", fontsize=9)
 
     fig.tight_layout()
@@ -248,5 +302,6 @@ def fig12_citation_integrity():
 
 if __name__ == "__main__":
     fig10_subfield(); print("fig10 done")
-    fig11_geography(); print("fig11 done")
+    fig11_firstauthor_equity(); print("fig11 (first-author) done")
+    fig11_geography(); print("fig11 (any-aff, ED) done")
     fig12_citation_integrity(); print("fig12 done")

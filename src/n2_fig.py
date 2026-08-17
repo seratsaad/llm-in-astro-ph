@@ -20,9 +20,9 @@ def main():
     d = d[d.q >= 2022]
     dec = json.load(open(os.path.join(DATA, "n2_avoidance.json")))["decay"]
 
-    fig = plt.figure(figsize=(6.5, 5.6))
-    gs = fig.add_gridspec(2, 2, width_ratios=[1.25, 1], height_ratios=[1, 0.95],
-                          hspace=0.42, wspace=0.35)
+    fig = plt.figure(figsize=(6.9, 5.6))
+    gs = fig.add_gridspec(2, 2, width_ratios=[1.05, 1.02], height_ratios=[1, 0.95],
+                          hspace=0.42, wspace=0.32)
     axA = fig.add_subplot(gs[0, 0]); axB = fig.add_subplot(gs[0, 1])
     axC = fig.add_subplot(gs[1, :])
 
@@ -39,36 +39,33 @@ def main():
     axA.legend(loc="upper left", fontsize=8.5)
     axA.text(0.96, 0.95, "(a)", transform=axA.transAxes, fontsize=10, ha="right", va="top")
 
-    # (b) frequency-matched pairs, the analysis that decides the question
+    # (b) frequency-matched pairs as horizontal dumbbells, one row per pair.
+    # Each named word (red) is joined to its matched unnamed word (blue); the
+    # two decays overlap heavily, which is the null the text reports.
     p4 = json.load(open(os.path.join(DATA, "p4_freqmatched.json")))
-    pairs = p4["C_matched"]["pairs"]
-    def destack(vals, min_gap=6.5):
-        """Nudge label y-positions apart while keeping order."""
-        order = sorted(range(len(vals)), key=lambda i: vals[i])
-        out = list(vals)
-        for a, b in zip(order, order[1:]):
-            if out[b] - out[a] < min_gap:
-                out[b] = out[a] + min_gap
-        return out
-    lyL = destack([p["decay_named"] for p in pairs])
-    lyR = destack([p["decay_unnamed"] for p in pairs])
-    for pr, yl, yr in zip(pairs, lyL, lyR):
-        axB.plot([0, 1], [pr["decay_named"], pr["decay_unnamed"]], "-",
-                 color="#BBBBBB", lw=0.8, zorder=1)
-        axB.plot(0, pr["decay_named"], "o", ms=4.5, color=C["vermillion"], zorder=3)
-        axB.plot(1, pr["decay_unnamed"], "o", ms=4.5, color=C["blue"], zorder=3)
-        axB.text(-0.08, yl, pr["named"], fontsize=6.6,
-                 ha="right", va="center", color=C["vermillion"])
-        axB.text(1.08, yr, pr["unnamed"], fontsize=6.6,
-                 ha="left", va="center", color=C["blue"])
-    axB.axhline(0, color="#CCCCCC", lw=0.6)
-    no_minor_y(axB)
-    axB.set_xlim(-0.75, 1.85)
-    axB.set_xticks([0, 1])
-    axB.set_xticklabels(["Named,\n2024", "Matched\nunnamed"], fontsize=8.5)
-    axB.set_ylabel("Decay from peak by mid-2026 (%)")
-    axB.text(0.96, 0.04, "(b)", transform=axB.transAxes, fontsize=10,
-             ha="right", va="bottom")
+    pairs = sorted(p4["C_matched"]["pairs"], key=lambda pr: pr["decay_named"])
+    n = len(pairs)
+    for i, pr in enumerate(pairs):
+        xn, xu = pr["decay_named"], pr["decay_unnamed"]
+        axB.plot([xn, xu], [i, i], "-", color="#CCCCCC", lw=1.0, zorder=1)
+        axB.plot(xn, i, "o", ms=4.3, color=C["vermillion"], zorder=3)
+        axB.plot(xu, i, "o", ms=4.3, color=C["blue"], zorder=3)
+        axB.text(-7, i, pr["named"], fontsize=6.3, ha="right", va="center",
+                 color=C["vermillion"])
+        axB.text(147, i, pr["unnamed"], fontsize=6.3, ha="left", va="center",
+                 color=C["blue"])
+    axB.set_xlim(-72, 212)
+    axB.set_ylim(-0.8, n + 1.1)
+    axB.set_yticks([])
+    axB.set_xticks([0, 50, 100])
+    axB.spines["bottom"].set_bounds(0, 135)   # axis line under the data only
+    axB.set_xlabel("Decay from peak by mid-2026 (%)", fontsize=8.5, x=0.42)
+    axB.text(-38, n + 0.25, "Named, 2024", fontsize=7.6, ha="center",
+             va="bottom", color=C["vermillion"])
+    axB.text(178, n + 0.25, "Matched unnamed", fontsize=7.6, ha="center",
+             va="bottom", color=C["blue"])
+    axB.spines["left"].set_visible(False)
+    axB.text(60, n + 0.55, "(b)", fontsize=10, ha="center", va="bottom")
     # (c) timing test: decay follows publicity, not model releases
     import numpy as np
     wq = pd.read_csv(os.path.join(DATA, "n2_words.csv"))

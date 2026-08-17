@@ -281,9 +281,9 @@ def fig5_gap():
     # (accent, lower bound -> right arrow), astro-ph disclosure (open circles)
     rows = [
         ("astro-ph, calibrated estimate",        44.0,    C["vermillion"], "cal"),
-        ("Computer science (Liang et al.)",     17.5,     C["grey"], "lit"),
+        ("Computer science (Liang et al., 2024)",     17.5,     C["grey"], "lit"),
         ("Biomedicine (Kobak et al., 2024)",    13.5,     C["grey"], "lit"),
-        ("Mathematics / Nature (Liang et al.)",  6.3,     C["grey"], "lit"),
+        ("Mathematics / Nature (Liang et al., 2024)",  6.3,     C["grey"], "lit"),
         ("astro-ph, marker-word lower bound",    est,     C["vermillion"], "lb"),
         ("astro-ph, writing disclosed in source", 1.78,    C["blue"], "open"),
         ("astro-ph, any AI mention in text",     disc_full, C["blue"], "open"),
