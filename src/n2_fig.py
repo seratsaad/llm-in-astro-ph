@@ -60,9 +60,7 @@ def main():
         j = jit[:len(vals)]
         axB.scatter(xc + j, vals, s=30, color=col, alpha=0.9,
                     edgecolor="white", linewidth=0.6, zorder=3)
-        m = float(np.mean(vals))       # mean is the permutation-test statistic
-        axB.plot([xc - 0.26, xc + 0.26], [m, m], color=col, lw=2.6, zorder=4)
-        return m
+        return float(np.mean(vals))    # mean is the permutation-test statistic
 
     mN = strip(0, named, C["vermillion"])
     mU = strip(1, unnamed, C["blue"])
