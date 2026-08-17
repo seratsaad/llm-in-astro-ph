@@ -62,6 +62,30 @@
    "p_perm_one_sided": 0.0266
   }
  },
+ "M5_placebo_points": {
+  "named": {
+   "delve": -78.51949251125218,
+   "delves": -45.740514659827205,
+   "delving": -112.51122011574542,
+   "intricate": -39.39000984660454,
+   "pivotal": -42.28960789554062,
+   "showcasing": 67.2249250668558,
+   "realm": -206.9166365997446,
+   "underscores": -13.524009652566338,
+   "intricacies": 70.34287013434839,
+   "meticulously": -104.28404132417859
+  },
+  "unnamed": {
+   "underscore": 147.9323725833835,
+   "underscoring": -11.549449477630006,
+   "encompassing": 36.582358044485524,
+   "elucidate": -20.02562596502624,
+   "leveraging": 79.62317053633039,
+   "offering": 87.1013556884507,
+   "highlighting": -64.39878732023358
+  },
+  "threshold": 0.19
+ },
  "M6_cochran_Q": {
   "Q": 9.403880408186872,
   "dof": 5,

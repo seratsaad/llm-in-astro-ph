@@ -39,33 +39,51 @@ def main():
     axA.legend(loc="upper left", fontsize=8.5)
     axA.text(0.96, 0.95, "(a)", transform=axA.transAxes, fontsize=10, ha="right", va="top")
 
-    # (b) frequency-matched pairs as horizontal dumbbells, one row per pair.
-    # Each named word (red) is joined to its matched unnamed word (blue); the
-    # two decays overlap heavily, which is the null the text reports.
-    p4 = json.load(open(os.path.join(DATA, "p4_freqmatched.json")))
-    pairs = sorted(p4["C_matched"]["pairs"], key=lambda pr: pr["decay_named"])
-    n = len(pairs)
-    for i, pr in enumerate(pairs):
-        xn, xu = pr["decay_named"], pr["decay_unnamed"]
-        axB.plot([xn, xu], [i, i], "-", color="#CCCCCC", lw=1.0, zorder=1)
-        axB.plot(xn, i, "o", ms=4.3, color=C["vermillion"], zorder=3)
-        axB.plot(xu, i, "o", ms=4.3, color=C["blue"], zorder=3)
-        axB.text(-7, i, pr["named"], fontsize=6.3, ha="right", va="center",
-                 color=C["vermillion"])
-        axB.text(147, i, pr["unnamed"], fontsize=6.3, ha="left", va="center",
-                 color=C["blue"])
-    axB.set_xlim(-72, 212)
-    axB.set_ylim(-0.8, n + 1.1)
-    axB.set_yticks([])
-    axB.set_xticks([0, 50, 100])
-    axB.spines["bottom"].set_bounds(0, 135)   # axis line under the data only
-    axB.set_xlabel("Decay from peak by mid-2026 (%)", fontsize=8.5, x=0.42)
-    axB.text(-38, n + 0.25, "Named, 2024", fontsize=7.6, ha="center",
-             va="bottom", color=C["vermillion"])
-    axB.text(178, n + 0.25, "Matched unnamed", fontsize=7.6, ha="center",
-             va="bottom", color=C["blue"])
-    axB.spines["left"].set_visible(False)
-    axB.text(60, n + 0.55, "(b)", fontsize=10, ha="center", va="bottom")
+    # (b) pseudo-naming placebo. Words publicly named as machine tells in 2024
+    # fall in the quarters after naming (red), while frequency-matched words
+    # that reached the same prominence but were never named keep rising (blue).
+    # This is the significant contrast, unlike the null decay-depth comparison.
+    import numpy as np
+    pl = json.load(open(os.path.join(DATA, "p11_round5.json")))
+    pts = pl["M5_placebo_points"]
+    pval = pl["M5_placebo"]["0.19"]["p_perm_one_sided"]
+    named = list(pts["named"].values())
+    unnamed = list(pts["unnamed"].values())
+    ylo_b = min(named + unnamed) - 25
+    yhi_b = max(named + unnamed) + 35
+    axB.axhspan(0, yhi_b, color=C["blue"], alpha=0.05, lw=0, zorder=0)
+    axB.axhspan(ylo_b, 0, color=C["vermillion"], alpha=0.05, lw=0, zorder=0)
+    axB.axhline(0, color="#888888", lw=0.9, ls="--", zorder=1)
+    jit = np.linspace(-0.16, 0.16, max(len(named), len(unnamed)))
+
+    def strip(xc, vals, col):
+        j = jit[:len(vals)]
+        axB.scatter(xc + j, vals, s=30, color=col, alpha=0.9,
+                    edgecolor="white", linewidth=0.6, zorder=3)
+        m = float(np.mean(vals))       # mean is the permutation-test statistic
+        axB.plot([xc - 0.26, xc + 0.26], [m, m], color=col, lw=2.6, zorder=4)
+        return m
+
+    mN = strip(0, named, C["vermillion"])
+    mU = strip(1, unnamed, C["blue"])
+    axB.text(-0.34, mN, f"{mN:+.0f}%", fontsize=8, color=C["vermillion"],
+             ha="right", va="center", fontweight="bold")
+    axB.text(1.34, mU, f"{mU:+.0f}%", fontsize=8, color=C["blue"],
+             ha="left", va="center", fontweight="bold")
+    axB.text(1.58, yhi_b * 0.55, "rise", fontsize=8, color=C["blue"],
+             ha="right", va="center", alpha=0.7, rotation=90)
+    axB.text(1.58, ylo_b * 0.55, "fall", fontsize=8, color=C["vermillion"],
+             ha="right", va="center", alpha=0.7, rotation=90)
+    axB.set_xlim(-0.62, 1.68)
+    axB.set_ylim(ylo_b, yhi_b)
+    axB.set_xticks([0, 1])
+    axB.set_xticklabels(["Named\nas a tell", "Matched,\nnever named"],
+                        fontsize=8.5)
+    axB.set_ylabel("Change over the next\ntwo quarters (%)", fontsize=8.5)
+    axB.text(0.5, yhi_b - 4, f"$p={pval:.3f}$", fontsize=8.5, ha="center",
+             va="top")
+    axB.text(0.02, 0.97, "(b)", transform=axB.transAxes, fontsize=10,
+             ha="left", va="top")
     # (c) timing test: decay follows publicity, not model releases
     import numpy as np
     wq = pd.read_csv(os.path.join(DATA, "n2_words.csv"))

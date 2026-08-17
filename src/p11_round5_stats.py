@@ -114,10 +114,14 @@ def main():
             return None
         return (exc_all[w][max(later)] - exc_all[w][q0]) / exc_all[w][q0] * 100
 
-    named_ch = [c for c in (chg2q(w, NAMED_Q) for w in named_at) if c is not None]
+    named_points = {w: chg2q(w, NAMED_Q) for w in named_at
+                    if chg2q(w, NAMED_Q) is not None}
+    named_ch = list(named_points.values())
     sens = {}
+    unnamed_points_headline = {}
     for thr in (0.10, 0.15, 0.19, 0.25):
         un_ch = []
+        un_pts = {}
         for r in rows:
             if r["named"]:
                 continue
@@ -129,7 +133,9 @@ def main():
                 continue
             c = chg2q(w, crossed[0])
             if c is not None:
-                un_ch.append(c)
+                un_ch.append(c); un_pts[w] = c
+        if thr == 0.19:
+            unnamed_points_headline = un_pts
         # permutation test on group means
         allv = named_ch + un_ch
         nn = len(named_ch)
@@ -146,6 +152,9 @@ def main():
         print(f"M5 thr {thr:.2f}pp: named {np.mean(named_ch):+.0f}% (n={nn}), "
               f"crossers {np.mean(un_ch):+.0f}% (n={len(un_ch)}), p={ge/20000:.4f}")
     out["M5_placebo"] = sens
+    out["M5_placebo_points"] = {"named": named_points,
+                                "unnamed": unnamed_points_headline,
+                                "threshold": 0.19}
 
     # ---- M6: omnibus heterogeneity for the subfield decay -------------------
     boot = json.load(open(os.path.join(DATA, "m5_subfield_boot.json")))
