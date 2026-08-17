@@ -118,9 +118,9 @@ def main():
     axC.set_xlabel("Year (quarterly)")
     axC.set_ylabel("Excess over trend, peak = 1")
     axC.legend(loc="upper left", fontsize=8, ncol=1, bbox_to_anchor=(0.005, 0.99))
-    axC.text(2024.335, -0.05, "Publicity", fontsize=7.5, color=C["vermillion"],
+    axC.text(2024.375, 0.06, "Publicity", fontsize=7.5, color=C["vermillion"],
              ha="center", va="bottom")
-    axC.text(0.985, 0.06, "(c)", transform=axC.transAxes, fontsize=10, ha="right", va="bottom")
+    axC.text(0.985, 0.95, "(c)", transform=axC.transAxes, fontsize=10, ha="right", va="top")
     fig.savefig(os.path.join(FIGS, "fig_avoidance.png"), bbox_inches="tight")
     print("wrote figs/fig_avoidance.png")
 
