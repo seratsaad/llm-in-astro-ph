@@ -47,7 +47,7 @@ def fig1_markers_vs_control():
     lohi = [wilson(k, n) for k, n in zip(agg.hit, agg.total)]
     yerr = np.array([[r*100 - lo*100 for (lo, hi), r in zip(lohi, agg.hit/agg.total)],
                      [hi*100 - r*100 for (lo, hi), r in zip(lohi, agg.hit/agg.total)]])
-    fig, ax = plt.subplots(figsize=(4.8, 2.85))
+    fig, ax = plt.subplots(figsize=(6.96, 4.13))
     ax.errorbar(yr.year, yr.rate*100, yerr=yerr, fmt="-o", color=C["vermillion"],
                 lw=1.3, ms=3.4, capsize=2, elinewidth=0.9,
                 label="LLM marker basket\n(delve, underscore, intricate, pivotal, ...)")

@@ -62,7 +62,7 @@ def fig_cooccur():
     lift = lift[np.ix_(order, order)]; sig = sig[np.ix_(order, order)]
     pairs = pairs[np.ix_(order, order)]; M = [M[i] for i in order]
     disp = np.where(sig, lift, np.nan)
-    fig, ax = plt.subplots(figsize=(4.8, 4.0))
+    fig, ax = plt.subplots(figsize=(6.96, 5.80))
     ax.set_facecolor("#EDEDED")   # grey background = not significant / no excess
     im = ax.imshow(np.ma.masked_invalid(disp), cmap="YlOrBr",
                    norm=LogNorm(vmin=1, vmax=np.nanmax(disp)))

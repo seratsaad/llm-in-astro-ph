@@ -16,7 +16,7 @@ def fig10_subfield():
     palette = {order[0]: C["vermillion"]}
     others = [C["blue"], C["green"], C["purple"], C["sky"], C["orange"]]
     for i, s in enumerate(order[1:]): palette[s] = others[i % len(others)]
-    fig, ax = plt.subplots(figsize=(4.8, 2.9))
+    fig, ax = plt.subplots(figsize=(6.96, 4.21))
     for s in order:
         d = df[df.subfield==s].sort_values("year")
         lw = 3.2 if s == order[0] else 1.8
@@ -234,7 +234,7 @@ def fig13_crossref_taxonomy():
     labels = [disp_name[k] for k in order if cls.get(k)]
     vals = [cls[k] for k in order if cls.get(k)]
     from pantera_style import no_minor_y
-    fig, ax = plt.subplots(figsize=(4.8, 2.6))
+    fig, ax = plt.subplots(figsize=(6.96, 3.77))
     ys = list(range(len(labels)))
     ax.barh(ys, vals, color=C["green"], height=0.62)
     for yi, v in zip(ys, vals):
