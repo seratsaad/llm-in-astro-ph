@@ -1,0 +1,53 @@
+{
+ "corpus": "YST astro-ph_knowledge_graph_complete OCR full text",
+ "shards": [
+  "2024-2025",
+  "2026"
+ ],
+ "papers_ocr": 58594,
+ "joined_to_dated_corpus": 53078,
+ "note": "body = OCR markdown after the Abstract header, References section stripped",
+ "by_half": {
+  "2024H1": {
+   "n": 9106,
+   "abs_pct": 5.4,
+   "body_density_per_10k": 1.14
+  },
+  "2024H2": {
+   "n": 9756,
+   "abs_pct": 5.4,
+   "body_density_per_10k": 1.12
+  },
+  "2025H1": {
+   "n": 9904,
+   "abs_pct": 6.3,
+   "body_density_per_10k": 1.13
+  },
+  "2025H2": {
+   "n": 11637,
+   "abs_pct": 4.3,
+   "body_density_per_10k": 1.03
+  },
+  "2026H1": {
+   "n": 11259,
+   "abs_pct": 3.5,
+   "body_density_per_10k": 0.85
+  },
+  "2026H2_partial": {
+   "n": 622,
+   "abs_pct": 2.9,
+   "body_density_per_10k": 0.76
+  }
+ },
+ "headline": {
+  "window": "2025H1 peak -> 2026H1",
+  "abstract_change_pct": -44.8,
+  "body_change_pct": -24.2,
+  "differential_pp": -20.6,
+  "ci95": [
+   -28.2,
+   -12.5
+  ],
+  "bootstrap_p": 0.0
+ }
+}
