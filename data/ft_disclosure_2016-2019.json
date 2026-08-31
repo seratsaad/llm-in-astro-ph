@@ -1,0 +1,236 @@
+[
+ {
+  "arxiv_id": "1807.04610",
+  "year": 2018,
+  "declared": 0,
+  "evidence": "Note: after submission of this manuscript, we became aware of Draghis & Romani (2018) who combine our archival Gemini data with their own near-infrared imaging to study the companion of PSR J0636$+$5128."
+ },
+ {
+  "arxiv_id": "1604.07901",
+  "year": 2016,
+  "declared": 0,
+  "evidence": "Edited by Daniel Benest and Claude Froeschle."
+ },
+ {
+  "arxiv_id": "1905.05093",
+  "year": 2019,
+  "declared": 0,
+  "evidence": "Present limits for ground-based coronagraphs are contrast ratios of the order of 10${}^{\\text{-5}}$ to 10${}^{\\text{-6}}$ at a few $\\lambda$/D, i.e., for the Gemini Planet Imager (GPI) (MacIntosh et al."
+ },
+ {
+  "arxiv_id": "1703.04623",
+  "year": 2017,
+  "declared": 0,
+  "evidence": "Figure 5: Discrete and smoothed $(g-z)o$ colour distribution for 522 $GCs$ candidates in an offset field in $NGC$ 4486 and observed with Gemini-GMOS (upper histogram, arbitrarily shifted upwards), compared with that of $GCs$ in Virgo galaxies with $M_{g}=$-20.2 to -19.2 (lower curve) and with the $TVP$ (dashed lines, see text)."
+ },
+ {
+  "arxiv_id": "1601.06145",
+  "year": 2016,
+  "declared": 0,
+  "evidence": "In fact, even when Raphael and I wrote our paper, I had pushed him to remove some of the most anthropic parts of the discussion."
+ },
+ {
+  "arxiv_id": "1902.07222",
+  "year": 2019,
+  "declared": 1,
+  "evidence": "## Acknowledgements We thank John Kormendy, Claude Carignan, Hsi-Yu Schive, Justin Read, Larry Widrow, and the referee, Paolo Salucci, for comments on a draft of the paper."
+ },
+ {
+  "arxiv_id": "1711.05138",
+  "year": 2017,
+  "declared": 0,
+  "evidence": "Susskind, The anthropic landscape of string theory, in: _Universe or Multiverse?_, edited by B."
+ },
+ {
+  "arxiv_id": "1611.02702",
+  "year": 2016,
+  "declared": 0,
+  "evidence": "Susskind, \"The Anthropic landscape of string theory,\" in _Universe or Multiverse?_, edited by B."
+ },
+ {
+  "arxiv_id": "1711.09611",
+  "year": 2017,
+  "declared": 1,
+  "evidence": "We thank the following volunteers in particular for their comments on the manuscript or active search for candidate RGZ HyMoRS on RadioTalk: Jean Tate, Tsinfaei Matorny, Victor Linares Pagan, Christine Sunjoto, Leonie van Vliet, Claude Cornen, Sam Deen, K.T."
+ },
+ {
+  "arxiv_id": "1708.00025",
+  "year": 2017,
+  "declared": 0,
+  "evidence": "Susskind, The anthropic landscape of string theory, in: _Universe or Multiverse?_, edited by B."
+ },
+ {
+  "arxiv_id": "1611.07257",
+  "year": 2016,
+  "declared": 0,
+  "evidence": "Top: the Gemini H$\\alpha+[{N\\textsc{ii}}]$ image (left), the WISE 12 $\\mu$m and 22 $\\mu$m images (middle and right, respectively)."
+ },
+ {
+  "arxiv_id": "1806.05692",
+  "year": 2018,
+  "declared": 1,
+  "evidence": "We also obtained a Gemini $r_{\\text{G0326}}$-band image, which was used to design the mask for the Gemini Multi-Object Spectrograph (GMOS)$^{47}$ observation of $\\text{J2150}-0551$ (program id GS-2016A-Q-20)."
+ },
+ {
+  "arxiv_id": "1906.11476",
+  "year": 2019,
+  "declared": 0,
+  "evidence": "### Gemini-GMOS long-slit spectroscopy On 2018 Oct 5 UT we triggered Target of Opportunity (ToO) observations of two galaxies (B and C in Figure 2 of the main text) located near the localization of FRB 180924 with the GMOS spectrograph [64, 65] mounted on the Gemini South telescope."
+ },
+ {
+  "arxiv_id": "1912.12807",
+  "year": 2019,
+  "declared": 0,
+  "evidence": "Footnote 4: [https://www.gemini.edu/wiki/ROACH2](https://www.gemini.edu/wiki/ROACH2) GPUs are suitable for computing rather than reading or writing."
+ },
+ {
+  "arxiv_id": "1701.04773",
+  "year": 2017,
+  "declared": 0,
+  "evidence": "Susskind, The anthropic landscape of string theory, in: _Universe or Multiverse?_, edited by B."
+ },
+ {
+  "arxiv_id": "1609.04076",
+  "year": 2016,
+  "declared": 1,
+  "evidence": "We used the GMOS IFU (Allington-Smith et al., 2002) on Gemini North during the 2015A semester (ID: GN-2015A-Q-204, PI: Woo) with the B600 disperser (R$\\sim$ 1400 for 2 pixel spectral binning, translating to an instrumental resolution FWHM $\\sim$ 215 km s${}^{-1}$) centered at 6200A in 1-slit mode."
+ },
+ {
+  "arxiv_id": "1909.01780",
+  "year": 2019,
+  "declared": 1,
+  "evidence": "## Acknowledgements The authors thank Virgil Baran, Gary Gibbons, George Papadopoulos and Claude Warnick for reading the manuscript and making useful comments and CR acknowledges the generous support of a POS-DRU European fellowship."
+ },
+ {
+  "arxiv_id": "1604.02942",
+  "year": 2016,
+  "declared": 0,
+  "evidence": "Data Reduction As our goal is to detect extremely low surface brightness emission for which control of systematics is crucial, we opted to write our own custom data-reduction pipeline in the Interactive Data Language (IDL), and used only the gmosaic routine in the publicly available Gemini/IRAF GMOS package 10, to correctly mosaic the three different chips of the CCD."
+ },
+ {
+  "arxiv_id": "1809.05584",
+  "year": 2018,
+  "declared": 1,
+  "evidence": "We thank the Gemini Observatory staff for their help with our observing program, and the anonymous referee for comments that improved the manuscript."
+ },
+ {
+  "arxiv_id": "1711.02566",
+  "year": 2017,
+  "declared": 0,
+  "evidence": "The Gemini/GMOS transmission and HST/WFC3 emission data were published during the final stages of the preparation of this manuscript, so we did not include them in our global analysis but we discuss these measurements along with our results in the scientific discussion."
+ },
+ {
+  "arxiv_id": "1604.04911",
+  "year": 2016,
+  "declared": 0,
+  "evidence": "Susskind, _The Anthropic Landscape of String Theory_, in _\"Universe or Multiverse?\"_, 247-266, Cambridge University Press (2007), edited by B."
+ },
+ {
+  "arxiv_id": "1604.06097",
+  "year": 2016,
+  "declared": 1,
+  "evidence": "To do so we used the same public Gemini Planet Imager J-band data on the source Beta Pictoris used in the body of the manuscript."
+ },
+ {
+  "arxiv_id": "1710.06605",
+  "year": 2017,
+  "declared": 0,
+  "evidence": "\\tag{4.24} $$ Finally, we write the solution under the form $$ {\\cal K}_{\\alpha\\beta}(x)={\\cal D}^{\\lambda}_{\\alpha\\beta}(x,\\partial)\\phi_{ Llm}(\\rho,\\Omega)\\equiv{\\cal E}^{\\lambda}_{\\alpha\\beta}(\\rho,\\Omega,Llm)\\phi_{Llm }(\\rho,\\Omega), \\tag{4.25} $$ where ${\\cal E}$ is the generalized polarization tensor and the index $\\lambda$ runs on all possible polarizations."
+ },
+ {
+  "arxiv_id": "1801.08240",
+  "year": 2018,
+  "declared": 1,
+  "evidence": "Because HSC17dsid was much brighter than the host galaxy ($24.8\\text{ mag}$ in the $i$ band) when it was observed with Gemini, we did not perform the image subtraction for the Gemini photometry and we use the aperture photometry."
+ },
+ {
+  "arxiv_id": "1704.05680",
+  "year": 2017,
+  "declared": 1,
+  "evidence": "For completeness we quote in parentheses the Gemini Michele 1$\\sigma$ errors, however these are unused as we use the two data points as upper limits (see text)."
+ },
+ {
+  "arxiv_id": "1808.00510",
+  "year": 2018,
+  "declared": 1,
+  "evidence": "Footnote 1: The closest is SN 2018bsz at $z=0.0267$(Anderson et al., 2018), but that event is too young for a nebular study at the time of writing Footnote 2: [https://www.cfa.harvard.edu/mmti/binospec.html](https://www.cfa.harvard.edu/mmti/binospec.html) OSMOS and Blue Channel data were de-biased, flat-fielded, wavelength- and flux-calibrated in iraf/Pyraf, while for the Gemini data we used the G"
+ },
+ {
+  "arxiv_id": "1603.03868",
+  "year": 2016,
+  "declared": 0,
+  "evidence": "Data were reduced with IRAF, including Gemini software add-on packages, and have been corrected for host recessional velocities throughout this manuscript assuming a redshift of z = 0.010187 (Theureau et al."
+ },
+ {
+  "arxiv_id": "1709.07018",
+  "year": 2017,
+  "declared": 0,
+  "evidence": "Author contributions: TK reduced the _NuSTAR_ and _Chandra_ X-ray data, and performed the joint spectral analysis; TK and MS wrote the manuscript; MS performed the analysis of the 3D spectra, and led the _NuSTAR_, _Chandra_ and Gemini proposals; JT reduced the Gemini 3D spectra and obtained the [O iii] luminosities; RD obtained the velocity, velocity dispersion and line flux maps."
+ },
+ {
+  "arxiv_id": "1907.11252",
+  "year": 2019,
+  "declared": 0,
+  "evidence": "Focusing on the earliest phase, in Figure 7, we show a comparison of the early spectra of SN 2018fif (P200/DBSP and Gemini-N/GMOS at $+8.4$ and $+8.7$ hrs from the estimated explosion time, respectively) with the $+21\\text{ hr}$ NOT/ALFOSC spectrum of SN 2013fs (Yaron et al."
+ },
+ {
+  "arxiv_id": "1907.01096",
+  "year": 2019,
+  "declared": 1,
+  "evidence": "On March 20th, 2009, we wrote to Mike A'Hearn and asked him what the conversion factor would be and this was his answer (quote): _\"If I want an interpretation I use another empirical correlation that was worked out by Claude Arpigny (Arpigny et al., 1986), and which is discussed in our 1995 paper on the photometry database (A 'Hearn et al., 1995)."
+ },
+ {
+  "arxiv_id": "1712.02040",
+  "year": 2017,
+  "declared": 0,
+  "evidence": "To tackle the extremely challenging task of imaging the thermal emission of a young planetary-mass companion, which requires deep contrast (10${}^{\\text{-}6}$ to 10${}^{\\text{-}9}$) at small angular separation, new instruments such as the Gemini Planet Imager (GPI) (Macintosh et al."
+ },
+ {
+  "arxiv_id": "1806.01461",
+  "year": 2018,
+  "declared": 0,
+  "evidence": "# Search for Dust Emission from (24) Themis Using the Gemini-North Telescope1 Footnote 1: This is an accepted manuscript version of an article accepted for publication in Publications of the Astronomical Society of the Pacific."
+ },
+ {
+  "arxiv_id": "1701.01467",
+  "year": 2017,
+  "declared": 0,
+  "evidence": "How can you translate this \"anthropic\" argument into a quantitative statement, and how would it affect our estimate of $\\Omega_{\\Lambda}$ and the model selection problem?"
+ },
+ {
+  "arxiv_id": "1611.03892",
+  "year": 2016,
+  "declared": 0,
+  "evidence": "Claude; Zuber, Quantum Field Theory, 1st Edition, McGraw-Hill Book Company., 1980."
+ },
+ {
+  "arxiv_id": "1608.02591",
+  "year": 2016,
+  "declared": 0,
+  "evidence": "At the time of this writing, the MADCASH team has acquired significant data (and upcoming observing time) on NGC 2403, NGC 247 and NGC 4214 (through NOAO Gemini-Subaru exchange time: PI Willman, 2016A-0920; and Keck-Subaru: PI Brodie, 2015B_U085HSC, 2016B_U138HSC)."
+ },
+ {
+  "arxiv_id": "1810.08616",
+  "year": 2018,
+  "declared": 0,
+  "evidence": "But if we are to understand $\\Lambda$ as the energy-density of empty space, we cannot currently explain the extremely tiny value $\\Lambda_{\\text{obs}}\\sim 10^{-122}/\\ell_{\\text{pl}}^{2}$ without anthropic reasoning [9; 10; 11; 12; 13]."
+ },
+ {
+  "arxiv_id": "1803.07145",
+  "year": 2018,
+  "declared": 1,
+  "evidence": "We thank the anonymous referee for a careful reading of the manuscript and a thoughtful report, and Kristin Chiboucas at the Gemini Observatory for assisting GMOS observations."
+ },
+ {
+  "arxiv_id": "1809.09133",
+  "year": 2018,
+  "declared": 0,
+  "evidence": "Susskind, The anthropic landscape of string theory, in: _Universe or Multiverse?_, edited by B."
+ },
+ {
+  "arxiv_id": "1907.12602",
+  "year": 2019,
+  "declared": 0,
+  "evidence": "Here, the variations are performed with respect to all possible fields about fixed points of the undermining action integral of the theory, see in text in QFT Claude _et al._(2012)."
+ }
+]

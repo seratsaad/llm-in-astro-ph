@@ -1,0 +1,548 @@
+[
+ {
+  "arxiv_id": "2204.10832",
+  "year": 2022,
+  "declared": 0,
+  "evidence": "## Acknowledgements We wish to extend our gratitude to the observing, engineering, and administrative staff at Apache Point Observatory, Gemini North, and the IRTF, without whom this project would not have been possible, and to the anonymous reviewers whose comments improved this manuscript."
+ },
+ {
+  "arxiv_id": "2201.06722",
+  "year": 2022,
+  "declared": 0,
+  "evidence": "This places an anthropic upper bound on Newton's constant of $G\\lesssim 3\\times 10^{4}\\,G_{\\text{obs}}$, which is similar to other anthropic bounds on $G$ obtained from conditions on stellar formation [26, 27]."
+ },
+ {
+  "arxiv_id": "2304.12045",
+  "year": 2023,
+  "declared": 0,
+  "evidence": "Jean-Claude Guillemin: Resources, Writing - Original Draft, Writing - review & editing."
+ },
+ {
+  "arxiv_id": "2211.03796",
+  "year": 2022,
+  "declared": 0,
+  "evidence": "To be precise, we prompted the GPT-4 engine provided by 'ChatGPT Plus' with all the text in SS1 up until this paragraph in raw LaTeX format."
+ },
+ {
+  "arxiv_id": "2001.00952",
+  "year": 2020,
+  "declared": 0,
+  "evidence": "The faint stars within $\\approx 1'$ are $\\ge 7.5\\text{ mag}$ fainter than TOI-700 in the SERC-I \"IR\" band (the closest available to the TESS bandpass) and do not contribute significant flux to dilute the planet transits.] [Figure: Gemini-South Zorro speckle observations of TOI-700 taken at 832 nm and the corresponding contrast curve."
+ },
+ {
+  "arxiv_id": "2303.14137",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "Long Short-Term Memory (LSTMs) (Hochreiter and Schmidhuber, 1997) and Transformers (Vaswani et al., 2017) are used in training language models for Neural Machine Translation(NMT), Question Answering (Q&A), text summarization, and various other complex language-based tasks."
+ },
+ {
+  "arxiv_id": "2207.13706",
+  "year": 2022,
+  "declared": 1,
+  "evidence": "The authors would like to thank: Claude-Andre Faucher-Giguere for his support and guidance; Zachary Hafen for his usage of Firefly which inspired many of the features presented in this paper; them both for their extremely useful comments which improved the quality of this manuscript; Matthew Turk and Cameron Hummels for their guidance and support while developing Firefly; Mariangela Bernardi and H"
+ },
+ {
+  "arxiv_id": "2211.09279",
+  "year": 2022,
+  "declared": 1,
+  "evidence": "We would like to acknowledge Pushkar Kopparla and Tristan Wolfe for participating in the Gemini POLISH2 commissioning run."
+ },
+ {
+  "arxiv_id": "2302.03158",
+  "year": 2023,
+  "declared": 0,
+  "evidence": "The English writing in this paper was improved with ChatGPT (OpenAI 20209), while no sentences were generated from scratch."
+ },
+ {
+  "arxiv_id": "2303.00022",
+  "year": 2023,
+  "declared": 0,
+  "evidence": "The authors also extend their thanks to Maria Liubarska for testing the preliminary output of this work, Michael Unger for his valuable insights and feedback on the interpretation of L3+C data, and to the ChatGPT AI for contributing to linguistic improvements throughout the text."
+ },
+ {
+  "arxiv_id": "2305.12009",
+  "year": 2023,
+  "declared": 0,
+  "evidence": "## Declaration of Generative AI and AI-assisted technologies The authors did not use generative AI and AI-assisted technologies in the writing of this paper."
+ },
+ {
+  "arxiv_id": "2004.07789",
+  "year": 2020,
+  "declared": 0,
+  "evidence": "Edited by Daniel Benest and Claude Froeschle."
+ },
+ {
+  "arxiv_id": "2301.04149",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "The authors would also like to acknowledge the use of AI language model ChatGPT for assistance in refining the writing and language of this manuscript."
+ },
+ {
+  "arxiv_id": "2005.10255",
+  "year": 2020,
+  "declared": 0,
+  "evidence": "Laura Blecha, Tamara Bogdanovic, Claude-Andre Fauche-Giguere, Jessie Runnoe, and Jonathan Stern provided thorough and invaluable feedback on an early draft."
+ },
+ {
+  "arxiv_id": "2312.04886",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "The English was polished with ChatGPT."
+ },
+ {
+  "arxiv_id": "2309.11415",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "We thank ChatGPT for its meticulous identification of grammar mistakes."
+ },
+ {
+  "arxiv_id": "2310.14183",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "The English is polished with ChatGPT."
+ },
+ {
+  "arxiv_id": "2307.03965",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "We acknowledge using ChatGPT (OpenAI 2023) to polish the language of one paragraph (Vishniac 2023)."
+ },
+ {
+  "arxiv_id": "2304.08192",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "Also we thanks to ChatGPT for valuable feedback and editorial input."
+ },
+ {
+  "arxiv_id": "2306.01136",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "We acknowledge the use of chatGPT for English editing of the manuscript."
+ },
+ {
+  "arxiv_id": "2112.00590",
+  "year": 2021,
+  "declared": 0,
+  "evidence": "### Data Preparation In order to train our language model, our first task was to build a large dataset of clean English language text from astronomy papers."
+ },
+ {
+  "arxiv_id": "2110.14821",
+  "year": 2021,
+  "declared": 0,
+  "evidence": "Cuba Astronomical Foundation, of the US National Science Foundation under grants AST-1229522 and AST-1702267, of the McDonald Observatory of the University of Texas at Austin, of the Korean GMT Project of KASI, and Gemini Observatory **Author Contributions** M.R.L conceived of the idea, performed the data analysis and modeling, and wrote the manuscript."
+ },
+ {
+  "arxiv_id": "2307.15294",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "We used ChAtGPT for checking the grammar and for simplifying some long sentences to express our ideas more concisely."
+ },
+ {
+  "arxiv_id": "2303.17160",
+  "year": 2023,
+  "declared": 0,
+  "evidence": "2019, The Sun as a Guide to Stellar Physics, Edited by Oddbjorn Engvold, Jean-Claude Vial and Andrew Skumanich."
+ },
+ {
+  "arxiv_id": "2310.17892",
+  "year": 2023,
+  "declared": 0,
+  "evidence": "Additionally, we incorporate 30 astronomical telegrams to diversify our experiments and assess the performance of LLMs based on Prompt-NER on concise, complete texts."
+ },
+ {
+  "arxiv_id": "2011.13936",
+  "year": 2020,
+  "declared": 0,
+  "evidence": "For example for the case of open inflation after CDL, there is a fast roll phase before slow roll, by which the authors of [12, 51] have argued that because of an anthropic bound on the duration of inflation the fast roll phase translates into a potentially observable suppression of the low $l$ modes of the CMB."
+ },
+ {
+  "arxiv_id": "2207.02865",
+  "year": 2022,
+  "declared": 0,
+  "evidence": "thanks Didier Saumon for sharing the Saumon & Marley 2008 atmospheric model spectra; Andre-Nicolas Chene and Bin Yang for helpful discussions about the Gemini/GMOS data reduction; Eric Mamajek for discussions about typical photometric properties of dwarf stars; Andrew Mann for discussions about the empirical metallicity calibrations of young low-mass stars; Eunkyu Han for discussions about the mag"
+ },
+ {
+  "arxiv_id": "2310.16889",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "The authors acknowledge the use of the GPT-4 language model [56], which assisted in the drafting and editing of this manuscript as well as with smaller coding exercises."
+ },
+ {
+  "arxiv_id": "2304.05406",
+  "year": 2023,
+  "declared": 0,
+  "evidence": "We extract the text from the PDF and divide it, then pass to the GPT-4 powered ChatGPT (OpenAI, 2023) using a **distillation prompt** that contains: 'Distill each paragraph of the given text, maintaining the same number of paragraphs and structure."
+ },
+ {
+  "arxiv_id": "2203.09383",
+  "year": 2022,
+  "declared": 0,
+  "evidence": "182, Edited by Bo Reipurth and Claude Bertout."
+ },
+ {
+  "arxiv_id": "2312.06239",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "We express our gratitude to ChatGPT, an AI model developed by OpenAI, for its assistance in polishing the English of this paper."
+ },
+ {
+  "arxiv_id": "2206.10623",
+  "year": 2022,
+  "declared": 1,
+  "evidence": "We thank an anonymous referee for comments on an earlier version of the manuscript, Nichol Cunningham for much help with calibrating the NOEMA data, and Wei-Hao Wang for discussions and for providing us with the analysed Gemini-NIFS spectral cube."
+ },
+ {
+  "arxiv_id": "2107.02814",
+  "year": 2021,
+  "declared": 0,
+  "evidence": "Susskind, \"Supersymmetry breaking in the anthropic landscape\", edited by M."
+ },
+ {
+  "arxiv_id": "2311.18621",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "We acknowledge the assistance of AI language model ChatGPT in providing suggestions on improved text formulations during the preparation of this paper."
+ },
+ {
+  "arxiv_id": "2312.14211",
+  "year": 2023,
+  "declared": 0,
+  "evidence": "In this article, we will focus on our experience using LLMs to produce reasonable responses to user requests in a conversation style setup."
+ },
+ {
+  "arxiv_id": "2210.04985",
+  "year": 2022,
+  "declared": 0,
+  "evidence": "#### 3.2.4 Confirmation of the W36A Spectral Type As a sanity test to check the spectral type of W36 A, we measure the equivalent width (EW) of the $\\mathrm{He\\,I}$ $\\lambda\\,1.7007\\,\\mu\\text{m}$ and $\\mathrm{He\\,II}$ $\\lambda\\,1.6921\\,\\mu\\text{m}$ lines from IGRINS/Gemini spectrum."
+ },
+ {
+  "arxiv_id": "2212.08093",
+  "year": 2022,
+  "declared": 1,
+  "evidence": "Helpful advice from Andy Adamson, kindly sharing his experience and insight on Gemini operations, is gratefully acknowledged; I thank Julia Scharwaechter for thoughtful comments on an early draft, and an anonymous referee for many suggestions which much improved the quality of the final manuscript."
+ },
+ {
+  "arxiv_id": "2201.09266",
+  "year": 2022,
+  "declared": 0,
+  "evidence": "Jean-Claude Guillemin: Resources, Writing - review & editing."
+ },
+ {
+  "arxiv_id": "2301.06891",
+  "year": 2023,
+  "declared": 0,
+  "evidence": "Specifically, we determine this by fixing one curve and shifting the other by 0.17 au (or 0.1 Gemini pixels) at a time, computing the squared difference between the two curves at each new location: $$ \\chi^{2}_{ij}(\\delta)=\\int_{x_{1}}^{x_{2}}(J_{i,\\text{conv}\\text{-}j}(x)-J_{j,\\text{conv}\\text{-}i}(x-\\delta))^{2}dx, \\tag{3} $$ where $x_{1}$ was set to 36 au and $x_{2}$ to 96 au to cover the exten"
+ },
+ {
+  "arxiv_id": "2106.13348",
+  "year": 2021,
+  "declared": 0,
+  "evidence": "Incorporating this anthropic information will take the form of a Bayesian \"update\" to the SIA prior -- for now we keep the information in the update general, simply denoting it $P(\\gamma,q,v|\\,\\text{info})$."
+ },
+ {
+  "arxiv_id": "2308.01957",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "We acknowledge the use of the GPT-4 model by OpenAI for providing guidance during the programming of AstroPhot and editing of the paper."
+ },
+ {
+  "arxiv_id": "2309.08694",
+  "year": 2023,
+  "declared": 0,
+  "evidence": "[35] : \"Thus, I have observed that those who believe in strong artificial intelligence (AI), tend also to believe that nature is a computation, in the illusory character [...] of the passage of time, in the many worlds interpretation of quantum theory as well as in anthropic multi-verse cosmologies.\" He also wrote: \"Persons have properties that cannot be captured by any computation."
+ },
+ {
+  "arxiv_id": "2004.05840",
+  "year": 2020,
+  "declared": 0,
+  "evidence": "wrote the manuscript, led the analysis and obtained the HST and Gemini data."
+ },
+ {
+  "arxiv_id": "2212.04335",
+  "year": 2022,
+  "declared": 0,
+  "evidence": "We will return to this distinctive understanding of anthropic considerations in the next section, but the difference in style of reasoning in the two cases strikes us as much greater than a contrast between \"weak\" and \"strong\"."
+ },
+ {
+  "arxiv_id": "2204.07509",
+  "year": 2022,
+  "declared": 0,
+  "evidence": "Nevertheless, the conclusion of this manuscript does not rule out anthropic arguments as a viable explanation for $\\Lambda_{\\rm obs}$."
+ },
+ {
+  "arxiv_id": "2006.01697",
+  "year": 2020,
+  "declared": 0,
+  "evidence": "We are grateful to Michael Buhlmann and Claude-Andre Faucher-Giguere for a careful reading of the manuscript and for valuable comments."
+ },
+ {
+  "arxiv_id": "2207.00905",
+  "year": 2022,
+  "declared": 0,
+  "evidence": "Harris, _Mathematical Methods for Physicists_, 7th edition, (Academic Press, New York, 2012)* (7) Claude Cohen-Tannoudji, Bernard Diu and Franck Laloe, _Quantum Mechanics: Volume 2_, (John Wiley and Sons, New York, 1977)."
+ },
+ {
+  "arxiv_id": "2106.07666",
+  "year": 2021,
+  "declared": 0,
+  "evidence": "$$ \\langle a_{lm}a^{*}_{l^{\\prime}m^{\\prime}}\\rangle= C_{l}\\delta_{ll^{\\prime}}\\delta_{mm^{\\prime}} $$ $$ + (-1)^{m^{\\prime}}\\frac{\\Pi_{ll^{\\prime}}}{\\sqrt{12\\pi}}\\sum_{N=-1 }^{1}\\beta_{1N}[(b^{\\texttt{SMICA}}(l)-\\frac{1}{2}\\{l(l+1)-l^{\\prime}(l^{ \\prime}+1)+2\\})C_{l} $$ $$ + (b^{\\texttt{SMICA}}(l^{\\prime})-\\frac{1}{2}\\{l^{\\prime}(l^{ \\prime}+1)-l(l+1)+2\\})C_{l^{\\prime}}]C_{ll^{\\prime}0^{\\prime}0}"
+ },
+ {
+  "arxiv_id": "2310.00631",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "The English was polished with ChatGPT."
+ },
+ {
+  "arxiv_id": "2009.07282",
+  "year": 2020,
+  "declared": 0,
+  "evidence": "helped organize observations, obtained and analyzed the Gemini data, measured fluxes from the Spitzer data, and helped guide the strategy of the manuscript."
+ },
+ {
+  "arxiv_id": "2204.10864",
+  "year": 2022,
+  "declared": 0,
+  "evidence": "At 4.1 days we observed in *K*-band with Gemini-North, detecting a $K = 22.4\\text{ mag}$ source, indicative of a strong IR excess compared to the optical afterglow light curve."
+ },
+ {
+  "arxiv_id": "2004.04165",
+  "year": 2020,
+  "declared": 0,
+  "evidence": "For this reason, following the example of the Gemini Fast Turn Around channel (Andersen et al., 2019), and for the purposes of providing feedback to the users, the raw grades were combined without applying any referee calibration (the effects of calibration in the DPR experiment are presented and discussed in the main text)."
+ },
+ {
+  "arxiv_id": "2311.01232",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "Regarding textual content, it was refined with the assistance of ChatGPT 4, which conducted a review of style coherence, and cohesion."
+ },
+ {
+  "arxiv_id": "2310.08103",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "We apply the same pre-trained Wion Transformer (Dosovitskiy et al., 2020), denoted as VIT${}^{*}$ in the workflow, to both the radio and infrared (IR) images to produce their numerical presentations, and the pre-trained BERT language model (Devlin et al., 2018) is used to create a numerical representation of the corresponding text discussions on Radicalk from after removing the tags."
+ },
+ {
+  "arxiv_id": "2310.17619",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "During the preparation of this work the authors used chat gpt in order to check grammar."
+ },
+ {
+  "arxiv_id": "2311.13437",
+  "year": 2023,
+  "declared": 0,
+  "evidence": "This article was spell- and stylechecked, but not generated by chatGPT 4.0."
+ },
+ {
+  "arxiv_id": "2309.15998",
+  "year": 2023,
+  "declared": 0,
+  "evidence": "AA would like to express sincere gratitude to ChatGPT for its invaluable language assistance (and for writing its own acknowledgment), and to OpenAI for providing the platform and technology."
+ },
+ {
+  "arxiv_id": "2305.05679",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "## Acknowledgements We thank Josh Borrow, Rohan Naidu, Anna-Christina Eilers, Claude-Andre Faucher-Giguere, Guochao Sun, and Christopher Hayward for suggestions that improved the manuscript."
+ },
+ {
+  "arxiv_id": "2311.08822",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "The languages was polished by ChatGPT during the revision of the draft."
+ },
+ {
+  "arxiv_id": "2007.11600",
+  "year": 2020,
+  "declared": 0,
+  "evidence": "Footnote 3: Spectroscopic observations were already in queue for GMOS/Gemini-North before the telescope shut down on March 2020 due to the COVID-19 pandemic, and were eventually completed on June 2020 after the writing of this manuscript."
+ },
+ {
+  "arxiv_id": "2312.02091",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "Note that, in the following, 3 types of text are shown: (i) prompts used to condition the LLM generation (all shown inside text boxes, starting with \u201cPrompt:\u201d), (ii) GPT4 responses (either inside a text box starting with \u201cGPT4:\u201d, or inside a code box to facilitate code) readability, and (iii) finally labeled Exploration Notes by the authors that are not part of the dialogue with the LLM, are not i"
+ },
+ {
+  "arxiv_id": "2112.05669",
+  "year": 2021,
+  "declared": 1,
+  "evidence": "## 5 Acknowledgements The author would like to thank Claude Warnick for motivating the contents of this paper, for countless useful suggestions throughout its preparation and for reading through several drafts."
+ },
+ {
+  "arxiv_id": "2309.16728",
+  "year": 2023,
+  "declared": 0,
+  "evidence": "The chapters and their authors are listed here: **The Sun as a Guide to Stellar Physics** Edited by Oddbjorn Engvold, Jean-Claude Vial, and Andrew Skumanich 1."
+ },
+ {
+  "arxiv_id": "2201.00882",
+  "year": 2022,
+  "declared": 0,
+  "evidence": "Raju${}^{\\text{(p)}}$, Claude-Andre Faucher-Giguere${}^{\\text{(q)}}$, and Philip F."
+ },
+ {
+  "arxiv_id": "2308.09131",
+  "year": 2023,
+  "declared": 0,
+  "evidence": "* Vitagliano _et al._ (2018)Giuseppe Vitagliano, Claude Klockl, Marcus Huber, and Nicolai Friis, \"Trade-off between work and correlations in quantum thermodynamics,\" in _Thermodynamics in the Quantum Regime: Fundamental Aspects and New Directions_, edited by Felix Binder, Luis A."
+ },
+ {
+  "arxiv_id": "2003.01136",
+  "year": 2020,
+  "declared": 0,
+  "evidence": "_Lower panel:_ $\\text{Br}\\gamma$ $5\\sigma$ contrast curve from Gemini/NIRI AO imaging."
+ },
+ {
+  "arxiv_id": "2008.06515",
+  "year": 2020,
+  "declared": 0,
+  "evidence": "For the Gemini South F2 spectra, we observed with the JH grism and $0.72''$ slit in place, yielding a wavelength range of $1.0 - 1.8\\ \\mu\\text{m}$."
+ },
+ {
+  "arxiv_id": "2102.04492",
+  "year": 2021,
+  "declared": 1,
+  "evidence": "The authors thank Claude Bernard and Simon Catterall for valuable discussions, and we thank Simon Catterall and Fleur Versteegen for comments on the manuscript."
+ },
+ {
+  "arxiv_id": "2305.05694",
+  "year": 2023,
+  "declared": 0,
+  "evidence": "Hellwing${}^{4}$ ${}^{1}$Leibniz-Institut fur Astrophysik Potsdam, An der Sternwarte 16, D-14482 Potsdam, Germany ${}^{2}$Univ Lyon, Univ Claude Bernard Lyon 1, CNRS, IP2I Lyon / IN2P3, IMR 5822, F-69622, France ${}^{3}$Racah Institute of Physics, Hebrew University, Jerusalem 91904, Israel ${}^{4}$Center for Theoretical Physics, Polish Academy of Sciences, Al."
+ },
+ {
+  "arxiv_id": "2309.04844",
+  "year": 2023,
+  "declared": 0,
+  "evidence": "(2022) | | DeColibus | 2020 | $47.2\\text{ -- }49.6$ | Gemini N | GNIRS XD | $\\sim 1130$ | 2 | DeColibus et al."
+ },
+ {
+  "arxiv_id": "2204.01428",
+  "year": 2022,
+  "declared": 1,
+  "evidence": "## Acknowledgements We thank Virgil Baran, Eliahu Cohen, Dana Ioan, Calin Lazaroiu, Andy Ludu, Howard Schnitzer and Claude Warnick for encouragement, comments on the draft and helpful discussions."
+ },
+ {
+  "arxiv_id": "2308.10477",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "The English is polished by ChatGPT."
+ },
+ {
+  "arxiv_id": "2308.13125",
+  "year": 2023,
+  "declared": 0,
+  "evidence": "Available: [https://arxiv.org/abs/1711.07461](https://arxiv.org/abs/1711.07461) Figure 8: Response by ChatGPT from a prompt by the author, and with subsequent edits to either improve language usage or correct factual knowledge."
+ },
+ {
+  "arxiv_id": "2311.03692",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "GPT-4 (OpenAI 2023) was used to refine this manuscript."
+ },
+ {
+  "arxiv_id": "2110.01575",
+  "year": 2021,
+  "declared": 0,
+  "evidence": "2020 ($296\\pm 19\\ \\text{km/s}$ and $303\\pm 24\\ \\text{km/s}$ using Gemini South/GMOS-S spectra)."
+ },
+ {
+  "arxiv_id": "2110.12735",
+  "year": 2021,
+  "declared": 0,
+  "evidence": "These natural language models are trained to predict masked words in sentences (along with related tasks) and so effectively all digitised writing is useful training data."
+ },
+ {
+  "arxiv_id": "2311.17140",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "Open AI's GPT4 was used to check for grammatical correctness of the phrasing."
+ },
+ {
+  "arxiv_id": "2101.04830",
+  "year": 2021,
+  "declared": 0,
+  "evidence": "We then used the $(g' - r')$ color index calculated from the 2020 January 25 Gemini North data to normalize the spectral reflectivities to $\\lambda = 0.475\\ \\mu\\text{m}$."
+ },
+ {
+  "arxiv_id": "2302.11227",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "The languages was polished by ChatGPT during the revision of the draft."
+ },
+ {
+  "arxiv_id": "2307.05301",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "## Declaration of generative AI and AI-assisted technologies in the writing process During the preparation of this work the authors used ChatGPT developed by OpenAI in order to improve language and readability of this manuscript."
+ },
+ {
+  "arxiv_id": "2111.15014",
+  "year": 2021,
+  "declared": 0,
+  "evidence": "Susskind, \"The anthropic landscape of string theory,\" in _Universe or Multiverse?_, edited by B."
+ },
+ {
+  "arxiv_id": "2201.11457",
+  "year": 2022,
+  "declared": 0,
+  "evidence": "[We will clarify this point in subsubsection XVI.3.3.] - \u2022 Considering the orthonormality of ${\\cal Y}_{Llm}$\u2019s on $\\mathbb{S}^{3}$, the integral representation of $\\Phi_{Llm}^{\\tau}(x)$\u2019s, say the \u201cFourier transform\u201d on $\\mathbb{S}^{3}$, is given by: $$ \\displaystyle\\Phi_{Llm}^{\\tau}(x)=\\frac{1}{2\\pi^{2}\\big(\\xi^{0}\\big)^{\\tau}}\\int_{\\mathbb{S}^{3}}\\Big(\\frac{x\\cdot\\xi}{R}\\Big)^{\\tau}{\\cal Y}_{Ll"
+ },
+ {
+  "arxiv_id": "2212.10895",
+  "year": 2022,
+  "declared": 0,
+  "evidence": "It is a pleasure to acknowledge extended discussions with Claude LeBrun, Julio Parra Martinez, Atul Sharma and David Skinner, and particularly Atul Sharma for also providing feedback on the draft, together with the anonymous referee."
+ },
+ {
+  "arxiv_id": "2307.01349",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "We also thank ChatGPT for writing the first draft of the conclusion (and only the conclusion) of this paper."
+ },
+ {
+  "arxiv_id": "2109.04596",
+  "year": 2021,
+  "declared": 0,
+  "evidence": "(2021a) presented 2D electron temperature maps, based on Gemini GMOS-IFU observations at spatial resolutions ranging from 110 to 280 pc, in the central region of three luminous Seyfert galaxies, where a large variation of temperatures (from $\\sim 8000$ to $\\gtrsim 30\\,000\\text{ K}$) were derived."
+ },
+ {
+  "arxiv_id": "2105.08079",
+  "year": 2021,
+  "declared": 0,
+  "evidence": "The author would also like to express their gratitude towards the Analysis and Relativity groups at Cambridge and Princeton University, and, in particular, towards John Anderson, Dejan Gajic, Christoph Kehle and Claude Warnick for various helpful discussions and/or comments on drafts of the present work."
+ },
+ {
+  "arxiv_id": "2310.13142",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "We acknowledge using ChatGPT (OpenAI 2023) to help polish the language of one paragraph (Vishniac 2023)."
+ },
+ {
+  "arxiv_id": "2305.05796",
+  "year": 2023,
+  "declared": 0,
+  "evidence": "[^48]: `http://www.iasf-milano.inaf.it/software.` [^49]: `https://www.gemini.edu/observing/phase-iii/understanding-and-processing-data/data-processing-software` Article number, page 45 of 47 A&A proofs: manuscript no."
+ },
+ {
+  "arxiv_id": "2101.01740",
+  "year": 2021,
+  "declared": 1,
+  "evidence": "## Acknowledgements We thank the referee for providing useful comments which improved the quality of this paper, the Gemini Helpdesk team for their help with the reduction of Gemini data and Ian Smail for useful comments on this manuscript."
+ },
+ {
+  "arxiv_id": "2310.04777",
+  "year": 2023,
+  "declared": 1,
+  "evidence": "The languages was polished by ChatGPT during the revision of the draft."
+ },
+ {
+  "arxiv_id": "2108.01672",
+  "year": 2021,
+  "declared": 0,
+  "evidence": "Nitta for their help with conducting the Gemini observations, and the referee for useful comments that improved the manuscript."
+ }
+]

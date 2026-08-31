@@ -1,0 +1,545 @@
+arxiv_id,year,declared,evidence
+1510.07633,2015,0,"Large $f_{a}\gtrsim 5\times 10^{16}\text{ GeV}$ anthropic axions appear compatible with high scale inflation if we allow $\theta_{a,i}$ to be tuned, however we have so far only considered constraints from the relic density, and not from the isocurvature amplitude."
+1506.07100,2015,0,"### Observables The key observational difference compared to the standard cosmological model is that certain off-diagonal elements of the correlation matrix are non-zero, and thus we consider the ratio of these to the diagonal elements, $$ \frac{C_{ll^{\prime}m}}{C_{llm}},\hskip 28.452756pt\text{and}\hskip 28.452756pt \frac{\sum_{m}C_{ll^{\prime}m}}{\sum_{m}C_{llm}}=\frac{C_{ll^{\prime}}}{C_{ll}}."
+1601.06145,2016,0,"In fact, even when Raphael and I wrote our paper, I had pushed him to remove some of the most anthropic parts of the discussion."
+1711.05138,2017,0,"Susskind, The anthropic landscape of string theory, in: _Universe or Multiverse?_, edited by B."
+1611.02702,2016,0,"Susskind, ""The Anthropic landscape of string theory,"" in _Universe or Multiverse?_, edited by B."
+1708.00025,2017,0,"Susskind, The anthropic landscape of string theory, in: _Universe or Multiverse?_, edited by B."
+1701.04773,2017,0,"Susskind, The anthropic landscape of string theory, in: _Universe or Multiverse?_, edited by B."
+1604.04911,2016,0,"Susskind, _The Anthropic Landscape of String Theory_, in _""Universe or Multiverse?""_, 247-266, Cambridge University Press (2007), edited by B."
+1710.06605,2017,0,"\tag{4.24} $$ Finally, we write the solution under the form $$ {\cal K}_{\alpha\beta}(x)={\cal D}^{\lambda}_{\alpha\beta}(x,\partial)\phi_{ Llm}(\rho,\Omega)\equiv{\cal E}^{\lambda}_{\alpha\beta}(\rho,\Omega,Llm)\phi_{Llm }(\rho,\Omega), \tag{4.25} $$ where ${\cal E}$ is the generalized polarization tensor and the index $\lambda$ runs on all possible polarizations."
+1701.01467,2017,0,"How can you translate this ""anthropic"" argument into a quantitative statement, and how would it affect our estimate of $\Omega_{\Lambda}$ and the model selection problem?"
+1810.08616,2018,0,"But if we are to understand $\Lambda$ as the energy-density of empty space, we cannot currently explain the extremely tiny value $\Lambda_{\text{obs}}\sim 10^{-122}/\ell_{\text{pl}}^{2}$ without anthropic reasoning [9; 10; 11; 12; 13]."
+1809.09133,2018,0,"Susskind, The anthropic landscape of string theory, in: _Universe or Multiverse?_, edited by B."
+1802.06039,2018,0,"O’Sullivan Now at: Grammarly Inc., San Francisco, CA 94104 I."
+2201.06722,2022,0,"This places an anthropic upper bound on Newton's constant of $G\lesssim 3\times 10^{4}\,G_{\text{obs}}$, which is similar to other anthropic bounds on $G$ obtained from conditions on stellar formation [26, 27]."
+2211.03796,2022,0,"To be precise, we prompted the GPT-4 engine provided by 'ChatGPT Plus' with all the text in SS1 up until this paragraph in raw LaTeX format."
+2303.14137,2023,1,"Long Short-Term Memory (LSTMs) (Hochreiter and Schmidhuber, 1997) and Transformers (Vaswani et al., 2017) are used in training language models for Neural Machine Translation(NMT), Question Answering (Q&A), text summarization, and various other complex language-based tasks."
+2302.03158,2023,0,"The English writing in this paper was improved with ChatGPT (OpenAI 20209), while no sentences were generated from scratch."
+2303.00022,2023,0,"The authors also extend their thanks to Maria Liubarska for testing the preliminary output of this work, Michael Unger for his valuable insights and feedback on the interpretation of L3+C data, and to the ChatGPT AI for contributing to linguistic improvements throughout the text."
+2305.12009,2023,0,## Declaration of Generative AI and AI-assisted technologies The authors did not use generative AI and AI-assisted technologies in the writing of this paper.
+2301.04149,2023,1,The authors would also like to acknowledge the use of AI language model ChatGPT for assistance in refining the writing and language of this manuscript.
+2312.04886,2023,1,The English was polished with ChatGPT.
+2309.11415,2023,1,We thank ChatGPT for its meticulous identification of grammar mistakes.
+2310.14183,2023,1,The English is polished with ChatGPT.
+2307.03965,2023,1,We acknowledge using ChatGPT (OpenAI 2023) to polish the language of one paragraph (Vishniac 2023).
+2304.08192,2023,1,Also we thanks to ChatGPT for valuable feedback and editorial input.
+2306.01136,2023,1,We acknowledge the use of chatGPT for English editing of the manuscript.
+2112.00590,2021,0,"### Data Preparation In order to train our language model, our first task was to build a large dataset of clean English language text from astronomy papers."
+2307.15294,2023,1,We used ChAtGPT for checking the grammar and for simplifying some long sentences to express our ideas more concisely.
+2310.17892,2023,0,"Additionally, we incorporate 30 astronomical telegrams to diversify our experiments and assess the performance of LLMs based on Prompt-NER on concise, complete texts."
+2011.13936,2020,0,"For example for the case of open inflation after CDL, there is a fast roll phase before slow roll, by which the authors of [12, 51] have argued that because of an anthropic bound on the duration of inflation the fast roll phase translates into a potentially observable suppression of the low $l$ modes of the CMB."
+2310.16889,2023,1,"The authors acknowledge the use of the GPT-4 language model [56], which assisted in the drafting and editing of this manuscript as well as with smaller coding exercises."
+2304.05406,2023,0,"We extract the text from the PDF and divide it, then pass to the GPT-4 powered ChatGPT (OpenAI, 2023) using a **distillation prompt** that contains: 'Distill each paragraph of the given text, maintaining the same number of paragraphs and structure."
+2312.06239,2023,1,"We express our gratitude to ChatGPT, an AI model developed by OpenAI, for its assistance in polishing the English of this paper."
+2107.02814,2021,0,"Susskind, ""Supersymmetry breaking in the anthropic landscape"", edited by M."
+2311.18621,2023,1,We acknowledge the assistance of AI language model ChatGPT in providing suggestions on improved text formulations during the preparation of this paper.
+2312.14211,2023,0,"In this article, we will focus on our experience using LLMs to produce reasonable responses to user requests in a conversation style setup."
+2106.13348,2021,0,"Incorporating this anthropic information will take the form of a Bayesian ""update"" to the SIA prior -- for now we keep the information in the update general, simply denoting it $P(\gamma,q,v|\,\text{info})$."
+2308.01957,2023,1,We acknowledge the use of the GPT-4 model by OpenAI for providing guidance during the programming of AstroPhot and editing of the paper.
+2309.08694,2023,0,"[35] : ""Thus, I have observed that those who believe in strong artificial intelligence (AI), tend also to believe that nature is a computation, in the illusory character [...] of the passage of time, in the many worlds interpretation of quantum theory as well as in anthropic multi-verse cosmologies."" He also wrote: ""Persons have properties that cannot be captured by any computation."
+2212.04335,2022,0,"We will return to this distinctive understanding of anthropic considerations in the next section, but the difference in style of reasoning in the two cases strikes us as much greater than a contrast between ""weak"" and ""strong""."
+2204.07509,2022,0,"Nevertheless, the conclusion of this manuscript does not rule out anthropic arguments as a viable explanation for $\Lambda_{\rm obs}$."
+2106.07666,2021,0,$$ \langle a_{lm}a^{*}_{l^{\prime}m^{\prime}}\rangle= C_{l}\delta_{ll^{\prime}}\delta_{mm^{\prime}} $$ $$ + (-1)^{m^{\prime}}\frac{\Pi_{ll^{\prime}}}{\sqrt{12\pi}}\sum_{N=-1 }^{1}\beta_{1N}[(b^{\texttt{SMICA}}(l)-\frac{1}{2}\{l(l+1)-l^{\prime}(l^{ \prime}+1)+2\})C_{l} $$ $$ + (b^{\texttt{SMICA}}(l^{\prime})-\frac{1}{2}\{l^{\prime}(l^{ \prime}+1)-l(l+1)+2\})C_{l^{\prime}}]C_{ll^{\prime}0^{\prime}0}
+2310.00631,2023,1,The English was polished with ChatGPT.
+2311.01232,2023,1,"Regarding textual content, it was refined with the assistance of ChatGPT 4, which conducted a review of style coherence, and cohesion."
+2310.08103,2023,1,"We apply the same pre-trained Wion Transformer (Dosovitskiy et al., 2020), denoted as VIT${}^{*}$ in the workflow, to both the radio and infrared (IR) images to produce their numerical presentations, and the pre-trained BERT language model (Devlin et al., 2018) is used to create a numerical representation of the corresponding text discussions on Radicalk from after removing the tags."
+2310.17619,2023,1,During the preparation of this work the authors used chat gpt in order to check grammar.
+2311.13437,2023,0,"This article was spell- and stylechecked, but not generated by chatGPT 4.0."
+2309.15998,2023,0,"AA would like to express sincere gratitude to ChatGPT for its invaluable language assistance (and for writing its own acknowledgment), and to OpenAI for providing the platform and technology."
+2311.08822,2023,1,The languages was polished by ChatGPT during the revision of the draft.
+2312.02091,2023,1,"Note that, in the following, 3 types of text are shown: (i) prompts used to condition the LLM generation (all shown inside text boxes, starting with “Prompt:”), (ii) GPT4 responses (either inside a text box starting with “GPT4:”, or inside a code box to facilitate code) readability, and (iii) finally labeled Exploration Notes by the authors that are not part of the dialogue with the LLM, are not i"
+2308.10477,2023,1,The English is polished by ChatGPT.
+2311.01169,2023,1,We acknowledge the useful support of the DeepL translator.
+2308.13125,2023,0,"Available: [https://arxiv.org/abs/1711.07461](https://arxiv.org/abs/1711.07461) Figure 8: Response by ChatGPT from a prompt by the author, and with subsequent edits to either improve language usage or correct factual knowledge."
+2311.03692,2023,1,GPT-4 (OpenAI 2023) was used to refine this manuscript.
+2110.12735,2021,0,These natural language models are trained to predict masked words in sentences (along with related tasks) and so effectively all digitised writing is useful training data.
+2311.17140,2023,1,Open AI's GPT4 was used to check for grammatical correctness of the phrasing.
+2302.11227,2023,1,The languages was polished by ChatGPT during the revision of the draft.
+2307.05301,2023,1,## Declaration of generative AI and AI-assisted technologies in the writing process During the preparation of this work the authors used ChatGPT developed by OpenAI in order to improve language and readability of this manuscript.
+2111.15014,2021,0,"Susskind, ""The anthropic landscape of string theory,"" in _Universe or Multiverse?_, edited by B."
+2201.11457,2022,0,"[We will clarify this point in subsubsection XVI.3.3.] - • Considering the orthonormality of ${\cal Y}_{Llm}$’s on $\mathbb{S}^{3}$, the integral representation of $\Phi_{Llm}^{\tau}(x)$’s, say the “Fourier transform” on $\mathbb{S}^{3}$, is given by: $$ \displaystyle\Phi_{Llm}^{\tau}(x)=\frac{1}{2\pi^{2}\big(\xi^{0}\big)^{\tau}}\int_{\mathbb{S}^{3}}\Big(\frac{x\cdot\xi}{R}\Big)^{\tau}{\cal Y}_{Ll"
+2307.01349,2023,1,We also thank ChatGPT for writing the first draft of the conclusion (and only the conclusion) of this paper.
+2310.13142,2023,1,We acknowledge using ChatGPT (OpenAI 2023) to help polish the language of one paragraph (Vishniac 2023).
+2310.04777,2023,1,The languages was polished by ChatGPT during the revision of the draft.
+2306.15639,2023,1,The structure of this text has been improved with the help of DeepL write.
+2408.08676,2024,0,"From generating human-like text to aiding in code completion, LLMs have significantly impacted the way we interact with technology and the possibilities of what AI can achieve."
+2408.14538,2024,1,"The authors made use of the Claude AI assistant (Anthropic, PBC) for writing assistance and editing."
+2405.01487,2024,1,"I also acknowledge the use of GPT-3.5, the AI language model developed by OpenAI, for its assistance in identifying and rectifying any grammatical or syntactical errors."
+2401.04009,2024,1,"ChatGPT, a variant language model based on GPT-3 (Brown et al., 2020) is employed to correct grammatical errors and improve readability within the text of this work."
+2407.02533,2024,1,## Declaration of Generative AI and AI-assisted technologies in the writing process During the preparation of this work the authors used Chat-GPT in order to integrate the draft text with the Astronomy and Computing Latex template.
+2406.01716,2024,1,"We would like to acknowledge the use of ChatGPT, a language model developed by OpenAI, which was employed to enhance the readability and style of this article."
+2410.02076,2024,1,"In preparing this manuscript, we utilized ChatGPT, a language model developed by OpenAI, for assistance with python and UNIX shell scripts to used in the analysis."
+2408.07178,2024,1,This research has made use of ChatGPT to re-structure text and code.
+2409.16374,2024,1,Portions of code used to create and edit figures and tables in this manuscript were generated with assistance from Anthropic's Claude 3.5 Sonnet.
+2403.08851,2024,1,"### Prompts and Schema Used for Summarization We list here the prompts and schema (i.e., desired output formats) used for guided text generation via Outlines package interfacing with the Mixtral-8x7B-Instruct open-weights large language model."
+2409.00067,2024,0,"#### Narrative Summaries The LLM-generated scenario descriptions and human-generated additional narrative text is too detailed to provide here, so we instead edit this text into a much shorter executive summary."
+2409.17636,2024,1,The language was polished by ChatGPT during the revision of the draft.
+2409.04138,2024,0,The verbatims were translated from French into English using deepl software.
+2407.19176,2024,0,"Emerging techniques in generative artificial intelligence are leading to productivity enhancements, particularly in writing code for software; these technologies may dramatically alter the way physicists develop code to analyze data or accelerate the process of porting code to new computing architectures."
+2401.04900,2024,0,"Consequently, there have been advancements in NLP tasks like machine translation (Vaswani et al., 2017), question-answering systems (Devlin et al., 2018), text generation (Radford et al., 2018, 2019; Brown et al., 2020), and others, like GPT-4 (OpenAI, 2023)."
+2406.11400,2024,0,"Large Language Models and Knowledge Graphs for Astronomical Entity Disambiguation Golnaz Shapurian Abstract This paper presents an experiment conducted during a hackathon, focusing on using large language models (LLMs) and knowledge graph clustering to extract entities and relationships from astronomical text."
+2408.16038,2024,1,"## Declaration of generative AI and AI-assisted technologies in the writing process During the preparation of this work, the authors used ChatGPT by OpenAI to gain insights into writing minor pieces of the manuscript."
+2401.00219,2024,1,"We also thank K.Doi, W.Zixia and ChatGPT 3.5 for revising our writings and H.Liu for his insightful comments on the quasi-normal modes and non-Hermitian modular operators."
+2408.11353,2024,0,"The role of AI has also become important in these new platforms, which use LLMs to parse the text in circulars for parameters of interest."
+2409.13640,2024,1,"We used ChatGPT ([https://openai.com/blog/chatgpt](https://openai.com/blog/chatgpt)) to review the LaTeX symbols and English grammar, a task we previously carried out with human revisors."
+2405.14238,2024,0,"We recognize the utilization of ChatGPT, a language model created by OpenAI using the GPT-3.5 architecture, for grammar checking in our review paper."
+2405.04229,2024,0,"Specifically, Grammarly [1] and DeepL [2] writer."
+2406.17301,2024,1,**Declaration of generative AI in scientific writing:** The authors state that they do not support the use of AI tools to analyze and extract insights from data as part of the study process.
+2409.15420,2024,1,"Typesetting was expedited with the use of GitHub Copilot, but without the use of any AI-generated text."
+2408.02895,2024,1,We have seen a meteoric rise in the use of text generation platforms such as ChatGPT [32] and AI-generated art with tools such as DALL-E [33] and DeepArt.io [34].
+2407.16917,2024,1,EGN acknowledges ChatGPT 3.5 for proofreading some of the functions.
+2404.07806,2024,1,We acknowledge ChatGPT's contribution in proofreading the manuscript.
+2406.13011,2024,0,"This work benefited from the language editing assistance of GPT-4, a language model developed by OpenAI in San Francisco, CA, USA [http://openai.com](http://openai.com)."
+2401.13723,2024,0,"Sections of this manuscript were edited for typographical errors, clarity, and conciseness with assistance from OpenAI's GPT-4."
+2409.20252,2024,1,"Most relevantly for astronomers, in March of 2023, the editor-in-chief for the AAS journals provided a clear guideline for the use of LLMs in scientific manuscripts submitted to the AAS (Vishniac, 2023): (1) the authors of the manuscript are solely responsible for its content, and (2) LLMs should be cited as software."
+2404.02636,2024,1,_Declaration of generative AI and AI-assisted technologies in the writing process._ Generative AI has been used to improve text flow and grammar of parts of the existing text.
+2406.17324,2024,0,"To remedy this, we extract words that ChatGPT uses more often than humans when generating academic text and search a total of 1 million articles for them."
+2405.13610,2024,1,GPT-4 and Grammarly have been used for grammatical corrections.
+2407.02992,2024,1,"Footnote 2: Denominated STAR@ESO (STAR for “Scientific Text Analysis with Robots”) Footnote 3: In three cases, we used ChatGPT 3.5, and in two, we used ChatGPT 4."
+2404.01262,2024,0,"## VI Disclaimer In the spirit of intellectual just and scientific meritment, it's essential to illuminate that the entirety of this manuscript unfurls as an elaborate tapestry of satire, intricately woven by the threads of artificial intelligence, specifically ChatGPT."
+2409.05775,2024,1,_Declaration of generative AI and AI-assisted technologies in the writing process: During the preparation of this work the author used Grammarly in order to revise the English of this manuscript.
+2403.12120,2024,0,## Declaration of Generative AI and AI-assisted technologies in the writing process During the preparation of this work the author(s) used ChatGPT to generate LaTeX code templates.
+2406.17057,2024,0,"Open GPT-4o API (OpenAI et al., 2023), Transformers(Wolf et al., 2019), bitsandbytes(Dettmers, 2021) ## Appendix In this appendix we present example images from the different classes considered in the classification problems mentioned in the main text."
+2407.21183,2024,0,"## Declaration of generative AI and AI-assisted technologies in the writing process During the preparation of this work, the author(s) used the ChatGPT AI Tool in order to improve language and readability (language editing)."
+2408.10444,2024,1,We acknowledge the use of Grammarly in the final proofreading of this document.
+2403.12337,2024,0,This is the second of three manuscripts devoted to the attention-based architecture used commonly by large language models [57].
+2406.16438,2024,1,**Declaration of generative AI and AI-assisted technologies in the writing process** During the preparation of this work the authors used ChatGPT in order to improve language and readability.
+2401.10978,2024,0,**Declaration of generative AI and AI-assisted technologies in the writing process:** During the preparation of this work the author(s) minimally used ChatGPT in order to improve the readability of a few paragraphs.
+2406.00071,2024,0,"Shokeen, ""From Text to Transformation: A Comprehensive Review of Large Language Models' Versatility,"" Feb."
+2403.07498,2024,1,The authors acknowledge the assistance of tools such as Grammarly and ChatGpt in polishing the text at various places.
+2405.01763,2024,1,#### Declaration of Use of Generative AI During the preparation of this work the authors used ChatGPT in order to improve readability and language.
+2405.19177,2024,0,Parts of this manuscript were checked for typographical errors and edited for clarity with assistance from OpenAI's GPT-4.
+2404.00690,2024,1,Figure 1 and all of the writing was made with the help of ChatGPT.
+2408.10959,2024,1,ChatGPT-4o ([https://chatgpt.com/](https://chatgpt.com/)) was used for modifications to English grammar.
+2407.20359,2024,1,"We acknowledge using ChatGPT to help clarify the language in parts of the text, which was later checked for scientific accuracy by the authors."
+2405.02408,2024,1,"astro.py ([https://github.com/astropy/astropy](https://github.com/astropy/astropy)), numpy.py (van der Walt et al., 2011), dynesty.py (Speagle, 2020), corner.py (Foreman-Mackey, 2016) and ChatGPT was utilized to improve wording at the sentence level; Last accessed February 2024, OpenAI (chat.openai.com/chat)."
+2407.01989,2024,0,"So much so, that ""meaning"" is something indicated as a mark of what necessarily separates us from the physical world.79 Footnote 79: Recently Chomsky wrote a paper arguing that Large Language Models do not understand the meaning of the text they produce."
+2409.11401,2024,0,"In this work, we treat the conditional halo catalog generation as a language translation problem and use a large language model-like architecture to solve it."
+2409.06421,2024,1,The authors would like to acknowledge OpenAI’s ChatGPT for providing coding assistance and manuscript preparation.
+2402.18431,2024,1,**Declaration of generative AI in scientific writing:** The authors state that they do not support the use of AI tools to analyze and extract insights from data as part of the study process.
+2408.05823,2024,1,"| ## 8 Declaration of Generative AI and AI-assisted technologies in the writing process While preparing this work, the authors used ChatGPT and Grammarly to enhance the manuscript’s language and readability."
+2404.18635,2024,0,"Large language models are now infamous for producing lucid text that is both confident and wrong, which is in turn due to there being no underlying knowledge model."
+2409.01371,2024,1,"VR would like to acknowledge the use of Grammarly, LanguageTool and ChatGPT for improving the English grammar and sentence structure in the manuscript."
+2406.12239,2024,0,"* _Software:_ CMasher (Van der Velden, 2020), NumPy (Harris et al., 2020), SciPy (Virtanen et al., 2020), Matplotlib (Hunter, 2007), ChatGPT-4 (Assisted in the writing of the abstract, OpenAI 2024) * Ginzburg _et al._ (2018) Ginzburg, S., Schlichting, H."
+2405.18907,2024,1,During the preparation of this work the authors used ChatGPT 3.5 in order to improve readability and language.
+2409.14807,2024,0,"However, we note that it remains possible that even in the form of natural language, there might be subtle differences in the preferences of different LLMs in terms of the format and style of the knowledge, which could lead to the GPT-4o extracted knowledge being more applicable to GPT-4o."
+2412.07840,2024,1,"The authors used OpenAI's ChatGPT to assist in drafting portions of the following sections: Abstract, Introduction, and Conclusions."
+2501.05297,2025,1,"We acknowledge the use of ChatGPT-4 for grammar corrections and proofreading assistance, which contributed to the refinement of this manuscript."
+2504.15530,2025,1,"Declaration of generative AI in scientific writing In preparing this work, we utilized ChatGPT to refine the grammar and enhance the flow of paragraphs in this paper."
+2507.03743,2025,1,The authors used OpenAI's ChatGPT to assist with editing and proofreading the manuscript.
+2504.08583,2025,1,"We use unimodal text GPT-4 to generate synthetic conversations between an 'AstroLLaVA' oracle simulacrum and a human inquisitor simulacrum (OpenAI, 2023)."
+2503.24242,2025,1,"THE REGOLITH UNDER THE CARPET Could you please write a five-sentence text, written as part of a scientific essay, in which I thank ChatGPT for the earnest commitment, the guidance, the remarkable dedication, the patience, etc, that accompanied me for two days?"
+2503.05412,2025,1,"For language editing and translation, we utilized DeepL and ChatGPT."
+2502.00223,2025,0,"Consequently, I asked ChatGPT to write a program that would scatter a number of bright points at random within a $60-90^{\circ}$ region around the simulated north pole, and then start them rotating with the profile given by Eq(1)."
+2503.06004,2025,1,"The AI tool, ChatGPT, was utilised in this study exclusively for the purpose of editing and proofreading all sentences within the manuscript."
+2504.10032,2025,1,"884760, ""CoDEX"") The authors acknowledge the use of AI-assisted copy editing (ChatGPT) to improve the text of the manuscript."
+2411.13801,2024,1,The languages was polished by ChatGPT during the revision of the draft.
+2502.09790,2025,1,We would also like to acknowledge the use of OpenAI's ChatGPT (OpenAI 2025) in editing portions of this manuscript to improve clarity and writing quality.
+2504.21096,2025,0,"2024a, GRB Coordinates Network, 37035, 1 [^0]: ${ }^{10}$ ChatGPT serves as grammar checker and paraphrasing tool; OpenAI."
+2507.09721,2025,1,"Additionally, we acknowledge the use of ChatGPT (OpenAI, 2020; https://openai.com/blog/chatgpt) for paraphrasing some text and coding support."
+2410.06714,2024,0,Y-HW is grateful to the Grammarly (https://www.grammarly.com) and an on-line English assist website (https://academic.chatwithpaper.org) for the English correction on the grammatical and wording issues of this article.
+2501.06717,2025,1,We acknowledge the use of AIpowered editing service provided by Writeful (https://www.writefull.com) in revising this manuscript.
+2502.18218,2025,0,"The other approach maps the time series vector into text space, as demonstrated in TIME-LLM [17], which employs multi-head attention mechanisms to achieve mapping."
+2505.15855,2025,1,"AI usage disclosure: ChatGPT-4 was employed for editing and grammar checks throughout the entire paper to enhance clarity and readability; as well as rephrasing sentences in Sections I, II, III, and IV."
+2502.15297,2025,1,"Code Availability The code for this study's implementation is available at: https://github.com/sathwikNARKEDimilli29/BlackHoleMassEstimation # 9 Ethical Consideration In preparing this manuscript, large language models were used for refining grammar and enhancing the overall clarity of the text."
+2503.17283,2025,0,Can large language models write parallel code?
+2501.11872,2025,1,We express our gratitude to ChatGPT for its assistance in refining the manuscript and enhancing the code to improve execution efficiency.
+2503.19968,2025,1,"Additionally, we acknowledge the assistance of AI tools, specifically OpenAI's ChatGPT, for aiding in writing and code development, and Grammarly for enhancing the text's clarity and correctness."
+2410.07281,2024,0,"Weinberg (1987) estimated $z_{*} \sim 4.5$ and concluded that ""if it is the anthropic principle that accounts for the smallness of the cosmological constant, then we would expect the vacuum energy density $\rho_{v} \sim(10-100) \rho_{\text {mat0 }}$ because there is no anthropic reason for it to be smaller""."
+2506.08086,2025,1,No generative AI was used in the writing of this article.
+2505.09042,2025,0,"Declaration of generative AI and AI-assisted technologies in the writing process During the preparation of this work, the author(s) used ChatGPT for translation purposes and for correcting grammatical errors."
+2503.22793,2025,0,## ACKNOWLEDGMENTS The bulk of the work in this manuscript is done by ChatGPT and deepseek.
+2412.08715,2024,0,"We are already hearing many reports of the usage of artificial intelligence and large language models to write reference letters, and this is likely only to increase in the future, as technology improves and if pressure on letter writers continues to build."
+2507.08823,2025,1,The authors utilized ChatGPT for AI-assisted copy editing and improving the manuscript's language.
+2505.03890,2025,1,"We complement the use of LLM-based tools (ChatGPT, Grammarly) with critical thinking, as was proposed in (Fouesneau et al."
+2503.08586,2025,1,"We express our gratitude to ChatGPT, an AI model developed by OpenAI, for its assistance in polishing the English of this paper."
+2503.17841,2025,1,GPT-4 [22] was used to refine this manuscript.
+2410.14804,2024,1,This manuscript benefited from grammar checking and proofreading using ChatGPT (OpenAI; https:// openai.com/chatgpt).
+2411.04968,2024,1,The authors would like to acknowledge the use of ChatGPT (version 4.0 and 4.01-preview) developed by OpenAI for assisting with language editing of this manuscript.
+2501.17508,2025,0,"However, the language was edited by using ChatGPT."
+2506.20690,2025,1,The authors utilized ChatGPT for AI-assisted copy editing and improving the manuscript's language.
+2506.15952,2025,1,"Portions of this text were written with the assistance of ChatGPT (OpenAI, 2024), especially in regard to English usage and grammar."
+2506.06445,2025,1,"The authors used ChatGPT (version GPT-4), a language model developed by OpenAI, to help improve the grammar and clarity of the manuscript."
+2507.03102,2025,1,## 10 Materials and Methods We acknowledge the use of ChatGPT 4.0 for grammatical and typographical review.
+2504.01645,2025,1,"We will share our experience in writing, handling and evaluating proposals in astronomy, and add thoughts about modern developments, including the possible use of artificial intelligence (AI) large language models (LLMs) like ChatGPT."
+2412.08490,2024,1,"RQ 2.2 Can we use an LLM to translate from CUDA (NVIDIA) to HIP (AMD), and how does this perform?"
+2505.23902,2025,1,"acknowledges the use of ChatGPT, which has been used on rare occasions to improve the clarity of the writing."
+2502.18045,2025,1,No generative AI was used in the production of this manuscript.
+2410.06246,2024,1,"2024, Claude, v3, Anthropic, Conversational AI model used for editing manuscript and generating testable code; the authors wrote all of the original manuscript text."
+2503.22866,2025,0,SN would like to acknowledge the language assistance provided by ChatGPT (https: //chatgpt.com/) and DeepL (https://www.deepl.com/) during the preparation of this manuscript.
+2502.12251,2025,0,SN would like to acknowledge the language assistance provided by ChatGPT (https://chatgpt.com/) and DeepL (https://www.deepl.com/) during the preparation of this manuscript.
+2501.07677,2025,1,"Minor typos, grammar and spelling mistakes were identified with the assistance of ChatGPT-4o ${ }^{3}$ when preparing this document."
+2503.02884,2025,1,"ChatGPT has been used to speed up writing some of the Python scripts, e.g., for plotting data."
+2503.23015,2025,0,"Leveraging modern AI, the authors have developed a digital avatar of Clarke, an AI assistant, named ArthurGPT, grounded in his writings and interviews."
+2504.19868,2025,1,We acknowledge the use of ChatGPT (OpenAI) for minor refinements to the language of the text.
+2504.10672,2025,1,## Declaration of generative AI in scientific writing During the preparation of this work the authors used ChatGPT in order to improve the flow and readability of the text.
+2503.24319,2025,1,"We gratefully acknowledge our own remaining ability to formulate coherent sentences without the use of generative language models, and certify that no machine (other than the coffee machine) was harmed in the production of this text."
+2507.12519,2025,0,"In the second case (""anthropic""), we have set $\gamma_{\text {dil }}=1$ and tuned $\theta_{i}$ to achieve the correct dark matter abundance."
+2504.13395,2025,1,We used OpenAI's GPT-4 language model for assistance with language refinement and drafting parts of the manuscript.
+2501.08084,2025,1,BS acknowledges the use of free version of ChatGPT (OpenAI) for language polishing and manuscript text refinement.
+2504.02305,2025,1,This manuscript benefited from grammar checking and proofreading using ChatGPT (OpenAI; https://openai.
+2506.09116,2025,1,"2025, ChatGPT, Model o3; Conversational AI model used for editing manuscript and generating testable code; the author wrote all of the original manuscript text."
+2502.17319,2025,1,"We would like to acknowledge the use of DeepL Write, a artificial intelligence writing assistant developed by DeepL, which was employed to enhance the readability and style of this article."
+2501.06538,2025,0,"In last couple of years, spectacular advances in machine translation using large language models have raised the possibility of AI aiding the human translation effort, however at this time the technology is still in too nascent stage to translate materials in Indian languages in an error-free manner."
+2505.08352,2025,0,# Declaration of generative AI and AI-assisted technologies in the writing process.
+2505.16198,2025,1,"During the preparation of this manuscript, the authors used 'DeepL' for improving English usage."
+2504.03424,2025,0,"For the diff-based code editing components, we implement a different approach using OpenAI's o3mini-high model."
+2410.21974,2024,1,No generative artificial intelligence has been used to write the manuscript.
+2412.02744,2024,1,"The texts and figures are original; several software were used to improve the readability and the quality of the text, such as ChatGPT, Grammarly and Google Translate."
+2507.05000,2025,1,JMP acknowledges the support of the Department for Economy (DfE) and the use of Grammarly for proofreading and grammar checking.
+2507.00765,2025,1,"We acknowledge the use of large language models (LLMs), including ChatGPT, to improve the grammar, clarity, and readability of the manuscript."
+2507.01939,2025,0,"In parallel, the past five years have witnessed the remarkable success of large language models (LLMs) in natural language understanding, conversational AI, and text generation (Vaswani et al."
+2503.20777,2025,1,The authors acknowledge the use of OpenAI's ChatGPT for assistance in refining the language and improving the clarity of the manuscript.
+2504.20036,2025,0,"2021), Eddy (Teague 2019), Grammarly (last used 01/2025, website), Matplotlib (Hunter 2007), Numpy (van der Walt et al."
+2501.04247,2025,0,"To optimize the performance of the LLMs in this text parsing task, we meticulously design prompts that include key components: role specification, task description, main objectives (with particular emphasis on fields like telescope names), and a well-crafted one-shot learning example."
+2504.12852,2025,0,"Thus, if we could set a more stringent upper bound on $\rho_{\Lambda}$ from refined anthropic considerations or other reasoning, $m_{\text {peak }}$ would become smaller."
+2411.03931,2024,1,# ACKNOWLEDGEMENTS We thank ChatGPT for polishing our English in this paper.
+2504.19177,2025,1,"We express our gratitude to ChatGPT, an AI model developed by OpenAI, for its assistance in polishing the English of this paper."
+2507.08680,2025,1,The authors acknowledge the use of Grammarly to help them improve the writing style and coherence of the text.
+2504.04387,2025,1,We thank ChatGPT for assisting us in polishing the manuscript and optimizing the code to improve its execution speed.
+2501.04082,2025,1,"This work made use of ChatGPT, a large language model developed by OpenAI, to assist with rewording sentences and improving the flow of the text."
+2410.19047,2024,1,The authors acknowledge the use of Grammarly( Grammarly 2024) and OpenAI's ChatGPT ( OpenAI 2024) for language refinement and proofreading.
+2501.03876,2025,0,"Already, rapid developments in the area of large language models (LLMs) are enhancing efficiency in writing code through tools like OpenAI's ChatGPT and GitHub's Copilot."
+2504.15086,2025,1,We express our gratitude to ChatGPT for its assistance in refining the manuscript and enhancing the code to improve execution efficiency.
+2504.20133,2025,0,AA also expresses sincere gratitude to ChatGPT for its language assistance (and for writing its own acknowledgment).
+2411.09750,2024,1,"During the preparation of this work, the authors used Writefull for Overleaf and chatGPT for language editing and to improve readability."
+2504.02392,2025,0,Excerpts from this work were translated with DeepL.com (free version).
+2504.03156,2025,0,"The English writing in this paper was improved with ChatGPT and Grammarly, while no sentences were generated by these softwares from scratch."
+2505.19896,2025,0,"From generating human-like text to aiding in code completion, LLMs have significantly impacted the way we interact with technology and the possibilities of what AI can achieve."
+2506.15090,2025,0,"Unlike CLIP, which separates vision and language encoders, and GPT-based models, which primarily extend language models to handle visual inputs, Gemini is designed to natively process multiple modalities (e.g., text, images, audio, video) within a single architecture."
+2502.19244,2025,1,"During the preparation of this manuscript, the author used ChatGPT-o1 for the purposes of improving syntax and grammar checking."
+2412.15046,2024,0,"Example competitions currently active on the platform include the identification of text generated from large language models, predicting how small molecules change gene expression in different cell types, predicting US stocks closing movements, and helping to evaluate tackling tactics and strategy in the American National Football League."
+2505.17188,2025,1,"We also acknowledge the use of OpenAI's ChatGPT for support with code implementation, text refinement, and certain analytical calculations."
+2505.02475,2025,1,The authors utilized AI-assisted tool (Microsoft Copilot) to enhance language clarity and grammatical precision in this manuscript.
+2506.23477,2025,1,The use of the Claude AI assistant is acknowledged for grammar refinement in the preparation of the text.
+2505.21042,2025,0,Language translation support was received by deepL and Open AI o1.
+2506.21701,2025,1,## Declaration of generative AI and AI-assisted technologies in the writing process During the preparation of this work the authors used ChatGPT in order to improve language and readability.
+2410.14014,2024,1,Claude 3.5 Sonnet and ChatGPT were used to improve wording at the sentence level and assist with coding.
+2410.13932,2024,1,"Typesetting was expedited with the use of GitHub Copilot, but without the use of any AI-generated text."
+2502.07713,2025,1,The authors acknowledge the use of ChatGPT for refining the text.
+2504.11546,2025,1,We acknowledge the use of ChatGPT-3.5 from OpenAI as a tool to improve the clarity and flow of the text.
+2506.23686,2025,1,"Some portions of the text were revised with the help of OpenAI’s ChatGPT (GPT-4), used for improving clarity and scientific language."
+2411.08099,2024,0,"2011), pandas (McKinney 2010), Grammarly, and ChatGPT (for help with grammar)."
+2506.03547,2025,1,The corresponding author acknowledges the use of OpenAI's ChatGPT Large language model for language proofreading and editing support.
+2503.10765,2025,1,## GENERATIVE AI STATEMENT The authors declare that no Generative AI was used in the creation of this manuscript.
+2412.05745,2024,1,We used OpenAI's GPT-4 language model for assistance with language refinement and drafting parts of the manuscript.
+2507.04918,2025,1,We acknowledge the use of Google Gemini 2.0 and Grammarly to generate suggestions for improving writing style and proofreading.
+2504.01351,2025,1,${ }^{62}$ Grammarly and ChatGPT are used for the language and grammar clean-up.
+2505.15995,2025,1,ChatGPT was used to improve the wording at the sentence level and to assist in coding.
+2506.07912,2025,1,The authors acknowledge the use of AI-assisted copy editing (ChatGPT) to improve the text of the manuscript.
+2410.11884,2024,0,"## Declaration of generative AI and AI-assisted technologies in the writing process During the preparation of this work, M."
+2502.18564,2025,1,"Typesetting was expedited with the use of GitHub Copilot, but without the use of AI-generated text."
+2506.05674,2025,1,Declaration of generative AI in scientific writing: The authors state that they do not support the use of AI tools to analyze and extract insights from data as part of the study process.
+2410.17697,2024,1,"Minor typos, grammar and spelling mistakes were identified with the assistance of ChatGPT-4c ${ }^{13}$ when preparing this document."
+2503.15312,2025,0,"With each new data release – assuming that galaxy scaling laws hold in the same way as previously found in textual models – models are projected to scale closer to the size of GPT-2 and GPT-3, large-scale transformer-based language models developed by OpenAI, representing significant advancements in natural language processing (Brown et al."
+2411.15495,2024,0,"The English writing in this paper was improved with ChatGPT (OpenAI 202026), while no sentences were generated by ChatGPT from scratch."
+2503.14856,2025,1,We acknowledge the use of OpenAI's ChatGPT-4o (https://chatgpt.com/) for providing suggestions on refining sentence structure in this manuscript.
+2506.05506,2025,1,"The public version of ChatGPT (OpenAI, 2023) was used to review the basic spelling and grammar of the document."
+2411.00987,2024,0,"2019, SciBERT: A Pretrained Language Model for Scientific Text, arXiv, doi: 10.48550/arXiv."
+2411.12799,2024,1,"This research made use of ChatGPT, an OpenAI software, to assist with python code development and refinement, however OpenAI software was not used to write content for this work or read and summarize journal articles."
+2412.05473,2024,0,"They have found success in many applications such as speech-to-text, video analysis, and text generation such as GPT-3 (Brown et al."
+2506.14757,2025,0,"Alternatively, we can work with multi-modal LLMs [85], which combine text and nonlinguistic data."
+2505.24743,2025,1,Use of AI tools: I acknowledge the assistance of ChatGPT 3.5 and Grammarly in improving the grammar and English language usage in this article.
+2507.00135,2025,1,"We also acknowledge the use of OpenAI's ChatGPT for support with code implementation, text refinement, and certain analytical calculations."
+2507.13409,2025,0,"2019), ChatGPT (coding) (OpenAI 2023), find_orb (Gray 2022), Grammarly, GRSS (Makadia et al."
+2507.13979,2025,0,## Declaration of generative AI and AI-assisted technologies in the writing process.
+2507.14827,2025,0,"In our second resiliency analysis, we assess the reliability of our AI-powered GCN interpreter, which leverages GPT-4.1, in extracting structured data from unformatted, free-text GCN circulars."
+2507.14854,2025,0,"Generative AI techniques} Recently, Generative AI has found application in generating images that are close to real with text inputs (Goodfellow et al."
+2507.15715,2025,0,"We take an open-ended exploratory approach to identifying how users evaluate LLM-based systems in astronomy, and we translate our analysis into principled criteria to guide future evaluations in scientific research contexts."
+2507.16902,2025,0,We refined the English writing of this paper using the artificial intelligence tool ChatGPT (https://chatgpt.com/).
+2507.17550,2025,1,"BG acknowledges the use of the OpenAI GPT-4 model (ChatGPT, https://openai.com) and Gemini for proofreading support."
+2507.18087,2025,1,Grammarly was used to improve language and grammar.
+2507.18682,2025,0,ChatGPT ${ }^{5}$ ) translation tools (e.g.
+2507.18683,2025,1,"The large language model Claude (Sonnet 4.6) was used to assist in rewording and clarifying the manuscript during the revision process, as well as debugging R code while reworking images."
+2507.20555,2025,0,Language translation support was received by deepL and Open AI o1.
+2507.21270,2025,1,The authors would like to acknowledge the use of OpenAI's ChatGPT for providing stylistic suggestions but take responsibility for the accuracy of this manuscript.
+2507.21632,2025,1,"We acknowledge the use of ChatGPT, Grammarly, and DeepL for language refinement and improving the manuscript’s clarity."
+2507.21639,2025,1,"Also, ChatGPT (OpenAI 2023) is used for assistance in correcting typos and grammar, though full responsibility for the manuscript's content remains our own."
+2507.22259,2025,0,The text was revised using Grammarly and double-checked by the authors.
+2507.23287,2025,1,We acknowledge the use of ChatGPT (GPT-5; OpenAI) for grammatical and clarity improvements throughout the manuscript.
+2508.00894,2025,1,"## 6 Declaration of Generative AI and AI-assisted technologies in the writing process During the preparation of this manuscript, the authors employed Grammarly and ChatGPT to improve language clarity and readability."
+2508.02602,2025,0,"That is, despite recent promising advances, a fundamental question remains: > Generative AI excels at producing complex data (text, images, videos), but how can scientists make sure that generative AI is equally successful at recovering hidden parameters from observed data with valid measures of uncertainty?"
+2508.03809,2025,0,Declaration of generative AI and AI-assisted technologies in the writing process.
+2508.03893,2025,1,LLMs were used to improve wording at the sentence level and assist with coding.
+2508.05579,2025,0,The main author acknowledges the usage of GitHub Copilot as an accessory tool to help improving the code and write code to speed up the manuscript’s writing.
+2508.05961,2025,1,"As a final step before submission, we made use of OpenAI’s ChatGPT to assist with language editing and improving clarity in parts of this manuscript."
+2508.06480,2025,1,ChatGPT was used to help improve the clarity and grammar of the manuscript.
+2508.06688,2025,0,### Declaration of generative AI and AI-assisted technologies in the writing process.
+2508.08558,2025,1,We used OpenAI’s ChatGPT (OpenAI 2022) during the preparation of this manuscript.
+2508.09256,2025,1,"The authors used the AI tool ChatGPT (OpenAI, GPT-4) to assist with grammar, spelling, and language clarity during manuscript preparation."
+2508.09568,2025,1,During the preparation of this work we used ChatGPT in order to enhance the clarity of the writing.
+2508.10853,2025,1,"DeepL Write was used in copy editing (spelling, grammar, and readability) of the manuscript."
+2508.11001,2025,1,"Portions of this text were written with the assistance of Chat-GPT (OpenAI, 2024), especially in regard to English usage and grammar."
+2508.12599,2025,1,This manuscript benefited from grammar checking and proofreading using ChatGPT (OpenAI 2023).
+2508.12601,2025,1,"The first author (YJP) used the OpenAI GPT-4 model (ChatGPT, https://openai.com) to a limited extent for assistance with LaTeX formatting and to improve the clarity of some sentences during the final stage of manuscript preparation."
+2508.12802,2025,1,"During the preparation of this work, the authors used Gemini 2.5 Pro to improve the readability and language of the manuscript."
+2508.14050,2025,0,"doi: 10.1089/ast.2011.0730 Acknowledgement: ChatGPT (OpenAI, San Francisco, CA, July 2025 version) implemented at NASA Goddard Space Flight Center to generate initial drafts of summary paragraphs based on author-provided prompts."
+2508.14508,2025,1,"I also acknowledge the use of AI tools, GitHub Copilot for code documentation, and Google AI Studio for proceeding readability improvements."
+2508.15756,2025,1,"Finally, we have used ChatGPT to improve the grammar and style of selected sentences."
+2508.16234,2025,1,We express our gratitude to ChatGPT for its assistance in refining the manuscript and enhancing the code to improve execution efficiency.
+2508.17331,2025,1,also acknowledges the use of ChatGPT (OpenAI) for assistance in language refinement and literature exploration during the preparation of this manuscript.
+2508.18623,2025,1,Parts of the manuscript text and code used for figure generation were assisted by ChatGPT (OpenAI).
+2508.19693,2025,1,## Declaration of generative AI and AI-assisted technologies in the writing process During the preparation of this work the authors used ChatGPT in order to improve language and readability.
+2508.20286,2025,1,ChatGPT (GPT-4.5) and DeepSeek (V3.1) were used to help debug codes and improve sentence wording.
+2508.21275,2025,1,"also acknowledges the use of ChatGPT (OpenAI) for assistance in language refinement, literature exploration, and Python scripting during the preparation of this manuscript."
+2509.00153,2025,1,This manuscript benefited from grammar checking and proofreading using ChatGPT ( OpenAI 2023).
+2509.02298,2025,1,LLM Deep Seek was used for grammar clean-up.
+2509.03165,2025,1,OpenAI’s language model – ChatGPT was used for some language editing during the draft stage of the preparation of this manuscript.
+2509.04142,2025,1,"also acknowledges the use of ChatGPT (OpenAI) for assistance in language refinement, literature exploration, and Python scripting during the preparation of this manuscript."
+2509.04336,2025,1,"Generative models, specifically Gemini 2.5 Pro and Claude 4.0 Sonnet, were used to assist with drafting and refining the text."
+2509.04560,2025,1,Any use of generative AI in this manuscript adheres to ethical guidelines for use and acknowledgment of generative AI in academic research.
+2509.07118,2025,1,"2021), ChatGPT was used to improve the wording at the sentence level and to assist in coding."
+2509.07453,2025,1,"We used ChatGPT-4.5 to prepare a draft version of the Introduction, which was then carefully fact-checked and edited."
+2509.08946,2025,1,"During the preparation of this work, the author used Microsoft Copilot to assist with text editing and language refinement."
+2509.09811,2025,1,ChatGPT (version GPT-5; OpenAI) was used in formatting the tables in this manuscript.
+2509.12318,2025,1,"The authors used AI tools (ChatGPT, OpenAI) only for language editing."
+2509.13571,2025,1,The authors acknowledge the use of ChatGPT (OpenAI) for language editing and stylistic improvements.
+2509.15334,2025,1,"The authors acknowledge the use of artificial intelligence language models (ChatGPT, Deepseek and Grammarly) for assistance with text editing."
+2509.17102,2025,0,The author also would like to acknowledge the assistance of AI (OpenAI’s ChatGPT5) for editorial and formatting support during the preparation of the manuscript.
+2509.18239,2025,1,We additionally acknowledge the use of OpenAI’s ChatGPT to assist with editing and proofreading of the manuscript.
+2509.18241,2025,1,"During the preparation of this manuscript, we used the ChatGPT software (OpenAI 2022) for suggestions on data analysis, plotting, and minor grammatical editing."
+2509.18270,2025,1,"acknowledges the use of ChatGPT, which has been used on rare occasions to improve the clarity of the writing."
+2509.20464,2025,1,"Typesetting was expedited with the use of GitHub Copilot, but without the use of AI-generated text."
+2509.20621,2025,1,The authors acknowledge the use of OpenAI’s ChatGPT for assistance with proofreading and visualization suggestions during the preparation of this manuscript.
+2509.23264,2025,1,"Also, ChatGPT (OpenAI 2023) is used for assistance in correcting typos and grammar, though full responsibility for the manuscript’s content remains our own."
+2509.24401,2025,0,Language refinement in parts of this manuscript was supported by Copilot.
+2510.00063,2025,1,"\end{itemize} To address these challenges, we used the LLaMA3.3-70B-Instruct model to rewrite the textual data."
+2510.00440,2025,0,The authors appreciate ChatGPT for helping with AI-driven copy editing and improving the manuscript's clarity.
+2510.01799,2025,1,## Declaration of generative AI and AI-assisted technologies in the writing process During the preparation of this work the authors used ChatGPT (OpenAI) in order to improve language clarity and grammar.
+2510.02517,2025,1,The AI tool ChatGPT (GPT-4.5) was used to assist in debugging the code used to produce the figures and to refine the wording of some sentences in the manuscript.
+2510.02639,2025,1,We acknowledge the use of ChatGPT (OpenAI) in improving the grammar and clarity of the manuscript.
+2510.03106,2025,1,The authors acknowledge the use of ChatGPT to improve the clarity and readability of the manuscript.
+2510.03436,2025,0,## Declaration of generative AI During the preparation of this work the author(s) used OpenAI in order to improve the readability and language of the manuscript.
+2510.03493,2025,1,"Despite the recent rise in the use of artificial intelligence (AI) tools such as ChatGPT, the task of scientific writing still requires a skilled human author, who can be assisted but not replaced by AI tools (Mingarelli 2025), maintaining the need for developing writing skills in STEM practitioners."
+2510.03525,2025,1,The manuscript was edited with the assistance of Writefull (Writefull 2024).
+2510.05016,2025,0,"Ting is a subject matter expert who provided knowledge and guidance regarding the usage of LLMs in the field of astronomy, formulated the structure of the manuscript, provided constructive feedback during weekly meetings, and revised the manuscript."
+2510.06193,2025,1,The authors used OpenAI’s ChatGPT (OpenAI 2022) during the preparation of this manuscript.
+2510.06510,2025,0,Note on methods: The schematic diagram portrayed above was created by prompting Google’s Gemini generative AI and then modifying the output with conventional image-editing software.
+2510.07034,2025,1,"We also acknowledge the use of ChatGPT, developed by OpenAI, for assistance in language editing during the preparation of this manuscript."
+2510.07234,2025,1,The authors made use of publicly available large language models to improve the style of some parts of the text of this paper.
+2510.08331,2025,1,"ChatGPT and the Writefull installation on Overleaf were used to provide editing suggestions for grammar, typos, and text consolidation, some of which were implemented to enhance readability."
+2510.08354,2025,0,"This is a major reason why we restricted our current study to SED modeling, where the limited number of wavelength data points could be effectively “textualized.” This allowed us to leverage the reasoning capabilities of LLMs to efficiently navigate the vast hypothesis space, circumventing the visual processing limitations that remain a bottleneck for current vision-language models."
+2510.08636,2025,0,"The overarching conclusion of the workshop (elaborated on in the rest of this paper) is a recommendation for the development of a multimodal Astrobiology Foundation Model that focuses on the detection of life, mission-focused decision making, and is interfaced by an interdisciplinary text-based large language model (Figure 2)."
+2510.09568,2025,1,This manuscript benefited from grammar checking and proofreading using ChatGPT (OpenAI 2024).
+2510.09760,2025,1,Some grammar improvement and graphic design was aided by an LLM.
+2510.09967,2025,1,"2015), which is widely used for image segmentation and translation, and is integral to generative artificial intelligence models (Isola et al."
+2510.10344,2025,1,Portions of the text were refined with the assistance of Large Language Models (ChatGPT-5 by OpenAI) to enhance readability.
+2510.11904,2025,1,## Acknowledgements ChatGPT was used to help with Python and FORTRAN debugging and corrections of grammar mistakes.
+2510.12213,2025,1,"In the next section, we show how these new fields enable the use of MOCs in generative AI models, not only text-based but also those with visual capabilities."
+2510.13765,2025,1,This manuscript also benefited from the use of generative AI tools for text refinement and language consistency.
+2510.14149,2025,0,"During the preparation of this work, the author(s) utilized ChatGPT-4o to refine the English wording of certain phrases."
+2510.15654,2025,1,"Parts of the text and analysis were assisted by OpenAI’s ChatGPT (version GPT-4.5, accessed July 2025) for drafting and editing support."
+2510.17265,2025,0,During the preparation of this work the author(s) used ChatGPT-3.5 in order to English wording of certain phrases.
+2510.17473,2025,1,I additionally acknowledge the use of OpenAI’s ChatGPT to assist with editing and proofreading of the manuscript.
+2510.19606,2025,1,"Disclosure: During the final editing of the manuscript, we used the OpenAI language model ChatGPT (GPT-5) as a tool to assist with checking grammar, typos, clarity and bibliographic formatting."
+2510.20693,2025,1,"During the preparation of this work, the authors used ChatGPT-5 in order to improve readability."
+2510.21197,2025,1,OpenAI ChatGPT (version 4.0) was used to assist with language and phrasing of the manuscript.
+2510.21912,2025,1,OpenAI’s ChatGPT has been used to draft portions of the manuscript.
+2510.22290,2025,1,acknowledges the use of generative AI (Claude Sonnet 4.5) to proofread and polish the manuscript.
+2510.24065,2025,1,We acknowledge the use of OpenAI’s ChatGPT only as a grammar checking and editing tool to improve the clarity and readability of the manuscript.
+2510.24084,2025,1,\section*{9 Declaration of Generative AI in Scientific Writing} During the preparation of this work the author(s) used Chat GPT in order to seek assistance in writing process.
+2510.24087,2025,1,The authors acknowledge the use of DeepSeek (DeepSeek Inc.)^5^5 5 www.deepseek.com for refining the language and structure of this manuscript.
+2510.24545,2025,0,"## Declaration on Generative AI During the preparation of this work, the author(s) used GPT-4 in order to: Grammar and spelling check."
+2510.24591,2025,0,We extract ReplicationBench metadata from the repository and generate up to 10 tasks using a language model ${ }^{1}$ (see prompt in Appendix D.2) prompted with access to the unmasked manuscript and dataset/executor metadata.
+2510.25161,2025,1,## Acknowledgment AI tools including ChatGPT 5 was used to improve wording and correct grammar/style.
+2510.25672,2025,1,AI Assistance Statement : The authors acknowledge the use of ChatGPT (OpenAI GPT-5) for language editing and stylistic refinement of the manuscript.
+2510.25824,2025,1,Large Language Model Use Disclosure: We used ChatGPT from September 2024 until final paper submission to assist with code drafting and debugging; all suggestions were checked by hand for correctness.
+2510.25953,2025,1,"We used OpenAI's ChatGPT to assist with code debugging, text paraphrasing, and improving the clarity of the manuscript."
+2510.26889,2025,1,The authors used OpenAI’s ChatGPT and Grammarly to assist with grammar and language polishing of the manuscript.
+2510.26970,2025,1,The Gemini AI 2.5 and Microsoft CoPilot tools were used to conduct literature searches and for editing sections of the paper for improving clarity.
+2510.27415,2025,1,Portions of the text were generated or refined with the assistance of GPT-5 Plus (OpenAI) for improve the clarity and fluency.
+2511.01958,2025,1,"## Declaration of generative AI and AI-assisted technologies in the manuscript preparation process During the preparation of this work, the authors used chatGPT5 to correct grammar misspellings, consistency of notation and terminology, and language fluency."
+2511.01959,2025,1,"## Declaration of generative AI and AI-assisted technologies in the manuscript preparation process During the preparation of this work, the authors used chatGPT5 to correct grammar misspellings, consistency of notation and terminology, and language fluency."
+2511.02562,2025,1,"DE acknowledges the use of AI language models (Claude by Anthropic and ChatGPT by OpenAI) for assistance with code editing, data visualisation, spell checking, and grammar correction."
+2511.02908,2025,0,Language editing and figure formatting were supported by ChatGPT (68).
+2511.02917,2025,0,Using DeepL Pro and ChatGPT (OpenAI) facilitated the editing of the text and improvement of clarity.
+2511.02988,2025,1,"\section*{Acknowledgement of AI Tool Usage} The text in this manuscript has been proofread, checked for grammar and consistency with the Euclid style guide using Ope- nAI's ChatGPT (version GPT-4, accessed May 2025)."
+2511.03802,2025,1,"We declare that all core analysis, code and manuscript text was written by the author, but note that generative AI tools (Github Copilot) were employed to improve and add documentation for the accompanying code repository to help maximise the reproducibility."
+2511.04122,2025,0,Wang Text classification via large language models.
+2511.04218,2025,1,The author acknowledges the use of ChatGPT (GPT-4-turbo and GPT-5) for proofreading and polishing the manuscript; all AI-generated text was carefully reviewed and edited by the author to ensure accuracy.
+2511.04740,2025,1,ChatGPT was utilized to improve wording at the sentence level and assist with coding inquires – last accessed in 2025 November.
+2511.04896,2025,1,"The author acknowledges helpful interactions with AI-based language models (ChatGPT, OpenAI) for clarifying forward-scattering physics and improving the manuscript presentation."
+2511.06965,2025,1,The authors acknowledge ChatGPT (OpenAI) and Grammarly for language refinement and paraphrasing support.
+2511.07745,2025,1,"In revising the manuscript, the authors used ChatGPT-5 solely for the purpose of English proofreading."
+2511.08970,2025,0,"(26) and knowledge distillation framework of the DeepSeek-R1 model (14), where we extract textual modality data (physical parameters) from Boucheron’s dataset—including Gradient mean, Total unsigned flux, Magnetic Neutral Line (NL) length, and Number of fragments along the magnetic NL (NL no."
+2511.09806,2025,1,"We also acknowledge the use of OpenAI’s ChatGPT for assistance in proofreading and improving the clarity of the manuscript, and GitHub Copilot for assistance in generating code."
+2511.10782,2025,1,"For language editing and translation, we utilized DeepL, ChatGPT, and Grammarly."
+2511.10785,2025,1,No information or text directly from generative AI was used in the preparation of this manuscript.
+2511.13393,2025,1,The authors acknowledge the use of CHATGPT for refining the text at the final stage of the manuscript.
+2511.14235,2025,0,"## Appendix C Declaration of Generative AI and AI-assisted technologies in the writing process During the preparation of this work, the author, Pradosh Keshav, utilized Grammarly/ChatGPT-5 to correct grammatical mistakes and enhance the structure of specific paragraphs."
+2511.14331,2025,1,"DeepL Write was used in copy editing (spelling, grammar, and readability) of the manuscript."
+2511.14733,2025,1,"Typesetting was expedited with the use of GitHub Copilot and ChatGPT, but without the use of any AI-generated text."
+2511.15121,2025,1,The author acknowledges the use of ChatGPT-4.0 and Grammarly to check for grammar and improve the language and readability of the manuscript.
+2511.16237,2025,1,ChatGPT and Overleaf Writefull were used for language editing and improving the figures.
+2511.16291,2025,1,The authors declare that an AI-based language model was used solely to assist with language editing and clarity of presentation.
+2511.17061,2025,1,We acknowledge small editorial suggestions provided by a large language model on the final text.
+2511.18607,2025,0,This work used OpenAI’s ChatGPT (GPT-4) to assist in refining Python scripts for data visualization and to provide limited editorial suggestions during manuscript preparation.
+2511.18981,2025,1,During the writing process a large language model was used to enhance readability.
+2511.19707,2025,1,During the preparation of this work the authors used ChatGPT for minor copy editing.
+2511.20970,2025,1,"Starting from an original manuscript, Microsoft CoPilot was used to improve the language of this paper."
+2511.21891,2025,0,"This paper was developed with substantial assistance from Claude (Anthropic), an AI assistant that helped with LaTeX formatting, figure generation, literature curation, and manuscript organization."
+2511.22987,2025,1,acknowledges the use of generative AI (Claude Sonnet 4.5) to proofread the manuscript.
+2511.23018,2025,1,"We used ChatGPT (OpenAI, GPT-5, Sept 2025) for language editing."
+2511.23368,2025,1,"Assistance in formatting the ‘Local Stars’ element in the legend of Figure 1 and proofreading the manuscript for spelling and grammar errors was performed with Claude, Sonnet/Opus 4.5 Model, Anthropic."
+2512.00056,2025,1,## 6 Acknowledgment The author acknowledges the use of ChatGPT-5.1 (November 2025 version) to edit and refine the tone and clarity of selected sections of this manuscript.
+2512.00442,2025,1,${ }^{36}$ We acknowledge the use of a Grammarly browser extension for grammatical and typographical help.
+2512.02007,2025,1,ChatGPT was utilized to improve wording at the sentence level and assist with coding inquires – last accessed in 2026 January.
+2512.02094,2025,1,\section*{ACKNOWLEDGMENTS} I thank ChatGPT for helping me overcome writer's block and composing the first two paragraphs of the Introduction.
+2512.02292,2025,1,"Claude AI and ChatGPT were used during the preparation of this work for exploratory brainstorming, language editing, and code-debugging assistance."
+2512.03281,2025,1,"The authors have used ChatGPT (OpenAI, 2023; https://chat.openai.com/chat to check coding syntax, and to check grammar in writing."
+2512.03329,2025,1,The authors wish to acknowledge the use of OpenAI’s ChatGPT (version August 2024) for assistance in language and grammar refinement.
+2512.03433,2025,1,This manuscript has benefited from grammar checking and proofreading using ChatGPT (OpenAI; https://openai.com/chatgpt).
+2512.04326,2025,0,## 10 Declaration of generative AI and AI-assisted technologies in the writing process.
+2512.06011,2025,1,"AI-based tools (ChatGPT, DeepL) were used to help sourcing information and translating."
+2512.07214,2025,1,The authors used ChatGPT (OpenAI) during the preparation of this manuscript to improve language clarity and grammatical correctness.
+2512.07896,2025,1,"Artificial Intelligence (AI) tools (OpenAI ChatGPT) were occasionally used to assist with improving readability, grammar, and language in the manuscript text."
+2512.08495,2025,1,"## Acknowledgement We acknowledge that artificial intelligence tools, including OpenAI’s ChatGPT, were used in proofreading and polishing this paper."
+2512.10222,2025,1,OpenAI's language model - ChatGPT was used for some language editing during the draft stage of the preparation of this manuscript.
+2512.11202,2025,1,We used an LLM (claude-sonnet-4.1) to process this text in order to create a user prompt that includes definitions and examples of each paper type (which is manually updated and described in more detail in Section 3).
+2512.11957,2025,0,"The integration of an LLM allows the for the model to provide textual explanations of its classifications, although the considerable computational cost of these models is not conducive to real-time deployment."
+2512.11982,2025,1,Large language models were used to assist with editing and formatting this manuscript.
+2512.12516,2025,1,ChatGPT is used for proofreading.
+2512.12754,2025,1,We acknowledge the use of OpenAI’s ChatGPT for assistance in editing this manuscript for clarity and conciseness and for making minor edits to codes.
+2512.14747,2025,1,## Declaration of generative AI and AI-assisted technologies The author declares that no generative AI or AI-assisted technologies were used in the writing of this manuscript.
+2512.14814,2025,1,The authors used OpenAI’s ChatGPT to assist in drafting portions of the manuscript.
+2512.16091,2025,1,We acknowledge the use of ChatGPT (GPT-5; OpenAI) for grammatical and clarity improvements throughout the manuscript.
+2512.16208,2025,1,"Minor typos, grammar and spelling mistakes were identified with the assistance of ChatGPT-4o^7^7 7 openai.com when preparing this document."
+2512.16502,2025,1,The authors acknowledge the assistance of Grammarly [47] in improving the grammar and language usage in this article.
+2512.17074,2025,1,"The authors acknowledge the use of ChatGPT (https://chat.openai.com/, version 4.1) and doubao for editing the paper."
+2512.17494,2025,1,"During the preparation of this work, the author used ChatGPT to improve the readability and language of the manuscript."
+2512.18795,2025,0,"## Declaration of generative AI and AI-assisted technologies in the writing process During the preparation of this work, M."
+2512.19183,2025,1,"We used the large language model (LLM) ChatGPT (OpenAI) & Gemini (Google) for assistance with language editing, formatting, and general proofreading."
+2512.23138,2025,1,Claude 4.5 was used for assistance with code development and manuscript copy-editing.
+2512.24895,2025,1,OpenAI ChatGPT (version 4.0) was used to assist with language and phrasing of the manuscript.
+2601.00522,2026,1,## Use of AI (Microsoft Copilot) Microsoft Copilot was used to assist with structural refinement and scientific phrasing throughout the manuscript.
+2601.00595,2026,1,The authors acknowledge the use of ChatGPT (OpenAI) for language editing.
+2601.00975,2026,1,"We complement the use of LLM-based tools (ChatGPT for finding appropriate wording and references in some cases, Grammarly for grammar and spelling convention checks) with critical thinking, as was proposed in (18)."
+2601.02482,2026,1,No AI or LLM tools were used in the construction of this manuscript or the conduct of the science herein.
+2601.02788,2026,1,"During the preparation of this manuscript, the authors used ChatGPT-4 to improve readability and language."
+2601.03571,2026,1,"In addition, we used Google Gemini (https://gemini.google.com/) and DeepSeek (https://chat.deepseek.com/) for language polishing and proofreading of this manuscript."
+2601.03921,2026,1,The authors acknowledge the use of Google Gemini 2.5 Pro for assistance with grammar and language editing in the preparation of this manuscript.
+2601.04552,2026,1,"We used ChatGPT for bibliographic assistance, but no artificially created text was used in the preparation of this manuscript."
+2601.04828,2026,1,"The author used AI-based language models exclusively for language editing, bibliographic assistance, and general guidance through iterative dialogue on presentation and numerical implementation aspects."
+2601.05598,2026,1,"\section*{Disclosures} Minor use of ChatGPT was made to assist in coding, figures, and writing latex equations."
+2601.05969,2026,1,"Disclosure: During the final editing of the manuscript, we used the OpenAI language model ChatGPT (GPT-5) as a tool to assist with checking grammar, typos, clarity and bibliographic formatting."
+2601.08037,2026,0,"2018), ChatGPT (OpenAI, 2024- for language editing and readability improvements), HEALPix (Górski et al."
+2601.08666,2026,1,"## Large Language Model Use Disclosure We used Le Chat CNRS Enterprise, an AI-powered language model developed by Mistral AI^17^17 17 https://mistral.ai and tailored to the research needs of the National Centre for Scientific Research (CNRS), to assist in refining the clarity and fluency of the English text."
+2601.08931,2026,1,"ODF acknowledges the use of ChatGPT in helping with minor phrasing, grammar, and editing, as well as with generating some tables and figures."
+2601.09492,2026,1,Some of the language has been polished with the assistance of OpenAI API Service (62).
+2601.09644,2026,1,"The authors acknowledge the use of ChatGPT (OpenAI, GPT-5.5) and Codex (OpenAI, Codex 5.5) to assist with language editing and code development."
+2601.10038,2026,0,"Current large language models demonstrate impressive capabilities in certain domains-generating plausible text, summarizing literature, and assisting with routine tasks."
+2601.10304,2026,1,AC acknowledges the use of CHATGPT for refining the text at the final stage of the manuscript.
+2601.10454,2026,0,NLP/LLM/chatbot and visual workflows are planned as extensions that dependably translate and validate to the canonical DSL.
+2601.11180,2026,0,Truran The anthropic significance of the existence of an excited state of ${}^{12}\textnormal{C}$.
+2601.13144,2026,1,"The authors acknowledge the use of ChatGPT, Gemini, and Cursor for assistance with language editing and coding."
+2601.14288,2026,0,"LLMs can effectively process and generate human-like text, making them valuable tools for literature review, hypothesis generation, and even manuscript drafting."
+2601.14426,2026,1,## Declaration of generative AI and AI-assisted technologies in the writing process During the preparation of this work the authors used ChatGPT in order to improve language and readability.
+2601.14650,2026,1,We used ChatGPT (OpenAI) to assist with English editing and clarity of the manuscript.
+2601.14877,2026,1,"We would also like to acknowledge the use of Microsoft Enterprise Copilot (Microsoft 2025), an AI-powered writing assistant, in editing portions of this manuscript to improve clarity and writing quality."
+2601.14975,2026,1,"We used Mistral AI (Mistral AI, 2024) and chatGPT (OpenAI, 2024) to help improve the text."
+2601.15837,2026,1,"An AI-based language model (ChatGPT, version 5.2) was used to assist in the English translation and linguistic polishing of the manuscript; the authors take full responsibility for the content."
+2601.15949,2026,1,"Besides, a large language model (LLM)-assisted curation workflow was employed to address the redundant and inconsistent information in the original texts."
+2601.15961,2026,1,The authors acknowledge the use of ChatGPT (OpenAI) for language polishing; all scientific content and conclusions were produced by the authors.
+2601.15965,2026,1,This manuscript benefited from grammar checking and proofreading using ChatGPT (OpenAI 2024).
+2601.16263,2026,1,"We also acknowledge the use of OpenAI’s ChatGPT for support with code implementation, text refinement, and certain analytical calculations."
+2601.16288,2026,1,Artificial Intelligence tool ChatGPT 4.5 was utilised for copy editing and linguistic refinement to ensure clarity.
+2601.18149,2026,1,"The English writing in this paper has been improved with the help of ChatGPT and Grammarly, while the software does not generate sentences from scratch."
+2601.18434,2026,0,"JY thanks DeepSeek ${ }^{4)}$ for debugging, code parallelization, and language polishing."
+2601.18652,2026,0,"## Declaration of generative AI and AI-assisted technologies in the writing process During the preparation of this work, M."
+2601.21377,2026,1,"We acknowledge the use of large language models (LLMs) to improve the grammar, clarity, and readability of the manuscript."
+2601.21870,2026,1,"We would like to acknowledge helpful discussions with Yi-Fang Liang and Wen-Jun Tan, and the use of DeepSeek for language polishing."
+2601.22215,2026,1,OpenAI’s ChatGPT has been used to draft portions of the manuscript.
+2602.00155,2026,1,"Finally, this paper was prepared without the use of generative language models, solely with grammar checkers."
+2602.00677,2026,1,"Also, we acknowledge the use of the RRI library, which provided access to the Grammarly (Fitria Tira Nur."
+2602.00736,2026,1,"Also, we acknowledge the use of RRI library provided access to the Grammarly (Fitria Tira Nur."
+2602.01098,2026,1,The authors also acknowledge the assistance of DeepSeek’s AI language model in improving the language and clarity of this manuscript.
+2602.02279,2026,1,\section*{Appendix} Use of AI tools Github Copilot was used as an auto-complete tool while writing the code for data analysis and numerical evaluation of the error budget.
+2602.02608,2026,0,## Declaration of generative AI and AI-assisted technologies in the writing process During the preparation of this work the author(s) used Grammarly and Quillbot in order to improve the language and correct the grammar.
+2602.02667,2026,0,"One approach to choosing an appropriate reference class is is to employ anthropic constraints, namely, conditions that are viewed as being necessary for the existence of any observers (in the style of Carter’s Weak Anthropic Principle Carter 1974), but such constraints are difficult to make precise."
+2602.02693,2026,1,"Portions of the writing and editing in this paper were assisted with the help of the ChatGPT large language model (OpenAI, 2025)."
+2602.04688,2026,1,We acknowledge the use of ChatGPT to check English grammar and improve the clarity of expressions.
+2602.05021,2026,1,"Portions of the text were refined with the assistance of OpenAI’s ChatGPT (GPT-5), which was used to improve clarity, grammar, and style."
+2602.05917,2026,1,"We acknowledge the use of large language models (LLMs), including ChatGPT, to improve the grammar, clarity, and readability of the manuscript."
+2602.06116,2026,1,"ChatGPT (version 4.0 and 5.0) was used for occasional minor help with Python coding (finding bugs, help with plotting, etc.) and minor text edits (typos and grammar)."
+2602.06688,2026,1,\section*{Materials and Methods} We acknowledge the assistance of Overleaf AI Assist powered by Writefull for language refinement and formatting in the preparation of this manuscript.
+2602.06783,2026,1,"## AI usage disclosure AI tools (GitHub Copilot, Grammarly) were used to proofread documentation and pull requests as well as scaffold tests."
+2602.06926,2026,0,"During the preparation of this work, the main author used a large language model ( OpenAI 2026) to partly assist with improving grammar, language, and readability of the manuscript."
+2602.08424,2026,1,## Acknowledgements RH acknowledges the utilisation of ChatGPT-5.2 and Gemini-3 for assistance with manuscript preparation and grammatical corrections.
+2602.09223,2026,1,"We acknowledge the use of ChatGPT (OpenAI, versions 4 – 5) for language editing and clarity suggestions in the drafting of this manuscript."
+2602.09251,2026,1,The authors acknowledge the use of the AI tool ChatGPT (versions 3.5 and 4.0) exclusively for language editing of the manuscript.
+2602.09694,2026,1,"SB acknowledges the use of artificial intelligence (AI) in this work for the following purposes: general proofreading (Apple Intelligence), machine-readable table compilation from publicly accessible resources for the observed data in Figures 3 and 13 (ChatGPT-5.2), bug fixing and optimisations in Python scripts (ChatGPT-5.2), fact-checking and literature search (Scholar AI)."
+2602.10172,2026,1,## GenAI Disclosure Large Language Models (LLMs) were used for the initial drafting of figures and text polishing.
+2602.10181,2026,0,"LLMs might get more trustworthy with time, but it will likely be a while before we trust them as much as we trust code we write, say, with astropy [9], which is community built and vetted."
+2602.10325,2026,1,"Portions of this text were written with the assistance of ChatGPT (OpenAI 2026), especially in regard to English usage and grammar."
+2602.11273,2026,0,Large language models played no role in the writing of this manuscript.
+2602.12201,2026,1,"We acknowledge the use of large language models (LLMs), including ChatGPT, to improve the grammar, clarity, and readability of the manuscript."
+2602.12661,2026,1,We acknowledge the use of OpenAI's ChatGPT only as a grammar-checking and editing tool to improve the clarity and readability of the manuscript.
+2602.13387,2026,0,"Susskind, “The Anthropic landscape of string theory,” in Universe or Multiverse?, edited by B."
+2602.13404,2026,1,"The Python software used to generate the plots shown here, and to develop the agent-based simulations, was initiated utilizing Gemini Pro 2.5 to draft potential code that was then scrutinized, tested, and modified by the author."
+2602.13961,2026,0,"Specifically, we apply multi-modal filtering using the following thresholds: the CLIP score for text-image semantic alignment with a threshold of $\tau_{\text {clip }}=0.32$, the LLM relevance confidence for Mars-specific grounding with a threshold of $\tau_{\text {llm }}=0.82$, and the MLLM consistency score for visual support of the claimed Martian features with a threshold of $\tau_{m l l m}=0."
+2602.14166,2026,1,"The authors thank Chat GPT, Google Translate, Grammarly, Overleaf Toggle WriteFull, for language and grammar clean-up of this paper."
+2602.14335,2026,0,"### 2.2 Object Extraction and SIMBAD Resolution For each paper, we prompt GPT-5-mini with the title, abstract, and full OCR text to extract candidate astronomical object mentions intended for SIMBAD-style resolution."
+2602.14925,2026,1,"Portions of the writing and editing in this paper were assisted with the help of the ChatGPT large language model (OpenAI, 2025)."
+2602.15951,2026,0,"#### 5.3.2 Discovered Algorithmic Techniques We start with MadEvolve’s own LLM-generated report of its innovations, which has been lightly edited for conciseness."
+2602.16252,2026,1,ChatGPT (OpenAI) was used for language editing and code debugging during the preparation of this manuscript.
+2602.17414,2026,1,"The author used OpenAI GPT 5.2 to refine portions of the draft, and Claude Opus 4.5 was used in refining the code."
+2602.17444,2026,1,"## Declaration of Generative AI and AI-assisted technologies in the writing process During the preparation of this work, the authors used Grammarly and ChatGPT 4.1 in order to improve readability."
+2602.17487,2026,1,"## Declaration of generative AI and AI-assisted technologies in the writing process During the copy-editing and LaTeX formatting stage of the writing process, the authors utilized ChatGPT 5.2 to assist with editing and formatting of the TeX document."
+2602.17708,2026,0,\section*{Declaration of generative AI and AI-assisted technologies in the manuscript preparation process} During the preparation of this work the author(s) used Claude in debugging and refactoring the codes.
+2602.17938,2026,1,ChatGPT was used to write the C++ code for the median filter function All code produced by AI was manually inspected for correctness.
+2602.19836,2026,0,"## VII Software and third party data repository citations Portions of the text were edited for clarity using ChatGPT (OpenAI, 2025)(https://openai.com/chatgpt)."
+2602.19958,2026,1,"During the preparation of this manuscript, we used ChatGPT and Gemini for language polishing and consistency checking."
+2602.19984,2026,1,Declaration of Generative AI and AI-assisted technologies in the writing process During the preparation of this work the authors used ChatGPT in order to improve readability and language.
+2602.20298,2026,1,ChatGPT and Claude were used for writing refinement and grammar checking.
+2602.20431,2026,1,The author acknowledges the use of ChatGPT (OpenAI) for assistance in language refinement and literature exploration during the preparation of this manuscript.
+2602.20522,2026,1,AI tools (ChatGPT-4) were used for language editing and clarity.
+2602.22004,2026,1,"The authors acknowledge the assistance of ChatGPT (OpenAI, San Francisco, USA) in coding and improving the clarity and grammar of the manuscript."
+2602.22079,2026,1,The author made use of Grammarly to assist with the drafting of this article to enhance readability and language.
+2602.22739,2026,1,"ChatGPT (OpenAI) was used for editorial assistance, specifically improving clarity and phrasing in parts of the manuscript."
+2602.23195,2026,1,\section*{Acknowledgements} ChatGPT (OpenAI) was used for language and grammar editing.
+2602.23415,2026,1,"LLM artificial intelligence agents were used to assist the editing of this manuscript, but all scientific results, concepts and claims represent original work by the human authors listed."
+2602.23521,2026,1,The author used ChatGPT (OpenAI) and Claude (Anthropic) for assistance with language editing and code refinement.
+2602.23724,2026,0,This manuscript benefited from grammar checking by DeepSeek and Grammarly.
+2602.24087,2026,1,"##### Accountability in the Use of AI for Documentation and Scientific Publications The use of generative AI, including LLMs, should be regarded as an advanced “assistive tool” for scientific writing."
+2602.24211,2026,1,We thank ChatGPT for helping to steamline language and to improve grammar and flow.
+2603.00249,2026,1,We made use of OpenAI's ChatGPT (GPT-5) to assist with language editing and polishing of the manuscript.
+2603.01352,2026,1,The author used ChatGPT (OpenAI) and Claude (Anthropic) for assistance with language editing and code refinement.
+2603.01618,2026,0,"## 9 General Research Disclosure During the preparation of this work, the author(s) used ChatGPT-5 and GPT-5 Mini to obtain suggestions to improve the readability and language of the manuscript, as well as to support documenting and debugging of the software."
+2603.02177,2026,1,"The AI tool ChatGPT 5.2, accessed through the Oxford University ChatGPT Edu Workspace, was used solely for initial language editing and stylistic refinement."
+2603.03063,2026,1,We acknowledge the use of OpenAI’s ChatGPT and Google’s Gemini only as grammar checking and editing tools to improve the clarity and readability of the manuscript.
+2603.04516,2026,0,The textual summaries are generated from scientific papers using GPT-4o-mini and later embedded using OpenAI's Ada-002 model.
+2603.04519,2026,1,The authors would like to acknowledge the use of OpenAI's ChatGPT in editing portions of this manuscript to improve the clarity of the writing.
+2603.04577,2026,1,ChatGPT (GPT-4.5) was used to assist with code debugging and minor language editing.
+2603.05680,2026,0,"Large language models (Claude, Anthropic; GPT/Codex, OpenAI) were essential tools for code optimization, systematic validation, and manuscript preparation."
+2603.06441,2026,1,AI (DeepSeek) was used for grammar checking prior to manuscript submission.
+2603.06772,2026,1,## Acknowledgments The author acknowledges the use of Anthropic Claude as a writing assistant in the preparation of this manuscript.
+2603.07158,2026,1,"Acknowledgments: During the preparation of this manuscript, the authors used ChatGPT (GPT-5) for assistance in translating parts of the text from Chinese to English."
+2603.08530,2026,1,We acknowledge the use of ChatGPT to improve English grammar and sentence structure.
+2603.09196,2026,1,We acknowledge the use of ChatGPT (OpenAI) for language editing and text drafting support under the careful scrutiny of the authors.
+2603.09489,2026,1,ChatGPT (GPT-5.1) was used to enhance the readability of some parts of the text.
+2603.10200,2026,1,The author acknowledges the use of Gemini (Google) and ChatGPT for assistance with editing and formatting this manuscript.
+2603.11215,2026,1,"Grammarly (non-AI version) and Microsoft Copilot were used to check grammar, spelling, and sentence structure of some individual paragraphs and sentences."
+2603.11371,2026,1,We thank ChatGPT for polishing the English in this paper.
+2603.11815,2026,1,"The authors used Claude Opus 4.5 to refine sections of code, and Grammarly was used to refine portions of the draft with grammatical edits."
+2603.13015,2026,1,We acknowledge the use of DeepL Translator for improving the English language of this manuscript.
+2603.13167,2026,0,"2025), Spellchecking and translation tools (Linguee, languagetool, chatGPT) \section*{REFERENCES} Ackerman, A."
+2603.13510,2026,1,\section*{Generative AI statement} The author(s) declared that generative AI was not used in the creation of this manuscript.
+2603.13715,2026,1,"## Declaration of generative AI use During the preparation of this work, the authors used Claude 4.6 Sonnet (Anthropic) and Gemini 3.1 Pro (Google) solely for the purposes of English grammar, vocabulary refinement, and improving the overall readability of the manuscript."
+2603.15128,2026,1,The authors used generative AI tools for code-assistance and language editing during software and manuscript development.
+2603.15490,2026,1,"## Declaration of generative AI and AI-assisted technologies in the writing process During manuscript preparation, AS used OpenAI’s GPT-4 for grammar, phrasing, and minor stylistic edits, and Google’s Gemini 2.5 to assist with editing PlantUML scripts used to generate UML diagrams."
+2603.15779,2026,1,"The author used Claude Code (Anthropic) and Codex (OpenAI) to assist with analysis scripting, numerical verification, and prose editing."
+2603.17072,2026,1,The authors acknowledge the use of large language models for proofreading and polishing the manuscript.
+2603.18165,2026,1,We also acknowledge the use of ChatGPT for language polishing and assistance with code organization.
+2603.19037,2026,1,"We acknowledge the use of Chatgpt for assistance with coding and analysis in exploratory discussions, as well as for improving the grammar and clarity of the manuscript."
+2603.20377,2026,1,Claude Sonnet 4.6 ( Anthropic 2026) was used to perform minor optimizations and improve readability for bonditools.py \section*{REFERENCES} Anthropic.
+2603.21306,2026,1,"The author acknowledges the use of an AI-based language model (ChatGPT; OpenAI, San Francisco, USA) for assistance with coding and for improving the clarity and grammar of the manuscript."
+2603.22400,2026,0,## Acknowledgments The first draft of the introduction and most of the analytical calculations in this paper were performed by ChatGPT.
+2603.22414,2026,1,"Statement of AI Usage In the preparation of this manuscript, the author made limited use of the AI assistant Claude (Anthropic)."
+2603.22720,2026,1,We thank the ChatGPT (https://chatgpt.com/) and DeepSeek (https://www.deepseek.com) language models for their help in improving the clarity and readability of this manuscript.
+2603.22941,2026,0,"Bestor and ChatGPT in the editing, organization, and documentation of the manuscript."
+2603.25595,2026,0,"## Appendix C Declaration of Generative AI and AI-assisted technologies in the writing process During the preparation of this work, the author, Pradosh Keshav MV, utilized Grammarly/ChatGPT-5 to correct grammatical mistakes and enhance the structure of specific paragraphs."
+2603.26644,2026,1,"Parts of this work used large language models: Claude (Anthropic) assisted with code and plotting scripts, and Claude and Gemini (Google) assisted with proofreading and manuscript editing."
+2603.27673,2026,1,"The authors acknowledge the use of ChatGPT (OpenAI, GPT-5.5 Thinking; accessed in June 2026) during the revision of this manuscript solely for language editing."
+2603.27830,2026,1,"Specifically, generative language models Gemini 3.1 Pro Preview (Google DeepMind) and Claude Opus 4.6 (Anthropic) were used to assist with drafting the text."
+2603.29242,2026,0,"Some of the text and code refinements were developed in micro-managed highly supervised engagement with AI language models (Claude, Anthropic and Gemini, Google), but all final text was generated directly or edited heavily by the human authors."

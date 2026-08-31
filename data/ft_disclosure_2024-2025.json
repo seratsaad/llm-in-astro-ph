@@ -1,0 +1,1922 @@
+[
+ {
+  "arxiv_id": "2408.08676",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "From generating human-like text to aiding in code completion, LLMs have significantly impacted the way we interact with technology and the possibilities of what AI can achieve."
+ },
+ {
+  "arxiv_id": "2408.14538",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "The authors made use of the Claude AI assistant (Anthropic, PBC) for writing assistance and editing."
+ },
+ {
+  "arxiv_id": "2405.01487",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "I also acknowledge the use of GPT-3.5, the AI language model developed by OpenAI, for its assistance in identifying and rectifying any grammatical or syntactical errors."
+ },
+ {
+  "arxiv_id": "2401.04009",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "ChatGPT, a variant language model based on GPT-3 (Brown et al., 2020) is employed to correct grammatical errors and improve readability within the text of this work."
+ },
+ {
+  "arxiv_id": "2407.02533",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "## Declaration of Generative AI and AI-assisted technologies in the writing process During the preparation of this work the authors used Chat-GPT in order to integrate the draft text with the Astronomy and Computing Latex template."
+ },
+ {
+  "arxiv_id": "2406.01716",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "We would like to acknowledge the use of ChatGPT, a language model developed by OpenAI, which was employed to enhance the readability and style of this article."
+ },
+ {
+  "arxiv_id": "2410.02076",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "In preparing this manuscript, we utilized ChatGPT, a language model developed by OpenAI, for assistance with python and UNIX shell scripts to used in the analysis."
+ },
+ {
+  "arxiv_id": "2408.07178",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "This research has made use of ChatGPT to re-structure text and code."
+ },
+ {
+  "arxiv_id": "2409.16374",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "Portions of code used to create and edit figures and tables in this manuscript were generated with assistance from Anthropic's Claude 3.5 Sonnet."
+ },
+ {
+  "arxiv_id": "2407.13005",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "Claude.AI and QuillBot7 were used for proofreading and language refinement."
+ },
+ {
+  "arxiv_id": "2403.08851",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "### Prompts and Schema Used for Summarization We list here the prompts and schema (i.e., desired output formats) used for guided text generation via Outlines package interfacing with the Mixtral-8x7B-Instruct open-weights large language model."
+ },
+ {
+  "arxiv_id": "2409.00067",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "#### Narrative Summaries The LLM-generated scenario descriptions and human-generated additional narrative text is too detailed to provide here, so we instead edit this text into a much shorter executive summary."
+ },
+ {
+  "arxiv_id": "2401.04900",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "Consequently, there have been advancements in NLP tasks like machine translation (Vaswani et al., 2017), question-answering systems (Devlin et al., 2018), text generation (Radford et al., 2018, 2019; Brown et al., 2020), and others, like GPT-4 (OpenAI, 2023)."
+ },
+ {
+  "arxiv_id": "2406.11400",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "Large Language Models and Knowledge Graphs for Astronomical Entity Disambiguation Golnaz Shapurian Abstract This paper presents an experiment conducted during a hackathon, focusing on using large language models (LLMs) and knowledge graph clustering to extract entities and relationships from astronomical text."
+ },
+ {
+  "arxiv_id": "2408.16038",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "## Declaration of generative AI and AI-assisted technologies in the writing process During the preparation of this work, the authors used ChatGPT by OpenAI to gain insights into writing minor pieces of the manuscript."
+ },
+ {
+  "arxiv_id": "2409.11708",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "The authors also acknowledge the use of Meta AI and Google Gemini AI to improve the readability of the text."
+ },
+ {
+  "arxiv_id": "2408.11353",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "The role of AI has also become important in these new platforms, which use LLMs to parse the text in circulars for parameters of interest."
+ },
+ {
+  "arxiv_id": "2402.04304",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "We also show with green data points the surface brightness profile where ellipticity and PA are fixed to values representative of the outer parts of the galaxy (see the main text for details) for Gemini data."
+ },
+ {
+  "arxiv_id": "2409.13640",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "We used ChatGPT ([https://openai.com/blog/chatgpt](https://openai.com/blog/chatgpt)) to review the LaTeX symbols and English grammar, a task we previously carried out with human revisors."
+ },
+ {
+  "arxiv_id": "2405.14238",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "We recognize the utilization of ChatGPT, a language model created by OpenAI using the GPT-3.5 architecture, for grammar checking in our review paper."
+ },
+ {
+  "arxiv_id": "2407.20525",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "on behalf of the Gemini partnership: the National Science Foundation (United States), National Research Council (Canada), Agencia Nacional de Investigacion y Desarrollo (Chile), Ministerio de Ciencia, Tecnologia e Innovacion (Argentina), Ministerio da Ciencia,Tecnologia, Inovace$\\grave{\\text{e}}$s e Comunicaco$\\grave{\\text{e}}$es (Brazil), and Korea Astronomy and Space Science Institute (Republic "
+ },
+ {
+  "arxiv_id": "2406.17301",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "**Declaration of generative AI in scientific writing:** The authors state that they do not support the use of AI tools to analyze and extract insights from data as part of the study process."
+ },
+ {
+  "arxiv_id": "2409.15420",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "Typesetting was expedited with the use of GitHub Copilot, but without the use of any AI-generated text."
+ },
+ {
+  "arxiv_id": "2408.02895",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "We have seen a meteoric rise in the use of text generation platforms such as ChatGPT [32] and AI-generated art with tools such as DALL-E [33] and DeepArt.io [34]."
+ },
+ {
+  "arxiv_id": "2407.16917",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "EGN acknowledges ChatGPT 3.5 for proofreading some of the functions."
+ },
+ {
+  "arxiv_id": "2404.07806",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "We acknowledge ChatGPT's contribution in proofreading the manuscript."
+ },
+ {
+  "arxiv_id": "2407.01099",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "If the $S_{8}$ tension persists and the next generation of CMB measurements find an indication of additional relativistic degrees of freedom $\\Delta N_{\\text{eff}}\\approx 0.027$, we will have a strong candidate solution to both simultaneously in the Gemini DM model."
+ },
+ {
+  "arxiv_id": "2406.13011",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "This work benefited from the language editing assistance of GPT-4, a language model developed by OpenAI in San Francisco, CA, USA [http://openai.com](http://openai.com)."
+ },
+ {
+  "arxiv_id": "2401.13723",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "Sections of this manuscript were edited for typographical errors, clarity, and conciseness with assistance from OpenAI's GPT-4."
+ },
+ {
+  "arxiv_id": "2409.20252",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "Most relevantly for astronomers, in March of 2023, the editor-in-chief for the AAS journals provided a clear guideline for the use of LLMs in scientific manuscripts submitted to the AAS (Vishniac, 2023): (1) the authors of the manuscript are solely responsible for its content, and (2) LLMs should be cited as software."
+ },
+ {
+  "arxiv_id": "2404.18334",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "2023) to find the physical properties of each [Fe II] transition (rest wavelengths, Einstein $A$ coefficients, energy levels), and the Gemini $\\text{H}{\\vphantom{\\text{X}}}_{\\smash[t]{\\text{2}}}$ line list to obtain the corresponding information for the $\\text{H}{\\vphantom{\\text{X}}}_{\\smash[t]{\\text{2}}}$ lines."
+ },
+ {
+  "arxiv_id": "2404.02636",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "_Declaration of generative AI and AI-assisted technologies in the writing process._ Generative AI has been used to improve text flow and grammar of parts of the existing text."
+ },
+ {
+  "arxiv_id": "2406.17324",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "To remedy this, we extract words that ChatGPT uses more often than humans when generating academic text and search a total of 1 million articles for them."
+ },
+ {
+  "arxiv_id": "2405.13610",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "GPT-4 and Grammarly have been used for grammatical corrections."
+ },
+ {
+  "arxiv_id": "2407.02992",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "Footnote 2: Denominated STAR@ESO (STAR for \u201cScientific Text Analysis with Robots\u201d) Footnote 3: In three cases, we used ChatGPT 3.5, and in two, we used ChatGPT 4."
+ },
+ {
+  "arxiv_id": "2404.01262",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "## VI Disclaimer In the spirit of intellectual just and scientific meritment, it's essential to illuminate that the entirety of this manuscript unfurls as an elaborate tapestry of satire, intricately woven by the threads of artificial intelligence, specifically ChatGPT."
+ },
+ {
+  "arxiv_id": "2409.05775",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "_Declaration of generative AI and AI-assisted technologies in the writing process: During the preparation of this work the author used Grammarly in order to revise the English of this manuscript."
+ },
+ {
+  "arxiv_id": "2403.12120",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "## Declaration of Generative AI and AI-assisted technologies in the writing process During the preparation of this work the author(s) used ChatGPT to generate LaTeX code templates."
+ },
+ {
+  "arxiv_id": "2406.17057",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "Open GPT-4o API (OpenAI et al., 2023), Transformers(Wolf et al., 2019), bitsandbytes(Dettmers, 2021) ## Appendix In this appendix we present example images from the different classes considered in the classification problems mentioned in the main text."
+ },
+ {
+  "arxiv_id": "2407.21183",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "## Declaration of generative AI and AI-assisted technologies in the writing process During the preparation of this work, the author(s) used the ChatGPT AI Tool in order to improve language and readability (language editing)."
+ },
+ {
+  "arxiv_id": "2403.12337",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "This is the second of three manuscripts devoted to the attention-based architecture used commonly by large language models [57]."
+ },
+ {
+  "arxiv_id": "2404.11658",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "$\\mathrm{Mg\\textsc{ii}}$ $\\lambda$2798 line and continuum flux at 3000\u00c5 ($F_{3000}$) are measured using VLT/SINFONI and Gemini-North/NIRI spectroscopy and used to obtain black hole mass and bolometric luminosity, presented in Trakhtenbrot et al."
+ },
+ {
+  "arxiv_id": "2402.14055",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "12-14, 69120 Heidelberg, Germany ${}^{\\text@b}$Departamento de Astronomia, Universidad de Chile, Camino El Observatorio 1515, Las Condes, Santiago, Chile ${}^{\\text@b}$AUK/Rubin Observatory Project Office, 950 North Cherry Avenue, Tucson, AZ 85719, USA ${}^{\\text@b}$Cerro Tololo Inter-American Observatory/NSF's NOIRLab, Casilla 603, La Serena, Chile ${}^{\\text@b}$Gemini Observatory/NSF's NOIRLab, "
+ },
+ {
+  "arxiv_id": "2406.16438",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "**Declaration of generative AI and AI-assisted technologies in the writing process** During the preparation of this work the authors used ChatGPT in order to improve language and readability."
+ },
+ {
+  "arxiv_id": "2401.10978",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "**Declaration of generative AI and AI-assisted technologies in the writing process:** During the preparation of this work the author(s) minimally used ChatGPT in order to improve the readability of a few paragraphs."
+ },
+ {
+  "arxiv_id": "2406.00071",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "Shokeen, \"From Text to Transformation: A Comprehensive Review of Large Language Models' Versatility,\" Feb."
+ },
+ {
+  "arxiv_id": "2403.07498",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "The authors acknowledge the assistance of tools such as Grammarly and ChatGpt in polishing the text at various places."
+ },
+ {
+  "arxiv_id": "2405.01763",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "#### Declaration of Use of Generative AI During the preparation of this work the authors used ChatGPT in order to improve readability and language."
+ },
+ {
+  "arxiv_id": "2405.19177",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "Parts of this manuscript were checked for typographical errors and edited for clarity with assistance from OpenAI's GPT-4."
+ },
+ {
+  "arxiv_id": "2402.09512",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "We corrected the Gemini astrometry (simple translation) with standard iraf_imcoords_ tasks."
+ },
+ {
+  "arxiv_id": "2408.10959",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "ChatGPT-4o ([https://chatgpt.com/](https://chatgpt.com/)) was used for modifications to English grammar."
+ },
+ {
+  "arxiv_id": "2407.20359",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "We acknowledge using ChatGPT to help clarify the language in parts of the text, which was later checked for scientific accuracy by the authors."
+ },
+ {
+  "arxiv_id": "2405.02408",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "astro.py ([https://github.com/astropy/astropy](https://github.com/astropy/astropy)), numpy.py (van der Walt et al., 2011), dynesty.py (Speagle, 2020), corner.py (Foreman-Mackey, 2016) and ChatGPT was utilized to improve wording at the sentence level; Last accessed February 2024, OpenAI (chat.openai.com/chat)."
+ },
+ {
+  "arxiv_id": "2407.01989",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "So much so, that \"meaning\" is something indicated as a mark of what necessarily separates us from the physical world.79 Footnote 79: Recently Chomsky wrote a paper arguing that Large Language Models do not understand the meaning of the text they produce."
+ },
+ {
+  "arxiv_id": "2409.11401",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "In this work, we treat the conditional halo catalog generation as a language translation problem and use a large language model-like architecture to solve it."
+ },
+ {
+  "arxiv_id": "2409.06421",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "The authors would like to acknowledge OpenAI\u2019s ChatGPT for providing coding assistance and manuscript preparation."
+ },
+ {
+  "arxiv_id": "2402.18431",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "**Declaration of generative AI in scientific writing:** The authors state that they do not support the use of AI tools to analyze and extract insights from data as part of the study process."
+ },
+ {
+  "arxiv_id": "2407.14629",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "Keck Observatory, 65-1120 Mamalahoa Hwy, Waimea, HI 96743, ${}^{\\text{d}}$The Gemini International Observatory, operated by NSF NOIRLab, 670 N Aohoku Pl, Hilo, HI 96720 ###### Abstract Astronomy is at a turning point in its history and in its relations with the Indigenous peoples who are the generational stewards of land where several of our main observatories are located."
+ },
+ {
+  "arxiv_id": "2408.05823",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "| ## 8 Declaration of Generative AI and AI-assisted technologies in the writing process While preparing this work, the authors used ChatGPT and Grammarly to enhance the manuscript\u2019s language and readability."
+ },
+ {
+  "arxiv_id": "2404.18635",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "Large language models are now infamous for producing lucid text that is both confident and wrong, which is in turn due to there being no underlying knowledge model."
+ },
+ {
+  "arxiv_id": "2409.01371",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "VR would like to acknowledge the use of Grammarly, LanguageTool and ChatGPT for improving the English grammar and sentence structure in the manuscript."
+ },
+ {
+  "arxiv_id": "2406.12239",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "* _Software:_ CMasher (Van der Velden, 2020), NumPy (Harris et al., 2020), SciPy (Virtanen et al., 2020), Matplotlib (Hunter, 2007), ChatGPT-4 (Assisted in the writing of the abstract, OpenAI 2024) * Ginzburg _et al._ (2018) Ginzburg, S., Schlichting, H."
+ },
+ {
+  "arxiv_id": "2409.14807",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "However, we note that it remains possible that even in the form of natural language, there might be subtle differences in the preferences of different LLMs in terms of the format and style of the knowledge, which could lead to the GPT-4o extracted knowledge being more applicable to GPT-4o."
+ },
+ {
+  "arxiv_id": "2406.14072",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "In this manuscript, we present the analysis of high resolution observations of WASP-127 b with the Immersion GRating INfrared Spectrometer (IGRINS) on Gemini South."
+ },
+ {
+  "arxiv_id": "2412.07840",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "The authors used OpenAI's ChatGPT to assist in drafting portions of the following sections: Abstract, Introduction, and Conclusions."
+ },
+ {
+  "arxiv_id": "2501.05297",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We acknowledge the use of ChatGPT-4 for grammar corrections and proofreading assistance, which contributed to the refinement of this manuscript."
+ },
+ {
+  "arxiv_id": "2504.15530",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Declaration of generative AI in scientific writing In preparing this work, we utilized ChatGPT to refine the grammar and enhance the flow of paragraphs in this paper."
+ },
+ {
+  "arxiv_id": "2505.22912",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "Since then, random dispersion in parameters and several weak and stronger [^0]: * E-mail: kgarnica@astro.com.mx (KG) $\\dagger$ Gemini Science Fellow trends have been explained as a set of correlations (the so-called Eigenvector 1 of quasars, E1) whose underlying physical parameter is believed to be Eddington ratio, the ratio between the bolometric luminosity ( $L_{\\text {bol }}$ ) and the Eddingto"
+ },
+ {
+  "arxiv_id": "2507.03743",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The authors used OpenAI's ChatGPT to assist with editing and proofreading the manuscript."
+ },
+ {
+  "arxiv_id": "2504.08583",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We use unimodal text GPT-4 to generate synthetic conversations between an 'AstroLLaVA' oracle simulacrum and a human inquisitor simulacrum (OpenAI, 2023)."
+ },
+ {
+  "arxiv_id": "2503.24242",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "THE REGOLITH UNDER THE CARPET Could you please write a five-sentence text, written as part of a scientific essay, in which I thank ChatGPT for the earnest commitment, the guidance, the remarkable dedication, the patience, etc, that accompanied me for two days?"
+ },
+ {
+  "arxiv_id": "2501.13917",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "Low-resolution Spectrum with Gemini Planet Imager Integral Field Spectrograph (IFS) For a $T_{\\text {eff }} \\approx 1400 \\mathrm{~K} \\mathrm{~L} / \\mathrm{T}$ transition brown dwarf companion, Xuan et al."
+ },
+ {
+  "arxiv_id": "2503.05412",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "For language editing and translation, we utilized DeepL and ChatGPT."
+ },
+ {
+  "arxiv_id": "2502.00223",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "Consequently, I asked ChatGPT to write a program that would scatter a number of bright points at random within a $60-90^{\\circ}$ region around the simulated north pole, and then start them rotating with the profile given by Eq(1)."
+ },
+ {
+  "arxiv_id": "2502.10672",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "We asked Google Gemini (1.5 Flash, accessed on 2024 October 29) for suggestions on the grammar and expression of the Introduction."
+ },
+ {
+  "arxiv_id": "2503.06004",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The AI tool, ChatGPT, was utilised in this study exclusively for the purpose of editing and proofreading all sentences within the manuscript."
+ },
+ {
+  "arxiv_id": "2504.10032",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "884760, \"CoDEX\") The authors acknowledge the use of AI-assisted copy editing (ChatGPT) to improve the text of the manuscript."
+ },
+ {
+  "arxiv_id": "2502.09790",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We would also like to acknowledge the use of OpenAI's ChatGPT (OpenAI 2025) in editing portions of this manuscript to improve clarity and writing quality."
+ },
+ {
+  "arxiv_id": "2504.21096",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "2024a, GRB Coordinates Network, 37035, 1 [^0]: ${ }^{10}$ ChatGPT serves as grammar checker and paraphrasing tool; OpenAI."
+ },
+ {
+  "arxiv_id": "2507.09721",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Additionally, we acknowledge the use of ChatGPT (OpenAI, 2020; https://openai.com/blog/chatgpt) for paraphrasing some text and coding support."
+ },
+ {
+  "arxiv_id": "2502.18218",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "The other approach maps the time series vector into text space, as demonstrated in TIME-LLM [17], which employs multi-head attention mechanisms to achieve mapping."
+ },
+ {
+  "arxiv_id": "2410.12230",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "The authors also acknowledge the use of Meta AI and Google Gemini AI to improve the readability of the text."
+ },
+ {
+  "arxiv_id": "2505.15855",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "AI usage disclosure: ChatGPT-4 was employed for editing and grammar checks throughout the entire paper to enhance clarity and readability; as well as rephrasing sentences in Sections I, II, III, and IV."
+ },
+ {
+  "arxiv_id": "2502.15297",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Code Availability The code for this study's implementation is available at: https://github.com/sathwikNARKEDimilli29/BlackHoleMassEstimation # 9 Ethical Consideration In preparing this manuscript, large language models were used for refining grammar and enhancing the overall clarity of the text."
+ },
+ {
+  "arxiv_id": "2503.17283",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "Can large language models write parallel code?"
+ },
+ {
+  "arxiv_id": "2501.11872",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We express our gratitude to ChatGPT for its assistance in refining the manuscript and enhancing the code to improve execution efficiency."
+ },
+ {
+  "arxiv_id": "2503.19968",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Additionally, we acknowledge the assistance of AI tools, specifically OpenAI's ChatGPT, for aiding in writing and code development, and Grammarly for enhancing the text's clarity and correctness."
+ },
+ {
+  "arxiv_id": "2410.07281",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "Weinberg (1987) estimated $z_{*} \\sim 4.5$ and concluded that \"if it is the anthropic principle that accounts for the smallness of the cosmological constant, then we would expect the vacuum energy density $\\rho_{v} \\sim(10-100) \\rho_{\\text {mat0 }}$ because there is no anthropic reason for it to be smaller\"."
+ },
+ {
+  "arxiv_id": "2503.08778",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "The Giant Gemini GMOS survey of $\\mathrm{z}_{\\text {min }}>4.4$ quasars - I."
+ },
+ {
+  "arxiv_id": "2506.08086",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "No generative AI was used in the writing of this article."
+ },
+ {
+  "arxiv_id": "2505.09042",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "Declaration of generative AI and AI-assisted technologies in the writing process During the preparation of this work, the author(s) used ChatGPT for translation purposes and for correcting grammatical errors."
+ },
+ {
+  "arxiv_id": "2410.16351",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "2013) and the following receivers: ${ }^{\\text {\u00ae }}$ The Band 3 performance is documented in Claude et al."
+ },
+ {
+  "arxiv_id": "2503.22793",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "## ACKNOWLEDGMENTS The bulk of the work in this manuscript is done by ChatGPT and deepseek."
+ },
+ {
+  "arxiv_id": "2412.08715",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "We are already hearing many reports of the usage of artificial intelligence and large language models to write reference letters, and this is likely only to increase in the future, as technology improves and if pressure on letter writers continues to build."
+ },
+ {
+  "arxiv_id": "2507.08823",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The authors utilized ChatGPT for AI-assisted copy editing and improving the manuscript's language."
+ },
+ {
+  "arxiv_id": "2505.03890",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We complement the use of LLM-based tools (ChatGPT, Grammarly) with critical thinking, as was proposed in (Fouesneau et al."
+ },
+ {
+  "arxiv_id": "2503.08586",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We express our gratitude to ChatGPT, an AI model developed by OpenAI, for its assistance in polishing the English of this paper."
+ },
+ {
+  "arxiv_id": "2502.13029",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "## ACKNOWLEDGEMENTS We thank Anvar Shukurov for comments on an early draft, Claude Carignan for providing kinematic data, and Tuhin Ghosh, Nishikanta Khandai, Rainer Beck, Fatemeh Tabatabaei, and \u0141ukasz Bratek for useful discussions."
+ },
+ {
+  "arxiv_id": "2503.17841",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "GPT-4 [22] was used to refine this manuscript."
+ },
+ {
+  "arxiv_id": "2410.14804",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "This manuscript benefited from grammar checking and proofreading using ChatGPT (OpenAI; https:// openai.com/chatgpt)."
+ },
+ {
+  "arxiv_id": "2411.04968",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "The authors would like to acknowledge the use of ChatGPT (version 4.0 and 4.01-preview) developed by OpenAI for assisting with language editing of this manuscript."
+ },
+ {
+  "arxiv_id": "2501.17508",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "However, the language was edited by using ChatGPT."
+ },
+ {
+  "arxiv_id": "2506.20690",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The authors utilized ChatGPT for AI-assisted copy editing and improving the manuscript's language."
+ },
+ {
+  "arxiv_id": "2506.15952",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Portions of this text were written with the assistance of ChatGPT (OpenAI, 2024), especially in regard to English usage and grammar."
+ },
+ {
+  "arxiv_id": "2506.06445",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The authors used ChatGPT (version GPT-4), a language model developed by OpenAI, to help improve the grammar and clarity of the manuscript."
+ },
+ {
+  "arxiv_id": "2507.03102",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "## 10 Materials and Methods We acknowledge the use of ChatGPT 4.0 for grammatical and typographical review."
+ },
+ {
+  "arxiv_id": "2504.01645",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We will share our experience in writing, handling and evaluating proposals in astronomy, and add thoughts about modern developments, including the possible use of artificial intelligence (AI) large language models (LLMs) like ChatGPT."
+ },
+ {
+  "arxiv_id": "2412.08490",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "RQ 2.2 Can we use an LLM to translate from CUDA (NVIDIA) to HIP (AMD), and how does this perform?"
+ },
+ {
+  "arxiv_id": "2505.23902",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "acknowledges the use of ChatGPT, which has been used on rare occasions to improve the clarity of the writing."
+ },
+ {
+  "arxiv_id": "2502.18045",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "No generative AI was used in the production of this manuscript."
+ },
+ {
+  "arxiv_id": "2410.06246",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "2024, Claude, v3, Anthropic, Conversational AI model used for editing manuscript and generating testable code; the authors wrote all of the original manuscript text."
+ },
+ {
+  "arxiv_id": "2503.22866",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "SN would like to acknowledge the language assistance provided by ChatGPT (https: //chatgpt.com/) and DeepL (https://www.deepl.com/) during the preparation of this manuscript."
+ },
+ {
+  "arxiv_id": "2502.12251",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "SN would like to acknowledge the language assistance provided by ChatGPT (https://chatgpt.com/) and DeepL (https://www.deepl.com/) during the preparation of this manuscript."
+ },
+ {
+  "arxiv_id": "2501.07677",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Minor typos, grammar and spelling mistakes were identified with the assistance of ChatGPT-4o ${ }^{3}$ when preparing this document."
+ },
+ {
+  "arxiv_id": "2503.02884",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "ChatGPT has been used to speed up writing some of the Python scripts, e.g., for plotting data."
+ },
+ {
+  "arxiv_id": "2503.23015",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "Leveraging modern AI, the authors have developed a digital avatar of Clarke, an AI assistant, named ArthurGPT, grounded in his writings and interviews."
+ },
+ {
+  "arxiv_id": "2504.19868",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We acknowledge the use of ChatGPT (OpenAI) for minor refinements to the language of the text."
+ },
+ {
+  "arxiv_id": "2504.10672",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "## Declaration of generative AI in scientific writing During the preparation of this work the authors used ChatGPT in order to improve the flow and readability of the text."
+ },
+ {
+  "arxiv_id": "2503.24319",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We gratefully acknowledge our own remaining ability to formulate coherent sentences without the use of generative language models, and certify that no machine (other than the coffee machine) was harmed in the production of this text."
+ },
+ {
+  "arxiv_id": "2507.12519",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "In the second case (\"anthropic\"), we have set $\\gamma_{\\text {dil }}=1$ and tuned $\\theta_{i}$ to achieve the correct dark matter abundance."
+ },
+ {
+  "arxiv_id": "2504.13395",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We used OpenAI's GPT-4 language model for assistance with language refinement and drafting parts of the manuscript."
+ },
+ {
+  "arxiv_id": "2410.19017",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "2018) on Gemini | Name | Value | Reference | | :--: | :--: | :--: | | Stellar Parameters | | | | $R_{\\text {star }}$ | $1.44\\left[R_{\\odot}\\right]$ | Borsa et al."
+ },
+ {
+  "arxiv_id": "2501.08084",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "BS acknowledges the use of free version of ChatGPT (OpenAI) for language polishing and manuscript text refinement."
+ },
+ {
+  "arxiv_id": "2504.02305",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "This manuscript benefited from grammar checking and proofreading using ChatGPT (OpenAI; https://openai."
+ },
+ {
+  "arxiv_id": "2506.09116",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "2025, ChatGPT, Model o3; Conversational AI model used for editing manuscript and generating testable code; the author wrote all of the original manuscript text."
+ },
+ {
+  "arxiv_id": "2501.06538",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "In last couple of years, spectacular advances in machine translation using large language models have raised the possibility of AI aiding the human translation effort, however at this time the technology is still in too nascent stage to translate materials in Indian languages in an error-free manner."
+ },
+ {
+  "arxiv_id": "2505.08352",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "# Declaration of generative AI and AI-assisted technologies in the writing process."
+ },
+ {
+  "arxiv_id": "2505.16198",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "Declaration of generative AI and AI-assisted technologies in the writing process."
+ },
+ {
+  "arxiv_id": "2504.03424",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "For the diff-based code editing components, we implement a different approach using OpenAI's o3mini-high model."
+ },
+ {
+  "arxiv_id": "2410.21974",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "No generative artificial intelligence has been used to write the manuscript."
+ },
+ {
+  "arxiv_id": "2412.02744",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "The texts and figures are original; several software were used to improve the readability and the quality of the text, such as ChatGPT, Grammarly and Google Translate."
+ },
+ {
+  "arxiv_id": "2507.00765",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We acknowledge the use of large language models (LLMs), including ChatGPT, to improve the grammar, clarity, and readability of the manuscript."
+ },
+ {
+  "arxiv_id": "2507.01939",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "In parallel, the past five years have witnessed the remarkable success of large language models (LLMs) in natural language understanding, conversational AI, and text generation (Vaswani et al."
+ },
+ {
+  "arxiv_id": "2503.20777",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The authors acknowledge the use of OpenAI's ChatGPT for assistance in refining the language and improving the clarity of the manuscript."
+ },
+ {
+  "arxiv_id": "2501.04247",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "To optimize the performance of the LLMs in this text parsing task, we meticulously design prompts that include key components: role specification, task description, main objectives (with particular emphasis on fields like telescope names), and a well-crafted one-shot learning example."
+ },
+ {
+  "arxiv_id": "2504.12852",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "Thus, if we could set a more stringent upper bound on $\\rho_{\\Lambda}$ from refined anthropic considerations or other reasoning, $m_{\\text {peak }}$ would become smaller."
+ },
+ {
+  "arxiv_id": "2411.03931",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "# ACKNOWLEDGEMENTS We thank ChatGPT for polishing our English in this paper."
+ },
+ {
+  "arxiv_id": "2504.19177",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We express our gratitude to ChatGPT, an AI model developed by OpenAI, for its assistance in polishing the English of this paper."
+ },
+ {
+  "arxiv_id": "2504.04387",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We thank ChatGPT for assisting us in polishing the manuscript and optimizing the code to improve its execution speed."
+ },
+ {
+  "arxiv_id": "2501.04082",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "This work made use of ChatGPT, a large language model developed by OpenAI, to assist with rewording sentences and improving the flow of the text."
+ },
+ {
+  "arxiv_id": "2410.19047",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "The authors acknowledge the use of Grammarly( Grammarly 2024) and OpenAI's ChatGPT ( OpenAI 2024) for language refinement and proofreading."
+ },
+ {
+  "arxiv_id": "2501.17156",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "The authors also wish to thank the Gemini North operations staff for help coordinating the observations described in this manuscript."
+ },
+ {
+  "arxiv_id": "2501.03876",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "Already, rapid developments in the area of large language models (LLMs) are enhancing efficiency in writing code through tools like OpenAI's ChatGPT and GitHub's Copilot."
+ },
+ {
+  "arxiv_id": "2507.08925",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "# Acknowledgments We thank Daniel Angl\u00e9s-Alc\u00e1zar, Claude-Andr\u00e9 Faucher-Gigu\u00e8re, Lucio Mayer, R\u00fcdiger Pakmor, Santi Roca-F\u00e0brega, and Freeke van de Voort for providing valuable comments and suggestions that helped improve the manuscript."
+ },
+ {
+  "arxiv_id": "2504.15086",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We express our gratitude to ChatGPT for its assistance in refining the manuscript and enhancing the code to improve execution efficiency."
+ },
+ {
+  "arxiv_id": "2504.20133",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "AA also expresses sincere gratitude to ChatGPT for its language assistance (and for writing its own acknowledgment)."
+ },
+ {
+  "arxiv_id": "2411.09750",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "During the preparation of this work, the authors used Writefull for Overleaf and chatGPT for language editing and to improve readability."
+ },
+ {
+  "arxiv_id": "2410.23374",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "Our deepest Gemini imaging reaches a 3- $\\sigma$ limit of $r \\approx 25.9$ mag derived using the image FWHM of $0.6^{\\prime \\prime}$, which we translate to the required combination of luminosity and redshift to exist below our detection threshold (Figure 5)."
+ },
+ {
+  "arxiv_id": "2504.03156",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "The English writing in this paper was improved with ChatGPT and Grammarly, while no sentences were generated by these softwares from scratch."
+ },
+ {
+  "arxiv_id": "2505.19896",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "From generating human-like text to aiding in code completion, LLMs have significantly impacted the way we interact with technology and the possibilities of what AI can achieve."
+ },
+ {
+  "arxiv_id": "2506.15090",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "Unlike CLIP, which separates vision and language encoders, and GPT-based models, which primarily extend language models to handle visual inputs, Gemini is designed to natively process multiple modalities (e.g., text, images, audio, video) within a single architecture."
+ },
+ {
+  "arxiv_id": "2501.11298",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "We find $\\mathrm{T}_{\\text {rot }}$ for the Oct $26 \\& 27,2018$ Discovery Telescope and Nov 27, 2023 Gemini South observations to be $542 \\pm 25$ and $397 \\pm 32 \\mathrm{~K}$ respectively."
+ },
+ {
+  "arxiv_id": "2502.19244",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "During the preparation of this manuscript, the author used ChatGPT-o1 for the purposes of improving syntax and grammar checking."
+ },
+ {
+  "arxiv_id": "2412.15046",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "Example competitions currently active on the platform include the identification of text generated from large language models, predicting how small molecules change gene expression in different cell types, predicting US stocks closing movements, and helping to evaluate tackling tactics and strategy in the American National Football League."
+ },
+ {
+  "arxiv_id": "2505.17188",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We also acknowledge the use of OpenAI's ChatGPT for support with code implementation, text refinement, and certain analytical calculations."
+ },
+ {
+  "arxiv_id": "2505.02475",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The authors utilized AI-assisted tool (Microsoft Copilot) to enhance language clarity and grammatical precision in this manuscript."
+ },
+ {
+  "arxiv_id": "2506.23477",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The use of the Claude AI assistant is acknowledged for grammar refinement in the preparation of the text."
+ },
+ {
+  "arxiv_id": "2506.21701",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "## Declaration of generative AI and AI-assisted technologies in the writing process During the preparation of this work the authors used ChatGPT in order to improve language and readability."
+ },
+ {
+  "arxiv_id": "2410.14014",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "Claude 3.5 Sonnet and ChatGPT were used to improve wording at the sentence level and assist with coding."
+ },
+ {
+  "arxiv_id": "2410.13932",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "Typesetting was expedited with the use of GitHub Copilot, but without the use of any AI-generated text."
+ },
+ {
+  "arxiv_id": "2502.07713",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The authors acknowledge the use of ChatGPT for refining the text."
+ },
+ {
+  "arxiv_id": "2504.11546",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We acknowledge the use of ChatGPT-3.5 from OpenAI as a tool to improve the clarity and flow of the text."
+ },
+ {
+  "arxiv_id": "2502.18971",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "(2022) and based upon observations made by HST ${ }^{1 /}$ /STIS, Gemini/NIFS and $\\mathrm{IRTF}^{2} / \\mathrm{SpeX}$ from 2000 - 2009 to improve upon the $P_{\\text {out }} / P_{\\text {in }}$ estimate for Uranus."
+ },
+ {
+  "arxiv_id": "2506.23686",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Some portions of the text were revised with the help of OpenAI\u2019s ChatGPT (GPT-4), used for improving clarity and scientific language."
+ },
+ {
+  "arxiv_id": "2411.08099",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "2011), pandas (McKinney 2010), Grammarly, and ChatGPT (for help with grammar)."
+ },
+ {
+  "arxiv_id": "2506.03547",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The corresponding author acknowledges the use of OpenAI's ChatGPT Large language model for language proofreading and editing support."
+ },
+ {
+  "arxiv_id": "2503.10765",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "## GENERATIVE AI STATEMENT The authors declare that no Generative AI was used in the creation of this manuscript."
+ },
+ {
+  "arxiv_id": "2412.05745",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "We used OpenAI's GPT-4 language model for assistance with language refinement and drafting parts of the manuscript."
+ },
+ {
+  "arxiv_id": "2410.10938",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "GRB 211211A and GRB 230307A data (dots with error bars and upper limits marked by triangles) compared with SNEC AB apparent magnitudes in Gemini J and Ks filters, with offsets applied for readability."
+ },
+ {
+  "arxiv_id": "2507.04918",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We acknowledge the use of Google Gemini 2.0 and Grammarly to generate suggestions for improving writing style and proofreading."
+ },
+ {
+  "arxiv_id": "2504.01351",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "${ }^{62}$ Grammarly and ChatGPT are used for the language and grammar clean-up."
+ },
+ {
+  "arxiv_id": "2505.15995",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "ChatGPT was used to improve the wording at the sentence level and to assist in coding."
+ },
+ {
+  "arxiv_id": "2410.22470",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "(2023) obtained optical integral field spectroscopy of the object with the Gemini Multi-Object Spectrograph and used spatially resolved kinematic mapping of $[\\mathrm{O} \\text { III }] \\lambda 5007 \\AA$ to discover a large ( $\\sim 40 \\mathrm{kpc}$ from end to end) ionized nebula around the target."
+ },
+ {
+  "arxiv_id": "2506.07912",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The authors acknowledge the use of AI-assisted copy editing (ChatGPT) to improve the text of the manuscript."
+ },
+ {
+  "arxiv_id": "2410.11884",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "## Declaration of generative AI and AI-assisted technologies in the writing process During the preparation of this work, M."
+ },
+ {
+  "arxiv_id": "2502.18564",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Typesetting was expedited with the use of GitHub Copilot, but without the use of AI-generated text."
+ },
+ {
+  "arxiv_id": "2506.05674",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Declaration of generative AI in scientific writing: The authors state that they do not support the use of AI tools to analyze and extract insights from data as part of the study process."
+ },
+ {
+  "arxiv_id": "2410.17697",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "Minor typos, grammar and spelling mistakes were identified with the assistance of ChatGPT-4c ${ }^{13}$ when preparing this document."
+ },
+ {
+  "arxiv_id": "2503.15312",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "With each new data release \u2013 assuming that galaxy scaling laws hold in the same way as previously found in textual models \u2013 models are projected to scale closer to the size of GPT-2 and GPT-3, large-scale transformer-based language models developed by OpenAI, representing significant advancements in natural language processing (Brown et al."
+ },
+ {
+  "arxiv_id": "2411.15495",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "The English writing in this paper was improved with ChatGPT (OpenAI 202026), while no sentences were generated by ChatGPT from scratch."
+ },
+ {
+  "arxiv_id": "2503.14856",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We acknowledge the use of OpenAI's ChatGPT-4o (https://chatgpt.com/) for providing suggestions on refining sentence structure in this manuscript."
+ },
+ {
+  "arxiv_id": "2506.05506",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The public version of ChatGPT (OpenAI, 2023) was used to review the basic spelling and grammar of the document."
+ },
+ {
+  "arxiv_id": "2411.00987",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "2019, SciBERT: A Pretrained Language Model for Scientific Text, arXiv, doi: 10.48550/arXiv."
+ },
+ {
+  "arxiv_id": "2411.12799",
+  "year": 2024,
+  "declared": 1,
+  "evidence": "This research made use of ChatGPT, an OpenAI software, to assist with python code development and refinement, however OpenAI software was not used to write content for this work or read and summarize journal articles."
+ },
+ {
+  "arxiv_id": "2412.05473",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "They have found success in many applications such as speech-to-text, video analysis, and text generation such as GPT-3 (Brown et al."
+ },
+ {
+  "arxiv_id": "2412.09732",
+  "year": 2024,
+  "declared": 0,
+  "evidence": "2004]) on Gemini North, and found a GRB redshift of $z_{\\text {host }}=5.9134$."
+ },
+ {
+  "arxiv_id": "2506.14757",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "Alternatively, we can work with multi-modal LLMs [85], which combine text and nonlinguistic data."
+ },
+ {
+  "arxiv_id": "2501.09072",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "On the other hand, fabrication and polishing of large monolithic mirrors of the 8 -meter class was established technology, as shown by several ground telescopes under construction at the time (VLT, Subaru, Gemini, and Magellan telescopes)."
+ },
+ {
+  "arxiv_id": "2505.24743",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Use of AI tools: I acknowledge the assistance of ChatGPT 3.5 and Grammarly in improving the grammar and English language usage in this article."
+ },
+ {
+  "arxiv_id": "2507.00135",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We also acknowledge the use of OpenAI's ChatGPT for support with code implementation, text refinement, and certain analytical calculations."
+ },
+ {
+  "arxiv_id": "2507.13979",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "## Declaration of generative AI and AI-assisted technologies in the writing process."
+ },
+ {
+  "arxiv_id": "2507.14827",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "In our second resiliency analysis, we assess the reliability of our AI-powered GCN interpreter, which leverages GPT-4.1, in extracting structured data from unformatted, free-text GCN circulars."
+ },
+ {
+  "arxiv_id": "2507.15715",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "We take an open-ended exploratory approach to identifying how users evaluate LLM-based systems in astronomy, and we translate our analysis into principled criteria to guide future evaluations in scientific research contexts."
+ },
+ {
+  "arxiv_id": "2507.16902",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "We refined the English writing of this paper using the artificial intelligence tool ChatGPT (https://chatgpt.com/)."
+ },
+ {
+  "arxiv_id": "2507.17550",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "BG acknowledges the use of the OpenAI GPT-4 model (ChatGPT, https://openai.com) and Gemini for proofreading support."
+ },
+ {
+  "arxiv_id": "2507.18185",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "2015 detected a large water-vapour luminosity originating from DoAr 44 using the Gemini-North telescope, and deduced the temperature of this water vapour to $T\\approx$450\\text{\\,}\\mathrm{K}$$."
+ },
+ {
+  "arxiv_id": "2507.18683",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The large language model Claude (Sonnet 4.6) was used to assist in rewording and clarifying the manuscript during the revision process, as well as debugging R code while reworking images."
+ },
+ {
+  "arxiv_id": "2507.21632",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We acknowledge the use of ChatGPT, Grammarly, and DeepL for language refinement and improving the manuscript\u2019s clarity."
+ },
+ {
+  "arxiv_id": "2507.23287",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We acknowledge the use of ChatGPT (GPT-5; OpenAI) for grammatical and clarity improvements throughout the manuscript."
+ },
+ {
+  "arxiv_id": "2507.23774",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "We normalized the continua of all three spectra (SDSS, Gemini, and GTC) to the same level in the wavelength range of $5950~\\text{\\AA}<\\lambda<6850~\\text{\\AA}$."
+ },
+ {
+  "arxiv_id": "2508.00894",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "## 6 Declaration of Generative AI and AI-assisted technologies in the writing process During the preparation of this manuscript, the authors employed Grammarly and ChatGPT to improve language clarity and readability."
+ },
+ {
+  "arxiv_id": "2508.03809",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "Declaration of generative AI and AI-assisted technologies in the writing process."
+ },
+ {
+  "arxiv_id": "2508.03893",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "LLMs were used to improve wording at the sentence level and assist with coding."
+ },
+ {
+  "arxiv_id": "2508.05579",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "The main author acknowledges the usage of GitHub Copilot as an accessory tool to help improving the code and write code to speed up the manuscript\u2019s writing."
+ },
+ {
+  "arxiv_id": "2508.05961",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "As a final step before submission, we made use of OpenAI\u2019s ChatGPT to assist with language editing and improving clarity in parts of this manuscript."
+ },
+ {
+  "arxiv_id": "2508.06480",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "ChatGPT was used to help improve the clarity and grammar of the manuscript."
+ },
+ {
+  "arxiv_id": "2508.06688",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "### Declaration of generative AI and AI-assisted technologies in the writing process."
+ },
+ {
+  "arxiv_id": "2508.08558",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We used OpenAI\u2019s ChatGPT (OpenAI 2022) during the preparation of this manuscript."
+ },
+ {
+  "arxiv_id": "2508.09256",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The authors used the AI tool ChatGPT (OpenAI, GPT-4) to assist with grammar, spelling, and language clarity during manuscript preparation."
+ },
+ {
+  "arxiv_id": "2508.09568",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "During the preparation of this work we used ChatGPT in order to enhance the clarity of the writing."
+ },
+ {
+  "arxiv_id": "2508.12599",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "This manuscript benefited from grammar checking and proofreading using ChatGPT (OpenAI 2023)."
+ },
+ {
+  "arxiv_id": "2508.12601",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The first author (YJP) used the OpenAI GPT-4 model (ChatGPT, https://openai.com) to a limited extent for assistance with LaTeX formatting and to improve the clarity of some sentences during the final stage of manuscript preparation."
+ },
+ {
+  "arxiv_id": "2508.12802",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "During the preparation of this work, the authors used Gemini 2.5 Pro to improve the readability and language of the manuscript."
+ },
+ {
+  "arxiv_id": "2508.14508",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "I also acknowledge the use of AI tools, GitHub Copilot for code documentation, and Google AI Studio for proceeding readability improvements."
+ },
+ {
+  "arxiv_id": "2508.15756",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Finally, we have used ChatGPT to improve the grammar and style of selected sentences."
+ },
+ {
+  "arxiv_id": "2508.17331",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "also acknowledges the use of ChatGPT (OpenAI) for assistance in language refinement and literature exploration during the preparation of this manuscript."
+ },
+ {
+  "arxiv_id": "2508.19693",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "## Declaration of generative AI and AI-assisted technologies in the writing process During the preparation of this work the authors used ChatGPT in order to improve language and readability."
+ },
+ {
+  "arxiv_id": "2508.21275",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "also acknowledges the use of ChatGPT (OpenAI) for assistance in language refinement, literature exploration, and Python scripting during the preparation of this manuscript."
+ },
+ {
+  "arxiv_id": "2509.02298",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "LLM Deep Seek was used for grammar clean-up."
+ },
+ {
+  "arxiv_id": "2509.03165",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "OpenAI\u2019s language model \u2013 ChatGPT was used for some language editing during the draft stage of the preparation of this manuscript."
+ },
+ {
+  "arxiv_id": "2509.04336",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Generative models, specifically Gemini 2.5 Pro and Claude 4.0 Sonnet, were used to assist with drafting and refining the text."
+ },
+ {
+  "arxiv_id": "2509.04560",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Any use of generative AI in this manuscript adheres to ethical guidelines for use and acknowledgment of generative AI in academic research."
+ },
+ {
+  "arxiv_id": "2509.07453",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We used ChatGPT-4.5 to prepare a draft version of the Introduction, which was then carefully fact-checked and edited."
+ },
+ {
+  "arxiv_id": "2509.08946",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "During the preparation of this work, the author used Microsoft Copilot to assist with text editing and language refinement."
+ },
+ {
+  "arxiv_id": "2509.13571",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The authors acknowledge the use of ChatGPT (OpenAI) for language editing and stylistic improvements."
+ },
+ {
+  "arxiv_id": "2509.15334",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The authors acknowledge the use of artificial intelligence language models (ChatGPT, Deepseek and Grammarly) for assistance with text editing."
+ },
+ {
+  "arxiv_id": "2509.17102",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "The author also would like to acknowledge the assistance of AI (OpenAI\u2019s ChatGPT5) for editorial and formatting support during the preparation of the manuscript."
+ },
+ {
+  "arxiv_id": "2509.18239",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We additionally acknowledge the use of OpenAI\u2019s ChatGPT to assist with editing and proofreading of the manuscript."
+ },
+ {
+  "arxiv_id": "2509.18241",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "During the preparation of this manuscript, we used the ChatGPT software (OpenAI 2022) for suggestions on data analysis, plotting, and minor grammatical editing."
+ },
+ {
+  "arxiv_id": "2509.18270",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "acknowledges the use of ChatGPT, which has been used on rare occasions to improve the clarity of the writing."
+ },
+ {
+  "arxiv_id": "2509.19172",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "Additionally, we present HD 189733 observations obtained with POLISH2 at the straight Cassegrain focus of the Gemini North 8-m telescope on UT 2 to 7 Aug 2018."
+ },
+ {
+  "arxiv_id": "2509.20464",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Typesetting was expedited with the use of GitHub Copilot, but without the use of AI-generated text."
+ },
+ {
+  "arxiv_id": "2509.20621",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The authors acknowledge the use of OpenAI\u2019s ChatGPT for assistance with proofreading and visualization suggestions during the preparation of this manuscript."
+ },
+ {
+  "arxiv_id": "2509.23264",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Also, ChatGPT (OpenAI 2023) is used for assistance in correcting typos and grammar, though full responsibility for the manuscript\u2019s content remains our own."
+ },
+ {
+  "arxiv_id": "2509.24401",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "Language refinement in parts of this manuscript was supported by Copilot."
+ },
+ {
+  "arxiv_id": "2510.01799",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "## Declaration of generative AI and AI-assisted technologies in the writing process During the preparation of this work the authors used ChatGPT (OpenAI) in order to improve language clarity and grammar."
+ },
+ {
+  "arxiv_id": "2510.02517",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The AI tool ChatGPT (GPT-4.5) was used to assist in debugging the code used to produce the figures and to refine the wording of some sentences in the manuscript."
+ },
+ {
+  "arxiv_id": "2510.02639",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We acknowledge the use of ChatGPT (OpenAI) in improving the grammar and clarity of the manuscript."
+ },
+ {
+  "arxiv_id": "2510.03106",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The authors acknowledge the use of ChatGPT to improve the clarity and readability of the manuscript."
+ },
+ {
+  "arxiv_id": "2510.03436",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "## Declaration of generative AI During the preparation of this work the author(s) used OpenAI in order to improve the readability and language of the manuscript."
+ },
+ {
+  "arxiv_id": "2510.03493",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Despite the recent rise in the use of artificial intelligence (AI) tools such as ChatGPT, the task of scientific writing still requires a skilled human author, who can be assisted but not replaced by AI tools (Mingarelli 2025), maintaining the need for developing writing skills in STEM practitioners."
+ },
+ {
+  "arxiv_id": "2510.05016",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "Ting is a subject matter expert who provided knowledge and guidance regarding the usage of LLMs in the field of astronomy, formulated the structure of the manuscript, provided constructive feedback during weekly meetings, and revised the manuscript."
+ },
+ {
+  "arxiv_id": "2510.06510",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "Note on methods: The schematic diagram portrayed above was created by prompting Google\u2019s Gemini generative AI and then modifying the output with conventional image-editing software."
+ },
+ {
+  "arxiv_id": "2510.07034",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We also acknowledge the use of ChatGPT, developed by OpenAI, for assistance in language editing during the preparation of this manuscript."
+ },
+ {
+  "arxiv_id": "2510.08331",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "ChatGPT and the Writefull installation on Overleaf were used to provide editing suggestions for grammar, typos, and text consolidation, some of which were implemented to enhance readability."
+ },
+ {
+  "arxiv_id": "2510.08354",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "This is a major reason why we restricted our current study to SED modeling, where the limited number of wavelength data points could be effectively \u201ctextualized.\u201d This allowed us to leverage the reasoning capabilities of LLMs to efficiently navigate the vast hypothesis space, circumventing the visual processing limitations that remain a bottleneck for current vision-language models."
+ },
+ {
+  "arxiv_id": "2510.09568",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "This manuscript benefited from grammar checking and proofreading using ChatGPT (OpenAI 2024)."
+ },
+ {
+  "arxiv_id": "2510.09967",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "2015), which is widely used for image segmentation and translation, and is integral to generative artificial intelligence models (Isola et al."
+ },
+ {
+  "arxiv_id": "2510.11904",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "## Acknowledgements ChatGPT was used to help with Python and FORTRAN debugging and corrections of grammar mistakes."
+ },
+ {
+  "arxiv_id": "2510.12213",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "In the next section, we show how these new fields enable the use of MOCs in generative AI models, not only text-based but also those with visual capabilities."
+ },
+ {
+  "arxiv_id": "2510.14149",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "During the preparation of this work, the author(s) utilized ChatGPT-4o to refine the English wording of certain phrases."
+ },
+ {
+  "arxiv_id": "2510.15654",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Parts of the text and analysis were assisted by OpenAI\u2019s ChatGPT (version GPT-4.5, accessed July 2025) for drafting and editing support."
+ },
+ {
+  "arxiv_id": "2510.17473",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "I additionally acknowledge the use of OpenAI\u2019s ChatGPT to assist with editing and proofreading of the manuscript."
+ },
+ {
+  "arxiv_id": "2510.18139",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "Using Gemini South Flamingos-2 (F2) $K_{s}$-band imaging together with ancillary Subaru Hyper Suprime-Cam and Hubble Space Telescope multi-band photometry, we obtain photometric redshifts, $z_{\\text{phot}}$, as well as star formation rates and stellar mass estimates for companion galaxies of the DSFGs."
+ },
+ {
+  "arxiv_id": "2510.19606",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Disclosure: During the final editing of the manuscript, we used the OpenAI language model ChatGPT (GPT-5) as a tool to assist with checking grammar, typos, clarity and bibliographic formatting."
+ },
+ {
+  "arxiv_id": "2510.21197",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "OpenAI ChatGPT (version 4.0) was used to assist with language and phrasing of the manuscript."
+ },
+ {
+  "arxiv_id": "2510.21912",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "OpenAI\u2019s ChatGPT has been used to draft portions of the manuscript."
+ },
+ {
+  "arxiv_id": "2510.22190",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The authors used Claude and Gemini as writing and coding aids to refine portions of the manuscript for clarity and readability."
+ },
+ {
+  "arxiv_id": "2510.24015",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "This study will help establish a framework for future systematic studies of the broader molecular cloud population.^2^2 2 claude.ai was used for editorial purposes."
+ },
+ {
+  "arxiv_id": "2510.24065",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We acknowledge the use of OpenAI\u2019s ChatGPT only as a grammar checking and editing tool to improve the clarity and readability of the manuscript."
+ },
+ {
+  "arxiv_id": "2510.24087",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The authors acknowledge the use of DeepSeek (DeepSeek Inc.)^5^5 5 www.deepseek.com for refining the language and structure of this manuscript."
+ },
+ {
+  "arxiv_id": "2510.24545",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "## Declaration on Generative AI During the preparation of this work, the author(s) used GPT-4 in order to: Grammar and spelling check."
+ },
+ {
+  "arxiv_id": "2510.24591",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "We extract ReplicationBench metadata from the repository and generate up to 10 tasks using a language model ${ }^{1}$ (see prompt in Appendix D.2) prompted with access to the unmasked manuscript and dataset/executor metadata."
+ },
+ {
+  "arxiv_id": "2510.24620",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "### II.3 Spectroscopy We observed the location of AT2025ulz using GMOS mounted on the 8.1 m Gemini-North telescope on at 2025-08-22 06:51:11 using the B480 grating with $4\\times 600\\,\\text{s}$ observations centered at 660nm and 670nm (GN-2025A-FT-216; PI: Palmese)."
+ },
+ {
+  "arxiv_id": "2510.25161",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "## Acknowledgment AI tools including ChatGPT 5 was used to improve wording and correct grammar/style."
+ },
+ {
+  "arxiv_id": "2510.25672",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "AI Assistance Statement : The authors acknowledge the use of ChatGPT (OpenAI GPT-5) for language editing and stylistic refinement of the manuscript."
+ },
+ {
+  "arxiv_id": "2510.25824",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Large Language Model Use Disclosure: We used ChatGPT from September 2024 until final paper submission to assist with code drafting and debugging; all suggestions were checked by hand for correctness."
+ },
+ {
+  "arxiv_id": "2510.26889",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The authors used OpenAI\u2019s ChatGPT and Grammarly to assist with grammar and language polishing of the manuscript."
+ },
+ {
+  "arxiv_id": "2510.26970",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The Gemini AI 2.5 and Microsoft CoPilot tools were used to conduct literature searches and for editing sections of the paper for improving clarity."
+ },
+ {
+  "arxiv_id": "2510.27415",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Portions of the text were generated or refined with the assistance of GPT-5 Plus (OpenAI) for improve the clarity and fluency."
+ },
+ {
+  "arxiv_id": "2511.01958",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "## Declaration of generative AI and AI-assisted technologies in the manuscript preparation process During the preparation of this work, the authors used chatGPT5 to correct grammar misspellings, consistency of notation and terminology, and language fluency."
+ },
+ {
+  "arxiv_id": "2511.01959",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "## Declaration of generative AI and AI-assisted technologies in the manuscript preparation process During the preparation of this work, the authors used chatGPT5 to correct grammar misspellings, consistency of notation and terminology, and language fluency."
+ },
+ {
+  "arxiv_id": "2511.02562",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "DE acknowledges the use of AI language models (Claude by Anthropic and ChatGPT by OpenAI) for assistance with code editing, data visualisation, spell checking, and grammar correction."
+ },
+ {
+  "arxiv_id": "2511.02908",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "Language editing and figure formatting were supported by ChatGPT (68)."
+ },
+ {
+  "arxiv_id": "2511.04122",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "Wang Text classification via large language models."
+ },
+ {
+  "arxiv_id": "2511.04218",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The author acknowledges the use of ChatGPT (GPT-4-turbo and GPT-5) for proofreading and polishing the manuscript; all AI-generated text was carefully reviewed and edited by the author to ensure accuracy."
+ },
+ {
+  "arxiv_id": "2511.04740",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "ChatGPT was utilized to improve wording at the sentence level and assist with coding inquires \u2013 last accessed in 2025 November."
+ },
+ {
+  "arxiv_id": "2511.04896",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The author acknowledges helpful interactions with AI-based language models (ChatGPT, OpenAI) for clarifying forward-scattering physics and improving the manuscript presentation."
+ },
+ {
+  "arxiv_id": "2511.06965",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The authors acknowledge ChatGPT (OpenAI) and Grammarly for language refinement and paraphrasing support."
+ },
+ {
+  "arxiv_id": "2511.08970",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "(26) and knowledge distillation framework of the DeepSeek-R1 model (14), where we extract textual modality data (physical parameters) from Boucheron\u2019s dataset\u2014including Gradient mean, Total unsigned flux, Magnetic Neutral Line (NL) length, and Number of fragments along the magnetic NL (NL no."
+ },
+ {
+  "arxiv_id": "2511.09806",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We also acknowledge the use of OpenAI\u2019s ChatGPT for assistance in proofreading and improving the clarity of the manuscript, and GitHub Copilot for assistance in generating code."
+ },
+ {
+  "arxiv_id": "2511.10782",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "For language editing and translation, we utilized DeepL, ChatGPT, and Grammarly."
+ },
+ {
+  "arxiv_id": "2511.13393",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The authors acknowledge the use of CHATGPT for refining the text at the final stage of the manuscript."
+ },
+ {
+  "arxiv_id": "2511.14235",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "## Appendix C Declaration of Generative AI and AI-assisted technologies in the writing process During the preparation of this work, the author, Pradosh Keshav, utilized Grammarly/ChatGPT-5 to correct grammatical mistakes and enhance the structure of specific paragraphs."
+ },
+ {
+  "arxiv_id": "2511.14733",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Typesetting was expedited with the use of GitHub Copilot and ChatGPT, but without the use of any AI-generated text."
+ },
+ {
+  "arxiv_id": "2511.15121",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The author acknowledges the use of ChatGPT-4.0 and Grammarly to check for grammar and improve the language and readability of the manuscript."
+ },
+ {
+  "arxiv_id": "2511.16237",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "ChatGPT and Overleaf Writefull were used for language editing and improving the figures."
+ },
+ {
+  "arxiv_id": "2511.16291",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The authors declare that an AI-based language model was used solely to assist with language editing and clarity of presentation."
+ },
+ {
+  "arxiv_id": "2511.18607",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "This work used OpenAI\u2019s ChatGPT (GPT-4) to assist in refining Python scripts for data visualization and to provide limited editorial suggestions during manuscript preparation."
+ },
+ {
+  "arxiv_id": "2511.18981",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "During the writing process a large language model was used to enhance readability."
+ },
+ {
+  "arxiv_id": "2511.19707",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "During the preparation of this work the authors used ChatGPT for minor copy editing."
+ },
+ {
+  "arxiv_id": "2511.20970",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Starting from an original manuscript, Microsoft CoPilot was used to improve the language of this paper."
+ },
+ {
+  "arxiv_id": "2511.21891",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "This paper was developed with substantial assistance from Claude (Anthropic), an AI assistant that helped with LaTeX formatting, figure generation, literature curation, and manuscript organization."
+ },
+ {
+  "arxiv_id": "2511.23018",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We used ChatGPT (OpenAI, GPT-5, Sept 2025) for language editing."
+ },
+ {
+  "arxiv_id": "2511.23368",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Assistance in formatting the \u2018Local Stars\u2019 element in the legend of Figure 1 and proofreading the manuscript for spelling and grammar errors was performed with Claude, Sonnet/Opus 4.5 Model, Anthropic."
+ },
+ {
+  "arxiv_id": "2512.00056",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "## 6 Acknowledgment The author acknowledges the use of ChatGPT-5.1 (November 2025 version) to edit and refine the tone and clarity of selected sections of this manuscript."
+ },
+ {
+  "arxiv_id": "2512.01270",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "While the ideas, draft, and layout are all from the authors, this project has benefited\u2014in line with its own ideals\u2014from collaboration with Claude-Opus-4.5 and Cursor for both coding development and writing refinement."
+ },
+ {
+  "arxiv_id": "2512.02007",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "ChatGPT was utilized to improve wording at the sentence level and assist with coding inquires \u2013 last accessed in 2026 January."
+ },
+ {
+  "arxiv_id": "2512.03281",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The authors have used ChatGPT (OpenAI, 2023; https://chat.openai.com/chat to check coding syntax, and to check grammar in writing."
+ },
+ {
+  "arxiv_id": "2512.03329",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The authors wish to acknowledge the use of OpenAI\u2019s ChatGPT (version August 2024) for assistance in language and grammar refinement."
+ },
+ {
+  "arxiv_id": "2512.03433",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "This manuscript has benefited from grammar checking and proofreading using ChatGPT (OpenAI; https://openai.com/chatgpt)."
+ },
+ {
+  "arxiv_id": "2512.04326",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "## 10 Declaration of generative AI and AI-assisted technologies in the writing process."
+ },
+ {
+  "arxiv_id": "2512.06083",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "2002a with adaptive optics (AO) imaging at Keck and Gemini and shed light on the \u201dbrown dwarf desert,\u201d namely the scarcity of $\\approx$15\u201375$\\text{M}_{\\text{Jup}}$ companions in radial velocity surveys of solar-type stars."
+ },
+ {
+  "arxiv_id": "2512.07214",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The authors used ChatGPT (OpenAI) during the preparation of this manuscript to improve language clarity and grammatical correctness."
+ },
+ {
+  "arxiv_id": "2512.07896",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Artificial Intelligence (AI) tools (OpenAI ChatGPT) were occasionally used to assist with improving readability, grammar, and language in the manuscript text."
+ },
+ {
+  "arxiv_id": "2512.08495",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "## Acknowledgement We acknowledge that artificial intelligence tools, including OpenAI\u2019s ChatGPT, were used in proofreading and polishing this paper."
+ },
+ {
+  "arxiv_id": "2512.11957",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "The integration of an LLM allows the for the model to provide textual explanations of its classifications, although the considerable computational cost of these models is not conducive to real-time deployment."
+ },
+ {
+  "arxiv_id": "2512.11982",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Large language models were used to assist with editing and formatting this manuscript."
+ },
+ {
+  "arxiv_id": "2512.12516",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "ChatGPT is used for proofreading."
+ },
+ {
+  "arxiv_id": "2512.12754",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We acknowledge the use of OpenAI\u2019s ChatGPT for assistance in editing this manuscript for clarity and conciseness and for making minor edits to codes."
+ },
+ {
+  "arxiv_id": "2512.14747",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "## Declaration of generative AI and AI-assisted technologies The author declares that no generative AI or AI-assisted technologies were used in the writing of this manuscript."
+ },
+ {
+  "arxiv_id": "2512.14814",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The authors used OpenAI\u2019s ChatGPT to assist in drafting portions of the manuscript."
+ },
+ {
+  "arxiv_id": "2512.16091",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We acknowledge the use of ChatGPT (GPT-5; OpenAI) for grammatical and clarity improvements throughout the manuscript."
+ },
+ {
+  "arxiv_id": "2512.16208",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Minor typos, grammar and spelling mistakes were identified with the assistance of ChatGPT-4o^7^7 7 openai.com when preparing this document."
+ },
+ {
+  "arxiv_id": "2512.17074",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "The authors acknowledge the use of ChatGPT (https://chat.openai.com/, version 4.1) and doubao for editing the paper."
+ },
+ {
+  "arxiv_id": "2512.17494",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "During the preparation of this work, the author used ChatGPT to improve the readability and language of the manuscript."
+ },
+ {
+  "arxiv_id": "2512.18795",
+  "year": 2025,
+  "declared": 0,
+  "evidence": "## Declaration of generative AI and AI-assisted technologies in the writing process During the preparation of this work, M."
+ },
+ {
+  "arxiv_id": "2512.19183",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "We used the large language model (LLM) ChatGPT (OpenAI) & Gemini (Google) for assistance with language editing, formatting, and general proofreading."
+ },
+ {
+  "arxiv_id": "2512.19652",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "While the scientific content, draft and analysis are entirely from the authors, this project has benefited from collaboration with AI tools: Cursor for coding development and Claude-Opus-4.5 for proofreading of the final manuscript."
+ },
+ {
+  "arxiv_id": "2512.23138",
+  "year": 2025,
+  "declared": 1,
+  "evidence": "Claude 4.5 was used for assistance with code development and manuscript copy-editing."
+ }
+]

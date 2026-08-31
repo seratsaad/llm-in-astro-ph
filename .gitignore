@@ -1,62 +1,19 @@
 __pycache__/
 *.pyc
-node_modules/
-package-lock.json
-.venv/
 .DS_Store
-POST.html
-# raw harvested abstract dump (~300 MB) — regenerate with src/harvest_arxiv.py
-data/astroph_abstracts.jsonl
-# logs and resumable-progress files
-data/*.log
-data/harvest_progress.json
-# Word lock/temp files
-~$*
-# internal working notes (not for the public repo)
-RESULTS.md
-LITERATURE_AND_IDEAS.md
-# n-gram intermediate for c8_ngrams.py (~350 MB) — regenerate with src/c8_ngrams.py
-data/ngram_counts.pkl
-# LaTeX build artifacts
-paper/*.aux
-paper/*.log
-paper/*.out
-paper/*.blg
-paper/*.bbl
-paper/*.synctex.gz
-paper/c*.log
-paper/bib.log
-paper/compile*.log
-
-# pre-existing skill-dev artifacts (superseded by src/ngrams.py)
-src/c8_ngrams.py
-data/c8_top_*.csv
-
-# journal manuscript kept out of the public repo (code + analysis only)
+# working material, not part of the release
 paper/
-
-# post write-up and its build tooling (repo is code for the paper)
-POST.md
-POST.pdf
-POST.docx
-package.json
-src/build_docx.js
-src/build_pdf.py
-
-paper_oja_locked/
 paper_nature/
-
-zenodo_deposit/
-
-llm.txt
-data/n1b_snippets.jsonl
-data/n3_pairs.jsonl
-data/n3_updated.jsonl
-data/n2b_gdelt_cache/
-data/n2e_trends_cache/
-# API response caches (regenerable) — round 5
-data/p13_aff_cache.jsonl
-data/m6_meta_cache.json
-data/m6_entries_cache.json
+paper_ojap/
+paper_oja_locked/
 submission_nature/
 submission_nature_signed/
+zenodo_deposit/
+node_modules/
+package-lock.json
+llm.txt
+RESULTS.md
+LITERATURE_AND_IDEAS.md
+POST.html
+notes_yst_email_draft.md
+withdrawal_message.md
