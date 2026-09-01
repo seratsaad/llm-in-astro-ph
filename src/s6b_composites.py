@@ -124,7 +124,7 @@ def fig3():
         qs = sorted(d, key=lambda q: (int(q[:4]), int(q[-1])))
         x = [int(q[:4]) + (int(q[-1]) - 1) / 4.0 + 0.125 for q in qs]
         ax.plot(x, [d[q] for q in qs], color=C["black"], lw=1.6,
-                label=r"fitted excess $e^{\delta_t}$")
+                label=r"Fitted excess $e^{\delta_t}$")
     tr = os.path.join(DATA, "marker_trajectories_fulltext.csv")
     if os.path.exists(tr):
         t = pd.read_csv(tr)
@@ -158,11 +158,11 @@ def fig3():
         lo = d.groupby("year")["lo"].mean()
         hi = d.groupby("year")["hi"].mean()
         ax.plot(g.index, 100 * g, color=C["vermillion"], lw=1.4,
-                label=r"estimated $\pi_t$")
+                label=r"Estimated $\pi_t$")
         ax.fill_between(g.index, 100 * lo, 100 * hi, color=C["vermillion"],
                         alpha=0.16, lw=0)
     ax.plot(decl.index, 100 * decl.clip(lower=1e-4), color=C["blue"], lw=1.4,
-            marker="o", ms=2.5, label="declared use")
+            marker="o", ms=2.5, label="Declared use")
     ax.set_yscale("log")
     ax.set_xlim(2019.5, 2026.5)
     ax.set_ylim(0.05, 200)
@@ -197,15 +197,15 @@ def fig4():
 
     ax = axes[0]
     ax.scatter(d.base_df, np.clip(d.disc_ratio, 0.2, 12), s=1.4, c=C["grey"],
-               alpha=0.22, lw=0, rasterized=True, label="all stable-background words")
+               alpha=0.22, lw=0, rasterized=True, label="All stable-background words")
     pick = d[d.word.isin(sel)]
     ax.scatter(pick.base_df, np.clip(pick.disc_ratio, 0.2, 12), s=10,
                facecolors="none", edgecolors=C["black"], lw=0.5,
-               label="selected", zorder=2)
+               label="Selected", zorder=2)
     ax.scatter(d[d.is_seed].base_df, np.clip(d[d.is_seed].disc_ratio, 0.2, 12),
-               s=10, c=C["vermillion"], lw=0, label="frozen seed markers", zorder=3)
+               s=10, c=C["vermillion"], lw=0, label="Frozen seed markers", zorder=3)
     ax.scatter(d[d.is_control].base_df, np.clip(d[d.is_control].disc_ratio, 0.2, 12),
-               s=10, c=C["blue"], lw=0, label="neutral controls", zorder=3)
+               s=10, c=C["blue"], lw=0, label="Neutral controls", zorder=3)
     ax.set_xscale("log")
     ax.set_yscale("log")
     ax.set_xlabel("Document frequency, 2015--2019")
@@ -220,9 +220,9 @@ def fig4():
     ax.scatter(d.disc_ratio, d.val_ratio, s=1.4, c=C["grey"], alpha=0.22,
                lw=0, rasterized=True)
     ax.scatter(pick.disc_ratio, pick.val_ratio, s=11, facecolors="none",
-               edgecolors=C["black"], lw=0.6, label="selected", zorder=3)
+               edgecolors=C["black"], lw=0.6, label="Selected", zorder=3)
     ax.scatter(d[d.is_control].disc_ratio, d[d.is_control].val_ratio, s=11,
-               c=C["blue"], lw=0, label="neutral controls", zorder=4)
+               c=C["blue"], lw=0, label="Neutral controls", zorder=4)
     lim = [0.4, 12]
     ax.plot(lim, lim, color=C["black"], lw=0.7, ls=(0, (4, 2)))
     ax.set_xscale("log")
