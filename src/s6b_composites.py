@@ -56,7 +56,7 @@ def fig1():
             cf = np.polyfit(x[m], np.log(y[m]), 1)
             ax.plot(x[~m], np.exp(np.polyval(cf, x[~m])), lw=1.0, ls=(0, (4, 2)),
                     color=colr, alpha=0.75)
-        ax.axvline(2022.92, color=C["grey"], lw=0.8, ls=":")
+        ax.axvline(2022.92, color=C["purple"], lw=1.0, zorder=0)
         ax.set_title(title, fontsize=9)
         ax.set_xlim(2015, 2026.6)
     axes[0, 0].set_ylabel("Rate per 1000 tokens\n(relative to 2015--2019)")
@@ -67,13 +67,13 @@ def fig1():
     for ax, pre, title in ((axes[1, 0], "K", "LLM markers, within section"),
                            (axes[1, 1], "C", "Neutral controls, within section")):
         for s, colr in zip(SEC, [C["vermillion"], C["blue"], C["green"],
-                                 C["orange"], C["purple"]]):
+                                 C["orange"], C["sky"]]):
             g = ft.groupby("year").apply(
                 lambda x: 1000 * x[f"{pre}_{s}"].sum() / max(x[f"L_{s}"].sum(), 1),
                 include_groups=False)
             ax.plot(g.index, g / g.loc[2015:2019].mean(), color=colr, lw=1.2,
                     label=SECLAB[s])
-        ax.axvline(2022.92, color=C["grey"], lw=0.8, ls=":")
+        ax.axvline(2022.92, color=C["purple"], lw=1.0, zorder=0)
         ax.set_title(title, fontsize=9)
         ax.set_xlabel("First-submission year")
     axes[1, 1].set_ylim(0.7, 1.6)
@@ -112,7 +112,7 @@ def fig3():
     ax.set_ylabel(r"Prevalence $\pi_t$ (% of papers)")
     ax.set_xlim(2020, 2026.6)
     ax.set_ylim(0, 100)
-    ax.legend(frameon=False, fontsize=6.4, loc="upper left", bbox_to_anchor=(0.045, 0.955),
+    ax.legend(frameon=False, fontsize=7.2, loc="upper left", bbox_to_anchor=(0.075, 0.925),
               labelspacing=0.28, handlelength=1.5, handletextpad=0.5,
               borderpad=0.2)
 
@@ -141,7 +141,7 @@ def fig3():
     from matplotlib.ticker import FuncFormatter, FixedLocator
     ax.yaxis.set_major_formatter(FuncFormatter(
         lambda v, _: f"{v:g}"))
-    ax.legend(frameon=False, fontsize=6.4, loc="upper left", ncol=1, bbox_to_anchor=(0.045, 0.955),
+    ax.legend(frameon=False, fontsize=7.2, loc="upper left", ncol=1, bbox_to_anchor=(0.075, 0.925),
               labelspacing=0.28, handlelength=1.5, handletextpad=0.5,
               borderpad=0.2)
 
@@ -171,7 +171,7 @@ def fig3():
         lambda v, _: f"{v:g}"))
     ax.set_xlabel("First-submission year")
     ax.set_ylabel(r"Percentage of papers")
-    ax.legend(frameon=False, fontsize=6.4, loc="upper left", bbox_to_anchor=(0.045, 0.955),
+    ax.legend(frameon=False, fontsize=7.2, loc="upper left", bbox_to_anchor=(0.075, 0.925),
               labelspacing=0.28, handlelength=1.5, handletextpad=0.5,
               borderpad=0.2)
 
@@ -197,7 +197,7 @@ def fig4():
 
     ax = axes[0]
     ax.scatter(d.base_df, np.clip(d.disc_ratio, 0.2, 12), s=1.4, c=C["grey"],
-               alpha=0.22, lw=0, rasterized=True, label="All stable-background words")
+               alpha=0.22, lw=0, rasterized=True)
     pick = d[d.word.isin(sel)]
     ax.scatter(pick.base_df, np.clip(pick.disc_ratio, 0.2, 12), s=10,
                facecolors="none", edgecolors=C["black"], lw=0.5,
@@ -211,9 +211,9 @@ def fig4():
     ax.set_xlabel("Document frequency, 2015--2019")
     ax.set_ylabel("Excess over background\n(discovery: 2023--2024)")
     ax.set_ylim(0.28, 34)
-    ax.legend(frameon=False, fontsize=6.4,
-              labelspacing=0.28, handlelength=1.4, handletextpad=0.5,
-              borderpad=0.2, loc="upper right", bbox_to_anchor=(0.965, 0.955))
+    ax.legend(frameon=False, fontsize=8.6,
+              labelspacing=0.32, handlelength=1.4, handletextpad=0.5,
+              borderpad=0.2, loc="upper right", bbox_to_anchor=(0.935, 0.925))
 
     # (b) held-out validation of the frozen selection
     ax = axes[1]
@@ -231,9 +231,9 @@ def fig4():
     ax.set_ylim(0.3, 25)
     ax.set_xlabel("Discovery excess (2023--2024)")
     ax.set_ylabel("Held-out excess (2025--2026)")
-    ax.legend(frameon=False, fontsize=6.4,
-              labelspacing=0.28, handlelength=1.4, handletextpad=0.5,
-              borderpad=0.2, loc="upper left", bbox_to_anchor=(0.045, 0.955))
+    ax.legend(frameon=False, fontsize=8.6,
+              labelspacing=0.32, handlelength=1.4, handletextpad=0.5,
+              borderpad=0.2, loc="upper left", bbox_to_anchor=(0.075, 0.925))
 
     fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig4_composite.pdf"), dpi=400)
@@ -268,9 +268,9 @@ def figS1():
     ax.plot([0, 80], [0, 80], color=C["black"], lw=0.8, ls=(0, (4, 2)))
     ax.set_xlabel(r"Injected prevalence (%)")
     ax.set_ylabel(r"Recovered prevalence (%)")
-    ax.legend(frameon=False, fontsize=6.4,
+    ax.legend(frameon=False, fontsize=7.2,
               labelspacing=0.28, handlelength=1.4, handletextpad=0.5,
-              borderpad=0.2, loc="upper left", bbox_to_anchor=(0.045, 0.955))
+              borderpad=0.2, loc="upper left", bbox_to_anchor=(0.075, 0.925))
 
     ax = axes[1]
     for d, colr, mk in zip(sorted(rows.true_delta.unique()),
