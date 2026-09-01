@@ -74,7 +74,6 @@ def fig1():
             ax.plot(g.index, g / g.loc[2015:2019].mean(), color=colr, lw=1.2,
                     label=SECLAB[s])
         ax.axvline(2022.92, color=C["grey"], lw=0.8, ls=":")
-        ax.axhline(1.0, color=C["black"], lw=0.6, ls=(0, (4, 2)))
         ax.set_title(title, fontsize=9)
         ax.set_xlabel("First-submission year")
     axes[1, 1].set_ylim(0.7, 1.6)
@@ -109,7 +108,6 @@ def fig3():
         ax.plot(x, 100 * d["mean"], color=colr, ls=ls, lw=1.3, label=lab)
         if band:
             ax.fill_between(x, 100 * d.lo, 100 * d.hi, color=colr, alpha=0.16, lw=0)
-    ax.axvline(2022.92, color=C["grey"], lw=0.8, ls=":")
     ax.set_xlabel("First-submission quarter")
     ax.set_ylabel(r"Prevalence $\pi_t$ (% of papers)")
     ax.set_xlim(2020, 2026.6)
@@ -137,7 +135,6 @@ def fig3():
             if len(g):
                 ax.plot(g.index + 0.5, g.values, lw=1.0, color=colr,
                         alpha=0.85, label=w)
-    ax.axhline(1.0, color=C["grey"], lw=0.6, ls=(0, (4, 2)))
     ax.set_xlabel("First-submission year")
     ax.set_ylabel(r"Excess over background")
     ax.set_yscale("log")
@@ -209,7 +206,6 @@ def fig4():
                s=10, c=C["vermillion"], lw=0, label="frozen seed markers", zorder=3)
     ax.scatter(d[d.is_control].base_df, np.clip(d[d.is_control].disc_ratio, 0.2, 12),
                s=10, c=C["blue"], lw=0, label="neutral controls", zorder=3)
-    ax.axhline(1.0, color=C["black"], lw=0.7, ls=(0, (4, 2)))
     ax.set_xscale("log")
     ax.set_yscale("log")
     ax.set_xlabel("Document frequency, 2015--2019")
@@ -229,8 +225,6 @@ def fig4():
                c=C["blue"], lw=0, label="neutral controls", zorder=4)
     lim = [0.4, 12]
     ax.plot(lim, lim, color=C["black"], lw=0.7, ls=(0, (4, 2)))
-    ax.axhline(1.0, color=C["grey"], lw=0.6, ls=":")
-    ax.axvline(1.6, color=C["grey"], lw=0.6, ls=":")
     ax.set_xscale("log")
     ax.set_yscale("log")
     ax.set_xlim(*lim)

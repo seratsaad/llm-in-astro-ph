@@ -53,7 +53,6 @@ def fig1_rates():
             cf = np.polyfit(x[m], np.log(y[m]), 1)
             ax.plot(x[~m], np.exp(np.polyval(cf, x[~m])), lw=1.0, ls=(0, (4, 2)),
                     color=colr, alpha=0.75)
-        ax.axvline(2022.92, color=C["grey"], lw=0.8, ls=":")
         ax.text(2022.99, ax.get_ylim()[1] * 0.97, "ChatGPT", fontsize=7,
                 color=C["grey"], va="top", rotation=90)
         ax.set_title(title)
@@ -90,7 +89,6 @@ def fig2_prevalence(tags=("fulltext_primary", "fulltext_unconstrained",
         ax.plot(x, 100 * d["mean"], color=colr, ls=ls, lw=1.3, label=lab)
         if band:
             ax.fill_between(x, 100 * d.lo, 100 * d.hi, color=colr, alpha=0.16, lw=0)
-    ax.axvline(2022.92, color=C["grey"], lw=0.8, ls=":")
     ax.set_xlabel("First-submission quarter")
     ax.set_ylabel(r"Posterior prevalence $\pi_t$ (% of papers)")
     ax.set_xlim(2020, 2026.6)
@@ -166,7 +164,6 @@ def fig6_discovery():
     ctrl = d[d.is_control]
     ax.scatter(ctrl.base_df, np.clip(ctrl.disc_ratio, 0.2, 12), s=9,
                c=C["blue"], lw=0, label="Neutral controls", zorder=3)
-    ax.axhline(1.0, color=C["black"], lw=0.7, ls=(0, (4, 2)))
     ax.set_xscale("log")
     ax.set_yscale("log")
     ax.set_xlabel("Document frequency, 2015--2019")
@@ -201,7 +198,6 @@ def fig7_sections():
     ax.set_ylabel("Marker rate\n(relative to 2015--2019)")
     axes[1].set_ylabel("Control rate\n(relative to 2015--2019)")
     for a in axes:
-        a.axvline(2022.92, color=C["grey"], lw=0.8, ls=":")
         a.set_xlabel("First-submission year")
         a.axhline(1.0, color=C["black"], lw=0.6, ls=(0, (4, 2)))
     axes[1].set_ylim(0.7, 1.6)
