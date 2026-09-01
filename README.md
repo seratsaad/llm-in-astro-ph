@@ -18,6 +18,7 @@ derived tables in `data/`.
 ## Layout
 
 ```
+paper/  the manuscript (main.tex), bibliography, and figures
 src/    the analysis pipeline, in stage order
 data/   derived tables, frozen baskets, and fitted posteriors
 ```

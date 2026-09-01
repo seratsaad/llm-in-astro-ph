@@ -60,7 +60,7 @@ def fig1():
         ax.set_title(title, fontsize=9)
         ax.set_xlim(2015, 2026.6)
     axes[0, 0].set_ylabel("Rate per 1000 tokens\n(relative to 2015--2019)")
-    axes[0, 0].legend(frameon=False, fontsize=6.5, loc="upper left",
+    axes[0, 0].legend(frameon=False, fontsize=7.5, loc="upper left",
                       bbox_to_anchor=(0.06, 0.94))
 
     # (c) and (d): within-section, markers then controls
@@ -79,7 +79,7 @@ def fig1():
         ax.set_xlabel("First-submission year")
     axes[1, 1].set_ylim(0.7, 1.6)
     axes[1, 0].set_ylabel("Rate within section\n(relative to 2015--2019)")
-    axes[1, 0].legend(frameon=False, fontsize=6, loc="upper left",
+    axes[1, 0].legend(frameon=False, fontsize=7.5, loc="upper left",
                       bbox_to_anchor=(0.06, 0.94))
     fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig1_composite.pdf"))
@@ -114,7 +114,7 @@ def fig3():
     ax.set_ylabel(r"Prevalence $\pi_t$ (% of papers)")
     ax.set_xlim(2020, 2026.6)
     ax.set_ylim(0, 100)
-    ax.legend(frameon=False, fontsize=5.8, loc="upper left")
+    ax.legend(frameon=False, fontsize=7.5, loc="upper left")
 
     # (b) the fading excess, plus four representative marker words
     ax = axes[1]
@@ -139,7 +139,10 @@ def fig3():
     ax.set_xlabel("First-submission year")
     ax.set_ylabel(r"Excess over background")
     ax.set_yscale("log")
-    ax.legend(frameon=False, fontsize=5.8, loc="upper left", ncol=1)
+    from matplotlib.ticker import FuncFormatter, FixedLocator
+    ax.yaxis.set_major_formatter(FuncFormatter(
+        lambda v, _: f"{v:g}"))
+    ax.legend(frameon=False, fontsize=7.5, loc="upper left", ncol=1)
 
     # (c) the disclosure gap
     ax = axes[2]
@@ -162,9 +165,12 @@ def fig3():
     ax.set_yscale("log")
     ax.set_xlim(2019.5, 2026.5)
     ax.set_ylim(0.05, 200)
+    from matplotlib.ticker import FuncFormatter
+    ax.yaxis.set_major_formatter(FuncFormatter(
+        lambda v, _: f"{v:g}"))
     ax.set_xlabel("First-submission year")
     ax.set_ylabel(r"Percentage of papers")
-    ax.legend(frameon=False, fontsize=6, loc="upper left")
+    ax.legend(frameon=False, fontsize=7.5, loc="upper left")
 
     fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig3_composite.pdf"))
@@ -202,7 +208,7 @@ def fig4():
     ax.set_yscale("log")
     ax.set_xlabel("Document frequency, 2015--2019")
     ax.set_ylabel("Excess over background\n(discovery: 2023--2024)")
-    ax.legend(frameon=False, fontsize=5.8, loc="upper right")
+    ax.legend(frameon=False, fontsize=7.5, loc="upper right")
 
     # (b) held-out validation of the frozen selection
     ax = axes[1]
@@ -222,7 +228,7 @@ def fig4():
     ax.set_ylim(0.3, 25)
     ax.set_xlabel("Discovery excess (2023--2024)")
     ax.set_ylabel("Held-out excess (2025--2026)")
-    ax.legend(frameon=False, fontsize=6, loc="upper left")
+    ax.legend(frameon=False, fontsize=7.5, loc="upper left")
 
     fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig4_composite.pdf"), dpi=400)
@@ -257,7 +263,7 @@ def figS1():
     ax.plot([0, 80], [0, 80], color=C["black"], lw=0.8, ls=(0, (4, 2)))
     ax.set_xlabel(r"Injected prevalence (%)")
     ax.set_ylabel(r"Recovered prevalence (%)")
-    ax.legend(frameon=False, fontsize=6.5, loc="upper left")
+    ax.legend(frameon=False, fontsize=7.5, loc="upper left")
 
     ax = axes[1]
     for d, colr, mk in zip(sorted(rows.true_delta.unique()),
