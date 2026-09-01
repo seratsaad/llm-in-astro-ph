@@ -1,0 +1,63 @@
+% Simplified plate diagram for the short paper. Topic effects, dispersions,
+% and the swept selection parameter are suppressed (stated in the caption).
+\begin{tikzpicture}[
+    >={Latex[length=1.8mm]}, semithick, font=\small,
+    node/.style={circle, thick, minimum size=10mm, align=center,
+        inner sep=0.5pt, font=\footnotesize},
+    bgN/.style={node, draw=oiGreen, fill=oiGreen!12},
+    asN/.style={node, draw=oiOrange, fill=oiOrange!12},
+    prN/.style={node, draw=oiBlue, fill=oiBlue!12},
+    obs/.style={node, draw=oiGray, fill=black!16},
+    plate/.style={rectangle, rounded corners=3pt, draw=black!45, thick,
+        inner sep=8pt},
+    platelab/.style={font=\scriptsize, text=black, align=left},
+    edge/.style={->, draw=black!55},
+    lab/.style={font=\scriptsize, text=black},
+]
+
+% quarter-level row
+\node[bgN] (g0)    at (2.7, 3.2)  {$g_0(t)$};
+\node[asN] (delta) at (4.8, 3.2)  {$\delta_t$};
+\node[prN] (pi)    at (6.9, 3.2)  {$\pi_t$};
+\node[prN] (rho)   at (9.0, 3.2)  {$\rho_t$};
+
+\node[lab, align=center] at (2.7, 4.15)  {background\\ drift};
+\node[lab, align=center] at (4.8, 4.15)  {excess of\\ assisted prose};
+\node[lab, align=center] at (6.9, 4.15)  {fraction\\ assisted};
+\node[lab, align=center] at (9.0, 4.15)  {chance of\\ declaring};
+
+% paper plate
+\node[obs] (L) at (0.6, 0.6)  {$L_i$};
+\node[bgN] (mu0) at (2.7, 0.6) {$\mu_{i0}$};
+\node[asN] (mu1) at (4.8, 0.6) {$\mu_{i1}$};
+\node[prN] (A)  at (6.9, 0.6)  {$A_i$};
+\node[obs] (K)  at (4.8, -1.1) {$K_i$};
+\node[obs] (D)  at (9.0, 0.6) {$D_i$};
+\begin{scope}[on background layer]
+\node[plate, fit=(L)(mu0)(mu1)(A)(K)(D)] (pplate) {};
+\end{scope}
+\node[platelab, anchor=north west] at ($(pplate.south west)+(1pt,20pt)$)
+    {papers $i=1\ldots N$\\ $A_i\equiv0$ before 2020};
+
+% edges
+\draw[edge] (g0)    -- (mu0);
+\draw[edge] (L)     -- (mu0);
+\draw[edge] (mu0)   -- (mu1);
+\draw[edge] (delta) -- (mu1);
+\draw[edge] (pi)    -- (A);
+\draw[edge] (rho)   -- (D);
+\draw[edge] (mu0)   to[out=-55,in=160] (K);
+\draw[edge] (mu1)   -- (K);
+\draw[edge] (A)     to[out=-125,in=20] (K);
+\draw[edge] (A)     -- (D);
+
+% legend, placed clear of the plate label beneath the box
+\node[obs, minimum size=5.5mm] at (0.56,-3.5) {};
+\node[anchor=west, font=\scriptsize] at (0.91,-3.5) {observed};
+\node[bgN, minimum size=5.5mm] at (2.86,-3.5) {};
+\node[anchor=west, font=\scriptsize] at (3.21,-3.5) {background};
+\node[asN, minimum size=5.5mm] at (5.26,-3.5) {};
+\node[anchor=west, font=\scriptsize] at (5.61,-3.5) {assisted};
+\node[prN, minimum size=5.5mm] at (7.36,-3.5) {};
+\node[anchor=west, font=\scriptsize] at (7.71,-3.5) {prevalence};
+\end{tikzpicture}

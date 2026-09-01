@@ -2,7 +2,6 @@ __pycache__/
 *.pyc
 .DS_Store
 # working material, not part of the release
-paper/
 paper_nature/
 paper_ojap/
 paper_oja_locked/
@@ -17,3 +16,9 @@ LITERATURE_AND_IDEAS.md
 POST.html
 notes_yst_email_draft.md
 withdrawal_message.md
+paper/main.aux
+paper/main.log
+paper/main.out
+paper/main.blg
+paper/main.bbl
+paper/main.pdf
