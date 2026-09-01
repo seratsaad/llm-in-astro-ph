@@ -56,7 +56,7 @@ def fig1():
             cf = np.polyfit(x[m], np.log(y[m]), 1)
             ax.plot(x[~m], np.exp(np.polyval(cf, x[~m])), lw=1.0, ls=(0, (4, 2)),
                     color=colr, alpha=0.75)
-        ax.axvline(2022.92, color=C["purple"], lw=1.0, zorder=0)
+        ax.axvline(2022.92, color=C["grey"], lw=1.1, alpha=0.55, zorder=0)
         ax.set_title(title, fontsize=9)
         ax.set_xlim(2015, 2026.6)
     axes[0, 0].set_ylabel("Rate per 1000 tokens\n(relative to 2015--2019)")
@@ -67,13 +67,13 @@ def fig1():
     for ax, pre, title in ((axes[1, 0], "K", "LLM markers, within section"),
                            (axes[1, 1], "C", "Neutral controls, within section")):
         for s, colr in zip(SEC, [C["vermillion"], C["blue"], C["green"],
-                                 C["orange"], C["sky"]]):
+                                 C["orange"], C["purple"]]):
             g = ft.groupby("year").apply(
                 lambda x: 1000 * x[f"{pre}_{s}"].sum() / max(x[f"L_{s}"].sum(), 1),
                 include_groups=False)
             ax.plot(g.index, g / g.loc[2015:2019].mean(), color=colr, lw=1.2,
                     label=SECLAB[s])
-        ax.axvline(2022.92, color=C["purple"], lw=1.0, zorder=0)
+        ax.axvline(2022.92, color=C["grey"], lw=1.1, alpha=0.55, zorder=0)
         ax.set_title(title, fontsize=9)
         ax.set_xlabel("First-submission year")
     axes[1, 1].set_ylim(0.7, 1.6)
