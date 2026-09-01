@@ -112,7 +112,7 @@ def fig3():
     ax.set_ylabel(r"Prevalence $\pi_t$ (% of papers)")
     ax.set_xlim(2020, 2026.6)
     ax.set_ylim(0, 100)
-    ax.legend(frameon=False, fontsize=7.2, loc="upper left", bbox_to_anchor=(0.075, 0.925),
+    ax.legend(frameon=False, fontsize=6.2, loc="upper left", bbox_to_anchor=(0.075, 0.925),
               labelspacing=0.28, handlelength=1.5, handletextpad=0.5,
               borderpad=0.2)
 
@@ -138,10 +138,11 @@ def fig3():
     ax.set_xlabel("First-submission year")
     ax.set_ylabel(r"Excess over background")
     ax.set_yscale("log")
+    ax.set_ylim(0.8, 60)
     from matplotlib.ticker import FuncFormatter, FixedLocator
     ax.yaxis.set_major_formatter(FuncFormatter(
         lambda v, _: f"{v:g}"))
-    ax.legend(frameon=False, fontsize=7.2, loc="upper left", ncol=1, bbox_to_anchor=(0.075, 0.925),
+    ax.legend(frameon=False, fontsize=6.2, loc="upper left", ncol=1, bbox_to_anchor=(0.075, 0.925),
               labelspacing=0.28, handlelength=1.5, handletextpad=0.5,
               borderpad=0.2)
 
@@ -171,7 +172,7 @@ def fig3():
         lambda v, _: f"{v:g}"))
     ax.set_xlabel("First-submission year")
     ax.set_ylabel(r"Percentage of papers")
-    ax.legend(frameon=False, fontsize=7.2, loc="upper left", bbox_to_anchor=(0.075, 0.925),
+    ax.legend(frameon=False, fontsize=6.2, loc="upper left", bbox_to_anchor=(0.075, 0.925),
               labelspacing=0.28, handlelength=1.5, handletextpad=0.5,
               borderpad=0.2)
 
