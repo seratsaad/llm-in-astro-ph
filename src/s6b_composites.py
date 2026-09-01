@@ -112,7 +112,7 @@ def fig3():
     ax.set_ylabel(r"Prevalence $\pi_t$ (% of papers)")
     ax.set_xlim(2020, 2026.6)
     ax.set_ylim(0, 100)
-    ax.legend(frameon=False, fontsize=6.4, loc="upper left",
+    ax.legend(frameon=False, fontsize=6.4, loc="upper left", bbox_to_anchor=(0.045, 0.955),
               labelspacing=0.28, handlelength=1.5, handletextpad=0.5,
               borderpad=0.2)
 
@@ -141,7 +141,7 @@ def fig3():
     from matplotlib.ticker import FuncFormatter, FixedLocator
     ax.yaxis.set_major_formatter(FuncFormatter(
         lambda v, _: f"{v:g}"))
-    ax.legend(frameon=False, fontsize=6.4, loc="upper left", ncol=1,
+    ax.legend(frameon=False, fontsize=6.4, loc="upper left", ncol=1, bbox_to_anchor=(0.045, 0.955),
               labelspacing=0.28, handlelength=1.5, handletextpad=0.5,
               borderpad=0.2)
 
@@ -171,7 +171,7 @@ def fig3():
         lambda v, _: f"{v:g}"))
     ax.set_xlabel("First-submission year")
     ax.set_ylabel(r"Percentage of papers")
-    ax.legend(frameon=False, fontsize=6.4, loc="upper left",
+    ax.legend(frameon=False, fontsize=6.4, loc="upper left", bbox_to_anchor=(0.045, 0.955),
               labelspacing=0.28, handlelength=1.5, handletextpad=0.5,
               borderpad=0.2)
 
@@ -213,7 +213,7 @@ def fig4():
     ax.set_ylim(0.28, 34)
     ax.legend(frameon=False, fontsize=6.4,
               labelspacing=0.28, handlelength=1.4, handletextpad=0.5,
-              borderpad=0.2, borderaxespad=0.4, loc="upper right")
+              borderpad=0.2, loc="upper right", bbox_to_anchor=(0.965, 0.955))
 
     # (b) held-out validation of the frozen selection
     ax = axes[1]
@@ -233,7 +233,7 @@ def fig4():
     ax.set_ylabel("Held-out excess (2025--2026)")
     ax.legend(frameon=False, fontsize=6.4,
               labelspacing=0.28, handlelength=1.4, handletextpad=0.5,
-              borderpad=0.2, borderaxespad=0.4, loc="upper left")
+              borderpad=0.2, loc="upper left", bbox_to_anchor=(0.045, 0.955))
 
     fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig4_composite.pdf"), dpi=400)
@@ -270,7 +270,7 @@ def figS1():
     ax.set_ylabel(r"Recovered prevalence (%)")
     ax.legend(frameon=False, fontsize=6.4,
               labelspacing=0.28, handlelength=1.4, handletextpad=0.5,
-              borderpad=0.2, borderaxespad=0.4, loc="upper left")
+              borderpad=0.2, loc="upper left", bbox_to_anchor=(0.045, 0.955))
 
     ax = axes[1]
     for d, colr, mk in zip(sorted(rows.true_delta.unique()),
