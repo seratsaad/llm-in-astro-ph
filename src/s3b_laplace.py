@@ -237,6 +237,8 @@ def build_logpost(data, drift, monotone, use_disclosure, gamma, free_from,
 
 
 def fit(args):
+    if args.abs_cohort:
+        os.environ["LLMH_ABS_COHORT"] = "1"
     spec = dict(VARIANTS[args.variant])
     basket = spec.pop("basket")
     free_from = spec.pop("free_from", M.FREE_FROM)
@@ -320,11 +322,15 @@ def fit(args):
     m_d = np.concatenate([m0_d[:, None], m0_d[:, None] + np.cumsum(inc_d, 1)], 1)
     pi_d = 1.0 / (1.0 + np.exp(-m_d))
 
-    tag = f"{args.phase}_{args.variant}" + (f"_{args.section}" if args.section else "")
+    tag = (f"{args.phase}_{args.variant}"
+           + (f"_{args.section}" if args.section else "")
+           + ("_cohort" if args.abs_cohort else ""))
     qs = [quarter_label(free_from + i) for i in range(n_free)]
     tab = pd.DataFrame({"quarter": qs, "mean": pi_d.mean(0),
                         "lo": np.percentile(pi_d, 2.5, 0),
-                        "hi": np.percentile(pi_d, 97.5, 0)})
+                        "hi": np.percentile(pi_d, 97.5, 0),
+                        "lo68": np.percentile(pi_d, 16.0, 0),
+                        "hi68": np.percentile(pi_d, 84.0, 0)})
     tab.to_csv(os.path.join(DATA, f"pi_{tag}.csv"), index=False)
     print(tab.round(4).to_string(index=False))
 
@@ -357,6 +363,8 @@ if __name__ == "__main__":
                     choices=["abstracts", "fulltext"])
     ap.add_argument("--variant", default="primary")
     ap.add_argument("--section", default=None, choices=SECTIONS + ["wholebody"])
+    ap.add_argument("--abs-cohort", action="store_true",
+                    help="abstracts phase: restrict to the full-text cohort")
     ap.add_argument("--free-delta", action="store_true",
                     help="disable the declared-papers anchor on delta_t")
     fit(ap.parse_args())

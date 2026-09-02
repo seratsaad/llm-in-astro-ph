@@ -64,6 +64,17 @@ def _secs(section):
 def load(phase, basket, section=None):
     if phase == "abstracts":
         df = pd.read_parquet(os.path.join(DATA, "abstract_features.parquet"))
+        if os.environ.get("LLMH_ABS_COHORT"):
+            # Restrict to the fitted full-text cohort, so the abstract and
+            # full-text numbers describe the same papers (YST note 2).
+            ftc = pd.read_parquet(
+                os.path.join(DATA, "fulltext_features.parquet"),
+                columns=["arxiv_id", "L_intro", "L_methods", "L_results",
+                         "L_discussion", "L_conclusions"])
+            named = ftc[["L_intro", "L_methods", "L_results",
+                         "L_discussion", "L_conclusions"]].sum(axis=1)
+            keep_ids = set(ftc.arxiv_id[named >= 300])
+            df = df[df.arxiv_id.isin(keep_ids)].reset_index(drop=True)
         decl_path = os.path.join(DATA, "declarations.csv")
         if os.path.exists(decl_path):
             d = pd.read_csv(decl_path, dtype={"arxiv_id": str})

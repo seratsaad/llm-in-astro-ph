@@ -182,6 +182,107 @@ def fig3():
     print("fig3 composite done")
 
 
+
+
+# ---------------------------------------------- figure 3 split (YST note 10)
+def fig3_split():
+    """The three arguments of the old composite as standalone figures."""
+    # (a) prevalence with the drift bracket
+    fig, ax = plt.subplots(figsize=(3.5, 2.75))
+    styles = {
+        "fulltext_primary": ("Linear drift (primary)", C["vermillion"], "-", True),
+        "fulltext_unconstrained": ("Unconstrained", C["black"], "--", False),
+        "fulltext_frozen_drift": ("Frozen background", C["orange"], ":", False),
+        "fulltext_tracked_drift": ("Control-tracked", C["blue"], "-.", False),
+    }
+    for tag, (lab, colr, ls, band) in styles.items():
+        p = os.path.join(DATA, f"pi_{tag}.csv")
+        if not os.path.exists(p):
+            continue
+        d = pd.read_csv(p)
+        qi = [int(q[:4]) * 4 + int(q[-1]) - 1 - 2015 * 4 for q in d.quarter]
+        x = [qmid(q) for q in qi]
+        ax.plot(x, 100 * d["mean"], color=colr, ls=ls, lw=1.3, label=lab)
+        if band:
+            ax.fill_between(x, 100 * d.lo, 100 * d.hi, color=colr,
+                            alpha=0.16, lw=0)
+    ax.set_xlabel("First-submission quarter")
+    ax.set_ylabel(r"Prevalence $\pi_t$ (% of papers)")
+    ax.set_xlim(2020, 2026.7)
+    ax.set_ylim(0, 100)
+    ax.legend(frameon=False, fontsize=6.6, loc="upper left",
+              bbox_to_anchor=(0.075, 0.925), labelspacing=0.3,
+              handlelength=1.5, handletextpad=0.5, borderpad=0.2)
+    fig.tight_layout()
+    fig.savefig(os.path.join(FIGS, "fig_prevalence.pdf"))
+    plt.close(fig)
+
+    # (b) the fading excess with four representative words
+    fig, ax = plt.subplots(figsize=(3.5, 2.75))
+    lp = os.path.join(DATA, "laplace_fulltext_primary.json")
+    if os.path.exists(lp):
+        d = json.load(open(lp))["delta_by_quarter"]
+        qs = sorted(d, key=lambda q: (int(q[:4]), int(q[-1])))
+        x = [int(q[:4]) + (int(q[-1]) - 1) / 4.0 + 0.125 for q in qs]
+        ax.plot(x, [d[q] for q in qs], color=C["black"], lw=1.6,
+                label=r"Fitted excess $e^{\delta_t}$")
+    tr = os.path.join(DATA, "marker_trajectories_fulltext.csv")
+    if os.path.exists(tr):
+        t = pd.read_csv(tr)
+        t = t[t.year >= 2019]
+        for w, colr in zip(["delve", "underscore", "notably", "intricate"],
+                           [C["vermillion"], C["blue"], C["green"], C["orange"]]):
+            g = t[t.marker == w].groupby("year").excess_ratio.mean()
+            if len(g):
+                ax.plot(g.index + 0.5, g.values, lw=1.0, color=colr,
+                        alpha=0.85, label=w)
+    ax.set_xlabel("First-submission year")
+    ax.set_ylabel("Excess over background")
+    ax.set_yscale("log")
+    ax.set_ylim(0.8, 60)
+    from matplotlib.ticker import FuncFormatter
+    ax.yaxis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:g}"))
+    ax.legend(frameon=False, fontsize=6.6, loc="upper left",
+              bbox_to_anchor=(0.075, 0.925), labelspacing=0.3,
+              handlelength=1.5, handletextpad=0.5, borderpad=0.2)
+    fig.tight_layout()
+    fig.savefig(os.path.join(FIGS, "fig_fading.pdf"))
+    plt.close(fig)
+
+    # (c) the disclosure gap
+    fig, ax = plt.subplots(figsize=(3.5, 2.75))
+    ft = pd.read_parquet(os.path.join(DATA, "fulltext_features.parquet"),
+                         columns=["year", "declared"])
+    decl = ft.groupby("year").declared.mean()
+    p = os.path.join(DATA, "pi_fulltext_primary.csv")
+    if os.path.exists(p):
+        d = pd.read_csv(p)
+        d["year"] = d.quarter.str[:4].astype(int)
+        g = d.groupby("year")["mean"].mean()
+        lo = d.groupby("year")["lo"].mean()
+        hi = d.groupby("year")["hi"].mean()
+        ax.plot(g.index, 100 * g, color=C["vermillion"], lw=1.4,
+                label=r"Estimated $\pi_t$")
+        ax.fill_between(g.index, 100 * lo, 100 * hi, color=C["vermillion"],
+                        alpha=0.16, lw=0)
+    ax.plot(decl.index, 100 * decl.clip(lower=1e-4), color=C["blue"], lw=1.4,
+            marker="o", ms=2.5, label="Declared use")
+    ax.set_yscale("log")
+    ax.set_xlim(2019.5, 2026.7)
+    ax.set_ylim(0.05, 200)
+    from matplotlib.ticker import FuncFormatter as _FF
+    ax.yaxis.set_major_formatter(_FF(lambda v, _: f"{v:g}"))
+    ax.set_xlabel("First-submission year")
+    ax.set_ylabel("Percentage of papers")
+    ax.legend(frameon=False, fontsize=6.6, loc="upper left",
+              bbox_to_anchor=(0.075, 0.925), labelspacing=0.3,
+              handlelength=1.5, handletextpad=0.5, borderpad=0.2)
+    fig.tight_layout()
+    fig.savefig(os.path.join(FIGS, "fig_gap.pdf"))
+    plt.close(fig)
+    print("fig3 split done")
+
+
 # ------------------------------------------------------------------ figure 4
 def fig4():
     p = os.path.join(DATA, "discovered_markers.csv")
@@ -202,9 +303,9 @@ def fig4():
     pick = d[d.word.isin(sel)]
     ax.scatter(pick.base_df, np.clip(pick.disc_ratio, 0.2, 12), s=10,
                facecolors="none", edgecolors=C["black"], lw=0.5,
-               label="Selected", zorder=2)
+               label="Selected here (Basket 2)", zorder=2)
     ax.scatter(d[d.is_seed].base_df, np.clip(d[d.is_seed].disc_ratio, 0.2, 12),
-               s=10, c=C["vermillion"], lw=0, label="Frozen seed markers", zorder=3)
+               s=10, c=C["vermillion"], lw=0, label="Imported markers (Basket 1)", zorder=3)
     ax.scatter(d[d.is_control].base_df, np.clip(d[d.is_control].disc_ratio, 0.2, 12),
                s=10, c=C["blue"], lw=0, label="Neutral controls", zorder=3)
     ax.set_xscale("log")
@@ -221,7 +322,7 @@ def fig4():
     ax.scatter(d.disc_ratio, d.val_ratio, s=1.4, c=C["grey"], alpha=0.22,
                lw=0, rasterized=True)
     ax.scatter(pick.disc_ratio, pick.val_ratio, s=11, facecolors="none",
-               edgecolors=C["black"], lw=0.6, label="Selected", zorder=3)
+               edgecolors=C["black"], lw=0.6, label="Selected here (Basket 2)", zorder=3)
     ax.scatter(d[d.is_control].disc_ratio, d[d.is_control].val_ratio, s=11,
                c=C["blue"], lw=0, label="Neutral controls", zorder=4)
     lim = [0.4, 12]
@@ -246,6 +347,7 @@ if __name__ == "__main__":
     os.makedirs(FIGS, exist_ok=True)
     fig1()
     fig3()
+    fig3_split()
     fig4()
 
 

@@ -99,3 +99,12 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def apply_judge_overrides(df):
+    """Zero the declared flag for ids the language-model judge audit rejected."""
+    p = os.path.join(DATA, "declaration_judge_overrides.csv")
+    if os.path.exists(p):
+        bad = set(pd.read_csv(p, dtype={"arxiv_id": str}).arxiv_id)
+        df.loc[df.arxiv_id.isin(bad), "declared"] = 0
+    return df

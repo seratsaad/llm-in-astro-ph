@@ -87,6 +87,10 @@ SUBJECT_RE = re.compile(
     r"our (?:model|agent|pipeline|system)|"
     r"astro(?:llama|sage|bert)|benchmark|fine-?tun|token(?:iz|s\b)|"
     r"embedding|transformer architecture|retrieval-augmented)\w*", re.I)
+# Sentences that DENY use ("No generative AI was used ...") must not count.
+NEG_RE = re.compile(
+    r"(?i)\b(?:no|not|never|without)\b[\w\s,'()-]{0,60}"
+    r"\b(?:use[dr]?|employ|appli|draft|writ|generat|creat)")
 # An authorial cue: the tool is reported as having been *used by the authors*.
 USE_RE = re.compile(
     r"\b((?:we|i|the authors?)\s+(?:also\s+|would like to\s+)?"
@@ -184,6 +188,8 @@ def detect_disclosure(text):
         if not WRITING_RE.search(sent):
             continue
         if SUBJECT_RE.search(sent):
+            continue
+        if NEG_RE.search(sent):
             continue
         if about_llms and not re.search(r"\b(we|authors?|manuscript|this paper)\b",
                                         sent, re.I):

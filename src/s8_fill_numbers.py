@@ -63,7 +63,22 @@ def main():
         M("declRateTwentyFive",
           pct(ft[ft.year == 2025].declared.mean(), 2))
     # cohort actually fitted (>=300 named-section tokens, topic assigned)
-    M("nFulltext", "202{,}680")
+    ftq = pd.read_parquet(ftp, columns=["arxiv_id", "year", "declared",
+                                        "L_intro", "L_methods", "L_results",
+                                        "L_discussion", "L_conclusions"])
+    ab_t = pd.read_parquet(os.path.join(DATA, "abstract_features.parquet"),
+                           columns=["arxiv_id", "topic"])
+    ftq = ftq.merge(ab_t, on="arxiv_id", how="left")
+    Lnamed = ftq[["L_intro", "L_methods", "L_results", "L_discussion",
+                  "L_conclusions"]].sum(axis=1)
+    coh = ftq[(ftq.topic.fillna(-1) >= 0) & (Lnamed >= 300)]
+    M("nFulltext", f"{len(coh):,}".replace(",", "{,}"))
+    # declaration counts, per year, inside the fitted cohort
+    dc = coh.groupby("year").declared.sum().astype(int)
+    M("nDeclaredPreChatGPT", str(int(dc.loc[:2022].sum())))
+    yrs = [int(dc.get(y, 0)) for y in (2023, 2024, 2025, 2026)]
+    M("declCountsByYear", f"{yrs[0]}, {yrs[1]}, {yrs[2]}, and {yrs[3]}")
+    M("nDeclaredCohort", str(int(coh.declared.sum())))
 
     # ---------------- ladder + crude estimates
     if ladder:
@@ -101,6 +116,9 @@ def main():
     if b:
         M("piAbstractsHeadline", b)
         M("ladderAbsRungFour", b)
+    b = band("abstracts_primary_cohort", 2025)
+    if b:
+        M("piAbstractsCohort", b)
     b = band("fulltext_expanded", 2025)
     if b:
         M("piExpandedHeadline", b)
@@ -108,11 +126,37 @@ def main():
     if exp_t is not None:
         M("piExpandedTracked", pct(exp_t, 0))
     # drift bracket: linear (floor) to frozen (ceiling), tracked between
+    def year_tab(tag, year):
+        p_ = os.path.join(DATA, f"pi_{tag}.csv")
+        if not os.path.exists(p_):
+            return None
+        d_ = pd.read_csv(p_)
+        d_["year"] = d_.quarter.str[:4].astype(int)
+        g_ = d_[d_.year == year]
+        if not len(g_):
+            return None
+        l68 = float(g_.lo68.mean()) if "lo68" in g_ else None
+        h68 = float(g_.hi68.mean()) if "hi68" in g_ else None
+        return (float(g_["mean"].mean()), float(g_.lo.mean()),
+                float(g_.hi.mean()), l68, h68)
+
+    m25_tab = year_tab("fulltext_primary", 2025)
     lo_v = annual("fulltext_primary", 2025)
     mid_v = annual("fulltext_tracked_drift", 2025)
     hi_v = annual("fulltext_frozen_drift", 2025)
     if None not in (lo_v, hi_v):
         M("piFulltextBracket", f"{100*lo_v:.0f}--{100*hi_v:.0f}\\%")
+    # headline written as +/- terms, generated rather than typed (both levels)
+    if None not in (lo_v, hi_v) and m25_tab is not None:
+        m, lo, hi, l68, h68 = m25_tab
+        bg_up = max(0.0, hi_v - m)
+        pm95 = (f"${100*m:.0f}^{{+{100*(hi-m):.0f}}}_{{-{100*(m-lo):.0f}}}"
+                f"\,(\mathrm{{stat}},\,95\%)\,"
+                f"^{{+{100*bg_up:.0f}}}_{{-0}}\,(\mathrm{{background}})$")
+        M("piHeadlinePM", pm95)
+        if l68 is not None:
+            M("piStatOneSigma",
+              f"$^{{+{100*(h68-m):.0f}}}_{{-{100*(m-l68):.0f}}}$")
     unc = annual("fulltext_unconstrained", 2025)
     if unc is not None:
         M("piUnconstrained", pct(unc, 0))
@@ -175,6 +219,20 @@ def main():
             if len(classes) == len(u):
                 M("topTopicName", short.get(classes[int(np.argmax(u))]))
                 M("bottomTopicName", short.get(classes[int(np.argmin(u))]))
+                # per-class 2025 prevalence: logit(pi_2025) + u_c (YST note 19)
+                if m25 is not None:
+                    lg = np.log(m25 / (1 - m25))
+                    pic = 1 / (1 + np.exp(-(lg + u)))
+                    M("piTopClass", pct(float(pic.max()), 0))
+                    M("piBottomClass", pct(float(pic.min()), 0))
+                    # paper-count weighting vs the class-average (YST note 8)
+                    cnt = coh[coh.year == 2025].topic.value_counts()
+                    w = np.array([cnt.get(k, 0) for k in range(len(u))],
+                                 dtype=float)
+                    if w.sum() > 0:
+                        pw = float((pic * w).sum() / w.sum())
+                        M("piWeightShift",
+                          f"{100*abs(pw - m25):.1f} percentage points")
     M("anchorRangeMarkers", "2.6--6.8")
     M("anchorRangeControls", "1.05--1.2")
 
