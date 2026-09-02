@@ -48,6 +48,19 @@ BASKETS = {"markers_38": MARKERS, "markers_strong_18": MARKERS_STRONG,
 SECTIONS = ["intro", "methods", "results", "discussion", "conclusions"]
 
 
+def _secs(section):
+    """Sections whose tokens enter the fit.
+
+    'wholebody' adds the unlabelled remainder back, which is the refit that
+    tests whether restricting to recognised headers changes the answer.
+    """
+    if section is None:
+        return SECTIONS
+    if section == "wholebody":
+        return SECTIONS + ["other"]
+    return [section]
+
+
 def load(phase, basket, section=None):
     if phase == "abstracts":
         df = pd.read_parquet(os.path.join(DATA, "abstract_features.parquet"))
@@ -69,7 +82,7 @@ def load(phase, basket, section=None):
         # Restrict to the five recognised sections. The unlabelled "other"
         # bucket shrinks from 50% to 39% of the body over the decade, so
         # including it would mix a composition shift into the drift term.
-        secs = SECTIONS if section is None else [section]
+        secs = _secs(section)
         if basket == "expanded":
             exp = pd.read_parquet(os.path.join(DATA, "expanded_features.parquet"))
             df = df.merge(exp, on="arxiv_id", how="inner")
@@ -95,7 +108,7 @@ def load(phase, basket, section=None):
 def neutral_drift_offset(df, n_q, free_from, phase="abstracts", section=None):
     """Per-quarter log drift of the neutral control basket, for 'tracked'."""
     if phase == "fulltext":
-        secs = SECTIONS if section is None else [section]
+        secs = _secs(section)
         Kc = df[[f"C_{s}" for s in secs]].sum(axis=1).values
     else:
         Kc = df[["w_" + w for w in CONTROL]].sum(axis=1).values
@@ -116,7 +129,7 @@ def main():
     ap.add_argument("--draws", type=int, default=1000)
     ap.add_argument("--tune", type=int, default=1000)
     ap.add_argument("--chains", type=int, default=4)
-    ap.add_argument("--section", default=None, choices=SECTIONS)
+    ap.add_argument("--section", default=None, choices=SECTIONS + ["wholebody"])
     ap.add_argument("--nuts", default="pymc", choices=["pymc", "numpyro"],
                     help="numpyro uses the JAX NUTS sampler (much faster)")
     args = ap.parse_args()

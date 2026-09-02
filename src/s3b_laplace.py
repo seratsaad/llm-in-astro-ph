@@ -356,7 +356,7 @@ if __name__ == "__main__":
     ap.add_argument("--phase", default="fulltext",
                     choices=["abstracts", "fulltext"])
     ap.add_argument("--variant", default="primary")
-    ap.add_argument("--section", default=None, choices=SECTIONS)
+    ap.add_argument("--section", default=None, choices=SECTIONS + ["wholebody"])
     ap.add_argument("--free-delta", action="store_true",
                     help="disable the declared-papers anchor on delta_t")
     fit(ap.parse_args())
