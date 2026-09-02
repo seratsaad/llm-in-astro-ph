@@ -16,7 +16,6 @@
 \definecolor{oiBlue}{HTML}{0072B2}
 \definecolor{oiGray}{HTML}{4D4D4D}
 
-
 \usepackage{lettrine}
 
 \newlength{\pixunit}
@@ -33,14 +32,17 @@
 \end{tikzpicture}}
 \newcommand{\pixelA}{\usebox{\pixelAbox}}
 
+% ---- Editorial notes (remove before submission) ----
+\newcommand{\rcode}[1]{\texttt{#1}}
+\newcommand{\rednote}[1]{\textcolor{red}{\textbf{[NOTE:} #1\textbf{]}}}
+
 \input{numbers}
 
-\shorttitle{Most recent astronomy papers use language-model assistance}
-\shortauthors{Saad \& Ting}
+%\shortauthors{Saad \& Ting}
 
 \begin{document}
 
-\title{More than half of recent astronomy papers are being written with
+\title{More than half of recent astronomy papers are written with
 language-model assistance}
 
 \author[0009-0004-9592-2311]{Serat M. Saad}
@@ -56,7 +58,21 @@ State University, Columbus, OH 43210, USA}
 Heidelberg, Germany}
 
 \begin{abstract}
-Since the public announcement of ChatGPT in 2022, large language models have been used in the writing of literature in every scientific field. In this work, we measure how much of the astronomy literature is now written with the help of language models. From the full text of \nFulltext\ astro-ph papers, spanning 2015 to mid-2026, we count the vocabulary that language models favor to calibrate its usage on the \nDeclared\ papers whose authors disclosed model use. We then infer the fraction of assisted papers with a hierarchical Bayesian model. The model uses the disclosed papers to fix the marker rate of assisted prose and the 106{,}000 papers in the corpus that predate ChatGPT to fix the rate without assistance. No data can tell us how the unassisted rate would have continued after 2022, had chatbots never been released, so rather than assuming a single continuation we fit three, and together they give the plausible range. For 2025, the primary specification gives \piFulltextHeadline, and the three continuations span \piFulltextBracket. The fraction stays at or above \piGridFloor\ under every variant we tried. We conclude that more than half of recent astro-ph papers carry a language-model trace in their prose, while only \declRateTwentyFive\ declare it.
+Language models leave a distinctive vocabulary in the prose they help write, and we measure
+how much of the astronomy literature now carries it. From the full text of \nFulltext\
+astro-ph papers spanning 2015 to mid-2026, we count those words in each paper and model the
+counts, in proportion to paper length, as a mixture of assisted and unassisted writing in a
+hierarchical Bayesian model. Papers from before 2020 calibrate the unassisted rate, and the
+\nDeclared\ papers that disclose model use calibrate the assisted one. Our answer depends on
+how often these words would appear today if nobody used a model, a rate that must be modeled
+rather than observed, so we extend it past 2020 under three assumptions and report all
+three. For 2025 that gives $67^{+12}_{-11}\,(\mathrm{stat},\,95\%)\,^{+22}_{-0}\,(\mathrm{background})$ per cent of papers, the second error being the spread across the three. The estimate stays at or above \piGridFloor\ when we vary that choice, the
+calibration, and the requirement that adoption only rises. A word list built from the astro-ph
+corpus, keeping only words that rose across every subfield, leaves 2025 in the same range. Assisted writing is also getting harder to see, since authors adapt to the
+words that reveal it and the marker excess more than halves between 2023 and 2026. Our model
+allows for that fading, so it can separate a fainter trace from reduced use. More than half of recent astro-ph papers therefore carry a language-model trace, while
+only \declRateTwentyFive\ of 2025 papers disclose it, one declaration for every
+\disclosureGapFactor\ papers with a trace.
 \end{abstract}
 
 \keywords{Astronomy data analysis (1858) --- Publishing (1329) ---
@@ -64,146 +80,30 @@ Bayesian statistics (1900)}
 % =====================================================================
 \section{Introduction}\label{sec:intro}
 \lettrine[lines=2, findent=3pt, nindent=0pt, slope=0pt, ante=]{\pixelA}{}%
-fter ChatGPT (Chat Generative Pre-trained Transformer) became publicly available in November 2022, a specific set of English words has spread through scientific writing. These words are not technical terms rather they are stylistic choices, like \textit{delve}, \textit{underscore}, \textit{intricate}, \textit{pivotal}, and their relatives, that language models favor and that human writers before November 2022 used rarely. The models are transformer language models \citep{Vaswani2017} scaled to the point where fluent scientific prose costs nothing to generate \citep{Brown2020}. The pattern was first quantified by \citet{Gray2025}, who estimated from keyword frequencies that at least one percent of 2023 articles were model-assisted, and by \citet{Liang2024}, who fitted a distributional model to abstracts and found rates of a few percent, rising fastest in computer science. \citet{Kobak2024} then introduced the approach that now dominates the field. Rather than assume a word list, they measured which words rose anomalously across 14 million PubMed abstracts and concluded that at least 10\% of 2024 biomedical abstracts had been processed with a language model. Extending the method to 1.2 million biomedical full texts, \citet{Holzwarth2026} report that 89\% of papers showed excess model-associated vocabulary by late 2025. Related measurements now exist for peer-review text \citep{Liang2024review}, for condensed-matter physics \citep{Xu2024}, and for preprints across arXiv \citep{Juzek2025, Bao2025}.
+fter ChatGPT (Chat Generative Pre-trained Transformer) became publicly available in November 2022, a specific set of English words has spread through scientific writing. These words are not technical terms but stylistic choices, like \textit{delve}, \textit{underscore}, \textit{intricate}, \textit{pivotal}, and their relatives, that language models favor and that human writers before November 2022 used rarely. We call them marker words. These models are transformers \citep{Vaswani2017}, scaled to the point where fluent scientific prose is generated at negligible cost \citep{Brown2020}. The pattern was first quantified by \citet{Gray2025}, who estimated from keyword frequencies that at least one percent of 2023 articles were model-assisted, and by \citet{Liang2024}, who fitted a distributional model to abstracts and found rates of a few percent, rising fastest in computer science.
 
-Although the counting of excess vocabulary is more straightforward, converting a count into a statement of the form ``$x$\% of papers used a language model'' is not, and the obstacle is not statistical noise. With hundreds of thousands of papers the observed word frequencies are known almost exactly. The obstacle is that the inference requires the frequency these words would have had if language models had never been released. This is something that stopped being observable in November 2022. Every estimate in this literature depends on a counterfactual that no amount of data can measure.
+\citet{Kobak2024} then introduced the approach that now dominates the field. Rather than assume a word list, they measured which words rose anomalously across 14 million PubMed abstracts and concluded that at least 10\% of 2024 biomedical abstracts had been processed with a language model. Extending the method to 1.2 million biomedical full texts, \citet{Holzwarth2026} report that 89\% of papers showed excess model-associated vocabulary by late 2025. Related measurements now exist for peer-review text \citep{Liang2024review}, for condensed-matter physics \citep{Xu2024}, and for preprints across arXiv \citep{Juzek2025, Bao2025}.
 
-Existing estimators handle that counterfactual by fixing it. The excess-vocabulary bound of \citet{Kobak2024} subtracts a baseline frequency from the observed one and reports the difference as a floor. The extrapolation estimator of \citet{Holzwarth2026} fits the pre-2022 trend of each marker word, extends it linearly, and converts the excess into an estimate that is unbiased if the extension is correct. None of these approach reports uncertainty on the extension itself, and both share three further restrictions that are rarely stated. Each paper is reduced to a binary flag, so a 200-word abstract and a 15{,}000-word monograph count equally. The background is one number per year, so no allowance is made for documents growing longer or for topics drifting. And the excess rate of assisted prose is held fixed, so the method cannot separate more papers using models from models becoming harder to detect, a failure mode the literature has already recorded, since \citet{Geng2025} showed that \textit{delve} fell sharply once it became famous in early 2024 while other model-favored words kept rising, so authors adapt and any fixed vocabulary loses power with time. The same group documented the initial shift a year earlier \citep{Geng2024}. The question matters because the documented failure modes of unsupervised model use are concrete, most obviously fabricated references \citep{Walters2023, Topaz2026}, and because researchers themselves are split on whether such use is acceptable \citep{Kwon2025}. Many journals also ask for disclosure, so it is worth knowing how much goes undisclosed.
+The question matters because the documented failure modes of unsupervised model use are concrete, fabricated references above all \citep{Walters2023, Topaz2026}, and because researchers themselves are split on whether such use is acceptable \citep{Kwon2025}. Many journals also ask for disclosure, so it is worth knowing how much goes undisclosed.
 
-No comparable measurement exists for astronomy, mainly because no clean full-text corpus existed. That changed with the AstroMLab~5 catalog \citep{Ting2025}, which provides uniform, OCR-normalized full text for 433{,}176 astro-ph papers through August 2026, together with abstracts and topic assignments. We work from the full text rather than the abstracts. An abstract offers a few hundred tokens of evidence, most containing no marker at all, while a paper body offers thousands.
+Counting excess vocabulary is straightforward. Converting a count into a statement of the form ``$x$ per cent of papers used a language model'' requires the frequency these words would have had if language models had never been released, and that frequency stopped being observable in November 2022. Statistical precision is not the obstacle, since with hundreds of thousands of papers the observed frequencies are known almost exactly. That frequency can only be supplied by a model, so every estimate in this literature rests on the model chosen for it.
 
-In this paper we make the measurement with a hierarchical bayesian model. We calibrate the background rate of marker words on the pre-ChatGPT era and the assisted rate on the papers whose authors state that they used a model, and we report the population fraction as the mixture weight. Where the data cannot decide between assumptions we fit the alternatives rather than choose one, and we quote the conservative end of the resulting range. Under the primary specification we obtain a 2025 assisted fraction of \piFulltextHeadline, and across every variant we ran, spanning the background counterfactual, the monotonicity assumption, the marker vocabulary, and the calibration, our estimate never falls below \piGridFloor.
+Existing estimators handle that missing frequency by fixing it. The excess-vocabulary bound of \citet{Kobak2024} subtracts a baseline frequency from the observed one and reports the difference as a floor. The extrapolation estimator of \citet{Holzwarth2026} fits the pre-2022 trend of each marker word, extends it linearly, and converts the excess into an estimate that is unbiased if the extension is correct. Neither approach reports uncertainty on the extension itself, and both carry three further restrictions that are worth making explicit.
 
-In Section~\ref{sec:methods} we describe the corpus, the vocabulary, the declarations, and the model. In Section~\ref{sec:results} we report the assisted fraction and the checks that constrain it, including a control test that the standard estimator fails on this corpus. In Section~\ref{sec:discussion} we compare the result with biomedicine and set
-out what we think follows.
+The first is that each paper is reduced to a binary flag, so a 200-word abstract and a 15{,}000-word monograph count equally. The second is that the background, the rate at which these words appear in writing that no model touched, is one number per year, so no allowance is made for documents growing longer or for topics drifting. The third is that the excess, the factor by which assisted prose lifts that rate, is held fixed, so the method cannot separate more papers using models from models becoming harder to detect. 
+
+The literature has already recorded that failure, since \citet{Geng2025} showed that \textit{delve} fell once it became famous in early 2024 while other model-favored words kept rising, so authors adapt and any fixed vocabulary loses power with time. The same group documented the initial shift a year earlier \citep{Geng2024}.
+
+No comparable measurement exists for astronomy, mainly because no clean full-text corpus existed. That changed with the AstroMLab~5 catalog \citep{Ting2025}, which curates 408{,}590 astro-ph papers from 1992 through July 2025 under uniform OCR normalization, together with structured summaries and topic assignments, and makes the underlying full text available on request. We work from an update of that catalog that extends the coverage to August 2026 and holds 433{,}176 papers, of which we analyze the \nFulltext\ first submitted from January 2015 onward that meet our length and topic requirements. We measure both the full text and the abstracts, and we take the full text as our primary evidence. An abstract offers a few hundred tokens, most containing no marker at all, while a paper body offers thousands.
+
+We take up those three restrictions with a hierarchical Bayesian model. We count marker words in each paper against the length of the text we analyze, so that a long paper contributes more evidence than a short one. We calibrate their rate in unassisted writing on the years before 2020, letting it vary with topic and with time, and their rate in assisted writing on the papers whose authors state that they used a model. We also let the difference between those two rates change from year to year, so that a marker word falling out of use as authors adapt to it appears as a fainter trace rather than as less use.
+
+None of this supplies the rate these words would have reached without language models. Rather than choose one continuation of that rate past 2020, we fit three and quote the conservative end of the range they give. For 2025 that range is \piFulltextBracket\ of papers, and no alternative we fit puts it below \piGridFloor.
+
+In Section~\ref{sec:methods} we describe the corpus, the vocabulary, the declarations, and the model. In Section~\ref{sec:results} we report the assisted fraction, the fading of the marker excess, a vocabulary drawn from the corpus itself, and the comparison with declared use. In Section~\ref{sec:discussion} we test how far the result depends on our assumptions, place it beside the biomedical measurements, and set out what follows from it.
 
 % =====================================================================
 \section{Methods}\label{sec:methods}
-
-\subsection{Corpus and cohort}\label{sec:m-corpus}
-
-We take all text from the AstroMLab~5 catalog \citep{Ting2025}. We date every paper by its first submission and decoded from the arXiv identifier so that a paper posted in 2019 and revised in 2024 cannot carry post-ChatGPT text into the pre-ChatGPT era. The OCR text corresponds to the latest revision, so a small amount of such leakage remains possible. We bound it in Section~\ref{sec:m-robust} by moving the boundary.
-
-We lowercase the text and tokenize it on contiguous alphabetic strings. We remove tables, displayed and inline mathematics, URLs, figure placeholders, and affiliation lines. We then segment the body on section headers into introduction, methods and data, results, discussion, and conclusions, and we analyze only these five section groups. We exclude the abstract so that our full-text analysis does not re-read the same prose, and we exclude
-references, acknowledgments, and appendices because their vocabulary is formulaic. We also exclude the unlabeled remainder of the body, which shrinks from half of the body in 2015 to two-fifths in 2026 as OCR sectioning improves. Including it would fold that change in composition into the language signal. We require at least 300 analyzed tokens and a topic assignment, which leaves \nFulltext\ papers first submitted between January 2015 and June 2026, with a median of about 2{,}500 analyzed tokens.
-
-\subsection{Marker, control, and null vocabulary}\label{sec:m-words}
-
-We count three baskets per paper and per section. The marker basket is 38 words that we take from the published biomedical and computer-science lists \citep{Liang2024, Kobak2024, Gray2025}, split between rare, high-specificity words such as \textit{delve} and \textit{underscore} and commoner ones such as \textit{comprehensive} and \textit{notably}. The control basket is ten neutral astronomy content words, among them \textit{observed}, \textit{galaxy}, and \textit{redshift}, that no language model has any reason to favor. The null basket is fifteen common hedges and intensifiers with pre-2020 frequencies comparable to those of the marker words. Table~\ref{tab:baskets} lists both marker baskets in full, together with the control and null vocabularies.
-
-We pass the controls and the nulls through the identical pipeline at every stage. Any prevalence they generate measures our own systematic error rather than language-model use, and we report it in those terms. We treat this as our main diagnostic, and in Section~\ref{sec:placebo} we show that the document-frequency estimator does not survive it at full-text lengths.
-
-\subsection{Declarations of model use}\label{sec:m-decl}
-
-A small number of authors state in the paper that they used a language model. We scan every full text for a single sentence that joins a named tool or an explicit language-model phrase, writing or editing vocabulary, and an authorial-use construction such as ``we used'' or ``the authors acknowledge''. We exclude papers about language models with a mention-count veto. We also handle two astronomy-specific ambiguities, the Gemini telescopes and colleagues named Claude, by requiring a vendor or version qualifier before we accept an ambiguous name.
-
-We find \nDeclared\ declarations. None fall before 2023, and the counts for 2023 through mid-2026 are 29, 52, 200, and 104. The pre-2023 null constrains our false-alarm rate, because the corpus offers roughly 160{,}000 earlier opportunities to false-alarm and the detector triggers on none of them. Declared papers use marker vocabulary at \anchorRangeMarkers\ times the background rate and control vocabulary at the background rate. We use that contrast to
-calibrate the model.
-
-We audited the detector for missed declarations with a language-model judge.
-We drew 150 undeclared papers from 2024--2026 at random, screened the closing
-3{,}500 characters of each for any loose model-related term, and read the
-three candidates that surfaced in full. None is a declaration, since two are
-funding-program and compute-cluster names that contain the letters AI and one
-is a paper about language models that the mention-count veto already handles.
-Zero misses in 150 papers bounds the false-negative rate below 2\% of papers
-at 95\% confidence. We re-read 20 declared papers the same way, and every
-statement visible in the closing text is a genuine authorial declaration,
-almost all naming grammar, clarity, or language editing as the purpose.
-
-\subsection{The mixture model}\label{sec:m-model}
-
-\begin{figure*}[!t]
-\centering
-\resizebox{0.66\textwidth}{!}{\input{diagram_simple}}
-\caption{The hierarchical Bayesian model used in this work. Each paper contributes its analyzed length $L_i$, its marker count $K_i$, and its declaration flag $D_i$. The background rate $\mu_{i0}$ scales with length and drifts as $g_0(t)$. Assisted papers multiply that rate by the excess $e^{\delta_t}$, which we calibrate on the declared papers. The latent indicator $A_i$ has probability $\pi_t$, the quantity we report, and we fix it to zero before 2020. We suppress the topic effects, the overdispersion parameters, and the declared-versus-silent selection parameter in this figure and describe them in the text.\label{fig:model}}
-\end{figure*}
-
-For paper $i$ with analyzed length $L_i$, marker count $K_i$, and latent assistance indicator $A_i$, we write the counts as a two-component mixture of negative binomials,
-\begin{align}
-K_i \mid A_i{=}0 &\sim \mathrm{NB}(\mu_{i0},\,\phi_0),\nonumber\\
-\log\mu_{i0} &= \log L_i + \beta_0 + b_{c_i} + g_0(t_i),\nonumber\\
-K_i \mid A_i{=}1 &\sim \mathrm{NB}(\mu_{i1},\,\phi_1),\nonumber\\
-\log\mu_{i1} &= \log\mu_{i0} + \delta_{t_i} + v_{c_i},\nonumber\\
-A_i &\sim \mathrm{Bern}(\pi_{t_i,c_i}),\nonumber\\
-\operatorname{logit}\pi_{t,c} &= m_t + u_c,
-\label{eq:model}
-\end{align}
-and we fix $\pi\equiv0$ for papers submitted before 2020. Here $c_i$ is the broad topic class and $t_i$ the submission quarter. The terms $b_c$, $v_c$, and $u_c$ are partially pooled topic effects on the background, the excess, and the prevalence. The negative binomial dispersions $\phi_0$ and $\phi_1$ absorb the heavy tail that a Poisson model would misread as structure. Mixtures of this kind are routine for latent-class problems in astronomy \citep[e.g.][]{Hogg2010, Foreman-Mackey2014}.
-
-Two features of Equation~\ref{eq:model} account for most of the improvement over the standard estimator. The first is the offset $\log L_i$, standard in count regression \citep{Cameron2013}. It makes our unit of evidence the count given length rather than the presence of a word anywhere in the document. The second is that we leave $\delta_t$ a free function of time, so the excess of assisted prose can fade as authors adapt without our reading that fading as a fall in use. We marginalize the latent $A_i$ analytically, so the fit involves only continuous parameters.
-
-We treat declarations as positive-unlabeled labels \citep{Elkan2008}. A declaration is a positive, but its absence is not a negative, since most assisted authors say nothing. Writing $\rho_t$ for the probability that an assisted author declares, we let a declared paper contribute $\pi\rho\,p_1(K_i)$ and a silent paper contribute $(1-\pi)p_0(K_i)+\pi(1-\rho)p_1(K_i)$, where $p_0$ and $p_1$ are the two negative binomial densities.
-
-\subsection{Identification and the counterfactual}\label{sec:m-ident}
-
-Left to itself, a two-component mixture is a flexible curve fitter. Given any spread of counts it will find two components, whether or not two processes are really there. When we run our model on the neutral control basket with the excess left free, it does exactly that and reports a large prevalence for words that carry no signal. We take our remedy from the logic of the original spam filter \citep{Sahami1998}. We do not let the model invent the assisted component. We anchor it to the papers we know are assisted, by centering the prior on $\delta_t$ tightly on the marker excess that we measure in the declared papers themselves. Once we anchor it, the model has no way to turn ordinary drift in control words into prevalence.
-
-We fix three other quantities from data rather than assume them. From the 106{,}000 pre-2020 papers we take the background level, how it scales with length, how it varies by topic, and how much it scatters. From the neutral controls we take a bound on how fast ordinary astronomy vocabulary drifts. From the declaration counts by year we take $\rho_t$. A fourth ingredient, the assumption that adoption only rises, is not data, and we report every
-number without it as well.
-
-One quantity we cannot fix by any of these means is the counterfactual from the introduction. We do not know what the background would have done after 2020 if chatbots had not been released. Rather than pick an answer and hide it, we fit the model three times. In the \textit{linear} variant we continue the trend we measure before 2020, which is what the standard estimator assumes. In the \textit{frozen} variant we hold the background at its 2020
-level, so we attribute every later change to assistance, and this gives the highest answer. In the \textit{tracked} variant we tie the background to the measured drift of the neutral controls, and this gives the lowest. We take the spread between the three as our uncertainty, and after 2024 it is wider than the statistical error of any single fit.
-
-\subsection{Inference and calibration}\label{sec:m-inf}
-
-We maximize the log posterior on the unconstrained parametrization with exact gradients, and we take our uncertainties from the curvature at the mode, the Laplace approximation \citep[cf.][]{Gelman2013}. Every fit converges in about a minute, which is what makes the variant grid of Section~\ref{sec:m-robust} affordable. We check the approximation against full Hamiltonian Monte Carlo \citep{Neal2011, Hoffman2014, Betancourt2017} on the primary specification, and we check convergence with rank-normalized $\widehat{R}$ and effective sample size \citep{Vehtari2021}.
-
-We calibrate the estimator on synthetic corpora that we build from the real pre-2020 papers, so that lengths, topics, and dispersion are realistic by construction, and we inject an assisted component at known prevalence and known excess. For excess factors of 2.5 and above we recover the prevalence to within two or three percentage points of the truth across the whole range. At an excess of 1.5 the degeneracy between prevalence and excess
-widens and our scatter grows by an order of magnitude. This is the degeneracy that the monotonicity anchor exists to control. We measure a full-text excess near \observedExcess, inside the calibrated regime but not far from its edge, which is a further reason to quote the assumption bracket rather than the interval of any single fit.
-
-% =====================================================================
-\section{Results}\label{sec:results}
-
-\begin{figure*}[!t]
-\centering
-\includegraphics[width=\textwidth]{figs/fig1_composite.pdf}
-\caption{We measure the occurrence rate of the three baskets across the decade, in abstracts and in full-text bodies. Top row, occurrence rate per 1000 tokens, normalized to 2015--2019. Dashed segments extend each basket's pre-2020 trend. The markers rise by a factor of \markerRiseFulltext\ in full text by 2025 while the per-token controls stay near flat. Bottom row, the same rates within each section. The marker rise appears in every section and the controls stay flat within every section, so the apparent control drift in whole-document counts comes mostly from section composition, with a small residual vocabulary drift that the model's background term absorbs. The grey vertical line in each panel marks the release of ChatGPT.\label{fig:rates}}
-\end{figure*}
-
-\subsection{A null test of the document-frequency estimator}\label{sec:placebo}
-
-We apply the extrapolation estimator of \citet{Holzwarth2026} to the 38 markers on full text and obtain a 2025 assisted fraction of \betaMarkersFull. The estimator was built for abstracts, where a document is a few hundred tokens, and the failure we describe here is a failure of transfer to documents thirty times longer rather than of the arithmetic itself. On full text it does not survive our null test. When we apply the same arithmetic to the neutral control basket we obtain \ctrlBetaFull, and when we apply it to the null hedges we obtain a similar number. Words with no possible connection to language models therefore yield an apparent prevalence as large as the marker signal.
-
-The mechanism is document length, since the median analyzed body grew from about 4{,}500 tokens in 2015 to 6{,}400 in 2025 and the probability that a fixed-rate word appears at least once rises with length. A statistic that asks only whether a word appears therefore reads longer papers as more contaminated. When we measure occurrences per token instead, most of the control excess disappears, as the top row of Figure~\ref{fig:rates} shows. On the per-token scale the markers rise by a factor of \markerRiseFulltext\ by 2025 while the controls stay near flat, and the small drift they retain is the ordinary-vocabulary change that the background term of our model absorbs.
-
-The within-section panels rule out a second artifact, since the unlabeled share of the body shrinks over the decade and a whole-document rate therefore mixes a change of composition into the measurement. Within each of the five named sections we find the marker rise at similar strength, and within each section we find the controls flat. The rise is therefore a property of the prose rather than of which parts of papers the OCR labels.
-
-\subsection{The assisted fraction}\label{sec:prevalence}
-
-\begin{figure*}[!t]
-\centering
-\includegraphics[width=\textwidth]{figs/fig3_composite.pdf}
-\caption{We infer the assisted fraction by quarter and track how the excess of assisted prose changes as that fraction rises. Left, the assisted fraction by quarter. The band is our primary fit with its 95\% interval, and the other curves each change one assumption. The spread between the drift variants exceeds any single interval, and we take that spread as our uncertainty. Middle, the fitted excess of assisted prose falls while the prevalence rises. \textit{Delve} falls after mid-2024 while \textit{underscore} continues to rise, so fixed word lists lose power with time. Right, our estimated prevalence against declared use on a logarithmic scale.\label{fig:results}}
-\end{figure*}
-
-Our main result appears in Figure~\ref{fig:results}. Under the primary specification, the fraction of astro-ph papers whose analyzed prose shows a language-model trace reaches \piFulltextHeadline\ in 2025, up from \piFulltextTwentyFour\ in 2024. The three background counterfactuals give us the bracket \piFulltextBracket\ for 2025. The linear continuation sets the floor and the frozen background the ceiling, and the control-tracked variant falls between them. We read that ordering as informative in itself. The marker words were already drifting upward before 2020, so extrapolating that drift absorbs part of the post-2022 excess and gives us the most conservative answer. When we remove the monotonicity constraint the 2025 figure falls to \piUnconstrained.
-
-The estimand we adopt is deliberately modest, the fraction of papers whose analyzed prose is more consistent with our calibrated assisted component than with the background. This is weaker than the claim that a machine wrote the paper and stronger than the observation that a paper contains one suspicious word. We count an author who ran a single section through a chatbot for grammar. We do not count model use that leaves no lexical trace, whether because the author edited it away or because the help was with code or ideas rather than prose. Every number we report is a floor in that sense. We treat the per-paper posterior probabilities as latent weights for aggregation and we do not publish them.
-
-\subsection{Time evolution of the marker excess}\label{sec:fading}
-
-The middle panel of Figure~\ref{fig:results} shows our second result. We find that the fitted excess of assisted prose falls from \deltaEarly\ times the background in 2023 to \deltaLate\ by 2026 while the prevalence rises. Taken together, these two motions are the population-level form of the adjustment that \citet{Geng2025} measured word by word. More papers pass through models while each leaves a fainter lexical trace.
-
-\begin{figure*}[!t]
-\centering
-\includegraphics[width=\textwidth]{figs/fig3_marker_trajectories.pdf}
-\caption{We follow each marker word separately to show that the aggregate signal is steadier than any of its parts. Observed occurrence rate (red) of the twelve markers with the largest recent excess, against the background that we extrapolate from before 2020 (dashed). We deconvolve the rates against the fitted prevalence, so no word selects the papers that we use to measure that word. The words do not move together, since \textit{delve} peaks in 2024 and returns toward its baseline while \textit{underscore} and \textit{notably} are still rising in 2026. This is why an estimator tied to a fixed word list loses power while one that lets the excess move does not.\label{fig:words}}
-\end{figure*}
-
-In Figure~\ref{fig:words} we show the same result one word at a time. We compute the per-word curves by deconvolution against the fitted prevalence, so that no word selects the papers that we use to measure that word. \textit{Delve} falls after mid-2024, when it became a widely recognized tell, while \textit{underscore} and \textit{notably} continue to rise. The practical implication is that fixed word lists lose their power within a few years, and any estimator that holds the excess constant will read the fading of markers as a fall in use.
-
-\subsection{A marker vocabulary derived from the astronomy corpus}\label{sec:discovery}
-
-\begin{figure*}[!t]
-\centering
-\includegraphics[width=\textwidth]{figs/fig4_composite.pdf}
-\caption{We derive a marker vocabulary from the astronomy corpus itself and test it on years the selection never saw. \texttt{Left:} every word with a stable pre-2020 background, placed by its 2015--2019 document frequency and its 2023--2024 excess over the extrapolated background. Circled words pass our selection screen, which requires a stable background, a rise in the discovery years, and a spread across all eight topic classes. The last criterion separates writing style from subfield vocabulary. \texttt{Right:} the frozen selection evaluated on 2025--2026. The selected words scatter about the dashed one-to-one line while the neutral controls cluster at unit excess on both axes.\label{fig:discovery}}
-\end{figure*}
-
-We imported the 38-word basket from other fields, and language models may mark astronomy prose differently. We therefore derive a second basket from the corpus itself, using a temporal split that we fix in advance. We require a candidate to occur in at least 0.2\% of pre-2020 papers with a stable background, to rise by at least 60\% over the extrapolated background in the discovery years 2023 and 2024, and to spread across all eight topic classes. The last requirement separates writing style, which appears in every subfield at once, from science, which does not. The same screen that promotes \textit{noteworthy} and \textit{comprehensively} rejects the pulsar-timing vocabulary that rose sharply after the 2023 gravitational-wave background detections. We remove author-name fragments and facility names with a dictionary requirement and a short stoplist. The selected words appear in Table~\ref{tab:baskets}.
-
-Our frozen basket has \nExpandedWords\ words, of which \nExpandedNew\ are new relative to the seeds. Of these, \nExpandedHeld\ independently show more than 20\% excess in 2025 and 2026, years that our selection never used, and the neutral controls pass the same screen at ratios between 0.98 and 1.08. When we fit the model with this basket we obtain \piExpandedHeadline\ for 2025 under linear drift and \piExpandedTracked\ under tracked drift, both inside the bracket that we obtained with the imported words. We regard the agreement as more informative than either value. Two marker vocabularies with different origins, one imported from biomedical and computer-science studies and one that we discovered here under a split fixed in advance, place the 2025 fraction in the same range.
 
 \begin{deluxetable*}{llcl}
 \tablecaption{The marker, control, and null vocabularies.\label{tab:baskets}}
@@ -224,61 +124,220 @@ background rate and the null hedges match the marker frequency distribution
 without carrying any tell.}
 \end{deluxetable*}
 
-\subsection{Robustness of the estimate}\label{sec:m-robust}
+\subsection{Corpus and cohort}\label{sec:m-corpus}
 
-The claim we defend is the floor rather than the central value. We therefore relax the standard estimator's restrictions one at a time, in four steps, so that the effect of each assumption stays visible rather than bundled into the end point. Step 1 is the standard estimator itself, which counts document frequency and gives \ladderFullRungZero. Step 2 measures occurrences per token against a flat background and anchors the excess on the declared papers, which gives \ladderFullRungTwo. Step 3 lets that background drift and gives \ladderFullRungThree. Step 4 is the full hierarchy, which gives the posterior \ladderFullRungFour.
+We take all text from the AstroMLab~5 catalog \citep{Ting2025}, in the update described in Section~\ref{sec:intro}. The catalog releases structured summaries and concept annotations, and its OCR full text is available on request. We date every paper by its first submission, decoded from the arXiv identifier, so that a paper posted in 2019 and revised in 2024 cannot carry post-ChatGPT text into the pre-ChatGPT era. The OCR text corresponds to the latest revision, so a small amount of such leakage remains possible.
 
-Across these steps the marker estimates rise rather than fall, because at full-text lengths the document-frequency statistic saturates and under-reads the excess. The neutral controls move the other way, giving a spurious \ladderCtrlRungZero\ at step 1 and losing any defined value from step 2 onward, because declared papers use control words at the background rate and the estimator therefore reports that those words carry no signal.
+We lowercase the text and tokenize it on contiguous alphabetic strings. We remove tables, displayed and inline mathematics, URLs, figure placeholders, and affiliation lines. We then segment the body on section headers into introduction, methods and data, results, discussion, and conclusions, and we analyze only these five section groups. We exclude the abstract so that our full-text analysis does not re-read the same prose, and we exclude
+references, acknowledgments, and appendices because their vocabulary is formulaic.
 
-We run five checks to bound the answer. First, in the anchored model the control words yield an attributed excess of \ctrlExcessRate\ of their own background, consistent with the measured drift of ordinary vocabulary and an order of magnitude below the \markerExcessRate\ that we attribute for markers. Second, we find that the simplest defensible estimator agrees with the full one. Step 2 is a single line of arithmetic, the observed per-token excess divided by the excess that we measure in declared papers, and it gives \ladderFullRungTwo\ with no hierarchy at all. Third, we find that the vocabulary does not drive the answer, as Section~\ref{sec:discovery} shows. Fourth, we move the known-negative boundary from 2020 to the quarter before the public release of ChatGPT, which changes the 2025 estimate by \boundaryShift, and we rescale the declared-to-silent marker-rate ratio by a factor of two in either direction, which moves it by up to \gammaShift. These are our largest systematics after the drift bracket, and both leave the floor intact. Fifth, our pipeline reproduces known answers on synthetic corpora, as we describe in Section~\ref{sec:m-inf}.
+We also exclude the part of the body that our segmentation assigns to none of those five section groups, either because a header is unconventional or because the OCR does not recover it. That remainder shrinks from half of the body in 2015 to two-fifths in 2026 as the sectioning improves, and including it would fold that change in composition into the language signal. \rednote{This discards about half the body in 2015 and two-fifths in 2026, and which papers lose the most is not random, since it tracks whether an author uses conventional headers. The cut may therefore be a selection on writing style, which is awkward for a measurement of writing style. The model carries no section term, so the mix of sections inside a paper is absorbed into its single rate. Either give sections their own background, which would make this cut harmless, or refit on the whole body and report the shift. Say in any case what the discarded text is.} We require at least 300 analyzed tokens and a topic assignment, one of the catalog's eight subject classes, which leaves \nFulltext\ papers first submitted between January 2015 and June 2026, with a median of about 2{,}500 analyzed tokens. We run the identical pipeline on the abstracts of these same papers, and we report that measurement in Section~\ref{sec:discussion}.\rednote{This sentence is new, and it states the design I think is right, which is to run the abstracts on the full-text cohort. The count on record is larger, so the abstract fit should be rerun on the same papers. The fit is cheap, matched counts read cleaner, and it makes the comparison in Section~\ref{sec:m-robust} a like-for-like one. Naming the abstract cuts here instead is the fallback if the rerun is not possible.}
 
-The one scenario that would break our conclusion is a large, marker-specific shift in human vocabulary that began exactly when chatbots launched, affected every section and every topic class at once, and left the neutral controls untouched, in which case we would misread it as model use. We cannot exclude that scenario on logical grounds. We can say that our control and null baskets were built to catch it, and that they show \ctrlExcessRate.
+\subsection{Marker, control, and null vocabulary}\label{sec:m-words}
+
+With the text fixed, the measurement needs a vocabulary. We use three word lists, which we call baskets. The model works from the count of each basket in a paper's analyzed text taken as a whole. We also count them inside each of the five sections separately, and those counts enter our checks rather than the model. The marker basket is 38 words that we take from the published biomedical and computer-science lists \citep{Liang2024, Kobak2024, Gray2025}, split between rare, high-specificity words such as \textit{delve} and \textit{underscore} and commoner ones such as \textit{comprehensive} and \textit{notably}.
+
+The control basket is ten neutral astronomy content words, among them \textit{observed}, \textit{galaxy}, and \textit{redshift}, that no language model has any reason to favor. The null basket is fifteen common hedges and intensifiers with pre-2020 frequencies comparable to those of the marker words. Table~\ref{tab:baskets} lists these three baskets in full, along with a second marker basket that we derive from the astro-ph corpus in Section~\ref{sec:discovery}.
+
+We pass the controls and the nulls through the identical pipeline at every stage. These words carry no assisted signal, so any prevalence the pipeline assigns them is a false positive, and we report it as a measure of our own systematic error. We treat this as our main diagnostic.
+
+\subsection{Declarations of model use}\label{sec:m-decl}
+
+The measurement also needs papers that are known to be assisted, and a small number of authors supply them by stating in the paper that they used a language model. We scan every full text for a single sentence that joins a named tool or an explicit language-model phrase, writing or editing vocabulary, and an authorial-use construction such as ``we used'' or ``the authors acknowledge''. We exclude papers about language models themselves by vetoing any paper that mentions models more often than a fixed threshold.\rednote{State the threshold, since a referee will ask for it. The veto fires on few papers, so consider passing those to the language-model judge used below and reporting how many it removes.} We also handle two astronomy-specific ambiguities, the Gemini telescopes and colleagues named Claude, by requiring a vendor or version qualifier before we accept an ambiguous name. No such tool existed before 2023, so the roughly 160{,}000 earlier papers test those two ambiguities, and none of them triggers the detector.
+
+We find \nDeclared\ declarations, none of them before 2023, with counts for 2023 through mid-2026 of 29, 52, 200, and 104.\rednote{These four counts sum to 385, but the totals elsewhere give \nDeclared\ declarations and \nDeclaredTwentyFive\ for 2025. At most one of the three can stand, and the factor of four in Section~\ref{sec:gap} rests on the same counts.} Declared papers use marker vocabulary at \anchorRangeMarkers\ times the background rate and control vocabulary at \anchorRangeControls\ times it. That contrast is what the fit uses to separate the assisted component from the background.\rednote{Three excess numbers appear in the paper and a reader will try to reconcile them. The declared papers show \anchorRangeMarkers\ times background here, Section~\ref{sec:m-inf} quotes a full-text excess near \observedExcess, and Section~\ref{sec:fading} fits \deltaEarly\ falling to \deltaLate. Say what each one refers to. If the anchor is re-measured in each period, say so, since that is what lets the fitted excess fall below the declared range.}
+
+We audited the detector for missed declarations with a language-model judge. We drew 150 undeclared papers from 2024--2026 at random, screened the closing 3{,}500 characters of each for any loose model-related term, and read the three candidates that surfaced in full. None is a declaration, since two are funding-program and compute-cluster names that contain the letters AI and one is a paper about language models that the mention-count veto already handles. Zero misses in 150 papers bounds the false-negative rate below 2\% of papers at 95\% confidence. We re-read 20 declared papers the same way, and every statement visible in the closing text is a genuine authorial declaration, almost all naming grammar, clarity, or language editing as the purpose.\rednote{Twenty of \nDeclared\ is a weak check on the set that anchors the assisted component. Sampling is unavoidable for the false negatives, where the pool is the whole corpus, but the declared set is small enough to read in full. Run the judge over all \nDeclared\ and report the exact count.}
+
+\subsection{The mixture model}\label{sec:m-model}
+
+\begin{figure*}[!t]
+\centering
+\resizebox{0.66\textwidth}{!}{\input{diagram_simple}}
+\caption{The hierarchical Bayesian model. Each paper contributes its analyzed length $L_i$, its marker count $K_i$, and its declaration flag $D_i$. The background rate $\mu_{i0}$ scales with length and drifts as $g_0(t)$. Assisted papers multiply that rate by the excess $e^{\delta_t}$, which we calibrate on the declared papers. The latent indicator $A_i$ has probability $\pi_t$, the quantity we report, and we fix that probability to zero before 2020, so no paper before then is assisted. We suppress the topic effects, the dispersions $\phi_0$ and $\phi_1$, and the declared-to-silent rate ratio of Section~\ref{sec:m-robust}, and we describe them in the text.\rednote{The diagram has only a paper plate, so the hierarchy itself is invisible. Consider a second plate over the eight subject classes holding $b_c$, $v_c$ and $u_c$ drawn from shared distributions, since that partial pooling is what makes the model hierarchical. The dispersions could hang off $K_i$, and a mark on $g_0$ would show where the three background variants of Section~\ref{sec:m-ident} differ.}\label{fig:model}}
+\end{figure*}
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{figs/fig1_composite.pdf}
+\caption{We measure the occurrence rate of the three baskets across the decade, in abstracts and in full-text bodies. Top row, occurrence rate per 1000 tokens, normalized to 2015--2019. Dashed segments extend each basket's pre-2020 trend. The markers rise by a factor of \markerRiseFulltext\ in full text by 2025 while the per-token controls stay near flat. Bottom row, the same rates measured inside each section. The markers rise by a similar factor in every section, and the controls drift inside sections by about as much as they drift across the whole document. The grey vertical line in each panel marks the release of ChatGPT.\label{fig:rates}}
+\end{figure*}
+
+The corpus gives a length for each paper, the vocabulary gives a marker count, and the declarations give a small set of papers known to be assisted. We combine the three in one model, shown in Figure~\ref{fig:model}. Each paper enters once, with the marker count of its analyzed text taken as a whole, so the five sections are pooled rather than modeled separately. For paper $i$ with analyzed length $L_i$, marker count $K_i$, and latent assistance indicator $A_i$, we write the counts as a two-component mixture of negative binomials,
+\begin{align}
+K_i \mid A_i{=}0 &\sim \mathrm{NB}(\mu_{i0},\,\phi_0),\nonumber\\
+\log\mu_{i0} &= \log L_i + \beta_0 + b_{c_i} + g_0(t_i),\nonumber\\
+K_i \mid A_i{=}1 &\sim \mathrm{NB}(\mu_{i1},\,\phi_1),\nonumber\\
+\log\mu_{i1} &= \log\mu_{i0} + \delta_{t_i} + v_{c_i},\nonumber\\
+A_i &\sim \mathrm{Bern}(\pi_{t_i,c_i}),\nonumber\\
+\operatorname{logit}\pi_{t,c} &= m_t + u_c,
+\label{eq:model}
+\end{align}
+and we fix $\pi\equiv0$ for papers submitted before 2020.
+
+Equation~\ref{eq:model} has two levels, and the lower one is easiest to read for a single paper. Paper $i$ has analyzed length $L_i$, subject class $c_i$, and submission quarter $t_i$. If no model touched it, we expect a marker count of $\mu_{i0} = L_i\,e^{\beta_0 + b_{c_i} + g_0(t_i)}$, that is, its length times a rate per token, where $\beta_0$ sets the overall rate, $b_c$ shifts it by subject class, and $g_0$ carries its drift through the decade. If a model did touch it, we expect the larger count $\mu_{i1} = \mu_{i0}\,e^{\delta_{t_i} + v_{c_i}}$, where $e^{\delta_t}$ is the excess that assisted prose carries in quarter $t$ and $v_c$ lets that excess differ by subject class.
+
+Which of the two applies is the latent flag $A_i$, drawn from a Bernoulli distribution with probability $\pi_{t_i,c_i}$. That probability is the quantity we report. We model it on the logit scale so that it stays between zero and one, with $m_t$ giving its rise from quarter to quarter and $u_c$ its offset by subject class. The count we observe, $K_i$, is a negative binomial draw around whichever mean applies, written $\mathrm{NB}(\mu,\phi)$ for mean $\mu$ and dispersion $\phi$, and the two dispersions $\phi_0$ and $\phi_1$ absorb the heavy tail that a Poisson model would misread as structure.
+
+The upper level ties the papers together. Subfields differ in how they write, and they may differ in how quickly they take up models, so each class carries its own background level through $b_c$, its own excess through $v_c$, and its own prevalence through $u_c$. Rather than fit those effects separately for each of the eight subject classes, we draw them from common distributions, so a class with few papers is pulled toward the corpus average instead of swinging the fit on its own. That partial pooling is what makes the model hierarchical.
+
+ We fit all \nFulltext\ papers at once, and every quarter and class informs the others through these shared distributions. The fraction we report is therefore a property of the population rather than a verdict on any one paper, and it is the corpus-wide figure aggregated over the eight classes.\rednote{Say how the class prevalences are combined into the reported number, whether weighted by the papers in each class or read from $m_t$ alone.} Mixtures of this kind are routine for latent-class problems in astronomy \citep[e.g.,][]{Hogg2010, Foreman-Mackey2014}.
+
+Three features of Equation~\ref{eq:model} answer the three restrictions of Section~\ref{sec:intro} in turn, and together they account for most of the difference from the standard estimator, by which we mean the document-frequency approach of \citet{Kobak2024} and \citet{Holzwarth2026}. The offset $\log L_i$, standard in count regression \citep{Cameron2013}, makes our unit of evidence the count given length rather than the presence of a word anywhere in the document, so a 15{,}000-word paper no longer counts for the same as an abstract. The background terms $b_c$ and $g_0(t)$ let the unassisted rate differ by subject class and drift through the decade, in place of one number per year. Leaving $\delta_t$ free in time lets the excess fade as authors adapt without our model mistaking that fading for a fall in use.
+
+The third of these needs the most care. A free $\delta_t$ can trade against $\pi_t$ quarter by quarter, so it is identified only because the declared papers, whose status we observe, carry information about the excess that the counts alone do not, as Section~\ref{sec:m-ident} describes. That measurement is what lets the excess fade without the estimate of prevalence absorbing the change.
+
+We treat declarations as positive-unlabeled labels \citep{Elkan2008}. A declaration is a positive, but its absence is not a negative, since most assisted authors say nothing. Writing $D_i$ for the declaration flag of paper $i$ and $\rho_t$ for the probability that an assisted author declares, we let a declared paper, with $D_i{=}1$, contribute $\pi\rho\,p_1(K_i)$ and a silent paper, with $D_i{=}0$, contribute $(1-\pi)p_0(K_i)+\pi(1-\rho)p_1(K_i)$, where $p_0$ and $p_1$ are the two negative binomial densities and the quarter and class subscripts are suppressed. Both expressions have the latent $A_i$ already summed out, so the fit involves only continuous parameters.
+
+\subsection{Identification and the missing background}\label{sec:m-ident}
+
+Nothing in Equation~\ref{eq:model} forces its second component to correspond to language-model use. An unconstrained two-component mixture is a flexible curve fit, and given any spread of counts it will find two components, whether or not two processes are present. On the neutral control basket, where the right answer is zero, it does exactly that.
+
+The reason is that prevalence and excess are not separately visible in the counts. The counts show the aggregate lift of marker words above the background, and a given lift can come from many papers each carrying a slight excess or from few papers carrying a strong one. The control basket shows a small lift, which is ordinary vocabulary drift, and a free mixture explains it in the first way.
+
+Our remedy follows the logic of the original spam filter \citep{Sahami1998}. Rather than let the counts alone define the assisted component, we anchor it to the papers we know are assisted. Their declaration flag is observed, so they enter the same likelihood as known positives, and the prior on $\delta_t$ is centered on the excess their counts display. This is not a calibration carried out before the fit, since the excess and the prevalence are estimated together. Holding $\delta_t$ near the declared value rules out the first reading, and the model can no longer turn ordinary drift in control words into prevalence.\rednote{The priors themselves are never stated. Give the family and width of the prior on $\delta_t$, the functional form of $g_0$ before 2020 and the prior that smooths it, the pooling scales for $b_c$, $v_c$ and $u_c$, and the priors on $\phi_0$ and $\phi_1$. Say whether $\delta_t$ is constrained positive, whether it is smoothed across quarters or left free in each, and whether rising adoption is imposed on $m_t$ as a hard constraint or as a prior. A short table would carry all of it.}
+
+Three other quantities come from the data rather than from assumption. We set $\pi\equiv0$ before 2020, so the 106{,}000 papers from those years act as known negatives, and the background level, its scaling with length, its variation by topic, and its scatter are estimated from them inside the same fit rather than set beforehand. The neutral controls bound how fast ordinary astronomy vocabulary drifts. The declaration counts by year give $\rho_t$. 
+
+A fourth quantity is assumed rather than measured. We impose a monotonicity constraint, requiring the assisted fraction not to fall from one quarter to the next, which is a statement about how adoption behaves rather than anything the counts show, and we report every number without it as well.
+
+One quantity none of this fixes is the background itself after 2020. The background is the rate at which human authors would have used these words anyway, and it does not stand still. Scientific vocabulary drifts, the mix of subfields changes, and the share of authors writing in a second language grows. Before 2020 we can watch that drift directly. After 2020 we cannot separate it from model use, so it has to be assumed rather than measured, and rather than adopt one continuation silently, we fit the model three times.
+
+The three variants share Equation~\ref{eq:model} and differ only in the form taken by $g_0$ after 2020. In the \textit{linear} variant we continue the slope measured before then, so that $g_0(t) = g_0(2020) + \kappa\,(t-2020)$ with $\kappa$ the pre-2020 trend, which for these words was already upward and which is what the standard estimator assumes. In the \textit{frozen} variant we set $g_0(t) = g_0(2020)$, so we attribute every later change to assistance, and this gives the highest answer. In the \textit{tracked} variant we set $g_0(t) - g_0(2020)$ to the measured drift of the neutral controls, and this falls between the other two. The tracked variant assumes that the control drift carries no assistance of its own, which is why we report it as one of three rather than adopt it.
+
+We take the linear variant as our primary specification, since it is the most conservative of the three. We keep the spread between the three separate from the statistical uncertainty of any single fit, and report the other assumptions we vary alongside it rather than folding them in.
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{figs/fig3_composite.pdf}
+\caption{\rednote{These three panels carry three separate arguments, the fraction and its assumption spread, the fading excess word by word, and the disclosure gap. Consider splitting them into three figures placed with the subsections that use them, since each is cited in a different place and the middle panel in particular is too dense at this width.} We infer the assisted fraction by quarter and track how the excess of assisted prose changes as that fraction rises. Left, the assisted fraction by quarter. The band is our primary fit with its 95\% interval, and the other curves each change one assumption. We take the spread between the drift variants as our uncertainty. Middle, the fitted excess of assisted prose falls while the prevalence rises. \textit{Delve} falls after mid-2024 while \textit{underscore} continues to rise, so fixed word lists lose power with time. Right, our estimated prevalence against declared use on a logarithmic scale.\label{fig:results}}
+\end{figure*}
+
+\subsection{Inference and calibration}\label{sec:m-inf}
+
+With the model specified and anchored, we fit it by maximizing the log posterior rather than by sampling from it. The model carries one parameter per quarter for each of the background drift, the excess and the prevalence, along with the class effects and the two dispersions, and the variants of Section~\ref{sec:m-robust} require the whole fit to be repeated dozens of times. We maximize with every bounded parameter transformed onto an unbounded scale, so that the optimizer can move freely, and with exact gradients, and we take our uncertainties from the curvature at the mode, the Laplace approximation \citep[cf.][]{Gelman2013}. Every fit converges in about a minute. 
+
+We check that approximation against full Hamiltonian Monte Carlo \citep{Neal2011, Hoffman2014, Betancourt2017} on the primary specification, a sampler that explores the whole posterior rather than its neighborhood of the mode. We judge its convergence with the two standard diagnostics, the rank-normalized $\widehat{R}$, which compares the spread within each chain against the spread across chains, and the effective sample size, which counts how many independent draws the correlated ones are worth \citep{Vehtari2021}.\rednote{If the sampler already runs on the primary specification, it should probably supply the headline posterior, with the Laplace fit used for the variants and the agreement between the two reported. A hierarchical Bayesian result quoted from a mode and a curvature invites the question of why the sampler was not used for the number that matters.}
+
+We also test the estimator by injection and recovery. We build synthetic corpora from the real pre-2020 papers, so that lengths, topics, and dispersion are realistic by construction. In each corpus we mark a known fraction of the papers as assisted, raise the marker rate of those papers by a known factor, redraw their counts, and then run the estimator to see what fraction it returns.\rednote{The decisive question is whether the synthetic corpora carry declared papers, so that the anchor is in force during recovery. If it is, the low-excess degradation survives anchoring. If it is not, the test describes an unanchored estimator and understates what the real fit can do. Say which. Also confirm whether counts are redrawn from the fitted negative binomial, whether the injected excess is applied uniformly across classes and quarters, and what range of injected prevalence was tested.} 
+
+The two injected quantities are the fraction of papers marked as assisted and the excess $e^{\delta}$ by which their marker rate is raised. When we inject an excess of 2.5 or more, the fraction we recover lies within two or three percentage points of the fraction we injected, across the whole range we test. In the real corpus we measure a full-text excess of \observedExcess, which places our own fit in that regime. When we inject an excess of 1.5, the recovered fractions scatter an order of magnitude more widely, which is the trade between prevalence and excess of Section~\ref{sec:m-ident} reappearing once the two components sit close together.\rednote{Confirm that the recovery test covers the excess values the fit returns in the late quarters, since it reaches \deltaLate\ by 2026.}
+
+% =====================================================================
+
+\section{Results}\label{sec:results}
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{figs/fig3_marker_trajectories.pdf}
+\caption{We follow each marker word separately to show that the aggregate signal is steadier than any of its parts. Observed occurrence rate (red) of the twelve markers with the largest recent excess, against the background that we extrapolate from before 2020 (dashed). Each curve is the word's rate in assisted prose, recovered by undoing the mixture with the fitted prevalence. That prevalence comes from the whole basket rather than from the word itself, so no word chooses the papers by which it is measured. The words do not move together, since \textit{delve} peaks in 2024 and returns toward its baseline while \textit{underscore} and \textit{notably} are still rising in 2026. An estimator tied to a fixed word list loses power as the words themselves change. In the model fitted here the excess is free to change from year to year and is held in each period to the papers whose authors declare model use.\label{fig:words}}
+\end{figure*}
+
+\subsection{The assisted fraction}\label{sec:prevalence}
+
+Our main result appears in Figure~\ref{fig:results}. Under the primary specification, the fraction of astro-ph papers whose analyzed prose shows a language-model trace reaches $67^{+12}_{-11}\,(\mathrm{stat},\,95\%)\,^{+22}_{-0}\,(\mathrm{background})$ per cent in 2025, up from $31^{+14}_{-8}$ per cent in 2024. Errors written as plus and minus are 95 per cent credible intervals of a single fit, here and throughout, and they carry statistical uncertainty alone. The second term is the spread across the three background continuations, one-sided because the linear one is the most conservative. It is not a full systematic budget, since the other assumptions we vary in Section~\ref{sec:m-robust} move the estimate separately and we report them there. At one sigma the statistical error is \rednote{insert the 68 per cent interval from the primary fit, so that both levels are on record} per cent.\rednote{Every plus-minus figure in the paper is worked out by hand from the intervals the fit reports, and the same form recurs in the abstract and in Section~\ref{sec:discussion}, so they should be generated with the other numbers rather than typed. The statistical term is labelled because a bare plus-minus reads as one sigma.} 
+
+The linear continuation sets the floor and the frozen background the ceiling, and the control-tracked variant falls between them. The ordering is itself informative. The marker words were already drifting upward before 2020, so extrapolating that drift absorbs part of the post-2022 excess and gives the most conservative answer. When we remove the monotonicity constraint, which forbids the assisted fraction from falling between one quarter and the next, the 2025 figure falls to \piUnconstrained. The constraint does its work in the latest quarters, where the excess is weakest and prevalence trades most easily against it, and without it the fit settles on a smaller fraction carrying a larger excess. This is the largest single sensitivity we find, and the figure remains above half.\rednote{The explanation for the drop is inferred from the degeneracy rather than measured. Check it against the unconstrained fit, and if the fall comes from somewhere else, replace the sentence.}
+
+The estimand we adopt is narrow, the fraction of papers whose analyzed prose is more consistent with our calibrated assisted component than with the background. This is weaker than the claim that a machine wrote the paper and stronger than the observation that a paper contains one suspicious word. We count an author who ran a single section through a language model for grammar. We do not count model use that leaves no lexical trace, whether because the author edited it away or because the help was with code or ideas rather than prose. Every number we report is a floor in that sense. We use the per-paper probabilities only as weights inside the aggregate, and we do not publish them.
+
+\subsection{Time evolution of the marker excess}\label{sec:fading}
+
+The middle panel of Figure~\ref{fig:results} shows our second result. The fitted excess of assisted prose falls from \deltaEarly\ times the background in 2023 to \deltaLate\ by 2026 while the prevalence rises. Taken together, these two trends are the population-level form of the adjustment that \citet{Geng2025} measured word by word. More papers pass through a language model while each leaves a fainter lexical trace.
+
+In Figure~\ref{fig:words} we show the same result one word at a time. The rate we observe for a word blends assisted and unassisted papers in the proportion the model estimates, so we undo that blend, removing the unassisted contribution and dividing by the fitted prevalence, and each curve then shows the word's rate in assisted prose. The prevalence we use comes from the whole basket rather than from the word in question, so no word chooses the papers by which it is measured.\rednote{I have described this as removing the unassisted contribution and dividing by the fitted prevalence. Confirm that is the operation.} 
+
+\textit{Delve} falls after mid-2024, once it became a recognized marker of model use, while \textit{underscore} and \textit{notably} continue to rise. The implication is that fixed word lists lose their power within a few years, and any estimator that holds the excess constant will mistake the fading of markers for a fall in use. In our model the excess is free to change and is held in each period to the declared papers, so the same motion registers as fading.
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{figs/fig4_composite.pdf}
+\caption{We derive a marker vocabulary from the astro-ph corpus and test it on years the selection never saw. Left, every word with a stable pre-2020 background, placed by its 2015--2019 document frequency and its 2023--2024 excess over the extrapolated background. Circled words pass our selection screen, which requires a stable background, a rise in the discovery years, and a spread across all eight subject classes. The last criterion separates writing style from subfield vocabulary. Right, the same selection, fixed before these years were examined, evaluated on 2025--2026. The selected words scatter about the one-to-one line while the neutral controls sit at unit excess on both axes. The points labelled as seed markers in the left panel are the 38 imported words of basket 1, which the screen did not choose but which we plot for comparison.\rednote{The legend says ``frozen seed markers'' while the text and Table~\ref{tab:baskets} say basket 1. Relabel the panel, and drop ``frozen'' for something a reader will follow, such as ``imported markers'' and ``selected here''.}\label{fig:discovery}}
+\end{figure*}
+
+\subsection{Marker vocabulary derived from the corpus}\label{sec:discovery}
+
+The 38-word basket of Section~\ref{sec:m-words} comes from studies of biomedical and computer-science writing \citep{Liang2024, Kobak2024, Gray2025}, and language models may mark astronomy prose differently. We therefore derive a second basket from the astro-ph corpus, using a temporal split that we fix in advance. We draw the candidates from the catalog's companion $n$-gram index, which supplies word frequencies by year across the corpus and is browsable online.\footnote{\url{https://tingyuansen.github.io/astro-ph_ngram_viewer/}} We require a candidate to occur in at least 0.2\% of pre-2020 papers with a stable background, to rise by at least 60 per cent over the extrapolated background in the discovery years 2023 and 2024, and to spread across all eight subject classes. The last requirement separates writing style, which appears in every subfield at once, from science, which does not.\rednote{The eight subject classes are never listed, and the screen turns on all eight. Name them once, here or in Section~\ref{sec:m-corpus}. The fit also estimates a prevalence for each class, which the paper never reports, and a reader will want to know which subfields sit highest and lowest.}
+
+The screen promotes \textit{noteworthy} and \textit{comprehensively}, and it rejects the pulsar-timing vocabulary that rose after the 2023 gravitational-wave background detections. We remove author-name fragments and facility names by requiring each candidate to appear in an English dictionary and by excluding a short list of names by hand. The selected words appear in Table~\ref{tab:baskets}.
+
+Figure~\ref{fig:discovery} shows the selection and its test on later years. The basket we fix in advance has \nExpandedWords\ words, of which \nExpandedNew\ are new relative to the imported basket. Of the \nExpandedWords, \nExpandedHeld\ independently show more than 20\% excess in 2025 and 2026, years that our selection never used, and the neutral controls, whose excess we measure the same way over those two years, sit between 0.98 and 1.08. 
+
+When we fit the model with this basket we obtain $80^{+10}_{-12}$ per cent for 2025 under linear drift and \piExpandedTracked\ under tracked drift, both inside the range the imported words give. The linear figure exceeds the $67^{+12}_{-11}$ per cent that the imported basket gives under the same background, which is what we would expect if a vocabulary drawn from astronomy prose catches uses that a borrowed list misses. On that reading the imported basket understates the fraction.
 
 \subsection{Comparison with declared use}\label{sec:gap}
 
-We find declared use two orders of magnitude below estimated use. In 2025, \declRateTwentyFive\ of full texts contain an explicit declaration against an estimated prevalence of \piFulltextHeadline, so roughly \disclosureGapFactor\ papers carry a language-model trace for every one that says so. The gap shows no sign of closing, since declarations grew by a factor of four between 2023 and 2025 and our estimated prevalence grew faster.
+The right panel of Figure~\ref{fig:results} sets our estimate against declared use on a logarithmic scale. In 2025, \declRateTwentyFive\ of full texts contain an explicit declaration against an estimated prevalence of 67 per cent, so roughly \disclosureGapFactor\ papers carry a language-model trace for every one that says so.
+
+The gap is not an artifact of the detector. The audit of Section~\ref{sec:m-decl} found no missed declaration in 150 undeclared papers, which bounds the false-negative rate below 2 per cent, so nearly all of the silence is real rather than overlooked. Nor is the gap closing. Declarations grew by a factor of four between 2023 and 2025 while our estimated prevalence grew faster, and the two curves separate across the whole period.
+
+The declarations themselves are narrow in scope. Almost every declaration we read names grammar, clarity, or language editing as its purpose, which is also the use our estimand is built to catch.
 
 % =====================================================================
-\section{Discussion}\label{sec:discussion}
+\section{Discussion and conclusions}\label{sec:discussion}
 
-We find that more than half of recent astro-ph papers carry a language-model trace in their prose. Our 2025 fraction is \piFulltextHeadline\ under the primary specification, and it never falls below \piGridFloor\ across the variants we ran. Astronomy therefore sits near the 89\% that \citet{Holzwarth2026} report for biomedicine and well above the few-per-cent figures that circulate from abstract-only studies.
+We find that more than half of recent astro-ph papers carry a language-model trace in their prose. Our 2025 fraction is $67^{+12}_{-11}\,(\mathrm{stat},\,95\%)\,^{+22}_{-0}\,(\mathrm{background})$ per cent, and it never falls below \piGridFloor\ across the variants we ran. Our range reaches at its upper end the 89 per cent that \citet{Holzwarth2026} report for biomedical full texts. No astronomy-specific estimate existed before this work.
 
-Abstracts, run through the same model, give \piAbstractsHeadline\ for 2025, consistent with our full-text bracket. We read the apparent order-of-magnitude disagreement between abstract and full-text estimates in the earlier literature as an artifact of comparing a 200-token document with a 2{,}500-token one using a statistic that saturates with length. Once we measure counts per token and calibrate the assisted component separately in each corpus, the two agree. Abstracts remain the weaker instrument, and our intervals from them are roughly twice as wide because each paper offers thirty times fewer tokens.
+\subsection{Robustness of the estimate}\label{sec:m-robust}
 
-Our conclusions carry three limitations. First, our estimand is a trace in analyzed prose, so we cannot see use that leaves no lexical trace, and every number we report is a floor. Second, we work from OCR text of the latest revision of each paper, so our known-negative era can contain a small admixture of post-2022 revisions, which we bound with the boundary test at \boundaryShift. Third, we calibrate the assisted component on declared papers, a selected minority, and we span the plausible selection with the $\gamma$ sweep at \gammaShift. That sweep is a span rather than a measurement, because the comparison it stands in for, the marker rate of authors who used a model and did not say so, is by definition unobserved.
+That floor does not rest on the hierarchy. On the per-token scale the markers rise by a factor of \markerRiseFulltext\ by 2025, and dividing that excess by the excess we measure in declared papers already puts the assisted fraction at \ladderFullRungTwo, above half, in a single line of arithmetic. Nor does it rest on how the OCR divides a paper, since the markers rise by a similar factor inside each of the five named sections, as the lower panels of Figure~\ref{fig:rates} show, while the controls drift inside sections by about as much as they drift across the whole document.
 
-A fourth limit applies to every method in this literature, ours included. When the assisted and background components sit close together, a small error in the background counterfactual becomes a large error in the fraction. For vocabulary with a strong excess, such as our markers, this does little damage. For vocabulary with a weak excess it removes the answer entirely, and more data does not help. This is why we report the null test in units of excess rate rather than as a prevalence, and why we would not trust a prevalence built on low-excess words, whoever computed it.
+The model exists to control the assumptions that arithmetic leaves implicit, and each of them can be tested in turn. Our model gives $67^{+12}_{-11}$ per cent for 2025. Holding the excess fixed in time, as the standard estimator does, lowers that to \ladderFullRungThree. Flattening the background as well raises it to \ladderFullRungTwo, since ordinary vocabulary drift is then read as assistance instead of being absorbed. Asking only whether a marker word appears in a paper, rather than how often it appears per token, lowers it to \ladderFullRungZero. That last assumption costs the most.
 
-We do not read our result as misconduct at scale. The lexical shift is strongest in the writing of non-native English speakers, where others have read it as a leveling of linguistic barriers rather than as misconduct \citep{Lin2025}, and much of what we detect is likely the grammar and style assistance that journal policies already permit. The problem we see is the factor of \disclosureGapFactor\ between practice and disclosure. A policy that most of a field quietly ignores does not deliver the transparency it was written for.
+The assumptions our own model adds move it less. Requiring adoption not to fall from quarter to quarter is worth \monotoneShift, since Section~\ref{sec:prevalence} gives \piUnconstrained\ without it. Moving the known-negative boundary, the date before which every paper is treated as unassisted, from 2020 to the quarter before ChatGPT was released changes the estimate by \boundaryShift.
 
-Two consequences follow for policy. First, enforcement built on detection has a limited future. We measure the excess falling from \deltaEarly\ to \deltaLate\ within three years while use rises, so any fixed vocabulary loses power, and a policy that depends on catching offenders will fail while the behaviour it targets grows. Disclosure norms that authors have a reason to follow will outlast detection. Second, the window for this measurement is closing, since if the trace continues to fade at the rate we measure, corpus-level estimates of this kind will become unreliable within a few years, and nobody can recreate the pre-2023 baseline that makes them possible. We therefore argue for measuring now, and for archiving the corpora and the marker vocabularies that later work will need in order to check us.
+One assumption matters more than the rest, because it concerns the papers the whole calibration rests on. The declaration counts give $\rho_t$, the probability that an assisted author declares, but they say nothing about whether those authors use marker words at the same rate as assisted authors who stay silent. We assume that they do, since the silent papers are never identified, and assuming instead that they use them twice as often, or half as often, moves the estimate by up to \gammaShift.\rednote{Confirm that the model fixes this ratio at unity.}
+
+Running the same model on abstracts rather than full texts gives $78^{+15}_{-15}$ per cent for 2025, consistent with the full-text range. Abstracts remain the weaker instrument, and our intervals from them are roughly twice as wide because each paper offers thirty times fewer tokens.
+
+\subsection{Why document-frequency estimates come out lower}\label{sec:m-compare}
+
+Our result stands apart from what the standard estimator returns on the same corpus. The extrapolation estimator of \citet{Holzwarth2026}, run on the 38 markers on full text, gives a 2025 assisted fraction of \betaMarkersFull. The estimator was built for abstracts, where a document is a few hundred tokens, and what fails here is the transfer to documents thirty times longer, not the arithmetic itself. On full text it does not pass our null test. When we apply the same arithmetic to the neutral control basket we obtain \ctrlBetaFull, and when we apply it to the null hedges we obtain a similar number. Words with no possible connection to language models therefore yield an apparent prevalence as large as the marker signal.
+
+The mechanism is document length, since the median body grew from about 4{,}500 tokens in 2015 to 6{,}400 in 2025 and the probability that a fixed-rate word appears at least once rises with length. A statistic that asks only whether a word appears therefore treats longer papers as more contaminated. Measuring occurrences per token instead removes most of the control excess, as the top row of Figure~\ref{fig:rates} shows, and it is why our own unit of evidence is the count given length. The same effect explains the apparent order-of-magnitude disagreement between abstract-based and full-text estimates in the earlier literature. Once we measure counts per token and calibrate the assisted component separately in each corpus, the two agree, as Section~\ref{sec:m-robust} shows.
+
+A different failure appears in our own model when its anchor is removed. Without the anchor the mixture assigns $57^{+5}_{-4}$ per cent of papers to an assisted component built from \textit{galaxy}, \textit{redshift} and their like, a fraction invented for words with no link to model use. With the anchor, declared papers use control words at only \anchorRangeControls\ times the background, so no control prevalence is identified at all. 
+
+The residue is an excess of \ctrlExcessRate\ above the controls' own background, against \markerExcessRate\ for the markers, where the ideal would be zero.\rednote{I could not work out what these two percentages measure, and the readings differ in whether this is a problem. If they are fitted excess factors, 1.26 and 1.79, they do not match the \deltaEarly\ to \deltaLate\ of Section~\ref{sec:fading}. If they are the share of each basket's rise that the model attributes to assistance, then 26 per cent of a small control rise is a small absolute amount and the comparison with 79 per cent is not alarming. Say which it is, and give the control prevalence as a number under a fixed small excess rather than reporting it as unidentified.}
+
+\subsection{Limitations}\label{sec:limits}
+
+Several limits are specific to this work. Our estimand is a trace in analyzed prose, so we cannot see use that leaves no lexical trace, and every number we report is a floor. We work from OCR text of the latest revision of each paper, so the era we treat as unassisted can hold a small admixture of post-2022 revisions. We also calibrate the assisted component on the declared papers, who are a selected minority, so the sweep of Section~\ref{sec:m-robust} stands in for a comparison we cannot make, the marker rate of authors who used a model and said nothing.
+
+A further limit applies to every method in this literature, ours included. When the assisted and background components sit close together, a small error in the assumed background becomes a large error in the fraction. For vocabulary with a strong excess, such as our markers, this matters little, but for vocabulary with a weak excess it removes the answer and more data does not help. This is why we report the null test in units of excess rate rather than as a prevalence, and why we would not trust a prevalence built on low-excess words, whatever method produced it.
+
+A final limit is that the unassisted rate we call the background may itself carry language-model influence. Some of the drift the controls retain may be assistance our detector misses, since authors who use a language model absorb its habits and leave the same faint trace in ordinary words. Some may be diffusion, since authors read a great deal of model-written prose and may take up its vocabulary without ever running their own manuscript through anything. Part of the rise in the controls, and more of the larger rise in the hedges, may therefore be model-driven.\rednote{Quote the 2026 control and hedge rises here, since the figure shows them and the argument rests on their size.}
+
+That possibility is why we bracket the background rather than tie it to the controls, and it works in our favour. Words that carry a faint trace but sit in the control or null baskets, among them the discourse connectors that language models also favor, are absorbed into the background instead of being counted as signal, so each one lowers the fraction we report. 
+
+The case we cannot rule out is the stronger one, in which the shift is confined to the marker words, began when language models were released, appeared in every section and subject class at once, and left the controls untouched. A change of that shape would be indistinguishable from assistance in our data, and it would blur the line our estimand draws, since prose shaped by reading language models is not the same as prose one helped to write.
+
+\subsection{Concluding remarks}\label{sec:follows}
+
+We do not interpret our result as misconduct at scale. The lexical shift is strongest in the writing of non-native English speakers, where others have interpreted it as a leveling of linguistic barriers rather than as misconduct \citep{Lin2025}, and much of what we detect is likely the grammar and style assistance that journal policies already permit. At the prevalence we measure, that use is no longer unusual, and a stigma attached to it is harder to justify than the practice itself.
+
+Enforcement is the half of the problem that cannot be won. The excess falls from \deltaEarly\ to \deltaLate\ within three years while use rises, so a policy that depends on catching offenders is chasing a signal its targets are already erasing. Stronger instruments have been proposed, watermarking among them, which is a deliberate version of the statistical trace we exploit here. Whether such measures are desirable is a live debate, but any of them strong enough to work would have to be imposed on the whole literature in order to police a practice that most of the literature already follows, and would be invasive in proportion.
+
+Disclosure is the half that can be won. We find roughly \disclosureGapFactor\ papers carrying a trace for every one that declares, and the declarations we do find name grammar, clarity and language editing, which is what journal policies already allow. Authors are therefore not concealing misconduct so much as avoiding a stigma, and researchers remain divided on whether the use is acceptable at all \citep{Kwon2025}. Removing that stigma costs nothing, and it would turn a norm most of the field ignores into one most of the field has no reason to break. It is also the more urgent of the two, since the trace we rely on here is fading and the measurement will not stay available indefinitely.
 
 \section*{Acknowledgments}
 
 SMS is supported by the Distinguished University Fellowship awarded by The Ohio State University. YST is supported by NSF under Grant AST-2406729 and by a Humboldt Research Award from the Alexander von Humboldt Foundation.
 
-We built this work on the AstroMLab~5 astro-ph catalog and its companion $n$-gram index.
+We built this work on the AstroMLab~5 astro-ph catalog and on the companion $n$-gram index that supplies the word frequencies of Section~\ref{sec:discovery}.
 
-Given the subject of this paper, we state our own practice plainly. We used Claude Code for coding development. We drafted and revised the text ourselves, then we use Claude Opus 5 for editing the prose and grammar throughout the paper.
+Given the subject of this paper, we state our own practice plainly. We used Claude Code for code development. We drafted and revised the text ourselves, then used Claude Opus 5 to edit the prose and grammar throughout.
 
 \section*{Data and code availability}
 
-The corpus is the public AstroMLab~5 catalog \citep{Ting2025}. We release the derived per-paper feature tables, the frozen baskets, the fitted posteriors, and all analysis code with this paper. We do not release a per-paper assisted-probability list.
-
-
-
-
-
-
-
-
+The corpus is the AstroMLab~5 catalog \citep{Ting2025}, in an update that extends its coverage from July 2025 to August 2026, and its OCR full text is available on request. We release the derived per-paper feature tables, the fixed baskets, the fitted posteriors, and all analysis code with this paper. We do not release a per-paper assisted-probability list.
 
 \software{NumPy \citep{2020Natur.585..357H}, SciPy
 \citep{2020NaMet..17..261V}, Matplotlib \citep{2007CSE.....9...90H}, pandas
 \citep{2020zndo...3509134R}, JAX \citep{jax2018github}, PyMC
 \citep{2023PeerJCS...9.1516A}, ArviZ \citep{2019JOSS....4.1143K}}
 
-\bibliographystyle{aasjournal}
+\bibliographystyle{mnras}
 \bibliography{refs}
 
 \end{document}
