@@ -3,8 +3,8 @@
   "disc_min": 1.6,
   "ent_min": 0.97
  },
- "n_words": 35,
- "n_new": 31,
+ "n_words": 34,
+ "n_new": 30,
  "words": [
   "adhere",
   "align",
@@ -24,7 +24,6 @@
   "excessively",
   "gratitude",
   "grounded",
-  "hinge",
   "luckily",
   "nonexistent",
   "notably",

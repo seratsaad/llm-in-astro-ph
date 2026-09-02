@@ -46,7 +46,7 @@ WATCH = sorted(set(MARKERS + CONTROL + PLACEBO))
 
 # ---------------------------------------------------------------- cohort
 YEAR_MIN, YEAR_MAX = 2015, 2026
-QUARTER_MAX = (2026, 2)          # last complete quarter in the release
+QUARTER_MAX = (2026, 6)          # last complete month in the release (2026Q2)
 KNOWN_NEGATIVE_BEFORE = 2020     # primary specification
 ADOPTION_QUARTER = (2022, 4)     # ChatGPT public release, 2022-11-30
 
