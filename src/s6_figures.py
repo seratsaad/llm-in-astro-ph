@@ -124,12 +124,7 @@ def fig3_marker_trajectories(phase="fulltext"):
         ax.set_xlabel("Year", fontsize=7.5)
     for r in range(axes.shape[0]):
         axes[r, 0].set_ylabel("per 10,000 tokens", fontsize=7)
-    handles = [Line2D([], [], color=C["vermillion"], lw=1.2, label="Observed"),
-               Line2D([], [], color=C["grey"], lw=0.9, ls=(0, (4, 2)),
-                      label="Pre-2020 extrapolation")]
-    fig.legend(handles=handles, frameon=False, fontsize=7, ncol=2,
-               loc="lower center", bbox_to_anchor=(0.5, -0.02))
-    fig.tight_layout(rect=(0, 0.04, 1, 1))
+    fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig3_marker_trajectories.pdf"))
     plt.close(fig)
     print("fig3 done")
