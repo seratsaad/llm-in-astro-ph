@@ -1,100 +1,103 @@
-% Simplified plate diagram for the short paper. Topic effects and the swept
-% selection parameter are suppressed (stated in the caption).
+% Plate diagram in the parameter/latent/distribution/observed idiom.
+% Topic effects on the background and the swept selection parameter are
+% suppressed (stated in the caption).
 \begin{tikzpicture}[
-    >={Latex[length=1.8mm]}, semithick, font=\small,
-    node/.style={circle, thick, minimum size=10mm, align=center,
-        inner sep=0.5pt, font=\footnotesize},
-    bgN/.style={node, draw=oiGreen, fill=oiGreen!12},
-    asN/.style={node, draw=oiOrange, fill=oiOrange!12},
-    prN/.style={node, draw=oiBlue, fill=oiBlue!12},
-    obs/.style={node, draw=oiGray, fill=black!16},
-    plate/.style={rectangle, rounded corners=3pt, draw=black!45, thick,
-        inner sep=8pt},
-    platelab/.style={font=\scriptsize, text=black, align=left},
-    edge/.style={->, draw=black!55},
+    shorten >=1pt, ->, draw=black!70, semithick,
+    >={Latex[length=1.8mm]}, font=\footnotesize,
+    neuron/.style={circle, minimum size=9.5mm, inner sep=0pt, align=center},
+    param/.style={neuron, fill=oiBlue!35},
+    inter/.style={neuron, fill=black!22},
+    dist/.style={neuron, fill=oiOrange!45},
+    obs/.style={neuron, fill=oiYellow!70},
+    box/.style={rectangle, draw=black!60, rounded corners=3pt, thick,
+        inner sep=9pt},
     lab/.style={font=\scriptsize, text=black},
-    newN/.style={node, draw=black!60, fill=black!6},
-    hypN/.style={node, draw=black!60, fill=white, dashed, minimum size=7.5mm},
-    newedge/.style={->, draw=black!55},
-    newlab/.style={font=\scriptsize, text=black},
 ]
 
-% shared scales (hyperparameters): the top of the hierarchy
-\node[hypN] (sb) at (2.7, 9.4) {$\sigma_b$};
-\node[hypN] (sv) at (4.8, 9.4) {$\sigma_v$};
-\node[hypN] (su) at (6.9, 9.4) {$\sigma_u$};
-\node[newlab, align=center] at (0.4, 9.4) {shared\\ scales};
+% ==== Shared scales (hyperparameters) ====
+\node[param] (sb) at (2.4, 12.4) {$\sigma_b$};
+\node[param] (sv) at (4.4, 12.4) {$\sigma_v$};
+\node[param] (su) at (6.4, 12.4) {$\sigma_u$};
 
-% class plate (partial pooling across the eight subject classes)
-\node[newN] (bc) at (2.7, 7.5) {$b_c$};
-\node[newN] (vc) at (4.8, 7.5) {$v_c$};
-\node[newN] (uc) at (6.9, 7.5) {$u_c$};
-\begin{scope}[on background layer]
-\node[plate, fit=(bc)(vc)(uc)] (cplate) {};
-\end{scope}
-\node[newlab, anchor=west] at ($(cplate.east)+(2pt,0)$) {classes $c=1\ldots8$};
-\node[newlab, anchor=east, align=center] at ($(cplate.west)-(2pt,0)$)
-    {zero-sum};
+% ==== Class-offset priors ====
+\node[dist] (nb_) at (2.4, 10.9) {$\mathcal{N}$};
+\node[dist] (nv_) at (4.4, 10.9) {$\mathcal{N}$};
+\node[dist] (nu_) at (6.4, 10.9) {$\mathcal{N}$};
 
-% quarter-level row
-\node[bgN] (g0)    at (1.7, 3.2)  {$g_0(t)$};
-\node[asN] (delta) at (3.8, 3.2)  {$\delta_t$};
-\node[prN] (pi)    at (5.9, 3.2)  {$\pi_t$};
-\node[prN] (rho)   at (8.0, 3.2)  {$\rho_t$};
+% ==== Class plate ====
+\node[param] (bc) at (2.4, 9.4) {$b_c$};
+\node[param] (vc) at (4.4, 9.4) {$v_c$};
+\node[param] (uc) at (6.4, 9.4) {$u_c$};
+\node[box, fit=(bc)(vc)(uc)] (cplate) {};
+\node[lab, anchor=south west] at ([xshift=4pt,yshift=2pt]cplate.south west)
+    {};
+\node[lab, anchor=west] at ([xshift=4pt]cplate.east) {classes $c=1\ldots8$,\ zero-sum};
 
-\node[lab, align=center] at (1.7, 4.15)  {background\\ drift};
-\node[lab, align=center] at (3.8, 4.15)  {excess of\\ assisted prose};
-\node[lab, align=center] at (5.9, 4.15)  {fraction\\ assisted};
-\node[lab, align=center] at (8.0, 4.15)  {chance of\\ declaring};
+% ==== Quarter-level parameters ====
+\node[param] (g0)    at (1.0, 7.15)  {$g_0(t)$};
+\node[param] (delta) at (3.2, 7.15)  {$\delta_t$};
+\node[param] (pi)    at (5.4, 7.15)  {$\pi_t$};
+\node[param] (rho)   at (7.6, 7.15)  {$\rho_t$};
 
-% paper plate
-\node[obs] (L) at (0.6, 0.6)  {$L_i$};
-\node[bgN] (mu0) at (2.7, 0.6) {$\mu_{i0}$};
-\node[asN] (mu1) at (4.8, 0.6) {$\mu_{i1}$};
-\node[prN] (A)  at (6.9, 0.6)  {$A_i$};
-\node[obs] (K)  at (4.8, -1.1) {$K_i$};
-\node[obs] (D)  at (9.0, 0.6) {$D_i$};
-\begin{scope}[on background layer]
-\node[plate, fit=(L)(mu0)(mu1)(A)(K)(D)] (pplate) {};
-\end{scope}
-\node[platelab, anchor=north west] at ($(pplate.south west)+(1pt,20pt)$)
-    {papers $i=1\ldots N$\\ $A_i\equiv0$ before 2020};
+\node[box, fit=(g0)(delta)(pi)(rho)] (qplate) {};
+\node[lab, anchor=west] at ([xshift=4pt]qplate.east) {quarters $t$};
 
-% dispersions
-\node[newN] (ph0) at (3.3, -3.4) {$\phi_0$};
-\node[newN] (ph1) at (6.3, -3.4) {$\phi_1$};
+% the three background continuations act on g0
+\node[lab, align=center] (var) at (-1.7, 7.15) {three\\ continuations};
+\draw[dashed] (var) -- (g0);
 
-% the three background continuations act here
-\node[newlab, align=center] (var) at (0, 4.6) {three\\ continuations};
-\draw[newedge, dashed] (var) -- (g0);
+% ==== Paper plate ====
+\node[obs]   (L)   at (-0.4, 5.2) {$L_i$};
+\node[inter] (mu0) at (1.6, 5.2)  {$\mu_{i0}$};
+\node[inter] (mu1) at (3.6, 5.2)  {$\mu_{i1}$};
+\node[dist]  (bern) at (5.4, 5.2) {$\mathcal{B}$};
+\node[inter] (A)   at (5.4, 3.7)  {$A_i$};
+\node[dist]  (bernD) at (7.6, 3.7) {$\mathcal{B}$};
+\node[obs]   (D)   at (7.6, 2.2)  {$D_i$};
+\node[dist]  (nbin) at (2.6, 3.0) {NB};
+\node[obs]   (K)   at (2.6, 1.4)  {$K_i$};
 
-% edges
-\draw[newedge] (sb) -- (bc);
-\draw[newedge] (sv) -- (vc);
-\draw[newedge] (su) -- (uc);
-\draw[edge] (g0)    -- (mu0);
-\draw[edge] (L)     -- (mu0);
-\draw[edge] (mu0)   -- (mu1);
-\draw[edge] (delta) -- (mu1);
-\draw[edge] (pi)    -- (A);
-\draw[edge] (rho)   -- (D);
-\draw[edge] (mu0)   to[out=-55,in=160] (K);
-\draw[edge] (mu1)   -- (K);
-\draw[edge] (A)     to[out=-125,in=20] (K);
-\draw[edge] (A)     -- (D);
-\draw[newedge] (bc) -- (mu0);
-\draw[newedge] (vc) -- (mu1);
-\draw[newedge] (uc) -- (A);
-\draw[newedge] (ph0) to[out=30,in=-120] (K);
-\draw[newedge] (ph1) to[out=150,in=-60] (K);
+\node[box, fit=(L)(mu0)(mu1)(bern)(A)(bernD)(D)(nbin)(K)] (pplate) {};
+\node[lab, anchor=south west]
+    at ([xshift=6pt,yshift=4pt]pplate.south west)
+    {papers $i=1\ldots N$, \ $A_i\equiv0$ before 2020};
 
-% legend, placed clear of the plate label beneath the box
-\node[obs, minimum size=5.5mm] at (-4,3.5) {};
-\node[anchor=west, font=\scriptsize] at (-3.5,3.5) {observed};
-\node[bgN, minimum size=5.5mm] at (-4,2.5) {};
-\node[anchor=west, font=\scriptsize] at (-3.5,2.5) {background};
-\node[asN, minimum size=5.5mm] at (-4,1.5) {};
-\node[anchor=west, font=\scriptsize] at (-3.5,1.5) {assisted};
-\node[prN, minimum size=5.5mm] at (-4,0.5) {};
-\node[anchor=west, font=\scriptsize] at (-3.5,0.5) {prevalence};
+% ==== Dispersions ====
+\node[param] (ph0) at (0.6, 0.0) {$\phi_0$};
+\node[param] (ph1) at (4.6, 0.0) {$\phi_1$};
+
+% ====== Edges ======
+\draw (sb) -- (nb_);  \draw (sv) -- (nv_);  \draw (su) -- (nu_);
+\draw (nb_) -- (bc);  \draw (nv_) -- (vc);  \draw (nu_) -- (uc);
+
+\draw (bc) to[out=-90,in=90] (mu0);
+\draw (vc) to[out=-90,in=90] (mu1);
+\draw (uc) to[out=-90,in=90] (bern);
+
+\draw (g0) -- (mu0);
+\draw (L) -- (mu0);
+\draw (mu0) -- (mu1);
+\draw (delta) -- (mu1);
+\draw (pi) -- (bern);
+\draw (bern) -- (A);
+\draw (rho) -- (bernD);
+\draw (A) -- (bernD);
+\draw (bernD) -- (D);
+
+\draw (mu0) to[out=-70,in=140] (nbin);
+\draw (mu1) -- (nbin);
+\draw (A) to[out=-160,in=15] (nbin);
+\draw (nbin) -- (K);
+\draw (ph0) to[out=45,in=-135] (nbin);
+\draw (ph1) to[out=135,in=-40] (nbin);
+
+% ==== Legend (outside, left) ====
+\node[anchor=east, inner sep=0pt] at ([xshift=-0.9cm]pplate.west) {
+    \begin{tikzpicture}[every node/.style={anchor=west}, y=0.85cm]
+        \node[param, minimum size=6mm, label=right:{parameter}] at (0,3) {};
+        \node[inter, minimum size=6mm, label=right:{latent variable}] at (0,2) {};
+        \node[dist, minimum size=6mm, label=right:{distribution}] at (0,1) {};
+        \node[obs, minimum size=6mm, label=right:{observed}] at (0,0) {};
+    \end{tikzpicture}
+};
 \end{tikzpicture}
