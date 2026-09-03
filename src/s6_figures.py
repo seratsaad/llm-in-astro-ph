@@ -111,7 +111,7 @@ def fig3_marker_trajectories(phase="fulltext"):
     d = d[d.year >= 2018]
     show = (d[d.year >= 2024].groupby("marker").excess_ratio.mean()
             .sort_values(ascending=False).head(12).index.tolist())
-    fig, axes = plt.subplots(2, 6, figsize=(7.1, 2.6), sharex=True)
+    fig, axes = plt.subplots(3, 4, figsize=(7.1, 4.6), sharex=True)
     for ax, w in zip(axes.ravel(), show):
         g = d[d.marker == w].groupby("year").agg(
             obs=("obs_rate", "mean"), bg=("bg_rate", "mean"))
@@ -122,8 +122,8 @@ def fig3_marker_trajectories(phase="fulltext"):
         ax.set_xticks([2018, 2021, 2024])
     for ax in axes[-1]:
         ax.set_xlabel("Year", fontsize=7.5)
-    axes[0, 0].set_ylabel("per 10,000 tokens", fontsize=7)
-    axes[1, 0].set_ylabel("per 10,000 tokens", fontsize=7)
+    for r in range(axes.shape[0]):
+        axes[r, 0].set_ylabel("per 10,000 tokens", fontsize=7)
     handles = [Line2D([], [], color=C["vermillion"], lw=1.2, label="Observed"),
                Line2D([], [], color=C["grey"], lw=0.9, ls=(0, (4, 2)),
                       label="Pre-2020 extrapolation")]
