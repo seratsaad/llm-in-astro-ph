@@ -184,8 +184,28 @@ def main():
     if args.section:
         tag += f"_{args.section}"
     tag += "_smoke" if args.smoke else ""
+    # Write the prevalence table FIRST: a failed netcdf write must not cost
+    # five hours of sampling (it did once, when no netCDF backend was present).
+    pi = idata.posterior["pi"].values.reshape(-1, data["n_quarters"] - free_from)
+    qs = [quarter_label(free_from + i) for i in range(pi.shape[1])]
+    tab = pd.DataFrame({"quarter": qs, "mean": pi.mean(0),
+                        "lo": np.percentile(pi, 2.5, axis=0),
+                        "hi": np.percentile(pi, 97.5, axis=0),
+                        "lo68": np.percentile(pi, 16.0, axis=0),
+                        "hi68": np.percentile(pi, 84.0, axis=0)})
+    print("\nposterior prevalence by quarter (NUTS):")
+    print(tab.round(4).to_string(index=False))
+    tab.to_csv(os.path.join(DATA, f"pi_{tag}_nuts.csv"), index=False)
+
     out = os.path.join(DATA, f"idata_{tag}.nc")
-    idata.to_netcdf(out)
+    try:
+        idata.to_netcdf(out)
+    except Exception as e:
+        import pickle
+        out = os.path.join(DATA, f"idata_{tag}.pkl")
+        with open(out, "wb") as fh:
+            pickle.dump(idata, fh)
+        print(f"netcdf write failed ({e}); pickled instead")
 
     summ = pm.summary(idata, var_names=["beta0", "g0_slope", "g0_curve", "phi0",
                                         "phi1", "m0", "sd_m", "eta0", "sd_eta"])
@@ -195,14 +215,6 @@ def main():
     if len(bad):
         print(bad.to_string())
 
-    pi = idata.posterior["pi"].values.reshape(-1, data["n_quarters"] - free_from)
-    qs = [quarter_label(free_from + i) for i in range(pi.shape[1])]
-    tab = pd.DataFrame({"quarter": qs, "mean": pi.mean(0),
-                        "lo": np.percentile(pi, 2.5, axis=0),
-                        "hi": np.percentile(pi, 97.5, axis=0)})
-    print("\nposterior prevalence by quarter:")
-    print(tab.round(4).to_string(index=False))
-    tab.to_csv(os.path.join(DATA, f"pi_{tag}.csv"), index=False)
     print(f"\nwrote {out}")
 
 
