@@ -250,7 +250,7 @@ The two injected quantities are the fraction of papers marked as assisted and th
 \begin{figure}[!t]
 \centering
 \includegraphics[width=\columnwidth]{figs/fig_prevalence.pdf}
-\caption{ The assisted fraction by quarter. The band is the primary fit with its 95\% interval, and the other curves each change one assumption. We take the spread between the drift variants as our uncertainty.\label{fig:results}}
+\caption{The assisted fraction of astro-ph papers by first-submission quarter. The band is the primary fit, linear background drift with its 95\% credible interval, and each other curve changes one assumption. The frozen variant holds the background at its 2020 level, the control-tracked variant moves it with the neutral control words, and the unconstrained variant drops the requirement that adoption only rises. The spread between the drift variants exceeds any single interval, and we take that spread as our uncertainty. Under every variant the fraction passes half during 2025.\label{fig:results}}
 \end{figure}
 
 \subsection{The assisted fraction}\label{sec:prevalence}
@@ -264,7 +264,7 @@ The estimand we adopt is narrow, the fraction of papers whose analyzed prose is 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=\columnwidth]{figs/fig_fading.pdf}
-\caption{The fitted excess of assisted prose falls while the prevalence rises. \textit{Delve} falls after mid-2024 while \textit{underscore} continues to rise, so fixed word lists lose power with time.\label{fig:fading}}
+\caption{The excess of assisted prose fades as adoption rises. The black curve is the fitted excess $e^{\delta_t}$, the factor by which assisted papers lift their marker rate above background, and it falls from \deltaEarly\ in early 2023 to \deltaLate\ by 2026. The colored curves follow four marker words, each deconvolved with the whole-basket prevalence so that no word selects the papers by which we measure it. \textit{Delve} falls after mid-2024 while \textit{underscore} continues to rise, and the words do not move together, so a fixed word list loses power with time while the fitted excess absorbs the change.\label{fig:fading}}
 \end{figure}
 
 \subsection{Time evolution of the marker excess}\label{sec:fading}
@@ -294,7 +294,7 @@ When we fit the model with this basket we obtain $80^{+10}_{-12}$\% for 2025 und
 \begin{figure}[!t]
 \centering
 \includegraphics[width=\columnwidth]{figs/fig_gap.pdf}
-\caption{Estimated prevalence against declared use on a logarithmic scale. The gap is two orders of magnitude and does not close.\label{fig:gap}}
+\caption{Estimated prevalence against declared use, both as a percentage of papers on a logarithmic scale. The curve with the band is the fitted assisted fraction with its 95\% interval, and the points mark the papers whose authors state model use in the text. The two rise together and the gap between them stays near two orders of magnitude, one declaration for every \disclosureGapFactor\ papers with a trace in 2025, so disclosure does not catch up as use spreads.\label{fig:gap}}
 \end{figure}
 
 \subsection{Comparison with declared use}\label{sec:gap}
