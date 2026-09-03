@@ -13,9 +13,9 @@
     platelab/.style={font=\scriptsize, text=black, align=left},
     edge/.style={->, draw=black!55},
     lab/.style={font=\scriptsize, text=black},
-    newN/.style={node, draw=blue, fill=blue!8, text=blue},
-    newedge/.style={->, draw=blue!70},
-    newlab/.style={font=\scriptsize, text=blue},
+    newN/.style={node, draw=black!60, fill=black!6},
+    newedge/.style={->, draw=black!55},
+    newlab/.style={font=\scriptsize, text=black},
 ]
 
 % quarter-level row
@@ -47,7 +47,7 @@
 \node[newN] (vc) at (-1.0, 2.6) {$v_c$};
 \node[newN] (uc) at (-1.0, 1.3) {$u_c$};
 \begin{scope}[on background layer]
-\node[plate, draw=blue!45, fit=(bc)(vc)(uc)] (cplate) {};
+\node[plate, fit=(bc)(vc)(uc)] (cplate) {};
 \end{scope}
 \node[newlab, anchor=south] at ($(cplate.north)+(0,1pt)$) {classes $c=1\ldots8$};
 \node[newlab, anchor=north, align=center] at ($(cplate.south)-(0,1pt)$)
