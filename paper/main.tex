@@ -198,6 +198,9 @@ Nothing in Equation~\ref{eq:model} forces its second component to correspond to 
 The reason is that prevalence and excess are not separately visible in the counts. The counts show the aggregate lift of marker words above the background, and a given lift can come from many papers each carrying a slight excess or from few papers carrying a strong one. The control basket shows a small lift, which is ordinary vocabulary drift, and a free mixture explains it in the first way.
 
 Our remedy follows the logic of the original spam filter \citep{Sahami1998}. Rather than let the counts alone define the assisted component, we anchor it to the papers we know are assisted. Their declaration flag is observed, so they enter the same likelihood as known positives, and the prior on $\delta_t$ is centered on the excess their counts display. This is not a calibration carried out before the fit, since the excess and the prevalence are estimated together. Holding $\delta_t$ near the declared value rules out the first reading, and the model can no longer turn ordinary drift in control words into prevalence. \ed{Table~\ref{tab:priors} lists every prior. The background drift $g_0$ is quadratic in time, with the linear term free at $\mathcal{N}(0,0.5)$ per quarter-scale unit and the curvature confined to $\mathcal{N}(0,0.05)$, and the pre-2020 papers pin it. The log excess $\eta_t$ follows a random walk pulled to the declared anchor with width 0.2 in each quarter, so it is smoothed rather than free, and the anchor floor at 1.05 keeps the two components from merging, though $\delta_t$ itself is not constrained positive. Rising adoption enters the primary specification as a hard constraint, softplus-positive increments on the prevalence walk, and the unconstrained variant removes it.}
+
+\rednote{The priors themselves are never stated. Give the family and width of the prior on $\delta_t$, the functional form of $g_0$ before 2020 and the prior that smooths it, the pooling scales for $b_c$, $v_c$ and $u_c$, and the priors on $\phi_0$ and $\phi_1$. Say whether $\delta_t$ is constrained positive, whether it is smoothed across quarters or left free in each, and whether rising adoption is imposed on $m_t$ as a hard constraint or as a prior. A short table would carry all of it.}
+
 \begin{deluxetable*}{lll}
 \tablecaption{\ed{Priors of the hierarchical model. All class effects sum to
 zero across the eight classes.}\label{tab:priors}}
@@ -215,7 +218,7 @@ zero across the eight classes.}\label{tab:priors}}
 \ed{$\rho_a,\ \rho_b$} & \ed{declaration propensity} & \ed{$\mathcal{N}(-4,2)$, $\mathcal{N}(0,1)$} \\
 \enddata
 \end{deluxetable*}
-\rednote{The priors themselves are never stated. Give the family and width of the prior on $\delta_t$, the functional form of $g_0$ before 2020 and the prior that smooths it, the pooling scales for $b_c$, $v_c$ and $u_c$, and the priors on $\phi_0$ and $\phi_1$. Say whether $\delta_t$ is constrained positive, whether it is smoothed across quarters or left free in each, and whether rising adoption is imposed on $m_t$ as a hard constraint or as a prior. A short table would carry all of it.}
+
 
 Three other quantities come from the data rather than from assumption. We set $\pi\equiv0$ before 2020, so the 106{,}000 papers from those years act as known negatives, and the background level, its scaling with length, its variation by topic, and its scatter are estimated from them inside the same fit rather than set beforehand. The neutral controls bound how fast ordinary astronomy vocabulary drifts. The declaration counts by year give $\rho_t$. 
 
