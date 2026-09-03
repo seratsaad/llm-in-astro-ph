@@ -1,5 +1,5 @@
-% Simplified plate diagram for the short paper. Topic effects, dispersions,
-% and the swept selection parameter are suppressed (stated in the caption).
+% Simplified plate diagram for the short paper. Topic effects and the swept
+% selection parameter are suppressed (stated in the caption).
 \begin{tikzpicture}[
     >={Latex[length=1.8mm]}, semithick, font=\small,
     node/.style={circle, thick, minimum size=10mm, align=center,
@@ -14,20 +14,38 @@
     edge/.style={->, draw=black!55},
     lab/.style={font=\scriptsize, text=black},
     newN/.style={node, draw=black!60, fill=black!6},
+    hypN/.style={node, draw=black!60, fill=white, dashed, minimum size=7.5mm},
     newedge/.style={->, draw=black!55},
     newlab/.style={font=\scriptsize, text=black},
 ]
 
-% quarter-level row
-\node[bgN] (g0)    at (2.7, 3.2)  {$g_0(t)$};
-\node[asN] (delta) at (4.8, 3.2)  {$\delta_t$};
-\node[prN] (pi)    at (6.9, 3.2)  {$\pi_t$};
-\node[prN] (rho)   at (9.0, 3.2)  {$\rho_t$};
+% shared scales (hyperparameters): the top of the hierarchy
+\node[hypN] (sb) at (2.7, 9.4) {$\sigma_b$};
+\node[hypN] (sv) at (4.8, 9.4) {$\sigma_v$};
+\node[hypN] (su) at (6.9, 9.4) {$\sigma_u$};
+\node[newlab, align=center] at (0.4, 9.4) {shared\\ scales};
 
-\node[lab, align=center] at (2.7, 4.15)  {background\\ drift};
-\node[lab, align=center] at (4.8, 4.15)  {excess of\\ assisted prose};
-\node[lab, align=center] at (6.9, 4.15)  {fraction\\ assisted};
-\node[lab, align=center] at (9.0, 4.15)  {chance of\\ declaring};
+% class plate (partial pooling across the eight subject classes)
+\node[newN] (bc) at (2.7, 7.5) {$b_c$};
+\node[newN] (vc) at (4.8, 7.5) {$v_c$};
+\node[newN] (uc) at (6.9, 7.5) {$u_c$};
+\begin{scope}[on background layer]
+\node[plate, fit=(bc)(vc)(uc)] (cplate) {};
+\end{scope}
+\node[newlab, anchor=west] at ($(cplate.east)+(2pt,0)$) {classes $c=1\ldots8$};
+\node[newlab, anchor=east, align=center] at ($(cplate.west)-(2pt,0)$)
+    {zero-sum};
+
+% quarter-level row
+\node[bgN] (g0)    at (1.7, 3.2)  {$g_0(t)$};
+\node[asN] (delta) at (3.8, 3.2)  {$\delta_t$};
+\node[prN] (pi)    at (5.9, 3.2)  {$\pi_t$};
+\node[prN] (rho)   at (8.0, 3.2)  {$\rho_t$};
+
+\node[lab, align=center] at (1.7, 4.15)  {background\\ drift};
+\node[lab, align=center] at (3.8, 4.15)  {excess of\\ assisted prose};
+\node[lab, align=center] at (5.9, 4.15)  {fraction\\ assisted};
+\node[lab, align=center] at (8.0, 4.15)  {chance of\\ declaring};
 
 % paper plate
 \node[obs] (L) at (0.6, 0.6)  {$L_i$};
@@ -42,26 +60,18 @@
 \node[platelab, anchor=north west] at ($(pplate.south west)+(1pt,20pt)$)
     {papers $i=1\ldots N$\\ $A_i\equiv0$ before 2020};
 
-% class plate (partial pooling across the eight subject classes)
-\node[newN] (bc) at (-1.0, 3.9) {$b_c$};
-\node[newN] (vc) at (-1.0, 2.6) {$v_c$};
-\node[newN] (uc) at (-1.0, 1.3) {$u_c$};
-\begin{scope}[on background layer]
-\node[plate, fit=(bc)(vc)(uc)] (cplate) {};
-\end{scope}
-\node[newlab, anchor=south] at ($(cplate.north)+(0,1pt)$) {classes $c=1\ldots8$};
-\node[newlab, anchor=north, align=center] at ($(cplate.south)-(0,1pt)$)
-    {zero-sum,\\ shared scales};
-
 % dispersions
-\node[newN] (ph0) at (3.3, -2.4) {$\phi_0$};
-\node[newN] (ph1) at (6.3, -2.4) {$\phi_1$};
+\node[newN] (ph0) at (3.3, -3.4) {$\phi_0$};
+\node[newN] (ph1) at (6.3, -3.4) {$\phi_1$};
 
 % the three background continuations act here
-\node[newlab, align=center] (var) at (1.0, 4.6) {three\\ continuations};
+\node[newlab, align=center] (var) at (0, 4.6) {three\\ continuations};
 \draw[newedge, dashed] (var) -- (g0);
 
 % edges
+\draw[newedge] (sb) -- (bc);
+\draw[newedge] (sv) -- (vc);
+\draw[newedge] (su) -- (uc);
 \draw[edge] (g0)    -- (mu0);
 \draw[edge] (L)     -- (mu0);
 \draw[edge] (mu0)   -- (mu1);
@@ -72,19 +82,19 @@
 \draw[edge] (mu1)   -- (K);
 \draw[edge] (A)     to[out=-125,in=20] (K);
 \draw[edge] (A)     -- (D);
-\draw[newedge] (bc) to[out=0,in=140] (mu0);
-\draw[newedge] (vc) to[out=0,in=175] (mu1);
-\draw[newedge] (uc) to[out=-20,in=-150] (A);
+\draw[newedge] (bc) -- (mu0);
+\draw[newedge] (vc) -- (mu1);
+\draw[newedge] (uc) -- (A);
 \draw[newedge] (ph0) to[out=30,in=-120] (K);
 \draw[newedge] (ph1) to[out=150,in=-60] (K);
 
 % legend, placed clear of the plate label beneath the box
-\node[obs, minimum size=5.5mm] at (0.56,-3.5) {};
-\node[anchor=west, font=\scriptsize] at (0.91,-3.5) {observed};
-\node[bgN, minimum size=5.5mm] at (2.86,-3.5) {};
-\node[anchor=west, font=\scriptsize] at (3.21,-3.5) {background};
-\node[asN, minimum size=5.5mm] at (5.26,-3.5) {};
-\node[anchor=west, font=\scriptsize] at (5.61,-3.5) {assisted};
-\node[prN, minimum size=5.5mm] at (7.36,-3.5) {};
-\node[anchor=west, font=\scriptsize] at (7.71,-3.5) {prevalence};
+\node[obs, minimum size=5.5mm] at (-4,3.5) {};
+\node[anchor=west, font=\scriptsize] at (-3.5,3.5) {observed};
+\node[bgN, minimum size=5.5mm] at (-4,2.5) {};
+\node[anchor=west, font=\scriptsize] at (-3.5,2.5) {background};
+\node[asN, minimum size=5.5mm] at (-4,1.5) {};
+\node[anchor=west, font=\scriptsize] at (-3.5,1.5) {assisted};
+\node[prN, minimum size=5.5mm] at (-4,0.5) {};
+\node[anchor=west, font=\scriptsize] at (-3.5,0.5) {prevalence};
 \end{tikzpicture}
