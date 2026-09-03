@@ -29,9 +29,7 @@
 \node[param] (vc) at (4.4, 9.4) {$v_c$};
 \node[param] (uc) at (6.4, 9.4) {$u_c$};
 \node[box, fit=(bc)(vc)(uc)] (cplate) {};
-\node[lab, anchor=south west] at ([xshift=4pt,yshift=2pt]cplate.south west)
-    {};
-\node[lab, anchor=west] at ([xshift=4pt]cplate.east) {classes $c=1\ldots8$,\ zero-sum};
+\node[lab, anchor=west] at ([xshift=5pt]cplate.east) {classes $c=1\ldots8$};
 
 % ==== Quarter-level parameters ====
 \node[param] (g0)    at (1.0, 7.15)  {$g_0(t)$};
@@ -40,7 +38,7 @@
 \node[param] (rho)   at (7.6, 7.15)  {$\rho_t$};
 
 \node[box, fit=(g0)(delta)(pi)(rho)] (qplate) {};
-\node[lab, anchor=west] at ([xshift=4pt]qplate.east) {quarters $t$};
+\node[lab, anchor=west] at ([xshift=5pt]qplate.east) {quarters $t$};
 
 % the three background continuations act on g0
 \node[lab, align=center] (var) at (-1.7, 7.15) {three\\ continuations};
@@ -58,9 +56,8 @@
 \node[obs]   (K)   at (2.6, 1.4)  {$K_i$};
 
 \node[box, fit=(L)(mu0)(mu1)(bern)(A)(bernD)(D)(nbin)(K)] (pplate) {};
-\node[lab, anchor=south west]
-    at ([xshift=6pt,yshift=4pt]pplate.south west)
-    {papers $i=1\ldots N$, \ $A_i\equiv0$ before 2020};
+\node[lab, anchor=west, align=left] at ([xshift=5pt]pplate.east)
+    {papers $i=1\ldots N$\\ $A_i\equiv0$ before 2020};
 
 % ==== Dispersions ====
 \node[param] (ph0) at (0.6, 0.0) {$\phi_0$};
@@ -72,7 +69,7 @@
 
 \draw (bc) to[out=-90,in=90] (mu0);
 \draw (vc) to[out=-90,in=90] (mu1);
-\draw (uc) to[out=-90,in=90] (bern);
+\draw (uc) to[out=-75,in=60] (bern);
 
 \draw (g0) -- (mu0);
 \draw (L) -- (mu0);
