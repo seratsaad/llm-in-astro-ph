@@ -240,8 +240,10 @@ def fig3_split():
     ax.set_ylabel("Excess over background")
     ax.set_yscale("log")
     ax.set_ylim(0.8, 60)
-    from matplotlib.ticker import FuncFormatter
+    from matplotlib.ticker import FuncFormatter, FixedLocator, NullFormatter
+    ax.yaxis.set_major_locator(FixedLocator([1, 2, 3, 5, 10, 20, 50]))
     ax.yaxis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:g}"))
+    ax.yaxis.set_minor_formatter(NullFormatter())
     ax.legend(frameon=False, fontsize=6.6, loc="upper left",
               bbox_to_anchor=(0.075, 0.925), labelspacing=0.3,
               handlelength=1.5, handletextpad=0.5, borderpad=0.2)
