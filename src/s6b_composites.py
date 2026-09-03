@@ -210,6 +210,7 @@ def fig3_split():
     ax.set_ylabel(r"Prevalence $\pi_t$ (% of papers)")
     ax.set_xlim(2020, 2026.7)
     ax.set_ylim(0, 100)
+    ax.set_yticks([20, 40, 60, 80, 100])
     ax.legend(frameon=False, fontsize=6.6, loc="upper left",
               bbox_to_anchor=(0.075, 0.925), labelspacing=0.3,
               handlelength=1.5, handletextpad=0.5, borderpad=0.2)
