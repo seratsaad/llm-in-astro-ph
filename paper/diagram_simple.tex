@@ -88,13 +88,13 @@
 \draw (ph0) to[out=45,in=-135] (nbin);
 \draw (ph1) to[out=135,in=-40] (nbin);
 
-% ==== Legend (outside, left) ====
-\node[anchor=east, inner sep=0pt] at ([xshift=-0.9cm]pplate.west) {
+% ==== Legend (top left) ====
+\node[anchor=north west, inner sep=0pt] at (-2.6, 12.9) {
     \begin{tikzpicture}[every node/.style={anchor=west}, y=0.85cm]
-        \node[param, minimum size=6mm, label=right:{parameter}] at (0,3) {};
-        \node[inter, minimum size=6mm, label=right:{latent variable}] at (0,2) {};
-        \node[dist, minimum size=6mm, label=right:{distribution}] at (0,1) {};
-        \node[obs, minimum size=6mm, label=right:{observed}] at (0,0) {};
+        \node[param, minimum size=6mm, label={[label distance=4pt]right:parameter}] at (0,3) {};
+        \node[inter, minimum size=6mm, label={[label distance=4pt]right:latent variable}] at (0,2) {};
+        \node[dist, minimum size=6mm, label={[label distance=4pt]right:distribution}] at (0,1) {};
+        \node[obs, minimum size=6mm, label={[label distance=4pt]right:observed}] at (0,0) {};
     \end{tikzpicture}
 };
 \end{tikzpicture}
