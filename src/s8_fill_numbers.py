@@ -112,6 +112,9 @@ def main():
     b = band("fulltext_primary_wholebody", 2025)
     if b:
         M("piWholeBody", b)
+    b = band("abstracts_primary_nuts", 2025)
+    if b:
+        M("piAbstractsNuts", b)
     b24 = band("fulltext_primary", 2024)
     if b24:
         M("piFulltextTwentyFour", b24)
