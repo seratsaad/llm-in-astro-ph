@@ -109,6 +109,9 @@ def main():
     if b:
         M("piFulltextHeadline", b)
         M("ladderFullRungFour", b)
+    b = band("fulltext_primary_wholebody", 2025)
+    if b:
+        M("piWholeBody", b)
     b24 = band("fulltext_primary", 2024)
     if b24:
         M("piFulltextTwentyFour", b24)
