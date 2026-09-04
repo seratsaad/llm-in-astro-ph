@@ -86,14 +86,24 @@ def fig1():
     print("fig1 composite done")
 
 
+
+
+def prim_csv():
+    n = "pi_fulltext_primary_nuts.csv"
+    return n if os.path.exists(os.path.join(DATA, n)) else "pi_fulltext_primary.csv"
+
 # ------------------------------------------------------------------ figure 3
 def fig3():
     fig, axes = plt.subplots(1, 3, figsize=(7.1, 2.75))
 
     # (a) prevalence with the drift bracket
     ax = axes[0]
+    import os as _os
+    prim = ("fulltext_primary_nuts"
+            if _os.path.exists(_os.path.join(DATA, "pi_fulltext_primary_nuts.csv"))
+            else "fulltext_primary")
     styles = {
-        "fulltext_primary": ("Linear drift (primary)", C["vermillion"], "-", True),
+        prim: ("Linear drift (primary)", C["vermillion"], "-", True),
         "fulltext_unconstrained": ("Unconstrained", C["black"], "--", False),
         "fulltext_frozen_drift": ("Frozen background", C["orange"], ":", False),
         "fulltext_tracked_drift": ("Control-tracked", C["blue"], "-.", False),
@@ -151,7 +161,7 @@ def fig3():
     ft = pd.read_parquet(os.path.join(DATA, "fulltext_features.parquet"),
                          columns=["year", "declared"])
     decl = ft.groupby("year").declared.mean()
-    p = os.path.join(DATA, "pi_fulltext_primary.csv")
+    p = os.path.join(DATA, prim_csv())
     if os.path.exists(p):
         d = pd.read_csv(p)
         d["year"] = d.quarter.str[:4].astype(int)
@@ -189,8 +199,12 @@ def fig3_split():
     """The three arguments of the old composite as standalone figures."""
     # (a) prevalence with the drift bracket
     fig, ax = plt.subplots(figsize=(3.5, 2.75))
+    import os as _os
+    prim = ("fulltext_primary_nuts"
+            if _os.path.exists(_os.path.join(DATA, "pi_fulltext_primary_nuts.csv"))
+            else "fulltext_primary")
     styles = {
-        "fulltext_primary": ("Linear drift (primary)", C["vermillion"], "-", True),
+        prim: ("Linear drift (primary)", C["vermillion"], "-", True),
         "fulltext_unconstrained": ("Unconstrained", C["black"], "--", False),
         "fulltext_frozen_drift": ("Frozen background", C["orange"], ":", False),
         "fulltext_tracked_drift": ("Control-tracked", C["blue"], "-.", False),
@@ -257,7 +271,7 @@ def fig3_split():
     ft = pd.read_parquet(os.path.join(DATA, "fulltext_features.parquet"),
                          columns=["year", "declared"])
     decl = ft.groupby("year").declared.mean()
-    p = os.path.join(DATA, "pi_fulltext_primary.csv")
+    p = os.path.join(DATA, prim_csv())
     if os.path.exists(p):
         d = pd.read_csv(p)
         d["year"] = d.quarter.str[:4].astype(int)

@@ -105,7 +105,13 @@ def main():
             return None
         return f"{100*m:.0f}\\% ({100*lo:.0f}--{100*hi:.0f}\\%)"
 
+    PRIM = ("fulltext_primary_nuts"
+            if os.path.exists(os.path.join(DATA, "pi_fulltext_primary_nuts.csv"))
+            else "fulltext_primary")
     b = band("fulltext_primary", 2025)
+    if b:
+        M("piFulltextLaplace", b)
+    b = band(PRIM, 2025)
     if b:
         M("piFulltextHeadline", b)
         M("ladderFullRungFour", b)
@@ -115,7 +121,7 @@ def main():
     b = band("abstracts_primary_nuts", 2025)
     if b:
         M("piAbstractsNuts", b)
-    b24 = band("fulltext_primary", 2024)
+    b24 = band(PRIM, 2024)
     if b24:
         M("piFulltextTwentyFour", b24)
     b = band("abstracts_primary", 2025)
@@ -146,16 +152,18 @@ def main():
         return (float(g_["mean"].mean()), float(g_.lo.mean()),
                 float(g_.hi.mean()), l68, h68)
 
-    m25_tab = year_tab("fulltext_primary", 2025)
+    m25_tab = year_tab(PRIM, 2025)
     lo_v = annual("fulltext_primary", 2025)
     mid_v = annual("fulltext_tracked_drift", 2025)
     hi_v = annual("fulltext_frozen_drift", 2025)
     if None not in (lo_v, hi_v):
-        M("piFulltextBracket", f"{100*lo_v:.0f}--{100*hi_v:.0f}\\%")
+        m_p = annual(PRIM, 2025) or lo_v
+        M("piFulltextBracket",
+          f"{100*m_p:.0f}--{100*(m_p + hi_v - lo_v):.0f}\\%")
     # headline written as +/- terms, generated rather than typed (both levels)
     if None not in (lo_v, hi_v) and m25_tab is not None:
         m, lo, hi, l68, h68 = m25_tab
-        bg_up = max(0.0, hi_v - m)
+        bg_up = max(0.0, hi_v - lo_v)
         pm95 = (f"${100*m:.0f}^{{+{100*(hi-m):.0f}}}_{{-{100*(m-lo):.0f}}}"
                 f"\,(\mathrm{{stat}},\,95\%)\,"
                 f"^{{+{100*bg_up:.0f}}}_{{-0}}\,(\mathrm{{sys,\ background}})$")
@@ -182,7 +190,7 @@ def main():
         M("piGridFloor", pct(gmin, 0))
         M("piGridRange", f"{100*gmin:.0f}--{100*gmax:.0f}\\%")
 
-    m25 = annual("fulltext_primary", 2025)
+    m25 = annual(PRIM, 2025)
     if m25 is not None and os.path.exists(ftp):
         d25 = ft[ft.year == 2025].declared.mean()
         M("disclosureGapFactor", f"$\\sim${m25/d25:.0f}")
