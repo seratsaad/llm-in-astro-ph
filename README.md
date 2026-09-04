@@ -1,7 +1,7 @@
 # Language-model use in the astronomy literature
 
-Code and derived data for **"More than half of recent astronomy papers show
-language-model use"** (Saad & Ting).
+Code and derived data for **"More than half of recent astronomy papers are
+being written with language-model assistance"** (Saad & Ting).
 
 We measure how much of the astronomy literature is written with the help of
 large language models. From the full text of astro-ph papers spanning 2015 to
@@ -43,17 +43,22 @@ frozen word lists.
 
 ### Data
 
-- **Per-paper feature tables.** `fulltext_features.parquet` (214,883 papers),
-  `abstract_features.parquet` (227,438), `expanded_features.parquet`. Columns
+- **Per-paper feature tables.** `fulltext_features.parquet` (219,434 papers),
+  `abstract_features.parquet` (233,428), `expanded_features.parquet`. Columns
   are per-paper word counts, section lengths, and the declaration flag. They
   contain no per-paper assisted probability.
 - **Frozen baskets.** `expanded_basket.json`, `discovered_markers.csv`,
   `discovered_with_spread.csv`.
 - **Fitted posteriors.** `laplace_*.json` for every specification in the
   variant grid, with the corresponding yearly assisted fractions in `pi_*.csv`
-  and the MCMC cross-check in `idata_abstracts_primary_smoke.nc`.
-- **Supporting tables.** `declarations.csv`, `calibration.json`, `ladder.json`,
-  `cohort_summary.json`, `aggregate_reproduction.json`.
+  and the sampled primary posterior in `pi_fulltext_primary_nuts.csv`, which
+  supplies the headline numbers. The fit runs in two stages, a Laplace grid
+  over the variants (`s3b_laplace.py`) and full HMC on the anchored primary
+  (`s3_fit.py --nuts numpyro`), chains initialized at the mode.
+- **Supporting tables.** `declarations.csv` (every candidate declaration with
+  its evidence sentence), `declaration_judge_overrides.csv` (the audited
+  false positives), `calibration.json` (unanchored and anchored injection
+  recovery), `ladder.json`, `cohort_summary.json`, `aggregate_reproduction.json`.
 
 The naming follows the specifications in the paper, so `laplace_fulltext_primary`
 is the primary specification and `..._frozen_drift`, `..._tracked_drift`,
