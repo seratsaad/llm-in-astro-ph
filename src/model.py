@@ -31,7 +31,7 @@ ADOPTION = 31           # 2022Q4, ChatGPT public release
 
 
 def build(data, drift="linear", monotone=True, use_disclosure=True,
-          gamma=0.0, free_from=FREE_FROM):
+          gamma=0.0, free_from=FREE_FROM, eta_anchor=None, anchor_sd=0.2):
     """data: dict with K, L, t, c, declared (all 1-D numpy), n_topics, n_quarters.
 
     drift:
@@ -100,6 +100,13 @@ def build(data, drift="linear", monotone=True, use_disclosure=True,
         sd_eta = pm.HalfNormal("sd_eta", 0.4)
         eta_inc = pm.Normal("eta_inc", 0.0, 1.0, shape=n_free - 1)
         eta = pt.concatenate([[eta0], eta0 + pt.cumsum(eta_inc * sd_eta)])
+        if eta_anchor is not None:
+            # Spam-filter calibration, identical to the Laplace fit: every
+            # quarter's log excess is pulled to the declared-paper trajectory.
+            anc = np.asarray(eta_anchor, dtype="float64")
+            pm.Potential("eta_anchor",
+                         -0.5 * pt.sum(((eta - anc) / anchor_sd) ** 2)
+                         - 0.5 * ((eta0 - anc[0]) / anchor_sd) ** 2)
         delta_free = pm.Deterministic("delta", pt.exp(eta), dims="free_quarter")
 
         sd_v = pm.HalfNormal("sd_v", 0.3)

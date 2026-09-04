@@ -29,7 +29,8 @@ jax.config.update("jax_enable_x64", True)
 
 sys.path.insert(0, os.path.dirname(__file__))
 from common import DATA, quarter_label
-from s3_fit import VARIANTS, load, neutral_drift_offset, SECTIONS
+from s3_fit import (VARIANTS, load, neutral_drift_offset, SECTIONS,
+                    declared_anchor)
 import model as M
 
 
@@ -59,34 +60,6 @@ def halfnorm_lp_pos(x, sd):
 #   m0, log_sd_m, m_inc_raw[n_free-1]        (monotone: inc = softplus)
 #   log_sd_u, u_raw[n_c-1]
 #   rho_a, rho_b
-
-
-def declared_anchor(df, K, free_from, n_t):
-    """Per-quarter log excess of declared papers over the pre-2020 background.
-
-    This is the spam-filter calibration: the assisted component's marker rate
-    is pinned to the papers that SAY they used a model, with a smoothed,
-    shrunk trajectory. Quarters with no declared papers inherit the nearest
-    later value (declarations only begin in 2023). Returns log(anchor_t) for
-    the free quarters, floored at log(1.05) so the components never merge
-    exactly.
-    """
-    pre = df.year < 2020
-    r_bg = K[pre.values].sum() / df.L.values[pre.values].sum()
-    dcl = df.declared.values == 1
-    logratio = np.full(n_t - free_from, np.nan)
-    for i in range(n_t - free_from):
-        m = dcl & (df.q.values == free_from + i)
-        Lsum = df.L.values[m].sum()
-        if m.sum() >= 5 and Lsum > 0:
-            r = K[m].sum() / Lsum
-            logratio[i] = np.log(max(r / r_bg, 1.05))
-    # smooth with a 3-quarter rolling mean, then back/forward fill
-    s = pd.Series(logratio).rolling(3, center=True, min_periods=1).mean()
-    s = s.bfill().ffill()
-    if s.isna().all():
-        s[:] = np.log(1.05)
-    return s.values
 
 
 def build_logpost(data, drift, monotone, use_disclosure, gamma, free_from,

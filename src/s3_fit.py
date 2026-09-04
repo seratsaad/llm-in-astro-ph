@@ -132,6 +132,30 @@ def neutral_drift_offset(df, n_q, free_from, phase="abstracts", section=None):
     return np.log(np.where(np.isnan(rate), ref, rate) / ref)
 
 
+
+def declared_anchor(df, K, free_from, n_t):
+    """Per-quarter log excess of declared papers over the pre-2020 background.
+
+    Identical to the Laplace fit's calibration: smoothed with a 3-quarter
+    rolling mean, back/forward filled, floored at log(1.05).
+    """
+    pre = df.year < 2020
+    r_bg = K[pre.values].sum() / df.L.values[pre.values].sum()
+    dcl = df.declared.values == 1
+    logratio = np.full(n_t - free_from, np.nan)
+    for i in range(n_t - free_from):
+        m = dcl & (df.q.values == free_from + i)
+        Lsum = df.L.values[m].sum()
+        if m.sum() >= 5 and Lsum > 0:
+            r = K[m].sum() / Lsum
+            logratio[i] = np.log(max(r / r_bg, 1.05))
+    sm = pd.Series(logratio).rolling(3, center=True, min_periods=1).mean()
+    sm = sm.bfill().ffill()
+    if sm.isna().all():
+        sm[:] = np.log(1.05)
+    return sm.values
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--phase", default="abstracts", choices=["abstracts", "fulltext"])
@@ -143,6 +167,8 @@ def main():
     ap.add_argument("--section", default=None, choices=SECTIONS + ["wholebody"])
     ap.add_argument("--nuts", default="pymc", choices=["pymc", "numpyro"],
                     help="numpyro uses the JAX NUTS sampler (much faster)")
+    ap.add_argument("--free-delta", action="store_true",
+                    help="drop the declared anchor (samples the unanchored posterior)")
     args = ap.parse_args()
 
     spec = dict(VARIANTS[args.variant])
@@ -166,13 +192,32 @@ def main():
     print(f"phase={args.phase} variant={args.variant} basket={basket} "
           f"n={len(df)} free_from={quarter_label(free_from)}", flush=True)
 
-    m = M.build(data, free_from=free_from, **spec)
+    eta_anchor = None
+    if not args.free_delta:
+        eta_anchor = declared_anchor(df, K, free_from, n_q)
+        print("delta anchor (exp):",
+              np.round(np.exp(eta_anchor), 2).tolist(), flush=True)
+
+    m = M.build(data, free_from=free_from, eta_anchor=eta_anchor, **spec)
+
+    # start the chains near the Laplace mode when one exists
+    initvals = None
+    lp_path = os.path.join(DATA, f"laplace_{args.phase}_{args.variant}.json")
+    if os.path.exists(lp_path):
+        lp = json.load(open(lp_path))
+        initvals = {"beta0": lp["beta0"], "g0_slope": lp["g0_slope"],
+                    "g0_curve": lp["g0_curve"], "phi0": lp["phi0"],
+                    "phi1": lp["phi1"]}
+        if eta_anchor is not None:
+            initvals["eta0"] = float(eta_anchor[0])
+        print(f"init from {os.path.basename(lp_path)}", flush=True)
     t0 = time.time()
     kw = dict(draws=200 if args.smoke else args.draws,
               tune=200 if args.smoke else args.tune,
               chains=2 if args.smoke else args.chains,
               cores=min(4, args.chains),
               target_accept=0.9, random_seed=20260826,
+              initvals=initvals,
               progressbar=True)
     if args.nuts == "numpyro":
         kw["nuts_sampler"] = "numpyro"
