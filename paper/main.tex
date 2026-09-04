@@ -75,8 +75,8 @@ only \declRateTwentySix\ of 2026 papers disclose it, one declaration for every \
 Bayesian statistics (1900)}
 % =====================================================================
 \section{Introduction}\label{sec:intro}
-\lettrine[lines=2, findent=3pt, nindent=0pt, slope=0pt, ante=]{\pixelA}{}%
-fter ChatGPT (Chat Generative Pre-trained Transformer) became publicly available in November 2022, a specific set of English words has spread through scientific writing. These words are not technical terms but stylistic choices, like \textit{delve}, \textit{underscore}, \textit{intricate}, \textit{pivotal}, and their relatives, that language models favor and that human writers before November 2022 used rarely. We call them marker words. These models are transformers \citep{Vaswani2017}, scaled to the point where fluent scientific prose is generated at negligible cost \citep{Brown2020}. The pattern was first quantified by \citet{Gray2025}, who estimated from keyword frequencies that at least 1\% of 2023 articles were model-assisted, and by \citet{Liang2024}, who fitted a distributional model to abstracts and found rates of a few percent, rising fastest in computer science.
+%\lettrine[lines=2, findent=3pt, nindent=0pt, slope=0pt, ante=]{\pixelA}{}%
+After ChatGPT (Chat Generative Pre-trained Transformer) became publicly available in November 2022, a specific set of English words has spread through scientific writing. These words are not technical terms but stylistic choices, like \textit{delve}, \textit{underscore}, \textit{intricate}, \textit{pivotal}, and their relatives, that language models favor and that human writers before November 2022 used rarely. We call them marker words. These models are transformers \citep{Vaswani2017}, scaled to the point where fluent scientific prose is generated at negligible cost \citep{Brown2020}. The pattern was first quantified by \citet{Gray2025}, who estimated from keyword frequencies that at least 1\% of 2023 articles were model-assisted, and by \citet{Liang2024}, who fitted a distributional model to abstracts and found rates of a few percent, rising fastest in computer science.
 
 \citet{Kobak2024} then introduced the approach that most later studies follow. Rather than assume a word list, they measured which words rose anomalously across 14 million PubMed abstracts and concluded that at least 10\% of 2024 biomedical abstracts had been processed with a language model. Extending the method to 1.2 million biomedical full texts, \citet{Holzwarth2026} report that 89\% of papers showed excess model-associated vocabulary by late 2025. Related measurements now exist for peer-review text \citep{Liang2024review}, for condensed-matter physics \citep{Xu2024}, and for preprints across arXiv \citep{Juzek2025, Bao2025}.
 
@@ -359,6 +359,18 @@ The corpus is the AstroMLab~5 catalog \citep{Ting2025}, in an update that extend
 \citep{2023PeerJCS...9.1516A}, ArviZ \citep{2019JOSS....4.1143K}}
 
 \bibliographystyle{mnras}
+\section*{Data availability}
+The analysis code, the derived tables, and the fitted posteriors are
+available at \url{https://github.com/seratsaad/llm-in-astro-ph}. The release
+holds the per-paper feature tables with word counts, section lengths, and
+declaration flags, the frozen marker, control, and null baskets, the
+declaration table with every evidence sentence and the audited override list,
+the injection-recovery grids, and the posterior of every specification in the
+variant grid alongside the sampled primary. The corpus itself is the public
+AstroMLab~5 catalog \citep{Ting2025}, which we do not redistribute. We do not
+release a per-paper assisted probability, since we calibrate the model for
+population inference rather than for judging individual papers.
+
 \bibliography{refs}
 
 \end{document}
