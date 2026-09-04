@@ -158,7 +158,7 @@ def main():
         bg_up = max(0.0, hi_v - m)
         pm95 = (f"${100*m:.0f}^{{+{100*(hi-m):.0f}}}_{{-{100*(m-lo):.0f}}}"
                 f"\,(\mathrm{{stat}},\,95\%)\,"
-                f"^{{+{100*bg_up:.0f}}}_{{-0}}\,(\mathrm{{background}})$")
+                f"^{{+{100*bg_up:.0f}}}_{{-0}}\,(\mathrm{{sys,\ background}})$")
         M("piHeadlinePM", pm95)
         if l68 is not None:
             M("piStatOneSigma",
@@ -258,6 +258,11 @@ def main():
     s2 = shift("fulltext_primary", "fulltext_gamma_high")
     if s1 is not None and s2 is not None:
         M("gammaShift", f"{100*max(s1,s2):.0f} percentage points")
+        gl, gh = annual("fulltext_gamma_low", 2025), annual("fulltext_gamma_high", 2025)
+        p_ = annual("fulltext_primary", 2025)
+        if None not in (gl, gh, p_):
+            M("gammaShiftUp", f"{100*(gh-p_):.0f} percentage points")
+            M("gammaShiftDown", f"{100*(p_-gl):.0f} percentage points")
     s_ = shift("fulltext_primary", "fulltext_no_disclosure")
     if s_ is not None:
         M("noDisclosureShift", f"{100*max(s_,0.005):.0f} percentage points")
