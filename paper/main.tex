@@ -350,8 +350,7 @@ We built this work on the AstroMLab~5 astro-ph catalog and on the companion $n$-
 Given the subject of this paper, we state our own practice plainly. We used Claude Code for code development. We drafted and revised the text ourselves, then used Claude Opus 5 to edit the prose and grammar throughout.
 
 \section*{Data and code availability}
-
-The corpus is the AstroMLab~5 catalog \citep{Ting2025}, in an update that extends its coverage from July 2025 to August 2026, and its OCR full text is available on request. We release the derived per-paper feature tables, the fixed baskets, the fitted posteriors, and all analysis code with this paper. We do not release a per-paper assisted-probability list.
+The corpus is the AstroMLab~5 catalog \citep{Ting2025}, in an update that extends its coverage from July 2025 to August 2026, and its OCR full text is available on request. We do not redistribute it. We release the analysis code and the derived data at \url{https://github.com/seratsaad/llm-in-astro-ph}. The release holds the per-paper feature tables with word counts, section lengths, and declaration flags, the frozen marker, control, and null baskets, the declaration table with every evidence sentence and the audited override list, the injection-recovery grids, and the posterior of every specification in the variant grid alongside the sampled primary. We do not release a per-paper assisted probability, since we calibrate the model for population inference rather than for judging individual papers.
 
 \software{NumPy \citep{2020Natur.585..357H}, SciPy
 \citep{2020NaMet..17..261V}, Matplotlib \citep{2007CSE.....9...90H}, pandas
@@ -359,18 +358,6 @@ The corpus is the AstroMLab~5 catalog \citep{Ting2025}, in an update that extend
 \citep{2023PeerJCS...9.1516A}, ArviZ \citep{2019JOSS....4.1143K}}
 
 \bibliographystyle{mnras}
-\section*{Data availability}
-The analysis code, the derived tables, and the fitted posteriors are
-available at \url{https://github.com/seratsaad/llm-in-astro-ph}. The release
-holds the per-paper feature tables with word counts, section lengths, and
-declaration flags, the frozen marker, control, and null baskets, the
-declaration table with every evidence sentence and the audited override list,
-the injection-recovery grids, and the posterior of every specification in the
-variant grid alongside the sampled primary. The corpus itself is the public
-AstroMLab~5 catalog \citep{Ting2025}, which we do not redistribute. We do not
-release a per-paper assisted probability, since we calibrate the model for
-population inference rather than for judging individual papers.
-
 \bibliography{refs}
 
 \end{document}
