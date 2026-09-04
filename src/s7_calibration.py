@@ -30,6 +30,7 @@ GRID_PI = [0.05, 0.15, 0.30, 0.50, 0.75]
 GRID_DELTA = [1.5, 2.5, 5.0]        # multiplicative excess of assisted prose
 N_PAPERS = 20000
 N_REP = 8
+DECL_RATE = 0.015          # declared fraction of assisted papers, as observed
 
 
 def nb_logpmf(k, mu, phi):
@@ -42,10 +43,12 @@ def nb_sample(mu, phi, rng):
     return rng.poisson(lam)
 
 
-def fit_mixture(K, L, base_rate, phi_bg):
+def fit_mixture(K, L, base_rate, phi_bg, anchor=None, anchor_sd=0.2):
     """Two-parameter fit (pi, log-delta) with the background held at truth.
 
     This isolates the mixture inversion, the step Stage 3 does by MCMC.
+    With `anchor` set, the log excess is pulled to it the way the real fit
+    is pulled to the declared papers.
     """
     mu0 = base_rate * L
 
@@ -55,7 +58,10 @@ def fit_mixture(K, L, base_rate, phi_bg):
         lp0 = nb_logpmf(K, mu0, phi_bg)
         lp1 = nb_logpmf(K, mu0 * np.exp(logd), phi_bg)
         ll = logsumexp(np.stack([np.log1p(-pi) + lp0, np.log(pi) + lp1]), axis=0)
-        return -ll.sum()
+        pen = 0.0
+        if anchor is not None:
+            pen = 0.5 * ((logd - anchor) / anchor_sd) ** 2
+        return -ll.sum() + pen
 
     best = None
     for lp in (-2.0, 0.0):
@@ -92,16 +98,29 @@ def main():
                 mu_i = base_rate * L * np.where(assisted, true_delta, 1.0)
                 K = nb_sample(mu_i, phi_bg, RNG)
                 pi_hat, delta_hat = fit_mixture(K, L, base_rate, phi_bg)
-                est.append((pi_hat, delta_hat))
+                # anchored repeat: declared papers drawn from the assisted at
+                # the observed declaration rate supply the calibration
+                decl = assisted & (RNG.random(N_PAPERS) < DECL_RATE)
+                if decl.sum() >= 5:
+                    r_d = K[decl].sum() / L[decl].sum()
+                    anc = np.log(max(r_d / base_rate, 1.05))
+                else:
+                    anc = np.log(true_delta)
+                pi_a, delta_a = fit_mixture(K, L, base_rate, phi_bg, anchor=anc)
+                est.append((pi_hat, delta_hat, pi_a, delta_a))
             est = np.array(est)
             results.append(dict(true_pi=true_pi, true_delta=true_delta,
                                 pi_mean=float(est[:, 0].mean()),
                                 pi_sd=float(est[:, 0].std()),
-                                delta_mean=float(est[:, 1].mean())))
+                                delta_mean=float(est[:, 1].mean()),
+                                pi_anch_mean=float(est[:, 2].mean()),
+                                pi_anch_sd=float(est[:, 2].std()),
+                                delta_anch_mean=float(est[:, 3].mean())))
             r = results[-1]
             print(f"pi={true_pi:.2f} d={true_delta:.1f} -> "
                   f"pi_hat={r['pi_mean']:.3f}+-{r['pi_sd']:.3f} "
-                  f"d_hat={r['delta_mean']:.2f}")
+                  f"d_hat={r['delta_mean']:.2f} | anchored "
+                  f"pi_hat={r['pi_anch_mean']:.3f}+-{r['pi_anch_sd']:.3f}")
 
     with open(os.path.join(DATA, "calibration.json"), "w") as f:
         json.dump(results, f, indent=1)
