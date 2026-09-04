@@ -64,13 +64,11 @@ hierarchical Bayesian model. Papers from before 2020 calibrate the unassisted ra
 \nDeclaredCohort\ papers that disclose model use calibrate the assisted one. Our answer depends on
 how often these words would appear today if nobody used a model, a rate that must be modeled
 rather than observed, so we extend it past 2020 under three assumptions and report all
-three. For 2025 that gives $54^{+8}_{-8}\,(\mathrm{stat},\,95\%)\,^{+22}_{-0}\,(\mathrm{sys,\ background})$\% of papers, the second error being the spread across the three. The estimate stays at or above \piGridFloor\ when we vary that choice, the
-calibration, and the requirement that adoption only rises. A word list built from the astro-ph
-corpus, keeping only words that rose across every subfield, leaves 2025 in the same range. Assisted writing is also getting harder to see, since authors adapt to the
+three. For the first half of 2026 that gives \piHeadlinePMTwentySix\% of papers, the second error being the spread across the three, and 2025 gives \piFulltextHeadline. The 2026 fraction stays at or above \piGridFloorTwentySix\ when we vary that choice, the calibration, and the requirement that adoption only rises. A word list built from the astro-ph
+corpus, keeping only words that rose across every subfield, leaves the estimates in the same range. Assisted writing is also getting harder to see, since authors adapt to the
 words that reveal it and the marker excess more than halves between 2023 and 2026. Our model
 allows for that fading, so it can separate a fainter trace from reduced use. More than half of recent astro-ph papers therefore carry a language-model trace, while
-only \declRateTwentyFive\ of 2025 papers disclose it, one declaration for every
-\disclosureGapFactor\ papers with a trace.
+only \declRateTwentySix\ of 2026 papers disclose it, one declaration for every \disclosureGapFactorTwentySix\ papers with a trace.
 \end{abstract}
 
 \keywords{Astronomy data analysis (1858) --- Publishing (1329) ---
@@ -250,7 +248,7 @@ We also test the estimator by injection and recovery. We build synthetic corpora
 
 \subsection{The assisted fraction}\label{sec:prevalence}
 
-Our main result appears in Figure~\ref{fig:results}. Under the primary specification, the fraction of astro-ph papers whose analyzed prose shows a language-model trace reaches \piHeadlinePM\% in 2025, up from \piFulltextTwentyFour\ in 2024. Errors written as plus and minus are 95\% credible intervals of a single fit, here and throughout, and they carry statistical uncertainty alone. The second term is the spread across the three background continuations, one-sided because the linear one is the most conservative. It is not a full systematic budget, since the other assumptions we vary in Section~\ref{sec:m-robust} move the estimate separately and we report them there. At one sigma the statistical interval is \piStatOneSigma\%.
+Our main result appears in Figure~\ref{fig:results}. Under the primary specification, the fraction of astro-ph papers whose analyzed prose shows a language-model trace reaches \piHeadlinePMTwentySix\% in the first half of 2026. The climb is quick, \piFulltextTwentyFour\ in 2024 and \piFulltextHeadline\ in 2025. Errors written as plus and minus are 95\% credible intervals of a single fit, here and throughout, and they carry statistical uncertainty alone. The second term is the spread across the three background continuations, one-sided because the linear one is the most conservative. It is not a full systematic budget, since the other assumptions we vary in Section~\ref{sec:m-robust} move the estimate separately and we report them there. At one sigma the 2026 interval is \piStatOneSigmaTwentySix\%.
 
 The linear continuation sets the floor and the frozen background the ceiling, and the control-tracked variant falls between them. The ordering is itself informative. The marker words were already drifting upward before 2020, so extrapolating that drift absorbs part of the post-2022 excess and gives the most conservative answer. When we remove the monotonicity constraint, which forbids the assisted fraction from falling between one quarter and the next, the 2025 figure falls to \piUnconstrained. The unconstrained trajectory runs lower at every quarter of the ramp and converges with the primary by 2026, at 93 against 95\% in the final quarter, so the constraint does its work in the middle of the ramp, where the likelihood is least informative about the split between a small assisted share and the drifting background, and the two specifications agree on where adoption ends. This is the largest single sensitivity we find, and the figure remains above half.
 
@@ -294,7 +292,7 @@ When we fit the model with this basket we obtain $80^{+10}_{-12}$\% for 2025 und
 
 \subsection{Comparison with declared use}\label{sec:gap}
 
-Figure~\ref{fig:gap} sets our estimate against declared use on a logarithmic scale. In 2025, \declRateTwentyFive\ of full texts contain an explicit declaration against an estimated prevalence of 67\%, so roughly \disclosureGapFactor\ papers carry a language-model trace for every one that says so.
+Figure~\ref{fig:gap} sets our estimate against declared use on a logarithmic scale. In the first half of 2026, \declRateTwentySix\ of full texts contain a declaration against an estimated prevalence of \piFulltextTwentySix, so roughly \disclosureGapFactorTwentySix\ papers carry a language-model trace for every one that says so.
 
 The gap is not an artifact of the detector. The audit of Section~\ref{sec:m-decl} found no missed declaration in 150 undeclared papers, which bounds the false-negative rate below 2\%, so nearly all of the silence is real rather than overlooked. Nor is the gap closing. Declarations grew by a factor of four between 2023 and 2025 while our estimated prevalence grew faster, and the two curves separate across the whole period.
 
@@ -303,7 +301,7 @@ The declarations themselves are narrow in scope. Almost every declaration we rea
 % =====================================================================
 \section{Discussion and conclusions}\label{sec:discussion}
 
-We find that more than half of recent astro-ph papers carry a language-model trace in their prose. Our 2025 fraction is $67^{+12}_{-11}\,(\mathrm{stat},\,95\%)\,^{+22}_{-0}\,(\mathrm{background})$\%, and it never falls below \piGridFloor\ across the variants we ran. Our range reaches at its upper end the 89\% that \citet{Holzwarth2026} report for biomedical full texts. No astronomy-specific estimate existed before this work.
+We find that more than half of recent astro-ph papers carry a language-model trace in their prose. By the first half of 2026 the fraction is \piFulltextTwentySix\ under the primary specification, and it never falls below \piGridFloorTwentySix\ across the variants we ran. The 2025 fraction is \piFulltextHeadline. Our 2026 measurement sits at the 89\% that \citet{Holzwarth2026} report for biomedical full texts in late 2025. No astronomy-specific estimate existed before this work.
 
 \subsection{Robustness of the estimate}\label{sec:m-robust}
 

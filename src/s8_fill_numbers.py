@@ -47,6 +47,7 @@ def pi_year(tag, year, stat="mean"):
 
 
 def main():
+    import glob as _g
     cohort = load_json("cohort_summary.json")
     ladder = load_json("ladder.json")
     exp = load_json("expanded_basket.json")
@@ -105,6 +106,21 @@ def main():
             return None
         return f"{100*m:.0f}\\% ({100*lo:.0f}--{100*hi:.0f}\\%)"
 
+    def year_tab(tag, year):
+        p_ = os.path.join(DATA, f"pi_{tag}.csv")
+        if not os.path.exists(p_):
+            return None
+        d_ = pd.read_csv(p_)
+        d_["year"] = d_.quarter.str[:4].astype(int)
+        g_ = d_[d_.year == year]
+        if not len(g_):
+            return None
+        l68 = float(g_.lo68.mean()) if "lo68" in g_ else None
+        h68 = float(g_.hi68.mean()) if "hi68" in g_ else None
+        return (float(g_["mean"].mean()), float(g_.lo.mean()),
+                float(g_.hi.mean()), l68, h68)
+
+
     PRIM = ("fulltext_primary_nuts"
             if os.path.exists(os.path.join(DATA, "pi_fulltext_primary_nuts.csv"))
             else "fulltext_primary")
@@ -121,6 +137,37 @@ def main():
     b = band("abstracts_primary_nuts", 2025)
     if b:
         M("piAbstractsNuts", b)
+    b26 = band(PRIM, 2026)
+    if b26:
+        M("piFulltextTwentySix", b26)
+    t26 = year_tab(PRIM, 2026)
+    lo_v26 = annual("fulltext_primary", 2026)
+    hi_v26 = annual("fulltext_frozen_drift", 2026)
+    if t26 is not None and None not in (lo_v26, hi_v26):
+        m, lo, hi, l68, h68 = t26
+        bg26 = max(0.0, hi_v26 - lo_v26)
+        M("piHeadlinePMTwentySix",
+          f"${100*m:.0f}^{{+{100*(hi-m):.0f}}}_{{-{100*(m-lo):.0f}}}"
+          f"\,(\mathrm{{stat}},\,95\%)\,"
+          f"^{{+{100*bg26:.0f}}}_{{-0}}\,(\mathrm{{sys,\ background}})$")
+        if l68 is not None:
+            M("piStatOneSigmaTwentySix",
+              f"$^{{+{100*(h68-m):.0f}}}_{{-{100*(m-l68):.0f}}}$")
+        # worst variant shift at 2026, applied about the sampled mean
+        shifts = []
+        for f_ in _g.glob(os.path.join(DATA, "pi_fulltext_*.csv")):
+            tg = os.path.basename(f_)[3:-4]
+            if "control" in tg or "smoke" in tg or "nuts" in tg or "wholebody" in tg:
+                continue
+            v = annual(tg, 2026)
+            if v is not None:
+                shifts.append(v - lo_v26)
+        if shifts:
+            M("piGridFloorTwentySix", pct(m + min(shifts), 0))
+    d26 = ft[ft.year == 2026].declared.mean()
+    M("declRateTwentySix", pct(d26, 2))
+    if t26 is not None and d26 > 0:
+        M("disclosureGapFactorTwentySix", f"$\sim${t26[0]/d26:.0f}")
     b24 = band(PRIM, 2024)
     if b24:
         M("piFulltextTwentyFour", b24)
@@ -138,20 +185,6 @@ def main():
     if exp_t is not None:
         M("piExpandedTracked", pct(exp_t, 0))
     # drift bracket: linear (floor) to frozen (ceiling), tracked between
-    def year_tab(tag, year):
-        p_ = os.path.join(DATA, f"pi_{tag}.csv")
-        if not os.path.exists(p_):
-            return None
-        d_ = pd.read_csv(p_)
-        d_["year"] = d_.quarter.str[:4].astype(int)
-        g_ = d_[d_.year == year]
-        if not len(g_):
-            return None
-        l68 = float(g_.lo68.mean()) if "lo68" in g_ else None
-        h68 = float(g_.hi68.mean()) if "hi68" in g_ else None
-        return (float(g_["mean"].mean()), float(g_.lo.mean()),
-                float(g_.hi.mean()), l68, h68)
-
     m25_tab = year_tab(PRIM, 2025)
     lo_v = annual("fulltext_primary", 2025)
     mid_v = annual("fulltext_tracked_drift", 2025)
