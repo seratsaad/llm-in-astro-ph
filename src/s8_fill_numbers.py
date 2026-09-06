@@ -220,8 +220,13 @@ def main():
     if vals:
         gmin = min(v for _, v in vals)
         gmax = max(v for _, v in vals)
-        M("piGridFloor", pct(gmin, 0))
         M("piGridRange", f"{100*gmin:.0f}--{100*gmax:.0f}\\%")
+        lap25 = annual("fulltext_primary", 2025)
+        m25s = annual(PRIM, 2025)
+        if None not in (lap25, m25s):
+            M("piGridFloor", pct(m25s + gmin - lap25, 0))
+        else:
+            M("piGridFloor", pct(gmin, 0))
 
     m25 = annual(PRIM, 2025)
     if m25 is not None and os.path.exists(ftp):
