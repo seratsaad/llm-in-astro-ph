@@ -35,9 +35,16 @@ def load_json(name):
     return json.load(open(p)) if os.path.exists(p) else None
 
 
-def pi_year(tag, year, stat="mean"):
-    """Average quarterly posterior prevalence over one year."""
+def pi_year(tag, year, stat="mean", allow_nuts=True):
+    """Average quarterly posterior prevalence over one year.
+
+    Prefers the sampled posterior (pi_<tag>_nuts.csv) when one exists.
+    """
     p = os.path.join(DATA, f"pi_{tag}.csv")
+    if allow_nuts and not tag.endswith("_nuts"):
+        pn = os.path.join(DATA, f"pi_{tag}_nuts.csv")
+        if os.path.exists(pn):
+            p = pn
     if not os.path.exists(p):
         return None
     d = pd.read_csv(p)
@@ -108,6 +115,10 @@ def main():
 
     def year_tab(tag, year):
         p_ = os.path.join(DATA, f"pi_{tag}.csv")
+        if not tag.endswith("_nuts"):
+            pn_ = os.path.join(DATA, f"pi_{tag}_nuts.csv")
+            if os.path.exists(pn_):
+                p_ = pn_
         if not os.path.exists(p_):
             return None
         d_ = pd.read_csv(p_)
@@ -124,7 +135,14 @@ def main():
     PRIM = ("fulltext_primary_nuts"
             if os.path.exists(os.path.join(DATA, "pi_fulltext_primary_nuts.csv"))
             else "fulltext_primary")
-    b = band("fulltext_primary", 2025)
+    def band_laplace(tag, year):
+        vv = [pi_year(tag, year, k, allow_nuts=False)
+              for k in ("mean", "lo", "hi")]
+        if vv[0] is None:
+            return None
+        return f"{100*vv[0]:.0f}\\% ({100*vv[1]:.0f}--{100*vv[2]:.0f}\\%)"
+
+    b = band_laplace("fulltext_primary", 2025)
     if b:
         M("piFulltextLaplace", b)
     b = band(PRIM, 2025)
@@ -154,16 +172,22 @@ def main():
             M("piStatOneSigmaTwentySix",
               f"$^{{+{100*(h68-m):.0f}}}_{{-{100*(m-l68):.0f}}}$")
         # worst variant shift at 2026, applied about the sampled mean
-        shifts = []
+        lap26 = pi_year("fulltext_primary", 2026, allow_nuts=False)
+        lev26 = []
         for f_ in _g.glob(os.path.join(DATA, "pi_fulltext_*.csv")):
             tg = os.path.basename(f_)[3:-4]
-            if "control" in tg or "smoke" in tg or "nuts" in tg or "wholebody" in tg:
+            if ("control" in tg or "smoke" in tg or "nuts" in tg
+                    or "wholebody" in tg):
                 continue
-            v = annual(tg, 2026)
-            if v is not None:
-                shifts.append(v - lo_v26)
-        if shifts:
-            M("piGridFloorTwentySix", pct(m + min(shifts), 0))
+            v = pi_year(tg, 2026, allow_nuts=False)
+            if v is None:
+                continue
+            if os.path.exists(os.path.join(DATA, f"pi_{tg}_nuts.csv")):
+                lev26.append(annual(tg, 2026))
+            elif lap26 is not None:
+                lev26.append(m + v - lap26)
+        if lev26:
+            M("piGridFloorTwentySix", pct(min(lev26), 0))
     d26 = ft[ft.year == 2026].declared.mean()
     M("declRateTwentySix", pct(d26, 2))
     if t26 is not None and d26 > 0:
@@ -190,9 +214,7 @@ def main():
     mid_v = annual("fulltext_tracked_drift", 2025)
     hi_v = annual("fulltext_frozen_drift", 2025)
     if None not in (lo_v, hi_v):
-        m_p = annual(PRIM, 2025) or lo_v
-        M("piFulltextBracket",
-          f"{100*m_p:.0f}--{100*(m_p + hi_v - lo_v):.0f}\\%")
+        M("piFulltextBracket", f"{100*lo_v:.0f}--{100*hi_v:.0f}\\%")
     # headline written as +/- terms, generated rather than typed (both levels)
     if None not in (lo_v, hi_v) and m25_tab is not None:
         m, lo, hi, l68, h68 = m25_tab
@@ -221,12 +243,16 @@ def main():
         gmin = min(v for _, v in vals)
         gmax = max(v for _, v in vals)
         M("piGridRange", f"{100*gmin:.0f}--{100*gmax:.0f}\\%")
-        lap25 = annual("fulltext_primary", 2025)
-        m25s = annual(PRIM, 2025)
-        if None not in (lap25, m25s):
-            M("piGridFloor", pct(m25s + gmin - lap25, 0))
-        else:
-            M("piGridFloor", pct(gmin, 0))
+        lap25 = pi_year("fulltext_primary", 2025, allow_nuts=False)
+        m25s = annual("fulltext_primary", 2025)
+        lev = []
+        for tg, v in vals:
+            if os.path.exists(os.path.join(DATA, f"pi_{tg}_nuts.csv")):
+                lev.append(annual(tg, 2025))
+            elif None not in (lap25, m25s):
+                lev.append(m25s + v - lap25)
+        if lev:
+            M("piGridFloor", pct(min(lev), 0))
 
     m25 = annual(PRIM, 2025)
     if m25 is not None and os.path.exists(ftp):

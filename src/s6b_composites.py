@@ -99,14 +99,15 @@ def fig3():
     # (a) prevalence with the drift bracket
     ax = axes[0]
     import os as _os
-    prim = ("fulltext_primary_nuts"
-            if _os.path.exists(_os.path.join(DATA, "pi_fulltext_primary_nuts.csv"))
-            else "fulltext_primary")
+    def _pref(tag):
+        nn = f"{tag}_nuts"
+        return (nn if _os.path.exists(_os.path.join(DATA, f"pi_{nn}.csv"))
+                else tag)
     styles = {
-        prim: ("Linear drift (primary)", C["vermillion"], "-", True),
-        "fulltext_unconstrained": ("Unconstrained", C["black"], "--", False),
-        "fulltext_frozen_drift": ("Frozen background", C["orange"], ":", False),
-        "fulltext_tracked_drift": ("Control-tracked", C["blue"], "-.", False),
+        _pref("fulltext_primary"): ("Linear drift (primary)", C["vermillion"], "-", True),
+        _pref("fulltext_unconstrained"): ("Unconstrained", C["black"], "--", False),
+        _pref("fulltext_frozen_drift"): ("Frozen background", C["orange"], ":", False),
+        _pref("fulltext_tracked_drift"): ("Control-tracked", C["blue"], "-.", False),
     }
     for tag, (lab, colr, ls, band) in styles.items():
         p = os.path.join(DATA, f"pi_{tag}.csv")
@@ -200,34 +201,47 @@ def fig3_split():
     # (a) prevalence with the drift bracket
     fig, ax = plt.subplots(figsize=(3.5, 2.75))
     import os as _os
-    prim = ("fulltext_primary_nuts"
-            if _os.path.exists(_os.path.join(DATA, "pi_fulltext_primary_nuts.csv"))
-            else "fulltext_primary")
-    styles = {
-        prim: ("Linear drift (primary)", C["vermillion"], "-", True),
-        "fulltext_unconstrained": ("Unconstrained", C["black"], "--", False),
-        "fulltext_frozen_drift": ("Frozen background", C["orange"], ":", False),
-        "fulltext_tracked_drift": ("Control-tracked", C["blue"], "-.", False),
-    }
-    for tag, (lab, colr, ls, band) in styles.items():
-        p = os.path.join(DATA, f"pi_{tag}.csv")
-        if not os.path.exists(p):
-            continue
-        d = pd.read_csv(p)
-        qi = [int(q[:4]) * 4 + int(q[-1]) - 1 - 2015 * 4 for q in d.quarter]
-        x = [qmid(q) for q in qi]
-        ax.plot(x, 100 * d["mean"], color=colr, ls=ls, lw=1.3, label=lab)
-        if band:
-            ax.fill_between(x, 100 * d.lo, 100 * d.hi, color=colr,
-                            alpha=0.16, lw=0)
+    def _pref(tag):
+        nn = f"{tag}_nuts"
+        return (nn if _os.path.exists(_os.path.join(DATA, f"pi_{nn}.csv"))
+                else tag)
+    p = os.path.join(DATA, f"pi_{_pref('fulltext_primary')}.csv")
+    d = pd.read_csv(p)
+    qi = [int(q[:4]) * 4 + int(q[-1]) - 1 - 2015 * 4 for q in d.quarter]
+    x = [qmid(q) for q in qi]
+    ax.plot(x, 100 * d["mean"], color=C["vermillion"], lw=1.4,
+            label="Assisted fraction (primary)")
+    ax.fill_between(x, 100 * d.lo, 100 * d.hi, color=C["vermillion"],
+                    alpha=0.16, lw=0)
+    ft = pd.read_parquet(os.path.join(DATA, "fulltext_features.parquet"),
+                         columns=["q", "declared"])
+    decl = ft.groupby("q").declared.mean()
+    decl = decl[decl.index >= 20]
+    ax.plot([qmid(q) for q in decl.index], 100 * decl.values,
+            color=C["blue"], lw=1.4, label="Declared use")
     ax.set_xlabel("First-submission quarter")
-    ax.set_ylabel(r"Prevalence $\pi_t$ (% of papers)")
+    ax.set_ylabel(r"Fraction of papers (%)")
     ax.set_xlim(2020, 2026.7)
     ax.set_ylim(0, 100)
     ax.set_yticks([20, 40, 60, 80, 100])
-    ax.legend(frameon=False, fontsize=6.6, loc="upper left",
+    ax.legend(frameon=False, fontsize=7, loc="upper left",
               bbox_to_anchor=(0.075, 0.925), labelspacing=0.3,
               handlelength=1.5, handletextpad=0.5, borderpad=0.2)
+    # inset: the declared curve enlarged, box + connectors on the main axes
+    axins = ax.inset_axes([0.08, 0.33, 0.40, 0.28])
+    axins.plot([qmid(q) for q in decl.index], 100 * decl.values,
+               color=C["blue"], lw=1.2)
+    axins.set_xlim(2022.8, 2026.7)
+    dmax = 100 * decl.values.max()
+    axins.set_ylim(0, 1.25 * dmax)
+    axins.set_xticks([2023, 2024, 2025, 2026])
+    axins.set_yticks([0, 1, 2])
+    axins.tick_params(labelsize=5.5, length=2.5)
+    axins.tick_params(which="minor", length=1.5)
+    rect, lines = ax.indicate_inset_zoom(axins, edgecolor="black",
+                                         alpha=0.5, lw=0.6)
+    for ln in lines:
+        ln.set(alpha=0.35, lw=0.5)
     fig.tight_layout()
     fig.savefig(os.path.join(FIGS, "fig_prevalence.pdf"))
     plt.close(fig)
