@@ -332,9 +332,9 @@ def fig4():
     ax.scatter(d.base_df, np.clip(d.disc_ratio, 0.2, 12), s=1.4, c=C["grey"],
                alpha=0.22, lw=0, rasterized=True)
     pick = d[d.word.isin(sel)]
-    ax.scatter(pick.base_df, np.clip(pick.disc_ratio, 0.2, 12), s=10,
-               facecolors="none", edgecolors=C["black"], lw=0.5,
-               label="Selected here (Basket 2)", zorder=2)
+    ax.scatter(pick.base_df, np.clip(pick.disc_ratio, 0.2, 12), s=16,
+               facecolors="none", edgecolors=C["black"], lw=0.6,
+               label="Selected here (Basket 2)", zorder=4)
     ax.scatter(d[d.is_seed].base_df, np.clip(d[d.is_seed].disc_ratio, 0.2, 12),
                s=10, c=C["vermillion"], lw=0, label="Imported markers (Basket 1)", zorder=3)
     ax.scatter(d[d.is_control].base_df, np.clip(d[d.is_control].disc_ratio, 0.2, 12),
@@ -352,8 +352,8 @@ def fig4():
     ax = axes[1]
     ax.scatter(d.disc_ratio, d.val_ratio, s=1.4, c=C["grey"], alpha=0.22,
                lw=0, rasterized=True)
-    ax.scatter(pick.disc_ratio, pick.val_ratio, s=11, facecolors="none",
-               edgecolors=C["black"], lw=0.6, label="Selected here (Basket 2)", zorder=3)
+    ax.scatter(pick.disc_ratio, pick.val_ratio, s=16, facecolors="none",
+               edgecolors=C["black"], lw=0.6, label="Selected here (Basket 2)", zorder=5)
     ax.scatter(d[d.is_control].disc_ratio, d[d.is_control].val_ratio, s=11,
                c=C["blue"], lw=0, label="Neutral controls", zorder=4)
     lim = [0.4, 12]

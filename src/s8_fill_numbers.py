@@ -111,7 +111,8 @@ def main():
         m, lo, hi = (annual(tag, year, k) for k in ("mean", "lo", "hi"))
         if m is None:
             return None
-        return f"{100*m:.0f}\\% ({100*lo:.0f}--{100*hi:.0f}\\%)"
+        return (f"${100*m:.0f}^{{+{100*(hi-m):.0f}}}"
+                f"_{{-{100*(m-lo):.0f}}}$\\%")
 
     def year_tab(tag, year):
         p_ = os.path.join(DATA, f"pi_{tag}.csv")
@@ -140,7 +141,8 @@ def main():
               for k in ("mean", "lo", "hi")]
         if vv[0] is None:
             return None
-        return f"{100*vv[0]:.0f}\\% ({100*vv[1]:.0f}--{100*vv[2]:.0f}\\%)"
+        return (f"${100*vv[0]:.0f}^{{+{100*(vv[2]-vv[0]):.0f}}}"
+                f"_{{-{100*(vv[0]-vv[1]):.0f}}}$\\%")
 
     b = band_laplace("fulltext_primary", 2025)
     if b:

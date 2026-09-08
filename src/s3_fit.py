@@ -225,9 +225,8 @@ def main():
         idata = pm.sample(**kw)
     print(f"sampling took {time.time()-t0:.0f}s", flush=True)
 
-    tag = f"{args.phase}_{args.variant}"
-    if args.section:
-        tag += f"_{args.section}"
+    tag = (f"{args.phase}_{args.variant}"
+           + (f"_{args.section}" if args.section else ""))
     tag += "_smoke" if args.smoke else ""
     # Write the prevalence table FIRST: a failed netcdf write must not cost
     # five hours of sampling (it did once, when no netCDF backend was present).
